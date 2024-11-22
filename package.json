@@ -1,0 +1,71 @@
+{
+  "name": "nachocode-developer-hub",
+  "version": "1.0.0",
+  "description": "Nachocode Developer Hub",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlipperCorporation/nachocode-developer-hub.git"
+  },
+  "homepage": "https://developer.nachocode.io",
+  "bugs": {
+    "url": "https://github.com/FlipperCorporation/nachocode-developer-hub/issues"
+  },
+  "author": {
+    "name": "FlipperCorporation",
+    "email": "flipper@nachocode.io"
+  },
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.6.2",
+    "@docusaurus/preset-classic": "3.6.2",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.6.2",
+    "@docusaurus/tsconfig": "3.6.2",
+    "@docusaurus/types": "3.6.2",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^22.8.7",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "editorconfig": "^2.0.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "typescript": "~5.6.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
