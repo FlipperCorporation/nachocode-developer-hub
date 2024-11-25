@@ -23,6 +23,8 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
+    "prettier": "prettier --ignore-path .prettierignore --write .",
+    "lint": "eslint --ignore-path .eslintignore --fix .",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc"
