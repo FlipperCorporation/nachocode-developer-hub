@@ -15,10 +15,11 @@ const sidebars: SidebarsConfig = {
         'sdk/getting-started',
         {
           type: 'category',
-          label: 'Namespaces',
+          label: '네임스페이스',
           items: [
             'sdk/namespaces/app',
             'sdk/namespaces/authentication',
+            'sdk/namespaces/backkey',
             'sdk/namespaces/device',
           ],
         },
