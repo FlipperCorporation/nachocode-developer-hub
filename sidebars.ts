@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/backkey',
             'sdk/namespaces/browser',
             'sdk/namespaces/device',
+            'sdk/namespaces/env',
           ],
         },
       ],
