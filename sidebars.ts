@@ -25,6 +25,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/env',
             'sdk/namespaces/event',
             'sdk/namespaces/permission',
+            'sdk/namespaces/preference',
           ],
         },
       ],
