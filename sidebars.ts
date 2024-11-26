@@ -23,6 +23,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/browser',
             'sdk/namespaces/device',
             'sdk/namespaces/env',
+            'sdk/namespaces/event',
           ],
         },
       ],
