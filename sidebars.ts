@@ -30,6 +30,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/refresh',
             'sdk/namespaces/share',
             'sdk/namespaces/tabbar',
+            'sdk/namespaces/vibration',
           ],
         },
       ],
