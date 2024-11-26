@@ -59,20 +59,20 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'docs',
-          position: 'left',
           label: 'SDK',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'docs',
+          type: 'doc',
+          docId: 'sdk/intro', // SDK의 시작 페이지로 이동
           position: 'left',
-          label: 'API',
         },
         {
-          href: 'https://github.com/FlipperCorporation',
+          label: 'API',
+          type: 'doc',
+          docId: 'api/intro', // API의 시작 페이지로 이동
+          position: 'left',
+        },
+        {
           label: 'GitHub',
+          href: 'https://github.com/FlipperCorporation',
           position: 'right',
         },
       ],
@@ -96,6 +96,7 @@ const config: Config = {
         {
           title: 'Community',
           items: [
+            { label: 'GitHub', href: 'https://github.com/FlipperCorporation' },
             {
               label: 'Discord',
               href: 'https://discord.gg/SU5wFmRw',
