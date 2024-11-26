@@ -29,6 +29,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/push',
             'sdk/namespaces/refresh',
             'sdk/namespaces/share',
+            'sdk/namespaces/tabbar',
           ],
         },
       ],
