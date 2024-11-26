@@ -8,6 +8,17 @@ sidebar_position: 2
 
 ---
 
+## 타입 정의
+
+### AuthenticationResult
+
+인증 결과를 나타내는 타입입니다.
+
+- `authenticated: boolean`: 인증 성공 여부입니다.
+- `error?: { code: string, message: string }`: (_optional_) 실패 시 실패 코드와 사유를 저장하여 전달되는 객체입니다.
+
+---
+
 ## 주요 메서드
 
 ### `canUseBiometrics(callback: (available: boolean, error?: { code: string, message: string }) => any): void`
