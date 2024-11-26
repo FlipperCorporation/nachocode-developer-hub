@@ -46,12 +46,18 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/og_image.png',
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
     navbar: {
       title: 'Nachocode',
       logo: {
         alt: 'Nachocode',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -110,6 +116,10 @@ const config: Config = {
         {
           title: 'More',
           items: [
+            {
+              label: 'Nachocode',
+              href: 'https://nachocode.io',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/FlipperCorporation',
