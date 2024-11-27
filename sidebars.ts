@@ -42,7 +42,7 @@ const sidebars: SidebarsConfig = {
         'api/intro',
         {
           type: 'category',
-          label: 'Push Notification',
+          label: '푸시 알림',
           items: ['api/push/overview', 'api/push/endpoints'],
         },
       ],

@@ -3,11 +3,11 @@ id: endpoints
 sidebar_label: API 엔드포인트
 ---
 
-# Push Notification API Endpoints
+# 푸시 알림 API Endpoints
 
 > 🔔 **최신화 일자:** 2024-11-27
 
-Nachocode Push Notification API는 다양한 엔드포인트를 제공하여 푸시 알림 관리 및 전송을 지원합니다.
+Nachocode 푸시 알림 API는 다양한 엔드포인트를 제공하여 푸시 알림 관리 및 전송을 지원합니다.
 
 ---
 

@@ -3,11 +3,11 @@ id: overview
 sidebar_label: API 개요
 ---
 
-# Push Notification API
+# 푸시 알림 API
 
 > 🔔 **최신화 일자:** 2024-11-27
 
-Nachocode Push Notification API는 푸시 알림을 관리하고 전송하기 위한 강력한 기능을 제공합니다. 이 문서에서는 API 사용법, 요청/응답 형식, 에러 처리 등을 다룹니다.
+Nachocode 푸시 알림 API는 푸시 알림을 관리하고 전송하기 위한 강력한 기능을 제공합니다. 이 문서에서는 API 사용법, 요청/응답 형식, 에러 처리 등을 다룹니다.
 
 ---
 
