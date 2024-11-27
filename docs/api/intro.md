@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: API 개요
+sidebar_label: 개요
 ---
 
 # Nachocode API 개요
