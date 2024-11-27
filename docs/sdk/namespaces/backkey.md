@@ -4,11 +4,7 @@ sidebar_position: 3
 
 # 백 키 (`backkey`)
 
-<!-- markdownlint-disable MD033 -->
-
-> <img alt="Android-Only" src="https://img.shields.io/badge/Android-Only?logo=android" />
-
-<!-- markdownlint-enable MD033 -->
+![Android-Only](https://img.shields.io/badge/Android-Only?logo=android)
 
 > Android 네이티브 백 키를 제어하는 네임스페이스입니다.
 > 기본 백 키 동작을 오버라이드하고 사용자 지정 이벤트를 등록할 수 있습니다.
