@@ -3,9 +3,9 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   docs: [
     {
-      type: 'category',
-      label: 'Introduction',
-      items: ['intro'],
+      type: 'doc',
+      label: '서비스소개',
+      id: 'intro',
     },
     {
       type: 'category',
