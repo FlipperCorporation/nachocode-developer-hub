@@ -4,7 +4,9 @@ sidebar_position: 2
 
 # 시작하기
 
-> Nachocode JavaScript Client SDK를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.
+> 🔔 **최신화 일자:** 2024-11-27
+
+Nachocode JavaScript Client SDK를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.
 
 ---
 
