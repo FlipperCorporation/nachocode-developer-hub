@@ -105,11 +105,11 @@ if (Nachocode.env.isApp()) {
 
 ### `isInitialized(): boolean`
 
-**Nachocode SDK**가 초기화되었는지 여부를 반환합니다.
+**nachocode SDK**가 초기화되었는지 여부를 반환합니다.
 
 ```javascript
 if (Nachocode.env.isInitialized()) {
-  // Nachocode SDK가 초기화 되었을 때만 실행 할 로직을 작성합니다.
+  // nachocode SDK가 초기화 되었을 때만 실행 할 로직을 작성합니다.
 }
 ```
 

@@ -15,7 +15,7 @@ sidebar_position: 13
 
 ### `moveTo(index: number): void`
 
-특정 index의 탭으로 전환합니다. Nachocode 대시보드에서 탭바를 먼저 등록 후 빌드해야합니다.
+특정 index의 탭으로 전환합니다. nachocode 대시보드에서 탭바를 먼저 등록 후 빌드해야합니다.
 
 ```javascript
 // 제일 첫번째 탭으로 탭을 전환합니다.
@@ -28,7 +28,7 @@ Nachocode.tabbar.moveTo(1);
 
 ### `show(): void`
 
-탭바를 화면에서 다시 보이게 합니다. Nachocode 대시보드에서 탭바를 먼저 등록 후 빌드해야합니다.
+탭바를 화면에서 다시 보이게 합니다. nachocode 대시보드에서 탭바를 먼저 등록 후 빌드해야합니다.
 
 ```javascript
 // 숨겨진 탭바를 다시 보이게 합니다.
@@ -39,7 +39,7 @@ Nachocode.tabbar.show();
 
 ### `hide(): void`
 
-탭바를 화면에서 숨깁니다. Nachocode 대시보드에서 탭바를 먼저 등록 후 빌드해야합니다.
+탭바를 화면에서 숨깁니다. nachocode 대시보드에서 탭바를 먼저 등록 후 빌드해야합니다.
 
 ```javascript
 // 탭바를 화면에서 숨깁니다.

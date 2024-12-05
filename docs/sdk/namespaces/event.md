@@ -37,7 +37,7 @@ Nachocode.event.on('init', () => {
   }
 });
 
-// Nachocode SDK를 초기화 합니다.
+// nachocode SDK를 초기화 합니다.
 Nachocode.init('your_api_key_here');
 ```
 

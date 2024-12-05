@@ -6,13 +6,13 @@ sidebar_position: 2
 
 > 🔔 **최신화 일자:** 2024-11-27
 
-Nachocode JavaScript Client SDK를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.
+nachocode JavaScript Client SDK를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.
 
 ---
 
 ## 1. SDK 스크립트 추가
 
-- 웹 페이지의 `<body>` 태그 안에 다음과 같은 스크립트 태그를 추가합니다. 이 스크립트는 **Nachocode SDK**를 웹 페이지에 로드합니다.
+- 웹 페이지의 `<body>` 태그 안에 다음과 같은 스크립트 태그를 추가합니다. 이 스크립트는 **nachocode SDK**를 웹 페이지에 로드합니다.
 
 - 항상 가장 최신 버전 불러오기
 
@@ -41,12 +41,12 @@ Nachocode JavaScript Client SDK를 프로젝트에 통합하고 기본적으로 
     // Nachocode SDK를 초기화 합니다.
     Nachocode.init('your_api_key_here', { logger: true });
   } else {
-    console.error('Nachocode SDK is not loaded.');
+    console.error('nachocode SDK is not loaded.');
   }
 </script>
 ```
 
-- `your_api_key_here`: Nachocode 서비스 접근을 위한 API 키입니다.
+- `your_api_key_here`: nachocode 서비스 접근을 위한 API 키입니다.
 - `logger`: 개발 중 디버깅을 돕기 위해 로깅 기능을 활성화하려면 `true`로 설정하세요.
 
 ---

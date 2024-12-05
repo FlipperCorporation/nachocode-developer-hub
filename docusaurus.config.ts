@@ -3,8 +3,8 @@ import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 
 const config: Config = {
-  title: 'Nachocode Developer Hub',
-  tagline: 'The Easiest App Builder Solution, Nachocode',
+  title: 'nachocode Developer Hub',
+  tagline: '가장 빠르고 쉬운 노코드/로우코드 앱 빌더, nachocode',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -26,7 +26,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'ko',
-    locales: ['ko', 'en'],
+    locales: ['ko'],
   },
 
   presets: [
@@ -54,9 +54,9 @@ const config: Config = {
       },
     },
     navbar: {
-      title: 'Nachocode',
+      title: 'nachocode',
       logo: {
-        alt: 'Nachocode',
+        alt: 'nachocode',
         src: 'img/logo.png',
       },
       items: [
@@ -98,10 +98,9 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            { label: 'GitHub', href: 'https://github.com/FlipperCorporation' },
             {
-              label: 'Discord',
-              href: 'https://discord.gg/SU5wFmRw',
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/nachocode',
             },
             {
               label: 'Instagram',
@@ -117,12 +116,13 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Nachocode',
+              label: 'nachocode.io',
               href: 'https://nachocode.io',
             },
+            { label: 'GitHub', href: 'https://github.com/FlipperCorporation' },
             {
-              label: 'GitHub',
-              href: 'https://github.com/FlipperCorporation',
+              label: 'Discord',
+              href: 'https://discord.gg/SU5wFmRw',
             },
           ],
         },
