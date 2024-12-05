@@ -1,7 +1,7 @@
 {
   "name": "nachocode-developer-hub",
   "version": "1.0.0",
-  "description": "Nachocode Developer Hub",
+  "description": "nachocode Developer Hub",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FlipperCorporation/nachocode-developer-hub.git"
@@ -33,10 +33,14 @@
     "@docusaurus/core": "^3.6.3",
     "@docusaurus/preset-classic": "^3.6.3",
     "@mdx-js/react": "^3.0.0",
+    "autoprefixer": "^10.4.20",
     "clsx": "^2.0.0",
+    "postcss": "^8.4.49",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "^18.0.0",
+    "react-syntax-highlighter": "^15.6.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.6.3",
@@ -46,13 +50,17 @@
     "@tsconfig/node20": "^20.1.4",
     "@types/jest": "^29.5.13",
     "@types/node": "^22.8.7",
+    "@types/react-copy-to-clipboard": "^5",
+    "@types/react-syntax-highlighter": "^15",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "editorconfig": "^2.0.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-tailwindcss": "^3.17.4",
     "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.16",
     "typescript": "~5.6.2"
   },
   "browserslist": {
