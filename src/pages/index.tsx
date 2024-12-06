@@ -41,7 +41,7 @@ function AdvancedAppFeaturesSection() {
         </h3>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className="button button--primary button--lg"
             to="/docs/intro"
           >
             nachocode 시작하기 - 5min ⏱️
@@ -441,7 +441,7 @@ const BottomBanner = () => {
         </h3>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className="button button--primary button--lg"
             to="/docs/intro"
           >
             nachocode 시작하기
