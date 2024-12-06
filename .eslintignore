@@ -6,14 +6,20 @@ node_modules
 logs
 *.log
 *.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Build products
+/build
+.docusaurus
 __generated__
 dist
 fixtures
 
 # Testing
 coverage
+test
 
 # misc
 .idea
@@ -29,5 +35,14 @@ temp
 # Uploads
 uploads/
 
-# Test
-test
+# Cache
+.cache/
+.module-cache
+.cache-loader
+
+# Yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
