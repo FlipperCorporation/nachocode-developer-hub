@@ -39,10 +39,13 @@ const ImageCard: React.FC<IImageCardProps> = ({
       <div
         className={`relative z-10 flex size-full flex-col items-center ${justifyContentStyles[justifyContent]} gap-[55px]`}
       >
-        <img src={imageSrc} alt={imageAlt}
+        <img
+          src={imageSrc}
+          alt={imageAlt}
           width={imageWidth}
           height={imageHeight}
-          className="w-auto h-auto max-w-full max-h-[422px]" />
+          className="w-auto h-auto max-w-full max-h-[422px]"
+        />
       </div>
     </div>
   );

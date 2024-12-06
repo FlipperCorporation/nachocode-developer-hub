@@ -27,7 +27,10 @@ function AdvancedAppFeaturesSection() {
   return (
     <div className="p-2 flex w-full items-center justify-center gap-[100px] overflow-hidden bg-gradient-to-b from-[#FFF7E6] to-[#FFF] pt-[170px]">
       <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-[48px]">
-        <Heading as="h1" className="text-[4.5rem] font-extrabold leading-[92px] text-gray-9 lg:text-[4rem] md:text-[2.5rem] sm:text-[2rem] max-[640px]:text-[2rem]">
+        <Heading
+          as="h1"
+          className="text-[4.5rem] font-extrabold leading-[92px] text-gray-9 lg:text-[4rem] md:text-[2.5rem] sm:text-[2rem] max-[640px]:text-[2rem]"
+        >
           {siteConfig.title}
         </Heading>
         <h3 className="text-[2.6rem] font-semibold leading-[52px] text-gray-7 lg:text-[2rem] md:text-[1.5rem] sm:text-[1.3rem] max-[640px]:text-[1rem]">
@@ -41,12 +44,17 @@ function AdvancedAppFeaturesSection() {
             nachocode 시작하기 - 5min ⏱️
           </Link>
         </div>
-        <img src="/img/developer/advanced-app-features-image.png" alt="App Features" width="2156" height="1564" className="h-auto w-max" />
+        <img
+          src="/img/developer/advanced-app-features-image.png"
+          alt="App Features"
+          width="2156"
+          height="1564"
+          className="h-auto w-max"
+        />
       </div>
     </div>
   );
 }
-
 
 const DeveloperSdkSupportSection = () => {
   const codeSnippet1 = `<script src="https://cdn.nachocode.io/nachocode/client-sdk/@latest/client-sdk.min.js"></script>`;
@@ -69,7 +77,7 @@ const DeveloperSdkSupportSection = () => {
           <p className="whitespace-pre-line text-center text-[24px] font-medium leading-[34px] text-gray-7">
             {`웹 개발자도 쉽게 네이티브 앱 기능을 사용할 수 있도록, \nnachocode SDK를 웹페이지에 통합하는 과정은 매우 간단합니다.`}
           </p>
-          <ul className="flex items-center justify-center gap-6">
+          <ul className="flex items-center justify-center gap-6 md:gap-3 sm:gap-1">
             <li>
               <TextButton
                 type={Type.text}
@@ -77,18 +85,22 @@ const DeveloperSdkSupportSection = () => {
                 size={Size.large}
                 color={Color.primary}
                 shape={Shape.square}
-                onClick={() => {window.location.href = "/docs/intro"}}
+                onClick={() => {
+                  window.location.href = '/docs/intro';
+                }}
                 endIcon={<RightLineArrowIconSvg fill="#F79E40" />}
               />
             </li>
             <li>
               <TextButton
                 type={Type.text}
-                text="SDK 통합 가이드"
+                text="SDK 가이드"
                 size={Size.large}
                 color={Color.primary}
                 shape={Shape.square}
-                onClick={() => {window.location.href = "/docs/sdk/intro"}}
+                onClick={() => {
+                  window.location.href = '/docs/sdk/intro';
+                }}
                 endIcon={<RightLineArrowIconSvg fill="#F79E40" />}
               />
             </li>
@@ -99,7 +111,9 @@ const DeveloperSdkSupportSection = () => {
                 size={Size.large}
                 color={Color.primary}
                 shape={Shape.square}
-                onClick={() => {window.location.href = "/docs/api/intro"}}
+                onClick={() => {
+                  window.location.href = '/docs/api/intro';
+                }}
                 endIcon={<RightLineArrowIconSvg fill="#F79E40" />}
               />
             </li>
@@ -111,9 +125,7 @@ const DeveloperSdkSupportSection = () => {
               <div className="text-[16px] font-medium leading-[28px] text-gray-4">
                 SDK 불러오기
               </div>
-              <CopyToClipboard
-                text={codeSnippet1}
-              >
+              <CopyToClipboard text={codeSnippet1}>
                 <button
                   type="button"
                   className="transition-transform duration-200 hover:scale-125 active:scale-75"
@@ -139,9 +151,7 @@ const DeveloperSdkSupportSection = () => {
               <div className="text-[16px] font-medium leading-[28px] text-gray-4">
                 SDK 초기화
               </div>
-              <CopyToClipboard
-                text={codeSnippet2}
-              >
+              <CopyToClipboard text={codeSnippet2}>
                 <button
                   type="button"
                   className="transition-transform duration-200 hover:scale-125 active:scale-75"
@@ -211,23 +221,22 @@ const NativeAppFeaturesSection = () => {
             이렇게나 많은 네이티브 앱 기능
           </h3>
           <p className="text-[24px] font-semibold leading-[34px] text-gray-7">
-            웹 개발자도 OK! 네이티브 앱 기능을 코드 몇 줄로 쉽게 사용할 수 있어요.
+            웹 개발자도 OK! 네이티브 앱 기능을 코드 몇 줄로 쉽게 사용할 수
+            있어요.
           </p>
         </div>
         <div className="flex flex-wrap flex-row min-w-0 items-start justify-center gap-[24px]">
-          {
-            data.map((item, idx) => {
-              return (
-                <div key={idx} className="w-12/25 max-w-12/25">
-                  <FeatureCard
-                      title={item.title}
-                      description={item.description}
-                      isReady={!!item.isReady}
-                    />
-                </div>
-              )
-            })
-          }
+          {data.map((item, idx) => {
+            return (
+              <div key={idx} className="w-12/25 max-w-12/25">
+                <FeatureCard
+                  title={item.title}
+                  description={item.description}
+                  isReady={!!item.isReady}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -412,7 +421,6 @@ Nachocode.preference.setData('sample', data => {
 };
 
 const BottomBanner = () => {
-
   return (
     <div className="p-2 relative inset-0 flex w-full items-center justify-center py-[136px]">
       <img
