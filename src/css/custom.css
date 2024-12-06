@@ -223,6 +223,11 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* 다크모드 스타일 무시 */
+html[data-theme='dark'] {
+  color-scheme: light; /* 다크모드에서 라이트 모드 강제 적용 */
+}
+
 html {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
