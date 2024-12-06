@@ -38,7 +38,7 @@ nachocode JavaScript Client SDK를 프로젝트에 통합하고 기본적으로 
 <script>
   // SDK가 로드되었는지 확인한 후 초기화를 시도합니다.
   if (window.Nachocode) {
-    // Nachocode SDK를 초기화 합니다.
+    // nachocode SDK를 초기화 합니다.
     Nachocode.init('your_api_key_here', { logger: true });
   } else {
     console.error('nachocode SDK is not loaded.');

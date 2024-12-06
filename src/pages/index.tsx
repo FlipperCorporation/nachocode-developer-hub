@@ -342,7 +342,10 @@ console.log(deviceOS); // ex. { os: 'Android', version: '34(14)' }`,
 const deviceModel = Nachocode.device.getDeviceModel();
 console.log(deviceModel); // ex. SM-S928N`,
         '실행 환경': `const runningEnv = Nachocode.env.getRunningEnv(); // 'web' | 'app'`,
-        '앱 정보': `const appName = Nachocode.app.getAppName(); // 앱 이름`,
+        '앱 정보': `const appName = Nachocode.app.getAppName(); // 앱 이름
+
+const appVersion = Nachocode.app.getCurrentAppVersion(); // 앱 버전
+`,
       },
     },
   ];
