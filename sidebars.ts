@@ -10,6 +10,10 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'SDK',
+      link: {
+        type: 'generated-index',
+        slug: 'sdk/intro',
+      },
       items: [
         'sdk/intro',
         'sdk/getting-started',
@@ -38,11 +42,19 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'API',
+      link: {
+        type: 'generated-index',
+        slug: 'api/intro',
+      },
       items: [
         'api/intro',
         {
           type: 'category',
           label: '푸시 알림',
+          link: {
+            type: 'generated-index',
+            slug: 'api/push/overview',
+          },
           items: ['api/push/overview', 'api/push/endpoints'],
         },
       ],

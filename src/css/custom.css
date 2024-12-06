@@ -186,16 +186,16 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #F79E40;
+  --ifm-color-primary: #f79e40;
   --ifm-color-primary-dark: #ffc53d;
   --ifm-color-primary-darker: #ffb800;
   --ifm-color-primary-darkest: #f79340;
   --ifm-color-primary-light: #ffe58f;
   --ifm-color-primary-lighter: #fff1b8;
   --ifm-color-primary-lightest: #fff7e6;
-  --ifm-menu-color-background-active: #FFFBE7;
+  --ifm-menu-color-background-active: #fffbe7;
   --ifm-menu-color-background-hover: #f5f5f5;
-  --ifm-breadcrumb-item-background-active: #FFFBE7;
+  --ifm-breadcrumb-item-background-active: #fffbe7;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
@@ -204,15 +204,22 @@
   color: #4b4b4b;
 }
 
+[data-theme='dark'] .menu__link:hover:not(.menu__link--active) {
+  color: var(--ifm-menu-color);
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #FFB800;
+  --ifm-color-primary: #ffb800;
   --ifm-color-primary-dark: #aa6215;
   --ifm-color-primary-darker: #d87a16;
   --ifm-color-primary-darkest: #e89a3c;
   --ifm-color-primary-light: #593815;
   --ifm-color-primary-lighter: #442a11;
   --ifm-color-primary-lightest: #2b1d11;
+  --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.05);
+  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.05);
+  --ifm-breadcrumb-item-background-active: rgba(255, 255, 255, 0.05);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 

@@ -33,8 +33,11 @@ function AdvancedAppFeaturesSection() {
         >
           {siteConfig.title}
         </Heading>
-        <h3 className={`text-center font-semibold text-gray-7 ${styles.subtitle}`}>
-          API & SDK로 쉽고 간편하게,<br className="md:hidden"/> 코드 몇 줄로 빠르게 앱을 개발하세요.
+        <h3
+          className={`text-center font-semibold text-gray-7 ${styles.subtitle}`}
+        >
+          API & SDK로 쉽고 간편하게,
+          <br className="md:hidden" /> 코드 몇 줄로 빠르게 앱을 개발하세요.
         </h3>
         <div className={styles.buttons}>
           <Link
@@ -74,7 +77,9 @@ const DeveloperSdkSupportSection = () => {
           <h3 className={`font-bold text-gray-9 ${styles.title}`}>
             개발자 SDK 지원
           </h3>
-          <p className={`whitespace-pre-line text-center font-medium text-gray-7 ${styles.subtitle}`}>
+          <p
+            className={`whitespace-pre-line text-center font-medium text-gray-7 ${styles.subtitle}`}
+          >
             {`웹 개발자도 쉽게 네이티브 앱 기능을 사용할 수 있도록, \nnachocode SDK를 웹페이지에 통합하는 과정은 매우 간단합니다.`}
           </p>
           <ul className="flex flex-col items-center justify-center gap-1 xl:gap-6 lg:gap-4 md:gap-2 min-[480px]:flex-row">
@@ -439,7 +444,8 @@ const BottomBanner = () => {
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
-            nachocode 시작하기<span className="max-[480px]:hidden"> - 5min</span> ⏱️
+            nachocode 시작하기
+            <span className="max-[480px]:hidden"> - 5min</span> ⏱️
           </Link>
         </div>
       </div>
