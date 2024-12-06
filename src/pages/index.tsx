@@ -29,12 +29,12 @@ function AdvancedAppFeaturesSection() {
       <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-[48px]">
         <Heading
           as="h1"
-          className="text-[4.5rem] font-extrabold leading-[92px] text-gray-9 lg:text-[4rem] md:text-[2.5rem] sm:text-[2rem] max-[640px]:text-[2rem]"
+          className="font-extrabold leading-[40px] text-gray-9 xl:leading-[92px] lg:leading-[92px] xl:text-[4.5rem] lg:text-[4rem] md:text-[2.5rem] sm:text-[2rem] max-[640px]:text-[2rem]"
         >
           {siteConfig.title}
         </Heading>
-        <h3 className="text-[2.6rem] font-semibold leading-[52px] text-gray-7 lg:text-[2rem] md:text-[1.5rem] sm:text-[1.3rem] max-[640px]:text-[1rem]">
-          API & SDK로 쉽고 간편하게, 코드 몇 줄로 빠르게 앱을 개발하세요.
+        <h3 className={`text-center font-semibold text-gray-7 ${styles.subtitle}`}>
+          API & SDK로 쉽고 간편하게,<br className="md:hidden"/> 코드 몇 줄로 빠르게 앱을 개발하세요.
         </h3>
         <div className={styles.buttons}>
           <Link
@@ -71,13 +71,13 @@ const DeveloperSdkSupportSection = () => {
     <div className="p-2 flex w-full flex-col items-center justify-center py-[159px]">
       <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-[80px]">
         <div className="flex flex-col items-center justify-center gap-[24px]">
-          <h3 className="text-[42px] font-bold leading-[52px] text-gray-9">
+          <h3 className={`font-bold text-gray-9 ${styles.title}`}>
             개발자 SDK 지원
           </h3>
-          <p className="whitespace-pre-line text-center text-[24px] font-medium leading-[34px] text-gray-7">
+          <p className={`whitespace-pre-line text-center font-medium text-gray-7 ${styles.subtitle}`}>
             {`웹 개발자도 쉽게 네이티브 앱 기능을 사용할 수 있도록, \nnachocode SDK를 웹페이지에 통합하는 과정은 매우 간단합니다.`}
           </p>
-          <ul className="flex items-center justify-center gap-6 md:gap-3 sm:gap-1">
+          <ul className="flex flex-col items-center justify-center gap-1 xl:gap-6 lg:gap-4 md:gap-2 min-[480px]:flex-row">
             <li>
               <TextButton
                 type={Type.text}
@@ -217,15 +217,15 @@ const NativeAppFeaturesSection = () => {
     <div className="p-2 flex w-full flex-col items-center justify-center py-[238px]">
       <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-[55px]">
         <div className="flex flex-col items-center justify-center gap-[24px]">
-          <h3 className="text-[42px] font-bold leading-[52px] text-gray-9">
+          <h3 className={`font-bold text-gray-9 ${styles.title}`}>
             이렇게나 많은 네이티브 앱 기능
           </h3>
-          <p className="text-[24px] font-semibold leading-[34px] text-gray-7">
+          <p className={`font-semibold text-gray-7 ${styles.subtitle}`}>
             웹 개발자도 OK! 네이티브 앱 기능을 코드 몇 줄로 쉽게 사용할 수
             있어요.
           </p>
         </div>
-        <div className="flex flex-wrap flex-row min-w-0 items-start justify-center gap-[24px]">
+        <div className="flex flex-wrap flex-row min-w-0 items-stretch justify-center gap-[24px]">
           {data.map((item, idx) => {
             return (
               <div key={idx} className="w-12/25 max-w-12/25">
@@ -248,14 +248,14 @@ const EnhancedUserExperienceSection = () => {
     <div className="p-2 flex w-full flex-col items-center justify-center py-[160px]">
       <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-[55px]">
         <div className="flex flex-col items-center justify-center gap-[24px]">
-          <h3 className="text-[42px] font-bold leading-[52px] text-gray-9">
+          <h3 className={`font-bold text-gray-9 ${styles.title}`}>
             사용자 경험을 강화하는 앱 기능
           </h3>
-          <p className="text-[24px] font-semibold leading-[34px] text-gray-7">
+          <p className={`font-semibold  text-gray-7 ${styles.subtitle}`}>
             사용자가 앱과 상호 작용하고 몰입할 수 있는 기능을 제공합니다.
           </p>
         </div>
-        <div className="flex items-start justify-center gap-[24px]">
+        <div className="flex items-center justify-center gap-[24px] flex-col xl:items-stretch lg:items-stretch md:items-stretch xl:flex-row lg:flex-row md:flex-row">
           <div className="flex flex-col items-center justify-center gap-[24px]">
             <ImageCard
               clipDirection="upward"
@@ -372,45 +372,45 @@ Nachocode.preference.setData('sample', data => {
     <div className="p-2 flex w-full flex-col items-center justify-center py-[105px]">
       <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-[114px]">
         <div className="flex flex-col items-center justify-center gap-[24px]">
-          <h3 className="text-[42px] font-bold leading-[52px] text-gray-9">
+          <h3 className={`font-bold text-gray-9 ${styles.title}`}>
             앱 정보와 리소스 활용을 유연하게
           </h3>
-          <p className="text-[24px] font-semibold leading-[34px] text-gray-7">
+          <p className={`font-semibold text-gray-7 ${styles.subtitle}`}>
             앱 내외부의 다양한 정보에 쉽게 접근하고, 필요한 리소스를 유연하게
             활용해보세요.
           </p>
         </div>
         <div className="flex w-full flex-col items-center justify-center gap-[55px]">
-          <div className="flex w-full items-start justify-center gap-[48px]">
+          <div className="flex w-full items-center justify-center gap-[48px] flex-col xl:flex-row lg:flex-row xl:items-start lg:items-start">
             <CodeSwitcher tabs={browserSnippetsa} />
             <div className="flex w-full flex-col items-start justify-start gap-4 p-[24px]">
               <h3 className="text-[24px] font-semibold leading-[34px] text-gray-9">
                 내부 / 외부 브라우저
               </h3>
               <p className="whitespace-pre-line text-[20px] font-medium leading-[30px] text-gray-7">
-                {`사용자가 앱 내에서 다양한 외부 리소스에 쉽게 연결될 수 있도록, \n내부 또는 외부 브라우저에서 URL을 열 수있도록 제어합니다.`}
+                {`사용자가 앱 내에서 다양한 외부 리소스에 쉽게 연결될 수 있도록, 내부 또는 외부 브라우저에서 URL을 열 수있도록 제어합니다.`}
               </p>
             </div>
           </div>
-          <div className="flex w-full items-start justify-center gap-[48px]">
+          <div className="flex w-full items-center justify-center gap-[48px] flex-col xl:flex-row lg:flex-row xl:items-start lg:items-start">
             <CodeSwitcher tabs={useDeviceSnippets} />
             <div className="flex w-full flex-col items-start justify-start gap-4 p-[24px]">
               <h3 className="text-[24px] font-semibold leading-[34px] text-gray-9">
                 사용자 디바이스 / 앱 정보
               </h3>
               <p className="whitespace-pre-line text-[20px] font-medium leading-[30px] text-gray-7">
-                {`사용자의 디바이스 OS, 디바이스 모델, 배터리 상태, 네트워크 상태부터 \n앱 실행 환경과 앱 정보까지 다양한 정보를 받아올 수 있습니 \n다.`}
+                {`사용자의 디바이스 OS, 디바이스 모델, 배터리 상태, 네트워크 상태부터 앱 실행 환경과 앱 정보까지 다양한 정보를 받아올 수 있습니 다.`}
               </p>
             </div>
           </div>
-          <div className="flex w-full items-start justify-center gap-[48px]">
+          <div className="flex w-full items-center justify-center gap-[48px] flex-col xl:flex-row lg:flex-row xl:items-start lg:items-start">
             <CodeSwitcher tabs={dataSnippets} />
             <div className="flex w-full flex-col items-start justify-start gap-4 p-[24px]">
               <h3 className="text-[24px] font-semibold leading-[34px] text-gray-9">
                 앱 내부 저장소 저장
               </h3>
               <p className="whitespace-pre-line text-[20px] font-medium leading-[30px] text-gray-7">
-                {`앱 내부 저장소에 특정 키로 데이터를 저장하거나, 저장되어있는 데 \n이터를 불러올 수 있습니다.`}
+                {`앱 내부 저장소에 특정 키로 데이터를 저장하거나, 저장되어있는 데이터를 불러올 수 있습니다.`}
               </p>
             </div>
           </div>
@@ -431,7 +431,7 @@ const BottomBanner = () => {
         className="absolute inset-0 z-0 object-cover size-full"
       />
       <div className="z-10 flex w-full max-w-[1100px] flex-col items-start justify-center gap-[36px]">
-        <h3 className="text-[42px] font-bold leading-[52px] text-gray-9">
+        <h3 className={`font-bold text-gray-9 ${styles.title}`}>
           앱, 지금 즉시 만들어보고 결정하세요
         </h3>
         <div className={styles.buttons}>
@@ -439,7 +439,7 @@ const BottomBanner = () => {
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
-            nachocode 시작하기 - 5min ⏱️
+            nachocode 시작하기<span className="max-[480px]:hidden"> - 5min</span> ⏱️
           </Link>
         </div>
       </div>

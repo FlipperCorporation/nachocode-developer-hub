@@ -12,7 +12,7 @@ const FeatureCard: React.FC<IFeatureCardProps> = ({
   isReady = false,
 }) => {
   return (
-    <div className="flex w-full max-w-[384px] flex-col items-start justify-center gap-[16px] rounded-[16px] bg-gray-1 p-[36px]">
+    <div className="flex w-full max-w-[384px] flex-col items-start justify-center gap-[16px] rounded-[16px] bg-gray-1 p-[36px] h-full max-h-[300px]">
       <div className="flex items-center justify-between w-full">
         <h3 className="text-[24px] font-bold leading-normal">{title}</h3>
         {isReady && <Tag>준비중</Tag>}
