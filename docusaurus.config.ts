@@ -4,7 +4,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 const config: Config = {
   title: 'nachocode Developer Hub',
-  tagline: '가장 빠르고 쉬운 노코드/로우코드 앱 빌더, nachocode',
+  tagline: '가장 빠르고 쉬운 노코드 & 로우코드 앱 빌더, nachocode',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

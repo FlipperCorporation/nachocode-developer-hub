@@ -80,9 +80,10 @@ const DeveloperSdkSupportSection = () => {
           <p
             className={`whitespace-pre-line text-center font-medium text-gray-7 ${styles.subtitle}`}
           >
-            {`웹 개발자도 쉽게 네이티브 앱 기능을 사용할 수 있도록, \nnachocode SDK를 웹페이지에 통합하는 과정은 매우 간단합니다.`}
+            <span className="max-[620px]:hidden">웹 개발자도 쉽게 네이티브 앱 기능을 사용할 수 있도록,<br />nachocode SDK를 웹페이지에 통합하는 과정은 매우 간단합니다.</span>
+            <span className="min-[620px]:hidden">nachocode SDK로 쉽게 <span className="max-[550px]:hidden">네이티브 </span>앱 기능을 사용해보세요.</span>
           </p>
-          <ul className="flex flex-col items-center justify-center gap-1 xl:gap-6 lg:gap-4 md:gap-2 min-[480px]:flex-row">
+          <ul className="m-0 list-none flex flex-col items-center justify-center gap-1 xl:gap-6 lg:gap-4 md:gap-2 min-[480px]:flex-row">
             <li>
               <TextButton
                 type={Type.text}
@@ -226,7 +227,7 @@ const NativeAppFeaturesSection = () => {
             이렇게나 많은 네이티브 앱 기능
           </h3>
           <p className={`font-semibold text-gray-7 ${styles.subtitle}`}>
-            웹 개발자도 OK! 네이티브 앱 기능을 코드 몇 줄로 쉽게 사용할 수
+            <span className="max-[550px]:hidden">웹 개발자도 OK! </span>네이티브 앱 기능을 코드 몇 줄로 쉽게 사용할 수
             있어요.
           </p>
         </div>
