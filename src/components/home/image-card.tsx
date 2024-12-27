@@ -1,3 +1,5 @@
+import React from 'react';
+
 const clipPathStyles = {
   upward: 'polygon(0 75%, 100% 60%, 100% 100%, 0 100%)',
   downward: 'polygon(0 60%, 100% 75%, 100% 100%, 0 100%)',
@@ -16,6 +18,8 @@ interface IImageCardProps {
   imageWidth: number;
   imageHeight: number;
   justifyContent: 'center' | 'start' | 'end';
+  maxWidth?: string;
+  hasPaddingBottom?: boolean;
   // blurDataURL: string;
 }
 
@@ -26,10 +30,12 @@ const ImageCard: React.FC<IImageCardProps> = ({
   imageWidth,
   imageHeight,
   justifyContent,
+  maxWidth = '77%',
+  hasPaddingBottom = false,
   // blurDataURL,
 }) => {
   return (
-    <div className="relative h-[540px] w-full max-w-[384px] rounded-[24px] border border-gray-3 bg-gray-white shadow-tertiary">
+    <div className="relative w-full max-w-[384px] rounded-[24px] border border-gray-3 bg-gray-white shadow-tertiary min-[501px]:h-[540px]">
       <div
         className="absolute inset-0 rounded-b-[24px] bg-nacho-2"
         style={{
@@ -37,14 +43,15 @@ const ImageCard: React.FC<IImageCardProps> = ({
         }}
       />
       <div
-        className={`relative z-10 flex size-full flex-col items-center ${justifyContentStyles[justifyContent]} gap-[55px]`}
+        className={`relative z-10 flex size-full flex-col items-center max-[501px]:pt-[15%] ${justifyContentStyles[justifyContent]} gap-default`}
       >
         <img
           src={imageSrc}
           alt={imageAlt}
           width={imageWidth}
           height={imageHeight}
-          className="w-auto h-auto max-w-full max-h-[422px]"
+          style={{ maxWidth }}
+          className={`size-auto ${hasPaddingBottom ? 'max-[501px]:pb-[15%]' : ''}`}
         />
       </div>
     </div>

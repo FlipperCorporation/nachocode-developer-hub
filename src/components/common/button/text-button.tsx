@@ -12,6 +12,7 @@ export interface ITextButtonProps extends IButtonProps {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   className?: string;
+  keepText?: boolean;
 }
 
 // 크기에 따른 Tailwind 클래스
@@ -46,16 +47,17 @@ const TextButton: React.FC<ITextButtonProps> = ({
   width,
   onClick,
   className,
+  keepText = false,
 }) => {
   const buttonClasses = `
     ${TEXT_SIZE_CLASSES[size]}
     ${SHAPE_CLASSES[shape]}
     ${disabled ? DISABLED_CLASSES[type] : TYPE_AND_COLOR_CLASSES[type][color]}
     font-bold
-    flex items-center justify-center box-border whitespace-nowrap
-    ${maxWidth}
-    ${width}
-    ${className}
+    flex items-center justify-center box-border whitespace-nowrap break-keep
+    ${maxWidth || ''}
+    ${width || ''}
+    ${className || ''}
   `;
 
   return (
@@ -67,7 +69,13 @@ const TextButton: React.FC<ITextButtonProps> = ({
     >
       <div className="flex items-center justify-center gap-1">
         {startIcon ? <IconWrapper>{startIcon}</IconWrapper> : null}
-        {text}
+        <span
+          className={
+            !keepText && (startIcon || endIcon) ? 'hidden sm:inline' : ''
+          }
+        >
+          {text}
+        </span>
         {endIcon ? <IconWrapper>{endIcon}</IconWrapper> : null}
       </div>
     </button>

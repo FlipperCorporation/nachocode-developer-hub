@@ -1,4 +1,5 @@
 import Tag from '@site/src/components/common/tag/default-tag';
+import React from 'react';
 
 interface IFeatureCardProps {
   title: string;
@@ -12,12 +13,14 @@ const FeatureCard: React.FC<IFeatureCardProps> = ({
   isReady = false,
 }) => {
   return (
-    <div className="flex w-full max-w-[384px] flex-col items-start justify-center gap-[16px] rounded-[16px] bg-gray-1 p-[36px] h-full max-h-[300px]">
-      <div className="flex items-center justify-between w-full">
-        <h3 className="text-[24px] font-bold leading-normal">{title}</h3>
+    <div className="mx-auto flex size-full h-[207px] w-[384px] max-w-full flex-col items-start justify-center gap-[16px] rounded-[16px] bg-gray-1 p-[36px] max-nacho-sm:h-auto">
+      <div className="flex w-full items-center justify-between">
+        <h3 className="m-0 break-keep text-sm-text1 !font-bold nacho-sm:text-text1">
+          {title}
+        </h3>
         {isReady && <Tag>준비중</Tag>}
       </div>
-      <p className="text-[20px] font-medium leading-[30px] text-gray-7">
+      <p className="m-0 text-sm-text2 text-gray-7 nacho-sm:text-text2">
         {description}
       </p>
     </div>

@@ -6,6 +6,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { hybrid } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import CopyIconSvg from '@site/src/components/svg/copy-icon';
+import React from 'react';
 
 interface CodeBlockProps {
   label: string;
@@ -20,7 +21,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ snippets }) => {
   return (
     <div className="flex min-h-[352px] w-full max-w-[576px] flex-col rounded-[10px] bg-gray-9">
       <div className="flex items-center justify-between rounded-t-[10px] bg-gray-black px-6 py-4">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 overflow-auto max-nacho-sm:pr-4">
           {Object.keys(snippets).map(key => (
             <div
               role="button"
@@ -30,7 +31,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ snippets }) => {
                 setSelectedSnippet(key);
               }}
               tabIndex={0}
-              className={`text-[16px] font-medium leading-[28px] ${
+              className={`whitespace-nowrap break-keep text-[16px] font-medium leading-[28px] ${
                 key === selectedSnippet
                   ? 'text-gray-4'
                   : 'text-gray-6 hover:text-gray-4'
@@ -48,7 +49,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ snippets }) => {
         >
           <button
             type="button"
-            className="transition-transform duration-200 hover:scale-125 active:scale-75"
+            className="transition-transform duration-200 hover:scale-125 active:scale-75 max-nacho-sm:hidden"
           >
             <CopyIconSvg />
           </button>

@@ -98,6 +98,8 @@ module.exports = {
       },
       backgroundColor: {},
       screens: {
+        'nacho-sm': '444px',
+        'nacho-md': '912px',
         'nacho-lg': '1084px',
         'nacho-xl': '1600px',
       },
@@ -105,6 +107,86 @@ module.exports = {
       borderRadius: {
         round: '100px',
         square: '8px',
+      },
+      fontSize: {
+        heading1: [
+          '72px',
+          {
+            lineHeight: '92px',
+            fontWeight: '800',
+          },
+        ],
+        heading2: [
+          '42px',
+          {
+            lineHeight: '52px',
+            fontWeight: '600',
+          },
+        ],
+        text1: [
+          '24px',
+          {
+            lineHeight: '34px',
+            fontWeight: '500',
+          },
+        ],
+        text2: [
+          '20px',
+          {
+            lineHeight: '30px',
+            fontWeight: '500',
+          },
+        ],
+        text3: [
+          '16px',
+          {
+            lineHeight: '26px',
+            fontWeight: '400',
+          },
+        ],
+        'sm-heading1': [
+          '48px',
+          {
+            lineHeight: '68px',
+            fontWeight: '800',
+          },
+        ],
+        'sm-heading2': [
+          '28px',
+          {
+            lineHeight: '38px',
+            fontWeight: '600',
+          },
+        ],
+        'sm-text1': [
+          '20px',
+          {
+            lineHeight: '30px',
+            fontWeight: '500',
+          },
+        ],
+        'sm-text2': [
+          '16px',
+          {
+            lineHeight: '26px',
+            fontWeight: '500',
+          },
+        ],
+        'sm-text3': [
+          '14px',
+          {
+            lineHeight: '24px',
+            fontWeight: '400',
+          },
+        ],
+      },
+      padding: {
+        default: '60px',
+        'sm-default': '40px',
+      },
+      gap: {
+        default: '55px',
+        content: '24px',
       },
       keyframes: {
         wave: {
