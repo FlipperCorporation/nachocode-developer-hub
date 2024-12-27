@@ -250,7 +250,7 @@ const NativeAppFeaturesSection = () => {
         <div className="flex min-w-0 max-w-full flex-row flex-wrap items-stretch justify-center gap-content">
           {data.map((item, idx) => {
             return (
-              <div key={idx} className="w-12/25 max-w-12/25">
+              <div key={idx} className="w-fit max-w-full">
                 <FeatureCard
                   title={item.title}
                   description={item.description}

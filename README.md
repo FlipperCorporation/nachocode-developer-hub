@@ -27,7 +27,7 @@ nachocode의 개발자 문서를 정독하려면 아래 링크를 방문하세�
 
 ## 🛠️ 기술 스택
 
-nachocode Developer Hub는 **[Docusaurus](https://docusaurus.io/)**를 사용하여 생성되었습니다.  
+nachocode Developer Hub는 [Docusaurus](https://docusaurus.io/)를 사용하여 생성되었습니다.  
 Docusaurus는 개발자 문서를 작성하고 배포하는 데 최적화된 정적 사이트 생성기입니다.
 
 ---
