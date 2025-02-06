@@ -3,6 +3,8 @@
 **nachocode Developer Hub**는 nachocode SDK 및 API 사용을 위한 공식 문서를 제공합니다.  
 웹 개발자와 앱 개발자가 nachocode의 강력한 노코드 & 로우코드 플랫폼을 활용하여 네이티브 앱을 빠르고 효율적으로 개발할 수 있도록 돕습니다.
 
+- 최신화 일자 : 2025-02-06
+
 ---
 
 ## 📚 프로젝트 개요
@@ -49,12 +51,20 @@ cd nachocode-developer-hub
 yarn install
 ```
 
+```bash
+npm install
+```
+
 ### 3. **로컬 개발 서버 실행**
 
 로컬 개발 환경에서 문서를 확인하고 수정할 수 있습니다.
 
 ```bash
 yarn start
+```
+
+```bash
+npm run start
 ```
 
 브라우저에서 [http://localhost:3005](http://localhost:3005)을 열어 사이트를 확인하세요.
@@ -67,12 +77,16 @@ yarn start
 yarn build
 ```
 
+```bash
+npm run build
+```
+
 ### 5. **GitHub Pages에 배포**
 
 GitHub Pages에 배포하려면 아래 명령을 실행하세요:
 
 ```bash
-GIT_USER=<your-github-username> USE_SSH=true yarn deploy
+GIT_USER=<your-github-username> yarn deploy
 ```
 
 ---
