@@ -32,19 +32,19 @@ declare type IapPurchaseResult = {
 };
 ```
 
-| **Property**           | **Type**                          | **Required** | **Description**                                                                                     |
-| ---------------------- | --------------------------------- | ------------ | --------------------------------------------------------------------------------------------------- |
-| `purchaseEnv`          | `'sandbox'` \| `'production'`     | ✔           | 구매가 이루어진 환경 (`sandbox`: 테스트 환경, `production`: 운영 환경)                              |
-| `userId`               | `string`                          | ✔           | 인앱 결제를 수행한 앱 사용자의 고유 식별자                                                          |
-| `productId`            | `string`                          | ✘            | **(_optional_)** 상품키로 조회된 스토어에 등록된 상품의 고유 식별자, Native 호출이 실패한 경우 없음 |
-| `nachoProductId`       | `string`                          | ✔           | Nachocode에서 발급받은 인앱 상품의 고유 식별자                                                      |
-| `purchaseId`           | `number`                          | ✘            | **(_optional_)** 인앱 결제 구매 내역 ID, Native 호출이 실패한 경우 없음                             |
-| `os`                   | `'android'` \| `'ios'` \| `null'` | ✔           | 인앱 결제가 이루어진 운영 체제 (`android`, `ios`, `null`: OS 정보 없음)                             |
-| `status`               | `object`                          | ✔           | 인앱 결제 호출 상태 정보                                                                            |
-| `status.success`       | `boolean`                         | ✔           | 인앱 결제 최종 성공 여부 (`true`: 성공, `false`: 실패)                                              |
-| `status.error`         | `object`                          | ✘            | **(_optional_)** 인앱 결제 실패 시 포함되는 오류 정보, `success` = true인 경우 없음                 |
-| `status.error.code`    | `string`                          | ✘            | **(_optional_)** 에러 발생 원인을 나타내는 코드, Native 호출이 실패한 경우 없음                     |
-| `status.error.message` | `string`                          | ✔           | 에러 발생 원인을 설명하는 메시지                                                                    |
+| **Property**           | **Type**                          | **Required** | **Description**                                                                                         |
+| ---------------------- | --------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------- |
+| `purchaseEnv`          | `'sandbox'` \| `'production'`     | ✔           | 구매가 이루어진 환경 (`sandbox`: 테스트 환경, `production`: 운영 환경)                                  |
+| `userId`               | `string`                          | ✔           | 인앱 결제를 수행한 앱 사용자의 고유 식별자                                                              |
+| `productId`            | `string`                          | ✘            | **(_optional_)** 상품키로 조회된 스토어에 등록된 상품의 고유 식별자, Native 호출이 실패한 경우 **없음** |
+| `nachoProductId`       | `string`                          | ✔           | Nachocode에서 발급받은 인앱 상품의 고유 식별자                                                          |
+| `purchaseId`           | `number`                          | ✘            | **(_optional_)** 인앱 결제 구매 내역 ID, Native 호출이 실패한 경우 **없음**                             |
+| `os`                   | `'android'` \| `'ios'` \| `null'` | ✔           | 인앱 결제가 이루어진 운영 체제 (`android`, `ios`, `null` = OS 정보 없음)                                |
+| `status`               | `object`                          | ✔           | 인앱 결제 호출 상태 정보                                                                                |
+| `status.success`       | `boolean`                         | ✔           | 인앱 결제 최종 성공 여부 (`true`: 성공, `false`: 실패)                                                  |
+| `status.error`         | `object`                          | ✘            | **(_optional_)** 인앱 결제 실패 시 포함되는 오류 정보, `success` = true인 경우 **없음**                 |
+| `status.error.code`    | `string`                          | ✘            | **(_optional_)** 에러 발생 원인을 나타내는 코드, Native 호출이 실패한 경우 **없음**                     |
+| `status.error.message` | `string`                          | ✔           | 에러 메시지                                                                                             |
 
 ## 주요 메서드
 
@@ -110,12 +110,12 @@ function onPurchase(productKey, userId) {
 ## 🛒 결제 상태 정의
 
 인앱 결제 호출 시 발생할 수 있는 케이스는 다음과 같습니다.
+상태에 따른 응답은 <a href = "#-예제-응답">이곳</a>을 확인해주세요.
 
 ### ✅ 1. **결제 성공**
 
 - 결제 검증을 포함한 모든 과정이 **성공적으로 완료된 상태**입니다.
-- 단, **웹 훅 전송(Webhook)은 실패할 수 있음**을 유의하세요.
-- 결제가 성공한 경우 **`success = true`** 입니다.
+- 단, **웹 훅 전송(Webhook)은 실패할 수** 있습니다.
 
 ---
 
@@ -125,15 +125,12 @@ function onPurchase(productKey, userId) {
   - 결제 실패
   - 결제 검증 실패
   - 사용자가 결제를 취소
-- **`success = false`** 이며 **`purchaseId`는 존재** 합니다.
-- 실패 원인은 **`status.error.code`** 를 통해 확인할 수 있습니다.
 
 ---
 
 ### ⚠️ 3. **결제 호출 실패**
 
 - **SDK 초기화 문제, 인수값 부재, Nachocode 서버에 상품이 등록되지 않음** 등의 이유로 인해 **인앱 결제 호출 자체가 실패한 경우**를 의미합니다.
-- **`success = false`** 이며 **`purchaseId`** 는 존재하지 않습니다.
 
 ## ❌ 인앱 결제 에러 케이스
 
@@ -189,13 +186,13 @@ function onPurchase(productKey, userId) {
 
 ### 🎯 **예제 응답**
 
-#### ✅ **성공 시 (`success = true`)**
+#### ✅ **결제 성공 시 (`success = true`)**
 
 ```json
 {
   "purchaseEnv": "production",
   "userId": "tester",
-  "productId": "com.nachocode.develop.test",
+  "productId": "com.nachocode.developer.product",
   "nachoProductId": "NP-TESTSAMPLE-0001",
   "purchaseId": 123456,
   "os": "android",
@@ -205,7 +202,27 @@ function onPurchase(productKey, userId) {
 }
 ```
 
-#### ❌ **실패 시 (`success = false`)**
+#### ❌ **결제 실패 시 (`success = false`)**
+
+```json
+{
+  "purchaseEnv": "production",
+  "userId": "tester",
+  "productId": "com.nachocode.developer.product",
+  "nachoProductId": "NP-TESTSAMPLE-0001",
+  "purchaseId": 123456,
+  "os": "android",
+  "status": {
+    "success": false,
+    "error": {
+      "code": "ERR-NNA-ILA-22",
+      "message": "User canceled the purchase."
+    }
+  }
+}
+```
+
+#### ⚠️ **결제 호출 실패 시 (`success = false`)**
 
 ```json
 {
@@ -216,8 +233,7 @@ function onPurchase(productKey, userId) {
   "status": {
     "success": false,
     "error": {
-      "code": "ERR-NNA-ILA-22",
-      "message": "User canceled the purchase."
+      "message": "Required parameters missing."
     }
   }
 }
