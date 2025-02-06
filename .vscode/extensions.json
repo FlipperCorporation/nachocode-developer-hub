@@ -11,6 +11,7 @@
     "github.vscode-github-actions",
     "lokalise.i18n-ally",
     "ms-azuretools.vscode-docker",
+    "streetsidesoftware.code-spell-checker",
     "yzhang.markdown-all-in-one"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
