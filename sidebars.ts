@@ -28,6 +28,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/device',
             'sdk/namespaces/env',
             'sdk/namespaces/event',
+            'sdk/namespaces/iap',
             'sdk/namespaces/permission',
             'sdk/namespaces/preference',
             'sdk/namespaces/push',
