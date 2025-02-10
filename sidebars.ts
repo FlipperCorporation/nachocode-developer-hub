@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
           label: '네임스페이스',
           items: [
             'sdk/namespaces/app',
+            'sdk/namespaces/apple',
             'sdk/namespaces/authentication',
             'sdk/namespaces/backkey',
             'sdk/namespaces/browser',
