@@ -30,6 +30,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/device',
             'sdk/namespaces/env',
             'sdk/namespaces/event',
+            'sdk/namespaces/facebook',
             'sdk/namespaces/permission',
             'sdk/namespaces/preference',
             'sdk/namespaces/push',
