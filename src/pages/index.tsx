@@ -30,7 +30,7 @@ function AdvancedAppFeaturesSection() {
       <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-[48px]">
         <Heading
           as="h1"
-          className="break-keep text-center text-heading1 text-gray-9 max-nacho-sm:text-sm-heading1"
+          className="text-center break-keep text-heading1 text-gray-9 max-nacho-sm:text-sm-heading1"
         >
           {siteConfig.title}
         </Heading>
@@ -209,7 +209,6 @@ const NativeAppFeaturesSection = () => {
       title: 'QR 리더기',
       description:
         'QR 리더기는 카메라를 통해 QR 코드를 스캔하여 특정 작업(웹사이트 방문, 정보 저장 등)을 실행합니다.',
-      isReady: true,
     },
     {
       title: '권한 요청 시점 제어',
@@ -247,10 +246,10 @@ const NativeAppFeaturesSection = () => {
             쉽게 사용할 수 있어요.
           </p>
         </div>
-        <div className="flex min-w-0 max-w-full flex-row flex-wrap items-stretch justify-center gap-content">
+        <div className="flex flex-row flex-wrap items-stretch justify-center max-w-full min-w-0 gap-content">
           {data.map((item, idx) => {
             return (
-              <div key={idx} className="w-fit max-w-full">
+              <div key={idx} className="max-w-full w-fit">
                 <FeatureCard
                   title={item.title}
                   description={item.description}
@@ -286,7 +285,7 @@ const EnhancedUserExperienceSection = () => {
           </p>
         </div>
         <div className="flex max-w-full flex-col items-center justify-center gap-content min-[1236px]:flex-row min-[1236px]:items-stretch">
-          <div className="flex max-w-full flex-col items-center justify-center gap-content">
+          <div className="flex flex-col items-center justify-center max-w-full gap-content">
             <ImageCard
               clipDirection="upward"
               imageSrc="/img/developer/use-experience-personal-push-image.png"
@@ -300,7 +299,7 @@ const EnhancedUserExperienceSection = () => {
               description="사용자 데이터(행동, 위치, 통계 정보 등)를 활용해 맞춤형 알림을 보내는 기능입니다."
             />
           </div>
-          <div className="flex max-w-full flex-col items-center justify-center gap-content">
+          <div className="flex flex-col items-center justify-center max-w-full gap-content">
             <ImageCard
               clipDirection="downward"
               imageSrc="/img/developer/use-experience-in-app-image.png"
@@ -315,7 +314,7 @@ const EnhancedUserExperienceSection = () => {
               isReady
             />
           </div>
-          <div className="flex max-w-full flex-col items-center justify-center gap-content">
+          <div className="flex flex-col items-center justify-center max-w-full gap-content">
             <ImageCard
               clipDirection="upward"
               imageSrc="/img/developer/use-experience-native-share-image.png"
@@ -420,7 +419,7 @@ Nachocode.preference.setData('sample', data => {
             필요한 리소스를 유연하게 활용해보세요.
           </p>
         </div>
-        <div className="flex w-full flex-col items-center justify-center gap-default">
+        <div className="flex flex-col items-center justify-center w-full gap-default">
           <div className="flex w-full flex-col items-center justify-center gap-content nacho-sm:gap-[48px] lg:flex-row lg:items-start">
             <CodeSwitcher tabs={browserSnippetsa} />
             <div className="flex w-full flex-col items-start justify-start gap-4 p-[24px]">
