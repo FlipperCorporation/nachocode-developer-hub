@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 11
 ---
 
 # 인앱 결제 (`iap`)
@@ -136,9 +136,9 @@ function onPurchase(productKey, userId) {
 
 ### 📌 **SDK**
 
-#### SDK에서 발생하는 에러는 안드로이드, iOS 동일한 에러 형식을 가집니다. SDK에서 발생한 에러의 경우 에러 코드를 반환하지 않습니다.
+#### SDK에서 발생하는 에러는 안드로이드, iOS 동일한 에러 형식을 가집니다. SDK에서 발생한 에러의 경우 에러 코드를 반환하지 않습니다
 
-#### 또한 에러 메시지는 로그를 통해 출력되므로 콘솔을 통해 확인해볼 수 있습니다.
+#### 또한 에러 메시지는 로그를 통해 출력되므로 콘솔을 통해 확인해볼 수 있습니다
 
 | **Message**                                                       | **Description**                                |
 | ----------------------------------------------------------------- | ---------------------------------------------- |
@@ -155,16 +155,17 @@ function onPurchase(productKey, userId) {
 안드로이드 인앱 결제 응답 코드 문서는 [다음 링크](https://developer.android.com/reference/com/android/billingclient/api/BillingClient.BillingResponseCode)
 에서 확인할 수 있습니다.<br/>
 **샌드박스** 혹은 **운영환경**에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.
-| **Code** | **Message** | **Description** | **Solution** |
-| ----------------- | ---------------------------------------------------------------------------- | ------------------------------------------------ | ------------ |
-| ERR-NNA-ILA-01 | Failed to connect play store. Invalid response code received.(Code: \{code\})| 구글 플레이 스토어 연결에 실패한 경우 | 앱 사용자가 플레이스토어에 로그인 돼있는지 확인 |
-| ERR-NNA-ILA-11 | Failed to get product detail. Invalid response code received. (Code: \{code\}) | 플레이 스토어로부터 상품 불러오기가 실패한 경우| 앱 사용자에게 재시도 요청|
-| ERR-NNA-ILA-12 | Product not found. Check your product id and product type. | Nachocode에 등록한 상품이 스토어에 등록돼있지 않은 경우| 플레이스토어에 인앱 상품 등록|
-| ERR-NNA-ILA-21 | Failed to purchase. Invalid billing response code received. (Code: \{code\}). | 결제| code 확인 후 재시도 요청 |
-| ERR-NNA-ILA-22 | User canceled the purchase.| 유저가 결제를 취소한 경우 | n/a |
-| ERR-NNA-ILA-23 | User already owned the product.| 유저가 이미 인앱 상품을 보유중인 경우 | 상품 숨김 혹은 보유 중 처리 |
-| ERR-NNA-IMA-61 | Purchase state is not valid.| 유저의 결제 요청이 알 수 없는 이유로 실패한 경우 | 앱 사용자에 재시도 요청 |
-| ERR-AB-PHS-01 | Invalid service key type. | 나쵸코드에 등록한 안드로이드 서비스 키의 올바르지 않은 경우 | 올바른 정보의 서비스 키 파일로 수정 |
+
+| **Code**       | **Message**                                                                    | **Description**                                             | **Solution**                                    |
+| -------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------- | ----------------------------------------------- |
+| ERR-NNA-ILA-01 | Failed to connect play store. Invalid response code received.(Code: \{code\})  | 구글 플레이 스토어 연결에 실패한 경우                       | 앱 사용자가 플레이스토어에 로그인 돼있는지 확인 |
+| ERR-NNA-ILA-11 | Failed to get product detail. Invalid response code received. (Code: \{code\}) | 플레이 스토어로부터 상품 불러오기가 실패한 경우             | 앱 사용자에게 재시도 요청                       |
+| ERR-NNA-ILA-12 | Product not found. Check your product id and product type.                     | Nachocode에 등록한 상품이 스토어에 등록돼있지 않은 경우     | 플레이스토어에 인앱 상품 등록                   |
+| ERR-NNA-ILA-21 | Failed to purchase. Invalid billing response code received. (Code: \{code\}).  | 결제                                                        | code 확인 후 재시도 요청                        |
+| ERR-NNA-ILA-22 | User canceled the purchase.                                                    | 유저가 결제를 취소한 경우                                   | n/a                                             |
+| ERR-NNA-ILA-23 | User already owned the product.                                                | 유저가 이미 인앱 상품을 보유중인 경우                       | 상품 숨김 혹은 보유 중 처리                     |
+| ERR-NNA-IMA-61 | Purchase state is not valid.                                                   | 유저의 결제 요청이 알 수 없는 이유로 실패한 경우            | 앱 사용자에 재시도 요청                         |
+| ERR-AB-PHS-01  | Invalid service key type.                                                      | 나쵸코드에 등록한 안드로이드 서비스 키의 올바르지 않은 경우 | 올바른 정보의 서비스 키 파일로 수정             |
 
 ---
 
