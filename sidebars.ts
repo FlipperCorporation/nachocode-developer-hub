@@ -26,6 +26,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/authentication',
             'sdk/namespaces/backkey',
             'sdk/namespaces/browser',
+            'sdk/namespaces/clipboard',
             'sdk/namespaces/device',
             'sdk/namespaces/env',
             'sdk/namespaces/event',
