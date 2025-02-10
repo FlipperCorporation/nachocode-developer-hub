@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/push',
             'sdk/namespaces/refresh',
             'sdk/namespaces/scanner',
+            'sdk/namespaces/setting',
             'sdk/namespaces/share',
             'sdk/namespaces/tabbar',
             'sdk/namespaces/vibration',
