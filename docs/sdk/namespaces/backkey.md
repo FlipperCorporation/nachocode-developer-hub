@@ -1,10 +1,10 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # 백 키 (`backkey`)
 
-> 🔔 **최신화 일자:** 2025-02-06
+> 🔔 **최신화 일자:** 2025-02-10
 
 ![Android-Only](https://img.shields.io/badge/Android_only-gray?logo=android)
 
@@ -13,9 +13,10 @@ sidebar_position: 3
 `backkey` 네임스페이스는 **Android 네이티브 백 키를 제어**하는 기능을 제공합니다.  
 **기본 백 키 동작을 오버라이드**하고, **사용자 지정 이벤트를 등록**할 수 있으며, **백 키 이벤트 스택을 관리**할 수 있습니다.
 
-> **⚠️ 참고:**  
+> **📢 참고:**  
 > 백 키 이벤트는 **FILO(First In Last Out) 방식**으로 처리됩니다.  
-> 즉, **가장 최근에 추가된 이벤트가 가장 먼저 실행**됩니다.
+> 즉, **가장 최근에 추가된 이벤트가 가장 먼저 실행**됩니다.  
+> ⚠️ **이 네임스페이스는 Android에서만 지원됩니다.**
 
 ---
 
