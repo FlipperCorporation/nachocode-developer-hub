@@ -101,7 +101,7 @@ function onPurchase(productKey, userId) {
 
         const errorCode = result.status.error.code;
         // 유저가 결제를 이탈한 경우
-        if (errorCode === 'ERR-NNA-ILA-22' || errorCode === 'ERR-') {
+        if (errorCode === 'ERR-NNA-ILA-22') {
           alert('인앱 결제가 취소됐습니다.');
         } else {
           alert('결제에 실패했습니다.');
