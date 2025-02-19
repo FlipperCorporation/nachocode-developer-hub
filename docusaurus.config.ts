@@ -64,15 +64,15 @@ const config: Config = {
       },
       items: [
         {
-          label: 'SDK',
-          type: 'doc',
-          docId: 'sdk/intro', // SDK의 시작 페이지로 이동
-          position: 'left',
-        },
-        {
           label: 'API',
           type: 'doc',
           docId: 'api/intro', // API의 시작 페이지로 이동
+          position: 'left',
+        },
+        {
+          label: 'SDK',
+          type: 'doc',
+          docId: 'sdk/intro', // SDK의 시작 페이지로 이동
           position: 'left',
         },
         {
@@ -95,12 +95,12 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'SDK',
-              to: '/docs/sdk/intro',
-            },
-            {
               label: 'API',
               to: '/docs/api/intro',
+            },
+            {
+              label: 'SDK',
+              to: '/docs/sdk/intro',
             },
             {
               label: '가이드',

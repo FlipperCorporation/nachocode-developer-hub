@@ -321,6 +321,10 @@ table {
   border-collapse: collapse;
 }
 
+table th {
+  word-break: keep-all;
+}
+
 button,
 select {
   text-transform: none;

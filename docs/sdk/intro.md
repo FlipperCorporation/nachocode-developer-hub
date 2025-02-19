@@ -5,7 +5,7 @@ sidebar_label: 개요
 
 # Nachocode SDK 개요
 
-> 🔔 **최신화 일자:** 2025-02-10
+> 🔔 **최신화 일자:** 2025-02-12
 
 **Nachocode JavaScript 클라이언트 SDK**는 웹 클라이언트 개발자가 네이티브 앱 개발을 할 수 있도록 돕는 다양한 기능을 제공합니다.
 
@@ -151,6 +151,6 @@ Nachocode SDK는 **웹 애플리케이션에서 네이티브 기능을 손쉽게
 
 Nachocode SDK와 함께 **웹과 네이티브의 경계를 허물고** 더욱 혁신적인 애플리케이션을 개발해보세요! 🚀
 
-📖 **더 궁금하신 사항이 있다면 언제든지 [문의하기](mailto://support@nachocode.io)를 통해 Nachocode 팀에게 물어보세요.**
+> 📖 Nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다. 기술적인 질문이나 피드백이 있다면 언제든지 [이메일](mailto:support@nachocode.io)을 보내주세요.
 
 ---
