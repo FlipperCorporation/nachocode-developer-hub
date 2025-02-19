@@ -9,17 +9,39 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'API',
+      link: {
+        type: 'generated-index',
+        slug: 'api/intro',
+      },
+      items: [
+        'api/intro',
+        {
+          type: 'category',
+          label: '푸시 알림',
+          link: {
+            type: 'generated-index',
+            slug: 'api/push/overview',
+          },
+          items: ['api/push/overview', 'api/push/endpoints'],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'SDK',
       link: {
         type: 'generated-index',
         slug: 'sdk/intro',
       },
+      collapsed: false,
       items: [
         'sdk/intro',
         'sdk/getting-started',
         {
           type: 'category',
           label: '네임스페이스',
+          collapsed: false,
           items: [
             'sdk/namespaces/app',
             'sdk/namespaces/apple',
@@ -41,26 +63,6 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/tabbar',
             'sdk/namespaces/vibration',
           ],
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'API',
-      link: {
-        type: 'generated-index',
-        slug: 'api/intro',
-      },
-      items: [
-        'api/intro',
-        {
-          type: 'category',
-          label: '푸시 알림',
-          link: {
-            type: 'generated-index',
-            slug: 'api/push/overview',
-          },
-          items: ['api/push/overview', 'api/push/endpoints'],
         },
       ],
     },
