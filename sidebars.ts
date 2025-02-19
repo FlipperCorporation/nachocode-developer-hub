@@ -74,6 +74,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'guide/intro',
+        'guide/iap',
         {
           type: 'category',
           label: '웹훅',
@@ -81,7 +82,14 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             slug: 'guide/webhook/overview',
           },
-          items: ['guide/webhook/overview', 'guide/webhook/iap'],
+          items: [
+            'guide/webhook/overview',
+            {
+              type: 'category',
+              label: '인앱결제',
+              items: ['guide/webhook/iap/purchase', 'guide/webhook/iap/refund'],
+            },
+          ],
         },
       ],
     },
