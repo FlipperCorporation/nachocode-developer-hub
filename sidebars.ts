@@ -65,6 +65,26 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: '가이드',
+      link: {
+        type: 'generated-index',
+        slug: 'guide/intro',
+      },
+      items: [
+        'guide/intro',
+        {
+          type: 'category',
+          label: '웹훅',
+          link: {
+            type: 'generated-index',
+            slug: 'guide/webhook/overview',
+          },
+          items: ['guide/webhook/overview', 'guide/webhook/iap'],
+        },
+      ],
+    },
   ],
 };
 

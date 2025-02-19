@@ -76,6 +76,12 @@ const config: Config = {
           position: 'left',
         },
         {
+          label: '가이드',
+          type: 'doc',
+          docId: 'guide/intro', // Guide의 시작 페이지로 이동
+          position: 'left',
+        },
+        {
           label: 'GitHub',
           href: 'https://github.com/FlipperCorporation',
           position: 'right',
@@ -95,6 +101,10 @@ const config: Config = {
             {
               label: 'API',
               to: '/docs/api/intro',
+            },
+            {
+              label: '가이드',
+              to: '/docs/guide/intro',
             },
           ],
         },
