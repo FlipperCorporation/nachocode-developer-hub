@@ -115,7 +115,7 @@ function onPurchase(productKey, userId) {
 }
 ```
 
-## 🛒 결제 상태 정의
+## 결제 상태 정의
 
 인앱 결제 호출 시 발생할 수 있는 케이스는 다음과 같습니다.  
 상태에 따른 응답은 [이곳](#-예제-응답)을 확인해주세요.
@@ -140,9 +140,9 @@ function onPurchase(productKey, userId) {
 
 - **SDK 초기화 문제, 인수값 부재, Nachocode 서버에 상품이 등록되지 않음** 등의 이유로 인해 **인앱 결제 호출 자체가 실패한 경우**를 의미합니다.
 
-## ❌ 인앱 결제 에러 케이스
+## 인앱 결제 에러 케이스
 
-### 📌 **SDK**
+### **SDK**
 
 #### SDK에서 발생하는 에러는 안드로이드, iOS 동일한 에러 형식을 가집니다. SDK에서 발생한 에러의 경우 에러 코드를 반환하지 않습니다
 
@@ -158,7 +158,7 @@ function onPurchase(productKey, userId) {
 | Failed to get in app product information.                         | Nachocode로 인앱 상품 조회 요청이 실패한 경우  |
 | Product not found with provided productKey.                       | 상품키로 조회된 상품 정보가 올바르지 않은 경우 |
 
-### 📌 **안드로이드 & 검증 서버 ![Android](https://img.shields.io/badge/Android-A4C639?logo=android)**
+### **안드로이드 & 검증 서버 ![Android](https://img.shields.io/badge/Android-A4C639?logo=android)**
 
 안드로이드 인앱 결제 응답 코드 문서는 [다음 링크](https://developer.android.com/reference/com/android/billingclient/api/BillingClient.BillingResponseCode)
 에서 확인할 수 있습니다.  
@@ -177,7 +177,7 @@ function onPurchase(productKey, userId) {
 
 ---
 
-### 📌 **iOS & 검증 서버 ![iOS](https://img.shields.io/badge/ios-000000?logo=apple&color=lightgray)**
+### **iOS & 검증 서버 ![iOS](https://img.shields.io/badge/ios-000000?logo=apple&color=lightgray)**
 
 **샌드박스** 혹은 **운영환경**에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.
 
@@ -193,7 +193,7 @@ function onPurchase(productKey, userId) {
 
 ---
 
-### 🎯 **예제 응답**
+### **예제 응답**
 
 #### ✅ **결제 성공 시 (`success = true`)**
 
