@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # 클립보드 (`clipboard`)
 
-> 🔔 **최신화 일자:** 2025-02-10
+> 🔔 **최신화 일자:** 2025-02-20
 
 ## **개요**
 
@@ -82,7 +82,7 @@ Nachocode.clipboard.getText(text => {
 
 ```javascript
 // 네이티브 클립보드에 텍스트를 저장합니다.
-Nachocode.clipboard.setText('Nachocode is awesome!', (status, message) => {
+Nachocode.clipboard.setText('Hello nachocode!', (status, message) => {
   if (status === 'success') {
     console.log('클립보드에 텍스트가 성공적으로 복사되었습니다.');
   } else {

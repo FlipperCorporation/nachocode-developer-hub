@@ -4,7 +4,7 @@ sidebar_position: 17
 
 # 공유 (`share`)
 
-> 🔔 **최신화 일자:** 2025-02-10
+> 🔔 **최신화 일자:** 2025-02-20
 
 ## **개요**
 
@@ -207,7 +207,7 @@ Nachocode.share.sendKakao(
   'custom',
   {
     templateId: 12345,
-    templateArgs: { title: 'Nachocode SDK' },
+    templateArgs: { title: 'nachocode SDK' },
   },
   result => {
     console.log('카카오 공유 결과:', result);

@@ -4,12 +4,12 @@ sidebar_position: 13
 
 # 푸시 알림 (`push`)
 
-> 🔔 **최신화 일자:** 2025-02-07
+> 🔔 **최신화 일자:** 2025-02-20
 
 ## **개요**
 
 `push` 네임스페이스는 **푸시 알림 관련 기능을 제공**합니다.  
-이를 통해 **푸시 토큰을 Nachocode 서버에 등록, 삭제** 등 여러 기능을 수행 할 수 있습니다.
+이를 통해 **푸시 토큰을 nachocode 서버에 등록, 삭제** 등 여러 기능을 수행 할 수 있습니다.
 
 ---
 
@@ -17,8 +17,8 @@ sidebar_position: 13
 
 | 메서드                                                                    | 설명                                       | 추가된 버전 |
 | ------------------------------------------------------------------------- | ------------------------------------------ | ----------- |
-| [`registerPushToken(userID)`](#registerpushtokenuserid-string-promiseany) | Nachocode 서버에 푸시 토큰을 등록합니다.   | ver.1.0.0   |
-| [`deletePushToken(userID)`](#deletepushtokenuserid-string-promiseany)     | Nachocode 서버에서 푸시 토큰을 삭제합니다. | ver.1.0.0   |
+| [`registerPushToken(userID)`](#registerpushtokenuserid-string-promiseany) | nachocode 서버에 푸시 토큰을 등록합니다.   | ver.1.0.0   |
+| [`deletePushToken(userID)`](#deletepushtokenuserid-string-promiseany)     | nachocode 서버에서 푸시 토큰을 삭제합니다. | ver.1.0.0   |
 
 ---
 
@@ -30,7 +30,7 @@ sidebar_position: 13
 
 #### 설명 (`registerPushToken`)
 
-Nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.  
+nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.  
 이때, 특정 사용자(`userID`)를 식별자로 사용하여 **푸시 알림을 해당 사용자에게 전송할 수 있도록 설정**합니다.
 
 #### 매개변수 (`registerPushToken`)
@@ -66,7 +66,7 @@ function onLoginSuccess(userID) {
 
 #### 설명 (`deletePushToken`)
 
-Nachocode 서버에서 **해당 사용자(`userID`)와 연결된 푸시 토큰을 삭제**합니다.  
+nachocode 서버에서 **해당 사용자(`userID`)와 연결된 푸시 토큰을 삭제**합니다.  
 사용자가 로그아웃하거나 푸시 알림을 더 이상 사용하지 않도록 설정할 경우 이 메서드를 호출해야 합니다.
 
 #### 매개변수 (`deletePushToken`)

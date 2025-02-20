@@ -4,20 +4,20 @@ sidebar_position: 2
 
 # 시작하기
 
-> 🔔 **최신화 일자:** 2025-02-12
+> 🔔 **최신화 일자:** 2025-02-20
 
-Nachocode JavaScript Client SDK를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.
+nachocode JavaScript Client SDK를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.
 
-Nachocode SDK는 웹 클라이언트에서 **네이티브 앱의 기능**을 손쉽게 활용할 수 있도록 지원합니다.  
+nachocode SDK는 웹 클라이언트에서 **네이티브 앱의 기능**을 손쉽게 활용할 수 있도록 지원합니다.  
 이 가이드는 SDK 설치부터 초기화, 주요 기능 사용까지 단계별로 설명합니다.
 
 ---
 
 ## 1. SDK 설치
 
-- Nachocode SDK는 **CDN을 통해 간편하게 설치**할 수 있습니다.
+- nachocode SDK는 **CDN을 통해 간편하게 설치**할 수 있습니다.
 
-- 웹 페이지의 `<body>` 태그 안에 다음과 같은 스크립트 태그를 추가합니다. 이 스크립트는 **Nachocode SDK**를 웹 페이지에 로드합니다.
+- 웹 페이지의 `<body>` 태그 안에 다음과 같은 스크립트 태그를 추가합니다. 이 스크립트는 **nachocode SDK**를 웹 페이지에 로드합니다.
 
   ### 최신 버전 불러오기
 
@@ -45,7 +45,7 @@ Nachocode SDK는 웹 클라이언트에서 **네이티브 앱의 기능**을 손
 
 ### 개요
 
-- 웹 페이지 로딩이 완료되면, **Nachocode SDK를 반드시 초기화**해야 합니다.
+- 웹 페이지 로딩이 완료되면, **nachocode SDK를 반드시 초기화**해야 합니다.
 - 초기화는 **API 키**를 사용하며, 필요에 따라 디버깅 로깅 기능을 활성화할 수 있습니다.
 
 ### `init` 함수 정의
@@ -57,13 +57,13 @@ Nachocode SDK는 웹 클라이언트에서 **네이티브 앱의 기능**을 손
 
 #### `init(apiKey: string, options?: InitializeOptions): void`
 
-- **Nachocode SDK**를 초기화합니다. 애플리케이션이 시작할 때 호출해야 합니다.
+- **nachocode SDK**를 초기화합니다. 애플리케이션이 시작할 때 호출해야 합니다.
 
 #### **초기화 옵션 설명**
 
 | 옵션     | 타입      | 설명                                                                                                          |
 | -------- | --------- | ------------------------------------------------------------------------------------------------------------- |
-| `apiKey` | `string`  | Nachocode SDK 서비스 접근을 위한 API 키. [Nachocode 대시보드](https://nachocode.io)에서 발급받을 수 있습니다. |
+| `apiKey` | `string`  | nachocode SDK 서비스 접근을 위한 API 키. [nachocode 대시보드](https://nachocode.io)에서 발급받을 수 있습니다. |
 | `logger` | `boolean` | `true`로 설정하면 개발 중 디버깅을 위한 **로그 출력**이 활성화됩니다.                                         |
 
 ### 예제
@@ -82,10 +82,10 @@ Nachocode SDK는 웹 클라이언트에서 **네이티브 앱의 기능**을 손
       }
     });
 
-    // Nachocode SDK를 초기화 합니다.
+    // nachocode SDK를 초기화 합니다.
     Nachocode.init('your_api_key_here', { logger: true });
   } else {
-    console.error('Nachocode SDK가 로드되지 않았습니다.');
+    console.error('nachocode SDK가 로드되지 않았습니다.');
   }
 </script>
 ```
@@ -104,7 +104,7 @@ Nachocode SDK는 웹 클라이언트에서 **네이티브 앱의 기능**을 손
 
 ## 3. 주요 기능 사용
 
-- Nachocode SDK가 초기화가 완료되면, `Nachocode` 네임스페이스 아래에 정의된 다양한 네이티브 기능을 사용할 수 있습니다.
+- nachocode SDK가 초기화가 완료되면, `Nachocode` 네임스페이스 아래에 정의된 다양한 네이티브 기능을 사용할 수 있습니다.
 
 - 아래 예시는 SDK의 일부 기능을 사용하는 방법을 보여줍니다.
 
@@ -112,7 +112,7 @@ Nachocode SDK는 웹 클라이언트에서 **네이티브 앱의 기능**을 손
 
   ```javascript
   const appName = Nachocode.app.getAppName();
-  console.log(`앱 이름: ${appName}`); // ex. "Nachocode Developer"
+  console.log(`앱 이름: ${appName}`); // ex. "nachocode Developer"
   ```
 
   - **디바이스 정보 확인**
