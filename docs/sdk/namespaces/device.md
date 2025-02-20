@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # 디바이스 (`device`)
 
-> 🔔 **최신화 일자:** 2025-02-10
+> 🔔 **최신화 일자:** 2025-02-20
 
 ## **개요**
 
@@ -132,7 +132,7 @@ Nachocode.device.getBatteryLevel(status => {
 #### 설명 (`getDeviceModel`)
 
 현재 디바이스의 **모델명을 반환**합니다.  
-Nachocode에서는 **자주 사용되는 디바이스 모델명을 JSON 형태**로 제공합니다.
+nachocode에서는 **자주 사용되는 디바이스 모델명을 JSON 형태**로 제공합니다.
 
 ✅ **[Android 삼성 기기 모델 리스트](https://cdn.nachocode.io/nachocode/client-sdk/assets/device-android-samsung-model.json)**  
 ✅ **[iOS 기기 모델 리스트](https://cdn.nachocode.io/nachocode/client-sdk/assets/device-ios-model.json)**

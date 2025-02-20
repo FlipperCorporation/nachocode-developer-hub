@@ -4,11 +4,11 @@ sidebar_position: 9
 
 # 이벤트 (`event`)
 
-> 🔔 **최신화 일자:** 2025-02-07
+> 🔔 **최신화 일자:** 2025-02-20
 
 ## **개요**
 
-`event` 네임스페이스는 **Nachocode SDK의 이벤트 핸들링 기능**을 제공합니다.  
+`event` 네임스페이스는 **nachocode SDK의 이벤트 핸들링 기능**을 제공합니다.  
 **SDK가 초기화**될 때(`init`), 앱이 **백그라운드로 전환**(`background`)되거나 **다시 활성화**(`foreground`)될 때, **네트워크 상태가 변경**(`networkchanged`)될 때 등의 이벤트를 감지하고 이를 처리할 수 있습니다.
 
 ---
@@ -17,7 +17,7 @@ sidebar_position: 9
 
 ### **`EventType`**
 
-Nachocode SDK에서 기본적으로 제공하는 예약된 이벤트 타입입니다.
+nachocode SDK에서 기본적으로 제공하는 예약된 이벤트 타입입니다.
 
 | 값               | 설명                                                               |
 | ---------------- | ------------------------------------------------------------------ |
@@ -140,7 +140,7 @@ Nachocode.event.off('networkchanged');
 
 ```javascript
 Nachocode.event.on('init', () => {
-  console.log('Nachocode SDK가 정상적으로 초기화되었습니다.');
+  console.log('nachocode SDK가 정상적으로 초기화되었습니다.');
 });
 ```
 

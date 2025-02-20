@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 애플리케이션 (`app`)
 
-> 🔔 **최신화 일자:** 2025-02-06
+> 🔔 **최신화 일자:** 2025-02-20
 
 ## 개요
 
@@ -18,7 +18,7 @@ sidebar_position: 1
 | ----------------------------------------------------------------------------------------- | ------------------------------------------------------ | ----------- |
 | [`checkFirstLaunch(callback)`](#checkfirstlaunchcallback-isfirstlaunch-boolean--any-void) | 앱이 최초 실행인지 여부를 확인합니다.                  | ver.1.4.0   |
 | [`getAppName()`](#getappname-string)                                                      | 앱의 이름을 가져옵니다.                                | ver.1.0.0   |
-| [`getAppKey()`](#getappkey-string)                                                        | Nachocode 플랫폼에서 발급한 앱의 고유 키를 반환합니다. | ver.1.0.0   |
+| [`getAppKey()`](#getappkey-string)                                                        | nachocode 플랫폼에서 발급한 앱의 고유 키를 반환합니다. | ver.1.0.0   |
 | [`getCurrentAppVersion()`](#getcurrentappversion-string)                                  | 현재 설치된 앱 버전을 반환합니다.                      | ver.1.0.0   |
 | [`getPackageName()`](#getpackagename-string)                                              | 앱의 패키지명을 가져옵니다.                            | ver.1.0.0   |
 
@@ -67,7 +67,7 @@ Nachocode.app.checkFirstLaunch(isFirstLaunch => {
 #### 설명 (`getAppName`)
 
 현재 앱의 **이름**을 반환합니다.  
-이 값은 Nachocode 대시보드에서 설정한 앱 이름과 동일합니다.
+이 값은 nachocode 대시보드에서 설정한 앱 이름과 동일합니다.
 
 #### 반환 값 (`getAppName`)
 
@@ -91,13 +91,13 @@ console.log(`앱 이름: ${appName}`);
 #### 설명 (`getAppKey`)
 
 **앱 프로젝트를 식별하는 고유 키**를 반환합니다.  
-이 키는 Nachocode 서비스에서 앱을 구별하는 데 사용됩니다.
+이 키는 nachocode 서비스에서 앱을 구별하는 데 사용됩니다.
 
 #### 반환 값 (`getAppKey`)
 
 | 타입     | 설명                                          |
 | -------- | --------------------------------------------- |
-| `string` | Nachocode에서 발급한 앱의 고유 식별 키입니다. |
+| `string` | nachocode에서 발급한 앱의 고유 식별 키입니다. |
 
 #### 사용 예제 (`getAppKey`)
 
