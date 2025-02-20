@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: 웹훅 개요
+sidebar_label: 개요
 ---
 
 # 웹훅 개요

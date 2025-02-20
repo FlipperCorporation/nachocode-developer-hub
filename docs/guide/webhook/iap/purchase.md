@@ -76,7 +76,7 @@ declare type AppStorePurchaseData = {
 | `originalTransactionId` | `string` | ✔           | 최초 거래의 고유 ID          |
 | `transactionId`         | `string` | ✔           | 현재 결제 요청의 트랜잭션 ID |
 
-**소모성** 및 **비소모성** 상품의 경우 `originalTransactionId`와 `transactionId` 모두 unique한 값임이 보장됩니다.
+**소모성** 및 **비소모성** 상품의 경우 `originalTransactionId`와 `transactionId` 모두 **unique**한 값임이 보장됩니다.
 따라서 유저의 구매를 식별하기 위한 식별자로 사용할 수 있습니다.
 
 ## 요청 본문 예시
