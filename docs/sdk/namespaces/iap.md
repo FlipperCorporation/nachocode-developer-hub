@@ -118,7 +118,7 @@ function onPurchase(productKey, userId) {
 ## 결제 상태 정의
 
 인앱 결제 호출 시 발생할 수 있는 케이스는 다음과 같습니다.  
-상태에 따른 응답은 [이곳](#-예제-응답)을 확인해주세요.
+상태에 따른 응답은 [이곳](#예제-응답)을 확인해주세요.
 
 ### ✅ 1. **결제 성공**
 
@@ -139,57 +139,6 @@ function onPurchase(productKey, userId) {
 ### ⚠️ 3. **결제 호출 실패**
 
 - **SDK 초기화 문제, 인수값 부재, Nachocode 서버에 상품이 등록되지 않음** 등의 이유로 인해 **인앱 결제 호출 자체가 실패한 경우**를 의미합니다.
-
-## 인앱 결제 에러 케이스
-
-### **SDK**
-
-#### SDK에서 발생하는 에러는 안드로이드, iOS 동일한 에러 형식을 가집니다. SDK에서 발생한 에러의 경우 에러 코드를 반환하지 않습니다
-
-#### 또한 에러 메시지는 로그를 통해 출력되므로 콘솔을 통해 확인해볼 수 있습니다
-
-| **Message**                                                       | **Description**                                |
-| ----------------------------------------------------------------- | ---------------------------------------------- |
-| Cannot initiate a purchase transaction before SDK initialization. | SDK가 초기화 되지 않은 경우                    |
-| Cannot detect device type.                                        | Device type을 감지하지 못한 경우               |
-| In app purchase is only available in native app environment.      | 앱 환경에서 인앱 결제를 호출하지 않은 경우     |
-| Required parameters missing.                                      | 인앱 결제 호출 파라미터 부재                   |
-| In app purchase is still processing. Please try again later.      | 인앱 결제를 중복 호출한 경우                   |
-| Failed to get in app product information.                         | Nachocode로 인앱 상품 조회 요청이 실패한 경우  |
-| Product not found with provided productKey.                       | 상품키로 조회된 상품 정보가 올바르지 않은 경우 |
-
-### **안드로이드 & 검증 서버 ![Android](https://img.shields.io/badge/Android-A4C639?logo=android)**
-
-안드로이드 인앱 결제 응답 코드 문서는 [다음 링크](https://developer.android.com/reference/com/android/billingclient/api/BillingClient.BillingResponseCode)
-에서 확인할 수 있습니다.  
-**샌드박스** 혹은 **운영환경**에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.
-
-| **Code**       | **Message**                                                                    | **Description**                                             | **Solution**                                    |
-| -------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------- | ----------------------------------------------- |
-| ERR-NNA-ILA-01 | Failed to connect play store. Invalid response code received.(Code: \{code\})  | 구글 플레이 스토어 연결에 실패한 경우                       | 앱 사용자가 플레이스토어에 로그인 돼있는지 확인 |
-| ERR-NNA-ILA-11 | Failed to get product detail. Invalid response code received. (Code: \{code\}) | 플레이 스토어로부터 상품 불러오기가 실패한 경우             | 앱 사용자에게 재시도 요청                       |
-| ERR-NNA-ILA-12 | Product not found. Check your product id and product type.                     | Nachocode에 등록한 상품이 스토어에 등록돼있지 않은 경우     | 플레이스토어에 인앱 상품 등록                   |
-| ERR-NNA-ILA-21 | Failed to purchase. Invalid billing response code received. (Code: \{code\}).  | 결제                                                        | code 확인 후 재시도 요청                        |
-| ERR-NNA-ILA-22 | User canceled the purchase.                                                    | 유저가 결제를 취소한 경우                                   | n/a                                             |
-| ERR-NNA-ILA-23 | User already owned the product.                                                | 유저가 이미 인앱 상품을 보유중인 경우                       | 상품 숨김 혹은 보유 중 처리                     |
-| ERR-NNA-IMA-61 | Purchase state is not valid.                                                   | 유저의 결제 요청이 알 수 없는 이유로 실패한 경우            | 앱 사용자에 재시도 요청                         |
-| ERR-AB-PHS-01  | Invalid service key type.                                                      | 나쵸코드에 등록한 안드로이드 서비스 키의 올바르지 않은 경우 | 올바른 정보의 서비스 키 파일로 수정             |
-
----
-
-### **iOS & 검증 서버 ![iOS](https://img.shields.io/badge/ios-000000?logo=apple&color=lightgray)**
-
-**샌드박스** 혹은 **운영환경**에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.
-
-### 에러 코드 매핑 테이블
-
-| **Code**       | **Message**                                         | **Description**                              | **Solution**                                                                      |
-| -------------- | --------------------------------------------------- | -------------------------------------------- | --------------------------------------------------------------------------------- |
-| ERR-NNI-ILA-22 | User cancelled the purchase.                        | 사용자가 결제 진행 중 취소한 경우            | n/a                                                                               |
-| ERR-NNI-ILA-21 | Purchase failed due to an error.                    | 결제가 실패한 경우                           | 앱 사용자의 결제 환경 및 정보를 확인                                              |
-| ERR-NNI-ILA-12 | Product not found.                                  | 요청한 상품이 App Store에 존재하지 않는 경우 | 앱 스토어에 인앱 상품 등록                                                        |
-| ERR-AB-ASS-05  | Something went wrong. Please try again later.       | 결제된 트랜잭션 정보를 불러 올 수 없는 경우  | 1. SDK 샌드박스 설정값 확인<br/> 2. 대시보드에 등록된 인앱결제 iOS 관련 설정 확인 |
-| ERR-AB-ASS-0e  | The app's iOS certificate information is incorrect. | iOS 빌드시 설정한 정보가 유효하지 않음       | 대시보드에 등록된 iOS 관련 설정 확인                                              |
 
 ---
 
