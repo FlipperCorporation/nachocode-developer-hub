@@ -6,8 +6,12 @@ sidebar_position: 11
 
 > 🔔 **최신화 일자:** 2025-02-10
 
-`iap` 네임스페이스는 **네이티브 인앱 결제 기능**을 제공합니다.  
-Nachocode SDK를 사용해 **Android 및 iOS 환경에서 인앱 결제를 손쉽게 처리**할 수 있으며, 테스트 환경(`sandbox`)과 운영 환경(`production`)을 모두 지원합니다.
+`iap` 네임스페이스는 **네이티브 인앱 결제 기능**을 제공합니다. nachocode SDK를 사용해 **Android 및 iOS 환경에서 인앱 결제를 손쉽게 처리**할 수 있으며, 테스트 환경(`sandbox`)과 운영 환경(`production`)을 모두 지원합니다.
+SDK 연동 전 **가이드**를 참고해보세요.
+
+➡️[인앱결제 가이드](../../guide/iap)
+
+➡️[웹훅 가이드](../../guide/webhook)
 
 ---
 
@@ -38,7 +42,7 @@ declare type IapPurchaseResult = {
 | `purchaseEnv`          | `'sandbox'` \| `'production'`     | ✔           | 구매가 이루어진 환경 (`sandbox`: 테스트 환경, `production`: 운영 환경)                                  |
 | `userId`               | `string`                          | ✔           | 인앱 결제를 수행한 앱 사용자의 고유 식별자                                                              |
 | `productId`            | `string`                          | ✘            | **(_optional_)** 상품키로 조회된 스토어에 등록된 상품의 고유 식별자, Native 호출이 실패한 경우 **없음** |
-| `nachoProductId`       | `string`                          | ✔           | Nachocode에서 발급받은 인앱 상품의 고유 식별자                                                          |
+| `nachoProductId`       | `string`                          | ✔           | nachocode에서 발급받은 인앱 상품의 고유 식별자                                                          |
 | `purchaseId`           | `number`                          | ✘            | **(_optional_)** 인앱 결제 구매 내역 ID, Native 호출이 실패한 경우 **없음**                             |
 | `os`                   | `'android'` \| `'ios'` \| `null'` | ✔           | 인앱 결제가 이루어진 운영 체제 (`android`, `ios`, `null` = OS 정보 없음)                                |
 | `status`               | `object`                          | ✔           | 인앱 결제 호출 상태 정보                                                                                |
@@ -51,7 +55,7 @@ declare type IapPurchaseResult = {
 
 ### `purchase(productKey: string, userId: string, callback: (result: IapPurchaseResult) => any): Promise<any>`
 
-Nachocode에서 생성한 **인앱 상품의 고유 식별자(`productKey`)**와 **사용자 ID(`userId`)** 를 전달받아 인앱결제를 실행합니다.
+nachocode에서 생성한 **인앱 상품의 고유 식별자(`productKey`)**와 **사용자 ID(`userId`)** 를 전달받아 인앱결제를 실행합니다.
 
 콜백 함수는 **결제 결과를 반환**하며, 성공 및 실패 시 각각의 처리를 구현할 수 있습니다.
 
@@ -82,15 +86,15 @@ function onPurchase(productKey, userId) {
 
     // 1. 결제 성공
     if (result.status.success) {
-      // 백엔드에서 웹 훅 수신이 정상적으로 이루어졌는지 확인합니다.
+      // 백엔드에서 웹훅 수신이 정상적으로 이루어졌는지 확인합니다.
       const response = await fetch(url);
       const purchaseData = response.json();
       if (purchaseData.success) {
         alert('구매가 성공했습니다.');
       } else {
-        // Native Layer에서 인앱 결제가 성공해으나 서버에서 권한을 확인할 수 없다면
-        // 웹 훅 전송이 실패했을 가능성이 있습니다.
-        // 나쵸코드 대시보드에서 웹 훅 로그를 확인해서 조치해주세요.
+        // Native Layer에서 인앱 결제가 성공했으나 서버에서 상품 지급이 이루어지지 않았다면
+        // 웹훅 전송이 실패했을 가능성이 있습니다.
+        // 나쵸코드 대시보드에서 웹훅 로그를 확인해서 조치해주세요.
         alert('구매 처리 중입니다.');
       }
     } else {
@@ -117,13 +121,13 @@ function onPurchase(productKey, userId) {
 
 ## 결제 상태 정의
 
-인앱 결제 호출 시 발생할 수 있는 케이스는 다음과 같습니다.  
-상태에 따른 응답은 [이곳](#예제-응답)을 확인해주세요.
+인앱 결제의 응답 형태는 **결제 성공**, **결제 실패**, **결제 호출 실패** 총 3가지로 이루어져있습니다.
+상태에 따른 응답 예시는 [이곳](#예제-응답)을 확인해주세요.
 
 ### ✅ 1. **결제 성공**
 
 - 결제 검증을 포함한 모든 과정이 **성공적으로 완료된 상태**입니다.
-- 단, **웹 훅(Webhook) 전송은 실패할 수** 있으므로 Nachocode 대시보드에서 확인하세요.
+- 단, **웹훅(Webhook) 전송은 실패할 수** 있으므로 nachocode 대시보드에서 확인하세요.
 
 ---
 
@@ -138,7 +142,7 @@ function onPurchase(productKey, userId) {
 
 ### ⚠️ 3. **결제 호출 실패**
 
-- **SDK 초기화 문제, 인수값 부재, Nachocode 서버에 상품이 등록되지 않음** 등의 이유로 인해 **인앱 결제 호출 자체가 실패한 경우**를 의미합니다.
+- **SDK 초기화 문제, 인수값 부재, nachocode 서버에 상품이 등록되지 않음** 등의 이유로 인해 **인앱 결제 호출 자체가 실패한 경우**를 의미합니다.
 
 ---
 

@@ -3,11 +3,11 @@ sidebar_position: 3
 sidebar_label: 개요
 ---
 
-# nachocode API 개요
+# nachocode 가이드
 
 > 🔔 **최신화 일자:** 2025-02-18
 
-**Nachocode 가이드**는 Nachocode **서비스의 기능** 혹은 **SDK 기능**을 원활하게 사용하기 위한 정보를 제공합니다.
+**nachocode 가이드**는 nachocode **서비스의 기능** 혹은 **SDK 기능**을 원활하게 사용하기 위한 정보를 제공합니다.
 
 ---
 
@@ -26,7 +26,7 @@ nachocode 가이드 문서는 아래와 같은 구조로 구성되어 있습니�
 
 ### 1. 인앱결제
 
-Nachocode에서 제공되는 인앱결제 기능에 대한 정보 및 정책, 처리 예시 등을 확인할 수 있습니다.
+nachocode에서 제공되는 인앱결제 기능에 대한 정보 및 정책, 처리 예시 등을 확인할 수 있습니다.
 
 ➡️ [인앱결제](./iap)
 
@@ -52,7 +52,7 @@ nachocode 플랫폼에서 **웹훅**을 등록하고 서버로 수신받을 수 
 
 ---
 
-**Nachocode 가이드**를 활용하여 다양하고 강력한 기능들을 사용하기 위한 설정을 진행해보세요!
+**nachocode 가이드**를 활용하여 다양하고 강력한 기능들을 사용하기 위한 설정을 진행해보세요!
 궁금한 점이 있다면 [support@nachocode.io](mailto:support@nachocode.io)로 문의해주세요.
 
 ---
