@@ -57,25 +57,11 @@ sidebar_label: 인앱 결제
 
 ## 인앱 결제 에러 케이스
 
-### **SDK**
-
-SDK에서 발생하는 에러는 **안드로이드**, **iOS** 모두 동일한 에러 형식을 가집니다. SDK에서 발생한 에러의 경우 에러 코드를 반환하지 않습니다.
-또한 에러 메시지는 로그를 통해 출력되므로 콘솔을 통해 확인해볼 수 있습니다.
-
-| **Message**                                                       | **Description**                                |
-| ----------------------------------------------------------------- | ---------------------------------------------- |
-| Cannot initiate a purchase transaction before SDK initialization. | SDK가 초기화 되지 않은 경우                    |
-| Cannot detect device type.                                        | Device type을 감지하지 못한 경우               |
-| In app purchase is only available in native app environment.      | 앱 환경에서 인앱 결제를 호출하지 않은 경우     |
-| Required parameters missing.                                      | 인앱 결제 호출 파라미터 부재                   |
-| In app purchase is still processing. Please try again later.      | 인앱 결제를 중복 호출한 경우                   |
-| Failed to get in app product information.                         | nachocode로 인앱 상품 조회 요청이 실패한 경우  |
-| Product not found with provided productKey.                       | 상품키로 조회된 상품 정보가 올바르지 않은 경우 |
-
 ### **안드로이드 & 검증 서버 ![Android](https://img.shields.io/badge/Android-A4C639?logo=android)**
 
 안드로이드 인앱 결제 응답 코드 문서는 [다음 링크](https://developer.android.com/reference/com/android/billingclient/api/BillingClient.BillingResponseCode)
-에서 확인할 수 있습니다.  
+에서 확인할 수 있습니다.
+
 **샌드박스** 혹은 **운영환경**에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.
 
 | **Code**       | **Message**                                                                    | **Description**                                             | **Solution**                                    |
