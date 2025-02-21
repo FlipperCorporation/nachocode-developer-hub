@@ -321,8 +321,10 @@ table {
   border-collapse: collapse;
 }
 
-table th {
+table th,
+table td {
   word-break: keep-all;
+  white-space: nowrap;
 }
 
 button,
