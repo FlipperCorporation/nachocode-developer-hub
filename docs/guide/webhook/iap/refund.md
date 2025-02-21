@@ -26,20 +26,20 @@ declare interface IapRefundEvent {
 }
 ```
 
-| **Property**     | **Type**                                               | **Required** | **Description**                                                                                                                  |
-| ---------------- | ------------------------------------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| `userId`         | `string`                                               | ✅           | 인앱 결제를 수행한 앱 사용자의 고유 식별자                                                                                       |
-| `iapLogId`       | `number`                                               | ✅           | 인앱 결제 요청의 고유 로그 ID                                                                                                    |
-| `nachoProductId` | `string`                                               | ✅           | nachocode에서 발급받은 인앱 상품의 고유 식별자                                                                                   |
-| `os`             | `'android'` \| `'ios'`                                 | ✅           | 인앱 결제가 이루어진 운영 체제 (`android`, `ios`)                                                                                |
-| `productId`      | `string`                                               | ✅           | 스토어에 등록된 상품의 고유 식별자                                                                                               |
-| `productType`    | `'consumable'` \| `'non-consumable'`                   | ✅           | 상품 유형 (`consumable`: 소모성, `non-consumable`: 비소모성)                                                                     |
-| `quantity`       | `number`                                               | ✅           | 구매한 상품 개수                                                                                                                 |
-| `price`          | `number`                                               | ✅           | 개당 구매 가격                                                                                                                   |
-| `environment`    | `'sandbox'` \| `'production'`                          | ✅           | 구매가 이루어진 환경 (`sandbox`: 테스트 환경, `production`: 운영 환경)                                                           |
-| `data`           | `PlayStorePurchaseData` \|<br/> `AppStorePurchaseData` | ✅           | 인앱 결제 데이터 정보.<br/> `os`가 `'android'`인 경우 `PlayStorePurchaseData`,<br/> `os`가 `'ios'`인 경우 `AppStorePurchaseData` |
-| `refundQuantity` | `number`                                               | ✅           | 환불된 수량, 부분 환불이 발생한 경우 `quantity` 보다 작을 수 있음                                                                |
-| `refundedAt`     | `string (ISO 8601 format)`                             | ✅           | 환불된 시간<br/> (`YYYY-MM-DD'T'HH:mm:ss.sss'Z'`)                                                                                |
+| **Property**     | **Type**                                               | **Required** | **Description**                                                                                                                 |
+| ---------------- | ------------------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| `userId`         | `string`                                               | ✅           | 인앱결제를 수행한 앱 사용자의 고유 식별자                                                                                       |
+| `iapLogId`       | `number`                                               | ✅           | 인앱결제 요청의 고유 로그 ID                                                                                                    |
+| `nachoProductId` | `string`                                               | ✅           | nachocode에서 발급받은 인앱 상품의 고유 식별자                                                                                  |
+| `os`             | `'android'` \| `'ios'`                                 | ✅           | 인앱결제가 이루어진 운영 체제 (`android`, `ios`)                                                                                |
+| `productId`      | `string`                                               | ✅           | 스토어에 등록된 상품의 고유 식별자                                                                                              |
+| `productType`    | `'consumable'` \| `'non-consumable'`                   | ✅           | 상품 유형 (`consumable`: 소모성, `non-consumable`: 비소모성)                                                                    |
+| `quantity`       | `number`                                               | ✅           | 구매한 상품 개수                                                                                                                |
+| `price`          | `number`                                               | ✅           | 개당 구매 가격                                                                                                                  |
+| `environment`    | `'sandbox'` \| `'production'`                          | ✅           | 구매가 이루어진 환경 (`sandbox`: 테스트 환경, `production`: 운영 환경)                                                          |
+| `data`           | `PlayStorePurchaseData` \|<br/> `AppStorePurchaseData` | ✅           | 인앱결제 데이터 정보.<br/> `os`가 `'android'`인 경우 `PlayStorePurchaseData`,<br/> `os`가 `'ios'`인 경우 `AppStorePurchaseData` |
+| `refundQuantity` | `number`                                               | ✅           | 환불된 수량, 부분 환불이 발생한 경우 `quantity` 보다 작을 수 있음                                                               |
+| `refundedAt`     | `string (ISO 8601 format)`                             | ✅           | 환불된 시간<br/> (`YYYY-MM-DD'T'HH:mm:ss.sss'Z'`)                                                                               |
 
 ---
 

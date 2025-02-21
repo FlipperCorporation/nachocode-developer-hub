@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-sidebar_label: 인앱 결제
+sidebar_label: 인앱결제
 ---
 
 # 인앱결제
@@ -10,11 +10,11 @@ sidebar_label: 인앱 결제
 
 인앱결제 요청에 의해 생성된 앱 사용자의 로그 데이터는 나쵸코드 대시보드를 통해 확인 및 관리할 수 있습니다.
 
-## **인앱 결제 프로세스**
+## **인앱결제 프로세스**
 
 ![test](../../static/img/developer/nachocode_iap_sequence_diagram.png)
 
-인앱 결제는 **Google Play Store** 및 **Apple App Store**를 통해 이루어지며, **구매 요청 → 결제 진행 → 검증 → 상품 지급 → 웹훅 전송**의 흐름으로 진행됩니다.
+인앱결제는 **Google Play Store** 및 **Apple App Store**를 통해 이루어지며, **구매 요청 → 결제 진행 → 검증 → 상품 지급 → 웹훅 전송**의 흐름으로 진행됩니다.
 
 ### 1. 구매 요청
 
@@ -55,11 +55,11 @@ sidebar_label: 인앱 결제
 
 ---
 
-## 인앱 결제 에러 케이스
+## 인앱결제 에러 케이스
 
 ### **안드로이드 & 검증 서버 ![Android](https://img.shields.io/badge/Android-A4C639?logo=android)**
 
-안드로이드 인앱 결제 응답 코드 문서는 [다음 링크](https://developer.android.com/reference/com/android/billingclient/api/BillingClient.BillingResponseCode)
+안드로이드 인앱결제 응답 코드 문서는 [다음 링크](https://developer.android.com/reference/com/android/billingclient/api/BillingClient.BillingResponseCode)
 에서 확인할 수 있습니다.
 
 **샌드박스** 혹은 **운영환경**에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.

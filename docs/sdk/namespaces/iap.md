@@ -2,18 +2,18 @@
 sidebar_position: 11
 ---
 
-# 인앱 결제 (`iap`)
+# 인앱결제 (`iap`)
 
 > 🔔 **최신화 일자:** 2025-02-10
 
 ## 개요
 
-`iap` 네임스페이스는 **네이티브 인앱 결제 기능**을 제공합니다. Nachocode SDK를 사용해 **Android 및 iOS 환경에서 인앱 결제를 손쉽게 처리**할 수 있으며, 테스트 환경(`sandbox`)과 운영 환경(`production`)을 모두 지원합니다.
+`iap` 네임스페이스는 **네이티브 인앱결제 기능**을 제공합니다. Nachocode SDK를 사용해 **Android 및 iOS 환경에서 인앱결제를 손쉽게 처리**할 수 있으며, 테스트 환경(`sandbox`)과 운영 환경(`production`)을 모두 지원합니다.
 SDK 연동 전 **가이드**를 참고해보세요.
 
 ➡️[인앱결제 가이드](../../guide/iap)
 
-➡️[웹훅 가이드](../../guide/webhook)
+➡️[웹훅 가이드](../../guide/webhook/overview)
 
 ---
 
@@ -42,14 +42,14 @@ declare type IapPurchaseResult = {
 | **Property**           | **Type**                          | **Required** | **Description**                                                                                         |
 | ---------------------- | --------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------- |
 | `purchaseEnv`          | `'sandbox'` \| `'production'`     | ✅           | 구매가 이루어진 환경 (`sandbox`: 테스트 환경, `production`: 운영 환경)                                  |
-| `userId`               | `string`                          | ✅           | 인앱 결제를 수행한 앱 사용자의 고유 식별자                                                              |
+| `userId`               | `string`                          | ✅           | 인앱결제를 수행한 앱 사용자의 고유 식별자                                                               |
 | `productId`            | `string`                          | ❌           | **(_optional_)** 상품키로 조회된 스토어에 등록된 상품의 고유 식별자, Native 호출이 실패한 경우 **없음** |
 | `nachoProductId`       | `string`                          | ✅           | nachocode에서 발급받은 인앱 상품의 고유 식별자                                                          |
-| `purchaseId`           | `number`                          | ❌           | **(_optional_)** 인앱 결제 구매 내역 ID, Native 호출이 실패한 경우 **없음**                             |
-| `os`                   | `'android'` \| `'ios'` \| `null'` | ✅           | 인앱 결제가 이루어진 운영 체제 (`android`, `ios`, `null` = OS 정보 없음)                                |
-| `status`               | `object`                          | ✅           | 인앱 결제 호출 상태 정보                                                                                |
-| `status.success`       | `boolean`                         | ✅           | 인앱 결제 최종 성공 여부 (`true`: 성공, `false`: 실패)                                                  |
-| `status.error`         | `object`                          | ❌           | **(_optional_)** 인앱 결제 실패 시 포함되는 오류 정보, `success` = true인 경우 **없음**                 |
+| `purchaseId`           | `number`                          | ❌           | **(_optional_)** 인앱결제 구매 내역 ID, Native 호출이 실패한 경우 **없음**                              |
+| `os`                   | `'android'` \| `'ios'` \| `null'` | ✅           | 인앱결제가 이루어진 운영 체제 (`android`, `ios`, `null` = OS 정보 없음)                                 |
+| `status`               | `object`                          | ✅           | 인앱결제 호출 상태 정보                                                                                 |
+| `status.success`       | `boolean`                         | ✅           | 인앱결제 최종 성공 여부 (`true`: 성공, `false`: 실패)                                                   |
+| `status.error`         | `object`                          | ❌           | **(_optional_)** 인앱결제 실패 시 포함되는 오류 정보, `success` = true인 경우 **없음**                  |
 | `status.error.code`    | `string`                          | ❌           | **(_optional_)** 에러 발생 원인을 나타내는 코드, Native 호출이 실패한 경우 **없음**                     |
 | `status.error.message` | `string`                          | ✅           | 에러 메시지                                                                                             |
 
@@ -71,15 +71,15 @@ SDK에서 발생하는 에러는 **안드로이드**, **iOS** 모두 동일한 �
 | ----------------------------------------------------------------- | ---------------------------------------------- |
 | Cannot initiate a purchase transaction before SDK initialization. | SDK가 초기화 되지 않은 경우                    |
 | Cannot detect device type.                                        | Device type을 감지하지 못한 경우               |
-| In app purchase is only available in native app environment.      | 앱 환경에서 인앱 결제를 호출하지 않은 경우     |
-| Required parameters missing.                                      | 인앱 결제 호출 파라미터 부재                   |
-| In app purchase is still processing. Please try again later.      | 인앱 결제를 중복 호출한 경우                   |
+| In app purchase is only available in native app environment.      | 앱 환경에서 인앱결제를 호출하지 않은 경우      |
+| Required parameters missing.                                      | 인앱결제 호출 파라미터 부재                    |
+| In app purchase is still processing. Please try again later.      | 인앱결제를 중복 호출한 경우                    |
 | Failed to get in app product information.                         | nachocode로 인앱 상품 조회 요청이 실패한 경우  |
 | Product not found with provided productKey.                       | 상품키로 조회된 상품 정보가 올바르지 않은 경우 |
 
 ## **사용 예제**
 
-아래는 인앱 결제 호출 결과에 따라 다양한 케이스에 대응하는 예시 코드입니다.
+아래는 인앱결제 호출 결과에 따라 다양한 케이스에 대응하는 예시 코드입니다.
 
 ```javascript
 // SDK가 로드되었는지 확인한 후 초기화를 시도합니다.
@@ -95,7 +95,7 @@ function onPurchase(productKey, userId) {
   // 구매할 상품. ex) 'NP-TESTSAMPLE-001a'
   // 상품을 구매하는 유저의 ID. ex) 'tester'
 
-  // 해당 상품 키에 저장된 스토어의 상품 ID를 통해 Native에서 인앱 결제를 호출합니다.
+  // 해당 상품 키에 저장된 스토어의 상품 ID를 통해 Native에서 인앱결제를 호출합니다.
   Nachocode.iap.purchase(productKey, userId, async result => {
     // 구매할 상품. ex) 'NP-TESTSAMPLE-001a'
     // 상품을 구매하는 유저의 ID. ex) 'tester'
@@ -108,7 +108,7 @@ function onPurchase(productKey, userId) {
       if (purchaseData.success) {
         alert('구매가 성공했습니다.');
       } else {
-        // Native Layer에서 인앱 결제가 성공했으나 서버에서 상품 지급이 이루어지지 않았다면
+        // Native Layer에서 인앱결제가 성공했으나 서버에서 상품 지급이 이루어지지 않았다면
         // 웹훅 전송이 실패했을 가능성이 있습니다.
         // 나쵸코드 대시보드에서 웹훅 로그를 확인해서 조치해주세요.
         alert('구매 처리 중입니다.');
@@ -122,13 +122,13 @@ function onPurchase(productKey, userId) {
         const errorCode = result.status.error.code;
         // 유저가 결제를 이탈한 경우
         if (errorCode === 'ERR-NNA-ILA-22') {
-          alert('인앱 결제가 취소됐습니다.');
+          alert('인앱결제가 취소됐습니다.');
         } else {
           alert('결제에 실패했습니다.');
         }
       } else {
         // 3. 결제 호출 실패
-        alert('인앱 결제를 시작할 수 없습니다.');
+        alert('인앱결제를 시작할 수 없습니다.');
       }
     }
   });
@@ -137,7 +137,7 @@ function onPurchase(productKey, userId) {
 
 ## 결제 상태 정의
 
-인앱 결제의 응답 형태는 **결제 성공**, **결제 실패**, **결제 호출 실패** 총 3가지로 이루어져있습니다.
+인앱결제의 응답 형태는 **결제 성공**, **결제 실패**, **결제 호출 실패** 총 3가지로 이루어져있습니다.
 상태에 따른 응답 예시는 [이곳](#예제-응답)을 확인해주세요.
 
 ### ✅ 1. **결제 성공**
@@ -149,7 +149,7 @@ function onPurchase(productKey, userId) {
 
 ### ❌ 2. **결제 실패**
 
-- **Native Layer에서 인앱 결제 호출은 성공했으나**, 다음과 같은 이유로 결제가 실패한 경우를 의미합니다.
+- **Native Layer에서 인앱결제 호출은 성공했으나**, 다음과 같은 이유로 결제가 실패한 경우를 의미합니다.
   - 결제 실패
   - 결제 검증 실패
   - 사용자가 결제를 취소
@@ -158,7 +158,7 @@ function onPurchase(productKey, userId) {
 
 ### ⚠️ 3. **결제 호출 실패**
 
-- **SDK 초기화 문제, 인수값 부재, nachocode 서버에 상품이 등록되지 않음** 등의 이유로 인해 **인앱 결제 호출 자체가 실패한 경우**를 의미합니다.
+- **SDK 초기화 문제, 인수값 부재, nachocode 서버에 상품이 등록되지 않음** 등의 이유로 인해 **인앱결제 호출 자체가 실패한 경우**를 의미합니다.
 
 ---
 
