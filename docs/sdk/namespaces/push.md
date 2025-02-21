@@ -13,9 +13,9 @@ sidebar_position: 13
 
 ---
 
-## **📌 타입 정의**
+## **타입 정의**
 
-### **`LocalPushPayload` (로컬 푸시 페이로드 정의)**
+### **`LocalPushPayload`**
 
 ```typescript
 export declare type LocalPushPayload = {
@@ -28,20 +28,18 @@ export declare type LocalPushPayload = {
 };
 ```
 
-#### **설명 (`LocalPushPayload`)**
-
-| 속성명          | 타입      | 필수 여부 | 설명                                                       |
-| --------------- | --------- | --------- | ---------------------------------------------------------- |
-| `title`         | `string`  | ✅        | 푸시 알림의 제목                                           |
-| `content`       | `string`  | ❌        | 푸시 알림의 본문 메시지                                    |
-| `link`          | `string`  | ❌        | 클릭 시 이동할 URL                                         |
-| `usingAppIcon`  | `boolean` | ❌        | 앱 아이콘을 푸시 아이콘으로 사용할지 여부 (기본값: `true`) |
-| `scheduledTime` | `Date`    | ❌        | 예약된 발송 시각 (지정하지 않으면 즉시 발송됨)             |
-| `id`            | `number`  | ❌        | 예약된 푸시를 식별할 ID (지정하지 않으면 자동 생성)        |
+| 속성명          | 타입      | 필수 여부 | 설명                                                                        |
+| --------------- | --------- | --------- | --------------------------------------------------------------------------- |
+| `title`         | `string`  | ✅        | 푸시 알림의 제목                                                            |
+| `content`       | `string`  | ❌        | **(_optional_)** 푸시 알림의 본문 메시지 (지정하지 않으면 제목만 노출)      |
+| `link`          | `string`  | ❌        | **(_optional_)** 클릭 시 이동할 URL (지정하지 않으면 앱 열기)               |
+| `usingAppIcon`  | `boolean` | ❌        | **(_optional_)** 앱 아이콘을 푸시 아이콘으로 사용할지 여부 (기본값: `true`) |
+| `scheduledTime` | `Date`    | ❌        | **(_optional_)** 예약된 발송 시각 (지정하지 않으면 즉시 발송됨)             |
+| `id`            | `number`  | ❌        | **(_optional_)** 예약된 푸시를 식별할 ID (지정하지 않으면 자동 생성)        |
 
 ---
 
-### **`LocalPushResult` (로컬 푸시 예약 결과 정의)**
+### **`LocalPushResult`**
 
 ```typescript
 export declare type LocalPushResult = {
@@ -52,14 +50,12 @@ export declare type LocalPushResult = {
 };
 ```
 
-#### **설명 (`LocalPushResult`)**
-
-| 속성명       | 타입                   | 필수 여부 | 설명                                        |
-| ------------ | ---------------------- | --------- | ------------------------------------------- |
-| `status`     | `'success' \| 'error'` | ✅        | 푸시 알림 예약 성공 여부                    |
-| `statusCode` | `string`               | ❌        | 오류 발생 시 반환되는 코드                  |
-| `message`    | `string`               | ❌        | 오류 발생 시 반환되는 메시지                |
-| `id`         | `number`               | ❌        | 예약된 푸시 알림의 ID (취소할 때 사용 가능) |
+| 속성명       | 타입                   | 필수 여부 | 설명                                                         |
+| ------------ | ---------------------- | --------- | ------------------------------------------------------------ |
+| `status`     | `'success' \| 'error'` | ✅        | 푸시 알림 예약 성공 여부                                     |
+| `statusCode` | `string`               | ❌        | **(_optional_)** 오류 발생 시 반환되는 코드                  |
+| `message`    | `string`               | ❌        | **(_optional_)** 오류 발생 시 반환되는 메시지                |
+| `id`         | `number`               | ❌        | **(_optional_)** 예약된 푸시 알림의 ID (취소할 때 사용 가능) |
 
 ---
 
@@ -87,10 +83,10 @@ export declare type LocalPushResult = {
 
 #### 매개변수 (`sendLocalPush`)
 
-| 이름       | 타입                                                                             | 필수 여부 | 설명                           |
-| ---------- | -------------------------------------------------------------------------------- | --------- | ------------------------------ |
-| `payload`  | [`LocalPushPayload`](#localpushpayload-로컬-푸시-페이로드-정의)                  | ✅        | 예약할 로컬 푸시 데이터        |
-| `callback` | [`(result: LocalPushResult) => void`](#localpushresult-로컬-푸시-예약-결과-정의) | ❌        | 예약 성공 여부를 반환하는 콜백 |
+| 이름       | 타입                                                    | 필수 여부 | 설명                           |
+| ---------- | ------------------------------------------------------- | --------- | ------------------------------ |
+| `payload`  | [`LocalPushPayload`](#localpushpayload)                 | ✅        | 예약할 로컬 푸시 데이터        |
+| `callback` | [`(result: LocalPushResult) => void`](#localpushresult) | ❌        | 예약 성공 여부를 반환하는 콜백 |
 
 #### 반환 값 (`sendLocalPush`)
 
