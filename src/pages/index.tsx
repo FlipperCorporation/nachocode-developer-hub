@@ -309,7 +309,7 @@ const EnhancedUserExperienceSection = () => {
               justifyContent="end"
             />
             <FeatureCard
-              title="인앱 결제"
+              title="인앱결제"
               description="플레이스토어, 앱 스토어에 상품을 등록해 사용자가 앱 내에서 디지털 콘텐츠를 구매할 수 있는 기능입니다."
               isReady
             />

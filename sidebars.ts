@@ -53,6 +53,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/env',
             'sdk/namespaces/event',
             'sdk/namespaces/facebook',
+            'sdk/namespaces/iap',
             'sdk/namespaces/permission',
             'sdk/namespaces/preference',
             'sdk/namespaces/push',
@@ -62,6 +63,34 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/share',
             'sdk/namespaces/tabbar',
             'sdk/namespaces/vibration',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: '가이드',
+      link: {
+        type: 'generated-index',
+        slug: 'guide/intro',
+      },
+      items: [
+        'guide/intro',
+        'guide/iap',
+        {
+          type: 'category',
+          label: '웹훅',
+          link: {
+            type: 'generated-index',
+            slug: 'guide/webhook/overview',
+          },
+          items: [
+            'guide/webhook/overview',
+            {
+              type: 'category',
+              label: '인앱결제',
+              items: ['guide/webhook/iap/purchase', 'guide/webhook/iap/refund'],
+            },
           ],
         },
       ],
