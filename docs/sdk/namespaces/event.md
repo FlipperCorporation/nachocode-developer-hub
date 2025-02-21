@@ -4,12 +4,12 @@ sidebar_position: 9
 
 # 이벤트 (`event`)
 
-> 🔔 **최신화 일자:** 2025-02-20
+> 🔔 **최신화 일자:** 2025-02-21
 
 ## **개요**
 
 `event` 네임스페이스는 **nachocode SDK의 이벤트 핸들링 기능**을 제공합니다.  
-**SDK가 초기화**될 때(`init`), 앱이 **백그라운드로 전환**(`background`)되거나 **다시 활성화**(`foreground`)될 때, **네트워크 상태가 변경**(`networkchanged`)될 때 등의 이벤트를 감지하고 이를 처리할 수 있습니다.
+**SDK가 초기화**될 때(`init`), 앱이 **백그라운드로 전환**(`background`)되거나 **다시 활성화**(`foreground`)될 때, **네트워크 상태가 변경**(`networkchanged`)될 때, **키보드가 열리고**(`keyboardshown`) **닫힐 때**(`keyboardhidden`) 등의 이벤트를 감지하고 이를 처리할 수 있습니다.
 
 ---
 
@@ -19,12 +19,14 @@ sidebar_position: 9
 
 nachocode SDK에서 기본적으로 제공하는 예약된 이벤트 타입입니다.
 
-| 값               | 설명                                                               |
-| ---------------- | ------------------------------------------------------------------ |
-| `init`           | SDK가 초기화될 때 호출되는 이벤트                                  |
-| `background`     | 앱이 백그라운드로 전환될 때 호출되는 이벤트                        |
-| `foreground`     | 앱이 다시 활성화될 때 호출되는 이벤트                              |
-| `networkchanged` | 네트워크 상태(연결 여부, 연결 방식 등)가 변경될 때 호출되는 이벤트 |
+| 이벤트 타입      | 설명                                                               | 추가된 버전 |
+| ---------------- | ------------------------------------------------------------------ | ----------- |
+| `init`           | SDK가 초기화될 때 호출되는 이벤트                                  | ver.1.0.2   |
+| `background`     | 앱이 백그라운드로 전환될 때 호출되는 이벤트                        | ver.1.2.0   |
+| `foreground`     | 앱이 다시 활성화될 때 호출되는 이벤트                              | ver.1.2.0   |
+| `networkchanged` | 네트워크 상태(연결 여부, 연결 방식 등)가 변경될 때 호출되는 이벤트 | ver.1.4.0   |
+| `keyboardshown`  | 네이티브 키보드가 화면에 표시될 때 호출되는 이벤트                 | ver.1.4.2   |
+| `keyboardhidden` | 네이티브 키보드가 화면에서 사라질 때 호출되는 이벤트               | ver.1.4.2   |
 
 ---
 
@@ -94,6 +96,20 @@ Nachocode.event.on('networkchanged', status => {
     `네트워크 상태 변경: ${status.isConnected ? '연결됨' : '연결 끊김'}`
   );
   console.log(`연결 유형: ${status.connectionType}`);
+});
+```
+
+```javascript
+// 네이티브 키보드가 화면에 나타날 때 실행되는 이벤트
+Nachocode.event.on('keyboardshown', () => {
+  console.log('네이티브 키보드가 표시되었습니다.');
+});
+```
+
+```javascript
+// 네이티브 키보드가 화면에서 사라질 때 실행되는 이벤트
+Nachocode.event.on('keyboardhidden', () => {
+  console.log('네이티브 키보드가 사라졌습니다.');
 });
 ```
 
@@ -175,6 +191,22 @@ Nachocode.event.on('background', () => {
 ```javascript
 Nachocode.event.on('foreground', () => {
   console.log('애플리케이션이 활성화되었습니다.');
+});
+```
+
+---
+
+### **예제 5: 네이티브 키보드 상태 감지**
+
+```javascript
+// 키보드가 나타날 때
+Nachocode.event.on('keyboardshown', () => {
+  console.log('네이티브 키보드가 표시되었습니다.');
+});
+
+// 키보드가 사라질 때
+Nachocode.event.on('keyboardhidden', () => {
+  console.log('네이티브 키보드가 사라졌습니다.');
 });
 ```
 
