@@ -167,7 +167,7 @@ nachocode 푸시 알림 API는 다양한 엔드포인트를 제공하여 푸시 
   | status | `number` | HTTP 응답 상태 코드 (200) |
   | response | `string` | 요청 성공 문자열 |
 
-- **Exmaple**
+- **Example**
   ```json
   "Push successfully requested to be sent."
   ```
@@ -252,7 +252,7 @@ nachocode 푸시 알림 API는 다양한 엔드포인트를 제공하여 푸시 
   | status | `number` | HTTP 응답 상태 코드 (200) |
   | response | `object` | 성공/실패한 유저에 대한 상세 결과 정보 |
 
-- **Exmaple**
+- **Example**
   ```json
   {
     "requested": {
@@ -349,7 +349,7 @@ nachocode 푸시 알림 API는 다양한 엔드포인트를 제공하여 푸시 
   | status | `number` | HTTP 응답 상태 코드 (200) |
   | response | `object` | 성공/실패한 유저에 대한 상세 결과 정보 |
 
-- **Exmaple**
+- **Example**
   ```json
   {
     "requested": {
