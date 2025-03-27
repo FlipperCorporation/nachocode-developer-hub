@@ -18,9 +18,9 @@ nachocode API 문서는 아래와 같은 구조로 구성되어 있습니다:
 1. **API 개요**  
    nachocode API의 주요 기능과 개념을 설명합니다.
 
-2. **푸시 알림 API**  
+2. **개인화 푸시 API**  
    nachocode 플랫폼에서 제공하는 푸시 알림 기능을 다룹니다.  
-   ➡️ [푸시 알림 API 개요](./push/overview.md)
+   ➡️ [개인화 푸시 API 개요](./push/overview.md)
 
 3. **추가 예정 API**  
    향후 nachocode에서 제공할 다양한 API에 대한 문서가 포함될 예정입니다.
@@ -31,10 +31,10 @@ nachocode API 문서는 아래와 같은 구조로 구성되어 있습니다:
 
 nachocode API는 아래와 같은 기능을 제공합니다:
 
-### 1. **푸시 알림 API**
+### 1. **개인화 푸시 API**
 
 nachocode 플랫폼의 푸시 알림 서비스를 활용하여 유저들에게 실시간으로 메시지를 전달할 수 있습니다.  
-➡️ [푸시 알림 API](./push/overview.md)
+➡️ [개인화 푸시 API](./push/overview.md)
 
 - **개별 푸시 전송**: 특정 유저 ID에 대해 개별 메시지를 전송합니다.
 
