@@ -101,7 +101,7 @@ nachocode 푸시 알림 API는 다양한 엔드포인트를 제공하여 푸시 
 
 - 에러코드<br/>
   <span style={{fontSize: "12px"}}>(샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.)</span>
-  | **Code** | **Status Code** | **Message** | **Description** |
+  | **ErrorCode** | **Status Code** | **Message** | **Description** |
   | ------------- | ---------------------------------------------------- | ------------------------------ | ---------------- |
   | ERR-AB-PSS-91 | 404 | App data not found. | 미등록 앱 | |
   | ERR-AB-PSS-92 | 404 | FCM Account data not found. | FCM Service Account파일 미등록 | FCM Service Account파일 등록 확인 |
@@ -180,7 +180,7 @@ nachocode 푸시 알림 API는 다양한 엔드포인트를 제공하여 푸시 
 
 - 에러코드<br/>
   <span style={{fontSize: "12px"}}>(샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.)</span>
-  | **Code** |**Status Code**| **Message** | **Description** |
+  | **ErrorCode** |**Status Code**| **Message** | **Description** |
   | ------------- | --- | ---------------------------------------------------- | ------------------------------ |
   | ERR-AB-PSS-91 | 404 | App data not found. | 미등록 앱 | |
   | ERR-AB-PSS-92 | 404 | FCM Account data not found. | FCM Service Account파일 미등록 |
@@ -280,10 +280,10 @@ nachocode 푸시 알림 API는 다양한 엔드포인트를 제공하여 푸시 
 
 - 에러코드<br/>
   <span style={{fontSize: "12px"}}>(샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.)</span>
-  | **Code** | **Status Code** | **Message** | **Description** |
+  | **ErrorCode** | **Status Code** | **Message** | **Description** |
   | ------------- | ---------------------------------------------------- | ------------------------------ | ---------------- |
-  | ERR-AB-PSS-11 | 400 | Invalid key or messages. | | |
-  | ERR-AB-PSS-52 | 404 | Account information has either never been<br/>registered or could not be found.| FCM Service Account파일 미등록 | FCM Service Account파일 등록 확인 |
+  | ERR-AB-PSS-11 | 400 | Invalid key or messages. | 전송 요청된 메세지가 없을 경우(빈 배열) |
+  | ERR-AB-PSS-52 | 404 | Account information has either never been<br/>registered or could not be found.| FCM Service Account파일 미등록 |
 
 <br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
 
@@ -377,7 +377,7 @@ nachocode 푸시 알림 API는 다양한 엔드포인트를 제공하여 푸시 
 
 - 에러코드<br/>
   <span style={{fontSize: "12px"}}>(샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.)</span>
-  | **Code** | **Status Code** | **Message** | **Description** |
+  | **ErrorCode** | **Status Code** | **Message** | **Description** |
   | ------------- | ---------------------------------------------------- | ------------------------------ | ---------------- |
   | ERR-AB-PSS-22 | 400 | Requested user not exist. | 전송 요청된 유저가 없을 경우(빈 배열) |
   | ERR-AB-PSS-23 | 404 | Account information has either never been<br/>registered or could not be found. |FCM Service Account파일 등록 확인 |
@@ -411,12 +411,12 @@ nachocode 푸시 알림 API는 다양한 엔드포인트를 제공하여 푸시 
 ### Error Response Object
 
 - **Property**
-  | **Parameter** | **Type** | **Required** | **Description** |
-  | ------------- | -------- | ------------ | --------------- |
-  | statusCode | `number` | ✔ | 상태 코드 |
-  | path | `string` | ✔ | 요청 경로 |
-  | code | `string` | ✔ | 에러 코드 |
-  | message | `string` | | 에러 메세지 |
+  | **Parameter** | **Type** | **Description** |
+  | ------------- | -------- | --------------- |
+  | statusCode | `number` | 상태 코드 |
+  | path | `string` | 요청 경로 |
+  | code | `string` | 에러 코드 |
+  | message | `string` | 에러 메세지 |
 
 - **Example**
   ```json
@@ -432,13 +432,13 @@ nachocode 푸시 알림 API는 다양한 엔드포인트를 제공하여 푸시 
 
 ## **기타 공용 에러코드**
 
-| **Code**      | **StatusCode** | **Message**                                                          | **Description**                   |
+| **ErrorCode** | **StatusCode** | **Message**                                                          | **Description**                   |
 | ------------- | -------------- | -------------------------------------------------------------------- | --------------------------------- |
 | ERR-AB-VAL-00 | 400            | Incorrect request. Server cannot understand request.                 | 요청 Body 데이터가 잘못된 경우    |
 | ERR-AB-SGK-11 | 400            | Secret key not found.                                                | Secret Key가 전달되지 않았을 경우 |
 | ERR-AB-SGK-13 | 401            | Incorrect secret key.                                                | 유효하지 않은 Secret Key          |
 | ERR-AB-KSY-11 | 400            | Required parameters missing.                                         | API Key가 전달되지 않았을 경우    |
 | ERR-AB-KSY-13 | 404            | Provided key information not found.<br/>Please check your key again. | 유효하지 않은 API Key             |
-| ERR-AB-AGK-12 | 400            | Required parameters missing.                                         | 유효하지 않은 API Key             |
+| ERR-AB-AGK-12 | 400            | Required parameters missing.                                         | API Key가 전달되지 않았을 경우    |
 
 <br/>
