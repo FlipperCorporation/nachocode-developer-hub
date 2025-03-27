@@ -166,6 +166,8 @@ console.log('푸시 알림이 취소되었습니다.');
 
 ---
 
+<a id='SDK_RegisterToken'></a>
+
 ### **`registerPushToken(userID: string): Promise<any>`**
 
 - _since ver.1.0.0_

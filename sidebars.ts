@@ -76,6 +76,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'guide/intro',
+        'guide/personal-push',
         'guide/iap',
         {
           type: 'category',
