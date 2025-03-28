@@ -19,6 +19,8 @@ sidebar_label: API 엔드포인트
 > V1버전과 V2버전의 **Request형식은 동일**하나,
 > Success Response가 "토큰조회 유저의 결과"가 아닌 **"문자열"** 반환으로 변경됩니다.
 
+<br/>
+
 nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 관리 및 전송을 지원합니다.
 
 이 문서에서는 **API 사용법**, **요청/응답 형식**, **에러 케이스** 등을 다룹니다.
@@ -99,10 +101,10 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
   - 에러코드<br/>
     <span style={{fontSize: "12px"}}>(샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.)</span>
 
-    | **ErrorCode** | **Status Code** | **Message**                 | **Description**                                                     |
-    | ------------- | --------------- | --------------------------- | ------------------------------------------------------------------- |
-    | ERR-AB-PSS-91 | 404             | App data not found.         | 미등록 앱                                                           |
-    | ERR-AB-PSS-92 | 404             | FCM Account data not found. | FCM Service Account파일 미등록 \| FCM Service Account파일 등록 확인 |
+    | **ErrorCode** | **Status Code** | **Message**                 | **Description**                |
+    | ------------- | --------------- | --------------------------- | ------------------------------ |
+    | ERR-AB-PSS-91 | 404             | App data not found.         | 미등록 앱                      |
+    | ERR-AB-PSS-92 | 404             | FCM Account data not found. | FCM Service Account파일 미등록 |
 
 <br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
 
