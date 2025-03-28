@@ -34,7 +34,7 @@ nachocode 개인화 푸시 API는 푸시 알림을 관리하고 특정 대상에
 💡 **[Push Token]**
 
 - 유저 당 여러 개의 푸시 토큰을 가질 수 있습니다.
-- [SDK](https://developer.nachocode.io/docs/sdk/namespaces/push#registerpushtokenuserid-string-promiseany)를 통한 푸시 토큰 및 유저 ID 등록이 완료된 후 개인화 푸시 전송이 가능합니다.<br/> <span style={{ fontSize: "13px"}}>(등록되지 않은 유저 ID이더라도 전송 요청 시 차감 수에 포함됩니다.)</span>
+- [SDK](../../sdk/namespaces/push#registerpushtokenuserid-string-promiseany)를 통한 푸시 토큰 및 유저 ID 등록이 완료된 후 개인화 푸시 전송이 가능합니다.<br/> <span style={{ fontSize: "13px"}}>(등록되지 않은 유저 ID이더라도 전송 요청 시 차감 수에 포함됩니다.)</span>
 
 <br/>
 
