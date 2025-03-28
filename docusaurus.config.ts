@@ -14,32 +14,22 @@ const config: Config = {
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'FlipperCorporation', // Usually your GitHub org/user name.
-  projectName: 'nachocode-developer-hub', // Usually your repo name.
+  organizationName: 'FlipperCorporation',
+  projectName: 'nachocode-developer-hub',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'ko',
-    locales: ['ko'],
-  },
+  // Use this field to set useful metadata like html lang.
+  i18n: { defaultLocale: 'ko', locales: ['ko'] },
 
   presets: [
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-        },
+        docs: { sidebarPath: './sidebars.ts' },
         blog: false,
-        theme: {
-          customCss: './src/css/custom.css',
-        },
+        theme: { customCss: './src/css/custom.css' },
       } satisfies Preset.Options,
     ],
   ],
@@ -50,18 +40,10 @@ const config: Config = {
       defaultMode: 'light', // 기본 모드를 라이트로 설정
     },
     image: 'img/og_image.png',
-    docs: {
-      sidebar: {
-        hideable: true,
-        autoCollapseCategories: true,
-      },
-    },
+    docs: { sidebar: { hideable: true, autoCollapseCategories: true } },
     navbar: {
       title: 'nachocode',
-      logo: {
-        alt: 'nachocode',
-        src: 'img/logo.png',
-      },
+      logo: { alt: 'nachocode', src: 'img/logo.png' },
       items: [
         {
           label: 'API',
@@ -94,18 +76,9 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {
-              label: 'API',
-              to: '/docs/api/intro',
-            },
-            {
-              label: 'SDK',
-              to: '/docs/sdk/intro',
-            },
-            {
-              label: '가이드',
-              to: '/docs/guide/intro',
-            },
+            { label: 'API', to: '/docs/api/intro' },
+            { label: 'SDK', to: '/docs/sdk/intro' },
+            { label: '가이드', to: '/docs/guide/intro' },
           ],
         },
         {
@@ -128,24 +101,15 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            {
-              label: 'nachocode.io',
-              href: 'https://nachocode.io',
-            },
+            { label: 'nachocode.io', href: 'https://nachocode.io' },
             { label: 'GitHub', href: 'https://github.com/FlipperCorporation' },
-            {
-              label: 'Discord',
-              href: 'https://discord.gg/SU5wFmRw',
-            },
+            { label: 'Discord', href: 'https://discord.gg/SU5wFmRw' },
           ],
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Flipper Corporation, Inc. All Rights Reserved.`,
     },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
+    prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
   } satisfies Preset.ThemeConfig,
 };
 
