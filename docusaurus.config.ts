@@ -46,6 +46,18 @@ const config: Config = {
       logo: { alt: 'nachocode', src: 'img/logo.png' },
       items: [
         {
+          label: '서비스 소개',
+          type: 'doc',
+          docId: 'intro', // 서비스 소개 페이지로 이동
+          position: 'left',
+        },
+        {
+          label: '가이드',
+          type: 'doc',
+          docId: 'guide/intro', // Guide의 시작 페이지로 이동
+          position: 'left',
+        },
+        {
           label: 'API',
           type: 'doc',
           docId: 'api/intro', // API의 시작 페이지로 이동
@@ -55,12 +67,6 @@ const config: Config = {
           label: 'SDK',
           type: 'doc',
           docId: 'sdk/intro', // SDK의 시작 페이지로 이동
-          position: 'left',
-        },
-        {
-          label: '가이드',
-          type: 'doc',
-          docId: 'guide/intro', // Guide의 시작 페이지로 이동
           position: 'left',
         },
         {
@@ -76,9 +82,9 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
+            { label: '가이드', to: '/docs/guide/intro' },
             { label: 'API', to: '/docs/api/intro' },
             { label: 'SDK', to: '/docs/sdk/intro' },
-            { label: '가이드', to: '/docs/guide/intro' },
           ],
         },
         {

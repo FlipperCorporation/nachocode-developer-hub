@@ -2,27 +2,40 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   docs: [
+    { type: 'doc', label: '서비스소개', id: 'intro' },
     {
-      type: 'doc',
-      label: '서비스소개',
-      id: 'intro',
+      type: 'category',
+      label: '가이드',
+      link: { type: 'generated-index', slug: 'guide/intro' },
+      items: [
+        'guide/intro',
+        'guide/personal-push',
+        'guide/iap',
+        {
+          type: 'category',
+          label: '웹훅',
+          link: { type: 'generated-index', slug: 'guide/webhook/overview' },
+          items: [
+            'guide/webhook/overview',
+            {
+              type: 'category',
+              label: '인앱결제',
+              items: ['guide/webhook/iap/purchase', 'guide/webhook/iap/refund'],
+            },
+          ],
+        },
+      ],
     },
     {
       type: 'category',
       label: 'API',
-      link: {
-        type: 'generated-index',
-        slug: 'api/intro',
-      },
+      link: { type: 'generated-index', slug: 'api/intro' },
       items: [
         'api/intro',
         {
           type: 'category',
           label: '개인화 푸시',
-          link: {
-            type: 'generated-index',
-            slug: 'api/push/overview',
-          },
+          link: { type: 'generated-index', slug: 'api/push/overview' },
           items: ['api/push/overview', 'api/push/endpoints'],
         },
       ],
@@ -30,10 +43,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'SDK',
-      link: {
-        type: 'generated-index',
-        slug: 'sdk/intro',
-      },
+      link: { type: 'generated-index', slug: 'sdk/intro' },
       collapsed: false,
       items: [
         'sdk/intro',
@@ -63,35 +73,6 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/share',
             'sdk/namespaces/tabbar',
             'sdk/namespaces/vibration',
-          ],
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: '가이드',
-      link: {
-        type: 'generated-index',
-        slug: 'guide/intro',
-      },
-      items: [
-        'guide/intro',
-        'guide/personal-push',
-        'guide/iap',
-        {
-          type: 'category',
-          label: '웹훅',
-          link: {
-            type: 'generated-index',
-            slug: 'guide/webhook/overview',
-          },
-          items: [
-            'guide/webhook/overview',
-            {
-              type: 'category',
-              label: '인앱결제',
-              items: ['guide/webhook/iap/purchase', 'guide/webhook/iap/refund'],
-            },
           ],
         },
       ],
