@@ -15,33 +15,84 @@ sidebar_label: 개인화 푸시
 > [`/users`](../api/push/endpoints.md#post-apipushv2users)로 끝나는 API 엔드포인트의 경우, 다수의 유저에게 동일한 제목과 내용을 전송할 때 사용합니다.
 
 <br/>
-이 문서는 개인화 푸시 전송에 필요한 **준비 과정**과 **프로세스**에 대해 안내합니다.<br/>
+이 문서는 개인화 푸시 전송에 필요한 **준비 과정**과 **프로세스**에 대해 안내합니다.
 
 ## **개인화 푸시 전송 프로세스**
 
-**[ 프로세스 1 : Push Token 등록 (SDK) ]**
+**[ 프로세스 1 : 푸시 토큰 등록 (SDK) ]**
 
 ![personal_push_sequence_diagram](../../static/img/developer/nachocode_personal_push_sequence_diagram_1.png)
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-**[ 프로세스 2 : 푸시 전송 (API) ]**
+**[ 프로세스 2 : 개인화 푸시 전송 (API) ]**
 
 ![personal_push_sequence_diagram](../../static/img/developer/nachocode_personal_push_sequence_diagram_2.png)
 
 ### 1. 선행 작업
 
-나쵸코드 대시보드에서 **Firebase 프로젝트 설정파일 등록** 및 **API Key, Secret Key 발급**이 완료되어야 합니다.<br/>
-Firebase 프로젝트 설정파일 등록과 관련된 자세한 내용은 [사용자 가이드](https://docs.nachocode.io/ko/articles/%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BC%EA%B0%9C%EC%9D%B8%ED%99%94-0eb97bdb) 탭에서 확인 가능합니다.
+나쵸코드 대시보드에서 **1)API Key, Secret Key 발급** 및 **2)Firebase 프로젝트 설정파일 등록**이 완료되어야 합니다.
 
-### 2. Push Token 등록 (SDK)
+- **API Key, Secret Key**는 안전하고 원활한 API 통신을 위해 필요한 정보로 나쵸코드 대시보드 **[앱 설정]** > **[개발자 설정]** 탭에서 발급 가능합니다.
+- **Firebase 프로젝트 설정 파일 등록**에는 아래와 같은 파일이 요구되며, 자세한 과정과 내용은 [사용자 가이드](https://docs.nachocode.io/ko/articles/%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BC%EA%B0%9C%EC%9D%B8%ED%99%94-0eb97bdb) 탭에서 확인 가능합니다.
 
-[nachocode SDK](../sdk/namespaces/push#registerpushtokenuserid-string-promiseany)를 통해 유저별 토큰을 등록합니다.
+  - Firebase 계정 비공개 키
+  - Firebase 프로젝트 안드로이드 앱 생성 시 다운로드 받은 파일(`google-service.json`)
+  - Firebase 프로젝트 iOS 앱 생성 시 다운로드 받은 파일(`GoogleService-info.plist`)
 
-### 3. Push 전송 API 호출 (API Call)
+<br/>
 
-Server 대 Server [API Call](../api/push/endpoints)을 통해 푸시 전송이 가능합니다.
+### 2. 푸시 토큰 등록 ([SDK](../sdk/namespaces/push#registerpushtokenuserid-string-promiseany))
 
-### 4. 전송 결과 확인 방법
+> :white_check_mark: **유저 식별자만 제공하면, 푸시 토큰을 자동으로 등록합니다.**
 
-[nachocode](https://nachocode.io) 대시보드 **[앱 기능]** > **[푸시 알림]** > **[개인화 푸시]** 탭에서 푸시 전송 결과 확인이 가능합니다.
+<br/>
+
+나쵸코드 서버에서는 유저 식별자와 함께 유저 디바이스의 푸시 토큰을 관리하고, 이를 바탕으로 푸시 전송 요청 시 푸시를 전송할 디바이스를 특정합니다.  
+따라서, 개발자가 SDK를 활용하여 **Web Client Side에서 유저 식별자로 푸시 토큰 등록**을 완료하여야만 정상적인 푸시 전송이 가능합니다.
+
+푸시 토큰 등록은 유저를 식별할 수 있는 시점(_ex: 로그인_ )에 [토큰 등록 메서드](../sdk/namespaces/push#registerpushtokenuserid-string-promiseany) 호출을 통해 진행할 수 있습니다.  
+이 후, 제거하고자 하는 시점(_ex: 로그아웃_ )에는 [토큰 삭제 메서드](../sdk/namespaces/push#deletepushtokenuserid-string-promiseany) 호출을 통해 등록된 토큰을 삭제할 수 있습니다.
+
+<br/>
+
+### 3. 개인화 푸시 전송 ([API](../api/push/endpoints.md))
+
+> :white_check_mark: **등록된 유저 식별자만으로 매칭 및 푸시 전송이 이루어집니다.**
+
+<br/>
+
+**동일한 내용**을 **다수의 유저**에게 전송할 시에는 [`/users`](../api/push/endpoints.md#post-apipushv2users) API Endpoint를 사용하고,  
+**각 유저마다 다른 내용**을 전송할 시에는 [`/messages`](../api/push/endpoints.md#post-apipushv2messages) API Endpoint를 사용합니다.
+
+API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전송 시점을 선정하여 개발자가 **Server Side 로직에 추가**하여야 합니다.  
+**전송하고자 하는 내용**과 대시보드에서 발급받은 **API Key, Secret Key**로 요청 데이터를 구성하여 상황에 맞는 API Endpoint로 푸시 전송을 요청할 수 있습니다.
+
+푸시 전송 요청이 nachocode server로 전달되면 토큰-유저식별자 매칭 과정을 거쳐 FCM으로의 요청을 수행하고, 완료된 FCM의 결과에 따른 히스토리를 관리합니다.
+
+<br/>
+
+### 4. 전송 결과 확인
+
+각 푸시 요청의 **히스토리**와 **성공 및 실패** 여부 이 외에도 **전송률**, **도달률**, **클릭률**과 같이 다양한 통계 데이터를 제공합니다. 이를 통해, 각 푸시의 효과를  
+분석하여 전략 수립에 활용할 수 있습니다.
+
+푸시 요청에 대한 상세 정보는 [nachocode](https://nachocode.io) 대시보드의 **[앱 기능]** > **[푸시 알림]** > **[개인화 푸시]** 탭에서 확인할 수 있습니다.
+
+<br/><br/><hr style={{ border: "1px solid black", opacity: "0.5"}} /><br/>
+
+## 개인화 푸시 활용 방법(예시)
+
+- #### 고객 세그먼트를 통한 알림 전송
+
+  - 특정 상품을 구독하고 있는 모든 사용자들에게 공지 알림을 보내고 싶을 때, 해당 사용자들에게 공지 알림을 전송할 수 있습니다.
+  - 특정 상품을 관심 등록한 사용자들에게 할인 및 마감 등의 내용으로 알림을 전송하고 싶을 때, 나쵸코드의 개인화 푸시를 이용해 상품 별로 사용자들에게 다른 내용의 푸시 알림을 전송할 수 있습니다.
+  - 새로운 상품이 등록됐을 때 해당 카테고리에 관심을 갖고 있던 사용자들에게 상품 입고 알림을 전송할 수 있습니다.
+  - 특정 시점에 연령대, 성별 등 사용자들의 정보를 토대로 개인화된 알림을 전송할 수 있습니다.
+
+<br/>
+
+- #### 이벤트 감지를 통한 알림 전송
+
+  - 사용자 A가 올린 게시글에 ‘좋아요’가 등록 됐을 때, 사용자 A에게 ‘좋아요’ 등록 알림을 전송할 수 있습니다.
+  - 글에 댓글이 생성되었을 때, 글 작성자에게 댓글 알림을 전송할 수 있습니다.
