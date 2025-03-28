@@ -434,4 +434,5 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 | ERR-AB-SGK-13 | 401            | Incorrect secret key.                                            | 유효하지 않은 Secret Key          |
 | ERR-AB-KSY-11 | 400            | Required parameters missing.                                     | API Key가 전달되지 않았을 경우    |
 | ERR-AB-KSY-13 | 404            | Provided key information not found. Please check your key again. | 유효하지 않은 API Key             |
-| ERR-AB-AGK-12 | 400            | Required parameters missing.                                     | API Key가 전달되지 않았을 경우    |
+| ERR-AB-AGK-11 | 400            | Api key not found.                                               | Api Key가 전달되지 않았을 경우    |
+| ERR-AB-AGK-12 | 400            | Invalid api key type.                                            | 유효하지 않은 API Key             |
