@@ -5,7 +5,7 @@ sidebar_label: 개요
 
 # nachocode API 개요
 
-> 🔔 **최신화 일자:** 2024-11-27
+> 🔔 **최신화 일자:** 2025-03-28
 
 nachocode API는 nachocode 서비스의 기능을 활용할 수 있도록 강력한 API를 제공합니다. 이 문서는 API의 개요, 주요 기능, 사용 방법 및 응답 구조를 안내합니다.
 
@@ -18,7 +18,7 @@ nachocode API 문서는 아래와 같은 구조로 구성되어 있습니다:
 1. **API 개요**  
    nachocode API의 주요 기능과 개념을 설명합니다.
 
-2. **푸시 알림 API**  
+2. **푸시 API**  
    nachocode 플랫폼에서 제공하는 푸시 알림 기능을 다룹니다.  
    ➡️ [푸시 알림 API 개요](./push/overview.md)
 

@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
         'api/intro',
         {
           type: 'category',
-          label: '푸시 알림',
+          label: '개인화 푸시',
           link: {
             type: 'generated-index',
             slug: 'api/push/overview',
@@ -76,6 +76,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'guide/intro',
+        'guide/personal-push',
         'guide/iap',
         {
           type: 'category',
