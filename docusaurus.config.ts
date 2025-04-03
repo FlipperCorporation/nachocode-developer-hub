@@ -124,6 +124,13 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      {
+        name: 'keywords',
+        content:
+          '나쵸코드, nachocode, 앱 빌더, 로우코드, 노코드, 웹뷰 앱, 네이티브 앱, 안드로이드, Android, iOS, WebView, app builder, no code, low code',
+      },
+    ],
     colorMode: {
       disableSwitch: true, // 다크모드 토글 버튼 비활성화
       defaultMode: 'light', // 기본 모드를 라이트로 설정
