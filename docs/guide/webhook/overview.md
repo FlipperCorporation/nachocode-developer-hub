@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: 개요
+description: nachocode 웹훅 가이드는 웹훅 이벤트 타입, 요청 방식, 테스트 방법 등 nachocode 플랫폼에서 발생한 이벤트를 서버로 전달하는 웹훅 정책을 설명합니다.
 ---
 
 # 웹훅 개요

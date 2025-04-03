@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: 개요
+description: nachocode 개발자 가이드는 개인화 푸시, 인앱결제, 웹훅 등 강력한 기능을 쉽고 빠르게 사용할 수 있도록 안내하는 공식 가이드 문서입니다. 각 기능을 원활히 사용하기 위한 설정과 사용법을 확인하세요.
 ---
 
 # nachocode 개발자 가이드

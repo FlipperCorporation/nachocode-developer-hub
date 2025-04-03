@@ -1,5 +1,6 @@
 ---
 sidebar_position: 11
+description: nachocode SDK의 iap 네임스페이스를 통해 Android 및 iOS 환경에서 인앱결제를 손쉽게 처리하고, 결제 성공, 실패, 웹훅(Webhook) 처리까지 효율적으로 관리하세요.
 ---
 
 # 인앱결제 (`iap`)
@@ -8,7 +9,7 @@ sidebar_position: 11
 
 ## **개요**
 
-`iap` 네임스페이스는 **네이티브 인앱결제 기능**을 제공합니다. Nachocode SDK를 사용해 **Android 및 iOS 환경에서 인앱결제를 손쉽게 처리**할 수 있으며, 테스트 환경(`sandbox`)과 운영 환경(`production`)을 모두 지원합니다.
+`iap` 네임스페이스는 **네이티브 인앱결제 기능**을 제공합니다. nachocode SDK를 사용해 **Android 및 iOS 환경에서 인앱결제를 손쉽게 처리**할 수 있으며, 테스트 환경(`sandbox`)과 운영 환경(`production`)을 모두 지원합니다.
 SDK 연동 전 **가이드**를 참고해보세요.
 
 ➡️[인앱결제 가이드](../../guide/iap)

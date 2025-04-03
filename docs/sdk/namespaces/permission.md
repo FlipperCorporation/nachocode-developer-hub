@@ -1,5 +1,6 @@
 ---
 sidebar_position: 12
+description: nachocode SDK의 permission 네임스페이스는 앱의 필수 권한(카메라, 위치, 마이크, 푸시 알림 등)의 허용 여부를 조회하고 사용자에게 권한을 요청하는 기능을 제공합니다.
 ---
 
 # 권한 (`permission`)

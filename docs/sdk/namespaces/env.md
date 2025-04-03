@@ -1,5 +1,6 @@
 ---
 sidebar_position: 8
+description: nachocode SDK의 `env` 네임스페이스는 SDK의 버전 정보, 실행 환경(Web/App), 샌드박스 모드 여부 등을 조회할 수 있는 기능을 제공합니다.
 ---
 
 # 환경 (`env`)
@@ -91,7 +92,7 @@ nachocode에서 제공하는 앱 소스 코드의 버전을 의미하며, SDK �
 ```javascript
 const currentVersion = Nachocode.env.getAppSourceVersion();
 
-console.log(`앱 소스 버전: ${appSourceVersion}`); // ex. "1.4.0"
+console.log(`앱 소스 버전: ${appSourceVersion}`); // ex. "1.4.2"
 ```
 
 ---
@@ -115,7 +116,7 @@ console.log(`앱 소스 버전: ${appSourceVersion}`); // ex. "1.4.0"
 ```javascript
 const currentEnv = Nachocode.env.getCurrentEnv();
 
-console.log(currentEnv); // ex. { deviceType: 'iOS', logger: false, runningEnv: 'app', sandbox: false, sdkVersion: "1.4.0", srcVersion: "1.4.0" }
+console.log(currentEnv); // ex. { deviceType: 'iOS', logger: false, runningEnv: 'app', sandbox: false, sdkVersion: "1.4.2", srcVersion: "1.4.2" }
 ```
 
 ---
@@ -161,7 +162,7 @@ console.log(`현재 실행 환경: ${runningEnv}`); // "app" 또는 "web"
 
 ```javascript
 const sdkVersion = Nachocode.env.getSDKVersion();
-console.log(`nachocode SDK 버전: ${sdkVersion}`); // ex. "1.4.0"
+console.log(`nachocode SDK 버전: ${sdkVersion}`); // ex. "1.4.2"
 ```
 
 ---

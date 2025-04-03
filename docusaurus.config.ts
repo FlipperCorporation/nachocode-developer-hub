@@ -5,13 +5,10 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config: Config = {
   title: 'nachocode Developer Hub',
   tagline: '가장 빠르고 쉬운 노코드 & 로우코드 앱 빌더, nachocode',
-  favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
   url: 'https://developer.nachocode.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  favicon: 'favicon-32x32.png',
   baseUrl: '/',
+  trailingSlash: false,
 
   // GitHub pages deployment config.
   organizationName: 'FlipperCorporation',
@@ -20,7 +17,99 @@ const config: Config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Use this field to set useful metadata like html lang.
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: 'static/fonts/pretendard/Pretendard-Black.subset.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: 'static/fonts/pretendard/Pretendard-Bold.subset.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: 'static/fonts/pretendard/Pretendard-ExtraBold.subset.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: 'static/fonts/pretendard/Pretendard-ExtraLight.subset.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: 'static/fonts/pretendard/Pretendard-Light.subset.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: 'static/fonts/pretendard/Pretendard-Medium.subset.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: 'static/fonts/pretendard/Pretendard-Regular.subset.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: 'static/fonts/pretendard/Pretendard-SemiBold.subset.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: 'static/fonts/pretendard/Pretendard-Thin.subset.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+  ],
+
   i18n: { defaultLocale: 'ko', locales: ['ko'] },
 
   presets: [
@@ -35,6 +124,13 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      {
+        name: 'keywords',
+        content:
+          '나쵸코드, nachocode, 앱 빌더, 로우코드, 노코드, 웹뷰 앱, 네이티브 앱, 안드로이드, Android, iOS, WebView, app builder, no code, low code',
+      },
+    ],
     colorMode: {
       disableSwitch: true, // 다크모드 토글 버튼 비활성화
       defaultMode: 'light', // 기본 모드를 라이트로 설정
@@ -82,7 +178,8 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            { label: '가이드', to: '/docs/guide/intro' },
+            { label: 'User Guide', to: 'https://docs.nachocode.io' },
+            { label: 'Developer Guide', to: '/docs/guide/intro' },
             { label: 'API', to: '/docs/api/intro' },
             { label: 'SDK', to: '/docs/sdk/intro' },
           ],

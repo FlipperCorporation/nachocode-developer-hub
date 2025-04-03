@@ -15,11 +15,13 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "cSpell.words": [
     "backkey",
+    "hideable",
     "kakao",
     "lastupdated",
     "nachocode",
     "networkchanged",
     "nowrap",
+    "pretendard",
     "rgba",
     "tabbar",
     "touchstart"

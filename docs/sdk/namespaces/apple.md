@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: nachocode SDK의 `apple` 네임스페이스는 Apple 소셜 로그인과 사용자 정보 조회 기능을 제공하여 iOS 네이티브 기능과의 통합을 지원합니다.
 ---
 
 # 애플 (`apple`)

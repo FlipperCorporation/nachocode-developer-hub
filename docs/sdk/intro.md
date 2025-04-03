@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: 개요
+description: nachocode Javascript 클라이언트 SDK는 웹 개발자를 위한 강력한 개발 도구로, 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어 등)을 손쉽게 통합할 수 있도록 지원합니다. SDK를 활용하여 혁신적으로 네이티브 앱을 개발하세요.
 ---
 
 # nachocode SDK 개요

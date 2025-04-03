@@ -497,11 +497,10 @@ const BottomBanner = () => {
 };
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description="나쵸코드는 가장 쉽게 앱을 만들 수 있는 노코드 앱 빌더입니다. 지금 무료로 앱을 만들고 오늘 바로 스토어에 출시하는 놀라운 경험을 해보세요!"
+      title="가장 쉬운 로우코드 네이티브 앱 빌드 플랫폼"
+      description="nachocode는 웹 개발자를 위한 강력한 로우코드 앱 빌드 플랫폼입니다. SDK와 API를 통해 고도화된 네이티브 앱을 구축할 수 있습니다. 쉽고 빠르게 네이티브 기능을 통합해, 웹 기술로 네이티브 앱을 제작하세요."
     >
       <main>
         <AdvancedAppFeaturesSection />
