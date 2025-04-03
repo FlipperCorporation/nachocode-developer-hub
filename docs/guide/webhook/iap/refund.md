@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: 환불 (refund)
+description: nachocode 인앱결제 환불 웹훅 이벤트의 요청 본문 예시와 상세한 데이터 구조를 설명합니다. 웹훅을 통해 앱 사용자 환불 이벤트를 수신하여 빠르게 처리할 수 있습니다.
 ---
 
 # 인앱결제 환불 이벤트

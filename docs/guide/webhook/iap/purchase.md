@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: 구매 (purchase)
+description: nachocode 인앱결제 구매 웹훅 이벤트의 요청 본문 예시와 데이터 구조를 설명합니다. 웹훅을 통해 앱 사용자의 구매 이벤트를 실시간으로 수신 및 처리할 수 있습니다.
 ---
 
 # 인앱결제 구매 이벤트

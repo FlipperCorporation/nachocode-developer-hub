@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+description: nachocode SDK의 `browser` 네임스페이스는 앱 내에서 URL을 열 때 외부 또는 내부 브라우저를 선택하여 열 수 있는 기능을 제공합니다.
 ---
 
 # 브라우저 (`browser`)
