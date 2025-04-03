@@ -203,7 +203,7 @@ module.exports = {
         fadeIn: 'fadeIn 1s ease-in-out',
       },
       fontFamily: {
-        pretendard: ['var(--font-pretendard)'],
+        pretendard: ['Pretendard'],
       },
       boxShadow: {
         tertiary:
