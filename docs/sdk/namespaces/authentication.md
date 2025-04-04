@@ -1,6 +1,21 @@
 ---
 sidebar_position: 3
 description: nachocode SDK의 `authentication` 네임스페이스는 생체 인증(Biometrics)을 지원하여 앱 내에서 사용자 인증을 안전하고 간편하게 처리할 수 있도록 합니다.
+keywords:
+  [
+    생체 인증,
+    바이오 인증,
+    안드로이드 지문 인증,
+    Android Biometrics,
+    Facial Authentication,
+    iOS Face ID,
+    iOS Touch ID,
+    Apple Face ID,
+    Apple Touch ID,
+    biometric,
+    biometrics authentication,
+    biometrics login,
+  ]
 ---
 
 # 인증 (`authentication`)

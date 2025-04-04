@@ -1,6 +1,16 @@
 ---
 sidebar_position: 17
 description: nachocode SDK의 setting 네임스페이스로 OS 설정 화면 접근, Pull to Refresh 기능 설정, 화면 확대(Zoom) 지원 활성화 등 앱의 사용자 환경을 효율적으로 제어하세요.
+keywords:
+  [
+    당겨서 새로고침,
+    앱 당겨서 새로고침,
+    앱 줌 설정 제어,
+    앱 설정 열기,
+    앱 설정 제어,
+    Pull to Refresh,
+    WebView Zoom Support,
+  ]
 ---
 
 # 설정 (`setting`)

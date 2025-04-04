@@ -1,6 +1,19 @@
 ---
 sidebar_position: 13
 description: nachocode SDK의 preference 네임스페이스를 사용해 앱의 네이티브 내부 저장소에 데이터를 저장, 조회 및 삭제하여 앱 설정이나 사용자 데이터를 간편하게 관리하세요.
+keywords:
+  [
+    app preference,
+    앱 내부 저장소,
+    앱 저장소,
+    앱 유저 설정,
+    앱 유저 정보,
+    앱 사용자 정보,
+    앱 임시 데이터,
+    앱 내 데이터,
+    iOS preference,
+    Android preference,
+  ]
 ---
 
 # 내부 저장소 (`preference`)

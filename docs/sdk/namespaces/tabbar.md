@@ -1,6 +1,17 @@
 ---
 sidebar_position: 19
 description: nachocode SDK의 tabbar 네임스페이스를 통해 앱 내 탭바의 표시 여부를 동적으로 관리하거나, 특정 탭으로 이동하는 사용자 인터페이스를 효과적으로 제어할 수 있습니다.
+keywords:
+  [
+    탭바,
+    탭 바,
+    네비게이션 바,
+    웹뷰 탭바,
+    tabbar,
+    tab bar,
+    navigation bar,
+    WebView tabbar,
+  ]
 ---
 
 # 탭바 (`tabbar`)

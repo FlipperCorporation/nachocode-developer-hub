@@ -46,3 +46,7 @@ uploads/
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+static/*
+tailwind.config.js
+postcss.config.js

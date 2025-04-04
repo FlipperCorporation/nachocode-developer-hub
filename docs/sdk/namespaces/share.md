@@ -1,6 +1,17 @@
 ---
 sidebar_position: 18
 description: nachocode SDK의 share 네임스페이스는 네이티브 공유 UI로 콘텐츠 공유 기능을 손쉽게 제공합니다.
+keywords:
+  [
+    웹뷰 네이티브 공유,
+    웹뷰 공유하기,
+    네이티브 공유,
+    콘텐츠 공유,
+    WebView native share,
+    WebView share,
+    native share,
+    contents share,
+  ]
 ---
 
 # 공유 (`share`)

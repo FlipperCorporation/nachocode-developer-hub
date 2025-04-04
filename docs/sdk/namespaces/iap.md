@@ -1,6 +1,18 @@
 ---
 sidebar_position: 11
 description: nachocode SDK의 iap 네임스페이스를 통해 Android 및 iOS 환경에서 인앱결제를 손쉽게 처리하고, 결제 성공, 실패, 웹훅(Webhook) 처리까지 효율적으로 관리하세요.
+keywords:
+  [
+    인앱 결제,
+    Android 결제,
+    iOS 결제,
+    구글 플레이 스토어,
+    애플 앱스토어,
+    일회성 구매,
+    in app purchase,
+    Google Play Store,
+    Apple App Store,
+  ]
 ---
 
 # 인앱결제 (`iap`)

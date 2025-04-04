@@ -499,8 +499,8 @@ const BottomBanner = () => {
 export default function Home(): JSX.Element {
   return (
     <Layout
-      title="가장 쉬운 로우코드 네이티브 앱 빌드 플랫폼"
-      description="nachocode는 웹 개발자를 위한 강력한 로우코드 앱 빌드 플랫폼입니다. SDK와 API를 통해 고도화된 네이티브 앱을 구축할 수 있습니다. 쉽고 빠르게 네이티브 기능을 통합해, 웹 기술로 네이티브 앱을 제작하세요."
+      title="JavaScript로 가장 쉽고 빠르게 네이티브 앱 개발하기"
+      description="nachocode는 웹 개발자가 JavaScript만으로 고도화된 네이티브 앱을 간단히 개발할 수 있도록 돕는 강력한 로우코드 앱 빌드 플랫폼입니다. 웹뷰 기반으로 네이티브 기능 (푸시 알림, 인증, QR 스캐너 등)을 손쉽게 활용해보세요. WebView 앱 개발, 네이티브 기능 호출까지 아주 쉬운 SDK와 API를 제공합니다."
     >
       <main>
         <AdvancedAppFeaturesSection />

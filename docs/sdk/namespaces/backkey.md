@@ -1,6 +1,17 @@
 ---
 sidebar_position: 4
 description: nachocode SDK의 `backkey` 네임스페이스는 Android 환경에서 네이티브 백 키 이벤트를 사용자 정의하고 관리할 수 있는 기능을 제공합니다.
+keywords:
+  [
+    백 키,
+    백 키 제어,
+    backkey,
+    backkey 제어,
+    Android 백 키,
+    네이티브 백 키,
+    Android backkey,
+    native backkey,
+  ]
 ---
 
 # 백 키 (`backkey`)

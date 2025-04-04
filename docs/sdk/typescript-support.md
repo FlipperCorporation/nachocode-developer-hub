@@ -4,13 +4,14 @@ description: nachocode JavaScript SDK의 TypeScript 지원 가이드입니다. �
 keywords:
   [
     nachocode,
-    SDK,
     TypeScript,
     JavaScript,
-    declare,
     d.ts,
     타입 선언,
-    설치 가이드,
+    Nachocode.d.ts,
+    나쵸코드 SDK,
+    nachocode SDK,
+    declare,
   ]
 ---
 

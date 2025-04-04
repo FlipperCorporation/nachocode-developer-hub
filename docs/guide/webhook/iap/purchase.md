@@ -2,6 +2,18 @@
 sidebar_position: 1
 sidebar_label: 구매 (purchase)
 description: nachocode 인앱결제 구매 웹훅 이벤트의 요청 본문 예시와 데이터 구조를 설명합니다. 웹훅을 통해 앱 사용자의 구매 이벤트를 실시간으로 수신 및 처리할 수 있습니다.
+keywords:
+  [
+    인앱 결제,
+    Android 결제,
+    iOS 결제,
+    구글 플레이 스토어,
+    애플 앱스토어,
+    일회성 구매,
+    in app purchase,
+    Google Play Store,
+    Apple App Store,
+  ]
 ---
 
 # 인앱결제 구매 이벤트
