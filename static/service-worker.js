@@ -21,6 +21,15 @@ const CACHE_ITEMS = [
   '/android-chrome-168x168.png',
   '/android-chrome-192x192.png',
   '/android-chrome-512x512.png',
+  '/fonts/pretendard/Pretendard-Black.subset.woff2',
+  '/fonts/pretendard/Pretendard-Bold.subset.woff2',
+  '/fonts/pretendard/Pretendard-ExtraBold.subset.woff2',
+  '/fonts/pretendard/Pretendard-ExtraLight.subset.woff2',
+  '/fonts/pretendard/Pretendard-Light.subset.woff2',
+  '/fonts/pretendard/Pretendard-Medium.subset.woff2',
+  '/fonts/pretendard/Pretendard-Regular.subset.woff2',
+  '/fonts/pretendard/Pretendard-SemiBold.subset.woff2',
+  '/fonts/pretendard/Pretendard-Thin.subset.woff2',
 ];
 
 const installEvent = event => {
