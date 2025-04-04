@@ -500,8 +500,8 @@ video {
   font-display: swap;
   src:
     local('Pretendard Thin'),
-    url('/static/fonts/pretendard/Pretendard-Thin.subset.woff2') format('woff2'),
-    url('/static/fonts/pretendard/Pretendard-Thin.subset.woff') format('woff');
+    url('/fonts/pretendard/Pretendard-Thin.subset.woff2') format('woff2'),
+    url('/fonts/pretendard/Pretendard-Thin.subset.woff') format('woff');
 }
 @font-face {
   font-family: 'Pretendard';
@@ -509,10 +509,8 @@ video {
   font-display: swap;
   src:
     local('Pretendard ExtraLight'),
-    url('/static/fonts/pretendard/Pretendard-ExtraLight.subset.woff2')
-      format('woff2'),
-    url('/static/fonts/pretendard/Pretendard-ExtraLight.subset.woff')
-      format('woff');
+    url('/fonts/pretendard/Pretendard-ExtraLight.subset.woff2') format('woff2'),
+    url('/fonts/pretendard/Pretendard-ExtraLight.subset.woff') format('woff');
 }
 @font-face {
   font-family: 'Pretendard';
@@ -520,9 +518,8 @@ video {
   font-display: swap;
   src:
     local('Pretendard Light'),
-    url('/static/fonts/pretendard/Pretendard-Light.subset.woff2')
-      format('woff2'),
-    url('/static/fonts/pretendard/Pretendard-Light.subset.woff') format('woff');
+    url('/fonts/pretendard/Pretendard-Light.subset.woff2') format('woff2'),
+    url('/fonts/pretendard/Pretendard-Light.subset.woff') format('woff');
 }
 @font-face {
   font-family: 'Pretendard';
@@ -530,10 +527,8 @@ video {
   font-display: swap;
   src:
     local('Pretendard Regular'),
-    url('/static/fonts/pretendard/Pretendard-Regular.subset.woff2')
-      format('woff2'),
-    url('/static/fonts/pretendard/Pretendard-Regular.subset.woff')
-      format('woff');
+    url('/fonts/pretendard/Pretendard-Regular.subset.woff2') format('woff2'),
+    url('/fonts/pretendard/Pretendard-Regular.subset.woff') format('woff');
 }
 @font-face {
   font-family: 'Pretendard';
@@ -541,9 +536,8 @@ video {
   font-display: swap;
   src:
     local('Pretendard Medium'),
-    url('/static/fonts/pretendard/Pretendard-Medium.subset.woff2')
-      format('woff2'),
-    url('/static/fonts/pretendard/Pretendard-Medium.subset.woff') format('woff');
+    url('/fonts/pretendard/Pretendard-Medium.subset.woff2') format('woff2'),
+    url('/fonts/pretendard/Pretendard-Medium.subset.woff') format('woff');
 }
 @font-face {
   font-family: 'Pretendard';
@@ -551,10 +545,8 @@ video {
   font-display: swap;
   src:
     local('Pretendard Semi Bold'),
-    url('/static/fonts/pretendard/Pretendard-SemiBold.subset.woff2')
-      format('woff2'),
-    url('/static/fonts/pretendard/Pretendard-SemiBold.subset.woff')
-      format('woff');
+    url('/fonts/pretendard/Pretendard-SemiBold.subset.woff2') format('woff2'),
+    url('/fonts/pretendard/Pretendard-SemiBold.subset.woff') format('woff');
 }
 @font-face {
   font-family: 'Pretendard';
@@ -562,8 +554,8 @@ video {
   font-display: swap;
   src:
     local('Pretendard Bold'),
-    url('/static/fonts/pretendard/Pretendard-Bold.subset.woff2') format('woff2'),
-    url('/static/fonts/pretendard/Pretendard-Bold.subset.woff') format('woff');
+    url('/fonts/pretendard/Pretendard-Bold.subset.woff2') format('woff2'),
+    url('/fonts/pretendard/Pretendard-Bold.subset.woff') format('woff');
 }
 @font-face {
   font-family: 'Pretendard';
@@ -571,10 +563,8 @@ video {
   font-display: swap;
   src:
     local('Pretendard Extra Bold'),
-    url('/static/fonts/pretendard/Pretendard-ExtraBold.subset.woff2')
-      format('woff2'),
-    url('/static/fonts/pretendard/Pretendard-ExtraBold.subset.woff')
-      format('woff');
+    url('/fonts/pretendard/Pretendard-ExtraBold.subset.woff2') format('woff2'),
+    url('/fonts/pretendard/Pretendard-ExtraBold.subset.woff') format('woff');
 }
 @font-face {
   font-family: 'Pretendard';
@@ -582,9 +572,8 @@ video {
   font-display: swap;
   src:
     local('Pretendard Black'),
-    url('/static/fonts/pretendard/Pretendard-Black.subset.woff2')
-      format('woff2'),
-    url('/static/fonts/pretendard/Pretendard-Black.subset.woff') format('woff');
+    url('/fonts/pretendard/Pretendard-Black.subset.woff2') format('woff2'),
+    url('/fonts/pretendard/Pretendard-Black.subset.woff') format('woff');
 }
 
 html,

@@ -22,7 +22,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'preload',
-        href: 'static/fonts/pretendard/Pretendard-Black.subset.woff2',
+        href: '/fonts/pretendard/Pretendard-Black.subset.woff2',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous',
@@ -32,7 +32,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'preload',
-        href: 'static/fonts/pretendard/Pretendard-Bold.subset.woff2',
+        href: '/fonts/pretendard/Pretendard-Bold.subset.woff2',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous',
@@ -42,7 +42,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'preload',
-        href: 'static/fonts/pretendard/Pretendard-ExtraBold.subset.woff2',
+        href: '/fonts/pretendard/Pretendard-ExtraBold.subset.woff2',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous',
@@ -52,7 +52,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'preload',
-        href: 'static/fonts/pretendard/Pretendard-ExtraLight.subset.woff2',
+        href: '/fonts/pretendard/Pretendard-ExtraLight.subset.woff2',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous',
@@ -62,7 +62,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'preload',
-        href: 'static/fonts/pretendard/Pretendard-Light.subset.woff2',
+        href: '/fonts/pretendard/Pretendard-Light.subset.woff2',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous',
@@ -72,7 +72,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'preload',
-        href: 'static/fonts/pretendard/Pretendard-Medium.subset.woff2',
+        href: '/fonts/pretendard/Pretendard-Medium.subset.woff2',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous',
@@ -82,7 +82,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'preload',
-        href: 'static/fonts/pretendard/Pretendard-Regular.subset.woff2',
+        href: '/fonts/pretendard/Pretendard-Regular.subset.woff2',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous',
@@ -92,7 +92,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'preload',
-        href: 'static/fonts/pretendard/Pretendard-SemiBold.subset.woff2',
+        href: '/fonts/pretendard/Pretendard-SemiBold.subset.woff2',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous',
@@ -102,7 +102,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'preload',
-        href: 'static/fonts/pretendard/Pretendard-Thin.subset.woff2',
+        href: '/fonts/pretendard/Pretendard-Thin.subset.woff2',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous',
