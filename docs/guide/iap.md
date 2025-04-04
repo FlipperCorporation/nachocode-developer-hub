@@ -2,6 +2,18 @@
 sidebar_position: 2
 sidebar_label: 인앱결제
 description: nachocode 인앱결제 가이드는 Android 및 iOS 환경에서 결제 프로세스부터 검증, 웹훅 설정, 에러 처리까지 구체적으로 안내합니다. 쉽고 안전한 인앱결제 설정으로 사용자의 결제 경험을 강화하세요.
+keywords:
+  [
+    인앱 결제,
+    Android 결제,
+    iOS 결제,
+    구글 플레이 스토어,
+    애플 앱스토어,
+    일회성 구매,
+    in app purchase,
+    Google Play Store,
+    Apple App Store,
+  ]
 ---
 
 # 인앱결제

@@ -2,6 +2,19 @@
 id: endpoints
 sidebar_label: API 엔드포인트
 description: nachocode 개인화 푸시 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
+keywords:
+  [
+    푸시 API,
+    푸시 알림,
+    개인화 푸시,
+    타겟 푸시,
+    타겟 알림,
+    사용자 맞춤 메시지,
+    나쵸코드 푸시,
+    nachocode push,
+    push notification,
+    personal push notification,
+  ]
 ---
 
 # 개인화 푸시 API Endpoints

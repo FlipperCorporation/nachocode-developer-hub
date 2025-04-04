@@ -1,6 +1,18 @@
 ---
 sidebar_position: 6
 description: nachocode SDK의 `clipboard` 네임스페이스는 디바이스의 네이티브 클립보드와 데이터를 쉽게 주고받을 수 있는 기능을 제공합니다.
+keywords:
+  [
+    클립보드,
+    네이티브 클립보드,
+    웹뷰 클립보드,
+    웹뷰 복사하기,
+    웹뷰 붙여넣기,
+    WebView copy,
+    WebView paste,
+    clipboard,
+    native clipboard,
+  ]
 ---
 
 # 클립보드 (`clipboard`)

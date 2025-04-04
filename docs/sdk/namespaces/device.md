@@ -1,6 +1,14 @@
 ---
 sidebar_position: 7
 description: nachocode SDK의 `device` 네임스페이스를 사용하여 디바이스의 모델, OS 버전, 언어, 배터리 상태, 네트워크 연결 정보 등을 조회하고, 디바이스 유형(Android/iOS)을 확인할 수 있습니다.
+keywords:
+  [
+    디바이스 네트워크 연결 확인,
+    디바이스 배터리 확인,
+    디바이스 OS 확인,
+    디바이스 언어 확인,
+    디바이스 모델 확인,
+  ]
 ---
 
 # 디바이스 (`device`)

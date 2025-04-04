@@ -2,6 +2,16 @@
 sidebar_position: 1
 sidebar_label: 개요
 description: nachocode API를 통해 개인화 푸시 알림을 쉽고 빠르게 전송할 수 있습니다. API의 기본 사항과 인증 방법, 사용 방법을 안내합니다.
+keywords:
+  [
+    나쵸코드 API,
+    나쵸코드 사용법,
+    나쵸코드 서비스,
+    나쵸코드 연동,
+    nachocode API,
+    nachocode 서비스,
+    nachocode 연동,
+  ]
 ---
 
 # nachocode API 개요

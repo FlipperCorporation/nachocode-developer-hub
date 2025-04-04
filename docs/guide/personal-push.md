@@ -2,6 +2,18 @@
 sidebar_position: 2
 sidebar_label: 개인화 푸시
 description: nachocode 개인화 푸시 가이드는 SDK 및 API를 활용한 개인 맞춤형 푸시 알림 전송 방법을 안내합니다. FCM 디바이스 토큰 등록부터 전송, 결과 분석까지 쉽고 효율적으로 관리할 수 있습니다.
+keywords:
+  [
+    푸시 알림,
+    개인화 푸시,
+    타겟 푸시,
+    타겟 알림,
+    사용자 맞춤 메시지,
+    FCM 디바이스 토큰,
+    push notification,
+    personal push notification,
+    FCM Device Token,
+  ]
 ---
 
 # 개인화 푸시

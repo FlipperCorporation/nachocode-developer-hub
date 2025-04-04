@@ -1,6 +1,18 @@
 ---
 sidebar_position: 14
 description: nachocode SDK의 push 네임스페이스는 FCM 디바이스 푸시 토큰 관리, 로컬 푸시 알림 예약 및 취소 기능을 제공하여 앱 사용자와의 효과적인 소통을 돕습니다.
+keywords:
+  [
+    푸시 알림,
+    개인화 푸시,
+    타겟 푸시,
+    타겟 알림,
+    사용자 맞춤 메시지,
+    FCM 디바이스 토큰,
+    push notification,
+    personal push notification,
+    FCM Device Token,
+  ]
 ---
 
 # 푸시 알림 (`push`)
