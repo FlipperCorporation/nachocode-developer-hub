@@ -48,3 +48,5 @@ uploads/
 .pnp.*
 
 static/*
+tailwind.config.js
+postcss.config.js
