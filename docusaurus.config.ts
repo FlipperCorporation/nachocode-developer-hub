@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 
 const config: Config = {
-  title: 'nachocode Developer Hub',
+  title: 'nachocode Developer',
   tagline: '가장 빠르고 쉬운 노코드 & 로우코드 앱 빌더, nachocode',
   url: 'https://developer.nachocode.io',
   favicon: 'favicon-32x32.png',
@@ -128,7 +128,7 @@ const config: Config = {
       {
         name: 'keywords',
         content:
-          '나쵸코드, nachocode, 앱 빌더, 로우코드, 노코드, 웹뷰 앱, 네이티브 앱, 안드로이드, Android, iOS, WebView, app builder, no code, low code',
+          '나쵸코드, nachocode, 앱 빌더, 로우코드, 노코드, 웹뷰 앱, 네이티브 앱, 안드로이드, Android, iOS, WebView, JavaScript, app builder, no code, low code',
       },
     ],
     colorMode: {
