@@ -4,14 +4,16 @@ sidebar_label: 개요
 description: nachocode 개발자 가이드는 개인화 푸시, 인앱결제, 웹훅 등 강력한 기능을 쉽고 빠르게 사용할 수 있도록 안내하는 공식 가이드 문서입니다. 각 기능을 원활히 사용하기 위한 설정과 사용법을 확인하세요.
 keywords:
   [
+    앱 빌더,
     웹뷰 앱,
     하이브리드 앱,
     푸시 알림,
     인앱 결제,
-    webview app,
-    hybrid app,
-    native app,
-    push notification,
+    안드로이드,
+    Android,
+    iOS,
+    WebView,
+    WKWebView,
     nachocode,
     나쵸코드,
   ]

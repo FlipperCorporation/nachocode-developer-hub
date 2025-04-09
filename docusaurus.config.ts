@@ -128,7 +128,7 @@ const config: Config = {
       {
         name: 'keywords',
         content:
-          '나쵸코드, nachocode, 앱 빌더, 로우코드, 노코드, 웹뷰 앱, 네이티브 앱, 안드로이드, Android, iOS, WebView, JavaScript, app builder, no code, low code',
+          '개발자, 앱 빌더, 앱 빌드, 로우코드, 웹뷰 앱, 웹 앱, 네이티브 앱, 하이브리드 앱, 안드로이드, Android, iOS, WebView, WKWebView, 나쵸코드, JavaScript, nachocode',
       },
     ],
     colorMode: {

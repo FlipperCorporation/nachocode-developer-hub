@@ -9,11 +9,12 @@ keywords:
     개인화 푸시,
     타겟 푸시,
     타겟 알림,
+    마케팅 푸시,
+    고객 마케팅,
+    개인화 메시지,
     사용자 맞춤 메시지,
     나쵸코드 푸시,
-    nachocode push,
-    push notification,
-    personal push notification,
+    nachocode 푸시,
   ]
 ---
 

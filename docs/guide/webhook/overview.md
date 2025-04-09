@@ -10,9 +10,9 @@ keywords:
     구글 플레이 스토어,
     애플 앱스토어,
     일회성 구매,
-    in app purchase,
-    Google Play Store,
-    Apple App Store,
+    Google 플레이 스토어,
+    Apple 앱스토어,
+    인앱 결제 검증,
   ]
 ---
 

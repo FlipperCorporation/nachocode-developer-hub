@@ -8,11 +8,12 @@ keywords:
     개인화 푸시,
     타겟 푸시,
     타겟 알림,
+    마케팅 푸시,
+    개인화 메시지,
     사용자 맞춤 메시지,
     FCM 디바이스 토큰,
-    push notification,
-    personal push notification,
-    FCM Device Token,
+    나쵸코드 푸시,
+    nachocode 푸시,
   ]
 ---
 
