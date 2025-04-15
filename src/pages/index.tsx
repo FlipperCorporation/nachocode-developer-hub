@@ -20,7 +20,7 @@ import CodeSwitcher from '@site/src/components/home/code-switcher';
 import FeatureCard from '@site/src/components/home/feature-card';
 import ImageCard from '@site/src/components/home/image-card';
 
-import React from 'react';
+import React, { JSX } from 'react';
 import styles from './index.module.css';
 
 function AdvancedAppFeaturesSection() {
@@ -253,7 +253,6 @@ const NativeAppFeaturesSection = () => {
                 <FeatureCard
                   title={item.title}
                   description={item.description}
-                  isReady={!!item.isReady}
                 />
               </div>
             );

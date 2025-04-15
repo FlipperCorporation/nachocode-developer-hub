@@ -14,7 +14,7 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": false,
     "incremental": true,
-    "lib": ["es2023"],
+    "lib": ["es2023", "DOM"],
     "module": "Node16",
     "moduleResolution": "Node16",
     "noFallthroughCasesInSwitch": true,
