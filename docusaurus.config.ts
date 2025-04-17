@@ -193,7 +193,7 @@ const config: Config = {
             },
             {
               label: 'Instagram',
-              href: 'https://www.instagram.com/nachocode.official',
+              href: 'https://www.instagram.com/nachocode.io',
             },
             {
               label: 'Facebook',
