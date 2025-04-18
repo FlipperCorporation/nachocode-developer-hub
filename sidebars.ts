@@ -66,6 +66,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/facebook',
             'sdk/namespaces/google',
             'sdk/namespaces/iap',
+            'sdk/namespaces/kakao',
             'sdk/namespaces/permission',
             'sdk/namespaces/preference',
             'sdk/namespaces/push',
