@@ -46,6 +46,10 @@ nachocode SDK 문서는 아래와 같은 구조로 구성되어 있습니다:
 3. **네임스페이스별 문서**  
    nachocode SDK의 각 네임스페이스(`app`, `authentication`, `device` 등)에 대한 상세한 문서와 사용법을 제공합니다.
 
+4. **릴리즈 노트**  
+   nachocode SDK의 각 버전별 릴리즈에 대한 노트를 제공합니다.  
+   ➡️ [릴리즈 노트](./releases/v1/intro)
+
 ---
 
 ## nachocode 앱 구조

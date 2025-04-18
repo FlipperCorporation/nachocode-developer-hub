@@ -92,7 +92,7 @@ nachocode에서 제공하는 앱 소스 코드의 버전을 의미하며, SDK �
 ```javascript
 const currentVersion = Nachocode.env.getAppSourceVersion();
 
-console.log(`앱 소스 버전: ${appSourceVersion}`); // ex. "1.4.2"
+console.log(`앱 소스 버전: ${appSourceVersion}`); // ex. "1.5.0"
 ```
 
 ---
@@ -116,7 +116,7 @@ console.log(`앱 소스 버전: ${appSourceVersion}`); // ex. "1.4.2"
 ```javascript
 const currentEnv = Nachocode.env.getCurrentEnv();
 
-console.log(currentEnv); // ex. { deviceType: 'iOS', logger: false, runningEnv: 'app', sandbox: false, sdkVersion: "1.4.2", srcVersion: "1.4.2" }
+console.log(currentEnv); // ex. { deviceType: 'iOS', logger: false, runningEnv: 'app', sandbox: false, sdkVersion: "1.5.0", srcVersion: "1.5.0" }
 ```
 
 ---
@@ -162,7 +162,7 @@ console.log(`현재 실행 환경: ${runningEnv}`); // "app" 또는 "web"
 
 ```javascript
 const sdkVersion = Nachocode.env.getSDKVersion();
-console.log(`nachocode SDK 버전: ${sdkVersion}`); // ex. "1.4.2"
+console.log(`nachocode SDK 버전: ${sdkVersion}`); // ex. "1.5.0"
 ```
 
 ---

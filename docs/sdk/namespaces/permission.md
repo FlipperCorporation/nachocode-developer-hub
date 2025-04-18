@@ -31,11 +31,42 @@ keywords:
 
 nachocode SDK에서 지원하는 디바이스의 앱 권한 유형입니다.
 
+```typescript
+const PERMISSION_TYPES = {
+  /**
+   * Camera usage permission
+   * @since 1.4.2
+   */
+  CAMERA: 'camera',
+  /**
+   * Location access permission
+   * @since 1.4.2
+   */
+  LOCATION: 'location',
+  /**
+   * Microphone usage permission
+   * @since 1.4.2
+   */
+  MICROPHONE: 'microphone',
+  /**
+   * Photo usage permission
+   * @since 1.5.0
+   */
+  PHOTO: 'photo',
+  /**
+   * Push notification permission
+   * @since 1.4.2
+   */
+  PUSH: 'push',
+} as const;
+```
+
 | 값           | 설명                |
 | ------------ | ------------------- |
 | `camera`     | 카메라 사용 권한    |
 | `location`   | 위치 정보 접근 권한 |
 | `microphone` | 마이크 사용 권한    |
+| `photo`      | 사진 사용 권한      |
 | `push`       | 푸시 알림 권한      |
 
 ---
@@ -66,7 +97,7 @@ nachocode SDK에서 지원하는 디바이스의 앱 권한 유형입니다.
 | `option`   | `{ type: PermissionType, ask?: boolean }` | ✅        | 확인할 권한 유형 및 권한 요청 여부 (`ask`) 포함 객체 |
 | `callback` | `(granted: boolean) => void` _(optional)_ | ❌        | 권한이 허용되었는지 여부를 전달받는 콜백 함수        |
 
-- `type`: 확인할 권한 유형 (`camera`, `location`, `microphone`, `push`)
+- `type`: 확인할 권한 유형 (`camera`, `location`, `microphone`, `photo`, `push`)
 - `ask`: `true`인 경우, 권한이 허용되지 않았을 때 요청 팝업을 표시 (`default: false`)
 
 #### 반환 값 (`checkPermission`)

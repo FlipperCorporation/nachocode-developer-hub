@@ -30,6 +30,14 @@ nachocode를 사용하면 비개발자도 간단한 설정만으로 네이티브
 
 ---
 
+## nachocode 앱 구조
+
+![nachocode_application](../static/img/docs/nachocode_app.webp)
+
+nachocode에서 빌드한 앱들은 위 구조를 통해 앱 사용자들에게 다양한 기능을 제공할 수 있게 설계돼있습니다.
+
+---
+
 ## nachocode의 주요 서비스
 
 ### 1. **노코드 앱 빌드 플랫폼**
