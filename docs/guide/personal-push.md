@@ -25,8 +25,8 @@ keywords:
 
 > **📢 참고:**
 >
-> [`/messages`](../api/push/endpoints.md#post-apipushv2messages)로 끝나는 API 엔드포인트의 경우, 각기 다른 유저에게 다른 제목과 메세지를 전송할 때 사용하고,  
-> [`/users`](../api/push/endpoints.md#post-apipushv2users)로 끝나는 API 엔드포인트의 경우, 다수의 유저에게 동일한 제목과 내용을 전송할 때 사용합니다.
+> [`/messages`](../api/push/endpoints#post-apipushv2messages)로 끝나는 API 엔드포인트의 경우, 각기 다른 유저에게 다른 제목과 메세지를 전송할 때 사용하고,  
+> [`/users`](../api/push/endpoints#post-apipushv2users)로 끝나는 API 엔드포인트의 경우, 다수의 유저에게 동일한 제목과 내용을 전송할 때 사용합니다.
 
 <br/>
 이 문서는 개인화 푸시 전송에 필요한 **준비 과정**과 **프로세스**에 대해 안내합니다.
@@ -70,14 +70,14 @@ keywords:
 
 <br/>
 
-### 3. 개인화 푸시 전송 ([API](../api/push/endpoints.md))
+### 3. 개인화 푸시 전송 ([API](../api/push/endpoints))
 
 > :white_check_mark: **등록된 유저 식별자만으로 매칭 및 푸시 전송이 이루어집니다.**
 
 <br/>
 
-**동일한 내용**을 **다수의 유저**에게 전송할 시에는 [`/users`](../api/push/endpoints.md#post-apipushv2users) API Endpoint를 사용하고,  
-**각 유저마다 다른 내용**을 전송할 시에는 [`/messages`](../api/push/endpoints.md#post-apipushv2messages) API Endpoint를 사용합니다.
+**동일한 내용**을 **다수의 유저**에게 전송할 시에는 [`/users`](../api/push/endpoints#post-apipushv2users) API Endpoint를 사용하고,  
+**각 유저마다 다른 내용**을 전송할 시에는 [`/messages`](../api/push/endpoints#post-apipushv2messages) API Endpoint를 사용합니다.
 
 API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전송 시점을 선정하여 개발자가 **Server Side 로직에 추가**하여야 합니다.  
 **전송하고자 하는 내용**과 대시보드에서 발급받은 **API Key, Secret Key**로 요청 데이터를 구성하여 상황에 맞는 API Endpoint로 푸시 전송을 요청할 수 있습니다.
@@ -97,7 +97,7 @@ API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전�
 
 ## 개인화 푸시 활용 방법(예시)
 
-- #### 고객 세그먼트를 통한 알림 전송
+- **고객 세그먼트를 통한 알림 전송**
 
   - 특정 상품을 구독하고 있는 모든 사용자들에게 공지 알림을 보내고 싶을 때, 해당 사용자들에게 공지 알림을 전송할 수 있습니다.
   - 특정 상품을 관심 등록한 사용자들에게 할인 및 마감 등의 내용으로 알림을 전송하고 싶을 때, 나쵸코드의 개인화 푸시를 이용해 상품 별로 사용자들에게 다른 내용의 푸시 알림을 전송할 수 있습니다.
@@ -106,7 +106,7 @@ API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전�
 
 <br/>
 
-- #### 이벤트 감지를 통한 알림 전송
+- **이벤트 감지를 통한 알림 전송**
 
   - 사용자 A가 올린 게시글에 ‘좋아요’가 등록 됐을 때, 사용자 A에게 ‘좋아요’ 등록 알림을 전송할 수 있습니다.
   - 글에 댓글이 생성되었을 때, 글 작성자에게 댓글 알림을 전송할 수 있습니다.

@@ -55,12 +55,12 @@ nachocode는 웹 개발자들이 네이티브 앱의 고급 기능을 활용할 
 
   - 네이티브 기능(생체 인증, 진동, 내부 브라우저 등)을 웹 앱에 통합 가능
   - 간단한 인터페이스로 개발 속도 향상
-  - [nachocode SDK 문서 바로가기](./sdk/intro.md)
+  - [nachocode SDK 문서 바로가기](./sdk/intro)
 
 - **nachocode API**:
   - 대량의 푸시 알림 전송 등을 서버 대 서버 요청으로 실행 가능
   - 사용자 맞춤형 메시지와 이벤트 트리거
-  - [nachocode API 문서 바로가기](./api/intro.md)
+  - [nachocode API 문서 바로가기](./api/intro)
 
 ---
 
@@ -86,7 +86,7 @@ nachocode SDK는 웹 개발자들이 네이티브 앱 개발의 진입 장벽을
 
 nachocode SDK를 활용하면 웹 개발자가 네이티브 앱을 제어하고 사용자 경험을 강화하는 데 필요한 모든 기능을 손쉽게 통합할 수 있습니다.
 
-➡️ [SDK 기능 살펴보기](./sdk/intro.md)
+➡️ [SDK 기능 살펴보기](./sdk/intro)
 
 ---
 
@@ -103,7 +103,7 @@ nachocode API는 앱 서비스와 사용자 데이터를 효율적으로 관리�
 
 nachocode API는 현재 푸시 알림 전송에 중점을 두고 있으며, 앞으로 다양한 API 기능이 추가될 예정입니다.
 
-➡️ [API 기능 살펴보기](./api/intro.md)
+➡️ [API 기능 살펴보기](./api/intro)
 
 ---
 

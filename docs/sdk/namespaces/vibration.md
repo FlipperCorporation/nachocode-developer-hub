@@ -1,5 +1,4 @@
 ---
-sidebar_position: 20
 description: nachocode SDK의 vibration 네임스페이스를 사용하여 디바이스 진동 및 햅틱 피드백 기능을 간단히 구현하고, 사용자 환경에 따라 활성화 또는 비활성화할 수 있습니다.
 keywords:
   [

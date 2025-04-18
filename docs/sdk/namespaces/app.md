@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 description: nachocode SDK의 `app` 네임스페이스는 앱의 이름, 버전, 패키지명 등 앱 정보를 조회하거나 앱의 최초 실행 여부를 확인하는 기능을 제공합니다.
 keywords:
   [

@@ -34,7 +34,7 @@ Nachocode.setting.openSetting();
 
 - 네이티브 키보드가 열리고 닫힐 때 감지할 수 있는 `keyboardshown`, `keyboardhidden` 이벤트가 추가되었습니다.
 - 해당 이벤트를 구독하여 키보드 상태 변화를 처리할 수 있습니다.
-- ➡️ [`event` 네임스페이스 문서](../../namespaces/event.md)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`event` 네임스페이스 문서](../../namespaces/event)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 이벤트
 

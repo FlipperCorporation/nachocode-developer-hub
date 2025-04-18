@@ -22,7 +22,7 @@ sidebar_label: 'ver.1.3.0 (24.11.20)'
 - 디바이스의 네이티브 **생체 인증**을 활용할 수 있도록 기능이 추가되었습니다.
 - `canUseBiometrics` 메서드로 현재 기기에서 생체 인증을 사용할 수 있는지 여부를 확인할 수 있습니다.
 - `useBiometrics` 메서드로 네이티브 생체 인증 팝업을 띄워 사용자 인증을 진행할 수 있습니다.
-- ➡️ [`authentication` 네임스페이스 문서](../../namespaces/authentication.md)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`authentication` 네임스페이스 문서](../../namespaces/authentication)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`authentication`)
 
@@ -66,7 +66,7 @@ Nachocode.authentication.useBiometrics(result => {
 - `getDeviceModel` 메서드를 통해 디바이스의 모델명을 확인할 수 있습니다.
 - `getDeviceOS` 메서드를 통해 디바이스의 운영체제(OS)와 버전을 반환합니다.
 - `getNetworkStatus` 메서드를 통해 네트워크 연결 상태 및 연결 유형(Wi-Fi, Cellular 등)을 확인할 수 있습니다.
-- ➡️ [`device` 네임스페이스 문서](../../namespaces/device.md)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`device` 네임스페이스 문서](../../namespaces/device)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`device`)
 
@@ -113,7 +113,7 @@ Nachocode.device.getNetworkStatus(status => {
 
 - 당겨서 새로고침 (Pull-to-Refresh) 기능을 활성화하거나 비활성화할 수 있는 `setPullToRefresh` 메서드가 추가되었습니다.
 - 사용자 인터페이스에서 새로고침 동작을 앱의 설정에 따라 제어할 수 있습니다.
-- ➡️ [`refresh` 네임스페이스 문서](../../namespaces/refresh.md)
+- ➡️ [`refresh` 네임스페이스 문서](../../namespaces/refresh)
 
 #### 추가된 메서드 (`refresh`)
 

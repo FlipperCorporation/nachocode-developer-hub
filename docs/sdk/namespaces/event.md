@@ -1,5 +1,4 @@
 ---
-sidebar_position: 9
 description: nachocode SDK의 `event` 네임스페이스는 SDK 초기화, 앱 활성화 상태 변경, 네트워크 변화 등의 다양한 이벤트를 처리할 수 있도록 지원합니다.
 keywords:
   [
