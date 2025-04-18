@@ -13,7 +13,7 @@ keywords:
 
 # 스캐너 (`scanner`)
 
-> 🔔 **최신화 일자:** 2025-02-10
+> 🔔 **최신화 일자:** 2025-04-18
 
 ## **개요**
 
@@ -24,15 +24,15 @@ keywords:
 
 ## **메서드 목록**
 
-| 메서드                                                                                                                                                                  | 설명                         | 추가된 버전 |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | ----------- |
-| [`openQRCodeScanner(option, callback?)`](#openqrcodescanneroption--opendirect-boolean-opentype-internal--external--main--callback-data-string-error-sdkerror--any-void) | QR 코드 스캐너를 실행합니다. | ver.1.4.0   |
+| 메서드                                                                                                                                                                   | 설명                         | 추가된 버전 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- | ----------- |
+| [`openQRCodeScanner(option, callback?)`](#openqrcodescanneroption--opendirect-boolean-opentype-internal--external--main--callback-data-string-error-sdkerror--void-void) | QR 코드 스캐너를 실행합니다. | ver.1.4.0   |
 
 ---
 
 ## **메서드 상세**
 
-### **`openQRCodeScanner(option: { openDirect: boolean, openType?: 'internal' | 'external' | 'main' }, callback?: (data: string, error?: SDKError) => any): void`**
+### **`openQRCodeScanner(option: { openDirect: boolean, openType?: 'internal' | 'external' | 'main' }, callback?: (data: string, error?: SDKError) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -50,7 +50,7 @@ QR 코드 스캐너를 실행하고, 스캔된 데이터를 **콜백 함수로 �
 | 이름       | 타입                                                                     | 필수 여부 | 설명                        |
 | ---------- | ------------------------------------------------------------------------ | --------- | --------------------------- |
 | `option`   | `{ openDirect: boolean, openType?: 'internal' \| 'external' \| 'main' }` | ✅        | 스캐너 옵션을 지정하는 객체 |
-| `callback` | `(data: string, error?: SDKError) => any`                                | ❌        | 스캔 결과를 반환하는 함수   |
+| `callback` | `(data: string, error?: SDKError) => void`                               | ❌        | 스캔 결과를 반환하는 함수   |
 
 ##### **option 설명**
 

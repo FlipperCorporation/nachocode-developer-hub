@@ -16,7 +16,7 @@ keywords:
 
 # 애플 (`apple`)
 
-> 🔔 **최신화 일자:** 2025-02-10
+> 🔔 **최신화 일자:** 2025-04-18
 
 - ![Static Badge](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
@@ -72,17 +72,17 @@ Apple 로그인 성공 시 반환되는 사용자 정보 객체입니다.
 
 ## **메서드 목록**
 
-| 메서드                                                                                                                            | 설명                                     | 추가된 버전 |
-| --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ----------- |
-| [`login(permissions, callback)`](#loginpermissions-applepermissions-callback-result-appleresult-userdata-appleuserdata--any-void) | Apple 네이티브 소셜 로그인을 수행합니다. | ver.1.4.0   |
-| [`isLoggedIn(identifier, callback)`](#isloggedinidentifier-string-callback-result-appleresult-isloggedin-boolean--any-void)       | Apple 로그인 상태를 확인합니다.          | ver.1.4.0   |
-| [`getUserIdentifier(callback)`](#getuseridentifiercallback-result-appleresult-useridentifier-string--any-void)                    | Apple 사용자 고유 식별자를 반환합니다.   | ver.1.4.0   |
+| 메서드                                                                                                                             | 설명                                     | 추가된 버전 |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ----------- |
+| [`login(permissions, callback)`](#loginpermissions-applepermissions-callback-result-appleresult-userdata-appleuserdata--void-void) | Apple 네이티브 소셜 로그인을 수행합니다. | ver.1.4.0   |
+| [`isLoggedIn(identifier, callback)`](#isloggedinidentifier-string-callback-result-appleresult-isloggedin-boolean--void-void)       | Apple 로그인 상태를 확인합니다.          | ver.1.4.0   |
+| [`getUserIdentifier(callback)`](#getuseridentifiercallback-result-appleresult-useridentifier-string--void-void)                    | Apple 사용자 고유 식별자를 반환합니다.   | ver.1.4.0   |
 
 ---
 
 ## **메서드 상세**
 
-### **`login(permissions: ApplePermissions, callback: (result: AppleResult, userData?: AppleUserData) => any): void`**
+### **`login(permissions: ApplePermissions, callback: (result: AppleResult, userData?: AppleUserData) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -92,10 +92,10 @@ Apple 네이티브 소셜 로그인을 수행하고 사용자 정보를 반환�
 
 #### 매개변수 (`login`)
 
-| 이름          | 타입                                                     | 필수 여부 | 설명                                    |
-| ------------- | -------------------------------------------------------- | --------- | --------------------------------------- |
-| `permissions` | `ApplePermissions`                                       | ✅        | 로그인 요청 시 요구할 권한 목록         |
-| `callback`    | `(result: AppleResult, userData?: AppleUserData) => any` | ✅        | 요청 결과와 사용자 정보를 반환하는 함수 |
+| 이름          | 타입                                                      | 필수 여부 | 설명                                    |
+| ------------- | --------------------------------------------------------- | --------- | --------------------------------------- |
+| `permissions` | `ApplePermissions`                                        | ✅        | 로그인 요청 시 요구할 권한 목록         |
+| `callback`    | `(result: AppleResult, userData?: AppleUserData) => void` | ✅        | 요청 결과와 사용자 정보를 반환하는 함수 |
 
 #### 반환 값 (`login`)
 
@@ -121,7 +121,7 @@ Nachocode.apple.login(['email', 'fullName'], (result, userData) => {
 
 ---
 
-### **`isLoggedIn(identifier: string, callback: (result: AppleResult, isLoggedIn: boolean) => any): void`**
+### **`isLoggedIn(identifier: string, callback: (result: AppleResult, isLoggedIn: boolean) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -131,10 +131,10 @@ Apple 사용자 고유 식별자(`identifier`)를 기반으로 현재 사용자�
 
 #### 매개변수 (`isLoggedIn`)
 
-| 이름         | 타입                                                | 필수 여부 | 설명                        |
-| ------------ | --------------------------------------------------- | --------- | --------------------------- |
-| `identifier` | `string`                                            | ✅        | Apple 사용자 고유 식별자    |
-| `callback`   | `(result: AppleResult, isLoggedIn: boolean) => any` | ✅        | 로그인 여부를 반환하는 함수 |
+| 이름         | 타입                                                 | 필수 여부 | 설명                        |
+| ------------ | ---------------------------------------------------- | --------- | --------------------------- |
+| `identifier` | `string`                                             | ✅        | Apple 사용자 고유 식별자    |
+| `callback`   | `(result: AppleResult, isLoggedIn: boolean) => void` | ✅        | 로그인 여부를 반환하는 함수 |
 
 #### 반환 값 (`isLoggedIn`)
 
@@ -156,7 +156,7 @@ Nachocode.apple.isLoggedIn('user_identifier_here', (result, isLoggedIn) => {
 
 ---
 
-### **`getUserIdentifier(callback: (result: AppleResult, userIdentifier?: string) => any): void`**
+### **`getUserIdentifier(callback: (result: AppleResult, userIdentifier?: string) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -166,9 +166,9 @@ Apple 사용자 고유 식별자를 반환합니다.
 
 #### 매개변수 (`getUserIdentifier`)
 
-| 이름       | 타입                                                    | 필수 여부 | 설명                                |
-| ---------- | ------------------------------------------------------- | --------- | ----------------------------------- |
-| `callback` | `(result: AppleResult, userIdentifier?: string) => any` | ✅        | Apple 사용자 식별자를 반환하는 함수 |
+| 이름       | 타입                                                     | 필수 여부 | 설명                                |
+| ---------- | -------------------------------------------------------- | --------- | ----------------------------------- |
+| `callback` | `(result: AppleResult, userIdentifier?: string) => void` | ✅        | Apple 사용자 식별자를 반환하는 함수 |
 
 #### 반환 값 (`getUserIdentifier`)
 

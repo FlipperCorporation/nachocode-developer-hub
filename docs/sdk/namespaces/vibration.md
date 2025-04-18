@@ -15,7 +15,7 @@ keywords:
 
 # 진동 (`vibration`)
 
-> 🔔 **최신화 일자:** 2025-02-10
+> 🔔 **최신화 일자:** 2025-04-18
 
 ## **개요**
 
@@ -42,7 +42,7 @@ keywords:
 | 메서드                                                                      | 설명                                | 추가된 버전 |
 | --------------------------------------------------------------------------- | ----------------------------------- | ----------- |
 | [`setHaptics(enable)`](#sethapticsenable-boolean-void)                      | 햅틱 피드백 사용 여부를 설정합니다. | ver.1.2.0   |
-| [`getHaptics(callback)`](#gethapticscallback-enable-boolean--any-void)      | 햅틱 피드백 사용 여부를 반환합니다. | ver.1.2.0   |
+| [`getHaptics(callback)`](#gethapticscallback-enable-boolean--void-void)     | 햅틱 피드백 사용 여부를 반환합니다. | ver.1.2.0   |
 | [`haptics(hapticsType?)`](#hapticshapticstype-hapticstype-void)             | 햅틱 피드백을 트리거합니다.         | ver.1.2.0   |
 | [`setVibration(enable)`](#setvibrationenable-boolean-void)                  | 진동 사용 여부를 설정합니다.        | ver.1.2.0   |
 | [`getVibration(callback)`](#getvibrationcallback-enable-boolean--void-void) | 진동 사용 여부를 반환합니다.        | ver.1.2.0   |
@@ -93,7 +93,7 @@ function onHapticsToggleChange(enable) {
 
 ---
 
-### **`getHaptics(callback: (enable: boolean) => any): void`**
+### **`getHaptics(callback: (enable: boolean) => void): void`**
 
 - _since ver.1.2.0_
 
@@ -104,9 +104,9 @@ function onHapticsToggleChange(enable) {
 
 #### 매개변수 (`getHaptics`)
 
-| 이름       | 타입                       | 필수 여부 | 설명                       |
-| ---------- | -------------------------- | --------- | -------------------------- |
-| `callback` | `(enable: boolean) => any` | ✅        | 햅틱 피드백 사용 여부 반환 |
+| 이름       | 타입                        | 필수 여부 | 설명                       |
+| ---------- | --------------------------- | --------- | -------------------------- |
+| `callback` | `(enable: boolean) => void` | ✅        | 햅틱 피드백 사용 여부 반환 |
 
 #### 반환 값 (`getHaptics`)
 
@@ -224,9 +224,9 @@ function onVibrationToggleChange(enable) {
 
 #### 매개변수 (`getVibration`)
 
-| 이름       | 타입                       | 필수 여부 | 설명                |
-| ---------- | -------------------------- | --------- | ------------------- |
-| `callback` | `(enable: boolean) => any` | ✅        | 진동 사용 여부 반환 |
+| 이름       | 타입                        | 필수 여부 | 설명                |
+| ---------- | --------------------------- | --------- | ------------------- |
+| `callback` | `(enable: boolean) => void` | ✅        | 진동 사용 여부 반환 |
 
 #### 반환 값 (`getVibration`)
 

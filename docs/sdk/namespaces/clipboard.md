@@ -16,7 +16,7 @@ keywords:
 
 # 클립보드 (`clipboard`)
 
-> 🔔 **최신화 일자:** 2025-02-20
+> 🔔 **최신화 일자:** 2025-04-18
 
 ## **개요**
 
@@ -27,16 +27,16 @@ keywords:
 
 ## **메서드 목록**
 
-| 메서드                                                                                                    | 설명                                            | 추가된 버전 |
-| --------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ----------- |
-| [`getText(callback)`](#gettextcallback-text-string--any-void)                                             | 네이티브 클립보드에 저장된 텍스트를 반환합니다. | ver.1.4.0   |
-| [`setText(text, callback?)`](#settexttext-string-callback-status-success--error-message-string--any-void) | 텍스트를 네이티브 클립보드에 저장합니다.        | ver.1.4.0   |
+| 메서드                                                                                                     | 설명                                            | 추가된 버전 |
+| ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ----------- |
+| [`getText(callback)`](#gettextcallback-text-string--void-void)                                             | 네이티브 클립보드에 저장된 텍스트를 반환합니다. | ver.1.4.0   |
+| [`setText(text, callback?)`](#settexttext-string-callback-status-success--error-message-string--void-void) | 텍스트를 네이티브 클립보드에 저장합니다.        | ver.1.4.0   |
 
 ---
 
 ## **메서드 상세**
 
-### **`getText(callback: (text: string) => any): void`**
+### **`getText(callback: (text: string) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -47,9 +47,9 @@ keywords:
 
 #### 매개변수 (`getText`)
 
-| 이름       | 타입                    | 필수 여부 | 설명                               |
-| ---------- | ----------------------- | --------- | ---------------------------------- |
-| `callback` | `(text: string) => any` | ✅        | 클립보드에 저장된 텍스트 반환 함수 |
+| 이름       | 타입                     | 필수 여부 | 설명                               |
+| ---------- | ------------------------ | --------- | ---------------------------------- |
+| `callback` | `(text: string) => void` | ✅        | 클립보드에 저장된 텍스트 반환 함수 |
 
 #### 반환 값 (`getText`)
 
@@ -67,7 +67,7 @@ Nachocode.clipboard.getText(text => {
 
 ---
 
-### **`setText(text: string, callback?: (status: 'success' | 'error', message: string) => any): void`**
+### **`setText(text: string, callback?: (status: 'success' | 'error', message: string) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -78,10 +78,10 @@ Nachocode.clipboard.getText(text => {
 
 #### 매개변수 (`setText`)
 
-| 이름       | 타입                                                     | 필수 여부 | 설명                                |
-| ---------- | -------------------------------------------------------- | --------- | ----------------------------------- |
-| `text`     | `string`                                                 | ✅        | 클립보드에 저장할 텍스트            |
-| `callback` | `(status: 'success' \| 'error', message: string) => any` | ❌        | 복사 결과 및 메시지를 반환하는 함수 |
+| 이름       | 타입                                                      | 필수 여부 | 설명                                |
+| ---------- | --------------------------------------------------------- | --------- | ----------------------------------- |
+| `text`     | `string`                                                  | ✅        | 클립보드에 저장할 텍스트            |
+| `callback` | `(status: 'success' \| 'error', message: string) => void` | ❌        | 복사 결과 및 메시지를 반환하는 함수 |
 
 - `status`: 복사 성공 여부 (`success` 또는 `error`)
 - `message`: 복사 성공 또는 오류 메시지

@@ -16,7 +16,7 @@ keywords:
 
 # 페이스북 (`facebook`)
 
-> 🔔 **최신화 일자:** 2025-02-10
+> 🔔 **최신화 일자:** 2025-04-18
 
 ## **개요**
 
@@ -28,12 +28,12 @@ keywords:
 
 ## **메서드 목록**
 
-| 메서드                                                                                                                                                                      | 설명                       | 추가된 버전 |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | ----------- |
-| [`login(permissions, callback)`](#loginpermissions-facebookpermissions-callback-result-facebookresult-accesstoken-string-userid-string-userdata-facebookuserdata--any-void) | 페이스북 네이티브 로그인   | ver.1.4.0   |
-| [`isLoggedIn(callback)`](#isloggedincallback-result-facebookresult-isloggedin-boolean-accesstoken-string-userid-string--any-void)                                           | 로그인 상태 확인           | ver.1.4.0   |
-| [`getUserData(permissions, callback)`](#getuserdatapermissions-facebookpermissions-callback-result-facebookresult-userdata-facebookuserdata--any-void)                      | 사용자 데이터 요청         | ver.1.4.0   |
-| [`logout()`](#logout-void)                                                                                                                                                  | 페이스북 네이티브 로그아웃 | ver.1.4.0   |
+| 메서드                                                                                                                                                                       | 설명                       | 추가된 버전 |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | ----------- |
+| [`login(permissions, callback)`](#loginpermissions-facebookpermissions-callback-result-facebookresult-accesstoken-string-userid-string-userdata-facebookuserdata--void-void) | 페이스북 네이티브 로그인   | ver.1.4.0   |
+| [`isLoggedIn(callback)`](#isloggedincallback-result-facebookresult-isloggedin-boolean-accesstoken-string-userid-string--void-void)                                           | 로그인 상태 확인           | ver.1.4.0   |
+| [`getUserData(permissions, callback)`](#getuserdatapermissions-facebookpermissions-callback-result-facebookresult-userdata-facebookuserdata--void-void)                      | 사용자 데이터 요청         | ver.1.4.0   |
+| [`logout()`](#logout-void)                                                                                                                                                   | 페이스북 네이티브 로그아웃 | ver.1.4.0   |
 
 ---
 
@@ -68,7 +68,7 @@ keywords:
 
 ## **메서드 상세**
 
-### **`login(permissions: FacebookPermissions, callback: (result: FacebookResult, accessToken?: string, userId?: string, userData?: FacebookUserData) => any): void`**
+### **`login(permissions: FacebookPermissions, callback: (result: FacebookResult, accessToken?: string, userId?: string, userData?: FacebookUserData) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -80,10 +80,10 @@ keywords:
 
 #### 매개변수 (`login`)
 
-| 이름          | 타입                                                                                                  | 필수 여부 | 설명                             |
-| ------------- | ----------------------------------------------------------------------------------------------------- | --------- | -------------------------------- |
-| `permissions` | `FacebookPermissions`                                                                                 | ✅        | 요청할 권한 목록                 |
-| `callback`    | `(result: FacebookResult, accessToken?: string, userId?: string, userData?: FacebookUserData) => any` | ✅        | 로그인 결과를 반환하는 콜백 함수 |
+| 이름          | 타입                                                                                                   | 필수 여부 | 설명                             |
+| ------------- | ------------------------------------------------------------------------------------------------------ | --------- | -------------------------------- |
+| `permissions` | `FacebookPermissions`                                                                                  | ✅        | 요청할 권한 목록                 |
+| `callback`    | `(result: FacebookResult, accessToken?: string, userId?: string, userData?: FacebookUserData) => void` | ✅        | 로그인 결과를 반환하는 콜백 함수 |
 
 #### 반환 값 (`login`)
 
@@ -110,7 +110,7 @@ Nachocode.facebook.login(
 
 ---
 
-### **`isLoggedIn(callback: (result: FacebookResult, isLoggedIn: boolean, accessToken?: string, userId?: string) => any): void`**
+### **`isLoggedIn(callback: (result: FacebookResult, isLoggedIn: boolean, accessToken?: string, userId?: string) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -121,9 +121,9 @@ Nachocode.facebook.login(
 
 #### 매개변수 (`isLoggedIn`)
 
-| 이름       | 타입                                                                                          | 필수 여부 | 설명                        |
-| ---------- | --------------------------------------------------------------------------------------------- | --------- | --------------------------- |
-| `callback` | `(result: FacebookResult, isLoggedIn: boolean, accessToken?: string, userId?: string) => any` | ✅        | 로그인 상태를 반환하는 함수 |
+| 이름       | 타입                                                                                           | 필수 여부 | 설명                        |
+| ---------- | ---------------------------------------------------------------------------------------------- | --------- | --------------------------- |
+| `callback` | `(result: FacebookResult, isLoggedIn: boolean, accessToken?: string, userId?: string) => void` | ✅        | 로그인 상태를 반환하는 함수 |
 
 #### 반환 값 (`isLoggedIn`)
 
@@ -146,7 +146,7 @@ Nachocode.facebook.isLoggedIn((result, isLoggedIn, accessToken, userId) => {
 
 ---
 
-### **`getUserData(permissions: FacebookPermissions, callback: (result: FacebookResult, userData?: FacebookUserData) => any): void`**
+### **`getUserData(permissions: FacebookPermissions, callback: (result: FacebookResult, userData?: FacebookUserData) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -157,10 +157,10 @@ Nachocode.facebook.isLoggedIn((result, isLoggedIn, accessToken, userId) => {
 
 #### 매개변수 (`getUserData`)
 
-| 이름          | 타입                                                           | 필수 여부 | 설명                           |
-| ------------- | -------------------------------------------------------------- | --------- | ------------------------------ |
-| `permissions` | `FacebookPermissions`                                          | ✅        | 요청할 사용자 데이터 권한 목록 |
-| `callback`    | `(result: FacebookResult, userData?: FacebookUserData) => any` | ✅        | 사용자 데이터를 반환하는 함수  |
+| 이름          | 타입                                                            | 필수 여부 | 설명                           |
+| ------------- | --------------------------------------------------------------- | --------- | ------------------------------ |
+| `permissions` | `FacebookPermissions`                                           | ✅        | 요청할 사용자 데이터 권한 목록 |
+| `callback`    | `(result: FacebookResult, userData?: FacebookUserData) => void` | ✅        | 사용자 데이터를 반환하는 함수  |
 
 #### 반환 값 (`getUserData`)
 

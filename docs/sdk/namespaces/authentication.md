@@ -19,7 +19,7 @@ keywords:
 
 # 인증 (`authentication`)
 
-> 🔔 **최신화 일자:** 2025-02-06
+> 🔔 **최신화 일자:** 2025-04-18
 
 ## **개요**
 
@@ -43,16 +43,16 @@ keywords:
 
 ## **메서드 목록**
 
-| 메서드                                                                                                                   | 설명                                                       | 추가된 버전 |
-| ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | ----------- |
-| [`canUseBiometrics(callback)`](#canusebiometricscallback-available-boolean-error--code-string-message-string---any-void) | 디바이스에서 생체 인증 기능을 사용할 수 있는지 확인합니다. | ver.1.3.0   |
-| [`useBiometrics(callback)`](#usebiometricscallback-result-authenticationresult--any-void)                                | 생체 인증 기능을 호출합니다.                               | ver.1.3.0   |
+| 메서드                                                                                                                    | 설명                                                       | 추가된 버전 |
+| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ----------- |
+| [`canUseBiometrics(callback)`](#canusebiometricscallback-available-boolean-error--code-string-message-string---void-void) | 디바이스에서 생체 인증 기능을 사용할 수 있는지 확인합니다. | ver.1.3.0   |
+| [`useBiometrics(callback)`](#usebiometricscallback-result-authenticationresult--void-void)                                | 생체 인증 기능을 호출합니다.                               | ver.1.3.0   |
 
 ---
 
 ## 메서드 상세
 
-### **`canUseBiometrics(callback: (available: boolean, error?: { code: string, message: string }) => any): void`**
+### **`canUseBiometrics(callback: (available: boolean, error?: { code: string, message: string }) => void): void`**
 
 - _since ver.1.3.0_
 
@@ -63,9 +63,9 @@ keywords:
 
 #### 매개변수 (`canUseBiometrics`)
 
-| 이름       | 타입                                                                     | 필수 여부 | 설명                                                            |
-| ---------- | ------------------------------------------------------------------------ | --------- | --------------------------------------------------------------- |
-| `callback` | `(available: boolean, error?: { code: string, message: string }) => any` | ✅        | `true`(사용 가능) 또는 `false`(사용 불가)를 전달 받는 콜백 함수 |
+| 이름       | 타입                                                                      | 필수 여부 | 설명                                                            |
+| ---------- | ------------------------------------------------------------------------- | --------- | --------------------------------------------------------------- |
+| `callback` | `(available: boolean, error?: { code: string, message: string }) => void` | ✅        | `true`(사용 가능) 또는 `false`(사용 불가)를 전달 받는 콜백 함수 |
 
 #### 반환 값 (`canUseBiometrics`)
 
@@ -88,7 +88,7 @@ Nachocode.authentication.canUseBiometrics((available, error) => {
 
 ---
 
-### **`useBiometrics(callback: (result: AuthenticationResult) => any): void`**
+### **`useBiometrics(callback: (result: AuthenticationResult) => void): void`**
 
 - _since ver.1.3.0_
 
@@ -99,9 +99,9 @@ Nachocode.authentication.canUseBiometrics((available, error) => {
 
 #### 매개변수 (`useBiometrics`)
 
-| 이름       | 타입                                    | 필수 여부 | 설명                            |
-| ---------- | --------------------------------------- | --------- | ------------------------------- |
-| `callback` | `(result: AuthenticationResult) => any` | ✅        | 인증 결과를 전달 받는 콜백 함수 |
+| 이름       | 타입                                     | 필수 여부 | 설명                            |
+| ---------- | ---------------------------------------- | --------- | ------------------------------- |
+| `callback` | `(result: AuthenticationResult) => void` | ✅        | 인증 결과를 전달 받는 콜백 함수 |
 
 #### 반환 값 (`useBiometrics`)
 

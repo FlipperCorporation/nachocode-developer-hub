@@ -12,7 +12,7 @@ keywords:
 
 # 디바이스 (`device`)
 
-> 🔔 **최신화 일자:** 2025-02-20
+> 🔔 **최신화 일자:** 2025-04-18
 
 ## **개요**
 
@@ -50,22 +50,22 @@ keywords:
 
 ## **메서드 목록**
 
-| 메서드                                                                                                                                | 설명                                    | 추가된 버전 |
-| ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | ----------- |
-| [`getCurrentLanguage(callback)`](#getcurrentlanguagecallback-language-string--any-void)                                               | 디바이스의 현재 언어 코드를 반환합니다. | ver.1.4.0   |
-| [`getBatteryLevel(callback)`](#getbatterylevelcallback-status--batterylevel-number-ischarging-boolean---any-void)                     | 디바이스의 배터리 상태를 반환합니다.    | ver.1.3.0   |
-| [`getDeviceModel()`](#getdevicemodel-string)                                                                                          | 디바이스의 모델명을 반환합니다.         | ver.1.3.0   |
-| [`getDeviceOS()`](#getdeviceos--os-devicetype-version-string-)                                                                        | 디바이스의 OS 유형과 버전을 반환합니다. | ver.1.3.0   |
-| [`getNetworkStatus(callback)`](#getnetworkstatuscallback-status--isconnected-boolean-connectiontype-networkconnectiontype---any-void) | 네트워크 연결 상태를 반환합니다.        | ver.1.3.0   |
-| [`getType()`](#gettype-devicetype)                                                                                                    | 현재 디바이스의 유형을 반환합니다.      | ver.1.0.0   |
-| [`isAndroid()`](#isandroid-boolean)                                                                                                   | 현재 디바이스가 Android인지 확인합니다. | ver.1.0.0   |
-| [`isIOS()`](#isios-boolean)                                                                                                           | 현재 디바이스가 iOS인지 확인합니다.     | ver.1.0.0   |
+| 메서드                                                                                                                                 | 설명                                    | 추가된 버전 |
+| -------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | ----------- |
+| [`getCurrentLanguage(callback)`](#getcurrentlanguagecallback-language-string--void-void)                                               | 디바이스의 현재 언어 코드를 반환합니다. | ver.1.4.0   |
+| [`getBatteryLevel(callback)`](#getbatterylevelcallback-status--batterylevel-number-ischarging-boolean---void-void)                     | 디바이스의 배터리 상태를 반환합니다.    | ver.1.3.0   |
+| [`getDeviceModel()`](#getdevicemodel-string)                                                                                           | 디바이스의 모델명을 반환합니다.         | ver.1.3.0   |
+| [`getDeviceOS()`](#getdeviceos--os-devicetype-version-string-)                                                                         | 디바이스의 OS 유형과 버전을 반환합니다. | ver.1.3.0   |
+| [`getNetworkStatus(callback)`](#getnetworkstatuscallback-status--isconnected-boolean-connectiontype-networkconnectiontype---void-void) | 네트워크 연결 상태를 반환합니다.        | ver.1.3.0   |
+| [`getType()`](#gettype-devicetype)                                                                                                     | 현재 디바이스의 유형을 반환합니다.      | ver.1.0.0   |
+| [`isAndroid()`](#isandroid-boolean)                                                                                                    | 현재 디바이스가 Android인지 확인합니다. | ver.1.0.0   |
+| [`isIOS()`](#isios-boolean)                                                                                                            | 현재 디바이스가 iOS인지 확인합니다.     | ver.1.0.0   |
 
 ---
 
 ## **메서드 상세**
 
-### **`getCurrentLanguage(callback: (language: string) => any): void`**
+### **`getCurrentLanguage(callback: (language: string) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -76,9 +76,9 @@ keywords:
 
 #### 매개변수 (`getCurrentLanguage`)
 
-| 이름       | 타입                        | 필수 여부 | 설명                |
-| ---------- | --------------------------- | --------- | ------------------- |
-| `callback` | `(language: string) => any` | ✅        | 언어 코드 반환 함수 |
+| 이름       | 타입                         | 필수 여부 | 설명                |
+| ---------- | ---------------------------- | --------- | ------------------- |
+| `callback` | `(language: string) => void` | ✅        | 언어 코드 반환 함수 |
 
 #### 반환 값 (`getCurrentLanguage`)
 
@@ -96,7 +96,7 @@ Nachocode.device.getCurrentLanguage(language => {
 
 ---
 
-### **`getBatteryLevel(callback: (status: { batteryLevel: number, isCharging: boolean }) => any): void`**
+### **`getBatteryLevel(callback: (status: { batteryLevel: number, isCharging: boolean }) => void): void`**
 
 - _since ver.1.3.0_
 
@@ -107,9 +107,9 @@ Nachocode.device.getCurrentLanguage(language => {
 
 #### 매개변수 (`getBatteryLevel`)
 
-| 이름       | 타입                                                             | 필수 여부 | 설명                                  |
-| ---------- | ---------------------------------------------------------------- | --------- | ------------------------------------- |
-| `callback` | `(status: { batteryLevel: number, isCharging: boolean }) => any` | ✅        | 배터리 상태 정보를 전달하는 콜백 함수 |
+| 이름       | 타입                                                              | 필수 여부 | 설명                                  |
+| ---------- | ----------------------------------------------------------------- | --------- | ------------------------------------- |
+| `callback` | `(status: { batteryLevel: number, isCharging: boolean }) => void` | ✅        | 배터리 상태 정보를 전달하는 콜백 함수 |
 
 - `batterLevel: number` : 배터리의 현재 충전 비율 (`0` ~ `100`)
 - `isCharging: boolean` : 디바이스가 충전 중인지 여부 (`true`/`false`)
@@ -187,7 +187,7 @@ console.log(`OS: ${deviceOS.os}, 버전: ${deviceOS.version}`); // ex. { os: 'An
 
 ---
 
-### **`getNetworkStatus(callback: (status: { isConnected: boolean, connectionType: NetworkConnectionType }) => any): void`**
+### **`getNetworkStatus(callback: (status: { isConnected: boolean, connectionType: NetworkConnectionType }) => void): void`**
 
 - _since ver.1.3.0_
 
@@ -197,9 +197,9 @@ console.log(`OS: ${deviceOS.os}, 버전: ${deviceOS.version}`); // ex. { os: 'An
 
 #### 매개변수 (`getNetworkStatus`)
 
-| 이름       | 타입                                                                               | 필수 여부 | 설명                                    |
-| ---------- | ---------------------------------------------------------------------------------- | --------- | --------------------------------------- |
-| `callback` | `(status: { isConnected: boolean, connectionType: NetworkConnectionType }) => any` | ✅        | 네트워크 상태 정보를 전달하는 콜백 함수 |
+| 이름       | 타입                                                                                | 필수 여부 | 설명                                    |
+| ---------- | ----------------------------------------------------------------------------------- | --------- | --------------------------------------- |
+| `callback` | `(status: { isConnected: boolean, connectionType: NetworkConnectionType }) => void` | ✅        | 네트워크 상태 정보를 전달하는 콜백 함수 |
 
 - `isConnected`: 네트워크 연결 여부 (`true`/`false`).
 - `connectionType`: 연결 유형 (Wi-Fi, Cellular, Ethernet 등).

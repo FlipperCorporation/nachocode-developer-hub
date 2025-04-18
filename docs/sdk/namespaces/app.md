@@ -15,7 +15,7 @@ keywords:
 
 # 애플리케이션 (`app`)
 
-> 🔔 **최신화 일자:** 2025-02-20
+> 🔔 **최신화 일자:** 2025-04-18
 
 ## 개요
 
@@ -25,19 +25,19 @@ keywords:
 
 ## 메서드 목록
 
-| 메서드                                                                                    | 설명                                                   | 추가된 버전 |
-| ----------------------------------------------------------------------------------------- | ------------------------------------------------------ | ----------- |
-| [`checkFirstLaunch(callback)`](#checkfirstlaunchcallback-isfirstlaunch-boolean--any-void) | 앱이 최초 실행인지 여부를 확인합니다.                  | ver.1.4.0   |
-| [`getAppName()`](#getappname-string)                                                      | 앱의 이름을 가져옵니다.                                | ver.1.0.0   |
-| [`getAppKey()`](#getappkey-string)                                                        | nachocode 플랫폼에서 발급한 앱의 고유 키를 반환합니다. | ver.1.0.0   |
-| [`getCurrentAppVersion()`](#getcurrentappversion-string)                                  | 현재 설치된 앱 버전을 반환합니다.                      | ver.1.0.0   |
-| [`getPackageName()`](#getpackagename-string)                                              | 앱의 패키지명을 가져옵니다.                            | ver.1.0.0   |
+| 메서드                                                                                     | 설명                                                   | 추가된 버전 |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
+| [`checkFirstLaunch(callback)`](#checkfirstlaunchcallback-isfirstlaunch-boolean--void-void) | 앱이 최초 실행인지 여부를 확인합니다.                  | ver.1.4.0   |
+| [`getAppName()`](#getappname-string)                                                       | 앱의 이름을 가져옵니다.                                | ver.1.0.0   |
+| [`getAppKey()`](#getappkey-string)                                                         | nachocode 플랫폼에서 발급한 앱의 고유 키를 반환합니다. | ver.1.0.0   |
+| [`getCurrentAppVersion()`](#getcurrentappversion-string)                                   | 현재 설치된 앱 버전을 반환합니다.                      | ver.1.0.0   |
+| [`getPackageName()`](#getpackagename-string)                                               | 앱의 패키지명을 가져옵니다.                            | ver.1.0.0   |
 
 ---
 
 ## 메서드 상세
 
-### **`checkFirstLaunch(callback: (isFirstLaunch: boolean) => any): void`**
+### **`checkFirstLaunch(callback: (isFirstLaunch: boolean) => void): void`**
 
 - _since ver.1.4.0_
 
@@ -48,9 +48,9 @@ keywords:
 
 #### 매개변수 (`checkFirstLaunch`)
 
-| 이름       | 타입                              | 필수 여부 | 설명                                                            |
-| ---------- | --------------------------------- | --------- | --------------------------------------------------------------- |
-| `callback` | `(isFirstLaunch: boolean) => any` | ✅        | `true`(최초 실행) 또는 `false`(기존 실행)를 전달 받는 콜백 함수 |
+| 이름       | 타입                               | 필수 여부 | 설명                                                            |
+| ---------- | ---------------------------------- | --------- | --------------------------------------------------------------- |
+| `callback` | `(isFirstLaunch: boolean) => void` | ✅        | `true`(최초 실행) 또는 `false`(기존 실행)를 전달 받는 콜백 함수 |
 
 #### 반환 값 (`checkFirstLaunch`)
 
