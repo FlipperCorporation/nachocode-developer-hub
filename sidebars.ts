@@ -84,6 +84,7 @@ const sidebars: SidebarsConfig = {
           link: { type: 'generated-index', slug: 'sdk/releases/v1/intro' },
           items: [
             'sdk/releases/v1/intro',
+            'sdk/releases/v1/release-v-1-5-0',
             'sdk/releases/v1/release-v-1-4-2',
             'sdk/releases/v1/release-v-1-4-1',
             'sdk/releases/v1/release-v-1-4-0',

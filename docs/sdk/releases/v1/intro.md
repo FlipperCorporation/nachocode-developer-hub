@@ -4,7 +4,7 @@ sidebar_label: '개요'
 
 # nachocode SDK Version 1 릴리즈 노트
 
-> 🔔 **최신화 일자:** 2025-04-16
+> 🔔 **최신화 일자:** 2025-04-18
 
 nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 정리한 릴리즈 노트입니다.
 
@@ -14,7 +14,7 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
 
 ## 🚀 최신 SDK 릴리즈
 
-- [ver.1.4.2 릴리즈 노트](./release-v-1-4-2)
+- [ver.1.5.0 릴리즈 노트](./release-v-1-5-0)
 
 - **항상 최신 버전 가져오기 (`@latest`)**
 
@@ -22,10 +22,10 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
   <script src="https://cdn.nachocode.io/nachocode/client-sdk/@latest/client-sdk.min.js"></script>
   ```
 
-- **현재 배포된 최신 버전 가져오기 (`@1.4.2`)**
+- **현재 배포된 최신 버전 가져오기 (`@1.5.0`)**
 
   ```html
-  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.4.2/client-sdk.min.js"></script>
+  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.5.0/client-sdk.min.js"></script>
   ```
 
 ---
@@ -34,6 +34,7 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
 
 | 버전                           | 릴리즈 날짜 | 주요 내용                                   |
 | ------------------------------ | ----------- | ------------------------------------------- |
+| [ver.1.5.0](./release-v-1-5-0) | 2025-04-18  | Kakao/Google 소셜 로그인 지원 등            |
 | [ver.1.4.2](./release-v-1-4-2) | 2025-02-19  | 설정 페이지 열기, 키보드 감지 이벤트 추가   |
 | [ver.1.4.1](./release-v-1-4-1) | 2025-02-12  | 로컬 푸시 알림 기능 추가                    |
 | [ver.1.4.0](./release-v-1-4-0) | 2025-02-06  | QR 코드 스캔, Apple/Facebook 로그인 지원 등 |

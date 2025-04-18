@@ -21,7 +21,7 @@ keywords:
 
 # 시작하기
 
-> 🔔 **최신화 일자:** 2025-04-03
+> 🔔 **최신화 일자:** 2025-04-18
 
 nachocode JavaScript Client SDK를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.
 
@@ -38,7 +38,7 @@ nachocode SDK는 웹 클라이언트에서 **네이티브 앱의 기능**을 손
 
   ### 최신 버전 불러오기
 
-  - 현재 최신 버전 v1.4.2
+  - 현재 최신 버전 v1.5.0
 
   - 최신 버전의 SDK를 항상 유지하려면 아래 코드를 사용하세요
 
@@ -51,7 +51,7 @@ nachocode SDK는 웹 클라이언트에서 **네이티브 앱의 기능**을 손
   - 특정 버전으로 고정하려면 다음과 같이 사용합니다
 
   ```html
-  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.4.2/client-sdk.min.js"></script>
+  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.5.0/client-sdk.min.js"></script>
   ```
 
 > 📢 **최신 버전을 사용하는 것이 권장되며, 특정 버전 고정은 호환성 유지가 필요한 경우에 사용하세요.**

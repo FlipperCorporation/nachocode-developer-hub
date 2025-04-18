@@ -15,9 +15,11 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "cSpell.words": [
     "backkey",
+    "birthyear",
     "hideable",
     "kakao",
     "lastupdated",
+    "MMDD",
     "nachocode",
     "networkchanged",
     "nowrap",
