@@ -404,9 +404,9 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 - **Property**
 
-  | **Parameter** | **Type**  | **Required** | **Description**            |
-  | ------------- | --------- | ------------ | -------------------------- |
-  | isUsingBadge  | `boolean` |              | 푸시 뱃지 제어 (기능 설명) |
+  | **Parameter** | **Type**  | **Required** | **Description**     |
+  | ------------- | --------- | ------------ | ------------------- |
+  | isUsingBadge  | `boolean` |              | 푸시 뱃지 제어 여부 |
 
   - **Example**
 
