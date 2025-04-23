@@ -17,13 +17,24 @@ keywords:
 
 # 카카오 (`kakao`)
 
-> 🔔 **최신화 일자:** 2025-04-18
+> 🔔 **최신화 일자:** 2025-04-23
 
 ## **개요**
 
 `kakao` 네임스페이스는 **카카오 네이티브 로그인** 및 **카카오톡 공유 기능**을 제공합니다.  
 이 네임스페이스를 통해 **로그인, 사용자 정보 조회, 로그아웃, 연결 해제(unlink)** 를 수행하거나,  
 **커스텀 템플릿 / URL 스크랩 기반** 카카오톡 공유 기능을 구현할 수 있습니다.
+
+---
+
+## **필수 선행 작업**
+
+nachocode SDK로 카카오 네이티브 기능을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
+
+1. [Kakao Developers](https://developers.kakao.com/console/app)에서 **애플리케이션 생성** 및 **앱 키 발급**
+2. [Android](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-android) 및 [iOS](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-ios) **플랫폼 등록** (패키지명과 Bundle ID nachocode에 등록된 것과 **일치 필수**)
+3. (선택사항) 공유하기 사용 시, **[메시지 템플릿](https://developers.kakao.com/docs/latest/ko/message-template/common)** 및 **사이트 도메인** 등록
+4. [nachocode 대시보드](https://nachocode.io)의 개발자 설정에서 **앱 키 등록** 및 **카카오 기능 사용을 활성화**하여 앱 설정 완료
 
 ---
 
@@ -126,10 +137,10 @@ keywords:
 type KakaoShareType = 'custom' | 'scrap';
 ```
 
-| 값       | 설명                                                             |
-| -------- | ---------------------------------------------------------------- |
-| `custom` | 사전에 등록된 커스텀 템플릿을 사용하여 카카오톡 공유 메시지 전송 |
-| `scrap`  | URL을 기반으로 카카오톡 스크랩 공유 메시지 전송                  |
+| 값       | 설명                                               |
+| -------- | -------------------------------------------------- |
+| `custom` | 미리 등록된 커스텀 템플릿을 사용하여 카카오톡 공유 |
+| `scrap`  | URL을 기반으로 카카오톡 스크랩 공유                |
 
 ---
 
@@ -218,8 +229,8 @@ const KAKAO_SHARE_STATUS_CODES = {
 | `106` | `scrap` 공유 타입에서 `requestUrl`이 비어 있음       |
 | `108` | `custom` 공유 타입에서 `templateId`가 비어 있음      |
 | `199` | 카카오 공유 요청 실패                                |
-| `200` | 카카오 공유 성공                                     |
-| `201` | Safari 브라우저에서 공유 성공                        |
+| `200` | 성공 (카카오톡 공유 성공)                            |
+| `201` | 성공 (외부 브라우저를 통한 공유 성공)                |
 
 ---
 
@@ -253,6 +264,7 @@ type KakaoShareStatusCode = 102 | 103 | 104 | 105 | 106 | 108 | 199 | 200 | 201;
 ### **`login(callback: (result: KakaoResult, loginData?: KakaoLoginData) => void): void`**
 
 - _since ver.1.5.0_
+- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`login`)
 
@@ -276,6 +288,7 @@ Nachocode.kakao.login((result, loginData) => {
 ### **`isLoggedIn(callback: (result: KakaoResult, isLoggedIn: boolean, loginData?: KakaoLoginData) => void): void`**
 
 - _since ver.1.5.0_
+- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`isLoggedIn`)
 
@@ -298,6 +311,7 @@ Nachocode.kakao.isLoggedIn((result, isLoggedIn, loginData) => {
 ### **`getUserData(callback: (result: KakaoResult, userData?: KakaoUserData) => void): void`**
 
 - _since ver.1.5.0_
+- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`getUserData`)
 
@@ -320,6 +334,7 @@ Nachocode.kakao.getUserData((result, userData) => {
 ### **`logout(callback: (result: KakaoResult) => void): void`**
 
 - _since ver.1.5.0_
+- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`logout`)
 
@@ -344,6 +359,7 @@ Nachocode.kakao.logout(result => {
 ### **`unlink(callback: (result: KakaoResult) => void): void`**
 
 - _since ver.1.5.0_
+- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`unlink`)
 
@@ -368,12 +384,15 @@ Nachocode.kakao.unlink(result => {
 ### **`share(type: KakaoShareType, data: KakaoShareCustom | KakaoShareScrap, callback?: (result: KakaoShareResult) => void): void`**
 
 - _since ver.1.5.0_
+- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`share`)
 
 카카오톡 공유 기능을 수행합니다.  
-커스텀 템플릿(`custom`) 또는 URL 스크랩(`scrap`) 방식을 사용하여 공유할 수 있습니다.  
+[커스텀 템플릿](https://developers.kakao.com/docs/latest/ko/message-template/common#configuration-method-type)(`custom`) 또는 URL [스크랩](https://developers.kakao.com/docs/latest/ko/message-template/common#scrap)(`scrap`) 방식을 사용하여 공유할 수 있습니다.  
 공유 결과는 선택적으로 `callback` 함수를 통해 전달받을 수 있습니다.
+
+_참고 : [kakao developers - 메시지 템플릿 이해하기](https://developers.kakao.com/docs/latest/ko/message-template/common)_
 
 #### 매개변수 (`share`)
 
@@ -430,3 +449,4 @@ Nachocode.kakao.share(
 - `custom` 공유 방식의 경우, **카카오 개발자 센터에서 사전 등록된 템플릿 ID**가 필요합니다.
 - `scrap` 방식은 카카오 서버가 스크랩 API를 통해 대상 URL의 메타데이터를 가져와 미리보기를 생성합니다.
 - 실패할 경우, `KakaoResult`의 `status` 값이 `'error'`로 설정되며 `message` 필드에 오류 원인이 포함됩니다.
+- 카카오 설정 시 어려움이 있으시면 언제든지 [support@nachocode.io](mailto:support@nachocode.io)로 문의해 주세요.
