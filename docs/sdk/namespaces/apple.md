@@ -16,9 +16,9 @@ keywords:
 
 # 애플 (`apple`)
 
-> 🔔 **최신화 일자:** 2025-04-18
+> 🔔 **최신화 일자:** 2025-04-23
 
-- ![Static Badge](https://img.shields.io/badge/iOS_only-gray?logo=apple)
+![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
 ## **개요**
 
@@ -26,6 +26,14 @@ keywords:
 현재는 **Apple 로그인** 및 **사용자 정보 조회** 기능을 제공합니다.
 
 > ⚠️ **이 네임스페이스는 현재 iOS에서만 지원됩니다.**
+
+---
+
+## **필수 선행 작업**
+
+1. [Apple Developer](https://developer.apple.com/account/resources/identifiers/list)에서 **Identifier**에 Capabilities 중 **Sign In with Apple** 추가
+   - ![developer_apple_capabilities_sign_in_with_apple](../../../static/img/docs/developer_apple_capabilities_sign_in_with_apple.png)
+2. [nachocode 대시보드](https://nachocode.io)의 개발자 설정에서 **애플 기능 사용을 활성화**하여 앱 설정 완료
 
 ---
 
@@ -85,6 +93,7 @@ Apple 로그인 성공 시 반환되는 사용자 정보 객체입니다.
 ### **`login(permissions: ApplePermissions, callback: (result: AppleResult, userData?: AppleUserData) => void): void`**
 
 - _since ver.1.4.0_
+- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`login`)
 
@@ -124,6 +133,7 @@ Nachocode.apple.login(['email', 'fullName'], (result, userData) => {
 ### **`isLoggedIn(identifier: string, callback: (result: AppleResult, isLoggedIn: boolean) => void): void`**
 
 - _since ver.1.4.0_
+- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`isLoggedIn`)
 
@@ -159,6 +169,7 @@ Nachocode.apple.isLoggedIn('user_identifier_here', (result, isLoggedIn) => {
 ### **`getUserIdentifier(callback: (result: AppleResult, userIdentifier?: string) => void): void`**
 
 - _since ver.1.4.0_
+- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`getUserIdentifier`)
 
