@@ -16,7 +16,7 @@ keywords:
 
 # 애플 (`apple`)
 
-> 🔔 **최신화 일자:** 2025-04-23
+> 🔔 **최신화 일자:** 2025-04-24
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
@@ -31,9 +31,12 @@ keywords:
 
 ## **필수 선행 작업**
 
-1. [Apple Developer](https://developer.apple.com/account/resources/identifiers/list)에서 **Identifier**에 Capabilities 중 **Sign In with Apple** 추가
-   - ![developer_apple_capabilities_sign_in_with_apple](../../../static/img/docs/developer_apple_capabilities_sign_in_with_apple.png)
-2. [nachocode 대시보드](https://nachocode.io)의 개발자 설정에서 **애플 기능 사용을 활성화**하여 앱 설정 완료
+nachocode SDK로 애플 네이티브 기능을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
+
+1. [Apple Developer](https://developer.apple.com/account/resources/identifiers/list)에서 **Identifier**에 Capabilities 중 **Sign In with Apple** 추가 ![developer_apple_capabilities_sign_in_with_apple](../../../static/img/docs/apple/developer_apple_capabilities_sign_in_with_apple.png)
+
+2. [nachocode 대시보드](https://nachocode.io)의 [**개발자 설정** > **애플 네이티브**]에서 토글을 활성화하여 앱 설정 완료 ![developer_apple_login_toggle](../../../static/img/docs/apple/developer_apple_login_toggle.png)
+   - _(5월 업데이트 예정) 사용을 희망할 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
 
 ---
 
