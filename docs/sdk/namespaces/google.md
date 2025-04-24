@@ -16,12 +16,42 @@ keywords:
 
 # 구글 (`google`)
 
-> 🔔 **최신화 일자:** 2025-04-18
+> 🔔 **최신화 일자:** 2025-04-24
 
 ## **개요**
 
 `google` 네임스페이스는 **구글 네이티브 로그인 기능을 제공**하며, 사용자는 **Google 계정을 통해 인증**할 수 있습니다.  
 이 네임스페이스를 사용하여 **로그인, 사용자 정보 조회, 로그인 상태 확인, 로그아웃**과 같은 기능을 수행할 수 있습니다.
+
+---
+
+### **필수 선행 작업**
+
+nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
+
+#### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 개발자 설정** ]에서 [SHA-1 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
+
+![nachocode_developer_android_setting](../../../static/img/docs/android/nachocode_developer_android_setting.png)
+
+- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+
+#### 2. [Firebase 대시보드](https://console.firebase.google.com/)의 [ 프로젝트 > Authentication > 로그인 방법 ]에서 추가 제공 업체로 [ Google ] 선택
+
+![firebase_authentication_login_methods](../../../static/img/docs/google/firebase_authentication_login_methods.png)
+
+#### 3. 최신 구성 파일 (`google-services.json`, `GoogleService-Info.plist`) 다운로드
+
+![firebase_download_services_config](../../../static/img/docs/google/firebase_download_services_config.png)
+
+#### 4. [nachocode 대시보드](https://nachocode.io)의 [ 앱 기능 > 푸시 알림 > 앱 푸시 설정 ]에 업로드
+
+![nachocode_google_push_notification_setting](../../../static/img/docs/google/nachocode_google_push_notification_setting.png)
+
+#### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 ]에서 [ 구글 로그인 ] 토글을 활성화하여 앱 설정 완료
+
+![nachocode_google_login_toggle](../../../static/img/docs/google/nachocode_google_login_toggle.png)
+
+- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
 
 ---
 
