@@ -37,6 +37,8 @@ nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아
 
 ![developer_apple_capabilities_sign_in_with_apple](../../../static/img/docs/apple/developer_apple_capabilities_sign_in_with_apple.png)
 
+<br/>
+
 #### 2. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 ]에서 [ 애플 로그인 ] 토글을 활성화하여 앱 설정 완료
 
 ![developer_apple_login_toggle](../../../static/img/docs/apple/nachocode_apple_login_toggle.png)

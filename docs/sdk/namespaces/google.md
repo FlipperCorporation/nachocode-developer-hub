@@ -35,17 +35,25 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 - _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
 
+<br/>
+
 #### 2. [Firebase 대시보드](https://console.firebase.google.com/)의 [ 프로젝트 > Authentication > 로그인 방법 ]에서 추가 제공 업체로 [ Google ] 선택
 
 ![firebase_authentication_login_methods](../../../static/img/docs/google/firebase_authentication_login_methods.png)
+
+<br/>
 
 #### 3. 최신 구성 파일 (`google-services.json`, `GoogleService-Info.plist`) 다운로드
 
 ![firebase_download_services_config](../../../static/img/docs/google/firebase_download_services_config.png)
 
+<br/>
+
 #### 4. [nachocode 대시보드](https://nachocode.io)의 [ 앱 기능 > 푸시 알림 > 앱 푸시 설정 ]에 업로드
 
 ![nachocode_google_push_notification_setting](../../../static/img/docs/google/nachocode_google_push_notification_setting.png)
+
+<br/>
 
 #### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 ]에서 [ 구글 로그인 ] 토글을 활성화하여 앱 설정 완료
 

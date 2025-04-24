@@ -37,9 +37,13 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 - _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
 
+<br/>
+
 #### 2. [Kakao Developers](https://developers.kakao.com/console/app)에서 애플리케이션 생성 및 앱 키 발급
 
 ![developer_kakao_app_key_register](../../../static/img/docs/kakao/developer_kakao_app_key_register.webp)
+
+<br/>
 
 #### 3. 플랫폼 등록 ([Android](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-android), [iOS](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-ios))
 
@@ -48,6 +52,8 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 ![developer_kakao_add_platform](../../../static/img/docs/kakao/developer_kakao_add_platform.webp)
 
+<br/>
+
 #### 4-1. (선택사항) 공유하기 사용 시, 사이트 도메인 등록
 
 - **스크랩 공유하기 기능**을 이용하기 위해서는 **사이트 도메인을 미리 등록**해야 합니다.
@@ -55,12 +61,16 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 ![developer_kakao_site_domain](../../../static/img/docs/kakao/developer_kakao_site_domain.webp)
 
+<br/>
+
 #### 4-2. (선택사항) 공유하기 사용 시, [메시지 템플릿](https://developers.kakao.com/docs/latest/ko/message-template/common) 등록 [ 도구 > 메시지 템플릿 ]
 
 - **커스텀 템플릿 공유하기 기능**을 이용하기 위해서는 카카오톡의 **메시지 템플릿 빌더**를 활용해 미리 **메시지 템플릿**을 만들어 저장해둬야 합니다.
 - 이 때 발급 받은 **템플릿 ID**를 활용하여 **nachocode SDK**를 통해 **템플릿 메시지 전송**이 가능해집니다.
 
 ![developer_kakao_message_template](../../../static/img/docs/kakao/developer_kakao_message_template.webp)
+
+<br/>
 
 #### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 ]에서 [ 카카오 네이티브 ] 토글 활성화 및 **Native 키 등록**하여 앱 설정 완료
 
@@ -296,7 +306,7 @@ type KakaoShareStatusCode = 102 | 103 | 104 | 105 | 106 | 108 | 199 | 200 | 201;
 ### **`login(callback: (result: KakaoResult, loginData?: KakaoLoginData) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`login`)
 
@@ -320,7 +330,7 @@ Nachocode.kakao.login((result, loginData) => {
 ### **`isLoggedIn(callback: (result: KakaoResult, isLoggedIn: boolean, loginData?: KakaoLoginData) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`isLoggedIn`)
 
@@ -343,7 +353,7 @@ Nachocode.kakao.isLoggedIn((result, isLoggedIn, loginData) => {
 ### **`getUserData(callback: (result: KakaoResult, userData?: KakaoUserData) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`getUserData`)
 
@@ -366,7 +376,7 @@ Nachocode.kakao.getUserData((result, userData) => {
 ### **`logout(callback: (result: KakaoResult) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`logout`)
 
@@ -391,7 +401,7 @@ Nachocode.kakao.logout(result => {
 ### **`unlink(callback: (result: KakaoResult) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`unlink`)
 
@@ -416,7 +426,7 @@ Nachocode.kakao.unlink(result => {
 ### **`share(type: KakaoShareType, data: KakaoShareCustom | KakaoShareScrap, callback?: (result: KakaoShareResult) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`share`)
 
