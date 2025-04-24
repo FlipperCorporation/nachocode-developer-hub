@@ -17,7 +17,7 @@ keywords:
 
 # 카카오 (`kakao`)
 
-> 🔔 **최신화 일자:** 2025-04-23
+> 🔔 **최신화 일자:** 2025-04-24
 
 ## **개요**
 
@@ -27,14 +27,46 @@ keywords:
 
 ---
 
-## **필수 선행 작업**
+### **필수 선행 작업**
 
-nachocode SDK로 카카오 네이티브 기능을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
+nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-1. [Kakao Developers](https://developers.kakao.com/console/app)에서 **애플리케이션 생성** 및 **앱 키 발급**
-2. [Android](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-android) 및 [iOS](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-ios) **플랫폼 등록** (패키지명과 Bundle ID nachocode에 등록된 것과 **일치 필수**)
-3. (선택사항) 공유하기 사용 시, **[메시지 템플릿](https://developers.kakao.com/docs/latest/ko/message-template/common)** 및 **사이트 도메인** 등록
-4. [nachocode 대시보드](https://nachocode.io)의 개발자 설정에서 **앱 키 등록** 및 **카카오 기능 사용을 활성화**하여 앱 설정 완료
+#### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 개발자 설정** ]에서 [SHA-1 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
+
+![nachocode_developer_android_setting](../../../static/img/docs/android/nachocode_developer_android_setting.png)
+
+- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+
+#### 2. [Kakao Developers](https://developers.kakao.com/console/app)에서 애플리케이션 생성 및 앱 키 발급
+
+![developer_kakao_app_key_register](../../../static/img/docs/kakao/developer_kakao_app_key_register.webp)
+
+#### 3. 플랫폼 등록 ([Android](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-android), [iOS](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-ios))
+
+- **Android 및 iOS 플랫폼을 등록**합니다.
+- **패키지명 및 번들 ID**는 **나쵸코드 대시보드에 등록된 것**과 반드시 일치해야 합니다.
+
+![developer_kakao_add_platform](../../../static/img/docs/kakao/developer_kakao_add_platform.webp)
+
+#### 4-1. (선택사항) 공유하기 사용 시, 사이트 도메인 등록
+
+- **스크랩 공유하기 기능**을 이용하기 위해서는 **사이트 도메인을 미리 등록**해야 합니다.
+- 운영 서버, 개발 서버 등의 도메인을 미리 등록해야 **스크랩 공유하기** 기능을 원활히 테스트 및 구현 가능합니다.
+
+![developer_kakao_site_domain](../../../static/img/docs/kakao/developer_kakao_site_domain.webp)
+
+#### 4-2. (선택사항) 공유하기 사용 시, [메시지 템플릿](https://developers.kakao.com/docs/latest/ko/message-template/common) 등록 [ 도구 > 메시지 템플릿 ]
+
+- **커스텀 템플릿 공유하기 기능**을 이용하기 위해서는 카카오톡의 **메시지 템플릿 빌더**를 활용해 미리 **메시지 템플릿**을 만들어 저장해둬야 합니다.
+- 이 때 발급 받은 **템플릿 ID**를 활용하여 **nachocode SDK**를 통해 **템플릿 메시지 전송**이 가능해집니다.
+
+![developer_kakao_message_template](../../../static/img/docs/kakao/developer_kakao_message_template.webp)
+
+#### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 ]에서 [ 카카오 네이티브 ] 토글 활성화 및 **Native 키 등록**하여 앱 설정 완료
+
+![nachocode_kakao_native_key](../../../static/img/docs/kakao/nachocode_kakao_native_key.png)
+
+- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
 
 ---
 
