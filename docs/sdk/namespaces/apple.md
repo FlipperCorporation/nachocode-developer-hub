@@ -29,14 +29,19 @@ keywords:
 
 ---
 
-## **필수 선행 작업**
+### **필수 선행 작업**
 
-nachocode SDK로 애플 네이티브 기능을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
+nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-1. [Apple Developer](https://developer.apple.com/account/resources/identifiers/list)에서 **Identifier**에 Capabilities 중 **Sign In with Apple** 추가 ![developer_apple_capabilities_sign_in_with_apple](../../../static/img/docs/apple/developer_apple_capabilities_sign_in_with_apple.png)
+#### 1. [Apple Developer](https://developer.apple.com/account/resources/identifiers/list)에서 **Identifier**에 Capabilities 중 [ Sign In with Apple ] 추가
 
-2. [nachocode 대시보드](https://nachocode.io)의 [**개발자 설정** > **애플 네이티브**]에서 토글을 활성화하여 앱 설정 완료 ![developer_apple_login_toggle](../../../static/img/docs/apple/developer_apple_login_toggle.png)
-   - _(5월 업데이트 예정) 사용을 희망할 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+![developer_apple_capabilities_sign_in_with_apple](../../../static/img/docs/apple/developer_apple_capabilities_sign_in_with_apple.png)
+
+#### 2. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 ]에서 [ 애플 로그인 ] 토글을 활성화하여 앱 설정 완료
+
+![developer_apple_login_toggle](../../../static/img/docs/apple/nachocode_apple_login_toggle.png)
+
+- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
 
 ---
 
@@ -96,7 +101,7 @@ Apple 로그인 성공 시 반환되는 사용자 정보 객체입니다.
 ### **`login(permissions: ApplePermissions, callback: (result: AppleResult, userData?: AppleUserData) => void): void`**
 
 - _since ver.1.4.0_
-- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`login`)
 
@@ -136,7 +141,7 @@ Nachocode.apple.login(['email', 'fullName'], (result, userData) => {
 ### **`isLoggedIn(identifier: string, callback: (result: AppleResult, isLoggedIn: boolean) => void): void`**
 
 - _since ver.1.4.0_
-- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`isLoggedIn`)
 
@@ -172,7 +177,7 @@ Nachocode.apple.isLoggedIn('user_identifier_here', (result, isLoggedIn) => {
 ### **`getUserIdentifier(callback: (result: AppleResult, userIdentifier?: string) => void): void`**
 
 - _since ver.1.4.0_
-- 📢 _[선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`getUserIdentifier`)
 
