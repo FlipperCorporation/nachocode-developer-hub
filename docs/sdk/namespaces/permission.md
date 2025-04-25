@@ -25,6 +25,22 @@ keywords:
 
 ---
 
+### **필수 선행 작업**
+
+#### (선택사항) `microphone` 권한 사용
+
+[nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **마이크 사용** ] 토글을 활성화하여 앱 설정 완료
+
+#### (선택사항) `location` 권한 사용
+
+[nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **위치/지도 사용** ] 토글을 활성화하여 앱 설정 완료
+
+![nachocode_advanced_android_setting](../../../static/img/docs/android/nachocode_advanced_android_setting.png)
+
+- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+
+---
+
 ## **타입 정의**
 
 ### **`PermissionType`**
@@ -84,6 +100,7 @@ const PERMISSION_TYPES = {
 ### **`checkPermission(option: { type: PermissionType, ask?: boolean }, callback?: (granted: boolean) => void): void`**
 
 - _since ver.1.2.0_
+- 📢 _`microphone`과 `location` 권한은 [필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`checkPermission`)
 
