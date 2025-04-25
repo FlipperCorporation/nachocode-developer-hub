@@ -41,7 +41,7 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 #### 2. [Kakao Developers](https://developers.kakao.com/console/app)에서 애플리케이션 생성 및 앱 키 발급
 
-![developer_kakao_app_key_register](../../../static/img/docs/kakao/developer_kakao_app_key_register.webp)
+![developer_kakao_app_key_register](../../../static/img/docs/kakao/developers_kakao_app_key_register.png)
 
 <br/>
 
@@ -50,7 +50,7 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 - **Android 및 iOS 플랫폼을 등록**합니다.
 - **패키지명 및 번들 ID**는 **나쵸코드 대시보드에 등록된 것**과 반드시 일치해야 합니다.
 
-![developer_kakao_add_platform](../../../static/img/docs/kakao/developer_kakao_add_platform.webp)
+![developer_kakao_add_platform](../../../static/img/docs/kakao/developers_kakao_add_platform.png)
 
 <br/>
 
@@ -59,7 +59,7 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 - **스크랩 공유하기 기능**을 이용하기 위해서는 **사이트 도메인을 미리 등록**해야 합니다.
 - 운영 서버, 개발 서버 등의 도메인을 미리 등록해야 **스크랩 공유하기** 기능을 원활히 테스트 및 구현 가능합니다.
 
-![developer_kakao_site_domain](../../../static/img/docs/kakao/developer_kakao_site_domain.webp)
+![developer_kakao_site_domain](../../../static/img/docs/kakao/developers_kakao_site_domain.png)
 
 <br/>
 
