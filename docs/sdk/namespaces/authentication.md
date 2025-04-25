@@ -19,12 +19,26 @@ keywords:
 
 # 인증 (`authentication`)
 
-> 🔔 **최신화 일자:** 2025-04-18
+> 🔔 **최신화 일자:** 2025-04-25
 
 ## **개요**
 
 `authentication` 네임스페이스는 앱 내 **사용자 인증**과 관련된 기능을 제공합니다.  
 이 네임스페이스를 활용하여 **생체 인증(Biometrics) 기능을 사용할 수 있는지 확인**하거나, **생체 인증을 직접 수행**할 수 있습니다.
+
+---
+
+### **필수 선행 작업**
+
+Android에서는 별도의 선행 작업 없이 **생체 인증 기능**을 사용할 수 있습니다.
+
+iOS에서 nachocode SDK로 **생체 인증 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
+
+#### [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > iOS 개발자 설정 ]에서 [ 생체인증(FaceID) 사용 ] 토글을 활성화하여 앱 설정 완료
+
+![nachocode_ios_faceid_authentication](../../../static/img/docs/authentication/nachocode_ios_faceid_authentication.png)
+
+- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
 
 ---
 
@@ -55,6 +69,7 @@ keywords:
 ### **`canUseBiometrics(callback: (available: boolean, error?: { code: string, message: string }) => void): void`**
 
 - _since ver.1.3.0_
+- 📢 _iOS는 [필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`canUseBiometrics`)
 
@@ -91,6 +106,7 @@ Nachocode.authentication.canUseBiometrics((available, error) => {
 ### **`useBiometrics(callback: (result: AuthenticationResult) => void): void`**
 
 - _since ver.1.3.0_
+- 📢 _iOS는 [필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`useBiometrics`)
 
