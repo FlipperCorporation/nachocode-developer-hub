@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: 개요
-description: nachocode Javascript 클라이언트 SDK는 웹 개발자를 위한 강력한 개발 도구로, 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어, QR 스캐너 등)을 손쉽게 웹에 통합할 수 있도록 지원합니다. SDK를 활용하여 혁신적으로 네이티브 앱을 개발하세요.
+description: nachocode 클라이언트 SDK는 웹 개발자를 위한 강력한 개발 도구로, 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어, QR 스캐너 등)을 손쉽게 웹에 통합할 수 있도록 지원합니다. SDK를 활용하여 혁신적으로 네이티브 앱을 개발하세요.
 keywords:
   [
     앱 빌더,
@@ -20,13 +20,13 @@ keywords:
   ]
 ---
 
-# nachocode SDK 개요
+# nachocode Client SDK 개요
 
-> 🔔 **최신화 일자:** 2025-04-18
+> 🔔 **최신화 일자:** 2025-04-25
 
-**nachocode JavaScript 클라이언트 SDK**는 웹 클라이언트 개발자가 네이티브 앱 개발을 할 수 있도록 돕는 다양한 기능을 제공합니다.
+**nachocode Client SDK**는 웹 클라이언트 개발자가 네이티브 앱 개발을 할 수 있도록 돕는 다양한 기능을 제공합니다.
 
-**nachocode SDK**를 활용하면 다양한 네이티브 기능에 접근할 수 있으며, 웹 애플리케이션에서도 손쉽게 모바일 디바이스의 고유 정보를 활용할 수 있습니다.
+**nachocode Client SDK**를 활용하면 다양한 네이티브 기능에 접근할 수 있으며, 웹 애플리케이션에서도 손쉽게 모바일 디바이스의 고유 정보를 활용할 수 있습니다.
 
 이 문서는 **SDK의 설치, 초기화, 주요 기능 및 사용 방법** 등을 안내합니다.
 
@@ -34,20 +34,28 @@ keywords:
 
 ## 문서 구조
 
-nachocode SDK 문서는 아래와 같은 구조로 구성되어 있습니다:
+nachocode Client SDK 문서는 아래와 같은 구조로 구성되어 있습니다:
 
 1. **SDK 개요**  
-   nachocode SDK의 주요 기능과 개념에 대한 설명을 제공합니다.
+   nachocode Client SDK의 주요 기능과 개념에 대한 설명을 제공합니다.
 
 2. **시작하기**  
-   nachocode SDK를 웹 클라이언트에 설치하고 설정하는 방법을 안내합니다.  
+   nachocode Client SDK를 웹 클라이언트에 설치하고 설정하는 방법을 안내합니다.  
    ➡️ [시작하기 가이드](./getting-started)
 
-3. **네임스페이스별 문서**  
-   nachocode SDK의 각 네임스페이스(`app`, `authentication`, `device` 등)에 대한 상세한 문서와 사용법을 제공합니다.
+3. **TypeScript 지원**  
+   nachocode Client SDK를 타입스크립트 프로젝트에 설치하고 사용하는 방법을 안내합니다.  
+   ➡️ [TypeScript 가이드](./typescript-support)
 
-4. **릴리즈 노트**  
-   nachocode SDK의 각 버전별 릴리즈에 대한 노트를 제공합니다.  
+4. **React 지원**  
+   nachocode Client SDK를 리액트 프로젝트에 설치하고 사용하는 방법을 안내합니다.  
+   ➡️ [React 가이드](./react-support)
+
+5. **네임스페이스별 문서**  
+   nachocode Client SDK의 각 네임스페이스(`app`, `authentication`, `device` 등)에 대한 상세한 문서와 사용법을 제공합니다.
+
+6. **릴리즈 노트**  
+   nachocode Client SDK의 각 버전별 릴리즈에 대한 노트를 제공합니다.  
    ➡️ [릴리즈 노트](./releases/v1/intro)
 
 ---
@@ -58,13 +66,13 @@ nachocode SDK 문서는 아래와 같은 구조로 구성되어 있습니다:
 
 nachocode에서 빌드한 앱들은 위 구조를 통해 앱 사용자들에게 다양한 기능을 제공할 수 있게 설계돼있습니다.
 
-**nachocode SDK**를 이용해 앱 사용자들에게 네이티브 앱 경험을 제공하세요!
+**nachocode Client SDK**를 이용해 앱 사용자들에게 네이티브 앱 경험을 제공하세요!
 
 ---
 
 ## 시작하기
 
-nachocode SDK를 처음 사용하시나요?  
+nachocode Client SDK를 처음 사용하시나요?  
 ➡️ [시작하기 가이드](./getting-started)를 확인하여 SDK 설치 및 초기화를 진행하세요.
 
 ---
@@ -79,7 +87,7 @@ nachocode SDK를 처음 사용하시나요?
 
 ## 주요 기능
 
-nachocode SDK는 다음과 같은 기능을 제공합니다:
+nachocode Client SDK는 다음과 같은 기능을 제공합니다:
 
 ### 1. **앱 정보 관리 (`app`)**
 
@@ -192,10 +200,10 @@ QR 코드 스캔 및 기타 스캔 기능을 제어할 수 있습니다.
 
 ## **마무리**
 
-nachocode SDK는 **웹 애플리케이션에서 네이티브 기능을 손쉽게 통합**할 수 있도록 설계되었습니다.  
+nachocode Client SDK는 **웹 애플리케이션에서 네이티브 기능을 손쉽게 통합**할 수 있도록 설계되었습니다.  
 지속적인 업데이트를 통해 **더 많은 기능과 향상된 개발 경험**을 제공할 예정입니다.
 
-nachocode SDK와 함께 **웹과 네이티브의 경계를 허물고** 더욱 혁신적인 애플리케이션을 개발해보세요! 🚀
+nachocode Client SDK와 함께 **웹과 네이티브의 경계를 허물고** 더욱 혁신적인 애플리케이션을 개발해보세요! 🚀
 
 > 📖 nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다. 기술적인 질문이나 피드백이 있다면 언제든지 [이메일](mailto:support@nachocode.io)을 보내주세요.
 

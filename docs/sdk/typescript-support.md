@@ -1,11 +1,10 @@
 ---
 sidebar_position: 3
-description: nachocode JavaScript SDK의 TypeScript 지원 가이드입니다. 타입스크립트 프로젝트에 nachocode SDK를 설치하고 사용하는 방법을 안내합니다.
+description: nachocode Client SDK의 TypeScript 지원 가이드입니다. 타입스크립트 프로젝트에 nachocode SDK를 설치하고 사용하는 방법을 안내합니다.
 keywords:
   [
     nachocode,
     TypeScript,
-    JavaScript,
     d.ts,
     타입 선언,
     Nachocode.d.ts,
@@ -17,7 +16,9 @@ keywords:
 
 # TypeScript 지원
 
-nachocode JavaScript SDK는 타입스크립트(`TypeScript`) 지원을 제공합니다.
+> 🔔 **최신화 일자:** 2025-04-25
+
+nachocode Client SDK는 타입스크립트(`TypeScript`) 지원을 제공합니다.
 
 타입스크립트 프로젝트에서 SDK를 더욱 편리하고 안전하게 사용하려면, 별도의 타입 선언 파일(`Nachocode.d.ts`)을 프로젝트에 추가하면 됩니다.
 
@@ -127,6 +128,7 @@ SDK의 전체 타입 정의 및 API 세부 사항을 확인하고 싶다면 아�
 
 ---
 
-## ℹ️ 추가 지원 안내
-
-향후 React, Vue 등 프론트엔드 프레임워크에 대한 지원도 계획 중입니다. 추가적인 지원이 필요하거나 기능 제안이 있으면 언제든지 [support@nachocode.io](mailto:support@nachocode.io)에 의견을 남겨주세요.
+> **ℹ️ 추가 지원 안내**
+>
+> 향후 여러 프론트엔드 프레임워크에 대한 지원도 계획 중입니다.
+> 추가적인 지원이 필요하거나 기능 제안이 있으면 언제든지 [support@nachocode.io](mailto:support@nachocode.io)에 의견을 남겨주세요.

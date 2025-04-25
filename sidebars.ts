@@ -49,6 +49,7 @@ const sidebars: SidebarsConfig = {
         'sdk/intro',
         'sdk/getting-started',
         'sdk/typescript-support',
+        'sdk/react-support',
         {
           type: 'category',
           label: '네임스페이스',

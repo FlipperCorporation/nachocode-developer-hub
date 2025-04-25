@@ -33,7 +33,7 @@ keywords:
 
 ### 1. 구매 요청
 
-**nachocode SDK**를 호출하여 nachocode Server로부터 인앱 상품 정보를 반환받습니다.
+**nachocode Client SDK**를 호출하여 nachocode Server로부터 인앱 상품 정보를 반환받습니다.
 
 상품 정보를 앱으로 전달한 후 스토어에서 상품을 불러옵니다.
 
