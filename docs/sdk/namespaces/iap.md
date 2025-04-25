@@ -16,7 +16,7 @@ keywords:
 
 # 인앱결제 (`iap`)
 
-> 🔔 **최신화 일자:** 2025-04-18
+> 🔔 **최신화 일자:** 2025-04-25
 
 ## **개요**
 
@@ -26,6 +26,14 @@ SDK 연동 전 **가이드**를 참고해보세요.
 ➡️[인앱결제 가이드](../../guide/iap)
 
 ➡️[웹훅 가이드](../../guide/webhook/overview)
+
+---
+
+### **필수 선행 작업**
+
+nachocode SDK로 **인앱결제 기능**을 사용하기 위해서는 nachocode 대시보드에서 **인앱결제 설정이 모두 완료된 후 빌드된 경우에만** 작동합니다.
+
+➡️ [인앱결제 유저 가이드](https://docs.nachocode.io/ko/articles/%EC%9D%B8%EC%95%B1-%EA%B2%B0%EC%A0%9C-c2ff4900)
 
 ---
 
@@ -70,6 +78,7 @@ declare type IapPurchaseResult = {
 ### `purchase(productKey: string, userId: string, callback: (result: IapPurchaseResult) => void): Promise<any>`
 
 - _since ver.1.4.0_
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`purchase`)
 
