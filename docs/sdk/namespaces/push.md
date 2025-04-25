@@ -16,12 +16,20 @@ keywords:
 
 # 푸시 알림 (`push`)
 
-> 🔔 **최신화 일자:** 2025-02-21
+> 🔔 **최신화 일자:** 2025-04-25
 
 ## **개요**
 
 `push` 네임스페이스는 **푸시 알림 관련 기능을 제공**합니다.  
 **푸시 토큰을 nachocode 서버에 등록, 삭제**하거나 **로컬 푸시 알림을 예약 및 취소**하는 등 여러 기능을 수행 할 수 있습니다.
+
+---
+
+### **필수 선행 작업**
+
+nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 nachocode 대시보드에서 **푸시 알림 설정이 모두 완료된 후 빌드된 경우에만** 작동합니다.
+
+➡️ [푸시 알림 유저 가이드](https://docs.nachocode.io/ko/articles/%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BC%EA%B0%9C%EC%9D%B8%ED%99%94-0eb97bdb)
 
 ---
 
@@ -181,6 +189,7 @@ console.log('푸시 알림이 취소되었습니다.');
 ### **`registerPushToken(userID: string): Promise<any>`**
 
 - _since ver.1.0.0_
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`registerPushToken`)
 
@@ -217,6 +226,7 @@ function onLoginSuccess(userID) {
 ### **`deletePushToken(userID: string): Promise<any>`**
 
 - _since ver.1.0.0_
+- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
 #### 설명 (`deletePushToken`)
 
