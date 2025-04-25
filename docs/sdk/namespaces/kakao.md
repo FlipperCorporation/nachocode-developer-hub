@@ -68,7 +68,7 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 - **커스텀 템플릿 공유하기 기능**을 이용하기 위해서는 카카오톡의 **메시지 템플릿 빌더**를 활용해 미리 **메시지 템플릿**을 만들어 저장해둬야 합니다.
 - 이 때 발급 받은 **템플릿 ID**를 활용하여 **nachocode SDK**를 통해 **템플릿 메시지 전송**이 가능해집니다.
 
-![developer_kakao_message_template](../../../static/img/docs/kakao/developer_kakao_message_template.webp)
+![developer_kakao_message_template](../../../static/img/docs/kakao/developers_kakao_message_template.png)
 
 <br/>
 
