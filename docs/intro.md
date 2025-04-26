@@ -23,10 +23,12 @@ keywords:
 
 # nachocode 서비스 소개
 
-> 🔔 **최신화 일자:** 2025-04-25
+![nachocode](../static/img/docs/nachocode.png)
+
+> 🔔 **최신화 일자:** 2025-04-27
 
 **nachocode**는 비개발자와 웹 개발자 모두를 위한 강력한 **노코드 & 로우코드 앱 빌드 플랫폼**입니다.  
-nachocode를 사용하면 비개발자도 간단한 설정만으로 네이티브 앱을 생성할 수 있으며, 웹 개발자는 SDK와 API를 통해 고도화된 네이티브 앱을 구축할 수 있습니다.
+nachocode를 사용하면 비개발자도 간단한 설정만으로 네이티브 앱을 생성할 수 있으며, 웹 개발자는 SDK와 API를 통해 고도화된 네이티브 앱을 구현할 수 있습니다.
 
 ➡️ [nachocode 대시보드 바로가기](https://nachocode.io)
 
@@ -37,6 +39,8 @@ nachocode를 사용하면 비개발자도 간단한 설정만으로 네이티브
 ![nachocode_application](../static/img/docs/nachocode_app.webp)
 
 nachocode에서 빌드한 앱들은 위 구조를 통해 앱 사용자들에게 다양한 기능을 제공할 수 있게 설계돼있습니다.
+
+nachocode를 활용하여 만들어진 네이티브 앱들은 nachocode Client SDK를 통해 웹 클라이언트에서 **Nacho Native APIs**에 접근할 수 있습니다.
 
 ---
 
