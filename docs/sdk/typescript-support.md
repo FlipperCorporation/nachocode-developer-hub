@@ -16,6 +16,8 @@ keywords:
 
 # TypeScript 지원
 
+![typescript](../../static/img/docs/typescript.png)
+
 > 🔔 **최신화 일자:** 2025-04-25
 
 nachocode Client SDK는 타입스크립트(`TypeScript`) 지원을 제공합니다.

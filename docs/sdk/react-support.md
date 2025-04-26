@@ -23,6 +23,8 @@ keywords:
 
 # React 지원
 
+![react](../../static/img/docs/react.png)
+
 > 🔔 **최신화 일자:** 2025-04-25
 
 **nachocode Client SDK**는 리엑트(`React`) 지원을 제공합니다.
