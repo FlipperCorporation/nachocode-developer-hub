@@ -16,7 +16,7 @@ keywords:
 
 # 구글 (`google`)
 
-> 🔔 **최신화 일자:** 2025-04-24
+> 🔔 **최신화 일자:** 2025-05-08
 
 ## **개요**
 
@@ -53,6 +53,8 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 ![nachocode_google_push_notification_setting](../../../static/img/docs/google/nachocode_google_push_notification_setting.png)
 
+- 이미 푸시 설정이 되어있더라도 최신 구성 파일을 업로드해야 합니다.
+
 <br/>
 
 #### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 ]에서 [ 구글 로그인 ] 토글을 활성화하여 앱 설정 완료
@@ -60,6 +62,12 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 ![nachocode_google_login_toggle](../../../static/img/docs/google/nachocode_google_login_toggle.png)
 
 - _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+
+#### 6. [nachocode 대시보드](https://nachocode.io)의 [ 앱 빌드 > 안드로이드, iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+
+![nachocode_build_android_new_version](../../../static/img/docs/android/nachocode_build_android_new_version.png)
+
+- 구글 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.
 
 ---
 

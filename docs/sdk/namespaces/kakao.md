@@ -17,7 +17,7 @@ keywords:
 
 # 카카오 (`kakao`)
 
-> 🔔 **최신화 일자:** 2025-04-24
+> 🔔 **최신화 일자:** 2025-05-08
 
 ## **개요**
 
@@ -77,6 +77,12 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 ![nachocode_kakao_native_key](../../../static/img/docs/kakao/nachocode_kakao_native_key.png)
 
 - _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+
+#### 6. [nachocode 대시보드](https://nachocode.io)의 [ 앱 빌드 > 안드로이드, iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+
+![nachocode_build_android_new_version](../../../static/img/docs/android/nachocode_build_android_new_version.png)
+
+- 카카오 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.
 
 ---
 

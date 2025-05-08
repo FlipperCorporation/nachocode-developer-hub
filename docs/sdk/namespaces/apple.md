@@ -16,7 +16,7 @@ keywords:
 
 # 애플 (`apple`)
 
-> 🔔 **최신화 일자:** 2025-04-24
+> 🔔 **최신화 일자:** 2025-05-08
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
@@ -44,6 +44,12 @@ nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아
 ![developer_apple_login_toggle](../../../static/img/docs/apple/nachocode_apple_login_toggle.png)
 
 - _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+
+#### 3. [nachocode 대시보드](https://nachocode.io)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+
+![nachocode_google_login_toggle](../../../static/img/docs/apple/nachocode_build_ios_new_version.png)
+
+- 애플 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.
 
 ---
 
