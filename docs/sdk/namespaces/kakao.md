@@ -17,7 +17,7 @@ keywords:
 
 # 카카오 (`kakao`)
 
-> 🔔 **최신화 일자:** 2025-05-08
+> 🔔 **최신화 일자:** 2025-05-09
 
 ## **개요**
 
@@ -31,7 +31,7 @@ keywords:
 
 nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-#### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 개발자 설정** ]에서 [SHA-1 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
+#### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 개발자 설정** ]에서 [키 해시](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
 
 ![nachocode_developer_android_setting](../../../static/img/docs/android/nachocode_developer_android_setting.png)
 
@@ -49,6 +49,7 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 - **Android 및 iOS 플랫폼을 등록**합니다.
 - **패키지명 및 번들 ID**는 **나쵸코드 대시보드에 등록된 것**과 반드시 일치해야 합니다.
+- [대시보드에서 확인한 키 해시](#1-nachocode-대시보드의--앱-설정--개발자-설정--안드로이드-개발자-설정-에서-키-해시-확인)를 Android 플랫폼에 등록합니다.
 
 ![developer_kakao_add_platform](../../../static/img/docs/kakao/developers_kakao_add_platform.png)
 
