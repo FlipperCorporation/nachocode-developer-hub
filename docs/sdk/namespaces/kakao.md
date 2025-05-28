@@ -31,19 +31,17 @@ keywords:
 
 nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-#### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 개발자 설정** ]에서 [키 해시](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
+#### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [해시키](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
 
-![nachocode_developer_android_setting](../../../static/img/docs/android/nachocode_developer_android_setting.png)
-
-- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+![nachocode_developer_android_hash_key](../../../static/img/docs/android/nachcodoe_developer_android_hash_key.png)
 
 <br/>
 
-#### 2. [Kakao Developers](https://developers.kakao.com/console/app)에서 애플리케이션 생성 및 앱 키 발급
+#### 2. [Kakao Developers](https://developers.kakao.com/console/app)에서 애플리케이션 생성 및 네이티브 앱 키 발급
 
 ![developer_kakao_app_key_register](../../../static/img/docs/kakao/developers_kakao_app_key_register.png)
 
-<br/>
+- 여기서 확인한 **네이티브 앱 키**는 [5. 대시보드 설정](#nachocode-dashboard-configuration) 시 필요합니다. <br/>
 
 #### 3. 플랫폼 등록 ([Android](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-android), [iOS](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-ios))
 
@@ -73,11 +71,11 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 <br/>
 
-#### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 ]에서 [ 카카오 네이티브 ] 토글 활성화 및 **Native 키 등록**하여 앱 설정 완료
+#### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 카카오 네이티브 설정 ]에서 [ 카카오 네이티브 활성화 ] 토글 활성화 후 Kakao Developers에서 발급한 **네이티브 앱 키**를 등록하여 앱 설정 완료 {#nachocode-dashboard-configuration}
 
-![nachocode_kakao_native_key](../../../static/img/docs/kakao/nachocode_kakao_native_key.png)
+![nachocode_developer_kakao_native_key](../../../static/img/docs/kakao/nachocode_developer_kakao_native_key.png)
 
-- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+<br/>
 
 #### 6. [nachocode 대시보드](https://nachocode.io)의 [ 앱 빌드 > 안드로이드, iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
 

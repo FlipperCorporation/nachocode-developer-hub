@@ -37,7 +37,7 @@ keywords:
 
 ![nachocode_advanced_android_setting](../../../static/img/docs/android/nachocode_advanced_android_setting.png)
 
-- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+<br/>
 
 ---
 
