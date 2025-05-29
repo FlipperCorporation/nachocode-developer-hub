@@ -24,6 +24,18 @@ const sidebars: SidebarsConfig = {
             },
           ],
         },
+        {
+          type: 'category',
+          label: 'Custom User Agent',
+          link: {
+            type: 'generated-index',
+            slug: 'guide/custom-user-agent/user-agent-definition',
+          },
+          items: [
+            'guide/custom-user-agent/user-agent-definition',
+            'guide/custom-user-agent/custom-user-agent-configuration',
+          ],
+        },
       ],
     },
     {
