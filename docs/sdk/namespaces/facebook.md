@@ -16,13 +16,94 @@ keywords:
 
 # 페이스북 (`facebook`)
 
-> 🔔 **최신화 일자:** 2025-04-18
+> 🔔 **최신화 일자:** 2025-05-30
 
 ## **개요**
 
 `facebook` 네임스페이스는 **페이스북 네이티브 로그인 기능을 제공**하며, 사용자는 **페이스북 계정을 통해 인증**할 수 있습니다.  
 이 네임스페이스를 사용하여 **로그인, 사용자 정보 조회, 로그아웃**과 같은 기능을 수행할 수 있습니다.  
 지원되는 **권한(permissions)** 목록은 [페이스북 권한 공식 문서](https://developers.facebook.com/docs/permissions)에서 확인할 수 있습니다.
+
+---
+
+### **필수 선행 작업**
+
+nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
+
+### 공통 작업
+
+### 안드로이드 설정
+
+#### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [해시키](https://developers.google.com/android/guides/client-auth?hl=ko) 확인{#facebook-android-1}
+
+![nachocode_developer_android_hash_key](../../../static/img/docs/android/nachcodoe_developer_android_hash_key.png)
+
+<br/>
+
+#### 2. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **고급 설정** > **패키지 이름** ]에서 패키지 이름 확인{#facebook-package-name}
+
+![nachocode_developer_android_hash_key](../../../static/img/docs/facebook/nachocode_advanced_package_name.png)
+
+<br/>
+
+#### 3. [Facebook Developer](https://developer.facebook.com)의 [ 앱 설정 > 기본 설정 ]에서 앱을 등록하고 정보 입력
+
+> **앱 ID**는 nachocode 대시보드 설정 시 필요합니다.
+
+![developer_facebook_create_app](../../../static/img/docs/facebook/developer_facebook_create_app.png)
+
+<br/>
+
+#### 4. [1. SHA-1 디지털 지문 확인](#facebook-android-1)에서 복사한 **해시키** 와 [2. 패키지 이름 확인](#facebook-package-name)에서 복사한 **패키지 이름** 등록
+
+![developer_facebook_android](../../../static/img/docs/facebook/developer_facebook_android.png)
+<br/>
+
+#### 5. [Facebook Developer](https://developer.facebook.com)의 [ 앱 설정 > 고급 설정 ] 에서 클라이언트 토큰 확인
+
+> **클라이언트 토큰**은 nachocode 대시보드 설정 시 필요합니다.
+
+![developer_facebook_client_token](../../../static/img/docs/facebook/developer_facebook_client_token.png)
+
+<br/>
+
+#### 6. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장
+
+> 페이스북 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.
+
+![nachocode_developer_facebook](../../../static/img/docs/facebook/nachocode_developer_facebook.png)
+
+## iOS 설정
+
+#### 1. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 고급 설정 > 패키지 이름 ]에서 패키지 이름 확인{#facebook-package-name}
+
+![nachocode_developer_android_hash_key](../../../static/img/docs/facebook/nachocode_advanced_package_name.png)
+
+<br/>
+
+#### 2. [Facebook Developer](https://developer.facebook.com)의 [ 앱 설정 > 기본 설정 ]에서 앱을 등록하고 정보 입력
+
+![developer_facebook_create_app](../../../static/img/docs/facebook/developer_facebook_create_app.png)
+
+<br/>
+
+#### 3. iOS 설정에서 nachocode 대시보드에서 확인한 패키지 이름 입력
+
+![developer_facebook_ios](../../../static/img/docs/facebook/developer_facebook_ios.png)
+
+<br/>
+
+#### 4. [Facebook Developer](https://developer.facebook.com)의 [ 앱 설정 > 고급 설정 ] 에서 클라이언트 토큰 확인
+
+> **클라이언트 토큰**은 nachocode 대시보드 설정 시 필요합니다.
+
+![developer_facebook_client_token](../../../static/img/docs/facebook/developer_facebook_client_token.png)
+
+#### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장
+
+> 페이스북 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.
+
+![nachocode_developer_facebook](../../../static/img/docs/facebook/nachocode_developer_facebook.png)
 
 ---
 

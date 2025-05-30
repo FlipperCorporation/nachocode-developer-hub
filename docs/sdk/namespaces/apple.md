@@ -16,7 +16,7 @@ keywords:
 
 # 애플 (`apple`)
 
-> 🔔 **최신화 일자:** 2025-05-08
+> 🔔 **최신화 일자:** 2025-05-30
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
