@@ -30,8 +30,6 @@ keywords:
 
 nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-### 공통 작업
-
 ### 안드로이드 설정
 
 #### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [해시키](https://developers.google.com/android/guides/client-auth?hl=ko) 확인{#facebook-android-1}
@@ -48,7 +46,7 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 #### 3. [Facebook Developer](https://developer.facebook.com)의 [ 앱 설정 > 기본 설정 ]에서 앱을 등록하고 정보 입력
 
-> **앱 ID**는 nachocode 대시보드 설정 시 필요합니다.
+> **`앱 ID`는 nachocode 대시보드 설정 시 필요합니다.**
 
 ![developer_facebook_create_app](../../../static/img/docs/facebook/developer_facebook_create_app.png)
 
@@ -61,7 +59,7 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 #### 5. [Facebook Developer](https://developer.facebook.com)의 [ 앱 설정 > 고급 설정 ] 에서 클라이언트 토큰 확인
 
-> **클라이언트 토큰**은 nachocode 대시보드 설정 시 필요합니다.
+> **`클라이언트 토큰`은 nachocode 대시보드 설정 시 필요합니다.**
 
 ![developer_facebook_client_token](../../../static/img/docs/facebook/developer_facebook_client_token.png)
 
@@ -69,7 +67,7 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 #### 6. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장
 
-> 페이스북 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.
+> **페이스북 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.**
 
 ![nachocode_developer_facebook](../../../static/img/docs/facebook/nachocode_developer_facebook.png)
 

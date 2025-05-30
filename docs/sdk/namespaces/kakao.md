@@ -39,9 +39,11 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 #### 2. [Kakao Developers](https://developers.kakao.com/console/app)에서 애플리케이션 생성 및 네이티브 앱 키 발급
 
-![developer_kakao_app_key_register](../../../static/img/docs/kakao/developers_kakao_app_key_register.png)
+- 여기서 확인한 **네이티브 앱 키**는 [5. 대시보드 설정](#nachocode-dashboard-configuration) 시 필요합니다.
 
-- 여기서 확인한 **네이티브 앱 키**는 [5. 대시보드 설정](#nachocode-dashboard-configuration) 시 필요합니다. <br/>
+ <br/>
+
+![developer_kakao_app_key_register](../../../static/img/docs/kakao/developers_kakao_app_key_register.png)
 
 #### 3. 플랫폼 등록 ([Android](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-android), [iOS](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-ios))
 

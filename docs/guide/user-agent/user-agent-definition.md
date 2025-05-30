@@ -50,7 +50,7 @@ Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) 
 - **렌더링 엔진**: `AppleWebKit/537.36`
 - **브라우저 정보**: `Chrome/111.0.0.0 Mobile Safari/537.36`
 
-nachocode는 여기에 추가로 앱 식별을 위한 **커스텀 문자열(User Agent)** 을 덧붙입니다.  
+nachocode는 여기에 추가로 앱 식별을 위한 **커스텀 문자열(`nachocode_android` / `nachocode_ios`)** 을 덧붙입니다.  
 **이 커스텀 문자열은 nachocode 앱(WebView)을 통해 접속한 경우에만 삽입되며, 이를 통해 서버는 nachocode 앱에서 발생한 요청인지 여부를 판단할 수 있습니다.**
 
 User Agent에 대한 자세한 내용은 [User Agent 설정](./user-agent-configuration) 문서를 참고해주세요.

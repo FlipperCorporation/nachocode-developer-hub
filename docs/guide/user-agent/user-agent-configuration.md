@@ -29,15 +29,21 @@ nachocode 대시보드에서 User Agent를 설정한 후에 빌드된 앱은 플
 | Android | `nachocode_android` |
 | iOS     | `nachocode_ios`     |
 
-**User Agent는 nachocode 앱을 통해 웹 페이지에 진입한 경우에만 설정되며, 일반 브라우저 또는 외부 앱에서는 설정되지 않습니다.**
+> **User Agent는 nachocode 앱을 통해 웹 페이지에 진입한 경우에만 설정되며, 일반 브라우저 또는 외부 앱에서는 설정되지 않습니다.**
 
 #### 📌 설정 후 유저 에이전트 예시
 
-**Android**:  
-`Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Mobile Safari/537.36 nachocode_android`
+**Android**:
 
-**iOS**:  
-`Mozilla/5.0 (iPhone; CPU iPhone OS 16_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Mobile/15E148 Safari/604.1 nachocode_ios`
+```
+Mozilla/5.0 ... (중략) ... nachocode_android
+```
+
+**iOS**:
+
+```
+Mozilla/5.0 ... (중략) ... nachocode_ios
+```
 
 ---
 
