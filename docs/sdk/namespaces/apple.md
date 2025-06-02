@@ -16,13 +16,14 @@ keywords:
 
 # 애플 (`apple`)
 
-> 🔔 **최신화 일자:** 2025-05-08
+> 🔔 **최신화 일자:** 2025-05-30
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
 ## **개요**
 
-`apple` 네임스페이스는 **디바이스의 Apple 네이티브 기능**을 활용할 수 있도록 지원합니다.  
+`apple` 네임스페이스는 **디바이스의 Apple 네이티브 기능**을 활용할 수 있도록 지원합니다.
+
 현재는 **Apple 로그인** 및 **사용자 정보 조회** 기능을 제공합니다.
 
 > ⚠️ **이 네임스페이스는 현재 iOS에서만 지원됩니다.**
@@ -39,11 +40,11 @@ nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아
 
 <br/>
 
-#### 2. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 ]에서 [ 애플 로그인 ] 토글을 활성화하여 앱 설정 완료
+#### 2. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 애플 로그인 사용 ] 토글을 활성화하여 앱 설정 완료
 
-![developer_apple_login_toggle](../../../static/img/docs/apple/nachocode_apple_login_toggle.png)
+![nachocode_developer_apple_login](../../../static/img/docs/apple/nachocode_developer_apple_login.png)
 
-- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+<br/>
 
 #### 3. [nachocode 대시보드](https://nachocode.io)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
 

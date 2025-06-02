@@ -24,6 +24,18 @@ const sidebars: SidebarsConfig = {
             },
           ],
         },
+        {
+          type: 'category',
+          label: 'User Agent',
+          link: {
+            type: 'generated-index',
+            slug: 'guide/user-agent/user-agent-definition',
+          },
+          items: [
+            'guide/user-agent/user-agent-definition',
+            'guide/user-agent/user-agent-configuration',
+          ],
+        },
       ],
     },
     {

@@ -16,11 +16,12 @@ keywords:
 
 # 구글 (`google`)
 
-> 🔔 **최신화 일자:** 2025-05-08
+> 🔔 **최신화 일자:** 2025-05-30
 
 ## **개요**
 
-`google` 네임스페이스는 **구글 네이티브 로그인 기능을 제공**하며, 사용자는 **Google 계정을 통해 인증**할 수 있습니다.  
+`google` 네임스페이스는 **구글 네이티브 로그인 기능을 제공**하며, 사용자는 **Google 계정을 통해 인증**할 수 있습니다.
+
 이 네임스페이스를 사용하여 **로그인, 사용자 정보 조회, 로그인 상태 확인, 로그아웃**과 같은 기능을 수행할 수 있습니다.
 
 ---
@@ -29,11 +30,9 @@ keywords:
 
 nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-#### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 개발자 설정** ]에서 [SHA-1 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
+#### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [SHA-1 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
 
-![nachocode_developer_android_setting](../../../static/img/docs/android/nachocode_developer_android_setting.png)
-
-- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+![nachocode_developer_android_sha](../../../static/img/docs/android/nachcoode_developer_android_sha.png)
 
 <br/>
 
@@ -57,11 +56,11 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 <br/>
 
-#### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 ]에서 [ 구글 로그인 ] 토글을 활성화하여 앱 설정 완료
+#### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 구글 네이티브 설정 ]에서 [ 구글 로그인 ] 토글을 활성화하여 앱 설정 완료
 
-![nachocode_google_login_toggle](../../../static/img/docs/google/nachocode_google_login_toggle.png)
+![nachocode_developer_google_login](../../../static/img/docs/google/nachocode_developer_google_login.png)
 
-- _(대시보드 5월 업데이트 예정) 지금 사용을 희망하시는 경우 [support@nachocode.io](mailto:support@nachocode.io)로 문의 바랍니다._
+<br/>
 
 #### 6. [nachocode 대시보드](https://nachocode.io)의 [ 앱 빌드 > 안드로이드, iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
 

@@ -15,12 +15,19 @@ keywords:
 
 # 이벤트 (`event`)
 
-> 🔔 **최신화 일자:** 2025-04-18
+> 🔔 **최신화 일자:** 2025-05-30
 
 ## **개요**
 
-`event` 네임스페이스는 **nachocode SDK의 이벤트 핸들링 기능**을 제공합니다.  
-**SDK가 초기화**될 때(`init`), 앱이 **백그라운드로 전환**(`background`)되거나 **다시 활성화**(`foreground`)될 때, **네트워크 상태가 변경**(`networkchanged`)될 때, **키보드가 열리고**(`keyboardshown`) **닫힐 때**(`keyboardhidden`) 등의 이벤트를 감지하고 이를 처리할 수 있습니다.
+`event` 네임스페이스는 **nachocode SDK의 이벤트 핸들링 기능**을 제공합니다.
+
+- **SDK가 초기화**(`init`)될 때
+- 앱이 **백그라운드로 전환**(`background`)될 때
+- 앱이 **다시 활성화**(`foreground`)될 때
+- **네트워크 상태가 변경**(`networkchanged`)될 때
+- **키보드가 열리고**(`keyboardshown`) **닫힐 때**(`keyboardhidden`)
+
+이벤트를 감지하고 이를 처리할 수 있습니다.
 
 ---
 
