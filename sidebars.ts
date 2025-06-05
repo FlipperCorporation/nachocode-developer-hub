@@ -9,8 +9,13 @@ const sidebars: SidebarsConfig = {
       link: { type: 'generated-index', slug: 'guide/intro' },
       items: [
         'guide/intro',
-        'guide/personal-push',
         'guide/iap',
+        {
+          type: 'category',
+          label: '푸시 알림',
+          link: { type: 'generated-index', slug: 'guide/push/personal-push' },
+          items: ['guide/push/personal-push', 'guide/push/topic-push'],
+        },
         {
           type: 'category',
           label: '웹훅',
@@ -46,9 +51,13 @@ const sidebars: SidebarsConfig = {
         'api/intro',
         {
           type: 'category',
-          label: '개인화 푸시',
+          label: '푸시 알림',
           link: { type: 'generated-index', slug: 'api/push/overview' },
-          items: ['api/push/overview', 'api/push/endpoints'],
+          items: [
+            'api/push/overview',
+            'api/push/v2/endpoints',
+            'api/push/v1/endpoints',
+          ],
         },
       ],
     },

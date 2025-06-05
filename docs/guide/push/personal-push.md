@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 sidebar_label: 개인화 푸시
 description: nachocode 개인화 푸시 가이드는 SDK 및 API를 활용한 개인 맞춤형 푸시 알림 전송 방법을 안내합니다. FCM 디바이스 토큰 등록부터 전송, 결과 분석까지 쉽고 효율적으로 관리할 수 있습니다.
 keywords:
@@ -22,11 +22,12 @@ keywords:
 > 🔔 **최신화 일자:** 2025-03-28
 
 <!-- 2025-03-27 최초 생성 -->
+<!-- 2025-06-04 토픽 푸시 추가로 인한 '개인화푸시'-> '푸시알림'탭으로 병합 -->
 
 > **📢 참고:**
 >
-> [`/messages`](../api/push/endpoints#post-apipushv2messages)로 끝나는 API 엔드포인트의 경우, 각기 다른 유저에게 다른 제목과 메세지를 전송할 때 사용하고,  
-> [`/users`](../api/push/endpoints#post-apipushv2users)로 끝나는 API 엔드포인트의 경우, 다수의 유저에게 동일한 제목과 내용을 전송할 때 사용합니다.
+> [`/messages`](../../api/push/v2/endpoints#post-apipushv2messages)로 끝나는 API 엔드포인트의 경우, 각기 다른 유저에게 다른 제목과 메세지를 전송할 때 사용하고,  
+> [`/users`](../../api/push/v2/endpoints#post-apipushv2users)로 끝나는 API 엔드포인트의 경우, 다수의 유저에게 동일한 제목과 내용을 전송할 때 사용합니다.
 
 <br/>
 이 문서는 개인화 푸시 전송에 필요한 **준비 과정**과 **프로세스**에 대해 안내합니다.
@@ -35,13 +36,13 @@ keywords:
 
 **[ 프로세스 1 : 푸시 토큰 등록 (SDK) ]**
 
-![personal_push_sequence_diagram](../../static/img/developer/nachocode_personal_push_sequence_diagram_1.png)
+![personal_push_sequence_diagram](../../../static/img/developer/nachocode_personal_push_sequence_diagram_1.png)
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
 **[ 프로세스 2 : 개인화 푸시 전송 (API) ]**
 
-![personal_push_sequence_diagram](../../static/img/developer/nachocode_personal_push_sequence_diagram_2.png)
+![personal_push_sequence_diagram](../../../static/img/developer/nachocode_personal_push_sequence_diagram_2.png)
 
 ### 1. 선행 작업
 
@@ -56,7 +57,7 @@ keywords:
 
 <br/>
 
-### 2. 푸시 토큰 등록 ([SDK](../sdk/namespaces/push#registerpushtokenuserid-string-promiseany))
+### 2. 푸시 토큰 등록 ([SDK](../../sdk/namespaces/push#registerpushtokenuserid-string-promiseany))
 
 > :white_check_mark: **유저 식별자만 제공하면, 푸시 토큰을 자동으로 등록합니다.**
 
@@ -70,14 +71,14 @@ keywords:
 
 <br/>
 
-### 3. 개인화 푸시 전송 ([API](../api/push/endpoints))
+### 3. 개인화 푸시 전송 ([API](../../api/push/endpoints))
 
 > :white_check_mark: **등록된 유저 식별자만으로 매칭 및 푸시 전송이 이루어집니다.**
 
 <br/>
 
-**동일한 내용**을 **다수의 유저**에게 전송할 시에는 [`/users`](../api/push/endpoints#post-apipushv2users) API Endpoint를 사용하고,  
-**각 유저마다 다른 내용**을 전송할 시에는 [`/messages`](../api/push/endpoints#post-apipushv2messages) API Endpoint를 사용합니다.
+**동일한 내용**을 **다수의 유저**에게 전송할 시에는 [`/users`](../../api/push/endpoints#post-apipushv2users) API Endpoint를 사용하고,  
+**각 유저마다 다른 내용**을 전송할 시에는 [`/messages`](../../api/push/endpoints#post-apipushv2messages) API Endpoint를 사용합니다.
 
 API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전송 시점을 선정하여 개발자가 **Server Side 로직에 추가**하여야 합니다.  
 **전송하고자 하는 내용**과 대시보드에서 발급받은 **API Key, Secret Key**로 요청 데이터를 구성하여 상황에 맞는 API Endpoint로 푸시 전송을 요청할 수 있습니다.

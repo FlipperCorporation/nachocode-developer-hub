@@ -1,12 +1,14 @@
 ---
 id: overview
-sidebar_label: API 개요
+sidebar_label: 개요
 description: nachocode 개인화 푸시 API는 푸시 알림을 특정 유저 또는 다수의 유저에게 간편하게 전송할 수 있는 강력한 기능을 제공합니다.
 keywords:
   [
     푸시 API,
     푸시 알림,
     개인화 푸시,
+    토픽 푸시,
+    그룹 푸시,
     타겟 푸시,
     타겟 알림,
     마케팅 푸시,
