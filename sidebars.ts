@@ -87,6 +87,7 @@ const sidebars: SidebarsConfig = {
             'sdk/namespaces/scanner',
             'sdk/namespaces/setting',
             'sdk/namespaces/share',
+            'sdk/namespaces/store',
             'sdk/namespaces/tabbar',
             'sdk/namespaces/vibration',
           ],
