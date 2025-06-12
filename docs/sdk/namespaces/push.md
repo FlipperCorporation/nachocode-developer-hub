@@ -128,21 +128,21 @@ export declare type LocalPushResult = {
 
 ## **메서드 목록**
 
-| 메서드                                                                          | 설명                                                       | 추가된 버전 |
-| ------------------------------------------------------------------------------- | ---------------------------------------------------------- | ----------- |
-| [`subscribePushTopic(topic, callback?)`](#subscribepushtopictopic-callback)     | **푸시 토픽을 구독**합니다.                                | ver.1.6.0   |
-| [`unsubscribePushTopic(topic, callback?)`](#unsubscribepushtopictopic-callback) | **푸시 토픽 구독을 취소**합니다.                           | ver.1.6.0   |
-| [`getSubscriptionList(callback)`](#getsubscriptionlistcallback)                 | 디바이스의 현재 **구독 중인 푸시 토픽 목록을 조회**합니다. | ver.1.6.0   |
-| [`sendLocalPush(payload, callback?)`](#sendlocalpushpayload-callback)           | **로컬 푸시 알림을 예약**합니다.                           | ver.1.4.1   |
-| [`cancelLocalPush(id)`](#cancellocalpushid-number)                              | 예약된 로컬 푸시 알림을 취소합니다.                        | ver.1.4.1   |
-| [`registerPushToken(userID)`](#registerpushtokenuserid-string-promiseany)       | nachocode 서버에 푸시 토큰을 등록합니다.                   | ver.1.0.0   |
-| [`deletePushToken(userID)`](#deletepushtokenuserid-string-promiseany)           | nachocode 서버에서 푸시 토큰을 삭제합니다.                 | ver.1.0.0   |
+| 메서드                                                                | 설명                                                       | 추가된 버전 |
+| --------------------------------------------------------------------- | ---------------------------------------------------------- | ----------- |
+| [`subscribePushTopic(topic, callback?)`](#subscribe-push-topic)       | **푸시 토픽을 구독**합니다.                                | ver.1.6.0   |
+| [`unsubscribePushTopic(topic, callback?)`](#unsubscribe-push-topic)   | **푸시 토픽 구독을 취소**합니다.                           | ver.1.6.0   |
+| [`getSubscriptionList(callback)`](#get-subscription-list)             | 디바이스의 현재 **구독 중인 푸시 토픽 목록을 조회**합니다. | ver.1.6.0   |
+| [`sendLocalPush(payload, callback?)`](#sendlocalpushpayload-callback) | **로컬 푸시 알림을 예약**합니다.                           | ver.1.4.1   |
+| [`cancelLocalPush(id)`](#cancellocalpushid-number)                    | 예약된 로컬 푸시 알림을 취소합니다.                        | ver.1.4.1   |
+| [`registerPushToken(userID)`](#register-push-token)                   | nachocode 서버에 푸시 토큰을 등록합니다.                   | ver.1.0.0   |
+| [`deletePushToken(userID)`](#deletepushtokenuserid-string-promiseany) | nachocode 서버에서 푸시 토큰을 삭제합니다.                 | ver.1.0.0   |
 
 ---
 
 ## **메서드 상세**
 
-### **`subscribePushTopic(topic, callback?)`**
+### **`subscribePushTopic(topic, callback?)`** {#subscribe-push-topic}
 
 - _since ver.1.6.0_
 
@@ -178,7 +178,7 @@ Nachocode.push.subscribePushTopic('event-promotion', result => {
 
 ---
 
-### **`unsubscribePushTopic(topic, callback?)`**
+### **`unsubscribePushTopic(topic, callback?)`** {#unsubscribe-push-topic}
 
 - _since ver.1.6.0_
 
@@ -208,7 +208,7 @@ Nachocode.push.unsubscribePushTopic('event-promotion', result => {
 
 ---
 
-### **`getSubscriptionList(callback)`**
+### **`getSubscriptionList(callback)`** {#get-subscription-list}
 
 - _since ver.1.6.0_
 
@@ -326,7 +326,7 @@ console.log('푸시 알림이 취소되었습니다.');
 
 ---
 
-### **`registerPushToken(userID: string): Promise<any>`**
+### **`registerPushToken(userID: string): Promise<any>`** {#register-push-token}
 
 - _since ver.1.0.0_
 - 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
