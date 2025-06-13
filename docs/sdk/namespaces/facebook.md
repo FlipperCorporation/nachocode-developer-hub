@@ -33,13 +33,13 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 ### 안드로이드 설정
 
-#### 1. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 안드로이드 네이티브 설정 ]에서 [해시키](https://developers.google.com/android/guides/client-auth?hl=ko) 확인{#facebook-android-1}
+#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 안드로이드 네이티브 설정 ]에서 [해시키](https://developers.google.com/android/guides/client-auth?hl=ko) 확인{#facebook-android-1}
 
 ![nachocode_developer_android_hash_key](../../../static/img/docs/android/nachcodoe_developer_android_hash_key.png)
 
 <br/>
 
-#### 2. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 고급 설정 > 패키지 이름 ]에서 패키지 이름 확인{#facebook-package-name}
+#### 2. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 고급 설정 > 패키지 이름 ]에서 패키지 이름 확인{#facebook-package-name}
 
 ![nachocode_developer_android_hash_key](../../../static/img/docs/facebook/nachocode_advanced_package_name.png)
 
@@ -66,13 +66,13 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 <br/>
 
-#### 6. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장{#facebook-android-nachocode}
+#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장{#facebook-android-nachocode}
 
 ![nachocode_developer_facebook](../../../static/img/docs/facebook/nachocode_developer_facebook.png)
 
 <br/>
 
-#### 7. [nachocode 대시보드](https://nachocode.io)의 [ 앱 빌드 > 안드로이드 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+#### 7. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > 안드로이드 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
 
 ![nachocode_build_android_new_version](../../../static/img/docs/android/nachocode_build_android_new_version.png)
 
@@ -82,7 +82,7 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 ### iOS 설정
 
-#### 1. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 고급 설정 > 패키지 이름 ]에서 패키지 이름 확인{#facebook-package-name}
+#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 고급 설정 > 패키지 이름 ]에서 패키지 이름 확인{#facebook-package-name}
 
 ![nachocode_developer_android_hash_key](../../../static/img/docs/facebook/nachocode_advanced_package_name.png)
 
@@ -108,13 +108,13 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 <br/>
 
-#### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장{#facebook-ios-nachocode}
+#### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장{#facebook-ios-nachocode}
 
 ![nachocode_developer_facebook](../../../static/img/docs/facebook/nachocode_developer_facebook.png)
 
 <br/>
 
-#### 6. [nachocode 대시보드](https://nachocode.io)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
 
 ![nachocode_google_login_toggle](../../../static/img/docs/apple/nachocode_build_ios_new_version.png)
 

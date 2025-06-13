@@ -32,7 +32,7 @@ keywords:
 
 nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-#### 1. [nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [해시키](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
+#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [해시키](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
 
 ![nachocode_developer_android_hash_key](../../../static/img/docs/android/nachcodoe_developer_android_hash_key.png)
 
@@ -74,13 +74,13 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 <br/>
 
-#### 5. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 카카오 네이티브 설정 ]에서 [ 카카오 네이티브 활성화 ] 토글 활성화 후 Kakao Developers에서 발급한 **네이티브 앱 키**를 등록하여 앱 설정 완료 {#nachocode-dashboard-configuration}
+#### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 카카오 네이티브 설정 ]에서 [ 카카오 네이티브 활성화 ] 토글 활성화 후 Kakao Developers에서 발급한 **네이티브 앱 키**를 등록하여 앱 설정 완료 {#nachocode-dashboard-configuration}
 
 ![nachocode_developer_kakao_native_key](../../../static/img/docs/kakao/nachocode_developer_kakao_native_key.png)
 
 <br/>
 
-#### 6. [nachocode 대시보드](https://nachocode.io)의 [ 앱 빌드 > 안드로이드, iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > 안드로이드, iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
 
 ![nachocode_build_android_new_version](../../../static/img/docs/android/nachocode_build_android_new_version.png)
 

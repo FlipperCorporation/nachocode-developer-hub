@@ -35,7 +35,7 @@ Android에서는 별도의 선행 작업 없이 **생체 인증 기능**을 사�
 
 iOS에서 nachocode SDK로 **생체 인증 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-#### [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 생체인증(FaceID) 사용 ] 토글을 활성화하여 앱 설정 완료
+#### [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 생체인증(FaceID) 사용 ] 토글을 활성화하여 앱 설정 완료
 
 ![nachocode_developer_apple_biometrics](../../../static/img/docs/authentication/nachocode_developer_apple_biometrics.png)
 

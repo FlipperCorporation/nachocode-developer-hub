@@ -61,7 +61,7 @@ nachocode-client-sdk는 React용으로 **Context Provider** (`NachoProvider`)를
 
 최상위 컴포넌트를 `NachoProvider`로 감싸 전체 앱에서 nachocode Client SDK를 사용할 수 있도록 설정하는 것을 권장합니다.
 
-이때 [nachocode 플랫폼](https://nachocode.io)에서 발급받은 API Key를 사용하여 SDK를 초기화합니다.
+이때 [nachocode 플랫폼](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 발급받은 API Key를 사용하여 SDK를 초기화합니다.
 
 ```jsx
 import React from 'react';
