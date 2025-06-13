@@ -1,10 +1,10 @@
 ---
-id: endpoints
-sidebar_label: V2 API 엔드포인트
+sidebar_label: V2 API
 description: nachocode 개인화 푸시 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
 keywords:
   [
-    푸시 API,
+    토픽 푸시,
+    그룹 푸시,
     푸시 알림,
     개인화 푸시,
     타겟 푸시,
@@ -15,6 +15,7 @@ keywords:
     사용자 맞춤 메시지,
     나쵸코드 푸시,
     nachocode 푸시,
+    푸시 API,
   ]
 ---
 
@@ -38,7 +39,8 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### 설명 {#post-v2-messages-summary}
 
 - 개별적으로 설정된 메시지를 각 유저 ID의 푸시 토큰에 전송합니다.
-- 요청된 유저의 총 푸시 토큰 수에 따라 요청 건수가 차감됩니다.<br/><br/>
+- 요청된 유저의 총 푸시 토큰 수에 따라 요청 건수가 차감됩니다.
+
 - ⚠️**요청 당 메세지의 최대 개수는 200개이며, Body의 크기는 150KB를 초과하지 않아야 합니다.**
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
@@ -105,13 +107,13 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
     "Push successfully requested to be sent."
     ```
 
-<br/>
+---
 
 - **Error Response**
 
   - [Error Response Object](#error-response-object)
 
-  - 에러코드<br/>
+  - 에러코드  
     <span style={{fontSize: "12px"}}>(샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.)</span>
 
     | **ErrorCode** | **Status Code** | **Message**                 | **Description**                |
@@ -127,7 +129,8 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 - 동일한 제목과 내용으로 여러 유저에게 푸시 알림을 전송합니다.
 - 유저 ID로 조회된 모든 푸시 토큰을 대상으로 전송합니다.
-- 유저 1명당 요청 건수를 차감합니다.<br/><br/>
+- 유저 1명당 요청 건수를 차감합니다.
+
 - ⚠️**요청 당 userId의 최대 개수는 500개입니다.**
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
@@ -189,13 +192,13 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
     "Push successfully requested to be sent."
     ```
 
-<br/>
+---
 
 - **Error Response**
 
   - [Error Response Object](#error-response-object)
 
-  - 에러코드<br/>
+  - 에러코드  
     <span style={{fontSize: "12px"}}>(샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.)</span>
 
     | **ErrorCode** | **Status Code** | **Message**                 | **Description**                 |
@@ -210,7 +213,9 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### 설명 {#post-v2-topic-summary}
 
 - 특정 토픽에 대한 구독 과정을 통해 구독된 모든 디바이스로 푸시를 전송합니다.
-- 토픽 푸시 전송 요청 건수에 따라 차감됩니다.<br/><br/>
+- 토픽 푸시 전송 요청 건수에 따라 차감됩니다.
+
+---
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
@@ -271,13 +276,13 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
     "Push successfully requested to be sent."
     ```
 
-<br/>
+---
 
 - **Error Response**
 
   - [Error Response Object](#error-response-object)
 
-  - 에러코드<br/>
+  - 에러코드  
     <span style={{fontSize: "12px"}}>(샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.)</span>
 
     | **ErrorCode** | **Status Code** | **Message**                      | **Description**                      |
@@ -294,7 +299,8 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 - SDK의 [`registerPushToken()`](../../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에 구독시킵니다.
 - FCM으로의 구독과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
-- 유저 1명당 요청 건수를 차감합니다.<br/><br/>
+- 유저 1명당 요청 건수를 차감합니다.
+
 - ⚠️**요청 당 userId의 최대 개수는 100개입니다**.
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
@@ -350,13 +356,13 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
     }
     ```
 
-<br/>
+---
 
 - **Error Response**
 
   - [Error Response Object](#error-response-object)
 
-  - 에러코드<br/>
+  - 에러코드  
     <span style={{fontSize: "12px"}}>(샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.)</span>
 
     | **ErrorCode** | **Status Code** | **Message**                 | **Description**                 |
@@ -372,7 +378,8 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 - SDK의 [`registerPushToken()`](../../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에서 구독을 해제합니다.
 - FCM으로의 구독해제 과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
-- 유저 1명당 요청 건수를 차감합니다.<br/><br/>
+- 유저 1명당 요청 건수를 차감합니다.
+
 - ⚠️**요청 당 userId의 최대 개수는 100개입니다**.
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
@@ -428,13 +435,13 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
     }
     ```
 
-<br/>
+---
 
 - **Error Response**
 
   - [Error Response Object](#error-response-object)
 
-  - 에러코드<br/>
+  - 에러코드  
     <span style={{fontSize: "12px"}}>(샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.)</span>
 
     | **ErrorCode** | **Status Code** | **Message**                 | **Description**                 |
@@ -462,7 +469,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
   }
   ```
 
-<br/>
+---
 
 - **Detail Description**
 
@@ -511,7 +518,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
   | tokenNotFound | `string[]` | 토큰을 보유하지 않은 유저 ID목록                                                             |
   | tokenDeleted  | `string[]` | FCM으로부터 '유효하지 않은 토큰'이라는 결과를 반환받아 삭제처리된 토큰의 소유자(유저) ID목록 |
 
-  \*<i>유저가 여러개의 토큰을 보유하고 있을 경우, `failed`, `success`, `tokenDeleted`항목에 동일한 userId가 존재할 수 있습니다.</i>
+  \* _유저가 여러개의 토큰을 보유하고 있을 경우, `failed`, `success`, `tokenDeleted`항목에 동일한 userId가 존재할 수 있습니다._
 
 - **Example**
 

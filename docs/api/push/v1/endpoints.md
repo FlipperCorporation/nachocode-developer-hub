@@ -1,5 +1,4 @@
 ---
-id: endpoints
 sidebar_label: V1 API ⚠️
 description: nachocode 개인화 푸시 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
 keywords:
