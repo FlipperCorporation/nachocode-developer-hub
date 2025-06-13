@@ -1,12 +1,12 @@
 ---
 id: endpoints
-sidebar_label: V1 API 엔드포인트 ⚠️
+sidebar_label: V1 API ⚠️
 description: nachocode 개인화 푸시 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
 keywords:
   [
-    푸시 API,
     푸시 알림,
     개인화 푸시,
+    그룹 푸시,
     타겟 푸시,
     타겟 알림,
     마케팅 푸시,
@@ -15,12 +15,13 @@ keywords:
     사용자 맞춤 메시지,
     나쵸코드 푸시,
     nachocode 푸시,
+    푸시 API,
   ]
 ---
 
 # 푸시알림 V1 API Endpoints
 
-> 🔔 **최신화 일자:** 2025-04-23
+> 🔔 **최신화 일자:** 2025-06-13
 
 <!-- 2024-11-27 최초 생성/ V0버전 제외 V1버전만 생성 -->
 <!-- 2025-03-27 V1버전 Deprecated처리 및 V2버전 신규 등록 -->
@@ -40,18 +41,18 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 이 문서에서는 **API 사용법**, **요청/응답 형식**, **에러 케이스** 등을 다룹니다.
 
-## **[POST] `/api/push/v1/messages`** <span style={{color:"#EA3E3E", fontSize:"20px"}}>(Deprecated)</span>
+## **[POST] `/api/push/v1/messages`** <span style={{color:"#EA3E3E", fontSize:"20px"}}>(Deprecated)</span> {#post-v1-messages}
 
-### 설명 (`/v1/messages`)
+### 설명 {#post-v1-messages-summary}
 
 - 개별적으로 설정된 메시지를 각 유저 ID의 푸시 토큰에 전송합니다.
 - 요청된 유저의 총 푸시 토큰 수에 따라 요청 건수가 차감됩니다.
   <br/><br/>
-- ⚠️ Obsolete 예정 버전입니다. V2버전([`/v2/messages`](../v2/endpoints.md#post-apipushv2messages)) 사용을 권장합니다.
+- ⚠️ Obsolete 예정 버전입니다. V2버전([`/v2/messages`](../v2/endpoints.md#post-v2-messages)) 사용을 권장합니다.
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Request (`/v1/messages`)
+### Request {#post-v1-messages-request}
 
 - **Header**
 
@@ -91,7 +92,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Response (`/v1/messages`)
+### Response {#post-v1-messages-response}
 
 - **Success Response**
 
@@ -136,9 +137,9 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
 
-## **[POST] `/api/push/v1/users`**<span style={{color:"#EA3E3E", fontSize:"20px"}}>(Deprecated)</span>
+## **[POST] `/api/push/v1/users`**<span style={{color:"#EA3E3E", fontSize:"20px"}}>(Deprecated)</span> {#post-v1-users}
 
-### 설명 (`/v1/users`)
+### 설명 {#post-v1-users-summary}
 
 - 동일한 제목과 내용으로 여러 유저에게 푸시 알림을 전송합니다.
 - 유저 ID로 조회된 모든 푸시 토큰을 대상으로 전송합니다.
@@ -148,7 +149,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Request (`/v1/users`)
+### Request {#post-v1-users-request}
 
 - **Header**
 
@@ -184,7 +185,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Response (`/v1/users`)
+### Response {#post-v1-users-response}
 
 - **Success Response**
 
