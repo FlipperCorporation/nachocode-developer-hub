@@ -20,7 +20,7 @@ keywords:
 
 # 푸시 알림 (`push`)
 
-> 🔔 **최신화 일자:** 2025-06-12
+> 🔔 **최신화 일자:** 2025-06-13
 
 ## **개요**
 
@@ -335,6 +335,13 @@ console.log('푸시 알림이 취소되었습니다.');
 
 nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.  
 이때, 특정 사용자(`userID`)를 식별자로 사용하여 **푸시 알림을 해당 사용자에게 전송할 수 있도록 설정**합니다.
+
+#### 설명 (푸시 토큰) {#push-token-summary}
+
+- 유저 당 여러개의 **각 디바이스 별로 매칭되는 푸시 토큰**을 가질 수 있습니다.
+- **유저 ID와 매칭 등록이 완료**되어야만 아래 기능을 이용할 수 있습니다.
+  - [**개인화 푸시 전송**](../../api/push/v2/endpoints#post-v2-users)이 가능합니다.
+  - **서버사이드에서 유저 식별자로 토픽**을 [**구독**](../../api/push/v2/endpoints#post-v2-topic-subscription), [**취소**](../../api/push/v2/endpoints#delete-v2-topic-subscription)할 수 있습니다.
 
 #### 매개변수 (`registerPushToken`)
 
