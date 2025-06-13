@@ -73,7 +73,7 @@ nachocode에서 제공되는 결과 데이터를 통해 "어떤 내용의 푸시
 > 유저 단위의 집계나 통계, 푸시 전송은 불가합니다.<br/>
 > <i style={{fontSize: "14px"}}>(유저 단위의 집계나 통계, 푸시 전송은 추후 개발될 "**세그먼트 푸시**"에서 제공될 예정입니다.)</i>
 >
-> 유저 당 여러 개의 디바이스를 가질 수 있고, [SDK](../../sdk/namespaces/push#registerpushtokenuserid-string-promiseany)를 통한 푸시 토큰 및 유저 ID 등록이 완료된 후 구독/구독해제가 가능합니다.<br/> <span style={{ fontSize: "14px"}}>(등록되지 않은 유저 ID이더라도 전송 요청 시 차감 수에 포함됩니다.)</span>
+> 유저 당 여러 개의 디바이스를 가질 수 있고, [SDK](../../sdk/namespaces/push#registerpushtokenuserid-string-promiseany)를 통한 푸시 토큰 및 유저 ID 등록이 완료된 후 구독/구독해제 API사용이 가능합니다.<br/> <span style={{ fontSize: "14px"}}>(등록되지 않은 유저 ID이더라도 전송 요청 시 차감 수에 포함됩니다.)</span>
 
 <br/><hr style={{ border: "0.2px solid grey", opacity: "0.1"}} /><br/>
 
@@ -126,28 +126,26 @@ nachocode 서버에서는 기본적으로 **디바이스를 기준으로 토픽 
 
 <br/>
 
-**[디바이스 기준: SDK]** <br/>
+**[ 디바이스 기준: SDK ]** <br/>
 디바이스를 기준으로의 구독은 개발자가 SDK를 활용하여 **Web Client Side**에서 구독하고자 하는 시점에 구독처리를 완료하여야만 토픽 푸시 전송이 가능합니다.  
 SDK를 활용한 구독은 **유저가 식별되지 않은 상황에서도 토픽 구독이 가능**때문에 사전 작업 필요없이 특정 이벤트 발생 시점에 디바이스 [구독](../../sdk/namespaces/push.md#subscribe-push-topic)과 [구독해제](../../sdk/namespaces/push.md#unsubscribe-push-topic) 메서드 호출을 통해 구독 여부를 즉시 설정할 수 있습니다.
 
-> ex:
->
-> - "이벤트 참여"를 클릭한 디바이스로 이벤트 알림이 보내지기를 원할 때 -> [_구독_](../../sdk/namespaces/push.md#subscribe-push-topic)
-> - "이벤트 참여 취소"를 클릭한 디바이스로 이벤트 알림이 보내지지 않도록 할 때 -> [_구독해제_](../../sdk/namespaces/push.md#unsubscribe-push-topic)
+> ex:  
+> "나쵸코드"를 검색한 식별 불가한 유저에게도 알림이 보내지기를 원할 때 -> [_구독SDK_](../../sdk/namespaces/push.md#subscribe-push-topic)  
+> "이벤트 참여 취소"를 클릭한 디바이스로 이벤트 알림이 보내지지 않도록 할 때 -> [_구독해제API_](../../sdk/namespaces/push.md#unsubscribe-push-topic)
 
 <br/><br/>
 
-**[유저 식별자 기준: API]** <br/>
+**[ 유저 식별자 기준: API ]** <br/>
 유저 식별자 기준으로의 구독은 개발자가 **API를 활용하여 Server Side에서 API Call**을 통해 구독이 가능합니다.
 
 구독 및 구독해제할 유저 식별자는 사전에 [푸시 토큰 등록 SDK 메서드](../../sdk/namespaces/push#register-push-token)를 통해 **nachocode 서버에 푸시 토큰이 등록된 적 있는 유저 식별자**이어야 정상적인 처리가 가능합니다. <br/>
 
 API를 활용한 구독은 **유저 식별자가 특정 가능**하고 유저의 모든 디바이스에 대한 토픽 관리가 필요할 경우 유용하게 사용됩니다.
 
-> ex:
->
-> - "이벤트 알림받기"를 클릭한 유저의 모든 디바이스로 이벤트 알림이 보내지기를 원할 때 ->[_구독API_](../../api/push/v2/endpoints.md#post-apipushv2topicsubscription)
-> - "이벤트 참여 취소"를 클릭한 유저의 모든 디바이스에 이벤트 알림이 보내지지 않도록 할 때 ->[_구독해제API_](../../api/push/v2/endpoints.md#delete-apipushv2topicsubscription)
+> ex:  
+> "나쵸코드"를 언팔로우한 디바이스 소유자의 모든 디바이스로 알림이 보내지지 않도록 할 때 -> [_구독API_](../../api/push/v2/endpoints.md#post-apipushv2topicsubscription)  
+> "나쵸코드"를 언팔로우한 디바이스 소유자의 모든 디바이스로 알림이 보내지지 않도록 할 때 -> [_구독해제API_](../../api/push/v2/endpoints.md#delete-apipushv2topicsubscription)
 
 단, 유저가 푸시 토큰 등록 SDK를 통해 토큰 등록이 완료된 유저의 디바이스에 한하여 구독이 가능합니다. 구독 시, 유저가 소유한 디바이스 전부를 구독시키며, 일부 디바이스에 대한 구독은 불가합니다.
 
