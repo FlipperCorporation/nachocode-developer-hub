@@ -3,7 +3,7 @@
 **nachocode Developer Hub**는 nachocode SDK 및 API 사용을 위한 공식 문서를 제공합니다.  
 웹 개발자와 앱 개발자가 nachocode의 강력한 노코드 & 로우코드 플랫폼을 활용하여 네이티브 앱을 빠르고 효율적으로 개발할 수 있도록 돕습니다.
 
-- 최신화 일자 : 2025-02-06
+- 최신화 일자 : 2025-06-13
 
 ---
 
@@ -20,7 +20,7 @@ nachocode의 대시보드와 함께 이 문서를 사용하면 더욱 강력한 
 ### 🌐 nachocode 공식 웹사이트
 
 nachocode의 메인 플랫폼을 탐험하려면 아래 링크를 방문하세요:  
-👉 [https://nachocode.io](https://nachocode.io)
+👉 [https://nachocode.io](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)
 
 nachocode의 개발자 문서를 정독하려면 아래 링크를 방문하세요:  
 👉 [https://developer.nachocode.io](https://developer.nachocode.io)
@@ -86,7 +86,9 @@ npm run build
 GitHub Pages에 배포하려면 아래 명령을 실행하세요:
 
 ```bash
-GIT_USER=<your-github-username> yarn deploy
+export SET GIT_USER=<your-github-username>
+
+yarn deploy
 ```
 
 ---
@@ -109,7 +111,7 @@ nachocode-developer-hub/
 
 ## 🔑 주요 링크
 
-- **nachocode 공식 웹사이트**: [https://nachocode.io](https://nachocode.io)
+- **nachocode 공식 웹사이트**: [https://nachocode.io](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)
 - **nachocode 개발자 문서**: [https://developer.nachocode.io](https://developer.nachocode.io)
 - **nachocode GitHub 레포지토리**: [https://github.com/FlipperCorporation](https://github.com/FlipperCorporation)
 

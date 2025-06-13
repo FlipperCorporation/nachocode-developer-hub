@@ -31,11 +31,11 @@ keywords:
 
 #### (선택사항) `microphone` 권한 사용
 
-[nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **마이크 사용** ] 토글을 활성화하여 앱 설정 완료
+[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **마이크 사용** ] 토글을 활성화하여 앱 설정 완료
 
 #### (선택사항) `location` 권한 사용
 
-[nachocode 대시보드](https://nachocode.io)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **위치/지도 사용** ] 토글을 활성화하여 앱 설정 완료
+[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **위치/지도 사용** ] 토글을 활성화하여 앱 설정 완료
 
 ![nachocode_advanced_android_setting](../../../static/img/docs/android/nachocode_advanced_android_setting.png)
 

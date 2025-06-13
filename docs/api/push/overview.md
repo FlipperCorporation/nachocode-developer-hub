@@ -61,8 +61,8 @@ nachocode 개인화 푸시 API는 푸시 알림을 관리하고 특정 대상에
 
 - 서버 대 서버 요청만 허용됩니다.
 - 요청 헤더에 반드시 `x-api-key`와 `x-secret-key`를 포함해야 합니다:
-  - `x-api-key`: [nachocode](https://nachocode.io) 대시보드에서 발급된 API 키
-  - `x-secret-key`: [nachocode](https://nachocode.io) 대시보드에서 발급된 Secret 키
+  - `x-api-key`: [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) 대시보드에서 발급된 API 키
+  - `x-secret-key`: [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) 대시보드에서 발급된 Secret 키
 
 ---
 
