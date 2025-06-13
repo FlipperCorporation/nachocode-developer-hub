@@ -21,7 +21,7 @@ keywords:
 
 # 토픽 푸시
 
-> 🔔 **최신화 일자:** 2025-06-10
+> 🔔 **최신화 일자:** 2025-06-13
 
 <!-- 2025-06-04 최초 생성 -->
 
@@ -45,7 +45,7 @@ nachocode의 토픽 푸시 기능은 특정 상황이나 행동을 한 사용자
 
 <br/><hr style={{ border: "0.2px solid grey", opacity: "0.1"}} /><br/>
 
-### 🧐 왜 nachocode 토픽 푸시를 사용해야할까요?
+### 왜 nachocode 토픽 푸시를 사용해야할까요?
 
 <br/><b style={{fontSize: "19px"}}>번거로운 관리는 nachocode가 합니다</b><br/><br/>
 
@@ -67,17 +67,20 @@ nachocode에서 제공되는 결과 데이터를 통해 "어떤 내용의 푸시
 
 <br/>
 
-> **⚠️ 주의**  
-> nachocode의 토픽 푸시는 "**디바이스 기준**"으로만 이루어집니다.<br/>
-> 일부 API에서 요구되는 유저식별자(user ID)의 경우 실제 유저-디바이스 매칭을 위한 목적으로만 사용되며, <br/>
-> 유저 단위의 집계나 통계, 푸시 전송은 불가합니다.<br/>
-> <i style={{fontSize: "14px"}}>(유저 단위의 집계나 통계, 푸시 전송은 추후 개발될 "**세그먼트 푸시**"에서 제공될 예정입니다.)</i>
->
-> 유저 당 여러 개의 디바이스를 가질 수 있고, [SDK](../../sdk/namespaces/push#registerpushtokenuserid-string-promiseany)를 통한 푸시 토큰 및 유저 ID 등록이 완료된 후 구독/구독해제 API사용이 가능합니다.<br/> <span style={{ fontSize: "14px"}}>(등록되지 않은 유저 ID이더라도 전송 요청 시 차감 수에 포함됩니다.)</span>
+:::warning 주의
+nachocode의 토픽 푸시는 "**디바이스 기준**"으로만 이루어집니다.  
+일부 API에서 요구되는 유저식별자(user ID)의 경우 실제 유저-디바이스 매칭을 위한 목적으로만 사용되며,
+
+유저 단위의 집계나 통계, 푸시 전송은 불가합니다.<br/>
+<i style={{fontSize: "14px"}}>(유저 단위의 집계나 통계, 푸시 전송은 추후 개발될 "**세그먼트 푸시**"에서 제공될 예정입니다.)</i>
+
+유저 당 여러 개의 디바이스를 가질 수 있고, [SDK](../../sdk/namespaces/push#registerpushtokenuserid-string-promiseany)를 통한 푸시 토큰 및 유저 ID 등록이 완료된 후 구독/구독해제 API사용이 가능합니다.<br/> <span style={{ fontSize: "14px"}}>(등록되지 않은 유저 ID이더라도 전송 요청 시 차감 수에 포함됩니다.)</span>
+
+:::
 
 <br/><hr style={{ border: "0.2px solid grey", opacity: "0.1"}} /><br/>
 
-### 💡 토픽 푸시 활용 방법(예시)
+### 토픽 푸시 활용 방법(예시)
 
 - **마케팅 캠페인**
 

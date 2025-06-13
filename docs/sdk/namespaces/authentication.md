@@ -19,7 +19,7 @@ keywords:
 
 # 인증 (`authentication`)
 
-> 🔔 **최신화 일자:** 2025-05-30
+> 🔔 **최신화 일자:** 2025-06-13
 
 ## **개요**
 
@@ -56,36 +56,39 @@ iOS에서 nachocode SDK로 **생체 인증 기능**을 사용하기 위해서는
 
 ## **메서드 목록**
 
-| 메서드                                                                                                                    | 설명                                                       | 추가된 버전 |
-| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ----------- |
-| [`canUseBiometrics(callback)`](#canusebiometricscallback-available-boolean-error--code-string-message-string---void-void) | 디바이스에서 생체 인증 기능을 사용할 수 있는지 확인합니다. | ver.1.3.0   |
-| [`useBiometrics(callback)`](#usebiometricscallback-result-authenticationresult--void-void)                                | 생체 인증 기능을 호출합니다.                               | ver.1.3.0   |
+| 메서드                                              | 설명                                                       | 추가된 버전 |
+| --------------------------------------------------- | ---------------------------------------------------------- | ----------- |
+| [`canUseBiometrics(callback)`](#can-use-biometrics) | 디바이스에서 생체 인증 기능을 사용할 수 있는지 확인합니다. | ver.1.3.0   |
+| [`useBiometrics(callback)`](#use-biometrics)        | 생체 인증 기능을 호출합니다.                               | ver.1.3.0   |
 
 ---
 
-## 메서드 상세
+## **메서드 상세**
 
-### **`canUseBiometrics(callback: (available: boolean, error?: { code: string, message: string }) => void): void`**
+### **`canUseBiometrics(callback: (available: boolean, error?: { code: string, message: string }) => void): void`** {#can-use-biometrics}
 
 - _since ver.1.3.0_
-- 📢 _iOS는 [필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
-#### 설명 (`canUseBiometrics`)
+:::warning
+_iOS는 [필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#can-use-biometrics-summary}
 
 현재 디바이스에서 **생체 인증(Biometrics) 기능을 사용할 수 있는지 여부**를 반환합니다.  
 일부 디바이스에서는 생체 인증 기능이 제공되지 않을 수 있으며, **사용자가 설정에서 해당 기능을 비활성화했을 경우에도 사용이 제한**될 수 있습니다.
 
-#### 매개변수 (`canUseBiometrics`)
+#### 매개변수 {#can-use-biometrics-parameters}
 
 | 이름       | 타입                                                                      | 필수 여부 | 설명                                                            |
 | ---------- | ------------------------------------------------------------------------- | --------- | --------------------------------------------------------------- |
 | `callback` | `(available: boolean, error?: { code: string, message: string }) => void` | ✅        | `true`(사용 가능) 또는 `false`(사용 불가)를 전달 받는 콜백 함수 |
 
-#### 반환 값 (`canUseBiometrics`)
+#### 반환 값 {#can-use-biometrics-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`canUseBiometrics`)
+#### 사용 예제 {#can-use-biometrics-examples}
 
 ```javascript
 // ex. 디바이스의 생체 인증 사용 가능 여부를 확인합니다.
@@ -102,27 +105,30 @@ Nachocode.authentication.canUseBiometrics((available, error) => {
 
 ---
 
-### **`useBiometrics(callback: (result: AuthenticationResult) => void): void`**
+### **`useBiometrics(callback: (result: AuthenticationResult) => void): void`** {#use-biometrics}
 
 - _since ver.1.3.0_
-- 📢 _iOS는 [필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
-#### 설명 (`useBiometrics`)
+:::warning
+_iOS는 [필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#use-biometrics-summary}
 
 디바이스의 **생체 인증(Biometrics) 기능을 실행**합니다.  
 사용자가 인증을 성공하면 `authenticated: true` 값을 반환하며, **인증이 실패하거나 중단될 경우 `error` 객체를 포함하여 실패 원인을 제공합니다.**
 
-#### 매개변수 (`useBiometrics`)
+#### 매개변수 {#use-biometrics-parameters}
 
 | 이름       | 타입                                     | 필수 여부 | 설명                            |
 | ---------- | ---------------------------------------- | --------- | ------------------------------- |
 | `callback` | `(result: AuthenticationResult) => void` | ✅        | 인증 결과를 전달 받는 콜백 함수 |
 
-#### 반환 값 (`useBiometrics`)
+#### 반환 값 {#use-biometrics-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`useBiometrics`)
+#### 사용 예제 {#use-biometrics-examples}
 
 ```javascript
 // 네이티브 생체 인증 기능을 호출 합니다.

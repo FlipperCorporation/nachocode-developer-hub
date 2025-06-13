@@ -17,7 +17,7 @@ keywords:
 
 # 카카오 (`kakao`)
 
-> 🔔 **최신화 일자:** 2025-05-30
+> 🔔 **최신화 일자:** 2025-06-13
 
 ## **개요**
 
@@ -314,7 +314,10 @@ type KakaoShareStatusCode = 102 | 103 | 104 | 105 | 106 | 108 | 199 | 200 | 201;
 ### **`login(callback: (result: KakaoResult, loginData?: KakaoLoginData) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 (`login`)
 
@@ -338,7 +341,10 @@ Nachocode.kakao.login((result, loginData) => {
 ### **`isLoggedIn(callback: (result: KakaoResult, isLoggedIn: boolean, loginData?: KakaoLoginData) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 (`isLoggedIn`)
 
@@ -361,7 +367,10 @@ Nachocode.kakao.isLoggedIn((result, isLoggedIn, loginData) => {
 ### **`getUserData(callback: (result: KakaoResult, userData?: KakaoUserData) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 (`getUserData`)
 
@@ -384,7 +393,10 @@ Nachocode.kakao.getUserData((result, userData) => {
 ### **`logout(callback: (result: KakaoResult) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 (`logout`)
 
@@ -409,7 +421,10 @@ Nachocode.kakao.logout(result => {
 ### **`unlink(callback: (result: KakaoResult) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 (`unlink`)
 
@@ -434,7 +449,10 @@ Nachocode.kakao.unlink(result => {
 ### **`share(type: KakaoShareType, data: KakaoShareCustom | KakaoShareScrap, callback?: (result: KakaoShareResult) => void): void`**
 
 - _since ver.1.5.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 (`share`)
 

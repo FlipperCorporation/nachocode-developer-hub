@@ -16,7 +16,7 @@ keywords:
 
 # 구글 (`google`)
 
-> 🔔 **최신화 일자:** 2025-05-30
+> 🔔 **최신화 일자:** 2025-06-13
 
 ## **개요**
 
@@ -72,12 +72,12 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 ## **메서드 목록**
 
-| 메서드                                                                                                         | 설명                   | 추가된 버전 |
-| -------------------------------------------------------------------------------------------------------------- | ---------------------- | ----------- |
-| [`login(callback)`](#logincallback-result-googleresult-idtoken-string-userdata-googleuserdata--void-void)      | 구글 네이티브 로그인   | ver.1.5.0   |
-| [`isLoggedIn(callback)`](#isloggedincallback-result-googleresult-isloggedin-boolean-idtoken-string--void-void) | 로그인 상태 확인       | ver.1.5.0   |
-| [`getUserData(callback)`](#getuserdatacallback-result-googleresult-userdata-googleuserdata--void-void)         | 사용자 데이터 요청     | ver.1.5.0   |
-| [`logout(callback)`](#logoutcallback-result-googleresult--void-void)                                           | 구글 네이티브 로그아웃 | ver.1.5.0   |
+| 메서드                                    | 설명                   | 추가된 버전 |
+| ----------------------------------------- | ---------------------- | ----------- |
+| [`login(callback)`](#login)               | 구글 네이티브 로그인   | ver.1.5.0   |
+| [`isLoggedIn(callback)`](#is-logged-in)   | 로그인 상태 확인       | ver.1.5.0   |
+| [`getUserData(callback)`](#get-user-data) | 사용자 데이터 요청     | ver.1.5.0   |
+| [`logout(callback)`](#logout)             | 구글 네이티브 로그아웃 | ver.1.5.0   |
 
 ---
 
@@ -113,26 +113,26 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 ## **메서드 상세**
 
-### **`login(callback: (result: GoogleResult, idToken?: string, userData?: GoogleUserData) => void): void`**
+### **`login(callback: (result: GoogleResult, idToken?: string, userData?: GoogleUserData) => void): void`** {#login}
 
 - _since ver.1.5.0_
 
-#### 설명 (`login`)
+#### 설명 {#login-summary}
 
 구글 네이티브 로그인 요청을 수행합니다.  
 로그인 성공 시 **`idToken`** 과 **`userData`** 를 콜백으로 반환합니다.
 
-#### 매개변수 (`login`)
+#### 매개변수 {#login-parameters}
 
 | 이름       | 타입                                                                          | 필수 여부 | 설명                        |
 | ---------- | ----------------------------------------------------------------------------- | --------- | --------------------------- |
 | `callback` | `(result: GoogleResult, idToken?: string, userData?: GoogleUserData) => void` | ✅        | 로그인 결과를 반환하는 함수 |
 
-#### 반환 값 (`login`)
+#### 반환 값 {#login-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`login`)
+#### 사용 예제 {#login-examples}
 
 ```javascript
 Nachocode.google.login((result, idToken, userData) => {
@@ -146,26 +146,26 @@ Nachocode.google.login((result, idToken, userData) => {
 
 ---
 
-### **`isLoggedIn(callback: (result: GoogleResult, isLoggedIn: boolean, idToken?: string) => void): void`**
+### **`isLoggedIn(callback: (result: GoogleResult, isLoggedIn: boolean, idToken?: string) => void): void`** {#is-logged-in}
 
 - _since ver.1.5.0_
 
-#### 설명 (`isLoggedIn`)
+#### 설명 {#is-logged-in-summary}
 
 현재 사용자가 **구글 네이티브 로그인 상태인지 확인**합니다.  
 로그인 여부(`isLoggedIn`)와 함께 `idToken`을 반환합니다.
 
-#### 매개변수 (`isLoggedIn`)
+#### 매개변수 {#is-logged-in-parameters}
 
 | 이름       | 타입                                                                    | 필수 여부 | 설명                        |
 | ---------- | ----------------------------------------------------------------------- | --------- | --------------------------- |
 | `callback` | `(result: GoogleResult, isLoggedIn: boolean, idToken?: string) => void` | ✅        | 로그인 상태를 반환하는 함수 |
 
-#### 반환 값 (`isLoggedIn`)
+#### 반환 값 {#is-logged-in-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`isLoggedIn`)
+#### 사용 예제 {#is-logged-in-examples}
 
 ```javascript
 Nachocode.google.isLoggedIn((result, isLoggedIn, idToken) => {
@@ -179,26 +179,26 @@ Nachocode.google.isLoggedIn((result, isLoggedIn, idToken) => {
 
 ---
 
-### **`getUserData(callback: (result: GoogleResult, userData?: GoogleUserData) => void): void`**
+### **`getUserData(callback: (result: GoogleResult, userData?: GoogleUserData) => void): void`** {#get-user-data}
 
 - _since ver.1.5.0_
 
-#### 설명 (`getUserData`)
+#### 설명 {#get-user-data-summary}
 
 구글에서 **사용자 데이터를 요청**합니다.  
 로그인된 사용자의 프로필 정보를 가져올 수 있습니다.
 
-#### 매개변수 (`getUserData`)
+#### 매개변수 {#get-user-data-parameters}
 
 | 이름       | 타입                                                        | 필수 여부 | 설명                          |
 | ---------- | ----------------------------------------------------------- | --------- | ----------------------------- |
 | `callback` | `(result: GoogleResult, userData?: GoogleUserData) => void` | ✅        | 사용자 데이터를 반환하는 함수 |
 
-#### 반환 값 (`getUserData`)
+#### 반환 값 {#get-user-data-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`getUserData`)
+#### 사용 예제 {#get-user-data-examples}
 
 ```javascript
 Nachocode.google.getUserData((result, userData) => {
@@ -212,25 +212,25 @@ Nachocode.google.getUserData((result, userData) => {
 
 ---
 
-### **`logout(callback: (result: GoogleResult) => void): void`**
+### **`logout(callback: (result: GoogleResult) => void): void`** {#logout}
 
 - _since ver.1.5.0_
 
-#### 설명 (`logout`)
+#### 설명 {#logout-summary}
 
 구글 네이티브 로그인 세션을 **로그아웃**합니다.
 
-#### 매개변수 (`logout`)
+#### 매개변수 {#logout-parameters}
 
 | 이름       | 타입                             | 필수 여부 | 설명               |
 | ---------- | -------------------------------- | --------- | ------------------ |
 | `callback` | `(result: GoogleResult) => void` | ✅        | 로그아웃 결과 콜백 |
 
-#### 반환 값 (`logout`)
+#### 반환 값 {#logout-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`logout`)
+#### 사용 예제 {#logout-examples}
 
 ```javascript
 Nachocode.google.logout(result => {
@@ -244,7 +244,9 @@ Nachocode.google.logout(result => {
 
 ---
 
-## **추가 정보**
+:::tip **추가 정보**
 
 - Google 로그인은 **Firebase 인증 기반**으로 동작하며, `idToken`은 서버 인증에 활용할 수 있습니다.
 - 로그아웃 후에는 `isLoggedIn()` 호출 시 `false`가 반환됩니다.
+
+:::

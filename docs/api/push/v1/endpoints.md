@@ -26,15 +26,15 @@ keywords:
 <!-- 2025-03-27 V1버전 Deprecated처리 및 V2버전 신규 등록 -->
 <!-- 2025-04-23 V1 Obsolete 예정 일 확정, isUsingBadge 옵션 추가 -->
 
-> **📢 공지:**
->
-> [V2버전](../v2/endpoints.md)이 Release됨에 따라 V1버전이 **Deprecated** 상태로 변경되었습니다.
->
-> **V1버전 종료일**: 2025년 10월 18일 23:59
->
-> **Obsolete** 예정 일 이 후, V1버전은 유지가 아닌 "**서비스 중지**"되는 점 양해 부탁드립니다.
+:::warning
 
-<br/>
+[V2버전](../v2/endpoints.md)이 Release됨에 따라 V1버전이 **Deprecated** 상태로 변경되었습니다.
+
+**V1버전 종료일**: 2025년 10월 18일 23:59
+
+**Obsolete** 예정 일 이 후, V1버전은 유지가 아닌 "**서비스 중지**"되는 점 양해 부탁드립니다.
+
+:::
 
 nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 관리 및 전송을 지원합니다.
 
@@ -46,8 +46,12 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 - 개별적으로 설정된 메시지를 각 유저 ID의 푸시 토큰에 전송합니다.
 - 요청된 유저의 총 푸시 토큰 수에 따라 요청 건수가 차감됩니다.
-  <br/><br/>
-- ⚠️ Obsolete 예정 버전입니다. V2버전([`/v2/messages`](../v2/endpoints.md#post-v2-messages)) 사용을 권장합니다.
+
+:::warning
+
+Obsolete 예정 버전입니다. V2버전([`/v2/messages`](../v2/endpoints.md#post-v2-messages)) 사용을 권장합니다.
+
+:::
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
@@ -143,8 +147,12 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 - 동일한 제목과 내용으로 여러 유저에게 푸시 알림을 전송합니다.
 - 유저 ID로 조회된 모든 푸시 토큰을 대상으로 전송합니다.
 - 유저 1명당 요청 건수를 차감합니다.
-  <br/><br/>
-- ⚠️ Obsolete 예정 버전입니다. V2버전([`/v2/users`](../v2/endpoints.md#post-apipushv2users)) 사용을 권장합니다.
+
+:::warning
+
+Obsolete 예정 버전입니다. V2버전([`/v2/users`](../v2/endpoints.md#post-apipushv2users)) 사용을 권장합니다.
+
+:::
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 

@@ -18,7 +18,7 @@ keywords:
 
 # 스토어 (`store`)
 
-> 🔔 **최신화 일자:** 2025-06-12
+> 🔔 **최신화 일자:** 2025-06-13
 
 ## **개요**
 
@@ -73,14 +73,18 @@ export declare type StoreInfo =
 
 - _since ver.1.6.0_
 
-#### 설명 (`openStore`)
+#### 설명 {#open-store-summary}
 
-> ⚠️ **주의** - 스토어 출시가 완료된 후 이용하세요.
+:::info
+
+스토어 출시가 완료된 후 사용이 가능합니다.
+
+:::
 
 현재 플랫폼에 따라 **Google Play 또는 Apple App Store의 앱 상세 페이지**를 엽니다.  
 Web 환경에서는 OS에 따라 각각 적절한 스토어 페이지로 이동합니다.
 
-#### 지원 플랫폼 (`openStore`)
+#### 지원 플랫폼 {#open-store-supported-platforms}
 
 `openStore` 메서드는 **App, Web 모든 환경을 지원**합니다.
 
@@ -88,19 +92,24 @@ Web 환경에서는 OS에 따라 각각 적절한 스토어 페이지로 이동�
 - ✅ iOS
 - ✅ Web (모바일/PC)
 
-#### 매개변수 (`openStore`)
+#### 매개변수 {#open-store-parameters}
 
 | 이름                     | 타입     | 필수 여부        | 설명                                                    |
 | ------------------------ | -------- | ---------------- | ------------------------------------------------------- |
 | `storeInfo.androidAppId` | `string` | 조건부 (Android) | Android 앱의 패키지 이름                                |
 | `storeInfo.iOSAppId`     | `string` | 조건부 (iOS)     | iOS 앱스토어의 앱 ID (Apple App Store Connect에서 확인) |
 
-> ⚠️ **주의**  
-> Android에서는 `androidAppId`,  
-> iOS에서는 `iOSAppId`가 활용되기에  
-> 최소한 하나의 **App ID**를 포함해야 합니다.
+:::warning 주의
 
-#### 예제 (`openStore`)
+Android에서는 `androidAppId`,  
+iOS에서는 `iOSAppId`가 활용되기에  
+최소한 하나의 **App ID**를 포함해야 합니다.
+
+:::
+
+#### 예제 {#open-store-examples}
+
+:::note
 
 예제에서는 출시된 **nachocode developer** 앱의 정보를 활용하였습니다.
 
@@ -108,6 +117,8 @@ Web 환경에서는 OS에 따라 각각 적절한 스토어 페이지로 이동�
 - iOS App ID : `6514317160`
 
 실사용시에는 적절한 값으로 수정이 필요합니다.
+
+:::
 
 - **Android 앱만 출시되어 있을 경우**
 
@@ -136,9 +147,13 @@ Nachocode.store.openStore({
 
 - _since ver.1.6.0_
 
-#### 설명 (`openReviewInStore`)
+#### 설명 {#open-review-in-store-summary}
 
-> ⚠️ **주의** - 스토어 출시가 완료된 후 이용하세요.
+:::info
+
+스토어 출시가 완료된 후 사용이 가능합니다.
+
+:::
 
 사용자를 **스토어 내 리뷰 작성 페이지**로 직접 연결합니다.
 
@@ -150,7 +165,7 @@ Nachocode.store.openStore({
 - **iOS** : 앱스토어 리뷰 화면을 연동합니다.
 - **Android, Web** : 스토어 내 앱 상세 페이지를 엽니다.
 
-#### 지원 플랫폼 (`openReviewInStore`)
+#### 지원 플랫폼 {#open-review-in-store-supported-platforms}
 
 `openReviewInStore` 메서드는 **App, Web 모든 환경을 지원**합니다.
 
@@ -158,19 +173,24 @@ Nachocode.store.openStore({
 - ✅ iOS
 - ✅ Web (모바일/PC)
 
-#### 매개변수 (`openReviewInStore`)
+#### 매개변수 {#open-review-in-store-parameters}
 
 | 이름                     | 타입     | 필수 여부        | 설명                                      |
 | ------------------------ | -------- | ---------------- | ----------------------------------------- |
 | `storeInfo.androidAppId` | `string` | 조건부 (Android) | Android 앱의 패키지 명                    |
 | `storeInfo.iOSAppId`     | `string` | 조건부 (iOS)     | 리뷰 화면으로 이동할 iOS 앱스토어의 앱 ID |
 
-> ⚠️ **주의**  
-> Android에서는 `androidAppId`,  
-> iOS에서는 `iOSAppId`가 활용되기에  
-> 최소한 하나의 **App ID**를 포함해야 합니다.
+:::warning 주의
 
-#### 예제 (`openReviewInStore`)
+Android에서는 `androidAppId`,  
+iOS에서는 `iOSAppId`가 활용되기에  
+최소한 하나의 **App ID**를 포함해야 합니다.
+
+:::
+
+#### 예제 {#open-review-in-store-examples}
+
+:::note
 
 예제에서는 출시된 **nachocode developer** 앱의 정보를 활용하였습니다.
 
@@ -178,6 +198,8 @@ Nachocode.store.openStore({
 - iOS App ID : `6514317160`
 
 실사용시에는 적절한 값으로 수정이 필요합니다.
+
+:::
 
 - **Android 앱만 출시되어 있을 경우**
 
@@ -207,14 +229,17 @@ Nachocode.store.openReviewInStore({
 
 - _since ver.1.6.0_
 
-#### 설명 (`requestReview`)
+#### 설명 {#request-review-summary}
 
-> ⚠️ **주의**  
-> 인앱 리뷰 요청은 운영체제(OS) 정책에 따라 제한될 수 있습니다.  
-> 자세한 내용은 공식 문서를 참고해 주세요.
->
-> - [App Store](https://developer.apple.com/app-store/ratings-and-reviews/)
-> - [Google Play](https://developer.android.com/guide/playcore/in-app-review?hl=ko#when-to-request)
+:::warning 주의
+
+인앱 리뷰 요청은 운영체제(OS) 정책에 따라 제한될 수 있습니다.  
+자세한 내용은 공식 문서를 참고해 주세요.
+
+- [App Store](https://developer.apple.com/app-store/ratings-and-reviews/)
+- [Google Play](https://developer.android.com/guide/playcore/in-app-review?hl=ko#when-to-request)
+
+:::
 
 앱 내에서 **네이티브 리뷰 요청 팝업**(UI)을 호출합니다.
 
@@ -229,7 +254,7 @@ Nachocode.store.openReviewInStore({
   - 스토어를 통해 설치된 앱에서만 해당 기능을 사용할 수 있습니다.
   - 테스트 트랙이거나 TestFlight에서는 리뷰 팝업이 노출되지 않습니다.
 
-#### 지원 플랫폼 (`requestReview`)
+#### 지원 플랫폼 {#request-review-supported-platforms}
 
 `requestReview` 메서드는 **Android 및 iOS** 네이티브 앱 환경에 대응하며, Web에서는 동작하지 않습니다.
 
@@ -237,13 +262,13 @@ Nachocode.store.openReviewInStore({
 - ✅ iOS
 - ❌ Web - _지원하지 않음_
 
-#### 반환 값 (`requestReview`)
+#### 반환 값 {#request-review-returns}
 
 해당 메서드는 반환 값을 가지지 않습니다.
 
 사용자의 리뷰 팝업에서의 상호작용 결과를 알 수 있는 방법은 없습니다.
 
-#### 예제 (`requestReview`)
+#### 예제 {#request-review-examples}
 
 ```javascript
 // 네이티브 인앱 리뷰 창 호출
@@ -252,8 +277,10 @@ Nachocode.store.requestReview();
 
 ---
 
-## **활용 팁**
+:::tip **활용 팁**
 
 - **사용자 피드백 유도**: 중요한 작업 완료 직후 `requestReview()` 호출로 자연스럽게 리뷰 요청 가능
 - **앱 설치 유도**: 웹페이지에서 `openStore()` 호출로 바로 다운로드 페이지로 이동
 - **리뷰 리마인더**: 앱을 일정 기간 사용한 사용자 대상으로 재방문 시 `openReviewInStore()` 호출
+
+:::

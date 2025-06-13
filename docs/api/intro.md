@@ -68,9 +68,15 @@ nachocode API의 기본 도메인은 다음과 같습니다.
 
 ---
 
-### API 인증
+### API 호출
 
-nachocode API는 모든 요청에서 인증 정보가 필요합니다.
+:::warning **중요**
+
+nachocode API는 **반드시 서버 사이드에서 호출**되어야 합니다.
+
+:::
+
+nachocode API는 모든 요청에서 인증 정보를 요구합니다.
 
 다음 헤더를 반드시 포함해야 합니다.
 
@@ -80,12 +86,6 @@ nachocode API는 모든 요청에서 인증 정보가 필요합니다.
 | `x-secret-key` | [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) 대시보드에서 발급받은 Secret 키 |
 
 ---
-
-### API 호출
-
-> ⚠️ **중요**
-
-nachocode API는 **반드시 서버 사이드에서 호출**되어야 합니다.
 
 요청 헤더에 `x-api-key`와 `x-secret-key`를 포함하므로  
 **클라이언트 사이드에서 호출 시 Secret Key가 노출**될 위험이 있습니다.
@@ -121,7 +121,7 @@ x-secret-key: your_secret_key
 
 ---
 
-nachocode API를 활용하여 푸시 알림을 손쉽게 관리하고, 향후 추가될 다양한 기능을 기대하세요!
+nachocode API를 활용하여 푸시 알림을 손쉽게 관리하고, 향후 추가될 다양한 기능을 기대하세요!  
 궁금한 점이 있다면 [support@nachocode.io](mailto:support@nachocode.io)로 문의해주세요.
 
 ---
