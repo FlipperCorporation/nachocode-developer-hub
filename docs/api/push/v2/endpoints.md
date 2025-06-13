@@ -20,7 +20,7 @@ keywords:
 
 # 푸시알림 V2 API Endpoints
 
-> 🔔 **최신화 일자:** 2025-06-09
+> 🔔 **최신화 일자:** 2025-06-13
 
 <!-- 2024-11-27 최초 생성/ V0버전 제외 V1버전만 생성 -->
 <!-- 2025-03-27 V1버전 Deprecated처리 및 V2버전 신규 등록 -->
@@ -292,7 +292,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 ### 설명 (`/v2/topic/subscription`)
 
-- SDK의 [`registerPushToken()`](@todo)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에 구독시킵니다.
+- SDK의 [`registerPushToken()`](../../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에 구독시킵니다.
 - FCM으로의 구독과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
 - 유저 1명당 요청 건수를 차감합니다.<br/><br/>
 - ⚠️**요청 당 userId의 최대 개수는 100개입니다**.
@@ -370,7 +370,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 ### 설명 (`/v2/topic/subscription`)
 
-- SDK의 [`registerPushToken()`](@todo)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에서 구독을 해제합니다.
+- SDK의 [`registerPushToken()`](../../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에서 구독을 해제합니다.
 - FCM으로의 구독해제 과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
 - 유저 1명당 요청 건수를 차감합니다.<br/><br/>
 - ⚠️**요청 당 userId의 최대 개수는 100개입니다**.
