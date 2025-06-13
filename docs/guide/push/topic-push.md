@@ -124,21 +124,21 @@ nachocode 서버에서는 기본적으로 **디바이스를 기준으로 토픽 
 
 <br/>
 
-**[디바이스 기준 ([SDK](@todo))]** <br/>
-디바이스를 기준으로의 구독은 개발자가 [SDK](@todo)를 활용하여 **Web Client Side**에서 구독하고자 하는 시점에 구독처리를 완료하여야만 토픽 푸시 전송이 가능합니다.  
-SDK를 활용한 구독은 **유저가 식별되지 않은 상황에서도 토픽 구독이 가능**때문에 사전 작업 필요없이 특정 이벤트 발생 시점에 디바이스 [구독](@todo)과 [구독해제](@todo) 메서드 호출을 통해 구독 여부를 즉시 설정할 수 있습니다.
+**[디바이스 기준: SDK]** <br/>
+디바이스를 기준으로의 구독은 개발자가 SDK를 활용하여 **Web Client Side**에서 구독하고자 하는 시점에 구독처리를 완료하여야만 토픽 푸시 전송이 가능합니다.  
+SDK를 활용한 구독은 **유저가 식별되지 않은 상황에서도 토픽 구독이 가능**때문에 사전 작업 필요없이 특정 이벤트 발생 시점에 디바이스 [구독](../../sdk/namespaces/push.md#subscribe-push-topic)과 [구독해제](../../sdk/namespaces/push.md#unsubscribe-push-topic) 메서드 호출을 통해 구독 여부를 즉시 설정할 수 있습니다.
 
 > ex:
 >
-> - "이벤트 참여"를 클릭한 디바이스로 이벤트 알림이 보내지기를 원할 때 -> 구독
-> - "이벤트 참여 취소"를 클릭한 디바이스로 이벤트 알림이 보내지지 않도록 할 때 -> 구독해제
+> - "이벤트 참여"를 클릭한 디바이스로 이벤트 알림이 보내지기를 원할 때 -> [_구독_](../../sdk/namespaces/push.md#subscribe-push-topic)
+> - "이벤트 참여 취소"를 클릭한 디바이스로 이벤트 알림이 보내지지 않도록 할 때 -> [_구독해제_](../../sdk/namespaces/push.md#unsubscribe-push-topic)
 
 <br/><br/>
 
-**[유저 식별자 기준 ([API](../../api/push/v2/endpoints.md#request-v2topicsubscription))]** <br/>
+**[유저 식별자 기준: API]** <br/>
 유저 식별자 기준으로의 구독은 개발자가 **API를 활용하여 Server Side에서 API Call**을 통해 구독이 가능합니다.
 
-구독 및 구독해제할 유저 식별자는 사전에 [푸시 토큰 등록 SDK](../../sdk/namespaces/push#registerpushtokenuserid-string-promiseany)를 통해 **nachocode 서버에 푸시 토큰이 등록된 적 있는 유저 식별자**이어야 정상적인 처리가 가능합니다. <br/>
+구독 및 구독해제할 유저 식별자는 사전에 [푸시 토큰 등록 SDK 메서드](../../sdk/namespaces/push#register-push-token)를 통해 **nachocode 서버에 푸시 토큰이 등록된 적 있는 유저 식별자**이어야 정상적인 처리가 가능합니다. <br/>
 
 API를 활용한 구독은 **유저 식별자가 특정 가능**하고 유저의 모든 디바이스에 대한 토픽 관리가 필요할 경우 유용하게 사용됩니다.
 
@@ -153,9 +153,9 @@ API를 활용한 구독은 **유저 식별자가 특정 가능**하고 유저의
 
 <br/><br/><br/>
 
-### 3. 토픽 푸시 전송 ([API](../../api/push/v2/endpoints#request-v2topic))
+### 3. 토픽 푸시 전송 ([API](../../api/push/v2/endpoints#post-apipushv2topic))
 
-> :white_check_mark: **토픽 이름만으로 구독된 모든 유저에게 전송이 가능합니다.**
+> :white_check_mark: **토픽 이름만으로 구독된 모든 유저에게 일괄 전송이 가능합니다.**
 
 <br/>
 
@@ -168,7 +168,7 @@ API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전�
 
 <br/>
 
-_토픽에 대한 푸시가 전송된 뒤 특정 디바이스에 대한 전송을 원하지 않을 경우, 구독해제 [SDK](@todo)(또는 [API](../../api/push/v2/endpoints.md#request-v2topicsubscription-1))호출이 요구됩니다.
+_토픽에 대한 푸시가 전송된 뒤 특정 디바이스에 대한 전송을 원하지 않을 경우, 구독해제 [SDK](../../sdk/namespaces/push.md#unsubscribe-push-topic)(또는 [API](../../api/push/v2/endpoints.md#request-v2topicsubscription-1))호출이 요구됩니다.
 <br/>일회성 이벤트 토픽일 경우, 사용 후 구독해제 없이 해당 토픽을 사용하지 않는 방식으로 폐기가 가능합니다._
 
 <br/>
