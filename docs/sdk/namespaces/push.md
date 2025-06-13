@@ -37,7 +37,7 @@ keywords:
 
 ### **필수 선행 작업**
 
-nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocode 대시보드](https://nachocode.io)에서  
+nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서  
 **푸시 알림 설정이 모두 완료된 후 빌드된 경우에만** 작동합니다.
 
 아래 유저 가이드를 따라 nachocode 푸시 알림 설정을 완료하세요.

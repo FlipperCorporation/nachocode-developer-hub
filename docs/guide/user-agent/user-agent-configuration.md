@@ -75,7 +75,7 @@ Mozilla/5.0 ... (중략) ... nachocode_ios
 
 ### User Agent 설정 방법
 
-#### 1. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 앱 유저 에이전트 활성화 ]에서 [ 앱 유저 에이전트 활성화 ] 토글을 활성화
+#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 앱 유저 에이전트 활성화 ]에서 [ 앱 유저 에이전트 활성화 ] 토글을 활성화
 
 ![nachocode_developer_custom_user_agent](../../../static/img/docs/user-agent/nachocode_developer_user_agent.png)
 

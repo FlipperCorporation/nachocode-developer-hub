@@ -40,13 +40,13 @@ nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아
 
 <br/>
 
-#### 2. [nachocode 대시보드](https://nachocode.io)의 [ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 애플 로그인 사용 ] 토글을 활성화하여 앱 설정 완료
+#### 2. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 애플 로그인 사용 ] 토글을 활성화하여 앱 설정 완료
 
 ![nachocode_developer_apple_login](../../../static/img/docs/apple/nachocode_developer_apple_login.png)
 
 <br/>
 
-#### 3. [nachocode 대시보드](https://nachocode.io)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+#### 3. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
 
 ![nachocode_google_login_toggle](../../../static/img/docs/apple/nachocode_build_ios_new_version.png)
 
