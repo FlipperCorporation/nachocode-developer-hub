@@ -33,9 +33,9 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 이 문서에서는 **API 사용법**, **요청/응답 형식**, **에러 케이스** 등을 다룹니다.
 
-## **[POST] `/api/push/v2/messages`**
+## **[POST] `/api/push/v2/messages`** {#post-v2-messages}
 
-### 설명 (`/v2/messages`)
+### 설명 {#post-v2-messages-summary}
 
 - 개별적으로 설정된 메시지를 각 유저 ID의 푸시 토큰에 전송합니다.
 - 요청된 유저의 총 푸시 토큰 수에 따라 요청 건수가 차감됩니다.<br/><br/>
@@ -43,7 +43,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Request (`/v2/messages`)
+### Request {#post-v2-messages-request}
 
 - **Header**
 
@@ -88,7 +88,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Response (`/v2/messages`)
+### Response {#post-v2-messages-response}
 
 - **Success Response**
 
@@ -121,9 +121,9 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
 
-## **[POST] `/api/push/v2/users`**
+## **[POST] `/api/push/v2/users`** {#post-v2-users}
 
-### 설명 (`/v2/users`)
+### 설명 {#post-v2-users-summary}
 
 - 동일한 제목과 내용으로 여러 유저에게 푸시 알림을 전송합니다.
 - 유저 ID로 조회된 모든 푸시 토큰을 대상으로 전송합니다.
@@ -132,7 +132,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Request (`/v2/users`)
+### Request {#post-v2-users-request}
 
 - **Header**
 
@@ -172,7 +172,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Response (`/v2/users`)
+### Response {#post-v2-users-response}
 
 - **Success Response**
 
@@ -205,16 +205,16 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <br/><br/><hr style={{ border: "1px solid black", opacity: "0.5"}} /><br/>
 
-## **[POST] `/api/push/v2/topic`**
+## **[POST] `/api/push/v2/topic`** {#post-v2-topic}
 
-### 설명 (`/v2/topic`)
+### 설명 {#post-v2-topic-summary}
 
 - 특정 토픽에 대한 구독 과정을 통해 구독된 모든 디바이스로 푸시를 전송합니다.
 - 토픽 푸시 전송 요청 건수에 따라 차감됩니다.<br/><br/>
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Request (`/v2/topic`)
+### Request {#post-v2-topic-request}
 
 - **Header**
 
@@ -254,7 +254,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Response (`/v2/topic`)
+### Response {#post-v2-topic-response}
 
 - **Success Response**
 
@@ -288,9 +288,9 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
 
-## **[POST] `/api/push/v2/topic/subscription`**
+## **[POST] `/api/push/v2/topic/subscription`** {#post-v2-topic-subscription}
 
-### 설명 (`/v2/topic/subscription`)
+### 설명 {#post-v2-topic-subscription-summary}
 
 - SDK의 [`registerPushToken()`](../../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에 구독시킵니다.
 - FCM으로의 구독과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
@@ -299,7 +299,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Request (`/v2/topic/subscription`)
+### Request {#post-v2-topic-subscription-request}
 
 - **Header**
 
@@ -329,7 +329,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Response (`/v2/topic/subscription`)
+### Response {#post-v2-topic-subscription-response}
 
 - **Success Response**
 
@@ -366,9 +366,9 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <br/><br/><hr style={{ border: "1px solid black", opacity: "0.5"}} /><br/>
 
-## **[DELETE] `/api/push/v2/topic/subscription`**
+## **[DELETE] `/api/push/v2/topic/subscription`** {#delete-v2-topic-subscription}
 
-### 설명 (`/v2/topic/subscription`)
+### 설명 {#delete-v2-topic-subscription-summary}
 
 - SDK의 [`registerPushToken()`](../../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에서 구독을 해제합니다.
 - FCM으로의 구독해제 과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
@@ -377,7 +377,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Request (`/v2/topic/subscription`)
+### Request {#delete-v2-topic-subscription-request}
 
 - **Header**
 
@@ -407,7 +407,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Response (`/v2/topic/subscription`)
+### Response {#delete-v2-topic-subscription-response}
 
 - **Success Response**
 
