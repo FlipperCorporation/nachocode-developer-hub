@@ -13,8 +13,12 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '푸시 알림',
-          link: { type: 'generated-index', slug: 'guide/push/personal-push' },
-          items: ['guide/push/personal-push', 'guide/push/topic-push'],
+          link: { type: 'generated-index', slug: 'guide/push/push-token' },
+          items: [
+            'guide/push/push-token',
+            'guide/push/personal-push',
+            'guide/push/topic-push',
+          ],
         },
         {
           type: 'category',

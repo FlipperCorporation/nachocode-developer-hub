@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 sidebar_label: 토픽 푸시
 description: nachocode 토픽 푸시 가이드는 SDK 및 API를 활용한 구독형 푸시 알림 전송 방법을 안내합니다. 토픽 구독부터 구독해제, 전송, 결과 분석까지 쉽고 효율적으로 관리할 수 있습니다.
 keywords:
