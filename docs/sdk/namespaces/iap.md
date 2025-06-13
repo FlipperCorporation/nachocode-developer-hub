@@ -16,7 +16,7 @@ keywords:
 
 # 인앱결제 (`iap`)
 
-> 🔔 **최신화 일자:** 2025-04-25
+> 🔔 **최신화 일자:** 2025-06-13
 
 ## **개요**
 
@@ -82,7 +82,10 @@ declare type IapPurchaseResult = {
 ### `purchase(productKey: string, userId: string, callback: (result: IapPurchaseResult) => void): Promise<any>`
 
 - _since ver.1.4.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 (`purchase`)
 

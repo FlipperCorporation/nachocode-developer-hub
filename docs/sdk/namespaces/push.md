@@ -20,7 +20,7 @@ keywords:
 
 # 푸시 알림 (`push`)
 
-> 🔔 **최신화 일자:** 2025-06-12
+> 🔔 **최신화 일자:** 2025-06-13
 
 ## **개요**
 
@@ -40,9 +40,11 @@ keywords:
 nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서  
 **푸시 알림 설정이 모두 완료된 후 빌드된 경우에만** 작동합니다.
 
-아래 유저 가이드를 따라 nachocode 푸시 알림 설정을 완료하세요.
+:::tip **푸시 알림 유저 가이드**
 
-➡️ [푸시 알림 유저 가이드](https://docs.nachocode.io/ko/articles/%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BC%EA%B0%9C%EC%9D%B8%ED%99%94-0eb97bdb)
+➡️ [**유저 가이드**](https://docs.nachocode.io/ko/articles/%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BC%EA%B0%9C%EC%9D%B8%ED%99%94-0eb97bdb)를 따라 nachocode 푸시 알림 설정을 완료하세요.
+
+:::
 
 ---
 
@@ -128,15 +130,15 @@ export declare type LocalPushResult = {
 
 ## **메서드 목록**
 
-| 메서드                                                                | 설명                                                       | 추가된 버전 |
-| --------------------------------------------------------------------- | ---------------------------------------------------------- | ----------- |
-| [`subscribePushTopic(topic, callback?)`](#subscribe-push-topic)       | **푸시 토픽을 구독**합니다.                                | ver.1.6.0   |
-| [`unsubscribePushTopic(topic, callback?)`](#unsubscribe-push-topic)   | **푸시 토픽 구독을 취소**합니다.                           | ver.1.6.0   |
-| [`getSubscriptionList(callback)`](#get-subscription-list)             | 디바이스의 현재 **구독 중인 푸시 토픽 목록을 조회**합니다. | ver.1.6.0   |
-| [`sendLocalPush(payload, callback?)`](#sendlocalpushpayload-callback) | **로컬 푸시 알림을 예약**합니다.                           | ver.1.4.1   |
-| [`cancelLocalPush(id)`](#cancellocalpushid-number)                    | 예약된 로컬 푸시 알림을 취소합니다.                        | ver.1.4.1   |
-| [`registerPushToken(userID)`](#register-push-token)                   | nachocode 서버에 푸시 토큰을 등록합니다.                   | ver.1.0.0   |
-| [`deletePushToken(userID)`](#deletepushtokenuserid-string-promiseany) | nachocode 서버에서 푸시 토큰을 삭제합니다.                 | ver.1.0.0   |
+| 메서드                                                              | 설명                                                       | 추가된 버전 |
+| ------------------------------------------------------------------- | ---------------------------------------------------------- | ----------- |
+| [`subscribePushTopic(topic, callback?)`](#subscribe-push-topic)     | **푸시 토픽을 구독**합니다.                                | ver.1.6.0   |
+| [`unsubscribePushTopic(topic, callback?)`](#unsubscribe-push-topic) | **푸시 토픽 구독을 취소**합니다.                           | ver.1.6.0   |
+| [`getSubscriptionList(callback)`](#get-subscription-list)           | 디바이스의 현재 **구독 중인 푸시 토픽 목록을 조회**합니다. | ver.1.6.0   |
+| [`sendLocalPush(payload, callback?)`](#send-local-push)             | **로컬 푸시 알림을 예약**합니다.                           | ver.1.4.1   |
+| [`cancelLocalPush(id)`](#cancel-local-push)                         | 예약된 로컬 푸시 알림을 취소합니다.                        | ver.1.4.1   |
+| [`registerPushToken(userID)`](#register-push-token)                 | nachocode 서버에 푸시 토큰을 등록합니다.                   | ver.1.0.0   |
+| [`deletePushToken(userID)`](#delete-push-token)                     | nachocode 서버에서 푸시 토큰을 삭제합니다.                 | ver.1.0.0   |
 
 ---
 
@@ -146,25 +148,25 @@ export declare type LocalPushResult = {
 
 - _since ver.1.6.0_
 
-#### 설명 (`subscribePushTopic`)
+#### 설명 {#subscribe-push-topic-summary}
 
 지정한 푸시 토픽을 구독합니다.  
 구독이 성공하면 **nachocode 서버 API**를 통해서 혹은  
 **FCM에서 해당 토픽으로 직접적으로 발송**한 메시지를 수신할 수 있습니다.
 
-#### 매개변수 (`subscribePushTopic`)
+#### 매개변수 {#subscribe-push-topic-parameters}
 
 | 이름       | 타입                                | 필수 여부 | 설명                           |
 | ---------- | ----------------------------------- | --------- | ------------------------------ |
 | `topic`    | `string`                            | ✅        | 구독할 토픽 이름               |
 | `callback` | `(result: PushTopicResult) => void` | ❌        | 구독 성공 여부를 콜백으로 수신 |
 
-#### 반환 값 (`subscribePushTopic`)
+#### 반환 값 {#subscribe-push-topic-returns}
 
 해당 메서드는 반환 값을 가지지 않습니다.  
 결과는 콜백으로 전달됩니다.
 
-#### 사용 예제 (`subscribePushTopic`)
+#### 사용 예제 {#subscribe-push-topic-examples}
 
 ```javascript
 Nachocode.push.subscribePushTopic('event-promotion', result => {
@@ -182,19 +184,19 @@ Nachocode.push.subscribePushTopic('event-promotion', result => {
 
 - _since ver.1.6.0_
 
-#### 설명 (`unsubscribePushTopic`)
+#### 설명 {#unsubscribe-push-topic-summary}
 
 지정한 푸시 토픽 구독을 해지합니다.  
 이후 해당 토픽으로 발송된 메시지를 더 이상 수신하지 않게 됩니다.
 
-#### 매개변수 (`unsubscribePushTopic`)
+#### 매개변수 {#unsubscribe-push-topic-parameters}
 
 | 이름       | 타입                                | 필수 여부 | 설명                                |
 | ---------- | ----------------------------------- | --------- | ----------------------------------- |
 | `topic`    | `string`                            | ✅        | 해지할 토픽 이름                    |
 | `callback` | `(result: PushTopicResult) => void` | ❌        | 구독 해지 성공 여부를 콜백으로 수신 |
 
-#### 사용 예제 (`unsubscribePushTopic`)
+#### 사용 예제 {#unsubscribe-push-topic-examples}
 
 ```javascript
 Nachocode.push.unsubscribePushTopic('event-promotion', result => {
@@ -212,17 +214,17 @@ Nachocode.push.unsubscribePushTopic('event-promotion', result => {
 
 - _since ver.1.6.0_
 
-#### 설명 (`getSubscriptionList`)
+#### 설명 {#get-subscription-list-summary}
 
 현재 디바이스에서 구독 중인 **푸시 토픽 목록을 조회**합니다.
 
-#### 매개변수 (`getSubscriptionList`)
+#### 매개변수 {#get-subscription-list-parameters}
 
 | 이름       | 타입                                   | 필수 여부 | 설명                                  |
 | ---------- | -------------------------------------- | --------- | ------------------------------------- |
 | `callback` | `(subscriptionList: string[]) => void` | ✅        | 구독된 토픽 이름 목록을 콜백으로 수신 |
 
-#### 사용 예제 (`getSubscriptionList`)
+#### 사용 예제 {#get-subscription-list-examples}
 
 ```javascript
 Nachocode.push.getSubscriptionList(list => {
@@ -232,27 +234,27 @@ Nachocode.push.getSubscriptionList(list => {
 
 ---
 
-### **`sendLocalPush(payload, callback?)`**
+### **`sendLocalPush(payload, callback?)`** {#send-local-push}
 
 - _since ver.1.4.1_
 
-#### 설명 (`sendLocalPush`)
+#### 설명 {#send-local-push-summary}
 
 로컬 푸시 알림을 예약하고, 특정 시각(`scheduledTime`)에 디바이스에서 푸시 알림을 표시할 수 있습니다.  
 즉시 발송하거나 예약 발송이 가능하며, 예약된 알림은 `id` 값을 사용해 취소할 수도 있습니다.
 
-#### 매개변수 (`sendLocalPush`)
+#### 매개변수 {#send-local-push-parameters}
 
 | 이름       | 타입                                                    | 필수 여부 | 설명                           |
 | ---------- | ------------------------------------------------------- | --------- | ------------------------------ |
 | `payload`  | [`LocalPushPayload`](#localpushpayload)                 | ✅        | 예약할 로컬 푸시 데이터        |
 | `callback` | [`(result: LocalPushResult) => void`](#localpushresult) | ❌        | 예약 성공 여부를 반환하는 콜백 |
 
-#### 반환 값 (`sendLocalPush`)
+#### 반환 값 {#send-local-push-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`sendLocalPush`)
+#### 사용 예제 {#send-local-push-examples}
 
 ```javascript
 // 1. 즉시 발송 (예약 시간 없이)
@@ -295,28 +297,28 @@ Nachocode.push.sendLocalPush(
 
 ---
 
-### **`cancelLocalPush(id: number)`**
+### **`cancelLocalPush(id: number)`** {#cancel-local-push}
 
 - _since ver.1.4.1_
 
-#### 설명 (`cancelLocalPush`)
+#### 설명 {#cancel-local-push-summary}
 
 예약된 로컬 푸시 알림을 취소합니다.  
 취소하려는 푸시 알림의 `id` 값을 전달해야 합니다.
 
-[`sendLocalPush`](#sendlocalpushpayload-callback)에서 반환된 `id`를 사용합니다.
+[`sendLocalPush`](#send-local-push)에서 반환된 `id`를 사용합니다.
 
-#### 매개변수 (`cancelLocalPush`)
+#### 매개변수 {#cancel-local-push-parameters}
 
 | 이름 | 타입     | 필수 여부 | 설명                         |
 | ---- | -------- | --------- | ---------------------------- |
 | `id` | `number` | ✅        | 취소할 예약된 푸시 알림의 ID |
 
-#### 반환 값 (`cancelLocalPush`)
+#### 반환 값 {#cancel-local-push-returns}
 
 해당 메서드는 반환 값을 가지지 않습니다.
 
-#### 사용 예제 (`cancelLocalPush`)
+#### 사용 예제 {#cancel-local-push-examples}
 
 ```javascript
 // 예약된 푸시 알림 취소
@@ -329,26 +331,29 @@ console.log('푸시 알림이 취소되었습니다.');
 ### **`registerPushToken(userID: string): Promise<any>`** {#register-push-token}
 
 - _since ver.1.0.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
-#### 설명 (`registerPushToken`)
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#register-push-token-summary}
 
 nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.  
 이때, 특정 사용자(`userID`)를 식별자로 사용하여 **푸시 알림을 해당 사용자에게 전송할 수 있도록 설정**합니다.
 
-#### 매개변수 (`registerPushToken`)
+#### 매개변수 {#register-push-token-parameters}
 
 | 이름     | 타입     | 필수 여부 | 설명                         |
 | -------- | -------- | --------- | ---------------------------- |
 | `userID` | `string` | ✅        | 푸시 토큰을 연결할 사용자 ID |
 
-#### 반환 값 (`registerPushToken`)
+#### 반환 값 {#register-push-token-returns}
 
 | 타입           | 설명                  |
 | -------------- | --------------------- |
 | `Promise<any>` | 등록 요청의 처리 결과 |
 
-#### 사용 예제 (`registerPushToken`)
+#### 사용 예제 {#register-push-token-examples}
 
 ```javascript
 // ex. 유저의 로그인 성공 시 호출되는 콜백함수
@@ -363,29 +368,32 @@ function onLoginSuccess(userID) {
 
 ---
 
-### **`deletePushToken(userID: string): Promise<any>`**
+### **`deletePushToken(userID: string): Promise<any>`** {#delete-push-token}
 
 - _since ver.1.0.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
-#### 설명 (`deletePushToken`)
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#delete-push-token-summary}
 
 nachocode 서버에서 **해당 사용자(`userID`)와 연결된 푸시 토큰을 삭제**합니다.  
 사용자가 로그아웃하거나 푸시 알림을 더 이상 사용하지 않도록 설정할 경우 이 메서드를 호출해야 합니다.
 
-#### 매개변수 (`deletePushToken`)
+#### 매개변수 {#delete-push-token-parameters}
 
 | 이름     | 타입     | 필수 여부 | 설명                                |
 | -------- | -------- | --------- | ----------------------------------- |
 | `userID` | `string` | ✅        | 삭제할 푸시 토큰이 연결된 사용자 ID |
 
-#### 반환 값 (`deletePushToken`)
+#### 반환 값 {#delete-push-token-returns}
 
 | 타입           | 설명                  |
 | -------------- | --------------------- |
 | `Promise<any>` | 삭제 요청의 처리 결과 |
 
-#### 사용 예제 (`deletePushToken`)
+#### 사용 예제 {#delete-push-token-examples}
 
 ```javascript
 // ex. 유저의 로그아웃 시 호출되는 콜백함수

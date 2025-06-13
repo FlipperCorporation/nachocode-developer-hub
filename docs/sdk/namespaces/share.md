@@ -16,7 +16,7 @@ keywords:
 
 # 공유 (`share`)
 
-> 🔔 **최신화 일자:** 2025-06-12
+> 🔔 **최신화 일자:** 2025-06-13
 
 ## **개요**
 
@@ -24,10 +24,12 @@ keywords:
 
 공유하기 기능은 **웹, Android, iOS 플랫폼 모두에서 사용 가능**합니다.
 
-> 🚨 **주의**  
-> 카카오톡 공유 관련 기능은 **nachocode SDK v1.5.0**부터 `kakao` 네임스페이스로 이동되었습니다.  
-> 따라서 `share.sendKakao`, `share.KakaoShareType` 등은 더 이상 사용을 권장하지 않습니다.  
-> ➡️ [kakao 네임스페이스로 이동된 공유 기능 문서 보기](./kakao#sharetype-kakaosharetype-data-kakaosharecustom--kakaosharescrap-callback-result-kakaoshareresult--void-void)
+:::info **공지**  
+카카오톡 공유 관련 기능은 **nachocode SDK v1.5.0**부터 `kakao` 네임스페이스로 이동되었습니다.  
+따라서 `share.sendKakao`, `share.KakaoShareType` 등은 더 이상 사용을 권장하지 않습니다.  
+➡️ [kakao 네임스페이스로 이동된 공유 기능 문서 보기](./kakao#sharetype-kakaosharetype-data-kakaosharecustom--kakaosharescrap-callback-result-kakaoshareresult--void-void)
+
+:::
 
 ---
 
@@ -54,7 +56,9 @@ keywords:
 
 **웹 공유 API와 동일한 구조**의 `{ title, url, text }` 형식을 지원합니다.
 
-> 참고 : [MDN - Navigator: share( ) method](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)
+:::tip 참고
+[MDN - Navigator: share( ) method](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)
+:::
 
 #### 지원 플랫폼 (`openSharing`)
 
@@ -66,11 +70,14 @@ keywords:
 
 #### 매개변수 (`openSharing`)
 
-> ⚠️ **주의**  
-> **nachocode SDK v1.6.0**부터는 **object 형식**(`title`, `url`, `text`를 조합)으로 매개변수가 변경되었으며,  
-> 기존 단일 `url` 전달 방식은 _Deprecated_ 되었습니다.
->
-> `shareData`는 반드시 `url` 또는 `text` 중 **최소 1개 이상을 포함**해야 합니다.
+:::warning **주의**
+
+**nachocode SDK v1.6.0**부터는 **object 형식**(`title`, `url`, `text`를 조합)으로 매개변수가 변경되었으며,  
+기존 단일 `url` 전달 방식은 _Deprecated_ 되었습니다.
+
+`shareData`는 반드시 `url` 또는 `text` 중 **최소 1개 이상을 포함**해야 합니다.
+
+:::
 
 | 이름              | 타입     | 필수 여부 | 설명               |
 | ----------------- | -------- | --------- | ------------------ |

@@ -18,7 +18,7 @@ keywords:
 
 # User Agent 설정하기
 
-> 🔔 **최신화 일자:** 2025-05-30
+> 🔔 **최신화 일자:** 2025-06-13
 
 ## nachocode User Agent
 
@@ -33,11 +33,13 @@ keywords:
 
 ---
 
-> 📢 **참고**:
->
-> **User Agent는 nachocode 앱을 통해 웹 페이지에 진입한 경우에만 설정되며**,
->
-> **일반 브라우저 또는 외부 앱에서는 설정되지 않습니다.**
+:::info
+
+**User Agent는 nachocode 앱을 통해 웹 페이지에 진입한 경우에만 설정되며**,
+
+**일반 브라우저 또는 외부 앱에서는 설정되지 않습니다.**
+
+:::
 
 ---
 
@@ -59,13 +61,19 @@ Mozilla/5.0 ... (중략) ... nachocode_ios
 
 ### 제외 URL 정책
 
-일부 외부 서비스(결제 시스템, OAuth 인증 등)에서는 nachocode의 User Agent로 인해 예상치 못한 렌더링 오류나 기능 비정상이 발생할 수 있습니다. 이를 방지하기 위해 nachocode는 **제외 URL(Exclusion URL)** 기능을 제공합니다.
+일부 외부 서비스(결제 시스템, OAuth 인증 등)에서는 nachocode의 User Agent로 인해 예상치 못한 렌더링 오류나 기능 비정상이 발생할 수 있습니다.
 
-#### **제외 URL이란?**
+이를 방지하기 위해 nachocode는 **제외 URL(Exclusion URL)** 기능을 제공합니다.
 
-**등록된 특정 URL 또는 도메인**에 대해서는 User Agent(`nachocode_android` / `nachocode_ios`)를 삽입하지 않고, **디바이스의 기본 User Agent만을 사용하도록 예외처리**하는 기능입니다.
+:::tip **제외 URL이란?**
 
-**예외처리는 다음과 같은 경우**에 유용하게 사용됩니다 :
+**등록된 특정 URL 또는 도메인**에 대해서는  
+User Agent(`nachocode_android` / `nachocode_ios`)를 삽입하지 않고,  
+**디바이스의 기본 User Agent만을 사용하도록 예외처리**하는 기능입니다.
+
+:::
+
+**예외처리는 다음과 같은 경우**에 유용하게 사용됩니다.
 
 - 외부 결제 창 연동 시 WebView 호환성 확보
 - 소셜 로그인 페이지 등 민감한 외부 웹 자원 호출
@@ -79,7 +87,7 @@ Mozilla/5.0 ... (중략) ... nachocode_ios
 
 ![nachocode_developer_custom_user_agent](../../../static/img/docs/user-agent/nachocode_developer_user_agent.png)
 
-#### 2. 커스텀 유저 에이전트를 사용하지 않을 **제외 URL**을 추가한 후 저장하기
+#### 2. 앱 유저 에이전트를 사용하지 않을 **제외 URL**을 추가한 후 저장하기
 
 ---
 
@@ -98,8 +106,12 @@ nachocode의 Custom User Agent는 **Google Analytics(GA)** 와 같은 웹 분석
 
 ### 추가 정보
 
+:::tip **GA 연동**
+
 **GA 연동을 위한 스크립트 구성, 커스텀 파라미터 설정** 등은 **GA 연동 유저 가이드 문서**를 참고해주세요.
 
-➡️ [**GA 연동 가이드**](https://docs.nachocode.io/ko/articles/GA4-%EC%97%B0%EB%8F%99-c7823729)
+➡️ [**GA 연동 유저 가이드**](https://docs.nachocode.io/ko/articles/GA4-%EC%97%B0%EB%8F%99-c7823729)
+
+:::
 
 추가로 궁금한 점이 있다면 [support@nachocode.io](mailto:support@nachocode.io)로 문의해주세요.

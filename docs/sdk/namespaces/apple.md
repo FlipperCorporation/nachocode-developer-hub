@@ -16,17 +16,21 @@ keywords:
 
 # 애플 (`apple`)
 
-> 🔔 **최신화 일자:** 2025-05-30
+> 🔔 **최신화 일자:** 2025-06-13
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
+
+:::warning 주의
+
+**이 네임스페이스는 현재 iOS에서만 지원됩니다.**
+
+:::
 
 ## **개요**
 
 `apple` 네임스페이스는 **디바이스의 Apple 네이티브 기능**을 활용할 수 있도록 지원합니다.
 
 현재는 **Apple 로그인** 및 **사용자 정보 조회** 기능을 제공합니다.
-
-> ⚠️ **이 네임스페이스는 현재 iOS에서만 지원됩니다.**
 
 ---
 
@@ -97,37 +101,40 @@ Apple 로그인 성공 시 반환되는 사용자 정보 객체입니다.
 
 ## **메서드 목록**
 
-| 메서드                                                                                                                             | 설명                                     | 추가된 버전 |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ----------- |
-| [`login(permissions, callback)`](#loginpermissions-applepermissions-callback-result-appleresult-userdata-appleuserdata--void-void) | Apple 네이티브 소셜 로그인을 수행합니다. | ver.1.4.0   |
-| [`isLoggedIn(identifier, callback)`](#isloggedinidentifier-string-callback-result-appleresult-isloggedin-boolean--void-void)       | Apple 로그인 상태를 확인합니다.          | ver.1.4.0   |
-| [`getUserIdentifier(callback)`](#getuseridentifiercallback-result-appleresult-useridentifier-string--void-void)                    | Apple 사용자 고유 식별자를 반환합니다.   | ver.1.4.0   |
+| 메서드                                                | 설명                                     | 추가된 버전 |
+| ----------------------------------------------------- | ---------------------------------------- | ----------- |
+| [`login(permissions, callback)`](#login)              | Apple 네이티브 소셜 로그인을 수행합니다. | ver.1.4.0   |
+| [`isLoggedIn(identifier, callback)`](#is-logged-in)   | Apple 로그인 상태를 확인합니다.          | ver.1.4.0   |
+| [`getUserIdentifier(callback)`](#get-user-identifier) | Apple 사용자 고유 식별자를 반환합니다.   | ver.1.4.0   |
 
 ---
 
 ## **메서드 상세**
 
-### **`login(permissions: ApplePermissions, callback: (result: AppleResult, userData?: AppleUserData) => void): void`**
+### **`login(permissions: ApplePermissions, callback: (result: AppleResult, userData?: AppleUserData) => void): void`** {#login}
 
 - _since ver.1.4.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
-#### 설명 (`login`)
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#login-summary}
 
 Apple 네이티브 소셜 로그인을 수행하고 사용자 정보를 반환합니다.
 
-#### 매개변수 (`login`)
+#### 매개변수 {#login-parameters}
 
 | 이름          | 타입                                                      | 필수 여부 | 설명                                    |
 | ------------- | --------------------------------------------------------- | --------- | --------------------------------------- |
 | `permissions` | `ApplePermissions`                                        | ✅        | 로그인 요청 시 요구할 권한 목록         |
 | `callback`    | `(result: AppleResult, userData?: AppleUserData) => void` | ✅        | 요청 결과와 사용자 정보를 반환하는 함수 |
 
-#### 반환 값 (`login`)
+#### 반환 값 {#login-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`login`)
+#### 사용 예제 {#login-examples}
 
 ```javascript
 // Apple 로그인 요청
@@ -147,27 +154,30 @@ Nachocode.apple.login(['email', 'fullName'], (result, userData) => {
 
 ---
 
-### **`isLoggedIn(identifier: string, callback: (result: AppleResult, isLoggedIn: boolean) => void): void`**
+### **`isLoggedIn(identifier: string, callback: (result: AppleResult, isLoggedIn: boolean) => void): void`** {#is-logged-in}
 
 - _since ver.1.4.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
-#### 설명 (`isLoggedIn`)
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#is-logged-in-summary}
 
 Apple 사용자 고유 식별자(`identifier`)를 기반으로 현재 사용자가 로그인 상태인지 확인합니다.
 
-#### 매개변수 (`isLoggedIn`)
+#### 매개변수 {#is-logged-in-parameters}
 
 | 이름         | 타입                                                 | 필수 여부 | 설명                        |
 | ------------ | ---------------------------------------------------- | --------- | --------------------------- |
 | `identifier` | `string`                                             | ✅        | Apple 사용자 고유 식별자    |
 | `callback`   | `(result: AppleResult, isLoggedIn: boolean) => void` | ✅        | 로그인 여부를 반환하는 함수 |
 
-#### 반환 값 (`isLoggedIn`)
+#### 반환 값 {#is-logged-in-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`isLoggedIn`)
+#### 사용 예제 {#is-logged-in-examples}
 
 ```javascript
 // Apple 로그인 상태 확인
@@ -183,26 +193,29 @@ Nachocode.apple.isLoggedIn('user_identifier_here', (result, isLoggedIn) => {
 
 ---
 
-### **`getUserIdentifier(callback: (result: AppleResult, userIdentifier?: string) => void): void`**
+### **`getUserIdentifier(callback: (result: AppleResult, userIdentifier?: string) => void): void`** {#get-user-identifier}
 
 - _since ver.1.4.0_
-- 📢 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 
-#### 설명 (`getUserIdentifier`)
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#get-user-identifier-summary}
 
 Apple 사용자 고유 식별자를 반환합니다.
 
-#### 매개변수 (`getUserIdentifier`)
+#### 매개변수 {#get-user-identifier-parameters}
 
 | 이름       | 타입                                                     | 필수 여부 | 설명                                |
 | ---------- | -------------------------------------------------------- | --------- | ----------------------------------- |
 | `callback` | `(result: AppleResult, userIdentifier?: string) => void` | ✅        | Apple 사용자 식별자를 반환하는 함수 |
 
-#### 반환 값 (`getUserIdentifier`)
+#### 반환 값 {#get-user-identifier-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`getUserIdentifier`)
+#### 사용 예제 {#get-user-identifier-examples}
 
 ```javascript
 // Apple 사용자 고유 식별자 조회
@@ -217,9 +230,9 @@ Nachocode.apple.getUserIdentifier((result, userIdentifier) => {
 
 ---
 
-## **추가 정보**
+:::info **추가 정보**
 
 - Apple 네임스페이스는 **현재 iOS에서만 동작**합니다. Android 및 기타 환경에서는 추후 지원될 예정입니다.
 - 사용자의 이메일 및 이름 정보는 최초 로그인 시에만 제공될 수 있으며, 이후 재로그인 시 반환되지 않을 수 있습니다.
 
----
+:::
