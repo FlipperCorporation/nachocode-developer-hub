@@ -157,3 +157,4 @@ API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전�
 분석하여 전략 수립에 활용할 수 있습니다.
 
 푸시 요청에 대한 상세 정보는 [nachocode](<(https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)>) 대시보드의 **[앱 기능]** > **[푸시 알림]** > **[개인화 푸시]** 탭에서 확인할 수 있습니다.
+푸시 요청에 대한 상세 정보는 [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) 대시보드의 **[앱 기능]** > **[푸시 알림]** > **[개인화 푸시]** 탭에서 확인할 수 있습니다.
