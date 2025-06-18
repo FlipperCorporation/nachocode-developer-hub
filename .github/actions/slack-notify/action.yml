@@ -8,7 +8,7 @@ inputs:
     description: 'Deployment status (Success or Failure)'
     required: true
   environment:
-    description: 'Deployment environment (Production or Staging)'
+    description: 'Deployment environment (Production or Develop)'
     required: true
   slack_webhook_url:
     description: 'Slack Webhook URL'
@@ -24,9 +24,9 @@ runs:
         if [ "${{ inputs.environment }}" == "Production" ]; then
           ENV_NAME="Production ‼"
           ENV_NAME_KOR="운영"
-        elif [ "${{ inputs.environment }}" == "Staging" ]; then
-          ENV_NAME="Staging"
-          ENV_NAME_KOR="스테이징"
+        elif [ "${{ inputs.environment }}" == "Develop" ]; then
+          ENV_NAME="Develop"
+          ENV_NAME_KOR="개발"
         else
           ENV_NAME_KOR=""
         fi
