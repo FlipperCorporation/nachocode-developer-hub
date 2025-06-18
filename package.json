@@ -23,6 +23,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve --no-open --port 3005",
+    "serve:back": "nohup npm run serve > developer_nohup.out 2> developer_nohup.err < /dev/null &",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "prettier": "prettier --ignore-path .prettierignore --write .",

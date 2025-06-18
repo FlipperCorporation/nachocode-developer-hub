@@ -1,0 +1,67 @@
+name: Continuous Deployment Staging
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  deploy:
+    name: Staging Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        id: checkout-git
+        uses: actions/checkout@v4
+
+      - name: Deploy to Staging Server
+        id: deploy-staging
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEV_SERVER_MAC_HOST }} # Dev_Server Mac 호스트명 또는 IP 주소
+          username: ${{ secrets.DEV_SERVER_MAC_USER }} # Dev_Server Mac 접속 사용자명
+          key: ${{ secrets.DEV_SERVER_MAC_SSH_KEY }} # Dev_Server_Mac SSH private key (path : ~/.ssh)
+          port: ${{ secrets.DEV_SERVER_MAC_SSH_PORT }} # Dev_Server_Mac SSH PORT
+          script: |
+            cd ~/Desktop/NACHOCODE/nachocode-developer-hub && sh .github/workflows/deploy-nacho-developer-hub-staging.sh
+
+      - name: Notify Slack on Failure
+        if: ${{ failure()}}
+        env:
+          SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
+        uses: ./.github/actions/slack-notify
+        with:
+          project: 'nachocode-developer-hub'
+          status: 'Failure'
+          environment: 'Staging'
+          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
+
+  notify:
+    name: Notify Slack
+    runs-on: ubuntu-latest
+    needs: [deploy]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Notify Slack on Success
+        if: ${{ success()}}
+        env:
+          SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
+        uses: ./.github/actions/slack-notify
+        with:
+          project: 'nachocode-developer-hub'
+          status: 'Success'
+          environment: 'Staging'
+          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
+
+      - name: Notify Slack on Failure
+        if: ${{ failure()}}
+        env:
+          SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
+        uses: ./.github/actions/slack-notify
+        with:
+          project: 'nachocode-developer-hub'
+          status: 'Failure'
+          environment: 'Staging'
+          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
