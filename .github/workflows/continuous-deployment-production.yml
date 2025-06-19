@@ -1,0 +1,54 @@
+name: Continuous Deployment Production
+on:
+  push:
+    branches:
+      - 'prod'
+jobs:
+  deploy:
+    name: Production Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        id: checkout-git
+        uses: actions/checkout@v4
+
+      - name: Deploy to Production Server Using Github Pages
+        id: deploy-production
+        env:
+          GIT_USER: ${{ secrets.GIT_USER }} # git user name
+          script: |
+            npm run install
+            npm run build
+            npm run deploy
+
+      # - name: Notify Slack on Failure
+      #   if: ${{ failure()}}
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
+      #   uses: ./.github/actions/slack-notify
+      #   with:
+      #     project: 'nachocode-developer-hub'
+      #     status: 'Failure'
+      #     environment: 'Production'
+      #     slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
+
+  notify:
+    name: Notify Slack
+    runs-on: ubuntu-latest
+    needs: [deploy]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Notify Slack on Success
+        if: ${{ success()}}
+        env:
+          SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
+        uses: ./.github/actions/slack-notify
+        with:
+          project: 'nachocode-developer-hub'
+          status: 'Success'
+          environment: 'Production'
+          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
