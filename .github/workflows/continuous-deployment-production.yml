@@ -16,7 +16,7 @@ jobs:
       - name: Deploy to Production Server Using Github Pages
         id: deploy-production
         run: |
-            npm run install
+            npm install
             npm run build
             npm run deploy
         env:
