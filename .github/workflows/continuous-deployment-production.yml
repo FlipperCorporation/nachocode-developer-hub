@@ -15,12 +15,12 @@ jobs:
 
       - name: Deploy to Production Server Using Github Pages
         id: deploy-production
-        env:
-          GIT_USER: ${{ secrets.GIT_USER }} # git user name
-          script: |
+        run: |
             npm run install
             npm run build
             npm run deploy
+        env:
+          GIT_USER: ${{ secrets.GIT_USER }} # git user name
 
       # - name: Notify Slack on Failure
       #   if: ${{ failure()}}
