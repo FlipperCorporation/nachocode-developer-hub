@@ -142,27 +142,27 @@ const config: Config = {
       logo: { alt: 'nachocode', src: 'img/logo.png' },
       items: [
         {
+          to: 'docs/intro', // 서비스 소개 페이지로 이동
+          activeBasePath: 'docs/intro',
           label: '서비스 소개',
-          type: 'doc',
-          docId: 'intro', // 서비스 소개 페이지로 이동
           position: 'left',
         },
         {
+          to: 'docs/guide/intro', // Guide의 시작 페이지로 이동
+          activeBasePath: 'docs/guide',
           label: '가이드',
-          type: 'doc',
-          docId: 'guide/intro', // Guide의 시작 페이지로 이동
           position: 'left',
         },
         {
+          to: 'docs/api/intro', // API의 시작 페이지로 이동
+          activeBasePath: 'docs/api',
           label: 'API',
-          type: 'doc',
-          docId: 'api/intro', // API의 시작 페이지로 이동
           position: 'left',
         },
         {
+          to: 'docs/sdk/intro', // SDK의 시작 페이지로 이동
+          activeBasePath: 'docs/sdk',
           label: 'SDK',
-          type: 'doc',
-          docId: 'sdk/intro', // SDK의 시작 페이지로 이동
           position: 'left',
         },
         {
