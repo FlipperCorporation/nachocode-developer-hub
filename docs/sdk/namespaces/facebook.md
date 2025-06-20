@@ -16,7 +16,7 @@ keywords:
 
 # 페이스북 (`facebook`)
 
-> 🔔 **최신화 일자:** 2025-05-30
+> 🔔 **최신화 일자:** 2025-06-20
 
 ## **개요**
 
@@ -122,22 +122,31 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 ---
 
-## **메서드 목록**
-
-| 메서드                                                                                                                                                                       | 설명                       | 추가된 버전 |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | ----------- |
-| [`login(permissions, callback)`](#loginpermissions-facebookpermissions-callback-result-facebookresult-accesstoken-string-userid-string-userdata-facebookuserdata--void-void) | 페이스북 네이티브 로그인   | ver.1.4.0   |
-| [`isLoggedIn(callback)`](#isloggedincallback-result-facebookresult-isloggedin-boolean-accesstoken-string-userid-string--void-void)                                           | 로그인 상태 확인           | ver.1.4.0   |
-| [`getUserData(permissions, callback)`](#getuserdatapermissions-facebookpermissions-callback-result-facebookresult-userdata-facebookuserdata--void-void)                      | 사용자 데이터 요청         | ver.1.4.0   |
-| [`logout()`](#logout-void)                                                                                                                                                   | 페이스북 네이티브 로그아웃 | ver.1.4.0   |
-
----
-
 ## **타입 정의**
 
 ### **`FacebookResult`**
 
 페이스북 로그인 및 요청의 결과 상태를 나타내는 타입입니다.
+
+```typescript
+export declare type FacebookSuccessResult = {
+  status: 'success';
+};
+```
+
+```typescript
+export declare type FacebookErrorResult = {
+  status: 'error';
+  errorCode: string;
+  message: string;
+};
+```
+
+```typescript
+export declare type FacebookResult =
+  | FacebookSuccessResult
+  | FacebookErrorResult;
+```
 
 | 필드        | 타입                   | 설명                       |
 | ----------- | ---------------------- | -------------------------- |
@@ -147,9 +156,72 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 ---
 
+### **`FacebookPermissionTypes`**
+
+페이스북 로그인 시 요청할 권한 타입입니다.
+
+:::tip 공식 문서
+
+[Permissions Reference for Meta Technologies APIs](https://developers.facebook.com/docs/permissions)
+
+:::
+
+<!-- markdownlint-disable MD033 -->
+<details>
+<summary>펼쳐 보기</summary>
+
+```typescript
+export declare type FacebookPermissionTypes = [
+  'email',
+  'public_profile',
+  'user_friends',
+  'user_birthday',
+  'user_hometown',
+  'user_location',
+  'user_photos',
+  'user_posts',
+  'user_gender',
+  'user_link',
+  'user_likes',
+  'user_events',
+  'user_videos',
+  'user_tagged_places',
+  'user_age_range',
+  'user_managed_groups',
+  'user_work_history',
+  'user_education_history',
+  'user_relationships',
+  'user_relationship_details',
+  'user_friends_relationships',
+  'user_pages',
+];
+```
+
+```typescript
+export declare type FacebookPermissions =
+  (typeof FacebookPermissionTypes)[string][];
+```
+
+</details>
+
+<!-- markdownlint-enable MD033 -->
+
+---
+
 ### **`FacebookUserData`**
 
 페이스북 사용자 데이터를 나타내는 타입입니다.
+
+```typescript
+export declare type FacebookUserData = {
+  email?: string;
+  name?: string;
+  id?: number;
+  first_name?: string;
+  last_name?: string;
+  [fields: string]: any;
+};
+```
 
 | 필드         | 타입     | 설명                  |
 | ------------ | -------- | --------------------- |
@@ -162,30 +234,45 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 ---
 
+## **메서드 목록**
+
+| 메서드                                                 | 설명                       | 추가된 버전 |
+| ------------------------------------------------------ | -------------------------- | ----------- |
+| [`login(permissions, callback)`](#login)               | 페이스북 네이티브 로그인   | ver.1.4.0   |
+| [`isLoggedIn(callback)`](#is-logged-in)                | 로그인 상태 확인           | ver.1.4.0   |
+| [`getUserData(permissions, callback)`](#get-user-data) | 사용자 데이터 요청         | ver.1.4.0   |
+| [`logout()`](#logout)                                  | 페이스북 네이티브 로그아웃 | ver.1.4.0   |
+
+---
+
 ## **메서드 상세**
 
-### **`login(permissions: FacebookPermissions, callback: (result: FacebookResult, accessToken?: string, userId?: string, userData?: FacebookUserData) => void): void`**
+### **`login(permissions: FacebookPermissions, callback: (result: FacebookResult, accessToken?: string, userId?: string, userData?: FacebookUserData) => void): void`** {#login}
 
 - _since ver.1.4.0_
 
-#### 설명 (`login`)
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#login-summary}
 
 페이스북 네이티브 로그인 요청을 수행합니다.  
 사용자가 지정한 **권한(permissions)** 목록에 따라 필요한 권한을 요청할 수 있습니다.  
 로그인 성공 시 **`accessToken`, `userId`, `userData`**가 콜백 함수로 전달됩니다.
 
-#### 매개변수 (`login`)
+#### 매개변수 {#login-parameters}
 
 | 이름          | 타입                                                                                                   | 필수 여부 | 설명                             |
 | ------------- | ------------------------------------------------------------------------------------------------------ | --------- | -------------------------------- |
 | `permissions` | `FacebookPermissions`                                                                                  | ✅        | 요청할 권한 목록                 |
 | `callback`    | `(result: FacebookResult, accessToken?: string, userId?: string, userData?: FacebookUserData) => void` | ✅        | 로그인 결과를 반환하는 콜백 함수 |
 
-#### 반환 값 (`login`)
+#### 반환 값 {#login-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`login`)
+#### 사용 예제 {#login-examples}
 
 ```javascript
 // 페이스북 로그인 요청
@@ -206,26 +293,30 @@ Nachocode.facebook.login(
 
 ---
 
-### **`isLoggedIn(callback: (result: FacebookResult, isLoggedIn: boolean, accessToken?: string, userId?: string) => void): void`**
+### **`isLoggedIn(callback: (result: FacebookResult, isLoggedIn: boolean, accessToken?: string, userId?: string) => void): void`** {#is-logged-in}
 
 - _since ver.1.4.0_
 
-#### 설명 (`isLoggedIn`)
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#is-logged-in-summary}
 
 현재 사용자가 **페이스북 네이티브 로그인 상태인지 확인**합니다.  
 로그인 여부(`isLoggedIn`), `accessToken`, `userId` 값을 반환합니다.
 
-#### 매개변수 (`isLoggedIn`)
+#### 매개변수 {#is-logged-in-parameters}
 
 | 이름       | 타입                                                                                           | 필수 여부 | 설명                        |
 | ---------- | ---------------------------------------------------------------------------------------------- | --------- | --------------------------- |
 | `callback` | `(result: FacebookResult, isLoggedIn: boolean, accessToken?: string, userId?: string) => void` | ✅        | 로그인 상태를 반환하는 함수 |
 
-#### 반환 값 (`isLoggedIn`)
+#### 반환 값 {#is-logged-in-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`isLoggedIn`)
+#### 사용 예제 {#is-logged-in-examples}
 
 ```javascript
 // 페이스북 로그인 상태 확인
@@ -242,27 +333,31 @@ Nachocode.facebook.isLoggedIn((result, isLoggedIn, accessToken, userId) => {
 
 ---
 
-### **`getUserData(permissions: FacebookPermissions, callback: (result: FacebookResult, userData?: FacebookUserData) => void): void`**
+### **`getUserData(permissions: FacebookPermissions, callback: (result: FacebookResult, userData?: FacebookUserData) => void): void`** {#get-user-data}
 
 - _since ver.1.4.0_
 
-#### 설명 (`getUserData`)
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#get-user-data-summary}
 
 페이스북에서 **사용자 데이터를 요청**합니다.  
 **요청한 권한(permissions)** 에 따라 **사용자 프로필, 이메일, 생일 등** 다양한 정보를 가져올 수 있습니다.
 
-#### 매개변수 (`getUserData`)
+#### 매개변수 {#get-user-data-parameters}
 
 | 이름          | 타입                                                            | 필수 여부 | 설명                           |
 | ------------- | --------------------------------------------------------------- | --------- | ------------------------------ |
 | `permissions` | `FacebookPermissions`                                           | ✅        | 요청할 사용자 데이터 권한 목록 |
 | `callback`    | `(result: FacebookResult, userData?: FacebookUserData) => void` | ✅        | 사용자 데이터를 반환하는 함수  |
 
-#### 반환 값 (`getUserData`)
+#### 반환 값 {#get-user-data-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`getUserData`)
+#### 사용 예제 {#get-user-data-examples}
 
 ```javascript
 // 사용자 데이터 요청
@@ -284,16 +379,20 @@ Nachocode.facebook.getUserData(
 
 ---
 
-### **`logout(): void`**
+### **`logout(): void`** {#logout}
 
 - _since ver.1.4.0_
 
-#### 설명 (`logout`)
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#logout-summary}
 
 페이스북 네이티브 로그인 세션을 **로그아웃**합니다.  
 이 메서드는 반환 값을 가지지 않습니다.
 
-#### 사용 예제 (`logout`)
+#### 사용 예제 {#logout-examples}
 
 ```javascript
 // 페이스북 로그아웃
@@ -303,10 +402,12 @@ console.log('페이스북에서 로그아웃되었습니다.');
 
 ---
 
-## **추가 정보**
+:::info **추가 정보**
 
 - 요청한 권한(permissions)은 페이스북 개발자 센터에서 **승인된 권한만 사용 가능**합니다.
 - 페이스북 사용자는 **로그인 및 사용자 데이터 제공 시 명시적으로 권한을 허용**해야 합니다.
 - 권한 목록은 [Facebook Permissions 공식 문서](https://developers.facebook.com/docs/permissions)에서 확인할 수 있습니다.
+
+:::
 
 ---
