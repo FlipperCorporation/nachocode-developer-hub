@@ -17,7 +17,7 @@ keywords:
 
 # 카카오 (`kakao`)
 
-> 🔔 **최신화 일자:** 2025-06-13
+> 🔔 **최신화 일자:** 2025-06-20
 
 ## **개요**
 
@@ -95,6 +95,25 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 - _since ver.1.5.0_
 
 카카오 API 요청 결과를 나타내는 타입입니다.
+
+```typescript
+export declare type KakaoSuccessResult = {
+  status: 'success';
+  statusCode: number;
+};
+```
+
+```typescript
+export declare type KakaoErrorResult = {
+  status: 'error';
+  statusCode: number;
+  message: string;
+};
+```
+
+```typescript
+export declare type KakaoResult = KakaoSuccessResult | KakaoErrorResult;
+```
 
 | 필드         | 타입                   | 설명                         |
 | ------------ | ---------------------- | ---------------------------- |
@@ -298,20 +317,20 @@ type KakaoShareStatusCode = 102 | 103 | 104 | 105 | 106 | 108 | 199 | 200 | 201;
 
 ## **메서드 목록**
 
-| 메서드                                                                                                                                         | 설명                                    | 추가된 버전 |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | ----------- |
-| [`login(callback)`](#logincallback-result-kakaoresult-logindata-kakaologindata--void-void)                                                     | 카카오 네이티브 로그인                  | ver.1.5.0   |
-| [`isLoggedIn(callback)`](#isloggedincallback-result-kakaoresult-isloggedin-boolean-logindata-kakaologindata--void-void)                        | 로그인 상태 확인                        | ver.1.5.0   |
-| [`getUserData(callback)`](#getuserdatacallback-result-kakaoresult-userdata-kakaouserdata--void-void)                                           | 사용자 데이터 요청                      | ver.1.5.0   |
-| [`logout(callback)`](#logoutcallback-result-kakaoresult--void-void)                                                                            | 카카오 네이티브 로그아웃                | ver.1.5.0   |
-| [`unlink(callback)`](#unlinkcallback-result-kakaoresult--void-void)                                                                            | 앱과 카카오 계정 연결 해제              | ver.1.5.0   |
-| [`share(type, data, callback?)`](#sharetype-kakaosharetype-data-kakaosharecustom--kakaosharescrap-callback-result-kakaoshareresult--void-void) | 카카오톡 커스텀 템플릿/스크랩 공유 기능 | ver.1.5.0   |
+| 메서드                                    | 설명                                    | 추가된 버전 |
+| ----------------------------------------- | --------------------------------------- | ----------- |
+| [`login(callback)`](#login)               | 카카오 네이티브 로그인                  | ver.1.5.0   |
+| [`isLoggedIn(callback)`](#is-logged-in)   | 로그인 상태 확인                        | ver.1.5.0   |
+| [`getUserData(callback)`](#get-user-data) | 사용자 데이터 요청                      | ver.1.5.0   |
+| [`logout(callback)`](#logout)             | 카카오 네이티브 로그아웃                | ver.1.5.0   |
+| [`unlink(callback)`](#unlink)             | 앱과 카카오 계정 연결 해제              | ver.1.5.0   |
+| [`share(type, data, callback?)`](#share)  | 카카오톡 커스텀 템플릿/스크랩 공유 기능 | ver.1.5.0   |
 
 ---
 
 ## **메서드 상세**
 
-### **`login(callback: (result: KakaoResult, loginData?: KakaoLoginData) => void): void`**
+### **`login(callback: (result: KakaoResult, loginData?: KakaoLoginData) => void): void`** {#login}
 
 - _since ver.1.5.0_
 
@@ -319,12 +338,22 @@ type KakaoShareStatusCode = 102 | 103 | 104 | 105 | 106 | 108 | 199 | 200 | 201;
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 :::
 
-#### 설명 (`login`)
+#### 설명 {#login-summary}
 
 카카오 네이티브 로그인을 수행합니다.  
 성공 시 `loginData`를 콜백을 통해 반환합니다.
 
-#### 사용 예제 (`login`)
+#### 매개변수 {#login-parameters}
+
+| 이름       | 타입                                                        | 필수 여부 | 설명                        |
+| ---------- | ----------------------------------------------------------- | --------- | --------------------------- |
+| `callback` | `(result: KakaoResult, loginData?: KakaoLoginData) => void` | ✅        | 로그인 결과를 반환하는 함수 |
+
+#### 반환 값 {#login-returns}
+
+해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
+
+#### 사용 예제 {#login-examples}
 
 ```javascript
 Nachocode.kakao.login((result, loginData) => {
@@ -338,7 +367,7 @@ Nachocode.kakao.login((result, loginData) => {
 
 ---
 
-### **`isLoggedIn(callback: (result: KakaoResult, isLoggedIn: boolean, loginData?: KakaoLoginData) => void): void`**
+### **`isLoggedIn(callback: (result: KakaoResult, isLoggedIn: boolean, loginData?: KakaoLoginData) => void): void`** {#is-logged-in}
 
 - _since ver.1.5.0_
 
@@ -346,11 +375,21 @@ Nachocode.kakao.login((result, loginData) => {
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 :::
 
-#### 설명 (`isLoggedIn`)
+#### 설명 {#is-logged-in-summary}
 
 현재 사용자의 카카오 로그인 상태를 확인합니다.
 
-#### 사용 예제 (`isLoggedIn`)
+#### 매개변수 {#is-logged-in-parameters}
+
+| 이름       | 타입                                                                            | 필수 여부 | 설명                        |
+| ---------- | ------------------------------------------------------------------------------- | --------- | --------------------------- |
+| `callback` | `(result: KakaoResult, isLoggedIn: boolean,loginData?: KakaoLoginData) => void` | ✅        | 로그인 상태를 반환하는 함수 |
+
+#### 반환 값 {#is-logged-in-returns}
+
+해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
+
+#### 사용 예제 {#is-logged-in-examples}
 
 ```javascript
 Nachocode.kakao.isLoggedIn((result, isLoggedIn, loginData) => {
@@ -364,7 +403,7 @@ Nachocode.kakao.isLoggedIn((result, isLoggedIn, loginData) => {
 
 ---
 
-### **`getUserData(callback: (result: KakaoResult, userData?: KakaoUserData) => void): void`**
+### **`getUserData(callback: (result: KakaoResult, userData?: KakaoUserData) => void): void`** {#get-user-data}
 
 - _since ver.1.5.0_
 
@@ -372,11 +411,21 @@ Nachocode.kakao.isLoggedIn((result, isLoggedIn, loginData) => {
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 :::
 
-#### 설명 (`getUserData`)
+#### 설명 {#get-user-data-summary}
 
 로그인된 사용자의 카카오 정보를 가져옵니다.
 
-#### 사용 예제 (`getUserData`)
+#### 매개변수 {#get-user-data-parameters}
+
+| 이름       | 타입                                                      | 필수 여부 | 설명                          |
+| ---------- | --------------------------------------------------------- | --------- | ----------------------------- |
+| `callback` | `(result: KakaoResult, userData?: KakaoUserData) => void` | ✅        | 사용자 데이터를 반환하는 함수 |
+
+#### 반환 값 {#get-user-data-returns}
+
+해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
+
+#### 사용 예제 {#get-user-data-examples}
 
 ```javascript
 Nachocode.kakao.getUserData((result, userData) => {
@@ -390,7 +439,7 @@ Nachocode.kakao.getUserData((result, userData) => {
 
 ---
 
-### **`logout(callback: (result: KakaoResult) => void): void`**
+### **`logout(callback: (result: KakaoResult) => void): void`** {#logout}
 
 - _since ver.1.5.0_
 
@@ -398,13 +447,23 @@ Nachocode.kakao.getUserData((result, userData) => {
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 :::
 
-#### 설명 (`logout`)
+#### 설명 {#logout-summary}
 
 카카오 네이티브 로그인 세션을 로그아웃합니다.
 
 다시 로그인 시도 시 자동으로 이전에 연결된 카카오 계정으로 다시 인가 과정을 수행합니다.
 
-#### 사용 예제 (`logout`)
+#### 매개변수 {#logout-parameters}
+
+| 이름       | 타입                            | 필수 여부 | 설명               |
+| ---------- | ------------------------------- | --------- | ------------------ |
+| `callback` | `(result: KakaoResult) => void` | ✅        | 로그아웃 결과 콜백 |
+
+#### 반환 값 {#logout-returns}
+
+해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
+
+#### 사용 예제 {#logout-examples}
 
 ```javascript
 Nachocode.kakao.logout(result => {
@@ -418,7 +477,7 @@ Nachocode.kakao.logout(result => {
 
 ---
 
-### **`unlink(callback: (result: KakaoResult) => void): void`**
+### **`unlink(callback: (result: KakaoResult) => void): void`** {#unlink}
 
 - _since ver.1.5.0_
 
@@ -426,13 +485,23 @@ Nachocode.kakao.logout(result => {
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 :::
 
-#### 설명 (`unlink`)
+#### 설명 {#unlink-summary}
 
 앱과 카카오 계정 간의 연결을 해제(unlink)합니다.
 
 다시 로그인 시도 시 카카오에서 처음부터 다시 인가 과정을 수행합니다.
 
-#### 사용 예제 (`unlink`)
+#### 매개변수 {#unlink-parameters}
+
+| 이름       | 타입                            | 필수 여부 | 설명               |
+| ---------- | ------------------------------- | --------- | ------------------ |
+| `callback` | `(result: KakaoResult) => void` | ✅        | 로그아웃 결과 콜백 |
+
+#### 반환 값 {#unlink-returns}
+
+해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
+
+#### 사용 예제 {#unlink-examples}
 
 ```javascript
 Nachocode.kakao.unlink(result => {
@@ -446,7 +515,7 @@ Nachocode.kakao.unlink(result => {
 
 ---
 
-### **`share(type: KakaoShareType, data: KakaoShareCustom | KakaoShareScrap, callback?: (result: KakaoShareResult) => void): void`**
+### **`share(type: KakaoShareType, data: KakaoShareCustom | KakaoShareScrap, callback?: (result: KakaoShareResult) => void): void`** {#share}
 
 - _since ver.1.5.0_
 
@@ -454,15 +523,17 @@ Nachocode.kakao.unlink(result => {
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
 :::
 
-#### 설명 (`share`)
+#### 설명 {#share-summary}
 
 카카오톡 공유 기능을 수행합니다.  
 [커스텀 템플릿](https://developers.kakao.com/docs/latest/ko/message-template/common#configuration-method-type)(`custom`) 또는 URL [스크랩](https://developers.kakao.com/docs/latest/ko/message-template/common#scrap)(`scrap`) 방식을 사용하여 공유할 수 있습니다.  
 공유 결과는 선택적으로 `callback` 함수를 통해 전달받을 수 있습니다.
 
-_참고 : [kakao developers - 메시지 템플릿 이해하기](https://developers.kakao.com/docs/latest/ko/message-template/common)_
+:::tip 카카오 공식 문서
+[Kakao Developers - 메시지 템플릿 이해하기](https://developers.kakao.com/docs/latest/ko/message-template/common)
+:::
 
-#### 매개변수 (`share`)
+#### 매개변수 {#share-parameters}
 
 | 이름       | 타입                                         | 필수 여부 | 설명                                    |
 | ---------- | -------------------------------------------- | --------- | --------------------------------------- |
@@ -470,7 +541,7 @@ _참고 : [kakao developers - 메시지 템플릿 이해하기](https://develope
 | `data`     | `KakaoShareCustom \| KakaoShareScrap`        | ✅        | 공유할 데이터 (템플릿 ID 또는 URL 필요) |
 | `callback` | `(result: KakaoResult) => void` _(optional)_ | ❌        | 공유 결과를 처리할 콜백 함수            |
 
-#### 사용 예제 (커스텀 템플릿)
+#### 사용 예제 (커스텀 템플릿) {#share-examples-custom}
 
 ```javascript
 // 커스텀 템플릿을 활용한 카카오톡 공유
@@ -490,7 +561,7 @@ Nachocode.kakao.share(
 );
 ```
 
-#### 사용 예제 (URL 스크랩)
+#### 사용 예제 (URL 스크랩) {#share-examples-scrap}
 
 ```javascript
 // URL을 활용한 카카오톡 공유
@@ -511,10 +582,12 @@ Nachocode.kakao.share(
 
 ---
 
-## **추가 정보**
+:::info **추가 정보**
 
 - 카카오 공유를 위해서는 **카카오 개발자 센터**에서 앱 키 설정이 선행되어야 합니다.
 - `custom` 공유 방식의 경우, **카카오 개발자 센터에서 사전 등록된 템플릿 ID**가 필요합니다.
 - `scrap` 방식은 카카오 서버가 스크랩 API를 통해 대상 URL의 메타데이터를 가져와 미리보기를 생성합니다.
 - 실패할 경우, `KakaoResult`의 `status` 값이 `'error'`로 설정되며 `message` 필드에 오류 원인이 포함됩니다.
 - 카카오 설정 시 어려움이 있으시면 언제든지 [support@nachocode.io](mailto:support@nachocode.io)로 문의해 주세요.
+
+:::
