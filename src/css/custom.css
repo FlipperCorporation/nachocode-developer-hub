@@ -591,3 +591,23 @@ div,
 a {
   font-family: 'Pretendard' !important;
 }
+
+.underlined-subtitle {
+  padding-top: var(--ifm-alert-padding-vertical);
+  margin-bottom: 2em;
+  border-bottom: 1px solid #000000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  position: relative;
+  width: fit-content;
+}
+.underlined-subtitle::after {
+  content: '';
+  margin-top: 0.1rem;
+  border-bottom: 1px solid #897e7e;
+  position: absolute;
+  height: 1px;
+  width: 96%;
+  top: 45px;
+  left: 0%;
+}
