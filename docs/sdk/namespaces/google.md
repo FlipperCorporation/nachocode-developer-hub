@@ -16,7 +16,7 @@ keywords:
 
 # 구글 (`google`)
 
-> 🔔 **최신화 일자:** 2025-06-18
+> 🔔 **최신화 일자:** 2025-06-20
 
 ## **개요**
 
@@ -110,22 +110,30 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 ---
 
-## **메서드 목록**
-
-| 메서드                                    | 설명                   | 추가된 버전 |
-| ----------------------------------------- | ---------------------- | ----------- |
-| [`login(callback)`](#login)               | 구글 네이티브 로그인   | ver.1.5.0   |
-| [`isLoggedIn(callback)`](#is-logged-in)   | 로그인 상태 확인       | ver.1.5.0   |
-| [`getUserData(callback)`](#get-user-data) | 사용자 데이터 요청     | ver.1.5.0   |
-| [`logout(callback)`](#logout)             | 구글 네이티브 로그아웃 | ver.1.5.0   |
-
----
-
 ## **타입 정의**
 
 ### **`GoogleResult`**
 
 구글 로그인 및 요청의 결과 상태를 나타내는 타입입니다.
+
+```typescript
+export declare type GoogleSuccessResult = {
+  status: 'success';
+  statusCode: 200;
+};
+```
+
+```typescript
+export declare type GoogleErrorResult = {
+  status: 'error';
+  statusCode: number;
+  message: string;
+};
+```
+
+```typescript
+export declare type GoogleResult = GoogleSuccessResult | GoogleErrorResult;
+```
 
 | 필드         | 타입                   | 설명                       |
 | ------------ | ---------------------- | -------------------------- |
@@ -139,6 +147,18 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 구글 사용자 데이터를 나타내는 타입입니다.
 
+```typescript
+export declare type GoogleUserData = {
+  uid: string;
+  email?: string;
+  displayName?: string;
+  photoURL?: string;
+  phoneNumber?: string;
+  isEmailVerified: boolean;
+  providerId?: string;
+};
+```
+
 | 필드              | 타입      | 설명                         |
 | ----------------- | --------- | ---------------------------- |
 | `uid`             | `string`  | 사용자 고유 식별자           |
@@ -148,6 +168,17 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 | `phoneNumber`     | `string`  | 전화번호 _(optional)_        |
 | `isEmailVerified` | `boolean` | 이메일 인증 여부             |
 | `providerId`      | `string`  | 인증 제공자 ID _(optional)_  |
+
+---
+
+## **메서드 목록**
+
+| 메서드                                    | 설명                   | 추가된 버전 |
+| ----------------------------------------- | ---------------------- | ----------- |
+| [`login(callback)`](#login)               | 구글 네이티브 로그인   | ver.1.5.0   |
+| [`isLoggedIn(callback)`](#is-logged-in)   | 로그인 상태 확인       | ver.1.5.0   |
+| [`getUserData(callback)`](#get-user-data) | 사용자 데이터 요청     | ver.1.5.0   |
+| [`logout(callback)`](#logout)             | 구글 네이티브 로그아웃 | ver.1.5.0   |
 
 ---
 
@@ -195,6 +226,9 @@ Nachocode.google.login((result, idToken, userData) => {
 현재 사용자가 **구글 네이티브 로그인 상태인지 확인**합니다.  
 로그인 여부(`isLoggedIn`)와 함께 `idToken`을 반환합니다.
 
+로그인이 되어있을 경우 `isLoggedIn`에는 `true` 값이, `idToken`에는 문자열이 담겨 콜백을 호출합니다.  
+비로그인 상태거나 에러가 발생할 경우 `isLoggedIn`에는 `false` 값이, `idToken`은 `undefined`로 콜백을 호출합니다.
+
 #### 매개변수 {#is-logged-in-parameters}
 
 | 이름       | 타입                                                                    | 필수 여부 | 설명                        |
@@ -209,10 +243,17 @@ Nachocode.google.login((result, idToken, userData) => {
 
 ```javascript
 Nachocode.google.isLoggedIn((result, isLoggedIn, idToken) => {
-  if (isLoggedIn) {
-    console.log('구글 로그인 상태입니다.', idToken);
+  if (result.status === 'success') {
+    if (isLoggedIn) {
+      // 네이티브 구글 로그인된 상태
+      console.log('구글 로그인 상태입니다.', idToken);
+    } else {
+      // 네이티브 구글 로그아웃 상태
+      console.log('구글 로그인이 되어 있지 않습니다.');
+    }
   } else {
-    console.log('구글에 로그인되어 있지 않습니다.');
+    // 네이티브 정보 불러오기 실패
+    console.error('구글 로그인 정보 불러오기 실패');
   }
 });
 ```
@@ -284,7 +325,7 @@ Nachocode.google.logout(result => {
 
 ---
 
-:::tip **추가 정보**
+:::info **추가 정보**
 
 - Google 로그인은 **Firebase 인증 기반**으로 동작하며, `idToken`은 서버 인증에 활용할 수 있습니다.
 - 로그아웃 후에는 `isLoggedIn()` 호출 시 `false`가 반환됩니다.
