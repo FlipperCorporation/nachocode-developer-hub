@@ -204,7 +204,10 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            { label: 'nachocode.io', href: 'https://nachocode.io' },
+            {
+              label: 'nachocode.io',
+              href: 'https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide',
+            },
             { label: 'GitHub', href: 'https://github.com/FlipperCorporation' },
             { label: 'Discord', href: 'https://discord.gg/SU5wFmRw' },
           ],
