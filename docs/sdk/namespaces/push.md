@@ -157,7 +157,7 @@ export declare type LocalPushResult = {
 
 ## **메서드 상세**
 
-### **`subscribePushTopic(topic): Promise<PushTopicResult>`** {#subscribe-push-topic}
+### **`subscribePushTopic(topic: string): Promise<PushTopicResult>`** {#subscribe-push-topic}
 
 - _since ver.1.6.0_
 - _lastupdated ver.1.6.1_
@@ -201,7 +201,7 @@ try {
 
 ---
 
-### **`unsubscribePushTopic(topic): Promise<PushTopicResult>`** {#unsubscribe-push-topic}
+### **`unsubscribePushTopic(topic: string): Promise<PushTopicResult>`** {#unsubscribe-push-topic}
 
 - _since ver.1.6.0_
 - _lastupdated ver.1.6.1_
