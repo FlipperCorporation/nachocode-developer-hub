@@ -188,6 +188,10 @@ export declare type GoogleUserData = {
 
 - _since ver.1.5.0_
 
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
 #### 설명 {#login-summary}
 
 구글 네이티브 로그인 요청을 수행합니다.  
@@ -220,6 +224,10 @@ Nachocode.google.login((result, idToken, userData) => {
 ### **`isLoggedIn(callback: (result: GoogleResult, isLoggedIn: boolean, idToken?: string) => void): void`** {#is-logged-in}
 
 - _since ver.1.5.0_
+
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 {#is-logged-in-summary}
 
@@ -264,6 +272,10 @@ Nachocode.google.isLoggedIn((result, isLoggedIn, idToken) => {
 
 - _since ver.1.5.0_
 
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
 #### 설명 {#get-user-data-summary}
 
 구글에서 **사용자 데이터를 요청**합니다.  
@@ -296,6 +308,10 @@ Nachocode.google.getUserData((result, userData) => {
 ### **`logout(callback: (result: GoogleResult) => void): void`** {#logout}
 
 - _since ver.1.5.0_
+
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 {#logout-summary}
 
