@@ -62,6 +62,8 @@ nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아
 
 ### **`AppleResult`**
 
+Apple 로그인 요청의 결과 상태를 나타내는 객체 타입입니다.
+
 ```typescript
 export declare type AppleSuccessResult = {
   status: 'success';
@@ -80,8 +82,6 @@ export declare type AppleErrorResult = {
 export declare type AppleResult = AppleSuccessResult | AppleErrorResult;
 ```
 
-Apple 로그인 요청의 결과 상태를 나타내는 객체 타입입니다.
-
 | 필드                     | 타입     | 설명                                 |
 | ------------------------ | -------- | ------------------------------------ |
 | `status`                 | `string` | 요청 결과 상태 (`success` / `error`) |
@@ -92,6 +92,8 @@ Apple 로그인 요청의 결과 상태를 나타내는 객체 타입입니다.
 
 ### **`ApplePermissionTypes`**
 
+Apple 로그인 요청 시 요구할 수 있는 권한 목록입니다.
+
 ```typescript
 export declare type ApplePermissionTypes = ['email', 'fullName'];
 ```
@@ -99,8 +101,6 @@ export declare type ApplePermissionTypes = ['email', 'fullName'];
 ```typescript
 export declare type ApplePermissions = (typeof ApplePermissionTypes)[string][];
 ```
-
-Apple 로그인 요청 시 요구할 수 있는 권한 목록입니다.
 
 | 값         | 설명                  |
 | ---------- | --------------------- |
@@ -110,6 +110,8 @@ Apple 로그인 요청 시 요구할 수 있는 권한 목록입니다.
 ---
 
 ### **`AppleUserData`**
+
+Apple 로그인 성공 시 반환되는 사용자 정보 객체입니다.
 
 ```typescript
 export declare type AppleUserData = {
@@ -124,8 +126,6 @@ export declare type AppleUserData = {
   [fields: string]: any;
 };
 ```
-
-Apple 로그인 성공 시 반환되는 사용자 정보 객체입니다.
 
 | 필드                           | 타입     | 설명                        |
 | ------------------------------ | -------- | --------------------------- |
