@@ -6,14 +6,14 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '가이드',
-      link: { type: 'generated-index', slug: 'guide/intro' },
+      link: { type: 'doc', id: 'guide/intro' },
       items: [
         'guide/intro',
         'guide/iap',
         {
           type: 'category',
           label: '푸시 알림',
-          link: { type: 'generated-index', slug: 'guide/push/push-token' },
+          link: { type: 'doc', id: 'guide/push/push-token' },
           items: [
             'guide/push/push-token',
             'guide/push/personal-push',
@@ -23,7 +23,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '웹훅',
-          link: { type: 'generated-index', slug: 'guide/webhook/overview' },
+          link: { type: 'doc', id: 'guide/webhook/overview' },
           items: [
             'guide/webhook/overview',
             {
@@ -37,8 +37,8 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'User Agent',
           link: {
-            type: 'generated-index',
-            slug: 'guide/user-agent/user-agent-definition',
+            type: 'doc',
+            id: 'guide/user-agent/user-agent-definition',
           },
           items: [
             'guide/user-agent/user-agent-definition',
@@ -50,13 +50,13 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'API',
-      link: { type: 'generated-index', slug: 'api/intro' },
+      link: { type: 'doc', id: 'api/intro' },
       items: [
         'api/intro',
         {
           type: 'category',
           label: '푸시 알림',
-          link: { type: 'generated-index', slug: 'api/push/v2/endpoints' },
+          link: { type: 'doc', id: 'api/push/v2/endpoints' },
           items: ['api/push/v2/endpoints', 'api/push/v1/endpoints'],
         },
       ],
@@ -64,7 +64,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'SDK',
-      link: { type: 'generated-index', slug: 'sdk/intro' },
+      link: { type: 'doc', id: 'sdk/intro' },
       collapsed: false,
       items: [
         'sdk/intro',
@@ -104,7 +104,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '릴리즈 노트',
-          link: { type: 'generated-index', slug: 'sdk/releases/v1/intro' },
+          link: { type: 'doc', id: 'sdk/releases/v1/intro' },
           items: [
             'sdk/releases/v1/intro',
             'sdk/releases/v1/release-v-1-6-0',
