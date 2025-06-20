@@ -20,7 +20,7 @@ keywords:
 
 # 푸시 알림 (`push`)
 
-> 🔔 **최신화 일자:** 2025-06-13
+> 🔔 **최신화 일자:** 2025-06-20
 
 ## **개요**
 
@@ -40,7 +40,7 @@ keywords:
 nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서  
 **푸시 알림 설정이 모두 완료된 후 빌드된 경우에만** 작동합니다.
 
-:::tip **푸시 알림 유저 가이드**
+:::tip **푸시 알림 설정하기**
 
 ➡️ [**유저 가이드**](https://docs.nachocode.io/ko/articles/%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BC%EA%B0%9C%EC%9D%B8%ED%99%94-0eb97bdb)를 따라 nachocode 푸시 알림 설정을 완료하세요.
 
@@ -136,9 +136,9 @@ export declare type LocalPushResult = {
 | [`unsubscribePushTopic(topic, callback?)`](#unsubscribe-push-topic) | **푸시 토픽 구독을 취소**합니다.                           | ver.1.6.0   |
 | [`getSubscriptionList(callback)`](#get-subscription-list)           | 디바이스의 현재 **구독 중인 푸시 토픽 목록을 조회**합니다. | ver.1.6.0   |
 | [`sendLocalPush(payload, callback?)`](#send-local-push)             | **로컬 푸시 알림을 예약**합니다.                           | ver.1.4.1   |
-| [`cancelLocalPush(id)`](#cancel-local-push)                         | 예약된 로컬 푸시 알림을 취소합니다.                        | ver.1.4.1   |
-| [`registerPushToken(userID)`](#register-push-token)                 | nachocode 서버에 푸시 토큰을 등록합니다.                   | ver.1.0.0   |
-| [`deletePushToken(userID)`](#delete-push-token)                     | nachocode 서버에서 푸시 토큰을 삭제합니다.                 | ver.1.0.0   |
+| [`cancelLocalPush(id)`](#cancel-local-push)                         | **예약된 로컬 푸시 알림을 취소**합니다.                    | ver.1.4.1   |
+| [`registerPushToken(userID)`](#register-push-token)                 | nachocode 서버에 **푸시 토큰을 등록**합니다.               | ver.1.0.0   |
+| [`deletePushToken(userID)`](#delete-push-token)                     | nachocode 서버에서 **푸시 토큰을 삭제**합니다.             | ver.1.0.0   |
 
 ---
 
@@ -148,10 +148,14 @@ export declare type LocalPushResult = {
 
 - _since ver.1.6.0_
 
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
 #### 설명 {#subscribe-push-topic-summary}
 
 지정한 푸시 토픽을 구독합니다.  
-구독이 성공하면 **nachocode 서버 API**를 통해서 혹은  
+구독이 성공하면 [**nachocode 서버 API**](../../api/push/v2/endpoints#post-v2-topic)를 통해서 혹은  
 **FCM에서 해당 토픽으로 직접적으로 발송**한 메시지를 수신할 수 있습니다.
 
 #### 매개변수 {#subscribe-push-topic-parameters}
@@ -184,6 +188,10 @@ Nachocode.push.subscribePushTopic('event-promotion', result => {
 
 - _since ver.1.6.0_
 
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
+
 #### 설명 {#unsubscribe-push-topic-summary}
 
 지정한 푸시 토픽 구독을 해지합니다.  
@@ -213,6 +221,10 @@ Nachocode.push.unsubscribePushTopic('event-promotion', result => {
 ### **`getSubscriptionList(callback)`** {#get-subscription-list}
 
 - _since ver.1.6.0_
+
+:::warning 주의
+_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 {#get-subscription-list-summary}
 
@@ -341,6 +353,10 @@ _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 
 nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.  
 이때, 특정 사용자(`userID`)를 식별자로 사용하여 **푸시 알림을 해당 사용자에게 전송할 수 있도록 설정**합니다.
 
+:::tip 푸시 토큰이란?
+[푸시 토큰 가이드](../../guide/push/push-token)에서 상세 설명을 확인해보세요.
+:::
+
 #### 매개변수 {#register-push-token-parameters}
 
 | 이름     | 타입     | 필수 여부 | 설명                         |
@@ -380,6 +396,10 @@ _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 
 
 nachocode 서버에서 **해당 사용자(`userID`)와 연결된 푸시 토큰을 삭제**합니다.  
 사용자가 로그아웃하거나 푸시 알림을 더 이상 사용하지 않도록 설정할 경우 이 메서드를 호출해야 합니다.
+
+:::tip 푸시 토큰이란?
+[푸시 토큰 가이드](../../guide/push/push-token)에서 상세 설명을 확인해보세요.
+:::
 
 #### 매개변수 {#delete-push-token-parameters}
 

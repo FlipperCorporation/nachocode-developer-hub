@@ -9,7 +9,6 @@ const sidebars: SidebarsConfig = {
       link: { type: 'doc', id: 'guide/intro' },
       items: [
         'guide/intro',
-        'guide/iap',
         {
           type: 'category',
           label: '푸시 알림',
@@ -20,6 +19,7 @@ const sidebars: SidebarsConfig = {
             'guide/push/topic-push',
           ],
         },
+        'guide/iap',
         {
           type: 'category',
           label: '웹훅',
