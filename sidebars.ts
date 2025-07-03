@@ -9,6 +9,7 @@ const sidebars: SidebarsConfig = {
       link: { type: 'doc', id: 'guide/intro' },
       items: [
         'guide/intro',
+        'guide/app-source',
         {
           type: 'category',
           label: '푸시 알림',
