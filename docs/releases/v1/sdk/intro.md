@@ -1,10 +1,14 @@
 ---
 sidebar_label: '개요'
+description: nachocode SDK Version 1 릴리즈 버전별 변경 사항을 확인할 수 있습니다.
+image: /img/docs/releases/release_note_sdk.png
 ---
 
-# nachocode SDK Version 1 릴리즈 노트
+# nachocode SDK 릴리즈 노트
 
-> 🔔 **최신화 일자:** 2025-06-20
+![sdk](../../../../static/img/docs/releases/release_note_sdk.png)
+
+> 🔔 **최신화 일자:** 2025-07-04
 
 nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 정리한 릴리즈 노트입니다.
 
