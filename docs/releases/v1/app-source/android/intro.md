@@ -1,6 +1,6 @@
 ---
-sidebar_label: '개요'
-pagination_label: 'Android App Source 릴리즈노트 개요'
+sidebar_label: '목차'
+pagination_label: 'Android App Source 릴리즈노트 목차'
 description: nachocode Android App Source Version 1 릴리즈 버전별 변경 사항을 확인할 수 있습니다.
 image: /img/docs/releases/release_note_android.png
 ---

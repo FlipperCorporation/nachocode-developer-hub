@@ -26,12 +26,14 @@ keywords:
 
 ![nachocode](../static/img/docs/nachocode.png)
 
-> 🔔 **최신화 일자:** 2025-04-27
+> 🔔 **최신화 일자:** 2025-07-04
 
 **nachocode**는 비개발자와 웹 개발자 모두를 위한 강력한 **노코드 & 로우코드 앱 빌드 플랫폼**입니다.  
 nachocode를 사용하면 비개발자도 간단한 설정만으로 네이티브 앱을 생성할 수 있으며, 웹 개발자는 SDK와 API를 통해 고도화된 네이티브 앱을 구현할 수 있습니다.
 
+:::info 대시보드 바로가기
 ➡️ [nachocode 대시보드 바로가기](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)
+:::
 
 ---
 
@@ -43,6 +45,10 @@ nachocode에서 빌드한 앱들은 위 구조를 통해 앱 사용자들에게 
 
 nachocode를 활용하여 만들어진 네이티브 앱들은 nachocode Client SDK를 통해 웹 클라이언트에서 **Nacho Native APIs**에 접근할 수 있습니다.
 
+:::info 나쵸코드 앱 자세히 살펴보기
+➡️ [nachocode 앱소스 가이드](/docs/guide/app-source)를 통해 나쵸코드 앱을 자세히 살펴보세요.
+:::
+
 ---
 
 ## nachocode의 주요 서비스
@@ -52,7 +58,9 @@ nachocode를 활용하여 만들어진 네이티브 앱들은 nachocode Client S
 nachocode의 **노코드 대시보드**를 통해 누구나 쉽고 빠르게 Android 및 iOS 앱을 생성할 수 있습니다.  
 웹사이트 주소만 입력하면 즉시 앱으로 빌드가 가능하며, 대시보드를 통해 다양한 앱 기능을 손쉽게 설정할 수 있습니다.
 
-➡️ [대시보드 체험하기](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)
+:::info 대시보드 체험하기
+➡️ [nachocode 대시보드 체험하기](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)
+:::
 
 #### **대시보드 주요 기능**
 
@@ -101,7 +109,9 @@ nachocode Client SDK는 웹 개발자들이 네이티브 앱 개발의 진입 �
 
 nachocode Client SDK를 활용하면 웹 개발자가 네이티브 앱을 제어하고 사용자 경험을 강화하는 데 필요한 모든 기능을 손쉽게 통합할 수 있습니다.
 
-➡️ [SDK 기능 살펴보기](./sdk/intro)
+:::info SDK 기능 살펴보기
+➡️ [nachocode Client SDK 기능 살펴보기](./sdk/intro)
+:::
 
 ---
 
@@ -118,7 +128,9 @@ nachocode API는 앱 서비스와 사용자 데이터를 효율적으로 관리�
 
 nachocode API는 현재 푸시 알림 전송에 중점을 두고 있으며, 앞으로 다양한 API 기능이 추가될 예정입니다.
 
-➡️ [API 기능 살펴보기](./api/intro)
+:::info API 기능 살펴보기
+➡️ [nachocode API 기능 살펴보기](./api/intro)
+:::
 
 ---
 
@@ -132,7 +144,9 @@ nachocode의 **노코드 대시보드와 로우코드 개발자 도구**로 고�
 nachocode 대시보드는 직관적인 인터페이스로 구성되어 있어, 비개발자도 클릭 몇 번으로 앱을 빌드하고 필요한 기능을 추가할 수 있습니다.  
 어려운 프로그래밍 과정 없이도 앱의 스플래시 화면, 탭바, 푸시 알림 등을 손쉽게 설정할 수 있습니다.
 
+:::info 대시보드 체험하기
 ➡️ [nachocode 대시보드 체험하기](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)
+:::
 
 ### 2. **개발자를 위한 강력한 SDK와 API**
 

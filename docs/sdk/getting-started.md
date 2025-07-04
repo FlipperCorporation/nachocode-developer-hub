@@ -23,6 +23,8 @@ keywords:
 
 # nachocode 클라이언트 SDK 시작하기
 
+![sdk](/img/docs/releases/release_note_sdk_detail.png)
+
 > 🔔 **최신화 일자:** 2025-06-13
 
 **nachocode Client SDK**를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.

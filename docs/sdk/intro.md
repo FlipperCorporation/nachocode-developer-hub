@@ -23,6 +23,8 @@ keywords:
 
 # nachocode Client SDK 개요
 
+![sdk](/img/docs/releases/release_note_sdk.png)
+
 > 🔔 **최신화 일자:** 2025-06-12
 
 **nachocode Client SDK**는 웹 클라이언트 개발자가 **모바일 네이티브 앱의 고유 기능**을 손쉽게 활용할 수 있도록 돕는 JavaScript SDK입니다.
