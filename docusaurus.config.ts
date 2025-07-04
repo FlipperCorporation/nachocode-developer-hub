@@ -166,6 +166,12 @@ const config: Config = {
           position: 'left',
         },
         {
+          to: 'docs/releases/v1/sdk/intro', // SDK 릴리즈노트로 이동
+          activeBasePath: 'docs/releases',
+          label: '릴리즈노트',
+          position: 'left',
+        },
+        {
           label: 'GitHub',
           href: 'https://github.com/FlipperCorporation',
           position: 'right',

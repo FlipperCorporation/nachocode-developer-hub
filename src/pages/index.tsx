@@ -41,7 +41,10 @@ function AdvancedAppFeaturesSection() {
           <br className="md:hidden" /> 코드 몇 줄로 빠르게 앱을 개발하세요.
         </h3>
         <div className={styles.buttons}>
-          <Link className="button button--primary button--lg" to="/docs/intro">
+          <Link
+            className="button button--primary button--lg"
+            to="/docs/sdk/getting-started"
+          >
             nachocode 시작하기 - 5min ⏱️
           </Link>
         </div>
@@ -484,7 +487,10 @@ const BottomBanner = () => {
         <div
           className={`flex gap-4 max-nacho-md:w-full max-nacho-md:justify-center ${styles.buttons}`}
         >
-          <Link className="button button--primary button--lg" to="/docs/intro">
+          <Link
+            className="button button--primary button--lg"
+            to="/docs/sdk/getting-started"
+          >
             nachocode 시작하기
             <span className="max-[480px]:hidden"> - 5min</span> ⏱️
           </Link>

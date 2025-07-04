@@ -1,7 +1,8 @@
 ---
 sidebar_position: 2
-sidebar_label: 인앱결제
-description: nachocode 인앱결제 가이드는 Android 및 iOS 환경에서 결제 프로세스부터 검증, 웹훅 설정, 에러 처리까지 구체적으로 안내합니다. 쉽고 안전한 인앱결제 설정으로 사용자의 결제 경험을 강화하세요.
+sidebar_label: 인앱 결제
+pagination_label: 인앱 결제 가이드
+description: nachocode 인앱 결제 가이드는 Android 및 iOS 환경에서 결제 프로세스부터 검증, 웹훅 설정, 에러 처리까지 구체적으로 안내합니다. 쉽고 안전한 인앱 결제 설정으로 사용자의 결제 경험을 강화하세요.
 keywords:
   [
     인앱 결제,
@@ -16,7 +17,7 @@ keywords:
   ]
 ---
 
-# 인앱결제
+# 인앱 결제
 
 > 🔔 **최신화 일자:** 2025-02-21
 

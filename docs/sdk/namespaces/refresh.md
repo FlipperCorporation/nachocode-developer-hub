@@ -1,3 +1,8 @@
+---
+description: nachocode SDK의 refresh 네임스페이스는 당겨서 새로고침 기능 설정을 지원합니다..
+keywords: [당겨서 새로고침, PTR, Pull To Refresh]
+---
+
 # 새로고침 (`refresh`) ⚠️
 
 > 🔔 **최신화 일자:** 2025-06-13

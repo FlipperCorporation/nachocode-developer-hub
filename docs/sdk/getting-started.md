@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+sidebar_label: 시작하기
+pagination_label: nachocode 클라이언트 SDK 시작하기
 description: nachocode Javascript 클라이언트 SDK 설치부터 초기화, 기본 사용법까지 한 번에 익히는 시작 가이드입니다. SDK를 활용하여 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어, QR 스캐너 등)을 손쉽게 웹에 통합하여 네이티브 앱을 개발하세요.
 keywords:
   [
@@ -19,7 +21,9 @@ keywords:
   ]
 ---
 
-# 시작하기
+# nachocode 클라이언트 SDK 시작하기
+
+![sdk](/img/docs/releases/release_note_sdk_detail.png)
 
 > 🔔 **최신화 일자:** 2025-06-13
 

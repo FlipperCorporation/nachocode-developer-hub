@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: 개요
+pagination_label: nachocode 클라이언트 SDK 개요
 description: nachocode 클라이언트 SDK는 웹 개발자를 위한 강력한 개발 도구로, 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어, QR 스캐너 등)을 손쉽게 웹에 통합할 수 있도록 지원합니다. SDK를 활용하여 혁신적으로 네이티브 앱을 개발하세요.
 keywords:
   [
@@ -21,6 +22,8 @@ keywords:
 ---
 
 # nachocode Client SDK 개요
+
+![sdk](/img/docs/releases/release_note_sdk.png)
 
 > 🔔 **최신화 일자:** 2025-06-12
 
