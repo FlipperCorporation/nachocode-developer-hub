@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: 푸시 토큰
+pagination_label: 푸시 토큰 가이드
 description: nachocode 푸시 토큰 가이드는 SDK 및 API를 활용한 개인 맞춤형 푸시 알림을 전송하기 위한 FCM 디바이스 토큰 등록부터 전송, 결과 분석 방법을 안내합니다.
 keywords:
   [

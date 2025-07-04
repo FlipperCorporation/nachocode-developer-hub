@@ -1,5 +1,6 @@
 ---
 sidebar_label: 'ver.1.6.2 (25.06.30)'
+description: nachocode Android App Source ver.1.6.2의 릴리즈노트입니다.
 image: /img/docs/releases/release_note_android_detail.png
 ---
 

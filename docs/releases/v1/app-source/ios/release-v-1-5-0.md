@@ -1,5 +1,6 @@
 ---
 sidebar_label: 'ver.1.5.0 (25.04.22)'
+description: nachocode iOS App Source ver.1.5.0의 릴리즈노트입니다.
 image: /img/docs/releases/release_note_ios_detail.png
 ---
 

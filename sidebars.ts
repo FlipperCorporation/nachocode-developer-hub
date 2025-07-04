@@ -6,14 +6,22 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '가이드',
-      link: { type: 'doc', id: 'guide/intro' },
+      link: {
+        type: 'generated-index',
+        title: 'nachocode 개발자 가이드',
+        slug: '/guide',
+      },
       items: [
         'guide/intro',
         'guide/app-source',
         {
           type: 'category',
           label: '푸시 알림',
-          link: { type: 'doc', id: 'guide/push/push-token' },
+          link: {
+            type: 'generated-index',
+            title: '푸시 알림 (Push Notification)',
+            slug: '/guide/push',
+          },
           items: [
             'guide/push/push-token',
             'guide/push/personal-push',
@@ -24,12 +32,21 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '웹훅',
-          link: { type: 'doc', id: 'guide/webhook/overview' },
+          link: {
+            type: 'generated-index',
+            title: '웹훅 (Webhook)',
+            slug: '/guide/webhook',
+          },
           items: [
             'guide/webhook/overview',
             {
               type: 'category',
-              label: '인앱결제',
+              label: '인앱 결제',
+              link: {
+                type: 'generated-index',
+                title: '인앱 결제',
+                slug: '/guide/webhook/iap',
+              },
               items: ['guide/webhook/iap/purchase', 'guide/webhook/iap/refund'],
             },
           ],
@@ -38,8 +55,9 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'User Agent',
           link: {
-            type: 'doc',
-            id: 'guide/user-agent/user-agent-definition',
+            type: 'generated-index',
+            title: '유저에이전트 (User Agent)',
+            slug: '/guide/user-agent',
           },
           items: [
             'guide/user-agent/user-agent-definition',
@@ -51,13 +69,21 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'API',
-      link: { type: 'doc', id: 'api/intro' },
+      link: {
+        type: 'generated-index',
+        title: 'nachocode API 문서',
+        slug: '/api',
+      },
       items: [
         'api/intro',
         {
           type: 'category',
           label: '푸시 알림',
-          link: { type: 'doc', id: 'api/push/v2/endpoints' },
+          link: {
+            type: 'generated-index',
+            title: '푸시 알림 (Push Notification)',
+            slug: '/api/push',
+          },
           items: ['api/push/v2/endpoints', 'api/push/v1/endpoints'],
         },
       ],
@@ -65,8 +91,11 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'SDK',
-      link: { type: 'doc', id: 'sdk/intro' },
-      collapsed: false,
+      link: {
+        type: 'generated-index',
+        title: 'nachocode Client SDK 문서',
+        slug: '/sdk',
+      },
       items: [
         'sdk/intro',
         'sdk/getting-started',
@@ -76,6 +105,11 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '네임스페이스',
           collapsed: false,
+          link: {
+            type: 'generated-index',
+            title: '네임스페이스',
+            slug: '/sdk/namespaces',
+          },
           items: [
             'sdk/namespaces/app',
             'sdk/namespaces/apple',
@@ -107,12 +141,21 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '릴리즈노트',
-      link: { type: 'doc', id: 'releases/v1/sdk/intro' },
+      link: {
+        type: 'generated-index',
+        title: '릴리즈 노트',
+        slug: '/releases/v1',
+      },
       items: [
         {
           type: 'category',
           label: 'SDK',
-          link: { type: 'doc', id: 'releases/v1/sdk/intro' },
+          link: {
+            type: 'generated-index',
+            title: 'nachocode Client SDK 릴리즈노트',
+            image: '/img/docs/releases/release_note_sdk.png',
+            slug: 'releases/v1/sdk',
+          },
           items: [
             'releases/v1/sdk/intro',
             'releases/v1/sdk/release-v-1-6-1',
@@ -132,12 +175,21 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'App Source',
-          link: { type: 'doc', id: 'releases/v1/app-source/android/intro' },
+          link: {
+            type: 'generated-index',
+            title: '앱소스 (App Source)',
+            slug: 'releases/v1/app-source',
+          },
           items: [
             {
               type: 'category',
               label: 'Android',
-              link: { type: 'doc', id: 'releases/v1/app-source/android/intro' },
+              link: {
+                type: 'generated-index',
+                title: 'Android App Source 릴리즈노트',
+                image: '/img/docs/releases/release_note_android.png',
+                slug: 'releases/v1/app-source/android',
+              },
               items: [
                 'releases/v1/app-source/android/intro',
                 'releases/v1/app-source/android/release-v-1-6-6',
@@ -162,7 +214,12 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: 'iOS',
-              link: { type: 'doc', id: 'releases/v1/app-source/ios/intro' },
+              link: {
+                type: 'generated-index',
+                title: 'iOS App Source 릴리즈노트',
+                image: '/img/docs/releases/release_note_ios.png',
+                slug: 'releases/v1/app-source/ios',
+              },
               items: [
                 'releases/v1/app-source/ios/intro',
                 'releases/v1/app-source/ios/release-v-1-6-6',

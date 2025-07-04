@@ -1,5 +1,6 @@
 ---
 sidebar_label: '개요'
+pagination_label: 'iOS App Source 릴리즈노트 개요'
 description: nachocode iOS App Source Version 1 릴리즈 버전별 변경 사항을 확인할 수 있습니다.
 image: /img/docs/releases/release_note_ios.png
 ---

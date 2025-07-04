@@ -1,10 +1,11 @@
 ---
 sidebar_label: '개요'
-description: nachocode SDK Version 1 릴리즈 버전별 변경 사항을 확인할 수 있습니다.
+pagination_label: 'SDK 릴리즈노트 개요'
+description: nachocode Client SDK Version 1 릴리즈 버전별 변경 사항을 확인할 수 있습니다.
 image: /img/docs/releases/release_note_sdk.png
 ---
 
-# nachocode SDK 릴리즈 노트
+# nachocode Client SDK 릴리즈 노트
 
 ![sdk](../../../../static/img/docs/releases/release_note_sdk.png)
 
