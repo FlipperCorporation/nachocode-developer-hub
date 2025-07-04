@@ -34,7 +34,7 @@ description: nachocode Client SDK ver.1.6.0의 릴리즈노트입니다.
 - **앱스토어 리뷰 페이지 열기 기능**: `store.openReviewInStore(storeInfo)`
 - **네이티브 앱 환경 리뷰 팝업 호출**: `store.requestReview()`
 
-➡️ [`store` 네임스페이스 문서](../../namespaces/store)에서 상세 정보를 확인할 수 있습니다.
+➡️ [`store` 네임스페이스 문서](/docs/sdk/namespaces/store)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`store`)
 
@@ -52,7 +52,7 @@ description: nachocode Client SDK ver.1.6.0의 릴리즈노트입니다.
 - **토픽 구독 취소**: `push.unsubscribePushTopic(topic, callback)`
 - **구독 중인 토픽 목록 조회**: `push.getSubscriptionList(callback)`
 
-➡️ [`push` 네임스페이스 문서](../../namespaces/push)에서 상세 정보를 확인할 수 있습니다.
+➡️ [`push` 네임스페이스 문서](/docs/sdk/namespaces/push)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`push`)
 
@@ -69,7 +69,7 @@ description: nachocode Client SDK ver.1.6.0의 릴리즈노트입니다.
 - 기존의 단일 문자열 **`(url: string)`** 형태에서 **웹 공유 API와 동일한 형태**(`{ title, url, text }`)로 개선되었습니다.
 - `title`, `url`, `text`를 조합해 공유할 수 있습니다.
 
-➡️ [`share` 네임스페이스 문서](../../namespaces/share)에서 상세 정보를 확인할 수 있습니다.
+➡️ [`share` 네임스페이스 문서](/docs/sdk/namespaces/share)에서 상세 정보를 확인할 수 있습니다.
 
 #### 업데이트된 메서드 (`share`)
 

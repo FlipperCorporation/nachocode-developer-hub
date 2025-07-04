@@ -25,7 +25,7 @@ nachocode Client SDK **v1.0.3**에서는 **탭바 제어 기능**과 **브라우
 - 앱 하단의 탭바를 이동하거나 숨기고, 다시 보이게 할 수 있는 기능이 추가되었습니다.
 - `moveTo`, `show`, `hide` 메서드를 통해 제어할 수 있습니다.
 
-➡️ [`tabbar` 네임스페이스 문서 확인하기](../../namespaces/tabbar)
+➡️ [`tabbar` 네임스페이스 문서 확인하기](/docs/sdk/namespaces/tabbar)
 
 #### 추가된 메서드 (`tabbar`)
 
@@ -55,7 +55,7 @@ Nachocode.tabbar.show();
 - URL을 외부 또는 내부 브라우저로 열 수 있는 기능이 추가되었습니다.
 - `openLink(url, option?)` 메서드를 통해 열 수 있으며, 기본은 외부 브라우저(`external`)입니다.
 
-➡️ [`browser` 네임스페이스 문서](../../namespaces/browser)에서 상세 정보를 확인할 수 있습니다.
+➡️ [`browser` 네임스페이스 문서](/docs/sdk/namespaces/browser)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`browser`)
 

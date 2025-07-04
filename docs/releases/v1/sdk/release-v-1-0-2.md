@@ -24,7 +24,7 @@ nachocode Client SDK **v1.0.2**에서는 **SDK 초기화 완료 이벤트** 감�
 - SDK가 초기화 완료되었을 때 `init` 이벤트를 수신할 수 있는 기능이 추가되었습니다.
 - `Nachocode.event.on('init', callback)` 형태로 사용합니다.
 
-➡️ [`event` 네임스페이스 문서 확인하기](../../namespaces/event)
+➡️ [`event` 네임스페이스 문서 확인하기](/docs/sdk/namespaces/event)
 
 #### 추가된 메서드 (`event`)
 

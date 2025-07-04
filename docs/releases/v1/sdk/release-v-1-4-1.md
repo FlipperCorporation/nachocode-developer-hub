@@ -18,7 +18,7 @@ description: nachocode Client SDK ver.1.4.1의 릴리즈노트입니다.
 - 사용자가 특정 시간에 알림을 예약하여 보낼 수 있는 **로컬 푸시(Local Push)** 기능이 추가되었습니다.
 - `sendLocalPush()` 메서드를 사용하여 즉시 또는 예약된 푸시 알림을 보낼 수 있습니다.
 - `cancelLocalPush()` 메서드를 통해 예약된 알림을 취소할 수 있습니다.
-- ➡️ [`push` 네임스페이스 문서](../../namespaces/push)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`push` 네임스페이스 문서](/docs/sdk/namespaces/push)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드
 

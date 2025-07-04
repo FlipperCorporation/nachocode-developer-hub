@@ -15,11 +15,11 @@ description: nachocode Client SDK ver.1.2.0의 릴리즈노트입니다.
 
 ### 추가된 기능 목록
 
-- [백 키 제어 기능](#1-백-키-제어-기능-추가-backkey-네임스페이스-android-전용) ([`backkey`](../../namespaces/backkey))
-- [앱 내부 저장소 기능](#2-앱-내부-저장소-기능-추가-preference-네임스페이스) ([`preference`](../../namespaces/preference))
-- [권한 제어 기능](#3-권한-제어-기능-추가-permission-네임스페이스) ([`permission`](../../namespaces/permission))
-- [앱 라이프 사이클 이벤트](#4-앱-라이프-사이클-이벤트-추가-event-네임스페이스) ([`event`](../../namespaces/event))
-- [앱 소스 버전 확인](#5-앱-소스-버전-확인-기능-추가-env-네임스페이스) ([`env`](../../namespaces/env))
+- [백 키 제어 기능](#1-백-키-제어-기능-추가-backkey-네임스페이스-android-전용) ([`backkey`](/docs/sdk/namespaces/backkey))
+- [앱 내부 저장소 기능](#2-앱-내부-저장소-기능-추가-preference-네임스페이스) ([`preference`](/docs/sdk/namespaces/preference))
+- [권한 제어 기능](#3-권한-제어-기능-추가-permission-네임스페이스) ([`permission`](/docs/sdk/namespaces/permission))
+- [앱 라이프 사이클 이벤트](#4-앱-라이프-사이클-이벤트-추가-event-네임스페이스) ([`event`](/docs/sdk/namespaces/event))
+- [앱 소스 버전 확인](#5-앱-소스-버전-확인-기능-추가-env-네임스페이스) ([`env`](/docs/sdk/namespaces/env))
 
 ---
 
@@ -28,7 +28,7 @@ description: nachocode Client SDK ver.1.2.0의 릴리즈노트입니다.
 - ![Android Only](https://img.shields.io/badge/Android_only-green?logo=android) **Android만 지원**.
 - 안드로이드 기기의 네이티브 **백 키 이벤트**를 제어할 수 있습니다.
 - `addEvent`, `removeEvent`, `clearEvent` 메서드를 통해 뒤로 가기 키 눌림 시 실행될 커스텀 이벤트를 등록하거나 제거할 수 있습니다.
-- ➡️ [`backkey` 네임스페이스 문서](../../namespaces/backkey)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`backkey` 네임스페이스 문서](/docs/sdk/namespaces/backkey)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`backkey`)
 
@@ -64,7 +64,7 @@ Nachocode.backkey.removeEvent();
 
 - 앱 내부에 데이터를 저장하고 조회할 수 있습니다.
 - `setData` 메서드로 데이터를 저장하고 `getData` 메서드로 저장된 데이터를 조회할 수 있습니다.
-- ➡️ [`preference` 네임스페이스 문서](../../namespaces/preference)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`preference` 네임스페이스 문서](/docs/sdk/namespaces/preference)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`preference`)
 
@@ -91,7 +91,7 @@ Nachocode.preference.getData('user_name', data => {
 
 - 앱 권한 허용 여부를 **확인**하거나 **요청**할 수 있습니다.
 - `checkPermission` 메서드를 통해 특정 권한의 허용 상태를 체크하고, 필요 시 네이티브 권한 요청을 수행합니다.
-- ➡️ [`permission` 네임스페이스 문서](../../namespaces/permission)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`permission` 네임스페이스 문서](/docs/sdk/namespaces/permission)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`permission`)
 
@@ -119,7 +119,7 @@ Nachocode.permission.checkPermission({ type: 'push', ask: true }, granted => {
 ### 4. 앱 라이프 사이클 이벤트 추가 (`event` 네임스페이스)
 
 - 앱이 백그라운드 ↔ 포그라운드 전환 시 이벤트를 감지할 수 있습니다.
-- ➡️ [`event` 네임스페이스 문서](../../namespaces/event)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`event` 네임스페이스 문서](/docs/sdk/namespaces/event)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 이벤트 (`event`)
 
@@ -152,7 +152,7 @@ Nachocode.event.on('foreground', () => {
 - 현재 앱 소스 버전을 확인할 수 있는 `getAppSourceVersion` 메서드가 추가되었습니다.
 - 앱 소스 버전이란 nachocode에서 제공하는 기본 앱 소스코드의 버전을 의미합니다.
 - SDK 버젼보다 앱 소스 버젼이 낮을 경우 SDK 일부 기능 사용이 제한됩니다.
-- ➡️ [`env` 네임스페이스 문서](../../namespaces/env)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`env` 네임스페이스 문서](/docs/sdk/namespaces/env)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`env`)
 

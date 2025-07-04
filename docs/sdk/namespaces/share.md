@@ -27,7 +27,7 @@ keywords:
 :::info **공지**  
 카카오톡 공유 관련 기능은 **nachocode SDK v1.5.0**부터 `kakao` 네임스페이스로 이동되었습니다.  
 따라서 `share.sendKakao`, `share.KakaoShareType` 등은 더 이상 사용을 권장하지 않습니다.  
-➡️ [kakao 네임스페이스로 이동된 공유 기능 문서 보기](./kakao#sharetype-kakaosharetype-data-kakaosharecustom--kakaosharescrap-callback-result-kakaoshareresult--void-void)
+➡️ [kakao 네임스페이스로 이동된 공유 기능 문서 보기](./kakao#share)
 
 :::
 

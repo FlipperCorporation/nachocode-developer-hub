@@ -24,7 +24,7 @@ description: nachocode Client SDK ver.1.6.1의 릴리즈노트입니다.
 - `subscribePushTopic(topic)`: `Promise<PushTopicResult>` 형태로 변경
 - `unsubscribePushTopic(topic)`: `Promise<PushTopicResult>` 형태로 변경
 
-➡️ [`push` 네임스페이스 문서](../../namespaces/push#subscribe-push-topic)에서 상세 내용을 확인할 수 있습니다.
+➡️ [`push` 네임스페이스 문서](/docs/sdk/namespaces/push#subscribe-push-topic)에서 상세 내용을 확인할 수 있습니다.
 
 #### 변경된 메서드 (`push`)
 
@@ -59,7 +59,7 @@ Nachocode.push.unsubscribePushTopic('event-news').then(result => {
 - iOS 앱에서 `clipboard.getText()`가 **정상적으로 동작하지 않던 문제**가 해결되었습니다.
 - 이제 Android, iOS 모두에서 일관된 방식으로 텍스트 클립보드를 읽을 수 있습니다.
 
-➡️ [`clipboard` 네임스페이스 문서](../../namespaces/clipboard)를 참고하세요.
+➡️ [`clipboard` 네임스페이스 문서](/docs/sdk/namespaces/clipboard)를 참고하세요.
 
 ---
 

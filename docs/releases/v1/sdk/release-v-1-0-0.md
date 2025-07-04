@@ -29,7 +29,7 @@ nachocode Client SDK의 첫 번째 공식 버전입니다.
 - nachocode SDK를 초기화할 수 있는 `init(apiKey: string, options?: InitializeOptions)` 메서드가 추가되었습니다.
 - 초기화 후, `env.isInitialized()`로 초기화 완료 여부를 확인할 수 있습니다.
 
-➡️ [`init` 함수 문서 확인하기](../../getting-started)
+➡️ [`init` 함수 문서 확인하기](/docs/sdk/getting-started)
 
 #### 사용 예제 (`init`)
 
@@ -49,7 +49,7 @@ if (window.Nachocode) {
 - SDK 버전 및 소스 버전 확인: `env.getSDKVersion()`
 - 현재 환경 상세 정보 조회: `env.getCurrentEnv()`
 
-➡️ [`env` 네임스페이스 문서 확인하기](../../namespaces/env)
+➡️ [`env` 네임스페이스 문서 확인하기](/docs/sdk/namespaces/env)
 
 #### 추가된 메서드 (`env`)
 
@@ -79,7 +79,7 @@ console.log(`현재 SDK 버전: ${Nachocode.env.getSDKVersion()}`);
 
 - 디바이스가 Android, iOS, Unknown 중 어느 타입인지 감지할 수 있습니다.
 
-➡️ [`device` 네임스페이스 문서 확인하기](../../namespaces/device)
+➡️ [`device` 네임스페이스 문서 확인하기](/docs/sdk/namespaces/device)
 
 #### 추가된 메서드 (`device`)
 
@@ -107,7 +107,7 @@ if (Nachocode.device.isAndroid()) {
 
 - 기기에서 푸시 토큰을 발급받고, 서버에 등록하거나 삭제할 수 있습니다.
 
-➡️ [`push` 네임스페이스 문서 확인하기](../../namespaces/push)
+➡️ [`push` 네임스페이스 문서 확인하기](/docs/sdk/namespaces/push)
 
 #### 추가된 메서드 (`push`)
 

@@ -15,15 +15,15 @@ description: nachocode Client SDK ver.1.1.0의 릴리즈노트입니다.
 
 ### 추가된 기능 목록
 
-- [공유하기 기능 추가](#1-공유하기-기능-추가-share-네임스페이스) ([`share`](../../namespaces/share))
-- [진동 및 햅틱 피드백 기능 추가](#2-진동-및-햅틱-피드백-기능-추가-vibration-네임스페이스) ([`vibration`](../../namespaces/vibration))
+- [공유하기 기능 추가](#1-공유하기-기능-추가-share-네임스페이스) ([`share`](/docs/sdk/namespaces/share))
+- [진동 및 햅틱 피드백 기능 추가](#2-진동-및-햅틱-피드백-기능-추가-vibration-네임스페이스) ([`vibration`](/docs/sdk/namespaces/vibration))
 
 ---
 
 ### 1. 공유하기 기능 추가 (`share` 네임스페이스)
 
 - 네이티브 공유 창을 이용하여 URL을 공유할 수 있습니다.
-- ➡️ [`share` 네임스페이스 문서](../../namespaces/share)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`share` 네임스페이스 문서](/docs/sdk/namespaces/share)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`share`)
 
@@ -43,7 +43,7 @@ Nachocode.share.openSharing('https://nachocode.io');
 ### 2. 진동 및 햅틱 피드백 기능 추가 (`vibration` 네임스페이스)
 
 - 앱 내에서 진동과 햅틱 피드백을 제어할 수 있는 기능이 추가되었습니다.
-- ➡️ [`vibration` 네임스페이스 문서](../../namespaces/vibration)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`vibration` 네임스페이스 문서](/docs/sdk/namespaces/vibration)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`vibration`)
 

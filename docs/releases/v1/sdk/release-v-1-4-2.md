@@ -16,7 +16,7 @@ description: nachocode Client SDK ver.1.4.2의 릴리즈노트입니다.
 ### 1. 네이티브 설정 페이지 열기 기능 추가 (`setting` 네임스페이스)
 
 - `openSetting` 메서드를 사용하여 사용자가 **OS 설정 페이지를 직접 열 수 있는 기능**이 추가되었습니다.
-- ➡️ [`setting` 네임스페이스 문서](../../namespaces/setting)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`setting` 네임스페이스 문서](/docs/sdk/namespaces/setting)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드
 
@@ -37,7 +37,7 @@ Nachocode.setting.openSetting();
 
 - 네이티브 키보드가 열리고 닫힐 때 감지할 수 있는 `keyboardshown`, `keyboardhidden` 이벤트가 추가되었습니다.
 - 해당 이벤트를 구독하여 키보드 상태 변화를 처리할 수 있습니다.
-- ➡️ [`event` 네임스페이스 문서](../../namespaces/event)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`event` 네임스페이스 문서](/docs/sdk/namespaces/event)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 이벤트
 

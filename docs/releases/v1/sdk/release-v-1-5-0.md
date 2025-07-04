@@ -32,7 +32,7 @@ description: nachocode Client SDK ver.1.5.0의 릴리즈노트입니다.
 - 로그인 성공 시 `idToken` 및 유저 정보(`GoogleUserData`)를 제공합니다.
 - 로그인 상태 확인, 유저 데이터 조회, 로그아웃 기능을 지원합니다.
 
-➡️ [`google` 네임스페이스 문서](../../namespaces/google)에서 상세 정보를 확인할 수 있습니다.
+➡️ [`google` 네임스페이스 문서](/docs/sdk/namespaces/google)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`google`)
 
@@ -63,7 +63,7 @@ Nachocode.google.login((result, idToken, userData) => {
 - 로그인 상태 확인, 유저 데이터 조회, 로그아웃, 연결 끊기(`unlink`) 기능을 지원합니다.
 - 기존 `share.sendKakao` 메서드가 `kakao.share` 메서드로 통합 및 개선되었습니다.
 
-➡️ [`kakao` 네임스페이스 문서 확인하기](../../namespaces/kakao)
+➡️ [`kakao` 네임스페이스 문서 확인하기](/docs/sdk/namespaces/kakao)
 
 #### 추가된 메서드 (`kakao`)
 
@@ -132,7 +132,7 @@ Nachocode.share.sendKakao(
 - 디바이스 권한 요청에 **사진 접근 권한(`photo`)** 타입이 추가되었습니다.
 - `permission.checkPermission({ type: 'photo' })` 형태로 사용합니다.
 
-➡️ [`permission` 네임스페이스 문서 확인하기](../../namespaces/permission)
+➡️ [`permission` 네임스페이스 문서 확인하기](/docs/sdk/namespaces/permission)
 
 #### 추가된 권한 타입 (`permission.PERMISSION_TYPES`)
 

@@ -29,7 +29,7 @@ keywords:
 
 :::warning
 
-[V2버전](../v2/endpoints.md)이 Release됨에 따라 V1버전이 **Deprecated** 상태로 변경되었습니다.
+[V2버전](../v2/endpoints)이 Release됨에 따라 V1버전이 **Deprecated** 상태로 변경되었습니다.
 
 **V1버전 종료일**: 2025년 10월 18일 23:59
 
@@ -50,7 +50,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 :::warning
 
-Obsolete 예정 버전입니다. V2버전([`/v2/messages`](../v2/endpoints.md#post-v2-messages)) 사용을 권장합니다.
+Obsolete 예정 버전입니다. V2버전([`/v2/messages`](../v2/endpoints#post-v2-messages)) 사용을 권장합니다.
 
 :::
 
@@ -151,7 +151,7 @@ Obsolete 예정 버전입니다. V2버전([`/v2/messages`](../v2/endpoints.md#po
 
 :::warning
 
-Obsolete 예정 버전입니다. V2버전([`/v2/users`](../v2/endpoints.md#post-apipushv2users)) 사용을 권장합니다.
+Obsolete 예정 버전입니다. V2버전([`/v2/users`](../v2/endpoints#post-v2-users)) 사용을 권장합니다.
 
 :::
 
