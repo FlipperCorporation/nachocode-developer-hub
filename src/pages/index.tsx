@@ -101,7 +101,7 @@ const DeveloperSdkSupportSection = () => {
                 color={Color.primary}
                 shape={Shape.square}
                 onClick={() => {
-                  window.location.href = '/docs/intro';
+                  window.location.href = '/docs/guide/intro';
                 }}
                 endIcon={<RightLineArrowIconSvg fill="#F79E40" />}
                 keepText

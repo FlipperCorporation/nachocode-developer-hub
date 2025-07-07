@@ -9,11 +9,13 @@ const config: Config = {
   favicon: 'favicon-32x32.png',
   baseUrl: '/',
   trailingSlash: false,
+  staticDirectories: ['static'],
 
   // GitHub pages deployment config.
   organizationName: 'FlipperCorporation',
   projectName: 'nachocode-developer-hub',
 
+  onBrokenAnchors: 'throw',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -141,12 +143,6 @@ const config: Config = {
       title: 'nachocode',
       logo: { alt: 'nachocode', src: 'img/logo.png' },
       items: [
-        {
-          to: 'docs/intro', // 서비스 소개 페이지로 이동
-          activeBasePath: 'docs/intro',
-          label: '서비스 소개',
-          position: 'left',
-        },
         {
           to: 'docs/guide/intro', // Guide의 시작 페이지로 이동
           activeBasePath: 'docs/guide',
