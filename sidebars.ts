@@ -96,6 +96,7 @@ const sidebars: SidebarsConfig = {
         'sdk/namespaces/google',
         'sdk/namespaces/iap',
         'sdk/namespaces/kakao',
+        'sdk/namespaces/location',
         'sdk/namespaces/permission',
         'sdk/namespaces/preference',
         'sdk/namespaces/push',
@@ -121,6 +122,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'releases/v1/sdk/intro',
+        'releases/v1/sdk/release-v-1-6-2',
         'releases/v1/sdk/release-v-1-6-1',
         'releases/v1/sdk/release-v-1-6-0',
         'releases/v1/sdk/release-v-1-5-0',

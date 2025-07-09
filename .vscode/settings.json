@@ -17,6 +17,8 @@
     "backkey",
     "birthyear",
     "faceid",
+    "Geocoder",
+    "Geolocation",
     "hideable",
     "kakao",
     "lastupdated",

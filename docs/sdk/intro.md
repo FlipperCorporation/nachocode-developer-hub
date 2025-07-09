@@ -25,13 +25,9 @@ keywords:
 
 ![sdk](/img/docs/releases/release_note_sdk.png)
 
-> 🔔 **최신화 일자:** 2025-06-12
+> 🔔 **최신화 일자:** 2025-07-09
 
-**nachocode Client SDK**는 웹 클라이언트 개발자가 **모바일 네이티브 앱의 고유 기능**을 손쉽게 활용할 수 있도록 돕는 JavaScript SDK입니다.
-
-웹 애플리케이션에 nachocode Client SDK를 연동하면 코드 몇 줄만으로도 간단하게 디바이스의 다양한 기능을 활용하여 **하이브리드 앱**을 개발할 수 있습니다.
-
-웹 기술만으로도 모바일 기기의 네이티브 API를 호출하고 제어할 수 있으므로, **별도 네이티브**(**Android/iOS**) **개발** 없이도 앱 기능을 구현할 수 있습니다.
+**nachocode Client SDK**는 웹 클라이언트 개발자가 **모바일 네이티브 앱의 고유 기능**을 손쉽게 활용할 수 있도록 돕는 JavaScript SDK입니다. 웹 애플리케이션에 nachocode Client SDK를 연동하면 코드 몇 줄만으로도 간단하게 디바이스의 다양한 기능을 활용하여 **하이브리드 앱**을 개발할 수 있습니다. 웹 기술만으로도 모바일 기기의 네이티브 API를 호출하고 제어할 수 있으므로, **별도 네이티브**(**Android/iOS**) **개발** 없이도 앱 기능을 구현할 수 있습니다.
 
 이 문서는 **SDK의 설치, 초기화, 주요 기능 및 사용 방법** 등을 안내합니다.
 
@@ -41,33 +37,41 @@ keywords:
 
 nachocode Client SDK 문서는 아래와 같은 구조로 구성되어 있습니다:
 
-1. **SDK 개요**  
-   nachocode Client SDK의 주요 기능과 개념에 대한 설명을 제공합니다.
-
-2. **시작하기**  
+1. **시작하기**  
    nachocode Client SDK를 웹 클라이언트에 설치하고 설정하는 방법을 안내합니다.  
-   ➡️ [시작하기 가이드](./getting-started)
+   :::info SDK 시작하기
+   ➡️ [nachocode 클라이언트 SDK 시작하기](./getting-started)
+   :::
 
-3. **TypeScript 지원**  
+2. **TypeScript 지원**  
    nachocode Client SDK를 타입스크립트 프로젝트에 설치하고 사용하는 방법을 안내합니다.  
+   :::info 타입스크립트
    ➡️ [TypeScript 가이드](./typescript-support)
+   :::
 
-4. **React 지원**  
+3. **React 지원**  
    nachocode Client SDK를 리액트 프로젝트에 설치하고 사용하는 방법을 안내합니다.  
+   :::info 리액트
    ➡️ [React 가이드](./react-support)
+   :::
 
-5. **네임스페이스별 문서**  
-   nachocode Client SDK의 각 네임스페이스(`app`, `authentication`, `device` 등)에 대한 상세한 문서와 사용법을 제공합니다.
+4. **네임스페이스별 문서**  
+   nachocode Client SDK의 각 네임스페이스(`app`, `authentication`, `device` 등)에 대한 상세한 문서와 사용법을 제공합니다.  
+   :::info 네임스페이스
+   ➡️ [네임스페이스 목록](/docs/sdk/namespaces)
+   :::
 
-6. **릴리즈 노트**  
+5. **릴리즈 노트**  
    nachocode Client SDK의 각 버전별 릴리즈에 대한 노트를 제공합니다.  
-   ➡️ [릴리즈 노트](/docs/releases/v1/sdk/intro)
+   :::info 릴리즈 노트
+   ➡️ [SDK 릴리즈 노트](/docs/releases/v1/sdk/intro)
+   :::
 
 ---
 
 ## nachocode 앱 구조
 
-![nachocode_application](../../static/img/docs/nachocode_app.webp)
+![nachocode_application](/img/docs/nachocode_app.webp)
 
 nachocode에서 빌드한 앱들은 위 구조를 통해 앱 사용자들에게 다양한 기능을 제공할 수 있게 설계돼있습니다.
 
@@ -75,12 +79,19 @@ nachocode를 활용하여 만들어진 네이티브 앱들은 nachocode Client S
 
 **nachocode Client SDK**를 이용해 앱 사용자들에게 네이티브 앱 경험을 제공하세요!
 
+:::info 나쵸코드 앱 자세히 살펴보기
+➡️ [nachocode 앱소스 가이드](/docs/guide/app-source)를 통해 나쵸코드 앱을 자세히 살펴보세요.
+:::
+
 ---
 
 ## 시작하기
 
-nachocode Client SDK를 처음 사용하시나요?  
-➡️ [시작하기 가이드](./getting-started)를 확인하여 SDK 설치 및 초기화를 진행하세요.
+nachocode Client SDK를 처음 사용하시나요?
+
+:::info SDK 시작하기
+➡️ [nachocode 클라이언트 SDK 시작하기](./getting-started)를 확인하여 SDK 설치 및 초기화를 진행하세요.
+:::
 
 ---
 
@@ -100,114 +111,165 @@ nachocode Client SDK는 다음과 같은 기능을 제공합니다:
 ### 1. **앱 정보 관리 (`app`)**
 
 애플리케이션 이름, 버전, 패키지 이름 등의 정보를 제공합니다.  
-➡️ [앱 네임스페이스](./namespaces/app)
+:::info app
+➡️ [앱 네임스페이스 문서 바로가기](./namespaces/app)
+:::
 
 ### 2. **애플 소셜 기능 (`apple`)**
 
 Apple 계정을 통한 소셜 로그인 기능을 네이티브로 제공합니다.  
-➡️ [Apple 네임스페이스](./namespaces/apple)
+:::info apple
+➡️ [Apple 네임스페이스 문서 바로가기](./namespaces/apple)
+:::
 
 ### 3. **사용자 인증 (`authentication`)**
 
 생체 인증(Fingerprint/Face ID) 등 다양한 인증 수단을 제공합니다.  
-➡️ [인증 네임스페이스](./namespaces/authentication)
+:::info authentication
+➡️ [인증 네임스페이스 문서 바로가기](./namespaces/authentication)
+:::
 
 - **사용자 인증**: 생체 인증 및 권한 확인 기능을 제공합니다.
 
 ### 4. **네이티브 백 키 제어 (`backkey`)**
 
 Android 디바이스의 네이티브 백 키 이벤트를 제어할 수 있습니다.  
-➡️ [백 키 네임스페이스](./namespaces/backkey)
+:::info backkey
+➡️ [백 키 네임스페이스 문서 바로가기](./namespaces/backkey)
+:::
 
 ### 5. **브라우저 기능 (`browser`)**
 
 외부 브라우저 또는 내부 브라우저로 URL을 열 수 있는 기능을 제공합니다.  
-➡️ [브라우저 네임스페이스](./namespaces/browser)
+:::info browser
+➡️ [브라우저 네임스페이스 문서 바로가기](./namespaces/browser)
+:::
 
 ### 6. **클립보드 관리 (`clipboard`)**
 
 텍스트를 클립보드에 복사하거나 읽을 수 있습니다.  
-➡️ [클립보드 네임스페이스](./namespaces/clipboard)
+:::info clipboard
+➡️ [클립보드 네임스페이스 문서 바로가기](./namespaces/clipboard)
+:::
 
 ### 7. **디바이스 정보 및 상태 확인 (`device`)**
 
 디바이스 모델, OS 버전, 배터리 상태, 네트워크 상태, 언어 코드 등을 확인할 수 있습니다.  
-➡️ [디바이스 네임스페이스](./namespaces/device)
+:::info device
+➡️ [디바이스 네임스페이스 문서 바로가기](./namespaces/device)
+:::
 
 ### 8. **환경 설정 및 실행 상태 관리 (`env`)**
 
 SDK 초기화 상태, 실행 환경(웹/앱) 등을 확인할 수 있습니다.  
-➡️ [환경 네임스페이스](./namespaces/env)
+:::info env
+➡️ [환경 네임스페이스 문서 바로가기](./namespaces/env)
+:::
 
 ### 9. **이벤트 관리 (`event`)**
 
 초기화, 포그라운드/백그라운드 전환, 네트워크 상태 변경 등의 이벤트를 처리합니다.  
-➡️ [이벤트 네임스페이스](./namespaces/event)
+:::info event
+➡️ [이벤트 네임스페이스 문서 바로가기](./namespaces/event)
+:::
 
 ### 10. **페이스북 소셜 기능 (`facebook`)**
 
 Facebook 계정을 통한 소셜 로그인 기능을 제공합니다.  
-➡️ [Facebook 네임스페이스](./namespaces/facebook)
+:::info facebook
+➡️ [Facebook 네임스페이스 문서 바로가기](./namespaces/facebook)
+:::
 
 ### 11. **구글 소셜 기능 (`google`)**
 
 Google 계정을 통한 소셜 로그인 기능을 제공합니다.  
-➡️ [Google 네임스페이스](./namespaces/google)
+:::info google
+➡️ [Google 네임스페이스 문서 바로가기](./namespaces/google)
+:::
 
 ### 12. **인앱결제 기능 (`iap`)**
 
 Android 및 iOS 환경에서 네이티브 인앱결제를 손쉽게 처리할 수 있습니다.  
-➡️ [인앱결제 네임스페이스](./namespaces/iap)
+:::info iap
+➡️ [인앱결제 네임스페이스 문서 바로가기](./namespaces/iap)
+:::
 
 ### 13. **카카오 소셜 기능 (`kakao`)**
 
 Kakao 계정을 통한 소셜 로그인 기능을 제공합니다.  
-➡️ [Kakao 네임스페이스](./namespaces/kakao)
+:::info kakao
+➡️ [Kakao 네임스페이스 문서 바로가기](./namespaces/kakao)
+:::
 
-### 14. **디바이스 권한 제어 (`permission`)**
+### 14. **위치 기능 (`location`)**
+
+현재 위치 정보를 가져오는 기능을 제공합니다.  
+:::info location
+➡️ [위치 네임스페이스 문서 바로가기](./namespaces/location)
+:::
+
+### 15. **디바이스 권한 제어 (`permission`)**
 
 카메라, 위치, 푸시 알림 등 디바이스 권한을 요청하고 상태를 확인할 수 있습니다.  
-➡️ [권한 네임스페이스](./namespaces/permission)
+:::info permission
+➡️ [권한 네임스페이스 문서 바로가기](./namespaces/permission)
+:::
 
-### 15. **내부 저장소 데이터 관리 (`preference`)**
+### 16. **내부 저장소 데이터 관리 (`preference`)**
 
 애플리케이션 내부 저장소를 통해 데이터를 저장 및 관리합니다.  
-➡️ [내부 저장소 네임스페이스](./namespaces/preference)
+:::info preference
+➡️ [내부 저장소 네임스페이스 문서 바로가기](./namespaces/preference)
+:::
 
-### 16. **푸시 알림 관리 (`push`)**
+### 17. **푸시 알림 관리 (`push`)**
 
 푸시 알림 토큰을 관리하고 nachocode 서버에 등록할 수 있습니다.  
-➡️ [푸시 네임스페이스](./namespaces/push)
+:::info push
+➡️ [푸시 네임스페이스 문서 바로가기](./namespaces/push)
+:::
 
-### 17. **스캔 기능 (`scanner`)**
+### 18. **스캔 기능 (`scanner`)**
 
 QR 코드 스캔 및 기타 스캔 기능을 제어할 수 있습니다.  
-➡️ [스캐너 네임스페이스](./namespaces/scanner)
+:::info scanner
+➡️ [스캐너 네임스페이스 문서 바로가기](./namespaces/scanner)
+:::
 
-### 18. **설정 (`setting`)**
+### 19. **설정 (`setting`)**
 
 'Pull to Refresh'와 같은 새로고침 동작과 화면 확대 기능 등을 설정할 수 있습니다.  
-➡️ [설정 네임스페이스](./namespaces/setting)
+:::info setting
+➡️ [설정 네임스페이스 문서 바로가기](./namespaces/setting)
+:::
 
-### 19. **네이티브 공유 기능 (`share`)**
+### 20. **네이티브 공유 기능 (`share`)**
 
 네이티브 공유 UI를 통해 콘텐츠를 공유할 수 있습니다.  
-➡️ [공유 네임스페이스](./namespaces/share)
+:::info share
+➡️ [공유 네임스페이스 문서 바로가기](./namespaces/share)
+:::
 
-### 20. **스토어 기능 (`store`)**
+### 21. **스토어 기능 (`store`)**
 
 앱스토어 및 플레이스토어 상호작용 기능을 제공합니다.  
-➡️ [스토어 네임스페이스](./namespaces/store)
+:::info store
+➡️ [스토어 네임스페이스 문서 바로가기](./namespaces/store)
+:::
 
-### 21. **탭바 제어 (`tabbar`)**
+### 22. **탭바 제어 (`tabbar`)**
 
 앱 내부 탭바의 표시 여부 및 이동을 제어할 수 있습니다.  
-➡️ [탭바 네임스페이스](./namespaces/tabbar)
+:::info tabbar
+➡️ [탭바 네임스페이스 문서 바로가기](./namespaces/tabbar)
+:::
 
-### 22. **진동 및 햅틱 피드백 (`vibration`)**
+### 23. **진동 및 햅틱 피드백 (`vibration`)**
 
 디바이스의 진동 및 햅틱 피드백을 트리거할 수 있습니다.  
-➡️ [진동 네임스페이스](./namespaces/vibration)
+:::info vibration
+➡️ [진동 네임스페이스 문서 바로가기](./namespaces/vibration)
+:::
 
 ---
 
