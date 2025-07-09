@@ -29,11 +29,13 @@ keywords:
 
 ### **필수 선행 작업**
 
-nachocode SDK로 Android 플랫폼에서 **위치 기능**을 사용하기 위해서는  
-[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **위치/지도 사용** ]  
-토글을 활성화하여 앱 설정을 완료 후 사용이 가능합니다.
-
 ![nachocode_advanced_android_setting](../../../static/img/docs/android/nachocode_advanced_android_setting.png)
+
+:::info
+**Android 플랫폼에서 nachocode SDK의 위치 기능**을 사용하기 위해서는  
+[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **위치/지도 사용** ]  
+토글을 활성화하여 앱 설정을 완료하여야합니다.
+:::
 
 ---
 
