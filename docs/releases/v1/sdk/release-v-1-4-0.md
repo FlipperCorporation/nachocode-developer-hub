@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'ver.1.4.0 (25.02.06)'
 description: nachocode Client SDK ver.1.4.0의 릴리즈노트입니다.
+image: /img/docs/releases/release_note_sdk_detail.png
 ---
 
 # Release: ver.1.4.0 (2025-02-06)

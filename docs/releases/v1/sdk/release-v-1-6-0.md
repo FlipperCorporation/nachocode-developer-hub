@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'ver.1.6.0 (25.06.12)'
 description: nachocode Client SDK ver.1.6.0의 릴리즈노트입니다.
+image: /img/docs/releases/release_note_sdk_detail.png
 ---
 
 # Release: ver.1.6.0 (2025-06-12)
@@ -86,7 +87,7 @@ Nachocode.share.openSharing('https://developer.nachocode.io'); // ❌ Deprecated
 // 개선된 형태로 공유
 Nachocode.share.openSharing({
   title: '나쵸코드 최신 업데이트',
-  url: 'https://developer.nachocode.io/docs/sdk/releases/v1/intro',
+  url: 'https://developer.nachocode.io/docs/releases/v1/sdk/intro',
   text: '최신 SDK 업데이트 소식을 확인해보세요!',
 }); // ✅ 권장 방식
 ```

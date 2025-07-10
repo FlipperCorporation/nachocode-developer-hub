@@ -94,7 +94,7 @@ keywords:
 ```javascript
 // URL 공유 - 공유할 URL을 지정하여 네이티브 공유 UI를 엽니다.
 Nachocode.share.openSharing({
-  url: 'https://developer.nachocode.io/docs/sdk/releases/v1/intro',
+  url: 'https://developer.nachocode.io/docs/releases/v1/sdk/intro',
 });
 ```
 
@@ -109,7 +109,7 @@ Nachocode.share.openSharing({
 // `title`, `url`, `text` 전부 활용 예시
 Nachocode.share.openSharing({
   title: '나쵸코드 최신 업데이트',
-  url: 'https://developer.nachocode.io/docs/sdk/releases/v1/intro',
+  url: 'https://developer.nachocode.io/docs/releases/v1/sdk/intro',
   text: '최신 SDK 업데이트 소식을 확인해보세요!',
 });
 ```
