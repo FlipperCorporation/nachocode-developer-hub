@@ -19,13 +19,14 @@ keywords:
     나쵸코드,
     nachocode,
   ]
+image: /img/docs/releases/release_note_sdk_detail.png
 ---
 
 # nachocode 클라이언트 SDK 시작하기
 
 ![sdk](/img/docs/releases/release_note_sdk_detail.png)
 
-> 🔔 **최신화 일자:** 2025-06-13
+> 🔔 **최신화 일자:** 2025-07-10
 
 **nachocode Client SDK**를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.
 
@@ -42,7 +43,7 @@ nachocode Client SDK는 웹 클라이언트에서 **네이티브 앱의 기능**
 
   ### 최신 버전 불러오기
 
-  - 현재 최신 버전 v1.6.0
+  - 현재 최신 버전 v1.6.2
 
   - 최신 버전의 SDK를 항상 유지하려면 아래 코드를 사용하세요
 
@@ -55,7 +56,7 @@ nachocode Client SDK는 웹 클라이언트에서 **네이티브 앱의 기능**
   - 특정 버전으로 고정하려면 다음과 같이 사용합니다
 
   ```html
-  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.6.0/client-sdk.min.js"></script>
+  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.6.2/client-sdk.min.js"></script>
   ```
 
 :::info
@@ -66,7 +67,7 @@ nachocode Client SDK는 웹 클라이언트에서 **네이티브 앱의 기능**
 
 :::tip **리액트 프로젝트에 설치하고 사용하는 방법**
 
-➡️ [**React 가이드**](./react-support)
+➡️ [**React 가이드** 바로가기](./react-support)
 
 :::
 
@@ -79,6 +80,13 @@ nachocode Client SDK는 웹 클라이언트에서 **네이티브 앱의 기능**
 - 웹 페이지 로딩이 완료되면, **nachocode Client SDK를 반드시 초기화**해야 합니다.
 - 초기화는 **API 키**를 사용하며, 필요에 따라 디버깅 로깅 기능을 활성화할 수 있습니다.
 - nachocode Client SDK 초기화는 비동기로 이루어지므로, **로딩 중 상태 처리와 오류 처리**를 구현하는 것이 좋습니다.
+
+:::info
+**API Key**는 안전하고 원활한 API 통신을 위해 필요한 정보로  
+nachocode 대시보드 **[앱 설정]** > **[개발자 설정]** 탭에서 발급 가능합니다.
+
+➡️ [개발자 설정 유저가이드 바로가기](https://docs.nachocode.io/ko/articles/app-developer)
+:::
 
 ### 초기화 옵션 설명 (`InitializeOptions`)
 
@@ -99,7 +107,7 @@ nachocode Client SDK 초기화는 두 가지 방식으로 가능합니다.
 
 ### 🔸 비동기 초기화 (`initAsync`) - 권장 ✅
 
-- SDK가 준비될 때까지 `await`을 통해 기다릴 수 있어 더 안전하고 직관적입니다.
+- SDK가 준비될 때까지 `await` 구문을 통해 기다릴 수 있어 더 안전하고 직관적입니다.
 
 ```html
 <script>
@@ -162,8 +170,8 @@ nachocode Client SDK 초기화는 두 가지 방식으로 가능합니다.
   - **앱 정보 가져오기**
 
   ```javascript
-  const appName = Nachocode.app.getAppName();
-  console.log(`앱 이름: ${appName}`); // ex. "nachocode Developer"
+  const appVersion = Nachocode.app.getCurrentAppVersion();
+  console.log(`현재 앱 버전: ${appVersion}`); // ex. "1.0.0"
   ```
 
   - **디바이스 정보 확인**
@@ -174,4 +182,22 @@ nachocode Client SDK 초기화는 두 가지 방식으로 가능합니다.
   });
   ```
 
-- 대부분의 기능은 웹 실행환경에선 무시되고, 앱 실행환경에서 정상 작동합니다.
+  - **인앱 브라우저에서 열기**
+
+  ```javascript
+  // 내부 브라우저에서 URL 열기
+  Nachocode.browser.openLink('https://nachocode.io', 'internal');
+  ```
+
+  - **링크 공유하기**
+
+  ```javascript
+  // 링크 공유 - 공유할 URL을 지정하여 네이티브 공유 UI를 엽니다.
+  Nachocode.share.openSharing({
+    url: 'https://developer.nachocode.io/docs/releases/v1/sdk/intro',
+  });
+  ```
+
+- 현재 대부분의 기능은 웹 실행환경에선 무시되고, 앱 실행환경에서 정상 작동합니다.
+
+- 일부 기능은 앱 뿐아니라 웹 실행환경도 지원하며, 점차 지원을 계속 확대할 예정입니다.
