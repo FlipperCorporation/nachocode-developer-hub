@@ -188,6 +188,7 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'releases/v1/app-source/ios/intro',
+            'releases/v1/app-source/ios/release-v-1-6-8',
             'releases/v1/app-source/ios/release-v-1-6-7',
             'releases/v1/app-source/ios/release-v-1-6-6',
             'releases/v1/app-source/ios/release-v-1-6-5',
