@@ -15,8 +15,8 @@ keywords:
 
 # 위치 (`location`)
 
-> 🚀 **추가된 버전:** `ver.1.6.2`  
-> 🔔 **최신화 일자:** 2025-07-11
+> 🚀 **추가된 버전 :** ![SDK](/img/docs/sdk-badge.svg) [`v.1.6.2`](/docs/releases/v1/sdk/release-v-1-6-2) ![Android](https://img.shields.io/badge/Android-gray?logo=android) [`v.1.6.7`](/docs/releases/v1/app-source/android/release-v-1-6-7) ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple) [`v.1.6.7`](/docs/releases/v1/app-source/ios/release-v-1-6-7)  
+> 🔔 **최신화 일자 :** 2025-07-11
 
 ## **개요**
 
@@ -51,7 +51,8 @@ keywords:
 
 ### **`LocationPosition`**
 
-- _since ver.1.6.2_
+- **_since :_**
+  ![SDK](/img/docs/sdk-badge.svg) [`v.1.6.2`](/docs/releases/v1/sdk/release-v-1-6-2)
 
 ```typescript
 export declare type LocationPosition = {
@@ -69,7 +70,8 @@ export declare type LocationPosition = {
 
 ### **`GetCurrentPositionSuccessResult`**
 
-- _since ver.1.6.2_
+- **_since :_**
+  ![SDK](/img/docs/sdk-badge.svg) [`v.1.6.2`](/docs/releases/v1/sdk/release-v-1-6-2)
 
 ```typescript
 export declare type GetCurrentPositionSuccessResult = {
@@ -91,7 +93,8 @@ export declare type GetCurrentPositionSuccessResult = {
 
 ### **`GetCurrentPositionErrorResult`**
 
-- _since ver.1.6.2_
+- **_since :_**
+  ![SDK](/img/docs/sdk-badge.svg) [`v.1.6.2`](/docs/releases/v1/sdk/release-v-1-6-2)
 
 ```typescript
 export declare type GetCurrentPositionErrorResult = {
@@ -113,7 +116,8 @@ export declare type GetCurrentPositionErrorResult = {
 
 ### **`GetCurrentPositionResult`**
 
-- _since ver.1.6.2_
+- **_since :_**
+  ![SDK](/img/docs/sdk-badge.svg) [`v.1.6.2`](/docs/releases/v1/sdk/release-v-1-6-2)
 
 ```typescript
 export declare type GetCurrentPositionResult =
@@ -125,9 +129,9 @@ export declare type GetCurrentPositionResult =
 
 ## **메서드 목록**
 
-| 메서드                                          | 설명                                            | 추가된 버전 |
-| ----------------------------------------------- | ----------------------------------------------- | ----------- |
-| [`getCurrentPosition()`](#get-current-position) | 디바이스의 현재 위치를 비동기적으로 가져옵니다. | ver.1.6.2   |
+| 메서드                                          | 설명                                            | 추가된 버전                                                                                                                                                                                                                                                                                                                                            |
+| ----------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`getCurrentPosition()`](#get-current-position) | 디바이스의 현재 위치를 비동기적으로 가져옵니다. | ![SDK](/img/docs/sdk-badge.svg) [`v.1.6.2`](/docs/releases/v1/sdk/release-v-1-6-2)<br/>![Android](https://img.shields.io/badge/Android-gray?logo=android) [`v.1.6.7`](/docs/releases/v1/app-source/android/release-v-1-6-7)<br/>![iOS](https://img.shields.io/badge/iOS-gray?logo=apple) [`v.1.6.7`](/docs/releases/v1/app-source/ios/release-v-1-6-7) |
 
 ---
 
@@ -135,7 +139,14 @@ export declare type GetCurrentPositionResult =
 
 ### **`getCurrentPosition(): Promise<GetCurrentPositionResult>`** {#get-current-position}
 
-- _since ver.1.6.2_
+- **_since :_**
+  ![SDK](/img/docs/sdk-badge.svg) [`v.1.6.2`](/docs/releases/v1/sdk/release-v-1-6-2)
+  ![Android](https://img.shields.io/badge/Android-gray?logo=android) [`v.1.6.7`](/docs/releases/v1/app-source/android/release-v-1-6-7)
+  ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple) [`v.1.6.7`](/docs/releases/v1/app-source/ios/release-v-1-6-7)
+- **_supports :_**
+  ![Android](https://img.shields.io/badge/Android-gray?logo=android)
+  ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)
+  ![Web](/img/docs/chrome-badge.svg)
 
 :::warning 주의
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 Android 플랫폼에서 사용할 수 있습니다._
@@ -162,6 +173,10 @@ _[필수 선행 작업](#필수-선행-작업)이 완료되어야 Android 플랫
 :::
 
 #### 지원 플랫폼 {#get-current-position-supported-platforms}
+
+![Android](https://img.shields.io/badge/Android-gray?logo=android)
+![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)
+![Web](/img/docs/chrome-badge.svg)
 
 `getCurrentPosition` 메서드는 App과 Web 환경을 동시 지원합니다.
 
