@@ -16,7 +16,7 @@ keywords:
 # 위치 (`location`)
 
 > 🚀 **추가된 버전:** `ver.1.6.2`  
-> 🔔 **최신화 일자:** 2025-07-09
+> 🔔 **최신화 일자:** 2025-07-11
 
 ## **개요**
 
@@ -35,6 +35,14 @@ keywords:
 **Android 플랫폼에서 nachocode SDK의 위치 기능**을 사용하기 위해서는  
 [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **위치/지도 사용** ]  
 토글을 활성화하여 앱 설정을 완료하여야합니다.
+:::
+
+![nachocode_build_android_new_version](../../../static/img/docs/android/nachocode_build_android_new_version.png)
+
+:::info
+위치 관련 네이티브 기능은 토글을 활성화하여 앱 설정 완료 후  
+[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 빌드** > **안드로이드 앱 빌드** ]에서 [ **새 버전 만들기** ]  
+버튼을 클릭하여 **새로 빌드 된 버전의 앱부터 적용**됩니다.
 :::
 
 ---
