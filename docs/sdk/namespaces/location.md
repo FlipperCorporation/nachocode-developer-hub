@@ -13,9 +13,9 @@ keywords:
   ]
 ---
 
-import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
-
 # 위치 (`location`)
+
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.6.2" link="/docs/releases/v1/sdk/release-v-1-6-2" /> <BadgeWithVersion type="Android" version="v1.6.7" link="/docs/releases/v1/app-source/android/release-v-1-6-7" /> <BadgeWithVersion type="iOS" version="v1.6.7" link="/docs/releases/v1/app-source/ios/release-v-1-6-7" />  
 > 🔔 **최신화 일자 :** 2025-07-14

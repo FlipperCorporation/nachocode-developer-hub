@@ -18,9 +18,9 @@ keywords:
   ]
 ---
 
-import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
-
 # 푸시 알림 (`push`)
+
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🔔 **최신화 일자:** 2025-07-14
 
