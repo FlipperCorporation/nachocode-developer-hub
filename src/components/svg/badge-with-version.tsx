@@ -241,10 +241,12 @@ function BadgeWithVersionSVG({ type, version }: BadgeWithVersionSVGProps) {
       style={{
         display: 'inline-flex',
         flexDirection: 'row',
-        flexWrap: 'wrap',
+        flexWrap: 'nowrap',
         alignContent: 'center',
         justifyContent: 'center',
         alignItems: 'center',
+        wordBreak: 'keep-all',
+        whiteSpace: 'nowrap',
       }}
     >
       {labelBadge}
@@ -252,10 +254,12 @@ function BadgeWithVersionSVG({ type, version }: BadgeWithVersionSVGProps) {
         style={{
           display: 'inline-flex',
           flexDirection: 'row',
-          flexWrap: 'wrap',
+          flexWrap: 'nowrap',
           alignContent: 'center',
           justifyContent: 'center',
           alignItems: 'center',
+          wordBreak: 'keep-all',
+          whiteSpace: 'nowrap',
           backgroundColor: color,
           color: '#FFFFFF',
           padding: '2.5px 6px',

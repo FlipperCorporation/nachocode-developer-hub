@@ -22,6 +22,7 @@ keywords:
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v0.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
 > 🔔 **최신화 일자:** 2025-07-14
 
 ## **개요**
@@ -97,7 +98,7 @@ export declare type PushTopicResult =
 
 ### **`LocalPushPayload`**
 
-- _since ver.1.4.1_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
 
 ```typescript
 export declare type LocalPushPayload = {
@@ -123,7 +124,7 @@ export declare type LocalPushPayload = {
 
 ### **`LocalPushResult`**
 
-- _since ver.1.4.1_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
 
 ```typescript
 export declare type LocalPushResult = {
@@ -145,15 +146,15 @@ export declare type LocalPushResult = {
 
 ## **메서드 목록**
 
-| 메서드                                                    | 설명                                                       | 추가된 버전 |
-| --------------------------------------------------------- | ---------------------------------------------------------- | ----------- |
-| [`subscribePushTopic(topic)`](#subscribe-push-topic)      | **푸시 토픽을 구독**합니다.                                | ver.1.6.0   |
-| [`unsubscribePushTopic(topic)`](#unsubscribe-push-topic)  | **푸시 토픽 구독을 취소**합니다.                           | ver.1.6.0   |
-| [`getSubscriptionList(callback)`](#get-subscription-list) | 디바이스의 현재 **구독 중인 푸시 토픽 목록을 조회**합니다. | ver.1.6.0   |
-| [`sendLocalPush(payload, callback?)`](#send-local-push)   | **로컬 푸시 알림을 예약**합니다.                           | ver.1.4.1   |
-| [`cancelLocalPush(id)`](#cancel-local-push)               | **예약된 로컬 푸시 알림을 취소**합니다.                    | ver.1.4.1   |
-| [`registerPushToken(userID)`](#register-push-token)       | nachocode 서버에 **푸시 토큰을 등록**합니다.               | ver.1.0.0   |
-| [`deletePushToken(userID)`](#delete-push-token)           | nachocode 서버에서 **푸시 토큰을 삭제**합니다.             | ver.1.0.0   |
+| 메서드                                                    | 설명                                                       | 추가된 버전                                                                                   |
+| --------------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`subscribePushTopic(topic)`](#subscribe-push-topic)      | **푸시 토픽을 구독**합니다.                                | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
+| [`unsubscribePushTopic(topic)`](#unsubscribe-push-topic)  | **푸시 토픽 구독을 취소**합니다.                           | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
+| [`getSubscriptionList(callback)`](#get-subscription-list) | 디바이스의 현재 **구독 중인 푸시 토픽 목록을 조회**합니다. | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
+| [`sendLocalPush(payload, callback?)`](#send-local-push)   | **로컬 푸시 알림을 예약**합니다.                           | <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" /> |
+| [`cancelLocalPush(id)`](#cancel-local-push)               | **예약된 로컬 푸시 알림을 취소**합니다.                    | <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" /> |
+| [`registerPushToken(userID)`](#register-push-token)       | nachocode 서버에 **푸시 토큰을 등록**합니다.               | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
+| [`deletePushToken(userID)`](#delete-push-token)           | nachocode 서버에서 **푸시 토큰을 삭제**합니다.             | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
 
 ---
 
@@ -161,8 +162,8 @@ export declare type LocalPushResult = {
 
 ### **`subscribePushTopic(topic: string): Promise<PushTopicResult>`** {#subscribe-push-topic}
 
-- _since ver.1.6.0_
-- _lastupdated ver.1.6.1_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.1" link="/docs/releases/v1/sdk/release-v-1-6-1" />
 
 :::warning 주의
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
@@ -205,8 +206,8 @@ try {
 
 ### **`unsubscribePushTopic(topic: string): Promise<PushTopicResult>`** {#unsubscribe-push-topic}
 
-- _since ver.1.6.0_
-- _lastupdated ver.1.6.1_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.1" link="/docs/releases/v1/sdk/release-v-1-6-1" />
 
 :::warning 주의
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
@@ -248,7 +249,7 @@ try {
 
 ### **`getSubscriptionList(callback)`** {#get-subscription-list}
 
-- _since ver.1.6.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
 
 :::warning 주의
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
@@ -276,7 +277,7 @@ Nachocode.push.getSubscriptionList(list => {
 
 ### **`sendLocalPush(payload, callback?)`** {#send-local-push}
 
-- _since ver.1.4.1_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
 
 #### 설명 {#send-local-push-summary}
 
@@ -339,7 +340,7 @@ Nachocode.push.sendLocalPush(
 
 ### **`cancelLocalPush(id: number)`** {#cancel-local-push}
 
-- _since ver.1.4.1_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
 
 #### 설명 {#cancel-local-push-summary}
 
@@ -370,7 +371,7 @@ console.log('푸시 알림이 취소되었습니다.');
 
 ### **`registerPushToken(userID: string): Promise<any>`** {#register-push-token}
 
-- _since ver.1.0.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
 
 :::warning 주의
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
@@ -414,7 +415,7 @@ function onLoginSuccess(userID) {
 
 ### **`deletePushToken(userID: string): Promise<any>`** {#delete-push-token}
 
-- _since ver.1.0.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
 
 :::warning 주의
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
