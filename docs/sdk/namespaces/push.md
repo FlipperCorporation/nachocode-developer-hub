@@ -18,9 +18,11 @@ keywords:
   ]
 ---
 
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
+
 # 푸시 알림 (`push`)
 
-> 🔔 **최신화 일자:** 2025-06-20
+> 🔔 **최신화 일자:** 2025-07-14
 
 ## **개요**
 
@@ -37,7 +39,7 @@ keywords:
 
 ### **필수 선행 작업**
 
-nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서  
+nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서
 **푸시 알림 설정이 모두 완료된 후 빌드된 경우에만** 작동합니다.
 
 :::tip **푸시 알림 설정하기**
@@ -52,8 +54,8 @@ nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocod
 
 ### **`PushTopicResult`**
 
-- _since ver.1.6.0_
-- _lastupdated ver.1.6.1_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> <BadgeWithVersion type="Android" version="v1.6.0" link="/docs/releases/v1/app-source/android/release-v-1-6-0" /> <BadgeWithVersion type="iOS" version="v1.6.0" link="/docs/releases/v1/app-source/ios/release-v-1-6-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.1" link="/docs/releases/v1/sdk/release-v-1-6-1" />
 
 ```typescript
 export declare type PushTopicResult =
@@ -168,8 +170,8 @@ _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 
 
 #### 설명 {#subscribe-push-topic-summary}
 
-지정한 푸시 토픽을 구독합니다.  
-구독이 성공하면 [**nachocode 서버 API**](../../api/push/v2/endpoints#post-v2-topic)를 통해서 발송하거나  
+지정한 푸시 토픽을 구독합니다.
+구독이 성공하면 [**nachocode 서버 API**](../../api/push/v2/endpoints#post-v2-topic)를 통해서 발송하거나
 **FCM에서 해당 토픽으로 직접 발송**한 메시지를 수신할 수 있습니다.
 
 #### 매개변수 {#subscribe-push-topic-parameters}
@@ -212,7 +214,7 @@ _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 
 
 #### 설명 {#unsubscribe-push-topic-summary}
 
-지정한 푸시 토픽 구독을 해지합니다.  
+지정한 푸시 토픽 구독을 해지합니다.
 이후 해당 토픽으로 발송된 메시지를 더 이상 수신하지 않게 됩니다.
 
 #### 매개변수 {#unsubscribe-push-topic-parameters}
@@ -278,7 +280,7 @@ Nachocode.push.getSubscriptionList(list => {
 
 #### 설명 {#send-local-push-summary}
 
-로컬 푸시 알림을 예약하고, 특정 시각(`scheduledTime`)에 디바이스에서 푸시 알림을 표시할 수 있습니다.  
+로컬 푸시 알림을 예약하고, 특정 시각(`scheduledTime`)에 디바이스에서 푸시 알림을 표시할 수 있습니다.
 즉시 발송하거나 예약 발송이 가능하며, 예약된 알림은 `id` 값을 사용해 취소할 수도 있습니다.
 
 #### 매개변수 {#send-local-push-parameters}
@@ -341,7 +343,7 @@ Nachocode.push.sendLocalPush(
 
 #### 설명 {#cancel-local-push-summary}
 
-예약된 로컬 푸시 알림을 취소합니다.  
+예약된 로컬 푸시 알림을 취소합니다.
 취소하려는 푸시 알림의 `id` 값을 전달해야 합니다.
 
 [`sendLocalPush`](#send-local-push)에서 반환된 `id`를 사용합니다.
@@ -376,7 +378,7 @@ _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 
 
 #### 설명 {#register-push-token-summary}
 
-nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.  
+nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.
 이때, 특정 사용자(`userID`)를 식별자로 사용하여 **푸시 알림을 해당 사용자에게 전송할 수 있도록 설정**합니다.
 
 :::tip 푸시 토큰이란?
@@ -420,7 +422,7 @@ _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 
 
 #### 설명 {#delete-push-token-summary}
 
-nachocode 서버에서 **해당 사용자(`userID`)와 연결된 푸시 토큰을 삭제**합니다.  
+nachocode 서버에서 **해당 사용자(`userID`)와 연결된 푸시 토큰을 삭제**합니다.
 사용자가 로그아웃하거나 푸시 알림을 더 이상 사용하지 않도록 설정할 경우 이 메서드를 호출해야 합니다.
 
 :::tip 푸시 토큰이란?
