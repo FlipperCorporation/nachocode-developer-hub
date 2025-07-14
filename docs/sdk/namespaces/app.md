@@ -15,7 +15,10 @@ keywords:
 
 # 애플리케이션 (`app`)
 
-> 🔔 **최신화 일자:** 2025-04-18
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
+
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
+> 🔔 **최신화 일자:** 2025-07-14
 
 ## 개요
 
@@ -25,38 +28,38 @@ keywords:
 
 ## 메서드 목록
 
-| 메서드                                                                                     | 설명                                                   | 추가된 버전 |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
-| [`checkFirstLaunch(callback)`](#checkfirstlaunchcallback-isfirstlaunch-boolean--void-void) | 앱이 최초 실행인지 여부를 확인합니다.                  | ver.1.4.0   |
-| [`getAppName()`](#getappname-string)                                                       | 앱의 이름을 가져옵니다.                                | ver.1.0.0   |
-| [`getAppKey()`](#getappkey-string)                                                         | nachocode 플랫폼에서 발급한 앱의 고유 키를 반환합니다. | ver.1.0.0   |
-| [`getCurrentAppVersion()`](#getcurrentappversion-string)                                   | 현재 설치된 앱 버전을 반환합니다.                      | ver.1.0.0   |
-| [`getPackageName()`](#getpackagename-string)                                               | 앱의 패키지명을 가져옵니다.                            | ver.1.0.0   |
+| 메서드                                               | 설명                                                   | 추가된 버전                                                                                   |
+| ---------------------------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| [`checkFirstLaunch(callback)`](#check-first-launch)  | 앱이 최초 실행인지 여부를 확인합니다.                  | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
+| [`getAppName()`](#get-app-name)                      | 앱의 이름을 가져옵니다.                                | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
+| [`getAppKey()`](#get-app-key)                        | nachocode 플랫폼에서 발급한 앱의 고유 키를 반환합니다. | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
+| [`getCurrentAppVersion()`](#get-current-app-version) | 현재 설치된 앱 버전을 반환합니다.                      | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
+| [`getPackageName()`](#get-package-name)              | 앱의 패키지명을 가져옵니다.                            | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
 
 ---
 
 ## 메서드 상세
 
-### **`checkFirstLaunch(callback: (isFirstLaunch: boolean) => void): void`**
+### **`checkFirstLaunch(callback: (isFirstLaunch: boolean) => void): void`** {#check-first-launch}
 
-- _since ver.1.4.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
-#### 설명 (`checkFirstLaunch`)
+#### 설명 {#check-first-launch-summary}
 
 앱이 **최초 실행인지 여부**를 확인합니다.
 이를 통해 **온보딩 화면을 최초 실행 시에만 표시**하거나, **특정 설정을 처음 실행 시에만 적용**하는 등의 로직을 구현할 수 있습니다.
 
-#### 매개변수 (`checkFirstLaunch`)
+#### 매개변수 {#check-first-launch-parameters}
 
 | 이름       | 타입                               | 필수 여부 | 설명                                                            |
 | ---------- | ---------------------------------- | --------- | --------------------------------------------------------------- |
 | `callback` | `(isFirstLaunch: boolean) => void` | ✅        | `true`(최초 실행) 또는 `false`(기존 실행)를 전달 받는 콜백 함수 |
 
-#### 반환 값 (`checkFirstLaunch`)
+#### 반환 값 {#check-first-launch-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`checkFirstLaunch`)
+#### 사용 예제 {#check-first-launch-examples}
 
 ```javascript
 Nachocode.app.checkFirstLaunch(isFirstLaunch => {
@@ -71,22 +74,22 @@ Nachocode.app.checkFirstLaunch(isFirstLaunch => {
 
 ---
 
-### **`getAppName(): string`**
+### **`getAppName(): string`** {#get-app-name}
 
-- _since ver.1.0.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
 
-#### 설명 (`getAppName`)
+#### 설명 {#get-app-name-summary}
 
 현재 앱의 **이름**을 반환합니다.  
 이 값은 nachocode 대시보드에서 설정한 앱 이름과 동일합니다.
 
-#### 반환 값 (`getAppName`)
+#### 반환 값 {#get-app-name-returns}
 
 | 타입     | 설명                    |
 | -------- | ----------------------- |
 | `string` | 앱의 이름을 반환합니다. |
 
-#### 사용 예제 (`getAppName`)
+#### 사용 예제 {#get-app-name-examples}
 
 ```javascript
 const appName = Nachocode.app.getAppName();
@@ -95,22 +98,22 @@ console.log(`앱 이름: ${appName}`);
 
 ---
 
-### **`getAppKey(): string`**
+### **`getAppKey(): string`** {#get-app-key}
 
-- _since ver.1.0.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
 
-#### 설명 (`getAppKey`)
+#### 설명 {#get-app-key-summary}
 
 **앱 프로젝트를 식별하는 고유 키**를 반환합니다.  
 이 키는 nachocode 서비스에서 앱을 구별하는 데 사용됩니다.
 
-#### 반환 값 (`getAppKey`)
+#### 반환 값 {#get-app-key-returns}
 
 | 타입     | 설명                                          |
 | -------- | --------------------------------------------- |
 | `string` | nachocode에서 발급한 앱의 고유 식별 키입니다. |
 
-#### 사용 예제 (`getAppKey`)
+#### 사용 예제 {#get-app-key-examples}
 
 ```javascript
 const appKey = Nachocode.app.getAppKey();
@@ -119,20 +122,22 @@ console.log(`앱 키: ${appKey}`); // ex. 'APP-XXXXXXX'
 
 ---
 
-### **`getCurrentAppVersion(): string`**
+### **`getCurrentAppVersion(): string`** {#get-current-app-version}
 
-#### 설명 (`getCurrentAppVersion`)
+- _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
+
+#### 설명 {#get-current-app-version-summary}
 
 사용자의 현재 디바이스에 **설치된 앱의 버전**을 반환합니다.  
 이 값은 사용자의 앱 업데이트 상태를 확인하는 용도로 사용할 수 있습니다.
 
-#### 반환 값 (`getCurrentAppVersion`)
+#### 반환 값 {#get-current-app-version-returns}
 
 | 타입     | 설명                             |
 | -------- | -------------------------------- |
 | `string` | 설치된 앱의 버전 (예: `"1.0.0"`) |
 
-#### 사용 예제 (`getCurrentAppVersion`)
+#### 사용 예제 {#get-current-app-version-examples}
 
 ```javascript
 const appVersion = Nachocode.app.getCurrentAppVersion();
@@ -141,20 +146,22 @@ console.log(`현재 앱 버전: ${appVersion}`); // ex. "1.0.0"
 
 ---
 
-### **`getPackageName(): string`**
+### **`getPackageName(): string`** {#get-package-name}
 
-#### 설명 (`getPackageName`)
+- _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
+
+#### 설명 {#get-package-name-summary}
 
 현재 실행 중인 앱의 **패키지명**을 반환합니다.  
 패키지명은 앱의 고유 식별자로, 일반적으로 `com.nachocode.example` 형식으로 제공됩니다.
 
-#### 반환 값 (`getPackageName`)
+#### 반환 값 {#get-package-name-returns}
 
 | 타입     | 설명                                                    |
 | -------- | ------------------------------------------------------- |
 | `string` | 애플리케이션의 패키지명 (예: `"com.nachocode.example"`) |
 
-#### 사용 예제 (`getPackageName`)
+#### 사용 예제 {#get-package-name-examples}
 
 ```javascript
 const packageName = Nachocode.app.getPackageName();
