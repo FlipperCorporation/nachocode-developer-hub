@@ -16,14 +16,15 @@ keywords:
 
 # 애플 (`apple`)
 
-> 🔔 **최신화 일자:** 2025-06-20
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
+> 🔔 **최신화 일자:** 2025-07-15
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
+
 :::warning 주의
-
 **이 네임스페이스는 현재 iOS에서만 지원됩니다.**
-
 :::
 
 ## **개요**
@@ -141,11 +142,11 @@ export declare type AppleUserData = {
 
 ## **메서드 목록**
 
-| 메서드                                                | 설명                                     | 추가된 버전 |
-| ----------------------------------------------------- | ---------------------------------------- | ----------- |
-| [`login(permissions, callback)`](#login)              | Apple 네이티브 소셜 로그인을 수행합니다. | ver.1.4.0   |
-| [`isLoggedIn(identifier, callback)`](#is-logged-in)   | Apple 로그인 상태를 확인합니다.          | ver.1.4.0   |
-| [`getUserIdentifier(callback)`](#get-user-identifier) | Apple 사용자 고유 식별자를 반환합니다.   | ver.1.4.0   |
+| 메서드                                                | 설명                                     | 추가된 버전                                                                                                                                                                                                 |
+| ----------------------------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`login(permissions, callback)`](#login)              | Apple 네이티브 소셜 로그인을 수행합니다. | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /><br/> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" /> |
+| [`isLoggedIn(identifier, callback)`](#is-logged-in)   | Apple 로그인 상태를 확인합니다.          | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /><br/> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" /> |
+| [`getUserIdentifier(callback)`](#get-user-identifier) | Apple 사용자 고유 식별자를 반환합니다.   | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /><br/> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" /> |
 
 ---
 
@@ -153,7 +154,7 @@ export declare type AppleUserData = {
 
 ### **`login(permissions: ApplePermissions, callback: (result: AppleResult, userData?: AppleUserData) => void): void`** {#login}
 
-- _since ver.1.4.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
@@ -196,7 +197,7 @@ Nachocode.apple.login(['email', 'fullName'], (result, userData) => {
 
 ### **`isLoggedIn(identifier: string, callback: (result: AppleResult, isLoggedIn: boolean) => void): void`** {#is-logged-in}
 
-- _since ver.1.4.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
@@ -235,7 +236,7 @@ Nachocode.apple.isLoggedIn('user_identifier_here', (result, isLoggedIn) => {
 
 ### **`getUserIdentifier(callback: (result: AppleResult, userIdentifier?: string) => void): void`** {#get-user-identifier}
 
-- _since ver.1.4.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
 _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
