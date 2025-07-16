@@ -16,47 +16,54 @@ keywords:
 
 # 클립보드 (`clipboard`)
 
-> 🔔 **최신화 일자:** 2025-04-18
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-## **개요**
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
+> 🔔 **최신화 일자:** 2025-07-16
+
+## **개요** {#overview}
 
 `clipboard` 네임스페이스는 **디바이스의 네이티브 클립보드에 텍스트를 복사하거나, 현재 저장된 텍스트를 가져오는 기능**을 제공합니다.
 
 이 기능을 사용하여 **사용자 인터페이스와 클립보드 간에 데이터를 효율적으로 공유**할 수 있습니다.
 
----
-
-## **메서드 목록**
-
-| 메서드                                                                                                     | 설명                                            | 추가된 버전 |
-| ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ----------- |
-| [`getText(callback)`](#gettextcallback-text-string--void-void)                                             | 네이티브 클립보드에 저장된 텍스트를 반환합니다. | ver.1.4.0   |
-| [`setText(text, callback?)`](#settexttext-string-callback-status-success--error-message-string--void-void) | 텍스트를 네이티브 클립보드에 저장합니다.        | ver.1.4.0   |
+:::warning _주의_
+_일부 디바이스 또는 특정 OS 버전에서는 클립보드 접근이 제한될 수 있습니다._
+:::
 
 ---
 
-## **메서드 상세**
+## **메서드 목록** {#method-list}
 
-### **`getText(callback: (text: string) => void): void`**
+| 메서드                                  | 설명                                            | 추가된 버전                                                                                   |
+| --------------------------------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`getText(callback)`](#get-text)        | 네이티브 클립보드에 저장된 텍스트를 반환합니다. | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
+| [`setText(text, callback?)`](#set-text) | 텍스트를 네이티브 클립보드에 저장합니다.        | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
 
-- _since ver.1.4.0_
+---
 
-#### 설명 (`getText`)
+## **메서드 상세** {#method-details}
+
+### **`getText(callback: (text: string) => void): void`** {#get-text}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
+
+#### 설명 {#get-text-summary}
 
 디바이스의 **네이티브 클립보드에 저장된 텍스트**를 가져옵니다.  
-콜백 함수로 텍스트 값을 전달합니다.
+해당 메서드는 **콜백 함수로 복사한 텍스트 값을 전달**합니다.
 
-#### 매개변수 (`getText`)
+#### 매개변수 {#get-text-parameters}
 
 | 이름       | 타입                     | 필수 여부 | 설명                               |
 | ---------- | ------------------------ | --------- | ---------------------------------- |
 | `callback` | `(text: string) => void` | ✅        | 클립보드에 저장된 텍스트 반환 함수 |
 
-#### 반환 값 (`getText`)
+#### 반환 값 {#get-text-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 텍스트는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`getText`)
+#### 사용 예제 {#get-text-examples}
 
 ```javascript
 // 네이티브 클립보드에서 텍스트를 가져옵니다.
@@ -68,16 +75,16 @@ Nachocode.clipboard.getText(text => {
 
 ---
 
-### **`setText(text: string, callback?: (status: 'success' | 'error', message: string) => void): void`**
+### **`setText(text: string, callback?: (status: 'success' | 'error', message: string) => void): void`** {#set-text}
 
-- _since ver.1.4.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
-#### 설명 (`setText`)
+#### 설명 {#set-text-summary}
 
 입력된 **텍스트를 네이티브 클립보드에 저장**합니다.  
 선택적으로 **콜백 함수**를 통해 복사 성공 여부와 메시지를 전달받을 수 있습니다.
 
-#### 매개변수 (`setText`)
+#### 매개변수 {#set-text-parameters}
 
 | 이름       | 타입                                                      | 필수 여부 | 설명                                |
 | ---------- | --------------------------------------------------------- | --------- | ----------------------------------- |
@@ -87,11 +94,11 @@ Nachocode.clipboard.getText(text => {
 - `status`: 복사 성공 여부 (`success` 또는 `error`)
 - `message`: 복사 성공 또는 오류 메시지
 
-#### 반환 값 (`setText`)
+#### 반환 값 {#set-text-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`setText`)
+#### 사용 예제 {#set-text-examples}
 
 ```javascript
 // 네이티브 클립보드에 텍스트를 저장합니다.
@@ -103,13 +110,5 @@ Nachocode.clipboard.setText('Hello nachocode!', (status, message) => {
   }
 });
 ```
-
----
-
-## **추가 정보**
-
-- **`getText` 메서드는 사용자가 직접 클립보드에 복사한 텍스트 값을 반환**합니다.
-- **`setText` 메서드는 앱 내에서 복사한 텍스트 값을 네이티브 클립보드에 저장**할 수 있습니다.
-- 일부 디바이스 또는 특정 OS 버전에서는 클립보드 접근이 제한될 수 있습니다.
 
 ---
