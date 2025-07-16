@@ -16,12 +16,12 @@ keywords:
 
 # 애플 (`apple`)
 
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
+
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
 > 🔔 **최신화 일자:** 2025-07-15
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
-
-import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 :::warning 주의
 **이 네임스페이스는 현재 iOS에서만 지원됩니다.**
