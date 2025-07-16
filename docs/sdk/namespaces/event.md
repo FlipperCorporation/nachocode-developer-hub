@@ -2,14 +2,17 @@
 description: nachocode SDK의 `event` 네임스페이스는 SDK 초기화, 앱 활성화 상태 변경, 네트워크 변화 등의 다양한 이벤트를 처리할 수 있도록 지원합니다.
 keywords:
   [
+    앱 상태 전환 감지,
+    앱 키보드 감지,
+    웹뷰 키보드 감지,
+    앱 네트워크 상태 변경 감지,
+    앱 활성화 감지,
+    앱 백그라운드로 전환,
     app foreground,
     app background,
     app keyboard,
     app network change,
-    앱 키보드 감지,
-    앱 네트워크 상태 변경 감지,
-    앱 활성화 감지,
-    앱 백그라운드로 전환,
+    WebView keyboard detect,
   ]
 ---
 
@@ -101,8 +104,15 @@ export declare type EventType = (typeof EVENT_TYPES)[keyof typeof EVENT_TYPES];
 ```javascript
 // SDK 초기화 완료 이벤트 리스너를 등록 합니다.
 Nachocode.event.on('init', () => {
-  if (Nachocode.env.isApp() && Nachocode.device.isIOS()) {
-    // iOS 디바이스에서만 동작할 로직을 작성합니다.
+  // SDK 초기화가 완료 되었을 때 동작할 로직을 작성합니다.
+  if (Nachocode.env.isApp()) {
+    // Android, iOS 앱에서만 동작해야하고
+    // 웹에서는 동작하면 안되는 로직을 작성합니다.
+    // ex) 푸시 토큰 등록, 생체 인증 등
+    if (Nachocode.device.isIOS()) {
+      // iOS 앱에서만 동작할 로직을 작성합니다.
+      // ex) 소셜 로그인 숨기기 등
+    }
   }
 });
 
@@ -114,6 +124,7 @@ Nachocode.init('your_api_key_here');
 // 앱이 백그라운드로 전환될 때 동작할 이벤트를 등록합니다.
 Nachocode.event.on('background', () => {
   // 앱이 백그라운드로 전환될 때 동작할 로직을 작성합니다.
+  // ex) 유저 이탈 시점 기록하기 등
 });
 ```
 
@@ -121,16 +132,22 @@ Nachocode.event.on('background', () => {
 // 앱이 백그라운드에서 다시 포그라운드로 전환될 때 동작할 이벤트를 등록합니다.
 Nachocode.event.on('foreground', () => {
   // 앱이 포그라운드로 전환될 때 동작할 로직을 작성합니다.
-  // ex. 페이지 새로고침, 데이터 불러오기 등
+  // ex) 페이지 새로고침, 데이터 불러오기 등
 });
 ```
 
 ```javascript
 // 네트워크 변경 감지 이벤트 리스너 등록
 Nachocode.event.on('networkchanged', status => {
-  console.log(
-    `네트워크 상태 변경: ${status.isConnected ? '연결됨' : '연결 끊김'}`
-  );
+  if (status.isConnected) {
+    console.log('인터넷 연결 복구');
+    // 인터넷이 연결되었을 때 실행시킬 코드를 작성합니다.
+    // ex) 재전송 기능 구현
+  } else {
+    console.warn('인터넷 연결 끊김');
+    // 인터넷 연결이 끊어졌을 때 실행시킬 코드를 작성합니다.
+    // ex) 사용자에게 오프라인 UI 띄우기 등
+  }
   console.log(`연결 유형: ${status.connectionType}`);
 });
 ```
@@ -138,14 +155,18 @@ Nachocode.event.on('networkchanged', status => {
 ```javascript
 // 네이티브 키보드가 화면에 나타날 때 실행되는 이벤트
 Nachocode.event.on('keyboardshown', () => {
-  console.log('네이티브 키보드가 표시되었습니다.');
+  console.log('키보드가 화면에 표시되었습니다.');
+  // 키보드가 표시될 때 실행시킬 로직을 작성합니다.
+  // ex) 키보드에 가려지는 입력 필드 위치 조정 등
 });
 ```
 
 ```javascript
 // 네이티브 키보드가 화면에서 사라질 때 실행되는 이벤트
 Nachocode.event.on('keyboardhidden', () => {
-  console.log('네이티브 키보드가 사라졌습니다.');
+  console.log('키보드가 화면에서 사라졌습니다.');
+  // 키보드가 사라질 때 실행시킬 로직을 작성합니다.
+  // ex) 조정됐던 레이아웃 복원 등
 });
 ```
 
@@ -173,13 +194,13 @@ Nachocode.event.on('keyboardhidden', () => {
 #### 사용 예제 {#off-examples}
 
 ```javascript
-// 'init' 이벤트명으로 바인드 된 event를 제거합니다.
-Nachocode.event.off('init');
+// 네트워크 변경 감지 이벤트 리스너 제거
+Nachocode.event.off('networkchanged');
 ```
 
 ```javascript
-// 네트워크 변경 감지 이벤트 리스너 제거
-Nachocode.event.off('networkchanged');
+// 'keyboardshown' 이벤트명으로 바인드 된 event를 제거합니다.
+Nachocode.event.off('keyboardshown');
 ```
 
 ---
@@ -188,62 +209,114 @@ Nachocode.event.off('networkchanged');
 
 아래는 `event` 네임스페이스를 활용한 **예시**입니다.
 
-### **예제 1: SDK 초기화 이벤트 감지** {#event-examples-init}
+### **1. SDK 초기화 이벤트 감지** (`init`) {#event-examples-init}
 
 ```javascript
 Nachocode.event.on('init', () => {
   console.log('nachocode SDK가 정상적으로 초기화되었습니다.');
+  // ex) 초기화 완료 후 푸시 토큰 등록
+  Nachocode.push.registerPushToken(userId).then(() => {
+    console.log('푸시 토큰이 성공적으로 등록되었습니다.');
+  });
 });
 ```
 
+:::tip 언제 활용할까?
+
+- SDK 로딩 및 초기화가 완료되는 시점에 종속 기능(푸시, 인증, 네이티브 호출 등)을 안전하게 실행
+- SDK 초기화 전 호출 시 발생하는 오류 방지
+
+:::
+
 ---
 
-### **예제 2: 네트워크 상태 변경 이벤트 감지** {#event-examples-networkchanged}
+### **2. 네트워크 상태 변경 이벤트 감지** (`networkchanged`) {#event-examples-networkchanged}
 
 ```javascript
 Nachocode.event.on('networkchanged', status => {
   if (status.isConnected) {
     console.log('인터넷 연결이 복구되었습니다.');
+    // ex) 재전송 기능 구현
+    retryPendingRequests();
   } else {
     console.log('인터넷 연결이 끊어졌습니다.');
+    // ex) 사용자에게 오프라인 UI 띄우기
+    showOfflineBanner();
   }
 });
 ```
 
+:::tip 언제 활용할까?
+
+- 인터넷 연결이 복구될 때 이전에 실패한 전송 정보의 재전송 트리거
+- 네트워크가 끊겼을 때 사용자 경고 및 오프라인 UI 보여주기
+
+:::
+
 ---
 
-### **예제 3: 앱 백그라운드 전환 감지** {#event-examples-background}
+### **3. 앱 백그라운드 전환 감지** (`background`) {#event-examples-background}
 
 ```javascript
 Nachocode.event.on('background', () => {
   console.log('애플리케이션이 백그라운드로 이동했습니다.');
+  // ex) 유저의 이탈 시점 기록
+  logUserLeave();
 });
 ```
 
+:::tip 언제 활용할까?
+
+- 유저가 앱을 떠났을 때 전환 시점 로그 기록
+- 유저가 앱을 떠났을 때 리소스 낭비를 줄이기 위한 타이머 중단 또는 세션 클리어 등
+
+:::
+
 ---
 
-### **예제 4: 앱 포그라운드 복귀 감지** {#event-examples-foreground}
+### **4. 앱 포그라운드 복귀 감지** (`foreground`) {#event-examples-foreground}
 
 ```javascript
 Nachocode.event.on('foreground', () => {
   console.log('애플리케이션이 활성화되었습니다.');
+  // ex) 데이터 새로고침, 배지 업데이트
+  refreshContent();
+  updateNotificationBadge();
 });
 ```
 
+:::tip 언제 활용할까?
+
+- 유저 복귀 후 최신 상태로 UI 갱신
+- 배지, 알림 현황을 다시 체크하여 반영
+
+:::
+
 ---
 
-### **예제 5: 네이티브 키보드 상태 감지** {#event-examples-keyboard}
+### **5. 네이티브 키보드 상태 감지** (`keyboardshown`, `keyboardhidden`) {#event-examples-keyboard}
 
 ```javascript
 // 키보드가 나타날 때
 Nachocode.event.on('keyboardshown', () => {
   console.log('네이티브 키보드가 표시되었습니다.');
+  // ex) 입력 필드 위치 조정
+  adjustInputPosition(true);
 });
 
 // 키보드가 사라질 때
 Nachocode.event.on('keyboardhidden', () => {
   console.log('네이티브 키보드가 사라졌습니다.');
+  // ex) 레이아웃 복원
+  adjustInputPosition(false);
 });
 ```
+
+:::tip 언제 활용할까?
+
+- 화면 내에서 입력 필드가 키보드에 가려지지 않도록 레이아웃 조정
+- 사용자 경험 향상을 위한 화면 이동/애니메이션 트리거
+
+:::
 
 ---
