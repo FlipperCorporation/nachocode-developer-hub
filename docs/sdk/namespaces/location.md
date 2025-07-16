@@ -5,11 +5,13 @@ keywords:
     위치 정보,
     Geolocation,
     위치 권한,
+    앱 위치 권한,
     위치 가져오기,
     웹뷰 위치 가져오기,
     디바이스 위치,
     GPS,
     getCurrentPosition,
+    location permission,
   ]
 ---
 
@@ -18,9 +20,9 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.6.2" link="/docs/releases/v1/sdk/release-v-1-6-2" /> <BadgeWithVersion type="Android" version="v1.6.7" link="/docs/releases/v1/app-source/android/release-v-1-6-7" /> <BadgeWithVersion type="iOS" version="v1.6.7" link="/docs/releases/v1/app-source/ios/release-v-1-6-7" />  
-> 🔔 **최신화 일자 :** 2025-07-14
+> 🔔 **최신화 일자 :** 2025-07-16
 
-## **개요**
+## **개요** {#overview}
 
 `location` 네임스페이스는 디바이스의 **현재 위치 정보를 가져오는 기능**을 제공합니다.
 
@@ -29,7 +31,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 ---
 
-### **필수 선행 작업**
+### **필수 선행 작업** {#prerequisite}
 
 ![nachocode_advanced_android_setting](../../../static/img/docs/android/nachocode_advanced_android_setting.png)
 
@@ -49,9 +51,9 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 ---
 
-## **타입 정의**
+## **타입 정의** {#types}
 
-### **`LocationPosition`**
+### **`LocationPosition`** {#location-position}
 
 - **_since :_**
   <BadgeWithVersion type="SDK" version="v1.6.2" link="/docs/releases/v1/sdk/release-v-1-6-2" />
@@ -70,7 +72,7 @@ export declare type LocationPosition = {
 
 ---
 
-### **`GetCurrentPositionSuccessResult`**
+### **`GetCurrentPositionSuccessResult`** {#get-current-position-success-result}
 
 - **_since :_**
   <BadgeWithVersion type="SDK" version="v1.6.2" link="/docs/releases/v1/sdk/release-v-1-6-2" />
@@ -93,7 +95,7 @@ export declare type GetCurrentPositionSuccessResult = {
 
 ---
 
-### **`GetCurrentPositionErrorResult`**
+### **`GetCurrentPositionErrorResult`** {#get-current-position-error-result}
 
 - **_since :_**
   <BadgeWithVersion type="SDK" version="v1.6.2" link="/docs/releases/v1/sdk/release-v-1-6-2" />
@@ -116,7 +118,7 @@ export declare type GetCurrentPositionErrorResult = {
 
 ---
 
-### **`GetCurrentPositionResult`**
+### **`GetCurrentPositionResult`** {#get-current-position-result}
 
 - **_since :_**
   <BadgeWithVersion type="SDK" version="v1.6.2" link="/docs/releases/v1/sdk/release-v-1-6-2" />
@@ -129,7 +131,7 @@ export declare type GetCurrentPositionResult =
 
 ---
 
-## **메서드 목록**
+## **메서드 목록** {#method-list}
 
 | 메서드                                          | 설명                                            | 추가된 버전                                                                                                                                                                                                                                                                                                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -137,7 +139,7 @@ export declare type GetCurrentPositionResult =
 
 ---
 
-## **메서드 상세**
+## **메서드 상세** {#method-details}
 
 ### **`getCurrentPosition(): Promise<GetCurrentPositionResult>`** {#get-current-position}
 
@@ -145,7 +147,7 @@ export declare type GetCurrentPositionResult =
   <BadgeWithVersion type="SDK" version="v1.6.2" link="/docs/releases/v1/sdk/release-v-1-6-2" /> <BadgeWithVersion type="Android" version="v1.6.7" link="/docs/releases/v1/app-source/android/release-v-1-6-7" /> <BadgeWithVersion type="iOS" version="v1.6.7" link="/docs/releases/v1/app-source/ios/release-v-1-6-7" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 Android 플랫폼에서 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 Android 플랫폼에서 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-current-position-summary}
@@ -180,9 +182,9 @@ _[필수 선행 작업](#필수-선행-작업)이 완료되어야 Android 플랫
 
 #### 반환 값 {#get-current-position-returns}
 
-| 타입                                | 설명                              |
-| ----------------------------------- | --------------------------------- |
-| `Promise<GetCurrentPositionResult>` | 위치 정보 요청 결과를 반환합니다. |
+| 타입                                                                | 설명                              |
+| ------------------------------------------------------------------- | --------------------------------- |
+| [`Promise<GetCurrentPositionResult>`](#get-current-position-result) | 위치 정보 요청 결과를 반환합니다. |
 
 ---
 
