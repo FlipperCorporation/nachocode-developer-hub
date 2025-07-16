@@ -1,5 +1,5 @@
 ---
-description: nachocode SDK의 iap 네임스페이스를 통해 Android 및 iOS 환경에서 인앱결제를 손쉽게 처리하고, 결제 성공, 실패, 웹훅(Webhook) 처리까지 효율적으로 관리하세요.
+description: nachocode SDK의 `iap` 네임스페이스를 통해 Android 및 iOS 환경에서 인앱결제를 손쉽게 처리하고, 결제 성공, 실패, 웹훅(Webhook) 처리까지 효율적으로 관리하세요.
 keywords:
   [
     인앱 결제,
@@ -16,34 +16,40 @@ keywords:
 
 # 인앱결제 (`iap`)
 
-> 🔔 **최신화 일자:** 2025-06-13
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-## **개요**
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.1" link="/docs/releases/v1/app-source/android/release-v-1-4-1" /> <BadgeWithVersion type="iOS" version="v1.4.1" link="/docs/releases/v1/app-source/ios/release-v-1-4-1" />  
+> 🔔 **최신화 일자:** 2025-07-16
 
-`iap` 네임스페이스는 **네이티브 인앱결제 기능**을 제공합니다.
+## **개요** {#overview}
 
+`iap` 네임스페이스는 **네이티브 인앱결제 기능**을 제공합니다.  
 nachocode SDK를 사용해 **Android 및 iOS 환경에서 인앱결제를 손쉽게 처리**할 수 있으며,  
 테스트 환경(`sandbox`)과 운영 환경(`production`)을 모두 지원합니다.
 
 SDK 연동 전 **가이드**를 참고해보세요.
 
-➡️[인앱결제 가이드](../../guide/iap)
+:::info 참고
+➡️[인앱결제 가이드 보러가기](../../guide/iap)
 
-➡️[웹훅 가이드](../../guide/webhook/overview)
+➡️[웹훅 가이드 보러가기](../../guide/webhook/overview)
+:::
 
 ---
 
-### **필수 선행 작업**
+### **필수 선행 작업** {#prerequisite}
 
 nachocode SDK로 **인앱결제 기능**을 사용하기 위해서는 nachocode 대시보드에서 **인앱결제 설정이 모두 완료된 후 빌드된 경우에만** 작동합니다.
 
-➡️ [인앱결제 유저 가이드](https://docs.nachocode.io/ko/articles/%EC%9D%B8%EC%95%B1-%EA%B2%B0%EC%A0%9C-c2ff4900)
+:::info 참고
+➡️ [인앱결제 유저 가이드 보러가기](https://docs.nachocode.io/ko/articles/%EC%9D%B8%EC%95%B1-%EA%B2%B0%EC%A0%9C-c2ff4900)
+:::
 
 ---
 
-## **타입 정의**
+## **타입 정의** {#types}
 
-### **`IapPurchaseResult`**
+### **`IapPurchaseResult`** {#iap-purchase-result}
 
 ```typescript
 declare type IapPurchaseResult = {
@@ -77,17 +83,17 @@ declare type IapPurchaseResult = {
 | `status.error.code`    | `string`                          | ❌            | **(_optional_)** 에러 발생 원인을 나타내는 코드, Native 호출이 실패한 경우 **없음**                     |
 | `status.error.message` | `string`                          | ✅            | 에러 메시지                                                                                             |
 
-## 주요 메서드
+## **메서드 상세** {#method-details}
 
-### `purchase(productKey: string, userId: string, callback: (result: IapPurchaseResult) => void): Promise<any>`
+### `purchase(productKey: string, userId: string, callback: (result: IapPurchaseResult) => void)` {#purchase}
 
-- _since ver.1.4.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
-#### 설명 (`purchase`)
+#### 설명 {#purchase-summary}
 
 nachocode에서 생성한 **인앱 상품의 고유 식별자**(`productKey`)와 **사용자 ID**(`userId`) 를 전달받아 인앱결제를 실행합니다.
 
@@ -95,7 +101,7 @@ nachocode에서 생성한 **인앱 상품의 고유 식별자**(`productKey`)와
 
 ---
 
-#### 에러 케이스 (`purchase`)
+#### 에러 케이스 {#purchase-errors}
 
 SDK에서 발생하는 에러는 **안드로이드**, **iOS** 모두 동일한 에러 형식을 가집니다. SDK에서 발생한 에러의 경우 에러 코드를 반환하지 않습니다.
 
@@ -109,7 +115,7 @@ SDK에서 발생하는 에러는 **안드로이드**, **iOS** 모두 동일한 �
 | Failed to get in app product information.                         | nachocode로 인앱 상품 조회 요청이 실패한 경우  |
 | Product not found with provided productKey.                       | 상품키로 조회된 상품 정보가 올바르지 않은 경우 |
 
-#### 사용 예제 (`purchase`)
+#### 사용 예제 {#purchase-examples}
 
 아래는 인앱결제 호출 결과에 따라 다양한 케이스에 대응하는 예시 코드입니다.
 
@@ -167,19 +173,19 @@ function onPurchase(productKey, userId) {
 }
 ```
 
-## 결제 상태 정의
+## 결제 상태 정의 {#purchase-status}
 
 인앱결제의 응답 형태는 **결제 성공**, **결제 실패**, **결제 호출 실패** 총 3가지로 이루어져있습니다.
-상태에 따른 응답 예시는 [이곳](#예제-응답)을 확인해주세요.
+상태에 따른 응답 예시는 [이곳](#purchase-response-example-reject)을 확인해주세요.
 
-### ✅ 1. **결제 성공**
+### ✅ 1. **결제 성공** {#purchase-status-success}
 
 - 결제 검증을 포함한 모든 과정이 **성공적으로 완료된 상태**입니다.
 - 단, **웹훅(Webhook) 전송은 실패할 수** 있으므로 nachocode 대시보드에서 확인하세요.
 
 ---
 
-### ❌ 2. **결제 실패**
+### ❌ 2. **결제 실패** {#purchase-status-fail}
 
 - **Native Layer에서 인앱결제 호출은 성공했으나**, 다음과 같은 이유로 결제가 실패한 경우를 의미합니다.
   - 결제 실패
@@ -188,15 +194,15 @@ function onPurchase(productKey, userId) {
 
 ---
 
-### ⚠️ 3. **결제 호출 실패**
+### ⚠️ 3. **결제 호출 실패** {#purchase-status-reject}
 
 - **SDK 초기화 문제, 인수값 부재, nachocode 서버에 상품이 등록되지 않음** 등의 이유로 인해 **인앱결제 호출 자체가 실패한 경우**를 의미합니다.
 
 ---
 
-### **예제 응답**
+### **예제 응답** {#purchase-response-example}
 
-#### ✅ **결제 성공 시 (`success = true`)**
+#### ✅ **결제 성공 시 (`success = true`)** {#purchase-response-example-success}
 
 ```json
 {
@@ -212,7 +218,7 @@ function onPurchase(productKey, userId) {
 }
 ```
 
-#### ❌ **결제 실패 시 (`success = false`)**
+#### ❌ **결제 실패 시 (`success = false`)** {#purchase-response-example-fail}
 
 ```json
 {
@@ -232,7 +238,7 @@ function onPurchase(productKey, userId) {
 }
 ```
 
-#### ⚠️ **결제 호출 실패 시 (`success = false`)**
+#### ⚠️ **결제 호출 실패 시 (`success = false`)** {#purchase-response-example-reject}
 
 ```json
 {
