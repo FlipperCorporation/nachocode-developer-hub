@@ -19,7 +19,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-07-15
+> 🔔 **최신화 일자:** 2025-07-16
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
@@ -27,7 +27,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 **이 네임스페이스는 현재 iOS에서만 지원됩니다.**
 :::
 
-## **개요**
+## **개요** {#overview}
 
 `apple` 네임스페이스는 **디바이스의 Apple 네이티브 기능**을 활용할 수 있도록 지원합니다.
 
@@ -35,23 +35,23 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 ---
 
-### **필수 선행 작업**
+### **필수 선행 작업** {#pre-requisite}
 
 nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-#### 1. [Apple Developer](https://developer.apple.com/account/resources/identifiers/list)에서 **Identifier**에 Capabilities 중 [ Sign In with Apple ] 추가
+#### 1. [Apple Developer](https://developer.apple.com/account/resources/identifiers/list)에서 **Identifier**에 Capabilities 중 [ Sign In with Apple ] 추가 {#pre-requisite-step-1}
 
 ![developer_apple_capabilities_sign_in_with_apple](../../../static/img/docs/apple/developer_apple_capabilities_sign_in_with_apple.png)
 
 <br/>
 
-#### 2. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 애플 로그인 사용 ] 토글을 활성화하여 앱 설정 완료
+#### 2. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 애플 로그인 사용 ] 토글을 활성화하여 앱 설정 완료 {#pre-requisite-step-2}
 
 ![nachocode_developer_apple_login](../../../static/img/docs/apple/nachocode_developer_apple_login.png)
 
 <br/>
 
-#### 3. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+#### 3. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#pre-requisite-step-3}
 
 ![nachocode_google_login_toggle](../../../static/img/docs/apple/nachocode_build_ios_new_version.png)
 
@@ -59,9 +59,9 @@ nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아
 
 ---
 
-## **타입 정의**
+## **타입 정의** {#types}
 
-### **`AppleResult`**
+### **`AppleResult`** {#apple-result}
 
 Apple 로그인 요청의 결과 상태를 나타내는 객체 타입입니다.
 
@@ -91,7 +91,7 @@ export declare type AppleResult = AppleSuccessResult | AppleErrorResult;
 
 ---
 
-### **`ApplePermissionTypes`**
+### **`ApplePermissionTypes`** {#apple-permission-type}
 
 Apple 로그인 요청 시 요구할 수 있는 권한 목록입니다.
 
@@ -110,7 +110,7 @@ export declare type ApplePermissions = (typeof ApplePermissionTypes)[string][];
 
 ---
 
-### **`AppleUserData`**
+### **`AppleUserData`** {#apple-user-data}
 
 Apple 로그인 성공 시 반환되는 사용자 정보 객체입니다.
 
@@ -140,7 +140,7 @@ export declare type AppleUserData = {
 
 ---
 
-## **메서드 목록**
+## **메서드 목록** {#method-list}
 
 | 메서드                                                | 설명                                     | 추가된 버전                                                                                                                                                                                                 |
 | ----------------------------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -150,14 +150,14 @@ export declare type AppleUserData = {
 
 ---
 
-## **메서드 상세**
+## **메서드 상세** {#method-details}
 
 ### **`login(permissions: ApplePermissions, callback: (result: AppleResult, userData?: AppleUserData) => void): void`** {#login}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#pre-requisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#login-summary}
@@ -168,7 +168,7 @@ Apple 네이티브 소셜 로그인을 수행하고 사용자 정보를 반환�
 
 | 이름          | 타입                                                      | 필수 여부 | 설명                                    |
 | ------------- | --------------------------------------------------------- | --------- | --------------------------------------- |
-| `permissions` | `ApplePermissions`                                        | ✅        | 로그인 요청 시 요구할 권한 목록         |
+| `permissions` | [`ApplePermissions`](#apple-permission-type)              | ✅        | 로그인 요청 시 요구할 권한 목록         |
 | `callback`    | `(result: AppleResult, userData?: AppleUserData) => void` | ✅        | 요청 결과와 사용자 정보를 반환하는 함수 |
 
 #### 반환 값 {#login-returns}
@@ -200,7 +200,7 @@ Nachocode.apple.login(['email', 'fullName'], (result, userData) => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#pre-requisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#is-logged-in-summary}
@@ -239,7 +239,7 @@ Nachocode.apple.isLoggedIn('user_identifier_here', (result, isLoggedIn) => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#pre-requisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-user-identifier-summary}

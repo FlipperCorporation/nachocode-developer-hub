@@ -28,7 +28,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 :::
 
-## **개요**
+## **개요** {#overview}
 
 `backkey` 네임스페이스는 **Android 네이티브 백 키를 제어**하는 기능을 제공합니다.
 
@@ -43,7 +43,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 ---
 
-## **메서드 목록**
+## **메서드 목록** {#method-list}
 
 | 메서드                                    | 설명                                             | 추가된 버전                                                                                   |
 | ----------------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------- |
@@ -54,7 +54,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 ---
 
-## **메서드 상세**
+## **메서드 상세** {#method-details}
 
 ### **`addEvent(event: (eventId: string) => void, eventId?: string): string`** {#add-event}
 

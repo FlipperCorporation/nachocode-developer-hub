@@ -20,13 +20,13 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
 > 🔔 **최신화 일자:** 2025-07-14
 
-## 개요
+## **개요** {#overview}
 
 `app` 네임스페이스는 앱의 **이름, 버전, 패키지명** 등 주요 정보를 조회하거나, **앱의 최초 실행 여부를 확인**하는 기능들을 제공합니다.
 
 ---
 
-## 메서드 목록
+## **메서드 목록** {#method-list}
 
 | 메서드                                               | 설명                                                   | 추가된 버전                                                                                   |
 | ---------------------------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
@@ -38,7 +38,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 ---
 
-## 메서드 상세
+## **메서드 상세** {#method-details}
 
 ### **`checkFirstLaunch(callback: (isFirstLaunch: boolean) => void): void`** {#check-first-launch}
 
