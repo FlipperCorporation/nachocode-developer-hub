@@ -32,21 +32,21 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 ---
 
-### **필수 선행 작업** {#pre-requisite}
+### **필수 선행 작업** {#prerequisite}
 
 Android에서는 별도의 선행 작업 없이 **생체 인증 기능**을 사용할 수 있습니다.
 
 iOS에서 nachocode SDK로 **생체 인증 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-#### [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 생체인증(FaceID) 사용 ] 토글을 활성화하여 앱 설정 완료 {#pre-requisite-step-1}
+#### [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 생체인증(FaceID) 사용 ] 토글을 활성화하여 앱 설정 완료 {#prerequisite-step-1}
 
-![nachocode_developer_apple_biometrics](../../../static/img/docs/authentication/nachocode_developer_apple_biometrics.png)
+![nachocode_developer_apple_biometrics](/img/docs/authentication/nachocode_developer_apple_biometrics.png)
 
 ---
 
 ## **타입 정의** {#types}
 
-### **`AuthenticationResult`** {authentication-result}
+### **`AuthenticationResult`** {#authentication-result}
 
 인증 결과를 나타내는 타입입니다.
 
@@ -73,7 +73,7 @@ iOS에서 nachocode SDK로 **생체 인증 기능**을 사용하기 위해서는
 - _since :_ <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />
 
 :::warning
-_iOS는 [필수 선행 작업](#pre-requisite)이 완료되어야 사용할 수 있습니다._
+_iOS는 [필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#can-use-biometrics-summary}
@@ -113,7 +113,7 @@ Nachocode.authentication.canUseBiometrics((available, error) => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />
 
 :::warning
-_iOS는 [필수 선행 작업](#pre-requisite)이 완료되어야 사용할 수 있습니다._
+_iOS는 [필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#use-biometrics-summary}
