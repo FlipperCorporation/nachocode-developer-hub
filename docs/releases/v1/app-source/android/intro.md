@@ -7,9 +7,9 @@ image: /img/docs/releases/release_note_android.png
 
 # Android App Source 릴리즈 노트
 
-![android](../../../../../static/img/docs/releases/release_note_android.png)
+![android](/img/docs/releases/release_note_android.png)
 
-> 🔔 **최신화 일자:** 2025-07-04
+> 🔔 **최신화 일자:** 2025-07-16
 
 nachocode Android App Source **Version 1**의 버전별 업데이트 내용을 정리한 릴리즈 노트입니다.
 
@@ -25,8 +25,8 @@ nachocode Android App Source **Version 1**의 버전별 업데이트 내용을 �
 
 | 버전                           | 릴리즈 날짜 | 주요 내용                                                    |
 | ------------------------------ | ----------- | ------------------------------------------------------------ |
-| [ver.1.6.8](./release-v-1-6-8) | 2025-07-15  | Google 로그인 이슈 수정                                        |
-| [ver.1.6.7](./release-v-1-6-7) | 2025-07-09  | 디바이스 현재 위치 기능 추가                                        |
+| [ver.1.6.8](./release-v-1-6-8) | 2025-07-15  | 웹 클라이언트 Google 로그인 이슈 수정                        |
+| [ver.1.6.7](./release-v-1-6-7) | 2025-07-09  | 디바이스 현재 위치 기능 추가                                 |
 | [ver.1.6.6](./release-v-1-6-6) | 2025-07-02  | UI 버그 수정                                                 |
 | [ver.1.6.5](./release-v-1-6-5) | 2025-07-02  | Target API 버전 35로 업데이트                                |
 | [ver.1.6.4](./release-v-1-6-4) | 2025-07-02  | 앱링크 개선                                                  |
