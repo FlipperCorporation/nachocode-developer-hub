@@ -16,9 +16,12 @@ keywords:
 
 # 구글 (`google`)
 
-> 🔔 **최신화 일자:** 2025-06-20
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-## **개요**
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
+> 🔔 **최신화 일자:** 2025-07-16
+
+## **개요** {#overview}
 
 `google` 네임스페이스는 **구글 네이티브 로그인 기능을 제공**하며, 사용자는 **Google 계정을 통해 인증**할 수 있습니다.
 
@@ -26,11 +29,11 @@ keywords:
 
 ---
 
-### **필수 선행 작업**
+### **필수 선행 작업** {#prerequisite}
 
 nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [SHA-1 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인{#nachocode-dashboard-sha1}
+#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [SHA-1 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인 {#prerequisite-step-1}
 
 ![nachocode_developer_android_sha](../../../static/img/docs/android/nachcoode_developer_android_sha.png)
 :::info
@@ -38,37 +41,37 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 :::
 <br/>
 
-#### 2. [Firebase 대시보드](https://console.firebase.google.com/)의 [ 프로젝트 > Authentication > 로그인 방법 ]에서 추가 제공 업체로 [ Google ] 선택 후 사용설정
+#### 2. [Firebase 대시보드](https://console.firebase.google.com/)의 [ 프로젝트 > Authentication > 로그인 방법 ]에서 추가 제공 업체로 [ Google ] 선택 후 사용설정 {#prerequisite-step-2}
 
 ![firebase_authentication_login_methods](../../../static/img/docs/google/firebase_authentication_login_methods.png)
 
 <br/>
 
-#### 3. `GoogleService-Info.plist` 를 다운받은 후에 [ 프로젝트 설정 ] 클릭
+#### 3. `GoogleService-Info.plist` 를 다운받은 후에 [ 프로젝트 설정 ] 클릭 {#prerequisite-step-3}
 
 ![firebase_authentication_login_methods_complete](../../../static/img/docs/google/firebase_authentication_login_methods_complete.png)
 
 <br/>
 
-#### 4. `google-services.json` 파일 다운로드
+#### 4. `google-services.json` 파일 다운로드 {#prerequisite-step-4}
 
 ![firebase_download_google_services](../../../static/img/docs/google/firebase_download_google_services.png)
 
 <br/>
 
-#### 5. [ Android 앱 ] 탭에서 [ 디지털 지문 추가 ] 클릭
+#### 5. [ Android 앱 ] 탭에서 [ 디지털 지문 추가 ] 클릭 {#prerequisite-step-5}
 
 ![firebase_android_add_fingerprint](../../../static/img/docs/google/firebase_android_add_fingerprint.png)
 
 <br/>
 
-#### 6. [나쵸코드 대시보드](#nachocode-dashboard-sha1)에서 복사한 [ SHA-1 디지털 지문 ]을 입력 후 저장
+#### 6. [나쵸코드 대시보드](#prerequisite-step-1)에서 복사한 [ SHA-1 디지털 지문 ]을 입력 후 저장 {#prerequisite-step-6}
 
 ![firebase_android_save_fingerprint](../../../static/img/docs/google/firebase_android_save_fingerprint.png)
 
 <br/>
 
-#### 7. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 기능 > 푸시 알림 > 앱 푸시 설정 ]에 다운받은 파일(`GoogleService-Info.plist`, `google-services.json`)을 업로드
+#### 7. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 기능 > 푸시 알림 > 앱 푸시 설정 ]에 다운받은 파일(`GoogleService-Info.plist`, `google-services.json`)을 업로드 {#prerequisite-step-7}
 
 ![nachocode_google_push_notification_setting](../../../static/img/docs/google/nachocode_google_push_notification_setting.png)
 :::warning
@@ -77,13 +80,13 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 <br/>
 
-#### 8. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 구글 네이티브 설정 ]에서 [ 구글 로그인 ] 토글을 활성화하여 앱 설정 완료
+#### 8. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 구글 네이티브 설정 ]에서 [ 구글 로그인 ] 토글을 활성화하여 앱 설정 완료 {#prerequisite-step-8}
 
 ![nachocode_developer_google_login](../../../static/img/docs/google/nachocode_developer_google_login.png)
 
 <br/>
 
-#### 9. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > 안드로이드 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+#### 9. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > 안드로이드 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-step-9}
 
 ![nachocode_build_android_new_version](../../../static/img/docs/android/nachocode_build_android_new_version.png)
 
@@ -93,7 +96,7 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 <br/>
 
-#### 10. 빌드된 aab 파일을 [Google Play Console](https://play.google.com/console)에 업로드 후 [ 테스트 및 출시 > 설정 > 앱 서명 ]에서 앱 서명키 인증서의 [ SHA-1 인증서 지문 ]을 확인
+#### 10. 빌드된 aab 파일을 [Google Play Console](https://play.google.com/console)에 업로드 후 [ 테스트 및 출시 > 설정 > 앱 서명 ]에서 앱 서명키 인증서의 [ SHA-1 인증서 지문 ]을 확인 {#prerequisite-step-10}
 
 ![google_console_fingerprint](../../../static/img/docs/google/google_console_fingerprint.png)
 :::warning
@@ -102,7 +105,7 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 <br/>
 
-#### 11. [ Google Play Console ]에서 복사한 [ SHA-1 디지털 지문 ]을 입력 후 저장
+#### 11. [ Google Play Console ]에서 복사한 [ SHA-1 디지털 지문 ]을 입력 후 저장 {#prerequisite-step-11}
 
 ![firebase_android_save_fingerprint](../../../static/img/docs/google/firebase_android_save_fingerprint.png)
 
@@ -110,9 +113,9 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 ---
 
-## **타입 정의**
+## **타입 정의** {#types}
 
-### **`GoogleResult`**
+### **`GoogleResult`** {#google-result}
 
 구글 로그인 및 요청의 결과 상태를 나타내는 타입입니다.
 
@@ -143,7 +146,7 @@ export declare type GoogleResult = GoogleSuccessResult | GoogleErrorResult;
 
 ---
 
-### **`GoogleUserData`**
+### **`GoogleUserData`** {#google-user-data}
 
 구글 사용자 데이터를 나타내는 타입입니다.
 
@@ -171,25 +174,25 @@ export declare type GoogleUserData = {
 
 ---
 
-## **메서드 목록**
+## **메서드 목록** {#method-list}
 
-| 메서드                                    | 설명                   | 추가된 버전 |
-| ----------------------------------------- | ---------------------- | ----------- |
-| [`login(callback)`](#login)               | 구글 네이티브 로그인   | ver.1.5.0   |
-| [`isLoggedIn(callback)`](#is-logged-in)   | 로그인 상태 확인       | ver.1.5.0   |
-| [`getUserData(callback)`](#get-user-data) | 사용자 데이터 요청     | ver.1.5.0   |
-| [`logout(callback)`](#logout)             | 구글 네이티브 로그아웃 | ver.1.5.0   |
+| 메서드                                    | 설명                   | 추가된 버전                                                                                   |
+| ----------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------- |
+| [`login(callback)`](#login)               | 구글 네이티브 로그인   | <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> |
+| [`isLoggedIn(callback)`](#is-logged-in)   | 로그인 상태 확인       | <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> |
+| [`getUserData(callback)`](#get-user-data) | 사용자 데이터 요청     | <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> |
+| [`logout(callback)`](#logout)             | 구글 네이티브 로그아웃 | <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> |
 
 ---
 
-## **메서드 상세**
+## **메서드 상세** {#method-details}
 
 ### **`login(callback: (result: GoogleResult, idToken?: string, userData?: GoogleUserData) => void): void`** {#login}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#login-summary}
@@ -223,10 +226,10 @@ Nachocode.google.login((result, idToken, userData) => {
 
 ### **`isLoggedIn(callback: (result: GoogleResult, isLoggedIn: boolean, idToken?: string) => void): void`** {#is-logged-in}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#is-logged-in-summary}
@@ -270,10 +273,10 @@ Nachocode.google.isLoggedIn((result, isLoggedIn, idToken) => {
 
 ### **`getUserData(callback: (result: GoogleResult, userData?: GoogleUserData) => void): void`** {#get-user-data}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-user-data-summary}
@@ -307,10 +310,10 @@ Nachocode.google.getUserData((result, userData) => {
 
 ### **`logout(callback: (result: GoogleResult) => void): void`** {#logout}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#logout-summary}
