@@ -17,9 +17,12 @@ keywords:
 
 # 카카오 (`kakao`)
 
-> 🔔 **최신화 일자:** 2025-06-20
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-## **개요**
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
+> 🔔 **최신화 일자:** 2025-07-16
+
+## **개요** {#overview}
 
 `kakao` 네임스페이스는 **카카오 네이티브 로그인** 및 **카카오톡 공유 기능**을 제공합니다.
 
@@ -28,35 +31,35 @@ keywords:
 
 ---
 
-### **필수 선행 작업**
+### **필수 선행 작업** {#prerequisite}
 
 nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [해시키](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
+#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [해시키](https://developers.google.com/android/guides/client-auth?hl=ko) 확인 {#prerequisite-step-1}
 
 ![nachocode_developer_android_hash_key](../../../static/img/docs/android/nachcodoe_developer_android_hash_key.png)
 
 <br/>
 
-#### 2. [Kakao Developers](https://developers.kakao.com/console/app)에서 애플리케이션 생성 및 네이티브 앱 키 발급
+#### 2. [Kakao Developers](https://developers.kakao.com/console/app)에서 애플리케이션 생성 및 네이티브 앱 키 발급 {#prerequisite-step-2}
 
-- 여기서 확인한 **네이티브 앱 키**는 [5. 대시보드 설정](#nachocode-dashboard-configuration) 시 필요합니다.
+- 여기서 확인한 **네이티브 앱 키**는 [5. 대시보드 설정](#prerequisite-step-5) 시 필요합니다.
 
  <br/>
 
 ![developer_kakao_app_key_register](../../../static/img/docs/kakao/developers_kakao_app_key_register.png)
 
-#### 3. 플랫폼 등록 ([Android](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-android), [iOS](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-ios))
+#### 3. 플랫폼 등록 ([Android](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-android), [iOS](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-ios)) {#prerequisite-step-3}
 
 - **Android 및 iOS 플랫폼을 등록**합니다.
 - **패키지명 및 번들 ID**는 **나쵸코드 대시보드에 등록된 것**과 반드시 일치해야 합니다.
-- [대시보드에서 확인한 키 해시](#1-nachocode-대시보드의--앱-설정--개발자-설정--안드로이드-네이티브-설정-에서-해시키-확인)를 Android 플랫폼에 등록합니다.
+- [대시보드에서 확인한 키 해시](#prerequisite-step-1)를 Android 플랫폼에 등록합니다.
 
 ![developer_kakao_add_platform](../../../static/img/docs/kakao/developers_kakao_add_platform.png)
 
 <br/>
 
-#### 4-1. (선택사항) 공유하기 사용 시, 사이트 도메인 등록
+#### 4-1. (선택사항) 공유하기 사용 시, 사이트 도메인 등록 {#prerequisite-step-4-1}
 
 - **스크랩 공유하기 기능**을 이용하기 위해서는 **사이트 도메인을 미리 등록**해야 합니다.
 - 운영 서버, 개발 서버 등의 도메인을 미리 등록해야 **스크랩 공유하기** 기능을 원활히 테스트 및 구현 가능합니다.
@@ -65,7 +68,7 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 <br/>
 
-#### 4-2. (선택사항) 공유하기 사용 시, [메시지 템플릿](https://developers.kakao.com/docs/latest/ko/message-template/common) 등록 [ 도구 > 메시지 템플릿 ]
+#### 4-2. (선택사항) 공유하기 사용 시, [메시지 템플릿](https://developers.kakao.com/docs/latest/ko/message-template/common) 등록 [ 도구 > 메시지 템플릿 ] {#prerequisite-step-4-2}
 
 - **커스텀 템플릿 공유하기 기능**을 이용하기 위해서는 카카오톡의 **메시지 템플릿 빌더**를 활용해 미리 **메시지 템플릿**을 만들어 저장해둬야 합니다.
 - 이 때 발급 받은 **템플릿 ID**를 활용하여 **nachocode SDK**를 통해 **템플릿 메시지 전송**이 가능해집니다.
@@ -74,13 +77,13 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 <br/>
 
-#### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 카카오 네이티브 설정 ]에서 [ 카카오 네이티브 활성화 ] 토글 활성화 후 Kakao Developers에서 발급한 **네이티브 앱 키**를 등록하여 앱 설정 완료 {#nachocode-dashboard-configuration}
+#### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 카카오 네이티브 설정 ]에서 [ 카카오 네이티브 활성화 ] 토글 활성화 후 Kakao Developers에서 발급한 **네이티브 앱 키**를 등록하여 앱 설정 완료 {#prerequisite-step-5}
 
 ![nachocode_developer_kakao_native_key](../../../static/img/docs/kakao/nachocode_developer_kakao_native_key.png)
 
 <br/>
 
-#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > 안드로이드, iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > 안드로이드, iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-step-6}
 
 ![nachocode_build_android_new_version](../../../static/img/docs/android/nachocode_build_android_new_version.png)
 
@@ -88,11 +91,11 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 ---
 
-## **타입 정의**
+## **타입 정의** {#types}
 
-### **`KakaoResult`**
+### **`KakaoResult`** {#kakao-result}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 카카오 API 요청 결과를 나타내는 타입입니다.
 
@@ -123,9 +126,9 @@ export declare type KakaoResult = KakaoSuccessResult | KakaoErrorResult;
 
 ---
 
-### **`KakaoLoginData`**
+### **`KakaoLoginData`** {#kakao-login-data}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 카카오 로그인 결과 데이터입니다.
 
@@ -139,9 +142,9 @@ export declare type KakaoResult = KakaoSuccessResult | KakaoErrorResult;
 
 ---
 
-### **`KakaoUserData`**
+### **`KakaoUserData`** {#kakao-user-data}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 카카오 사용자 정보 데이터입니다.
 
@@ -193,10 +196,9 @@ export declare type KakaoResult = KakaoSuccessResult | KakaoErrorResult;
 
 ---
 
-### **`KakaoShareType`**
+### **`KakaoShareType`** {#kakao-share-type}
 
-- _since ver.1.2.0_
-- _lastupdated ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 카카오톡 공유 유형을 나타내는 타입(type)입입니다.
 
@@ -211,10 +213,9 @@ type KakaoShareType = 'custom' | 'scrap';
 
 ---
 
-### **`KakaoShareCustom`**
+### **`KakaoShareCustom`** {#kakao-share-custom}
 
-- _since ver.1.2.0_
-- _lastupdated ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 카카오톡 커스텀 템플릿 공유 시 사용할 데이터 타입입니다.
 
@@ -238,10 +239,9 @@ declare type KakaoShareCustom = {
 
 ---
 
-### **`KakaoShareScrap`**
+### **`KakaoShareScrap`** {#kakao-share-scrap}
 
-- _since ver.1.2.0_
-- _lastupdated ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 카카오톡 URL 스크랩 공유 시 사용할 데이터 타입입니다.
 
@@ -267,9 +267,9 @@ declare type KakaoShareScrap = {
 
 ---
 
-### **`KAKAO_SHARE_STATUS_CODES`**
+### **`KAKAO_SHARE_STATUS_CODES`** {#kakao-share-status-codes}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 카카오 공유 요청의 상태 코드 목록입니다.
 
@@ -301,9 +301,9 @@ const KAKAO_SHARE_STATUS_CODES = {
 
 ---
 
-### **`KakaoShareStatusCode`**
+### **`KakaoShareStatusCode`** {#kakao-share-status-code}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 카카오 공유 요청의 상태 코드 타입(type)입니다.
 
@@ -313,27 +313,27 @@ type KakaoShareStatusCode = 102 | 103 | 104 | 105 | 106 | 108 | 199 | 200 | 201;
 
 ---
 
-## **메서드 목록**
+## **메서드 목록** {#method-list}
 
-| 메서드                                    | 설명                                    | 추가된 버전 |
-| ----------------------------------------- | --------------------------------------- | ----------- |
-| [`login(callback)`](#login)               | 카카오 네이티브 로그인                  | ver.1.5.0   |
-| [`isLoggedIn(callback)`](#is-logged-in)   | 로그인 상태 확인                        | ver.1.5.0   |
-| [`getUserData(callback)`](#get-user-data) | 사용자 데이터 요청                      | ver.1.5.0   |
-| [`logout(callback)`](#logout)             | 카카오 네이티브 로그아웃                | ver.1.5.0   |
-| [`unlink(callback)`](#unlink)             | 앱과 카카오 계정 연결 해제              | ver.1.5.0   |
-| [`share(type, data, callback?)`](#share)  | 카카오톡 커스텀 템플릿/스크랩 공유 기능 | ver.1.5.0   |
+| 메서드                                    | 설명                                    | 추가된 버전                                                                                   |
+| ----------------------------------------- | --------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`login(callback)`](#login)               | 카카오 네이티브 로그인                  | <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> |
+| [`isLoggedIn(callback)`](#is-logged-in)   | 로그인 상태 확인                        | <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> |
+| [`getUserData(callback)`](#get-user-data) | 사용자 데이터 요청                      | <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> |
+| [`logout(callback)`](#logout)             | 카카오 네이티브 로그아웃                | <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> |
+| [`unlink(callback)`](#unlink)             | 앱과 카카오 계정 연결 해제              | <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> |
+| [`share(type, data, callback?)`](#share)  | 카카오톡 커스텀 템플릿/스크랩 공유 기능 | <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> |
 
 ---
 
-## **메서드 상세**
+## **메서드 상세** {#method-details}
 
 ### **`login(callback: (result: KakaoResult, loginData?: KakaoLoginData) => void): void`** {#login}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#login-summary}
@@ -367,10 +367,10 @@ Nachocode.kakao.login((result, loginData) => {
 
 ### **`isLoggedIn(callback: (result: KakaoResult, isLoggedIn: boolean, loginData?: KakaoLoginData) => void): void`** {#is-logged-in}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#is-logged-in-summary}
@@ -403,10 +403,10 @@ Nachocode.kakao.isLoggedIn((result, isLoggedIn, loginData) => {
 
 ### **`getUserData(callback: (result: KakaoResult, userData?: KakaoUserData) => void): void`** {#get-user-data}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-user-data-summary}
@@ -439,10 +439,10 @@ Nachocode.kakao.getUserData((result, userData) => {
 
 ### **`logout(callback: (result: KakaoResult) => void): void`** {#logout}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#logout-summary}
@@ -477,10 +477,10 @@ Nachocode.kakao.logout(result => {
 
 ### **`unlink(callback: (result: KakaoResult) => void): void`** {#unlink}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#unlink-summary}
@@ -515,10 +515,10 @@ Nachocode.kakao.unlink(result => {
 
 ### **`share(type: KakaoShareType, data: KakaoShareCustom | KakaoShareScrap, callback?: (result: KakaoShareResult) => void): void`** {#share}
 
-- _since ver.1.5.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#share-summary}
@@ -533,11 +533,11 @@ _[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 
 
 #### 매개변수 {#share-parameters}
 
-| 이름       | 타입                                         | 필수 여부 | 설명                                    |
-| ---------- | -------------------------------------------- | --------- | --------------------------------------- |
-| `type`     | `KakaoShareType`                             | ✅        | `custom` 또는 `scrap` 공유 방식 선택    |
-| `data`     | `KakaoShareCustom \| KakaoShareScrap`        | ✅        | 공유할 데이터 (템플릿 ID 또는 URL 필요) |
-| `callback` | `(result: KakaoResult) => void` _(optional)_ | ❌        | 공유 결과를 처리할 콜백 함수            |
+| 이름       | 타입                                                                                 | 필수 여부 | 설명                                    |
+| ---------- | ------------------------------------------------------------------------------------ | --------- | --------------------------------------- |
+| `type`     | [`KakaoShareType`](#kakao-share-type)                                                | ✅        | `custom` 또는 `scrap` 공유 방식 선택    |
+| `data`     | [`KakaoShareCustom`](#kakao-share-custom) \| [`KakaoShareScrap`](#kakao-share-scrap) | ✅        | 공유할 데이터 (템플릿 ID 또는 URL 필요) |
+| `callback` | `(result: KakaoResult) => void` _(optional)_                                         | ❌        | 공유 결과를 처리할 콜백 함수            |
 
 #### 사용 예제 (커스텀 템플릿) {#share-examples-custom}
 
@@ -585,7 +585,7 @@ Nachocode.kakao.share(
 - 카카오 공유를 위해서는 **카카오 개발자 센터**에서 앱 키 설정이 선행되어야 합니다.
 - `custom` 공유 방식의 경우, **카카오 개발자 센터에서 사전 등록된 템플릿 ID**가 필요합니다.
 - `scrap` 방식은 카카오 서버가 스크랩 API를 통해 대상 URL의 메타데이터를 가져와 미리보기를 생성합니다.
-- 실패할 경우, `KakaoResult`의 `status` 값이 `'error'`로 설정되며 `message` 필드에 오류 원인이 포함됩니다.
+- 실패할 경우, [`KakaoResult`](#kakao-result)의 `status` 값이 `'error'`로 설정되며 `message` 필드에 오류 원인이 포함됩니다.
 - 카카오 설정 시 어려움이 있으시면 언제든지 [support@nachocode.io](mailto:support@nachocode.io)로 문의해 주세요.
 
 :::
