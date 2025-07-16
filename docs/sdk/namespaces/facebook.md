@@ -166,7 +166,6 @@ export declare type FacebookResult =
 
 :::
 
-<!-- markdownlint-disable MD033 -->
 <details>
 <summary>펼쳐 보기</summary>
 
@@ -203,8 +202,6 @@ export declare type FacebookPermissions =
 ```
 
 </details>
-
-<!-- markdownlint-enable MD033 -->
 
 ---
 

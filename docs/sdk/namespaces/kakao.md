@@ -153,7 +153,6 @@ export declare type KakaoResult = KakaoSuccessResult | KakaoErrorResult;
 | `profile` | `string`  | 프로필 정보 _(optional)_      |
 | 기타 필드 | `unknown` | 추가 사용자 속성 _(optional)_ |
 
-<!-- markdownlint-disable MD033 -->
 <details>
   <summary>전체 보기</summary>
 
@@ -191,7 +190,6 @@ export declare type KakaoResult = KakaoSuccessResult | KakaoErrorResult;
 | `isKorean`                      | `boolean` | 한국인 여부 _(optional)_                       |
 
 </details>
-<!-- markdownlint-enable MD033 -->
 
 ---
 

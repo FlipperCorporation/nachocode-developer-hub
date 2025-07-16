@@ -3,7 +3,7 @@
 **nachocode Developer Hub**는 nachocode SDK 및 API 사용을 위한 공식 문서를 제공합니다.  
 웹 개발자와 앱 개발자가 nachocode의 강력한 노코드 & 로우코드 플랫폼을 활용하여 네이티브 앱을 빠르고 효율적으로 개발할 수 있도록 돕습니다.
 
-- 최신화 일자 : 2025-06-13
+- 최신화 일자 : 2025-07-16
 
 ---
 
@@ -29,8 +29,16 @@ nachocode의 개발자 문서를 정독하려면 아래 링크를 방문하세�
 
 ## 🛠️ 기술 스택
 
+### Docusaurus
+
 nachocode Developer Hub는 [Docusaurus](https://docusaurus.io/)를 사용하여 생성되었습니다.  
 Docusaurus는 개발자 문서를 작성하고 배포하는 데 최적화된 정적 사이트 생성기입니다.
+
+### markdownlint
+
+nachocode Developer Hub는 [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)를 사용하여 문법을 검사하고 있습니다. lint rule에 관한 상세 설명은 [markdownlint의 Rules.md](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)에서 확인할 수 있습니다.
+
+루트 경로의 `.markdownlint.json`을 수정하여 rule을 추가하거나 삭제할 수 있습니다.
 
 ---
 
@@ -51,6 +59,8 @@ cd nachocode-developer-hub
 yarn install
 ```
 
+or
+
 ```bash
 npm install
 ```
@@ -62,6 +72,8 @@ npm install
 ```bash
 yarn start
 ```
+
+or
 
 ```bash
 npm run start
@@ -76,6 +88,8 @@ npm run start
 ```bash
 yarn build
 ```
+
+or
 
 ```bash
 npm run build
