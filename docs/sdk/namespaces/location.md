@@ -20,7 +20,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.6.2" link="/docs/releases/v1/sdk/release-v-1-6-2" /> <BadgeWithVersion type="Android" version="v1.6.7" link="/docs/releases/v1/app-source/android/release-v-1-6-7" /> <BadgeWithVersion type="iOS" version="v1.6.7" link="/docs/releases/v1/app-source/ios/release-v-1-6-7" />  
-> 🔔 **최신화 일자 :** 2025-07-16
+> 🔔 **최신화 일자 :** 2025-07-18
 
 ## **개요** {#overview}
 
@@ -172,13 +172,13 @@ _[필수 선행 작업](#prerequisite)이 완료되어야 Android 플랫폼에�
 
 #### 지원 플랫폼 {#get-current-position-supported-platforms}
 
-`getCurrentPosition` 메서드는 App과 Web 환경을 동시 지원합니다.
+`getCurrentPosition` 메서드는 **App과 Web 환경을 동시 지원**합니다.
 
-| 플랫폼  | 지원 여부 | 비고                 |
-| ------- | --------- | -------------------- |
-| Android | ✅        | 네이티브 GPS 사용    |
-| iOS     | ✅        | 네이티브 GPS 사용    |
-| Web     | ✅        | Geolocation API 사용 |
+| 플랫폼                                                             | 지원 여부 | 비고                   |
+| ------------------------------------------------------------------ | --------- | ---------------------- |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        | 네이티브 Location 사용 |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | 네이티브 Location 사용 |
+| ![Web](/img/docs/chrome-badge.svg)                                 | ✅        | Geolocation API 사용   |
 
 #### 반환 값 {#get-current-position-returns}
 
