@@ -15,9 +15,12 @@ keywords:
 
 # 진동 (`vibration`)
 
-> 🔔 **최신화 일자:** 2025-06-13
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-## **개요**
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> <BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />  
+> 🔔 **최신화 일자:** 2025-07-18
+
+## **개요** {#overview}
 
 `vibration` 네임스페이스는 **디바이스 진동 및 햅틱 피드백을 제어하는 기능**을 제공합니다.
 
@@ -26,9 +29,9 @@ keywords:
 
 ---
 
-## **타입 정의**
+## **타입 정의** {#types}
 
-### **`HapticsType`**
+### **`HapticsType`** {#haptics-type}
 
 햅틱 피드백 유형을 나타내는 열거형(enum)입니다.
 
@@ -39,26 +42,26 @@ keywords:
 
 ---
 
-## **메서드 목록**
+## **메서드 목록** {#method-list}
 
-| 메서드                                                                      | 설명                                | 추가된 버전 |
-| --------------------------------------------------------------------------- | ----------------------------------- | ----------- |
-| [`setHaptics(enable)`](#sethapticsenable-boolean-void)                      | 햅틱 피드백 사용 여부를 설정합니다. | ver.1.2.0   |
-| [`getHaptics(callback)`](#gethapticscallback-enable-boolean--void-void)     | 햅틱 피드백 사용 여부를 반환합니다. | ver.1.2.0   |
-| [`haptics(hapticsType?)`](#hapticshapticstype-hapticstype-void)             | 햅틱 피드백을 트리거합니다.         | ver.1.2.0   |
-| [`setVibration(enable)`](#setvibrationenable-boolean-void)                  | 진동 사용 여부를 설정합니다.        | ver.1.2.0   |
-| [`getVibration(callback)`](#getvibrationcallback-enable-boolean--void-void) | 진동 사용 여부를 반환합니다.        | ver.1.2.0   |
-| [`vibrate()`](#vibrate-void)                                                | 짧은 진동 패턴을 트리거합니다.      | ver.1.2.0   |
+| 메서드                                     | 설명                                | 추가된 버전                                                                                   |
+| ------------------------------------------ | ----------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`setHaptics(enable)`](#set-haptics)       | 햅틱 피드백 사용 여부를 설정합니다. | <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> |
+| [`getHaptics(callback)`](#get-haptics)     | 햅틱 피드백 사용 여부를 반환합니다. | <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> |
+| [`haptics(hapticsType?)`](#haptics)        | 햅틱 피드백을 트리거합니다.         | <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> |
+| [`setVibration(enable)`](#set-vibration)   | 진동 사용 여부를 설정합니다.        | <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> |
+| [`getVibration(callback)`](#get-vibration) | 진동 사용 여부를 반환합니다.        | <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> |
+| [`vibrate()`](#vibrate)                    | 짧은 진동 패턴을 트리거합니다.      | <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> |
 
 ---
 
-## **메서드 상세**
+## **메서드 상세** {#method-details}
 
-### **`setHaptics(enable: boolean): void`**
+### **`setHaptics(enable: boolean): void`** {#set-haptics}
 
-- _since ver.1.2.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
 
-#### 설명 (`setHaptics`)
+#### 설명 {#set-haptics-summary}
 
 앱 사용자의 햅틱 피드백 사용 여부를 설정합니다.
 
@@ -66,17 +69,17 @@ keywords:
 진동 기능을 사용할 경우, 앱 사용자가 햅틱 피드백을 비활성화할 수 있는 옵션을 반드시 제공해야 합니다.
 :::
 
-#### 매개변수 (`setHaptics`)
+#### 매개변수 {#set-haptics-parameters}
 
 | 이름     | 타입      | 필수 여부 | 설명                                                        |
 | -------- | --------- | --------- | ----------------------------------------------------------- |
 | `enable` | `boolean` | ✅        | 햅틱 피드백 사용 여부 (`true` = 사용, `false` = 사용 안 함) |
 
-#### 반환 값 (`setHaptics`)
+#### 반환 값 {#set-haptics-returns}
 
 해당 메서드는 반환 값을 가지지 않습니다.
 
-#### 사용 예제 (`setHaptics`)
+#### 사용 예제 {#set-haptics-examples}
 
 ```javascript
 // 앱이 햅틱 피드백을 사용하도록 설정합니다.
@@ -97,26 +100,26 @@ function onHapticsToggleChange(enable) {
 
 ---
 
-### **`getHaptics(callback: (enable: boolean) => void): void`**
+### **`getHaptics(callback: (enable: boolean) => void): void`** {#get-haptics}
 
-- _since ver.1.2.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
 
-#### 설명 (`getHaptics`)
+#### 설명 {#get-haptics-summary}
 
 현재 앱 사용자의 **햅틱 피드백 사용 여부**를 반환합니다.  
 콜백 함수로 `true` 또는 `false` 값을 전달받습니다.
 
-#### 매개변수 (`getHaptics`)
+#### 매개변수 {#get-haptics-parameters}
 
 | 이름       | 타입                        | 필수 여부 | 설명                       |
 | ---------- | --------------------------- | --------- | -------------------------- |
 | `callback` | `(enable: boolean) => void` | ✅        | 햅틱 피드백 사용 여부 반환 |
 
-#### 반환 값 (`getHaptics`)
+#### 반환 값 {#get-haptics-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`getHaptics`)
+#### 사용 예제 {#get-haptics-examples}
 
 ```javascript
 // ex. Native에서 햅틱 피드백 사용유무를 받아와 input의 checked 값을 변경합니다.
@@ -131,23 +134,23 @@ Nachocode.vibration.getHaptics(enable => {
 
 ---
 
-### **`haptics(hapticsType?: HapticsType): void`**
+### **`haptics(hapticsType?: HapticsType): void`** {#haptics}
 
-- _since ver.1.2.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
 
-#### 설명 (`haptics`)
+#### 설명 {#haptics-summary}
 
 햅틱 피드백을 트리거합니다.  
-`SUCCESS = 0 | ERROR = 1`을 옵션으로 선택할 수 있습니다.
+`SUCCESS = 0 | ERROR = 1`을 옵션으로 선택할 수 있습니다.  
 기본적으로 `SUCCESS` 피드백을 사용하며, 선택적으로 `ERROR` 피드백을 지정할 수 있습니다.
 
-#### 매개변수 (`haptics`)
+#### 매개변수 {#haptics-parameters}
 
-| 이름          | 타입          | 필수 여부 | 설명                      |
-| ------------- | ------------- | --------- | ------------------------- |
-| `hapticsType` | `HapticsType` | ❌        | 트리거할 햅틱 피드백 유형 |
+| 이름          | 타입                           | 필수 여부 | 설명                      |
+| ------------- | ------------------------------ | --------- | ------------------------- |
+| `hapticsType` | [`HapticsType`](#haptics-type) | ❌        | 트리거할 햅틱 피드백 유형 |
 
-#### 사용 예제 (`haptics`)
+#### 사용 예제 {#haptics-examples}
 
 ```javascript
 // 기본 햅틱 피드백 (SUCCESS)
@@ -180,11 +183,11 @@ document
 
 ---
 
-### **`setVibration(enable: boolean): void`**
+### **`setVibration(enable: boolean): void`** {#set-vibration}
 
-- _since ver.1.2.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
 
-#### 설명 (`setVibration`)
+#### 설명 {#set-vibration-summary}
 
 앱 사용자의 진동 사용 여부를 설정합니다.
 
@@ -192,13 +195,13 @@ document
 진동 기능을 사용할 경우, 앱 사용자가 진동을 비활성화할 수 있는 옵션을 반드시 제공해야 합니다.
 :::
 
-#### 매개변수 (`setVibration`)
+#### 매개변수 {#set-vibration-parameters}
 
 | 이름     | 타입      | 필수 여부 | 설명                            |
 | -------- | --------- | --------- | ------------------------------- |
 | `enable` | `boolean` | ✅        | 진동 사용 여부 (`true`/`false`) |
 
-#### 사용 예제 (`setVibration`)
+#### 사용 예제 {#set-vibration-examples}
 
 ```javascript
 // 앱이 진동을 사용하도록 설정합니다.
@@ -219,26 +222,26 @@ function onVibrationToggleChange(enable) {
 
 ---
 
-### **`getVibration(callback: (enable: boolean) => void): void`**
+### **`getVibration(callback: (enable: boolean) => void): void`** {#get-vibration}
 
-- _since ver.1.2.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
 
-#### 설명 (`getVibration`)
+#### 설명 {#get-vibration-summary}
 
 현재 앱 사용자의 **진동 사용 여부**를 반환합니다.  
 콜백 함수로 `true` 또는 `false` 값을 전달받습니다.
 
-#### 매개변수 (`getVibration`)
+#### 매개변수 {#get-vibration-parameters}
 
 | 이름       | 타입                        | 필수 여부 | 설명                |
 | ---------- | --------------------------- | --------- | ------------------- |
 | `callback` | `(enable: boolean) => void` | ✅        | 진동 사용 여부 반환 |
 
-#### 반환 값 (`getVibration`)
+#### 반환 값 {#get-vibration-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
-#### 사용 예제 (`getVibration`)
+#### 사용 예제 {#get-vibration-examples}
 
 ```javascript
 // ex. Native에서 진동 사용유무를 받아와 input의 checked 값을 변경합니다.
@@ -253,19 +256,19 @@ Nachocode.vibration.getVibration(enable => {
 
 ---
 
-### **`vibrate(): void`**
+### **`vibrate(): void`** {#vibrate}
 
-- _since ver.1.2.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
 
-#### 설명 (`vibrate`)
+#### 설명 {#vibrate-summary}
 
 짧은 **패턴의 진동**을 트리거합니다.
 
-#### 반환 값 (`vibrate`)
+#### 반환 값 {#vibrate-returns}
 
 해당 메서드는 반환 값을 가지지 않습니다.
 
-#### 사용 예제 (`vibrate`)
+#### 사용 예제 {#vibrate-examples}
 
 ```javascript
 // DOM 요소의 click 이벤트에 진동 트리거를 바인드 합니다.
