@@ -66,7 +66,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 #### 지원 플랫폼 {#open-sharing-supported-platforms}
 
-`openSharing` 메서드는 App과 Web 환경을 동시 지원합니다.
+`openSharing` 메서드는 **App과 Web 모든 환경을 지원**합니다.
 
 | 플랫폼                                                             | 지원 여부 | 비고                     |
 | ------------------------------------------------------------------ | --------- | ------------------------ |

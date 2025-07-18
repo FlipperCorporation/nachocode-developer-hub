@@ -18,9 +18,12 @@ keywords:
 
 # 스토어 (`store`)
 
-> 🔔 **최신화 일자:** 2025-06-13
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-## **개요**
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> <BadgeWithVersion type="Android" version="v1.6.0" link="/docs/releases/v1/app-source/android/release-v-1-6-0" /> <BadgeWithVersion type="iOS" version="v1.6.0" link="/docs/releases/v1/app-source/ios/release-v-1-6-0" />  
+> 🔔 **최신화 일자:** 2025-07-18
+
+## **개요** {#overview}
 
 `store` 네임스페이스는 앱스토어 및 플레이스토어 인터랙션 기능을 제공합니다.
 
@@ -32,11 +35,11 @@ keywords:
 
 ---
 
-## **타입 정의**
+## **타입 정의** {#types}
 
-### **`StoreInfo`**
+### **`StoreInfo`** {#store-info}
 
-- _since ver.1.6.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
 
 ```typescript
 export declare type StoreInfo =
@@ -50,35 +53,33 @@ export declare type StoreInfo =
     };
 ```
 
-| 속성명         | 타입     | 필수 여부        | 설명                                                    |
-| -------------- | -------- | ---------------- | ------------------------------------------------------- |
-| `androidAppId` | `string` | 조건부 (Android) | Android 앱 ID (패키지 이름)                             |
-| `iOSAppId`     | `string` | 조건부 (iOS)     | iOS 앱스토어의 앱 ID (Apple App Store Connect에서 확인) |
+| 속성명         | 타입     | 필수 여부        | 설명                                                                                                     |
+| -------------- | -------- | ---------------- | -------------------------------------------------------------------------------------------------------- |
+| `androidAppId` | `string` | 조건부 (Android) | **Google Play Store**의 앱 ID (패키지 이름)                                                              |
+| `iOSAppId`     | `string` | 조건부 (iOS)     | **Apple App Store**의 앱 ID ([**Apple App Store Connect**](https://appstoreconnect.apple.com/)에서 확인) |
 
 ---
 
-## **메서드 목록**
+## **메서드 목록** {#method-list}
 
-| 메서드                                                  | 설명                                               | 추가된 버전 |
-| ------------------------------------------------------- | -------------------------------------------------- | ----------- |
-| [`openStore(storeInfo)`](#open-store)                   | OS에 맞는 앱 스토어 설치/다운로드 페이지를 엽니다. | ver.1.6.0   |
-| [`openReviewInStore(storeInfo)`](#open-review-in-store) | 앱 스토어 내 리뷰 작성 화면으로 이동합니다.        | ver.1.6.0   |
-| [`requestReview()`](#request-review)                    | 네이티브 인앱 리뷰 팝업을 호출합니다.              | ver.1.6.0   |
+| 메서드                                                  | 설명                                               | 추가된 버전                                                                                   |
+| ------------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`openStore(storeInfo)`](#open-store)                   | OS에 맞는 앱 스토어 설치/다운로드 페이지를 엽니다. | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
+| [`openReviewInStore(storeInfo)`](#open-review-in-store) | 앱 스토어 내 리뷰 작성 화면으로 이동합니다.        | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
+| [`requestReview()`](#request-review)                    | 네이티브 인앱 리뷰 팝업을 호출합니다.              | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
 
 ---
 
-## **메서드 상세**
+## **메서드 상세** {#method-details}
 
 ### **`openStore(storeInfo: StoreInfo): void`** {#open-store}
 
-- _since ver.1.6.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
 
 #### 설명 {#open-store-summary}
 
 :::info
-
 스토어 출시가 완료된 후 사용이 가능합니다.
-
 :::
 
 현재 플랫폼에 따라 **Google Play 또는 Apple App Store의 앱 상세 페이지**를 엽니다.  
@@ -86,38 +87,38 @@ Web 환경에서는 OS에 따라 각각 적절한 스토어 페이지로 이동�
 
 #### 지원 플랫폼 {#open-store-supported-platforms}
 
-`openStore` 메서드는 **App, Web 모든 환경을 지원**합니다.
+`openStore` 메서드는 **App과 Web 모든 환경을 지원**합니다.
 
-- ✅ Android
-- ✅ iOS
-- ✅ Web (모바일/PC)
+| 플랫폼                                                             | 지원 여부 | 비고                                           |
+| ------------------------------------------------------------------ | --------- | ---------------------------------------------- |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        | 스토어 내 앱 상세 페이지로 이동                |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | 스토어 내 앱 상세 페이지로 이동                |
+| ![Web](/img/docs/chrome-badge.svg)                                 | ✅        | 디바이스의 OS에 맞는 스토어 상세 페이지로 이동 |
 
 #### 매개변수 {#open-store-parameters}
 
-| 이름                     | 타입     | 필수 여부        | 설명                                                    |
-| ------------------------ | -------- | ---------------- | ------------------------------------------------------- |
-| `storeInfo.androidAppId` | `string` | 조건부 (Android) | Android 앱의 패키지 이름                                |
-| `storeInfo.iOSAppId`     | `string` | 조건부 (iOS)     | iOS 앱스토어의 앱 ID (Apple App Store Connect에서 확인) |
+| 이름        | 타입                       | 필수 여부 | 설명                                                              |
+| ----------- | -------------------------- | --------- | ----------------------------------------------------------------- |
+| `storeInfo` | [`StoreInfo`](#store-info) | ✅        | Android 앱의 앱 ID, Apple 앱스토어의 앱 ID를 포함하는 스토어 정보 |
+
+- `storeInfo.androidAppId`: **Google Play Store**의 앱 ID (앱의 패키지 이름)
+- `storeInfo.iOSAppId`: **Apple App Store**의 앱 ID ([**Apple App Store Connect**](https://appstoreconnect.apple.com/)에서 확인 가능)
 
 :::warning 주의
-
 Android에서는 `androidAppId`,  
 iOS에서는 `iOSAppId`가 활용되기에  
 최소한 하나의 **App ID**를 포함해야 합니다.
-
 :::
 
 #### 예제 {#open-store-examples}
 
 :::note
-
 예제에서는 출시된 **nachocode developer** 앱의 정보를 활용하였습니다.
 
 - Android App ID : `com.nachocode.developer`
 - iOS App ID : `6514317160`
 
 실사용시에는 적절한 값으로 수정이 필요합니다.
-
 :::
 
 - **Android 앱만 출시되어 있을 경우**
@@ -145,14 +146,12 @@ Nachocode.store.openStore({
 
 ### **`openReviewInStore(storeInfo: StoreInfo): void`** {#open-review-in-store}
 
-- _since ver.1.6.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
 
 #### 설명 {#open-review-in-store-summary}
 
 :::info
-
 스토어 출시가 완료된 후 사용이 가능합니다.
-
 :::
 
 사용자를 **스토어 내 리뷰 작성 페이지**로 직접 연결합니다.
@@ -169,36 +168,36 @@ Nachocode.store.openStore({
 
 `openReviewInStore` 메서드는 **App, Web 모든 환경을 지원**합니다.
 
-- ✅ Android
-- ✅ iOS
-- ✅ Web (모바일/PC)
+| 플랫폼                                                             | 지원 여부 | 비고                                           |
+| ------------------------------------------------------------------ | --------- | ---------------------------------------------- |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        | 스토어 내 앱 상세 페이지로 이동                |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | 앱스토어 리뷰 화면으로 이동                    |
+| ![Web](/img/docs/chrome-badge.svg)                                 | ✅        | 디바이스의 OS에 맞는 스토어 상세 페이지로 이동 |
 
 #### 매개변수 {#open-review-in-store-parameters}
 
-| 이름                     | 타입     | 필수 여부        | 설명                                      |
-| ------------------------ | -------- | ---------------- | ----------------------------------------- |
-| `storeInfo.androidAppId` | `string` | 조건부 (Android) | Android 앱의 패키지 명                    |
-| `storeInfo.iOSAppId`     | `string` | 조건부 (iOS)     | 리뷰 화면으로 이동할 iOS 앱스토어의 앱 ID |
+| 이름        | 타입                       | 필수 여부 | 설명                                                              |
+| ----------- | -------------------------- | --------- | ----------------------------------------------------------------- |
+| `storeInfo` | [`StoreInfo`](#store-info) | ✅        | Android 앱의 앱 ID, Apple 앱스토어의 앱 ID를 포함하는 스토어 정보 |
+
+- `storeInfo.androidAppId`: **Google Play Store**의 앱 ID (앱의 패키지 이름)
+- `storeInfo.iOSAppId`: **Apple App Store**의 앱 ID ([**Apple App Store Connect**](https://appstoreconnect.apple.com/)에서 확인 가능)
 
 :::warning 주의
-
 Android에서는 `androidAppId`,  
 iOS에서는 `iOSAppId`가 활용되기에  
 최소한 하나의 **App ID**를 포함해야 합니다.
-
 :::
 
 #### 예제 {#open-review-in-store-examples}
 
 :::note
-
 예제에서는 출시된 **nachocode developer** 앱의 정보를 활용하였습니다.
 
 - Android App ID : `com.nachocode.developer`
 - iOS App ID : `6514317160`
 
 실사용시에는 적절한 값으로 수정이 필요합니다.
-
 :::
 
 - **Android 앱만 출시되어 있을 경우**
@@ -227,22 +226,20 @@ Nachocode.store.openReviewInStore({
 
 ### **`requestReview(): void`** {#request-review}
 
-- _since ver.1.6.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
 
 #### 설명 {#request-review-summary}
 
 :::warning 주의
+**인앱 리뷰 요청은 운영체제(OS) 정책**에 따라 제한될 수 있습니다.  
+자세한 내용은 **첨부된 공식 문서를 참고**해 주세요.
 
-인앱 리뷰 요청은 운영체제(OS) 정책에 따라 제한될 수 있습니다.  
-자세한 내용은 공식 문서를 참고해 주세요.
-
-- [App Store](https://developer.apple.com/app-store/ratings-and-reviews/)
-- [Google Play](https://developer.android.com/guide/playcore/in-app-review?hl=ko#when-to-request)
+- [**Apple App Store**](https://developer.apple.com/app-store/ratings-and-reviews/)
+- [**Google Play Store**](https://developer.android.com/guide/playcore/in-app-review?hl=ko#when-to-request)
 
 :::
 
-앱 내에서 **네이티브 리뷰 요청 팝업**(UI)을 호출합니다.
-
+앱 내에서 **네이티브 리뷰 요청 팝업**(UI)을 호출합니다.  
 리뷰 요청 다이얼로그는 항상 표시되지는 않으며 OS 내부 로직에 따라 노출됩니다.
 
 - **최근에 리뷰 요청이 없었는가**
@@ -258,15 +255,16 @@ Nachocode.store.openReviewInStore({
 
 `requestReview` 메서드는 **Android 및 iOS** 네이티브 앱 환경에 대응하며, Web에서는 동작하지 않습니다.
 
-- ✅ Android
-- ✅ iOS
-- ❌ Web - _지원하지 않음_
+| 플랫폼                                                             | 지원 여부 | 비고                                             |
+| ------------------------------------------------------------------ | --------- | ------------------------------------------------ |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        | OS 내부 로직에 따라 인앱 리뷰 요청을 노출합니다. |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | OS 내부 로직에 따라 인앱 리뷰 요청을 노출합니다. |
+| ![Web](/img/docs/chrome-badge.svg)                                 | ❌        | 지원하지 않습니다.                               |
 
 #### 반환 값 {#request-review-returns}
 
-해당 메서드는 반환 값을 가지지 않습니다.
-
-사용자의 리뷰 팝업에서의 상호작용 결과를 알 수 있는 방법은 없습니다.
+해당 메서드는 반환 값을 가지지 않습니다.  
+**사용자의 리뷰 팝업에서의 상호작용 결과는 OS 정책 상 알 수 없습니다.**
 
 #### 예제 {#request-review-examples}
 
