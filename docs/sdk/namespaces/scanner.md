@@ -13,9 +13,12 @@ keywords:
 
 # 스캐너 (`scanner`)
 
-> 🔔 **최신화 일자:** 2025-04-18
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-## **개요**
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
+> 🔔 **최신화 일자:** 2025-07-18
+
+## **개요** {#overview}
 
 `scanner` 네임스페이스는 **QR 코드 스캐너 및 기타 스캔 관련 기능**을 제공합니다.
 
@@ -23,37 +26,38 @@ keywords:
 
 ---
 
-## **메서드 목록**
+## **메서드 목록** {#method-list}
 
-| 메서드                                                                                                                                                                   | 설명                         | 추가된 버전 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- | ----------- |
-| [`openQRCodeScanner(option, callback?)`](#openqrcodescanneroption--opendirect-boolean-opentype-internal--external--main--callback-data-string-error-sdkerror--void-void) | QR 코드 스캐너를 실행합니다. | ver.1.4.0   |
+| 메서드                                                          | 설명                         | 추가된 버전                                                                                   |
+| --------------------------------------------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------- |
+| [`openQRCodeScanner(option, callback?)`](#open-qr-code-scanner) | QR 코드 스캐너를 실행합니다. | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
 
 ---
 
-## **메서드 상세**
+## **메서드 상세** {#method-details}
 
-### **`openQRCodeScanner(option: { openDirect: boolean, openType?: 'internal' | 'external' | 'main' }, callback?: (data: string, error?: SDKError) => void): void`**
+### **`openQRCodeScanner(option: { openDirect: boolean, openType?: 'internal' | 'external' | 'main' }, callback?: (data: string, error?: SDKError) => void): void`** {#open-qr-code-scanner}
 
-- _since ver.1.4.0_
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
-#### 설명 (`openQRCodeScanner`)
+#### 설명 {#open-qr-code-scanner-summary}
 
-QR 코드 스캐너를 실행하고, 스캔된 데이터를 **콜백 함수로 반환**합니다.
+QR 코드 스캐너를 실행하고, 스캔된 데이터를 **콜백 함수로 반환**합니다.  
+필요에 따라 **데이터만 반환하거나, 내부 또는 외부 브라우저 혹은 메인 뷰에서 실행**할 수 있습니다.
 
 `openDirect` 옵션이 **true**일 경우, 스캔한 **URL을 자동으로 브라우저에서 실행**합니다.  
 **false**일 경우, 스캔한 브라우저로 실행하지 않고 데이터로만 반환 받습니다.
 
 `openType` 옵션을 통해 **내부 브라우저(`internal`)**, **외부 브라우저(`external`)**, **메인 뷰(`main`)** 어디에서 스캔한 URL을 오픈할 지 실행 방식을 선택할 수 있습니다.
 
-#### 매개변수 (`openQRCodeScanner`)
+#### 매개변수 {#open-qr-code-scanner-parameters}
 
 | 이름       | 타입                                                                     | 필수 여부 | 설명                        |
 | ---------- | ------------------------------------------------------------------------ | --------- | --------------------------- |
 | `option`   | `{ openDirect: boolean, openType?: 'internal' \| 'external' \| 'main' }` | ✅        | 스캐너 옵션을 지정하는 객체 |
 | `callback` | `(data: string, error?: SDKError) => void`                               | ❌        | 스캔 결과를 반환하는 함수   |
 
-##### **option 설명**
+##### **option 설명** {#open-qr-code-scanner-options}
 
 - `openDirect: boolean`: **true**일 경우, **스캔된 URL을 브라우저에서 자동으로 실행**합니다.
   - **false**일 경우, **데이터만 반환**하고 브라우저는 열리지 않습니다.
@@ -62,7 +66,7 @@ QR 코드 스캐너를 실행하고, 스캔된 데이터를 **콜백 함수로 �
   - `'external'`: **외부 브라우저**에서 실행합니다.
   - `'main'`: **메인 뷰에서 실행**합니다.
 
-#### 반환 값 (`openQRCodeScanner`)
+#### 반환 값 {#open-qr-code-scanner-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
 
@@ -71,7 +75,7 @@ QR 코드 스캐너를 실행하고, 스캔된 데이터를 **콜백 함수로 �
 
 ---
 
-## **사용 예제**
+## **사용 예제** {#open-qr-code-scanner-examples}
 
 ```javascript
 // 기본 QR 코드 스캐너 실행 (데이터만 반환)
@@ -125,13 +129,5 @@ Nachocode.scanner.openQRCodeScanner(
   }
 );
 ```
-
----
-
-## **추가 정보**
-
-- **`openDirect`** 옵션을 사용하면 **스캔된 URL이 자동으로 브라우저에서 열립니다.**
-- **`openType`** 으로 **브라우저 실행 방식**을 선택할 수 있으며, 필요에 따라 **데이터만 반환하거나, 내부 또는 외부 브라우저 혹은 메인 뷰에서 실행**할 수 있습니다.
-- 현재는 **QR 코드 스캔 기능만 지원**하지만, 추후 **영수증 스캔 및 기타 스캔 관련 기능**이 추가될 예정입니다.
 
 ---
