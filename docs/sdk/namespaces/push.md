@@ -23,9 +23,9 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2025-07-14
+> 🔔 **최신화 일자:** 2025-07-18
 
-## **개요**
+## **개요** {#overview}
 
 `push` 네임스페이스는 **푸시 알림 관련 기능을 제공**합니다.
 
@@ -34,13 +34,24 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 - **푸시 토픽 구독 및 취소**
 - **디바이스의 구독된 토픽 조회**
 
-그 외에도 다양한 기능을 수행 할 수 있습니다.
+**푸시 알림 사용법**을 더 자세히 알아보려면 아래 가이드를 참고해보세요.
+
+:::info 푸시 알림 상세 가이드
+
+[➡️ 푸시 토큰 가이드 보러가기](/docs/guide/push/push-token)
+
+[➡️ 개인화 푸시 가이드 보러가기](/docs/guide/push/personal-push)
+
+[➡️ 토픽 푸시 가이드 보러가기](/docs/guide/push/topic-push)
+
+:::
 
 ---
 
-### **필수 선행 작업**
+### **필수 선행 작업** {#prerequisite}
 
-nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서
+nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의  
+**[ 앱 기능 > 푸시 알림 > 설정 ]** 탭에서
 **푸시 알림 설정이 모두 완료된 후 빌드된 경우에만** 작동합니다.
 
 :::tip **푸시 알림 설정하기**
@@ -51,11 +62,11 @@ nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocod
 
 ---
 
-## **타입 정의**
+## **타입 정의** {#types}
 
-### **`PushTopicResult`**
+### **`PushTopicResult`** {#push-topic-result}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> <BadgeWithVersion type="Android" version="v1.6.0" link="/docs/releases/v1/app-source/android/release-v-1-6-0" /> <BadgeWithVersion type="iOS" version="v1.6.0" link="/docs/releases/v1/app-source/ios/release-v-1-6-0" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
 - _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.1" link="/docs/releases/v1/sdk/release-v-1-6-1" />
 
 ```typescript
@@ -96,7 +107,7 @@ export declare type PushTopicResult =
 
 ---
 
-### **`LocalPushPayload`**
+### **`LocalPushPayload`** {#local-push-payload}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
 
@@ -122,7 +133,7 @@ export declare type LocalPushPayload = {
 
 ---
 
-### **`LocalPushResult`**
+### **`LocalPushResult`** {#local-push-result}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
 
@@ -166,7 +177,7 @@ export declare type LocalPushResult = {
 - _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.1" link="/docs/releases/v1/sdk/release-v-1-6-1" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#subscribe-push-topic-summary}
@@ -210,7 +221,7 @@ try {
 - _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.1" link="/docs/releases/v1/sdk/release-v-1-6-1" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#unsubscribe-push-topic-summary}
@@ -252,7 +263,7 @@ try {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-subscription-list-summary}
@@ -374,7 +385,7 @@ console.log('푸시 알림이 취소되었습니다.');
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#register-push-token-summary}
@@ -418,7 +429,7 @@ function onLoginSuccess(userID) {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
 
 :::warning 주의
-_[필수 선행 작업](#필수-선행-작업)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#delete-push-token-summary}
