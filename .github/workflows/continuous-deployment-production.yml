@@ -16,9 +16,9 @@ jobs:
       - name: Deploy to Production Server Using Github Pages
         id: deploy-production
         run: |
-            npm install
-            npm run build
-            npm run deploy
+            yarn install
+            yarn build
+            yarn deploy
         env:
           # see link - https://docusaurus.io/ko/docs/next/deployment#environment-settings
           GIT_USER: ${{ secrets.GIT_USER }} # git repository owner's user name

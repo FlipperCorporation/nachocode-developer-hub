@@ -19,18 +19,18 @@ fi
 
 source ~/.zshrc
 
-npm install
-# npm install이 성공적으로 이루어지는지 확인
+yarn install
+# yarn install이 성공적으로 이루어지는지 확인
 if [ $? -ne 0 ]; then
-  echo "Failed to install npm packages."
+  echo "Failed to install yarn packages."
   exit 1
 fi
 
 # 서빙을 위해 빌드
-npm run build
+yarn build
 
 if [ $? -ne 0 ]; then
-  echo "Failed to execute 'npm run build'."
+  echo "Failed to execute 'yarn build'."
   exit 1
 fi
 
