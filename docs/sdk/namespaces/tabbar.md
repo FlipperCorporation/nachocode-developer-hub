@@ -20,7 +20,7 @@ keywords:
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> <BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />  
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
 > 🔔 **최신화 일자:** 2025-07-18
 
 ## **개요** {#overview}
@@ -44,9 +44,9 @@ nachocode SDK로 **탭바 기능**을 사용하기 위해서는 nachocode 대시
 
 | 메서드                      | 설명                             | 추가된 버전                                                                                   |
 | --------------------------- | -------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`moveTo(index)`](#move-to) | 특정 인덱스의 탭으로 전환합니다. | <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> |
-| [`show()`](#show)           | 탭바를 화면에 다시 표시합니다.   | <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> |
-| [`hide()`](#hide)           | 탭바를 화면에서 숨깁니다.        | <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> |
+| [`moveTo(index)`](#move-to) | 특정 인덱스의 탭으로 전환합니다. | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> |
+| [`show()`](#show)           | 탭바를 화면에 다시 표시합니다.   | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> |
+| [`hide()`](#hide)           | 탭바를 화면에서 숨깁니다.        | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> |
 
 ---
 
@@ -54,7 +54,7 @@ nachocode SDK로 **탭바 기능**을 사용하기 위해서는 nachocode 대시
 
 ### **`moveTo(index: number): void`** {#move-to}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" />
 
 :::warning 주의
 _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
@@ -89,7 +89,7 @@ Nachocode.tabbar.moveTo(1);
 
 ### **`show(): void`** {#show}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" />
 
 :::warning 주의
 _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
@@ -114,7 +114,7 @@ Nachocode.tabbar.show();
 
 ### **`hide(): void`** {#hide}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" />
 
 :::warning 주의
 _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
