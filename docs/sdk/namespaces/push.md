@@ -297,10 +297,10 @@ Nachocode.push.getSubscriptionList(list => {
 
 #### 매개변수 {#send-local-push-parameters}
 
-| 이름       | 타입                                                    | 필수 여부 | 설명                           |
-| ---------- | ------------------------------------------------------- | --------- | ------------------------------ |
-| `payload`  | [`LocalPushPayload`](#localpushpayload)                 | ✅        | 예약할 로컬 푸시 데이터        |
-| `callback` | [`(result: LocalPushResult) => void`](#localpushresult) | ❌        | 예약 성공 여부를 반환하는 콜백 |
+| 이름       | 타입                                                      | 필수 여부 | 설명                           |
+| ---------- | --------------------------------------------------------- | --------- | ------------------------------ |
+| `payload`  | [`LocalPushPayload`](#local-push-payload)                 | ✅        | 예약할 로컬 푸시 데이터        |
+| `callback` | [`(result: LocalPushResult) => void`](#local-push-result) | ❌        | 예약 성공 여부를 반환하는 콜백 |
 
 #### 반환 값 {#send-local-push-returns}
 
