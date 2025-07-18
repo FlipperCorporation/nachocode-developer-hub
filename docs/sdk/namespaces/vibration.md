@@ -35,6 +35,18 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 햅틱 피드백 유형을 나타내는 열거형(enum)입니다.
 
+```typescript
+export declare const HAPTICS_TYPES = {
+  SUCCESS: 0,
+  ERROR: 1,
+} as const;
+```
+
+```typescript
+export declare type HapticsType =
+  (typeof HAPTICS_TYPES)[keyof typeof HAPTICS_TYPES];
+```
+
 | 값        | 설명                          |
 | --------- | ----------------------------- |
 | `SUCCESS` | 성공 시의 햅틱 피드백         |
