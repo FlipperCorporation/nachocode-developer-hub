@@ -19,7 +19,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> <BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />  
-> 🔔 **최신화 일자:** 2025-07-18
+> 🔔 **최신화 일자:** 2025-07-22
 
 ## **개요** {#overview}
 
@@ -58,7 +58,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 네이티브 공유 UI는 **기본적으로 사용자의 디바이스에 설치된 공유 가능한 앱 목록**을 표시합니다.
 
 **웹 공유 API와 동일한 구조**의 `{ title, url, text }` 형식을 지원합니다.  
-공유하기 기능은 **SDK ver.1.6.0**부터 **웹, Android, iOS 플랫폼 모두에서 사용 가능**합니다.
+공유하기 기능은 [**SDK ver.1.6.0**](/docs/releases/v1/sdk/release-v-1-6-0)부터 **웹, Android, iOS 플랫폼 모두에서 사용 가능**합니다.
 
 :::tip 참고
 [MDN - Navigator: share( ) method](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)

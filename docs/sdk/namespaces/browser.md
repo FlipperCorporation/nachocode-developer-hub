@@ -107,6 +107,8 @@ export declare type OpenURLOption =
 주어진 URL을 **외부 브라우저 또는 내부 브라우저**에서 엽니다.  
 기본적으로 `external` 모드(외부 브라우저)가 사용됩니다.
 
+브라우저 열기 기능은 [**SDK ver.1.6.3**](/docs/releases/v1/sdk/release-v-1-6-3)부터 **웹, Android, iOS 플랫폼 모두에서 사용 가능**합니다.
+
 #### 지원 플랫폼 {#open-link-supported-platforms}
 
 `openLink` 메서드는 **App과 Web 모든 환경을 지원**합니다.
