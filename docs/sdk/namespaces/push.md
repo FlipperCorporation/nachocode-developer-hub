@@ -23,7 +23,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2025-07-18
+> 🔔 **최신화 일자:** 2025-07-28
 
 ## **개요** {#overview}
 
@@ -63,6 +63,36 @@ nachocode SDK로 **푸시 알림 기능**을 사용하기 위해서는 [nachocod
 ---
 
 ## **타입 정의** {#types}
+
+### **`PushTokenResult`** {#push-token-result}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" />
+
+```typescript
+export declare type PushTokenResult =
+  | {
+      status: 'success';
+      statusCode: 201;
+      message: string;
+    }
+  | {
+      status: 'error';
+      statusCode: number;
+      message: string;
+      desc: string;
+      code: string;
+    };
+```
+
+| 속성명       | 타입                   | 필수 여부 | 설명                                           |
+| ------------ | ---------------------- | --------- | ---------------------------------------------- |
+| `status`     | `'success' \| 'error'` | ✅        | 푸시 토큰 요청 성공 여부                       |
+| `statusCode` | `number`               | ✅        | 푸시 토큰 결과 상태 코드                       |
+| `message`    | `string`               | ✅        | 결과 상세 메시지. (에러 발생 시 사유 반환)     |
+| `desc`       | `string`               | ❌        | **(_optional_)** 오류 상세 내용 (에러 발생 시) |
+| `code`       | `string`               | ❌        | **(_optional_)** 오류 코드 (에러 발생 시)      |
+
+---
 
 ### **`PushTopicResult`** {#push-topic-result}
 
@@ -164,8 +194,8 @@ export declare type LocalPushResult = {
 | [`getSubscriptionList(callback)`](#get-subscription-list) | 디바이스의 현재 **구독 중인 푸시 토픽 목록을 조회**합니다. | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
 | [`sendLocalPush(payload, callback?)`](#send-local-push)   | **로컬 푸시 알림을 예약**합니다.                           | <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" /> |
 | [`cancelLocalPush(id)`](#cancel-local-push)               | **예약된 로컬 푸시 알림을 취소**합니다.                    | <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" /> |
-| [`registerPushToken(userID)`](#register-push-token)       | nachocode 서버에 **푸시 토큰을 등록**합니다.               | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
-| [`deletePushToken(userID)`](#delete-push-token)           | nachocode 서버에서 **푸시 토큰을 삭제**합니다.             | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
+| [`registerPushToken(userId)`](#register-push-token)       | nachocode 서버에 **푸시 토큰을 등록**합니다.               | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
+| [`deletePushToken(userId?)`](#delete-push-token)          | nachocode 서버에서 **푸시 토큰을 삭제**합니다.             | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
 
 ---
 
@@ -380,9 +410,10 @@ console.log('푸시 알림이 취소되었습니다.');
 
 ---
 
-### **`registerPushToken(userID: string): Promise<any>`** {#register-push-token}
+### **`registerPushToken(userId: string): Promise<PushTokenResult>`** {#register-push-token}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
+- _lastupdated : 반환 타입 변경, 내부 로직 최적화_ <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" />
 
 :::warning 주의
 _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
@@ -391,7 +422,7 @@ _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습�
 #### 설명 {#register-push-token-summary}
 
 nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.
-이때, 특정 사용자(`userID`)를 식별자로 사용하여 **푸시 알림을 해당 사용자에게 전송할 수 있도록 설정**합니다.
+이때, 특정 사용자(`userId`)를 식별자로 사용하여 **푸시 알림을 해당 사용자에게 전송할 수 있도록 설정**합니다.
 
 :::tip 푸시 토큰이란?
 [푸시 토큰 가이드](../../guide/push/push-token)에서 상세 설명을 확인해보세요.
@@ -401,32 +432,37 @@ nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.
 
 | 이름     | 타입     | 필수 여부 | 설명                         |
 | -------- | -------- | --------- | ---------------------------- |
-| `userID` | `string` | ✅        | 푸시 토큰을 연결할 사용자 ID |
+| `userId` | `string` | ✅        | 푸시 토큰을 연결할 사용자 ID |
 
 #### 반환 값 {#register-push-token-returns}
 
-| 타입           | 설명                  |
-| -------------- | --------------------- |
-| `Promise<any>` | 등록 요청의 처리 결과 |
+| 타입                                             | 설명                            |
+| ------------------------------------------------ | ------------------------------- |
+| [`Promise<PushTokenResult>`](#push-token-result) | 푸시 토큰 등록 요청의 처리 결과 |
 
 #### 사용 예제 {#register-push-token-examples}
 
 ```javascript
 // ex. 유저의 로그인 성공 시 호출되는 콜백함수
-function onLoginSuccess(userID) {
-  // ex. userID : "nacho123"
-  // "nacho123" 사용자 식별자로 nachocode 서버에 등록합니다.
-  Nachocode.push.registerPushToken(userID).then(() => {
-    console.log('푸시 토큰이 성공적으로 등록되었습니다.');
+function onLoginSuccess(userId) {
+  // ex. userId : "nacho123"
+  // "nacho123" 사용자 식별자로 푸시토큰을 nachocode 서버에 등록합니다.
+  Nachocode.push.registerPushToken(userId).then(result => {
+    if (result.status === 'success') {
+      console.log('푸시 토큰이 성공적으로 등록되었습니다.');
+    } else {
+      console.error(`푸시 토큰 등록 실패: ${result.message}`);
+    }
   });
 }
 ```
 
 ---
 
-### **`deletePushToken(userID: string): Promise<any>`** {#delete-push-token}
+### **`deletePushToken(userId?: string): Promise<PushTokenResult>`** {#delete-push-token}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
+- _lastupdated : 반환 타입 변경, 내부 로직 최적화_ <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" />
 
 :::warning 주의
 _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
@@ -434,7 +470,7 @@ _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습�
 
 #### 설명 {#delete-push-token-summary}
 
-nachocode 서버에서 **해당 사용자(`userID`)와 연결된 푸시 토큰을 삭제**합니다.
+nachocode 서버에서 **해당 사용자(`userId`)와 연결된 푸시 토큰을 삭제**합니다.
 사용자가 로그아웃하거나 푸시 알림을 더 이상 사용하지 않도록 설정할 경우 이 메서드를 호출해야 합니다.
 
 :::tip 푸시 토큰이란?
@@ -445,23 +481,38 @@ nachocode 서버에서 **해당 사용자(`userID`)와 연결된 푸시 토큰�
 
 | 이름     | 타입     | 필수 여부 | 설명                                |
 | -------- | -------- | --------- | ----------------------------------- |
-| `userID` | `string` | ✅        | 삭제할 푸시 토큰이 연결된 사용자 ID |
+| `userId` | `string` | ❌        | 삭제할 푸시 토큰이 연결된 사용자 ID |
 
 #### 반환 값 {#delete-push-token-returns}
 
-| 타입           | 설명                  |
-| -------------- | --------------------- |
-| `Promise<any>` | 삭제 요청의 처리 결과 |
+| 타입                                             | 설명                            |
+| ------------------------------------------------ | ------------------------------- |
+| [`Promise<PushTokenResult>`](#push-token-result) | 푸시 토큰 삭제 요청의 처리 결과 |
 
 #### 사용 예제 {#delete-push-token-examples}
 
 ```javascript
+// 현재 디바이스 토큰 삭제 (userId 생략 가능)
+Nachocode.push.deletePushToken().then(result => {
+  if (result.status === 'success') {
+    console.log('현재 디바이스의 푸시 토큰이 삭제되었습니다.');
+  } else {
+    console.error(`푸시 토큰 삭제 실패: ${result.message}`);
+  }
+});
+```
+
+```javascript
 // ex. 유저의 로그아웃 시 호출되는 콜백함수
-function onLogout(userID) {
-  // ex. userID : "nacho123"
+function onLogout(userId) {
+  // ex. userId : "nacho123"
   // "nacho123" 사용자 식별자에 해당하는 푸시 토큰을 삭제합니다.
-  Nachocode.push.deletePushToken(userID).then(() => {
-    console.log('푸시 토큰이 성공적으로 삭제되었습니다.');
+  Nachocode.push.deletePushToken(userId).then(() => {
+    if (result.status === 'success') {
+      console.log('유저 푸시 토큰이 성공적으로 삭제되었습니다.');
+    } else {
+      console.error(`푸시 토큰 삭제 실패: ${result.message}`);
+    }
   });
 }
 ```
