@@ -122,6 +122,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'releases/v1/sdk/intro',
+        'releases/v1/sdk/release-v-1-6-3',
         'releases/v1/sdk/release-v-1-6-2',
         'releases/v1/sdk/release-v-1-6-1',
         'releases/v1/sdk/release-v-1-6-0',
