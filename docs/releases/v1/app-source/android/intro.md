@@ -9,7 +9,7 @@ image: /img/docs/releases/release_note_android.png
 
 ![android](/img/docs/releases/release_note_android.png)
 
-> 🔔 **최신화 일자:** 2025-07-16
+> 🔔 **최신화 일자:** 2025-07-30
 
 nachocode Android App Source **Version 1**의 버전별 업데이트 내용을 정리한 릴리즈 노트입니다.
 
@@ -25,6 +25,7 @@ nachocode Android App Source **Version 1**의 버전별 업데이트 내용을 �
 
 | 버전                           | 릴리즈 날짜 | 주요 내용                                                    |
 | ------------------------------ | ----------- | ------------------------------------------------------------ |
+| [ver.1.6.9](./release-v-1-6-9) | 2025-07-30  | 더 빠른 앱 실행을 위한 내부 구조 최적화, 기본 브라우저 호출 SDK 기능 추가   |
 | [ver.1.6.8](./release-v-1-6-8) | 2025-07-15  | 웹 클라이언트 Google 로그인 이슈 수정                        |
 | [ver.1.6.7](./release-v-1-6-7) | 2025-07-09  | 디바이스 현재 위치 기능 추가                                 |
 | [ver.1.6.6](./release-v-1-6-6) | 2025-07-02  | UI 버그 수정                                                 |
