@@ -21,7 +21,8 @@ nachocode iOS App Source **1.6.9** 버전이 반영되었습니다.
   - 앱 User Agent에서 더이상 `'wv'` 정보를 제공하지 않습니다.
 
 :::tip 구글 로그인 정책
-구글은 정책 상 애플리케이션에 삽입된 브라우저를 통한 로그인의 보안이 취약하다고 판단하여 기본적으로 차단합니다. ➡️ [**구글 도움말 센터**](https://support.google.com/accounts/answer/7675428)
+구글은 정책 상 애플리케이션에 삽입된 브라우저를 통한 로그인의 보안이 취약하다고 판단하여 기본적으로 차단합니다.  
+➡️ [**구글 도움말 센터**](https://support.google.com/accounts/answer/7675428)
 
 이번 업데이트 변경 사항은 임시 조치이며 언젠가 다시 문제가 생길 여지가 있습니다.  
 nachocode에서는 [**SDK의 Google 네임스페이스**](/docs/sdk/namespaces/google)를 활용하여 네이티브 로그인을 구현하는 방식을 권장합니다.

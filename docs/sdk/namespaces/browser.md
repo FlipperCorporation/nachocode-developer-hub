@@ -26,7 +26,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />  
-> 🔔 **최신화 일자:** 2025-07-22
+> 🔔 **최신화 일자:** 2025-07-30
 
 ## **개요** {#overview}
 
@@ -60,26 +60,23 @@ export declare type OpenURLOption =
   | 'internal_default';
 ```
 
-| 옵션                 | 설명                    | 추가된 버전                                                                                                                                                                                                                                                                                                                          |
-| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `'external'`         | 앱 외부 기본 브라우저   | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <br/><BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <br/><BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />    |
-| `'internal'`         | 인앱 브라우저 (WebView) | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <br/><BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <br/><BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />    |
-| `'internal_default'` | 앱 내부 기본 브라우저   | <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" /> <br/> <BadgeWithVersion type="Android" version="v1.6.9" link="/docs/releases/v1/app-source/android/release-v-1-6-8" /> <br/> <BadgeWithVersion type="iOS" version="v1.6.10" link="/docs/releases/v1/app-source/ios/release-v-1-6-9" /> |
+| 옵션                 | 설명                    | 추가된 버전                                                                                                                                                                                                                                                                                                                           |
+| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `'external'`         | 앱 외부 기본 브라우저   | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <br/><BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <br/><BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />     |
+| `'internal'`         | 인앱 브라우저 (WebView) | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <br/><BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <br/><BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />     |
+| `'internal_default'` | 앱 내부 기본 브라우저   | <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" /> <br/> <BadgeWithVersion type="Android" version="v1.6.9" link="/docs/releases/v1/app-source/android/release-v-1-6-9" /> <br/> <BadgeWithVersion type="iOS" version="v1.6.10" link="/docs/releases/v1/app-source/ios/release-v-1-6-10" /> |
 
 - `'external'`
-
   - 링크를 사용자 설정에 따른 **앱 외부의 기본 브라우저**(Chrome, Safari 등)에서 여는 방식입니다.
   - 타 앱을 열거나, 앱과 다른 도메인의 페이지를 보여주어야 할 때 유용
   - 앱과의 **세션이 분리되어 쿠키 등이 공유되지 않음**
 
 - `'internal'`
-
   - 링크를 **앱 내 WebView**에서 인앱 브라우저로 여는 방식입니다.
   - 메인 WebView와의 **세션이 유지됨**
   - 메인 WebView와 **쿠키 공유 가능**
 
 - `'internal_default'`
-
   - 링크를 **앱 내부에서 기본 브라우저 엔진**(SafariViewController, Chrome Custom Tabs 등)으로 여는 방식입니다.
   - 모든 동작이 **외부 브라우저와 동일하게 동작**
   - 메인 WebView와의 **세션이 분리되어 쿠키 등이 공유되지 않음**
