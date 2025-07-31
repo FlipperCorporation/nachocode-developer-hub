@@ -5,12 +5,13 @@ description: nachocode의 앱소스 (App Source)는 웹사이트를 네이티브
 image: /img/docs/releases/release_note_app_source.png
 keywords:
   [
-    앱 빌더,
-    웹뷰 앱,
     하이브리드 앱,
+    웹뷰 앱,
     네이티브 앱,
+    앱 빌더,
     푸시 알림,
     안드로이드,
+    Hybrid App,
     Android,
     iOS,
     WebView,
@@ -24,11 +25,11 @@ keywords:
 
 ![app-source](/img/docs/releases/release_note_app_source.png)
 
-> 🔔 **최신화 일자:** 2025-07-09
+> 🔔 **최신화 일자:** 2025-07-31
 
 ## 앱소스 이해하기 {#app-source-summary}
 
-nachocode의 **앱소스**(**App Source**)는 웹사이트를 네이티브 앱으로 만들어줄 때 사용되는 **앱의 기반 소스 코드**입니다. 앱의 실행 속도 및 안정성은 앱소스의 구현에 의해 보통 결정됩니다. nachocode의 앱소스에는 하이브리드 언어가 아닌 **Android에서는 Java, iOS에서는 Swift**가 사용되어 각 OS 네이티브 SDK로 별도 구현되었습니다.
+nachocode의 **앱소스**(**App Source**)는 웹사이트를 네이티브 앱으로 만들어줄 때 사용되는 **앱의 기반 소스 코드**입니다. 앱의 실행 속도 및 안정성은 앱소스의 구현에 의해 보통 결정됩니다. nachocode의 앱소스에는 ReactNative, Flutter 등 크로스플랫폼 프레임워크가 사용되지 않고, **Android에서는 Java, iOS에서는 Swift** 언어가 사용되어 각 OS 네이티브 SDK를 활용하여 구현되었습니다.
 
 :::tip 비유하자면?
 웹사이트는 **영화 스크립트**, 앱소스는 **스크립트를 상영하는 극장 장비**입니다.  
@@ -36,7 +37,7 @@ nachocode의 **앱소스**(**App Source**)는 웹사이트를 네이티브 앱�
 :::
 
 nachocode에서는 **Android 및 iOS의 최신 OS 업데이트 및 정책 변경에 신속히 대응**할 수 있도록 앱소스를 지속적으로 관리하고 있습니다.
-예를 들어, Google Play Store나 Apple App Store의 정책 변경(예: Target API 버전 상향, 권한 처리 방식 변경 등)이나 새로운 OS 기능 도입, 비호환성 문제 해결 등을 반영하여 앱소스를 개선하고 있습니다.
+예를 들어, **Google Play Store나 Apple App Store의 정책 변경**(ex. Target API 버전 상향, 권한 처리 방식 변경 등)이나 새로운 OS 기능 도입, 비호환성 문제 해결 등을 반영하여 앱소스를 개선하고 있습니다.
 
 nachocode의 앱소스를 사용하는 고객은 앱이 항상 **최신 플랫폼 요구사항을 충족**하도록 유지할 수 있으며, 별도의 추가 개발 없이도 **정책 위반이나 호환성 문제로 인한 출시 거부를 방지**할 수 있습니다.
 
