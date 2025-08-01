@@ -41,23 +41,23 @@ export const SDKBadge = () => {
     >
       <title>SDK</title>
       <linearGradient id="sdk-linear-gradient" x2="0" y2="100%">
-        <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
-        <stop offset="1" stop-opacity=".1" />
+        <stop offset="0" stopColor="#bbb" stopOpacity=".1" />
+        <stop offset="1" stopOpacity=".1" />
       </linearGradient>
       <clipPath id="sdk-clip-path">
         <rect width="51" height="20" rx="3" fill="#fff" />
       </clipPath>
-      <g clip-path="url(#sdk-clip-path)">
+      <g clipPath="url(#sdk-clip-path)">
         <rect width="0" height="20" fill="#555" />
         <rect x="0" width="51" height="20" fill="#555" />
         <rect width="51" height="20" fill="url(#sdk-linear-gradient)" />
       </g>
       <g
         fill="#fff"
-        text-anchor="middle"
-        font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
-        text-rendering="geometricPrecision"
-        font-size="110"
+        textAnchor="middle"
+        fontFamily="Verdana,Geneva,DejaVu Sans,sans-serif"
+        textRendering="geometricPrecision"
+        fontSize="110"
       >
         <image
           x="5"
@@ -71,7 +71,7 @@ export const SDKBadge = () => {
           x="345"
           y="150"
           fill="#010101"
-          fill-opacity=".3"
+          fillOpacity=".3"
           transform="scale(.1)"
           textLength="230"
         >
@@ -103,23 +103,23 @@ export const AndroidBadge = () => {
     >
       <title>Android</title>
       <linearGradient id="android-linear-gradient" x2="0" y2="100%">
-        <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
-        <stop offset="1" stop-opacity=".1" />
+        <stop offset="0" stopColor="#bbb" stopOpacity=".1" />
+        <stop offset="1" stopOpacity=".1" />
       </linearGradient>
       <clipPath id="android-clip-path">
         <rect width="71" height="20" rx="3" fill="#fff" />
       </clipPath>
-      <g clip-path="url(#android-clip-path)">
+      <g clipPath="url(#android-clip-path)">
         <rect width="0" height="20" fill="#555" />
         <rect x="0" width="71" height="20" fill="#555" />
         <rect width="71" height="20" fill="url(#android-linear-gradient)" />
       </g>
       <g
         fill="#fff"
-        text-anchor="middle"
-        font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
-        text-rendering="geometricPrecision"
-        font-size="110"
+        textAnchor="middle"
+        fontFamily="Verdana,Geneva,DejaVu Sans,sans-serif"
+        textRendering="geometricPrecision"
+        fontSize="110"
       >
         <image
           x="5"
@@ -133,7 +133,7 @@ export const AndroidBadge = () => {
           x="445"
           y="150"
           fill="#010101"
-          fill-opacity=".3"
+          fillOpacity=".3"
           transform="scale(.1)"
           textLength="430"
         >
@@ -165,23 +165,23 @@ export const iOSBadge = () => {
     >
       <title>iOS</title>
       <linearGradient id="ios-linear-gradient" x2="0" y2="100%">
-        <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
-        <stop offset="1" stop-opacity=".1" />
+        <stop offset="0" stopColor="#bbb" stopOpacity=".1" />
+        <stop offset="1" stopOpacity=".1" />
       </linearGradient>
       <clipPath id="ios-clip-path">
         <rect width="47" height="20" rx="3" fill="#fff" />
       </clipPath>
-      <g clip-path="url(#ios-clip-path)">
+      <g clipPath="url(#ios-clip-path)">
         <rect width="0" height="20" fill="#555" />
         <rect x="0" width="47" height="20" fill="#555" />
         <rect width="47" height="20" fill="url(#ios-linear-gradient)" />
       </g>
       <g
         fill="#fff"
-        text-anchor="middle"
-        font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
-        text-rendering="geometricPrecision"
-        font-size="110"
+        textAnchor="middle"
+        fontFamily="Verdana,Geneva,DejaVu Sans,sans-serif"
+        textRendering="geometricPrecision"
+        fontSize="110"
       >
         <image
           x="5"
@@ -195,7 +195,7 @@ export const iOSBadge = () => {
           x="325"
           y="150"
           fill="#010101"
-          fill-opacity=".3"
+          fillOpacity=".3"
           transform="scale(.1)"
           textLength="190"
         >
