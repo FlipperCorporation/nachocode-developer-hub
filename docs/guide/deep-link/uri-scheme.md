@@ -22,7 +22,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" /> <BadgeWithVersion type="iOS" version="v1.2.0" link="/docs/releases/v1/app-source/ios/release-v-1-2-0" />  
-> 🔔 **최신화 일자:** 2025-08-04
+> 🔔 **최신화 일자:** 2025-08-05
 
 ![Android](https://img.shields.io/badge/Android-gray?logo=android)
 ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)
@@ -100,7 +100,7 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
 
 ---
 
-#### URI 스킴 딥링크 활용 예시 {#uri-scheme-example}
+#### URI 스킴 딥링크 스크립트 구현 예시 {#uri-scheme-example}
 
 예를 들어 내 앱의 패키지명이 `com.nachocode.developer`이면 기본 스킴은 `developer://` 형태입니다. 특정 페이지(`https://nachocode.io/applist`)를 열도록 하는 **URI 스킴 딥링크**는 아래 예시와 같습니다.
 
@@ -115,13 +115,13 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
   function openMyApp() {
     // 앱 스킴 URL 정보
     const androidPackageName = 'com.nachocode.developer'; // 안드로이드 앱 ID
-    const appleAppStoreId = 'id6514317160'; // App Store 앱 ID
+    const appleAppStoreId = '6514317160'; // App Store 앱 ID
     const scheme = 'developer'; // 커스텀 앱 URI 스킴
     const targetUrl = encodeURI('https://nachocode.io/applist');
     const schemeUrl = `${scheme}://open?targeturl=${targetUrl}`;
 
     // fallback 스토어 URL 지정
-    let storeUrl = `https://apps.apple.com/app/${appleAppStoreId}`;
+    let storeUrl = `https://apps.apple.com/app/id${appleAppStoreId}`;
 
     const start = Date.now();
     const timeout = 1500;
@@ -148,6 +148,47 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
 ```
 
 위 스크립트는 사용자의 기기에 앱이 설치되어 있으면 딥링크가 우선 실행되고, 설치되어 있지 않을 경우 약 1.5초 뒤에 스토어 페이지로 이동시킵니다. Android에서는 **Play 스토어의 앱 설치 페이지**, iOS에서는 **App Store의 앱 페이지**로 유도하게 됩니다. 이 시간을 조절하여 사용자의 네트워크나 기기 성능에 따라 적절히 조정할 수 있습니다. 또 다른 방법으로 Android Chrome 브라우저에서는 [**인텐트 스킴**](./intent-scheme)을 활용하면 앱 미설치 시 자동으로 Play 스토어로 연결할 수도 있습니다.
+
+---
+
+#### nachocode SDK를 활용한 구현 예시 {#uri-scheme-sdk-example}
+
+[nachocode SDK](/docs/sdk/intro)를 사용하면 이러한 로직을 조금 더 간단히 처리할 수 있습니다. SDK의 [`store.openStore`](/docs/sdk/namespaces/store#open-store) 메서드를 사용하면 현재 플랫폼을 자동으로 구분하여 올바른 스토어 상세 페이지로 이동 시킬 수 있습니다.
+
+```html
+<script src="https://cdn.nachocode.io/nachocode/client-sdk/@latest/client-sdk.min.js"></script>
+<script>
+  async function openMyApp() {
+    // 앱 스킴 URL 정보
+    const androidPackageName = 'com.nachocode.developer'; // 안드로이드 앱 ID
+    const appleAppStoreId = '6514317160'; // App Store 앱 ID
+    const scheme = 'developer'; // 커스텀 앱 URI 스킴
+    const targetUrl = encodeURI('https://nachocode.io/applist');
+    const schemeUrl = `${scheme}://open?targeturl=${targetUrl}`;
+
+    // SDK 초기화
+    await Nachocode.initAsync('your_api_key_here');
+
+    // 앱 실행 환경이 아닐 경우
+    if (!Nachocode.env.isApp()) {
+      const start = Date.now();
+      const timeout = 1500;
+      // 커스텀 앱 스킴 호출 (앱 열기)
+      window.location = schemeUrl;
+      // 앱이 설치되어 있지 않을 경우, 일정 시간 후에 마켓으로 이동
+      setTimeout(() => {
+        const elapsed = Date.now() - start;
+        if (elapsed < timeout + 200) {
+          Nachocode.store.openStore({
+            androidAppId: androidPackageName, // Android 앱 패키지명
+            iOSAppId: appleAppStoreId, // iOS Apple 앱 ID
+          });
+        }
+      }, timeout);
+    }
+  }
+</script>
+```
 
 ---
 
