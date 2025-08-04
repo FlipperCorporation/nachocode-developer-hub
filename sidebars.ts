@@ -18,6 +18,23 @@ const sidebars: SidebarsConfig = {
         'guide/push/topic-push',
       ],
     },
+    {
+      type: 'category',
+      label: '딥링크',
+      link: {
+        type: 'generated-index',
+        title: '딥링크 (Deep Link)',
+        slug: '/guide/deep-link',
+      },
+      items: [
+        'guide/deep-link/intro',
+        'guide/deep-link/uri-scheme',
+        'guide/deep-link/intent-scheme',
+        'guide/deep-link/universal-link',
+        'guide/deep-link/app-link',
+        'guide/deep-link/nachocode-link',
+      ],
+    },
     'guide/iap',
     {
       type: 'category',
