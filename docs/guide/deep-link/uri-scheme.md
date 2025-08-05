@@ -28,11 +28,11 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 ![Android](https://img.shields.io/badge/Android-gray?logo=android)
 ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)
 
-## URI 스킴 (URI Scheme) 이해하기 {#understand}
+## URI 스킴 이해하기 {#understand}
 
 **URI 스킴 딥링크**는 모바일 앱 딥링크의 가장 기본적인 형태로, **앱별로 스킴(Scheme)을 미리 정의하여 앱을 실행할 수 있는 링크**입니다.
 
-### URI 스킴 (URI Scheme) 기본 구조 {#basic}
+### URI 스킴 기본 구조 {#basic}
 
 ```scheme
 {scheme}://{path}?{query}
@@ -46,7 +46,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 URI 스킴 딥링크는 웹의 URL과 유사한 형식으로, **스킴 이름을 앱에 할당하고 경로 및 쿼리로 세부 화면을 지정**합니다. 구현이 간단하고 커스텀 스킴 정의를 자유롭게 할 수 있습니다. 오프라인 환경에서도 동작하므로 QR코드나 문자메시지에 **앱 스킴 링크를 넣으면 스캔 및 클릭 시 바로 앱을 실행** 시킬 수도 있습니다.
 
-### URI 스킴 (URI Scheme)의 제약과 단점 {#limitations}
+### URI 스킴의 제약과 단점 {#limitations}
 
 :::warning 주의
 URI 스킴 방식에는 몇 가지 **제약과 단점**이 있어 호환성과 안정성 면에서 다른 딥링크 방식들보다 더 주의가 필요합니다.
@@ -63,7 +63,7 @@ URI 스킴의 한계 때문에, **Apple과 Google은 각각 더 안전한 딥링
 
 ---
 
-## URI 스킴 (URI Scheme) 설정하기 {#set-up}
+## URI 스킴 설정하기 {#set-up}
 
 일반적으로 URI 스킴을 사용하기 위해서는 사용 전에 Android, iOS 각각 **앱이 해당 스킴을 처리하도록 등록**해야 합니다. Android에서는 앱의 `AndroidManifest.xml`에 스킴을 선언하고 iOS에서는 `Info.plist`에 스킴을 등록해야합니다.
 
@@ -109,7 +109,7 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
 
 ---
 
-## URI 스킴 (URI Scheme) 활용하기 {#usage}
+## URI 스킴 활용하기 {#usage}
 
 ### 웹에서 내 앱 열기 (딥링크 실행) {#open-my-app}
 
