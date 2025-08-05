@@ -268,7 +268,7 @@ nachocode 앱에서 외부 앱을 호출할 때의 fallback 처리는 좀 더 �
   - 플레이스토어에서 앱 설치 페이지 링크의 쿼리 파라미터 `id` 값
   - 모바일의 경우 앱 공유하기를 통해 URL을 확인할 수 있습니다.
 
-![naver-android-store-id](/img/docs/deep-link/naver_android_store_id.webp)
+![naver-android-store-id](/img/docs/deep-link/naver_android_store_id.png)
 
 ---
 
@@ -284,6 +284,6 @@ iOS 앱 ID는 숫자 형식의 Apple ID 앞에 `id`를 붙인 `id+숫자` 형태
   - 앱스토어에서 앱 설치 페이지 링크의 맨 뒤 path에 있는 `id+숫자` 형태의 문자열
   - 모바일의 경우 앱 공유하기를 통해 URL을 확인할 수 있습니다.
 
-![naver-ios-store-id](/img/docs/deep-link/naver_ios_store_id.webp)
+![naver-ios-store-id](/img/docs/deep-link/naver_ios_store_id.png)
 
 ---
