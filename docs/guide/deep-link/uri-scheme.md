@@ -27,7 +27,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 ![Android](https://img.shields.io/badge/Android-gray?logo=android)
 ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)
 
-## **URI 스킴 (URI Scheme) 이해하기** {#understand}
+## URI 스킴 (URI Scheme) 이해하기 {#understand}
 
 **URI 스킴 딥링크**는 모바일 앱 딥링크의 가장 기본적인 형태로, **앱별로 스킴(Scheme)을 미리 정의하여 앱을 실행할 수 있는 링크**입니다.
 
@@ -52,7 +52,7 @@ URI 스킴의 한계 때문에, **Apple과 Google은 각각 더 안전한 딥링
 
 ---
 
-## **URI 스킴 (URI Scheme) 설정하기** {#set-up}
+## URI 스킴 (URI Scheme) 설정하기 {#set-up}
 
 일반적으로 URI 스킴을 사용하기 위해서는 사용 전에 Android, iOS 각각 **앱이 해당 스킴을 처리하도록 등록**해야 합니다. Android에서는 앱의 `AndroidManifest.xml`에 스킴을 선언하고 iOS에서는 `Info.plist`에 스킴을 등록해야합니다.
 
@@ -83,18 +83,33 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
 - **targeturl**: 딥링크 URL에 추가적인 **쿼리 파라미터**를 붙여 앱에서 특정 동작을 수행하도록 전달할 수 있습니다. nachocode 딥링크에서는 `targeturl` 파라미터를 활용하여 앱을 열 때 곧바로 특정 페이지를 로드하도록 지정합니다. (_since:_ <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />)
 
 :::warning **주의**
-`targeturl`에 사용하는 URL 값은 반드시 **URI 인코딩**된 형태로 넣어야 합니다. 예를 들어 `https://nachocode.io/applist`를 타겟 URL로 지정하려면 `https%3A%2F%2Fnachocode.io%2Fapplist` 처럼 인코딩해야 합니다.
+`targeturl`에 사용하는 URL 값은 반드시 **URI 인코딩**된 형태로 넣어야 합니다. 예를 들어 `https://developer.nachocode.io/docs/guide/deep-link/uri-scheme`를 타겟 URL로 지정하려면 `https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2Fdeep-link%2Furi-scheme` 처럼 인코딩해야 합니다.
 :::
 
 ---
 
-## **URI 스킴 (URI Scheme) 활용하기** {#usage}
+## URI 스킴 (URI Scheme) 활용하기 {#usage}
 
-### 웹에서 내 앱 열기 (딥링크 실행)
+### 웹에서 내 앱 열기 (딥링크 실행) {#open-my-app}
 
 웹페이지나 모바일 브라우저에서 **커스텀 URI 스킴 딥링크를 통해 내 앱을 여는 방법**은 두 가지 방식이 있습니다.
 
-**기본 방법**은 단순히 딥링크 URL을 하이퍼링크로 사용하거나, 자바스크립트로 `window.location`을 해당 스킴으로 지정하는 것입니다. 예를 들어 HTML에서 `<a href="my_app_scheme://open?...">앱 열기</a>` 링크를 제공하거나, 버튼 클릭 시 `window.location.href = "my_app_scheme://open?...";`처럼 스킴을 호출할 수 있습니다. 이 방식은 사용자가 해당 링크를 클릭하면 바로 딥링크를 실행합니다. **단, 앱이 설치되어 있지 않을 경우 아무 반응이 없거나 에러가 발생**할 수 있으므로 추가 처리가 필요합니다.
+**기본 방법**은 단순히 딥링크 URL을 HTML에서 `a` 태그나 `button` 태그를 활용하여 스킴을 호출하는 것입니다.
+
+```html
+<a href="my_app_scheme://open?...">앱 열기</a>
+```
+
+```html
+<button
+  type="button"
+  onclick="window.location.href = 'my_app_scheme://open?...';"
+>
+  앱 열기
+</button>
+```
+
+이 방식은 사용자가 해당 링크를 클릭하면 바로 딥링크를 실행합니다. **단, 앱이 설치되어 있지 않을 경우 아무 반응이 없거나 에러가 발생**할 수 있으므로 권장되는 방식은 아닙니다.
 
 **앱 미설치를 대비**하고 싶을 경우, 사용자가 앱이 없을 경우 **스토어로 이동 처리**를 해주는 로직을 추가해야 합니다. 일반적으로는 자바스크립트에서 딥링크 호출 후 약간의 지연을 두고 **스토어 링크로 리디렉션**하는 방식이 널리 쓰입니다.
 
@@ -102,13 +117,13 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
 
 #### URI 스킴 딥링크 스크립트 구현 예시 {#uri-scheme-example}
 
-예를 들어 내 앱의 패키지명이 `com.nachocode.developer`이면 기본 스킴은 `developer://` 형태입니다. 특정 페이지(`https://nachocode.io/applist`)를 열도록 하는 **URI 스킴 딥링크**는 아래 예시와 같습니다.
+예를 들어 내 앱의 패키지명이 `com.nachocode.developer`이면 기본 스킴은 `developer://` 형태입니다. 특정 페이지(`https://developer.nachocode.io/docs/guide/deep-link/uri-scheme`)를 열도록 하는 **URI 스킴 딥링크**는 아래 예시와 같습니다.
 
 ```scheme
-예시: developer://open?targeturl=https%3A%2F%2Fnachocode.io%2Fapplist
+예시: developer://open?targeturl=https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2Fdeep-link%2Furi-scheme
 ```
 
-위 링크를 모바일 기기에서 열면, nachocode로 만든 해당 앱이 설치되어 있을 경우 곧바로 앱이 실행되어 `https://nachocode.io/applist` 페이지를 로드합니다. 앱이 설치되어 있지 않다면 아래 예시 코드처럼 **스토어로 자동 이동**시켜 설치를 유도할 수 있습니다.
+위 링크를 모바일 기기에서 열면, nachocode로 만든 해당 앱이 설치되어 있을 경우 곧바로 앱이 실행되어 `https://developer.nachocode.io/docs/guide/deep-link/uri-scheme` 페이지를 로드합니다. 앱이 설치되어 있지 않다면 아래 예시 코드처럼 **스토어로 자동 이동**시켜 설치를 유도할 수 있습니다.
 
 ```html
 <script>
@@ -117,7 +132,9 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
     const androidPackageName = 'com.nachocode.developer'; // 안드로이드 앱 ID
     const appleAppStoreId = '6514317160'; // App Store 앱 ID
     const scheme = 'developer'; // 커스텀 앱 URI 스킴
-    const targetUrl = encodeURI('https://nachocode.io/applist');
+    const targetUrl = encodeURI(
+      'https://developer.nachocode.io/docs/guide/deep-link/uri-scheme'
+    );
     const schemeUrl = `${scheme}://open?targeturl=${targetUrl}`;
 
     // fallback 스토어 URL 지정
@@ -147,7 +164,7 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
 </script>
 ```
 
-위 스크립트는 사용자의 기기에 앱이 설치되어 있으면 딥링크가 우선 실행되고, 설치되어 있지 않을 경우 약 1.5초 뒤에 스토어 페이지로 이동시킵니다. Android에서는 **Play 스토어의 앱 설치 페이지**, iOS에서는 **App Store의 앱 페이지**로 유도하게 됩니다. 이 시간을 조절하여 사용자의 네트워크나 기기 성능에 따라 적절히 조정할 수 있습니다. 또 다른 방법으로 Android Chrome 브라우저에서는 [**인텐트 스킴**](./intent-scheme)을 활용하면 앱 미설치 시 자동으로 Play 스토어로 연결할 수도 있습니다.
+위 스크립트는 사용자의 기기에 앱이 설치되어 있으면 딥링크가 우선 실행되고, 설치되어 있지 않을 경우 약 1.5초 뒤에 스토어 페이지로 이동시킵니다. Android에서는 **Play 스토어의 앱 상세 페이지**, iOS에서는 **App Store의 앱 상세 페이지**로 유도하게 됩니다. 이 시간을 조절하여 사용자의 네트워크나 기기 성능에 따라 적절히 조정할 수 있습니다. 또 다른 방법으로 Android Chrome 브라우저에서는 [**인텐트 스킴**](./intent-scheme)을 활용하면 앱 미설치 시 자동으로 Play 스토어로 연결할 수도 있습니다.
 
 ---
 
@@ -163,7 +180,9 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
     const androidPackageName = 'com.nachocode.developer'; // 안드로이드 앱 ID
     const appleAppStoreId = '6514317160'; // App Store 앱 ID
     const scheme = 'developer'; // 커스텀 앱 URI 스킴
-    const targetUrl = encodeURI('https://nachocode.io/applist');
+    const targetUrl = encodeURI(
+      'https://developer.nachocode.io/docs/guide/deep-link/uri-scheme'
+    );
     const schemeUrl = `${scheme}://open?targeturl=${targetUrl}`;
 
     // SDK 초기화
@@ -192,7 +211,7 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
 
 ---
 
-### 내 앱에서 다른 앱 열기 (외부 앱 호출)
+### 내 앱에서 다른 앱 열기 (외부 앱 호출) {#open-external-app}
 
 **앱에서 다른 앱을 열고 싶을 때 해당 앱의 패키지명을 미리 앱 내 등록**해야하며, **등록된 패키지명만 앱에서 스킴으로 호출이 가능**합니다.
 
@@ -202,12 +221,69 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
 [**나쵸코드 대시보드**](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) > **앱 설정** > **개발자 설정** > **외부 앱 호출용 앱 스킴**
 :::
 
-앱 내에서 **다른 앱을 실행**하는 방법은 간단합니다. 예를 들어, 우리 앱에서 카카오톡이나 유튜브 앱을 열고 싶다면 해당 앱이 정의한 URI 스킴을 호출하면 됩니다. 구현 방법은 웹에서 딥링크를 여는 것과 유사하게 **window\.open 또는 `<a>` 태그**를 사용하면 됩니다.
+앱 내에서 **다른 앱을 실행**하는 방법은 간단합니다. 외부 앱이 고유 스킴을 가지고 있다면 **`다른앱스킴://경로`** 형태로 URI 스킴을 호출하면 됩니다.
 
-외부 앱이 고유 스킴을 가지고 있다면 `window.location.href = "다른앱스킴://경로"` 형태로 URI 스킴을 호출합니다. 예를 들어 카카오톡 앱을 열려면 `kakaotalk://launch`와 같이 그 앱의 스킴을 알맞게 호출하면 됩니다. 이때도 대상 앱이 설치되어 있지 않을 수 있으므로 **예외 처리**나 사용자 안내가 필요합니다.
+```javascript
+window.location.href = `${scheme}://${path}`;
+```
 
-:::tip 참고
-외부 앱의 스킴 및 지원 여부는 각 앱 개발사 문서를 참고해야 합니다.
+예를 들어 카카오톡 앱을 열려면 `kakaotalk://launch`, nachocode developer 앱을 열려면 `developer://open`와 같이 그 앱의 스킴을 알맞게 호출하면 됩니다. 구현 방법은 웹에서 딥링크를 여는 것과 유사하게 **`window.location` 변경 또는 `<a>` 태그**를 사용하면 됩니다.
+
+:::warning 참고
+외부 앱의 스킴 및 지원 여부는 각 앱 개발사의 문서를 참고해야 합니다.
 :::
+
+```html
+<a
+  href="developer://open?targeturl=https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2Fdeep-link%2Furi-scheme&iOS_id=id6514317160&AOS_id=com.nachocode.developer"
+>
+  nachocode developer URI 스킴
+</a>
+```
+
+```html
+<button
+  type="button"
+  onclick="location.href ='developer://open?targeturl=https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2Fdeep-link%2Furi-scheme&iOS_id=id6514317160&AOS_id=com.nachocode.developer'"
+>
+  nachocode developer URI 스킴
+</button>
+```
+
+nachocode 앱에서 외부 앱을 호출할 때의 fallback 처리는 좀 더 쉽게 구현이 가능합니다. 스킴 주소를 직접 지정하고 `AOS_id`와 `iOS_id`를 쿼리 파라미터로 전달해 앱이 설치되지 않은 경우 스토어로 이동할 수 있도록 처리할 수 있습니다. `AOS_id`는 **구글 플레이스토어로 이동할 때 필요한 앱의 패키지명**이고, `iOS_id`는 **앱스토어 이동에 필요한 앱의 아이디**입니다.
+
+---
+
+## 스토어 앱 ID 확인법 {#check-store-id}
+
+### 안드로이드 - 플레이스토어 앱 ID {#check-android-store-id}
+
+:::info
+안드로이드는 패키지명이 앱 ID 입니다.
+:::
+
+- **내 앱**
+  - [**나쵸코드 대시보드**](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 **패키지명** 확인
+- **외부 앱**
+  - 플레이스토어에서 앱 설치 페이지 링크의 쿼리 파라미터 `id` 값
+  - 모바일의 경우 앱 공유하기를 통해 URL을 확인할 수 있습니다.
+
+![naver-android-store-id](/img/docs/deep-link/naver_android_store_id.webp)
+
+---
+
+### iOS - 앱스토어 앱 ID {#check-ios-store-id}
+
+:::info
+iOS 앱 ID는 숫자 형식의 Apple ID 앞에 `id`를 붙인 `id+숫자` 형태의 문자열 입니다.
+:::
+
+- **내 앱**
+  - [ [**앱스토어 커넥트**](https://appstoreconnect.apple.com/) > **앱 관리 페이지** > **일반 정보** > **앱 정보** > **Apple ID** ]
+- **외부 앱**
+  - 앱스토어에서 앱 설치 페이지 링크의 맨 뒤 path에 있는 `id+숫자` 형태의 문자열
+  - 모바일의 경우 앱 공유하기를 통해 URL을 확인할 수 있습니다.
+
+![naver-ios-store-id](/img/docs/deep-link/naver_ios_store_id.webp)
 
 ---
