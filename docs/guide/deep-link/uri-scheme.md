@@ -30,7 +30,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 ## URI 스킴 이해하기 {#understand}
 
-**URI 스킴 딥링크**는 모바일 앱 딥링크의 가장 기본적인 형태로, **앱별로 스킴(Scheme)을 미리 정의하여 앱을 실행할 수 있는 링크**입니다.
+**URI 스킴 딥링크**는 모바일 앱 딥링크의 가장 기본적인 형태로, **앱별로 스킴(Scheme)을 미리 정의하여 앱을 실행할 수 있는 딥링크**입니다. 해당 스킴으로 시작하는 URL을 클릭하면 **OS가 해당 앱을 실행**하며 **iOS와 Android 모두에서 지원**됩니다.
 
 ### URI 스킴 기본 구조 {#basic}
 
@@ -81,6 +81,25 @@ URI 스킴의 한계 때문에, **Apple과 Google은 각각 더 안전한 딥링
 
 :::
 
+1. **커스텀 스킴 이름 결정**
+   - 앱에서 사용할 고유 스킴 이름을 정합니다.
+   - 보통 서비스나 앱의 영문명으로 작성하며, 공백이나 특수문자 없이 짧고 명확하게 정합니다.
+
+2. **대시보드에서 스킴 등록**
+   - nachocode 대시보드의 앱 설정 메뉴에서 **개발자 설정**의 **앱 스킴 설정** 섹션을 찾습니다.
+   - 여기에서 "딥링크 앱 스킴명" 항목에 앞서 결정한 스킴 이름을 입력합니다.
+   - 예를 들어 스킴 이름을 `myapp`으로 입력했다면, 해당 앱은 `myapp://`으로 시작하는 딥링크를 처리할 수 있게 됩니다.
+   - 이 설정은 Android의 **Manifest**(인텐트 필터)와 iOS의 **Info.plist**(URL Types)에 자동으로 반영되어 앱이 해당 스킴을 인식하도록 합니다.
+
+3. **앱 빌드 및 배포**
+   - 스킴 설정을 저장한 후 **앱을 다시 빌드**해야 변경 사항이 적용됩니다.
+   - nachocode 대시보드의 **앱 빌드** 메뉴에서 새로운 버전을 빌드하세요.
+   - 빌드된 앱을 기기에 설치하거나 스토어에 업데이트하면, 이제 해당 스킴의 딥링크를 사용할 준비가 됩니다.
+
+4. **딥링크 URL 사용**
+   - 설정 완료 후에는 `myapp://open` 형태의 URL을 다양한 곳에서 활용할 수 있습니다.
+   - **웹페이지 또는 이메일에 연결** - `<a href="myapp://open">앱에서 보기</a>` 와 같이 링크를 작성하면, 사용자가 웹에서 클릭 시 앱이 열립니다.
+
 ---
 
 ### nachocode 앱 URI 스킴 구조 {#nachocode-uri-scheme}
@@ -88,7 +107,7 @@ URI 스킴의 한계 때문에, **Apple과 Google은 각각 더 안전한 딥링
 nachocode로 생성된 **앱의 기본 URI 스킴** 구조는 다음과 같습니다.
 
 ```scheme
-nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
+{my_app_scheme}://open?targeturl={TARGET_URL}
 ```
 
 - **my_app_scheme**
@@ -141,7 +160,7 @@ nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
 예를 들어 내 앱의 패키지명이 `com.nachocode.developer`이면 기본 스킴은 `developer://` 형태입니다. 특정 페이지(`https://developer.nachocode.io/docs/guide/deep-link/uri-scheme`)를 열도록 하는 **URI 스킴 딥링크**는 아래 예시와 같습니다.
 
 ```scheme
-예시: developer://open?targeturl=https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2Fdeep-link%2Furi-scheme
+developer://open?targeturl=https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2Fdeep-link%2Furi-scheme
 ```
 
 위 링크를 모바일 기기에서 열면, nachocode로 만든 해당 앱이 설치되어 있을 경우 곧바로 앱이 실행되어 `https://developer.nachocode.io/docs/guide/deep-link/uri-scheme` 페이지를 로드합니다. 앱이 설치되어 있지 않다면 아래 예시 코드처럼 **스토어로 자동 이동**시켜 설치를 유도할 수 있습니다.
