@@ -26,7 +26,7 @@ keywords:
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-> 🔔 **최신화 일자:** 2025-08-04
+> 🔔 **최신화 일자:** 2025-08-06
 
 ## 딥링크 이해하기 {#understand}
 
@@ -168,3 +168,8 @@ nachocode **나쵸 링크 (nachocode.link) 가이드**에서는 nachocode에서 
 :::
 
 ---
+
+:::tip 기술 지원
+nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다.  
+기술적인 질문이나 피드백이 있다면 언제든지 [**support@nachocode.io**](mailto:support@nachocode.io)에 **이메일**을 보내주세요.
+:::

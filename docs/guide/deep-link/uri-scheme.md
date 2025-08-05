@@ -23,7 +23,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" /> <BadgeWithVersion type="iOS" version="v1.2.0" link="/docs/releases/v1/app-source/ios/release-v-1-2-0" />  
 > 🛠️ **개선된 버전:** <BadgeWithVersion type="Android" version="v1.5.1" link="/docs/releases/v1/app-source/android/release-v-1-5-1" /> <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" /> - `targeturl` 파라미터 추가  
-> 🔔 **최신화 일자:** 2025-08-05
+> 🔔 **최신화 일자:** 2025-08-06
 
 ![Android](https://img.shields.io/badge/Android-gray?logo=android)
 ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)
@@ -119,7 +119,7 @@ nachocode로 생성된 **앱의 기본 URI 스킴** 구조는 다음과 같습�
   - nachocode 딥링크에서는 `{scheme}://open` 형식으로 앱 실행을 처리합니다.
 - **targeturl**
   - _since:_ <BadgeWithVersion type="Android" version="v1.5.1" link="/docs/releases/v1/app-source/android/release-v-1-5-1" /> <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />
-  - 딥링크 URL에 추가적인 **쿼리 파라미터**를 붙여 앱에서 특정 동작을 수행하도록 전달할 수 있습니다.
+  - 딥링크 URL에 추가적인 **쿼리 파라미터**를 붙여 앱에서 특정 페이지를 열도록 전달할 수 있습니다.
   - nachocode 딥링크에서는 `targeturl` 파라미터를 활용하여 앱을 열 때 곧바로 특정 페이지를 로드하도록 지정합니다.
 
 :::warning **주의**
@@ -298,4 +298,9 @@ nachocode 앱에서 외부 앱을 호출할 때의 fallback 처리는 좀 더 �
 구글 플레이스토어와 앱스토어에서의 앱 ID를 확인하기 어렵다면 아래 문서를 참고해보세요.
 
 ➡️ [**스토어 ID 확인하기**](./check-store-id)
+:::
+
+:::tip 기술 지원
+nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다.  
+기술적인 질문이나 피드백이 있다면 언제든지 [**support@nachocode.io**](mailto:support@nachocode.io)에 **이메일**을 보내주세요.
 :::
