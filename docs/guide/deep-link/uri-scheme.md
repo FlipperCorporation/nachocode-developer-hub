@@ -22,6 +22,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" /> <BadgeWithVersion type="iOS" version="v1.2.0" link="/docs/releases/v1/app-source/ios/release-v-1-2-0" />  
+> 🛠️ **개선된 버전:** <BadgeWithVersion type="Android" version="v1.5.1" link="/docs/releases/v1/app-source/android/release-v-1-5-1" /> <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" /> - `targeturl` 파라미터 추가  
 > 🔔 **최신화 일자:** 2025-08-05
 
 ![Android](https://img.shields.io/badge/Android-gray?logo=android)
@@ -31,11 +32,21 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 **URI 스킴 딥링크**는 모바일 앱 딥링크의 가장 기본적인 형태로, **앱별로 스킴(Scheme)을 미리 정의하여 앱을 실행할 수 있는 링크**입니다.
 
+### URI 스킴 (URI Scheme) 기본 구조 {#basic}
+
 ```scheme
-URI 스킴 기본 구조: {scheme}://{path}?{query}
+{scheme}://{path}?{query}
 ```
 
+| 구성 요소 | 설명                                                                                                                                   | 필수 여부 |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| `scheme`  | 앱에서 정의한 스킴 이름 ( ex. `nachocode`, `developer`)                                                                                | ✅        |
+| `path`    | 앱 내에서 열고자 하는 특정 화면이나 리소스를 지정하는 경로. (ex. `/open`)                                                              | ✅        |
+| `query`   | 선택적으로 전달할 파라미터. <br/> `?` 뒤에 `key=value` 형식으로 작성하며 여러 개일 경우 `&`로 연결. <br/> (ex. `?id=123&ref=campaign`) | ❌        |
+
 URI 스킴 딥링크는 웹의 URL과 유사한 형식으로, **스킴 이름을 앱에 할당하고 경로 및 쿼리로 세부 화면을 지정**합니다. 구현이 간단하고 커스텀 스킴 정의를 자유롭게 할 수 있습니다. 오프라인 환경에서도 동작하므로 QR코드나 문자메시지에 **앱 스킴 링크를 넣으면 스캔 및 클릭 시 바로 앱을 실행** 시킬 수도 있습니다.
+
+### URI 스킴 (URI Scheme)의 제약과 단점 {#limitations}
 
 :::warning 주의
 URI 스킴 방식에는 몇 가지 **제약과 단점**이 있어 호환성과 안정성 면에서 다른 딥링크 방식들보다 더 주의가 필요합니다.
@@ -56,7 +67,9 @@ URI 스킴의 한계 때문에, **Apple과 Google은 각각 더 안전한 딥링
 
 일반적으로 URI 스킴을 사용하기 위해서는 사용 전에 Android, iOS 각각 **앱이 해당 스킴을 처리하도록 등록**해야 합니다. Android에서는 앱의 `AndroidManifest.xml`에 스킴을 선언하고 iOS에서는 `Info.plist`에 스킴을 등록해야합니다.
 
-**nachocode에서 빌드된 앱은 기본적으로 커스텀 앱 URI 스킴 지원이 활성화**되어 있으며, 앱 패키지명 마지막 문자열을 사용하여 각 OS 설정 파일에 자동 지정됩니다. **대시보드의 앱 설정 내 개발자 설정 메뉴에서 앱 URI 스킴 이름을 직접 확인하거나 변경 가능**합니다. 이를 활용해 외부에서 앱을 실행하거나, 추가적인 설정 후, 앱 내에서 다른 앱을 호출할 수 있습니다.
+### nachocode에서 URI 스킴 설정하기 {#set-up-nachocode-uri-scheme}
+
+**nachocode에서 빌드된 앱은 기본적으로 커스텀 앱 URI 스킴 지원이 활성화**되어 있으며, 앱 패키지명 마지막 문자열을 사용하여 각 OS 설정 파일에 자동 지정됩니다. **[대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 앱 설정 내 개발자 설정 메뉴에서 앱 URI 스킴 이름을 직접 확인하거나 변경 가능**합니다. 이를 활용해 외부에서 앱을 실행하거나, 추가적인 설정 후, 앱 내에서 다른 앱을 호출할 수 있습니다.
 
 ![nachocode-app-scheme](/img/docs/deep-link/nachocode_dashboard_developer_settings_app_scheme.png)
 
@@ -70,7 +83,7 @@ URI 스킴의 한계 때문에, **Apple과 Google은 각각 더 안전한 딥링
 
 ---
 
-### nachocode 앱 URI 스킴 {#nachocode-uri-scheme}
+### nachocode 앱 URI 스킴 구조 {#nachocode-uri-scheme}
 
 nachocode로 생성된 **앱의 기본 URI 스킴** 구조는 다음과 같습니다.
 
@@ -78,9 +91,17 @@ nachocode로 생성된 **앱의 기본 URI 스킴** 구조는 다음과 같습�
 nachocode 앱 스킴 구조: {my_app_scheme}://open?targeturl={TARGET_URL}
 ```
 
-- **my_app_scheme**: 내 앱을 식별하는 고유 이름입니다. nachocode에서 빌드한 앱은 기본적으로 **앱의 패키지명의 마지막 부분이 scheme으로 지정**됩니다. 만약 스킴 이름을 변경하고 싶다면 nachocode 대시보드에서 직접 변경할 수 있습니다.
-- **open**: `/open` 으로 고정된 경로를 사용합니다. nachocode 딥링크에서는 `{scheme}://open` 형식으로 앱 실행을 처리합니다.
-- **targeturl**: 딥링크 URL에 추가적인 **쿼리 파라미터**를 붙여 앱에서 특정 동작을 수행하도록 전달할 수 있습니다. nachocode 딥링크에서는 `targeturl` 파라미터를 활용하여 앱을 열 때 곧바로 특정 페이지를 로드하도록 지정합니다. (_since:_ <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />)
+- **my_app_scheme**
+  - 내 앱을 식별하는 고유 이름입니다.
+  - nachocode에서 빌드한 앱은 기본적으로 **앱의 패키지명의 마지막 부분이 scheme으로 지정**됩니다.
+  - 만약 스킴 이름을 변경하고 싶다면 [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 직접 변경할 수 있습니다.
+- **open**
+  - `/open` 으로 고정된 경로를 사용합니다.
+  - nachocode 딥링크에서는 `{scheme}://open` 형식으로 앱 실행을 처리합니다.
+- **targeturl**
+  - _since:_ <BadgeWithVersion type="Android" version="v1.5.1" link="/docs/releases/v1/app-source/android/release-v-1-5-1" /> <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />
+  - 딥링크 URL에 추가적인 **쿼리 파라미터**를 붙여 앱에서 특정 동작을 수행하도록 전달할 수 있습니다.
+  - nachocode 딥링크에서는 `targeturl` 파라미터를 활용하여 앱을 열 때 곧바로 특정 페이지를 로드하도록 지정합니다.
 
 :::warning **주의**
 `targeturl`에 사용하는 URL 값은 반드시 **URI 인코딩**된 형태로 넣어야 합니다. 예를 들어 `https://developer.nachocode.io/docs/guide/deep-link/uri-scheme`를 타겟 URL로 지정하려면 `https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2Fdeep-link%2Furi-scheme` 처럼 인코딩해야 합니다.

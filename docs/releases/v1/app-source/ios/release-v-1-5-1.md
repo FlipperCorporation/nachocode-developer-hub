@@ -24,5 +24,5 @@ nachocode iOS App Source **1.5.1** 버전이 반영되었습니다.
 nachocode iOS AppSource **ver.1.5.1**의 변경 사항을 앱에 반영하려면 아래 경로에서 신규 버전의 앱을 다시 빌드하여 적용 가능합니다.
 
 :::info 업데이트 적용
-[**나쵸코드 대시보드**](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) > **앱 빌드** > **안드로이드 앱 빌드** > **새 버전 만들기**
+[**나쵸코드 대시보드**](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) > **앱 빌드** > **iOS 앱 빌드** > **새 버전 만들기**
 :::

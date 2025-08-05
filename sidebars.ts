@@ -185,6 +185,7 @@ const sidebars: SidebarsConfig = {
             'releases/v1/app-source/android/release-v-1-6-2',
             'releases/v1/app-source/android/release-v-1-6-1',
             'releases/v1/app-source/android/release-v-1-6-0',
+            'releases/v1/app-source/android/release-v-1-5-1',
             'releases/v1/app-source/android/release-v-1-5-0',
             'releases/v1/app-source/android/release-v-1-4-2',
             'releases/v1/app-source/android/release-v-1-4-1',
