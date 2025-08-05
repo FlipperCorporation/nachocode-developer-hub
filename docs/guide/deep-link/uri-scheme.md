@@ -206,6 +206,28 @@ developer://open?targeturl=https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2
 
 위 스크립트는 사용자의 기기에 앱이 설치되어 있으면 딥링크가 우선 실행되고, 설치되어 있지 않을 경우 약 1.5초 뒤에 스토어 페이지로 이동시킵니다. Android에서는 **Play 스토어의 앱 상세 페이지**, iOS에서는 **App Store의 앱 상세 페이지**로 유도하게 됩니다. 이 시간을 조절하여 사용자의 네트워크나 기기 성능에 따라 적절히 조정할 수 있습니다. 또 다른 방법으로 Android Chrome 브라우저에서는 [**인텐트 스킴**](./intent-scheme)을 활용하면 앱 미설치 시 자동으로 Play 스토어로 연결할 수도 있습니다.
 
+<details>
+  <summary>⚠️ iOS Safari에서 URI 스킴 딥링크 사용 시 일반적인 문제</summary>
+  :::warning 주의
+  Safari는 웹 링크(http, https ) 형태가 아닌 URI 스킴 링크(developer://open)를 유효하지 않은 링크로 판단합니다.
+  :::
+
+1. **앱이 설치되어 있는 경우**
+   - 앱은 정상적으로 열림
+   - 하지만 백그라운드에서는 여전히 JavaScript를 중단하지 않고 백그라운드에서 계속 실행
+   - `setTimeout`을 이용한 앱스토어 이동용 스크립트가 실행됨
+   - 결과적으로 앱이 열린 후 몇 초 뒤에 **앱스토어로 강제로 리다이렉션**되는 현상 발생
+
+2. **앱이 설치되어 있지 않은 경우**
+   - "**주소가 유효하지 않기 때문에 Safari가 해당 페이지를 열 수 없습니다**" 라는 팝업이 표시된 후에 앱스토어로 이동
+
+:::note 참고
+해당 이슈는 Safari에서 URI Scheme을 사용할 때 발생하는 문제로 유명하며,  
+iOS에서는 [유니버셜 링크 (Universal Link)](./universal-link)를 사용하여 딥링크를 구현하는 것을 권장합니다.
+:::
+
+</details>
+
 ---
 
 #### nachocode SDK를 활용한 구현 예시 {#uri-scheme-sdk-example}
