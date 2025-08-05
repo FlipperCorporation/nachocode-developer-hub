@@ -133,7 +133,7 @@ nachocode 앱에서 **인텐트 스킴 딥링크**를 활용하려면, 우선 [*
    - nachocode 대시보드 **고급 앱 설정**에서 해당 앱의 **패키지 이름**(Android Package Name)을 확인합니다.
    - 인텐트 링크의 `package=` 부분에 이 값을 정확히 넣어야 합니다. _(ex. `com.nachocode.developer`)_
 
-   ![nachocode-package-name](/img/docs/deep-link/nachocode_dashboard_advanced_settings_pacakge_name.png)
+   ![nachocode-package-name](/img/docs/settings/nachocode_dashboard_advanced_settings_pacakge_name.png)
 
 2. **인텐트 링크 구성**
    - 앱에서 열고자 하는 페이지 경로와 쿼리 정보를 포함해 인텐트 URL을 만듭니다.

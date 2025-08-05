@@ -1,8 +1,18 @@
 ---
 sidebar_label: 유니버셜 링크
 pagination_label: 유니버셜 링크 (Universal Link)
-description: nachocode에서의 iOS Universal Link 활용법
-keywords: [딥링크, 유니버셜 링크, Deep Link, Universal Link, App Links, iOS]
+description: nachocode에서의 iOS Universal Link를 설정하는 방법과 활용법을 안내합니다.
+keywords:
+  [
+    딥링크,
+    딥 링크,
+    유니버셜 링크,
+    Deep Link,
+    Deep-Link,
+    Universal Link,
+    App Links,
+    iOS,
+  ]
 ---
 
 # 유니버셜 링크 (Universal Link) {#universal-link}
@@ -10,17 +20,71 @@ keywords: [딥링크, 유니버셜 링크, Deep Link, Universal Link, App Links,
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />  
-> 🔔 **최신화 일자:** 2025-08-04
+> 🔔 **최신화 일자:** 2025-08-05
 
 ![iOS Only](https://img.shields.io/badge/iOS-Only-gray?logo=apple)
 
 ## 유니버설 링크 (Universal Link) 이해하기 {#understand}
 
-**유니버설 링크**(**Universal Link**)는 iOS에서 제공하는 딥링크 방식으로, 마찬가지로 **웹 URL을 통해 앱을 실행**할 수 있게 해줍니다. Apple에서 도입한 방식으로, 사용자가 특정 도메인의 HTTPS 링크를 열었을 때 해당 도메인이 **사전에 연동된 iOS 앱**이 있으면 사파리 대신 앱이 실행됩니다. nachocode 앱소스 `v1.5.1`부터 iOS 유니버설 링크를 지원합니다. 설정 방법은 다음과 같습니다:
+**유니버설 링크**(**Universal Link**)는 Apple iOS에서 도입한 **표준 딥링크 방식**으로, **정규 웹 URL을 이용해 앱을 여는 기술**입니다. 사용자가 특정 도메인의 HTTPS 링크를 열었을 때 해당 도메인이 **사전에 연동된 iOS 앱**이 있으면 사파리 대신 앱이 실행됩니다.
+
+예를 들어 [**https://nachocode.link**](https://nachocode.link) 같은 URL을 Universal Link로 설정해두면, iPhone의 Safari 등에서 해당 링크를 클릭했을 때 **동일 도메인을 지원하는 앱이 설치되어 있으면 앱이 곧바로 열리고**, 설치되지 않은 경우에는 **그 URL의 웹페이지를 그대로 열어주는** 형태입니다. 한마디로 **하나의 HTTPS 링크로 앱과 웹을 모두 연결**할 수 있어 사용성, 보안성 면에서 우수합니다.
+
+:::info
+nachocode 앱소스 <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />부터 iOS 유니버설 링크를 지원합니다.
+:::
+
+---
+
+### 유니버셜 링크 구현 요건
+
+유니버셜 링크 (Universal Link)를 적용하려면 **도메인 소유권 인증** 과 **앱 설정** 두 가지가 필요합니다.
+
+1. **웹 도메인에 연계 파일 제공**
+   - 해당 도메인 서버에 `apple-app-site-association` 파일을 설치해야 합니다.
+   - 이 파일에는 **해당 앱의 App ID(Bundle ID)와 허용 경로 패턴** 정보가 JSON으로 포함되어 있으며, iOS는 링크를 클릭할 때 이 파일을 HTTPS로 조회하여 **앱과 도메인이 서로 연동 허용된 관계**인지 검증합니다.
+2. **앱에 Associated Domains 설정**
+   - 앱의 코드 서명에 **Associated Domains** 권한(entitlement)을 추가하고, 거기에 `applinks:your.domain.com` 형식으로 해당 도메인을 명시해야 합니다.
+   - iOS는 앱 설치 시 이 값을 확인하여, 추후 해당 도메인의 링크를 클릭하면 이 앱으로 열어줄 수 있게 연결짓습니다.
+
+---
+
+### 유니버셜 링크 특징
+
+유니버셜 링크 (Universal Link)는 **iOS 9 이상**에서 지원되고, iPhone/iPad의 Safari, Mail, Messages 등 **애플 기본 앱 및 WebView 등**에서 동작합니다. 사용자가 링크를 클릭하면 **Safari를 거치지 않고 바로 앱이 실행**되기 때문에, 이전의 스킴 방식처럼 별도 팝업이나 확인 없이도 자연스러운 전환이 가능합니다.
+
+Apple이 제공하는 표준 방식이므로 **보안과 사용자 경험이 뛰어나고** 아래와 같은 장점을 가집니다.
+
+1. **고유성과 안전성**
+   - Universal Link는 소유한 도메인을 기반으로 하므로 **다른 앱이 가로챌 수 없습니다**.
+   - 또한 도메인 소유자만 설정 파일을 제공할 수 있어 **앱-도메인 연결이 안전**합니다.
+2. **원앱-원도메인 원칙**
+   - 한 도메인을 여러 앱에 매핑하거나 한 앱에 여러 도메인을 연결하는 것도 가능하지만, 각 연결은 명시적으로 인증되어야 합니다.
+   - 즉, **허가된 앱만 해당 도메인 링크를 열 수 있고**, 그렇지 않은 앱은 열 수 없습니다.
+3. **원활한 fallback**
+   - 만약 사용자가 앱을 설치하지 않았다면, 해당 **웹사이트가 자동으로 열리기 때문에** 자연스러운 사용자 경험을 이어갈 수 있습니다.
+   - 사용자는 웹에서 계속 내용을 확인하거나, 필요한 경우 그 웹페이지에서 **다운로드 유도**를 할 수 있습니다.
+4. **단일 링크 사용**
+   - 하나의 URL로 웹과 앱을 모두 처리할 수 있어, 마케팅/운영 측면에서 **URL 관리가 단순**해집니다.
+
+:::warning 주의사항
+유니버셜 링크 (Universal Link)를 적용할 때는 **HTTPS 보안**이 필수이므로 HTTP나 IP주소 링크 등은 동작하지 않습니다.  
+또한 Apple 개발자 계정 팀 ID와 앱 ID 구성 등 정확한 설정이 필요합니다.
+
+Universal Link가 동작하면 iOS에서는 **앱을 바로 실행**하기 때문에, 만약 웹 콘텐츠도 제공해야 하는 경우라면 **"이 페이지를 앱에서 여시겠습니까?" 같은 중간 안내**를 구현할 수 없으므로 사용자가 원래 웹페이지를 보려고 한 것인지, 앱으로 바로 이동해도 되는지에 대한 고려가 필요합니다.
+
+다만 사용자가 한 번 Universal Link로 앱을 연 이후에는 **Safari의 주소창에 해당 도메인 이름 옆에 작은 앱 아이콘**이 표시되어, 이 도메인의 링크가 앱으로 연결된다는 것을 인지시켜줍니다.
+:::
+
+---
+
+## 유니버셜 링크 설정하기
 
 ### 웹 서버에 AASA 파일 추가하기
 
-iOS 유니버설 링크를 쓰려면, 웹 서버에 **애플 앱 사이트 연관 파일**을 제공해야 합니다. 이 파일의 이름은 보통 **apple-app-site-association** (**AASA**)이고, `.well-known/apple-app-site-association` 경로로 HTTPS 제공됩니다. **확장자가 없고(JSON 포맷이지만)** Content-Type은 `application/json`으로 보내야 합니다. AASA 파일에는 연결할 iOS 앱의 정보(앱 ID와 경로 규칙)가 담깁니다. 예시 구조는 다음과 같습니다:
+iOS 유니버설 링크를 쓰려면, 웹 서버에 **애플 앱 사이트 연관 파일**을 제공해야 합니다. 이 파일의 이름은 보통 **apple-app-site-association** (**AASA**)이고, `.well-known/apple-app-site-association` 경로에 HTTPS로 호스팅되어 제공됩니다. **JSON 포맷이지만 확장자가 없고** `Content-Type`은 `application/json`으로 보내야 합니다. AASA 파일에는 앱 ID와 경로 규칙같은 연결할 iOS 앱의 정보가 담깁니다.
+
+#### Apple App Site Association 파일 예시
 
 ```json
 {
@@ -36,8 +100,13 @@ iOS 유니버설 링크를 쓰려면, 웹 서버에 **애플 앱 사이트 연�
 }
 ```
 
-- `appID`: **개발자 팀 ID + 번들ID** 조합으로, Apple에서 앱을 식별하는 문자열입니다. (`ABCDE12345`는 Apple 개발자 계정의 팀 ID 예시이고, `com.example.myapp`은 앱의 Bundle ID입니다.)
-- `paths`: 유니버설 링크로 연결할 경로 패턴 목록입니다. 위 예시는 `/path1/` 이하 모든 경로와 `/path2/detail/` 이하 모든 경로를 유니버설 링크로 허용한다는 뜻입니다. `"*"` 와 `"?*"` 와일드카드로 세부 조정도 가능합니다. 지정한 경로만 앱으로 열리고, 그 외 경로는 앱으로 열리지 않습니다.
+- `appID`
+  - **개발자 팀 ID + 번들ID** 조합으로, Apple에서 앱을 식별하는 문자열입니다.
+  - `ABCDE12345`는 Apple 개발자 계정의 팀 ID 예시이고, `com.example.myapp`은 앱의 Bundle ID입니다.
+- `paths`: 유니버설 링크로 연결할 경로 패턴 목록입니다.
+  - 위 예시는 `/path1/` 이하 모든 경로와 `/path2/detail/` 이하 모든 경로를 유니버설 링크로 허용한다는 뜻입니다.
+  - `"*"` 와 `"?*"` 와일드카드로 세부 조정도 가능합니다.
+  - 지정한 경로만 앱으로 열리고, 그 외 경로는 앱으로 열리지 않습니다.
 
 AASA 파일 역시 **HTTPS로 호스팅**되어야 하며, `https://<내도메인>/.well-known/apple-app-site-association`으로 접근 가능해야 합니다. 파일이 정상적으로 제공되는지 확인한 후, Apple 개발자 계정의 **앱 설정**(**Associated Domains**)에 해당 도메인을 추가해야 합니다. nachocode로 빌드된 iOS 앱의 경우, nachocode 측에서 **앱 서명 시 연관 도메인(Associated Domains)** 설정에 도메인을 포함해야 유효한 유니버설 링크가 완성됩니다. 그러므로 AASA 파일을 준비한 후 nachocode 지원팀에 **해당 도메인과 앱 정보를 전달**하여 앱에 연관도메인 설정을 해달라고 요청해야 할 수 있습니다.
 
@@ -62,18 +131,8 @@ AASA 파일 역시 **HTTPS로 호스팅**되어야 하며, `https://<내도메�
 - 웹상에서 **“더 나은 경험을 위해 앱을 설치하세요”**라는 메시지와 함께 설치 링크를 제공하거나,
 - 중요한 이벤트의 경우 이메일이나 푸시로 **앱 설치를 유도**하는 방식을 고려합니다.
 
-## 스토어 앱 ID 확인 방법
+:::info 스토어 ID 확인법
+구글 플레이스토어와 앱스토어에서의 앱 ID를 확인하기 어렵다면 아래 문서를 참고해보세요.
 
-딥링크 URL에서 `AOS_id`와 `iOS_id` 파라미터로 **앱의 스토어 ID**를 사용한다고 언급했습니다. 이 항목에서는 Android와 iOS에서 **자신의 앱 스토어 ID를 찾는 방법**을 안내합니다.
-
-### Android – 플레이스토어 앱 ID
-
-**Android 플레이 스토어의 앱 ID**는 곧 **앱의 패키지명**과 동일합니다. 일반적으로 nachocode로 앱을 생성하면 패키지명이 정해지며, 대시보드 **앱 설정 화면**에서 패키지명을 확인할 수 있습니다 (예: `com.company.appname`).
-
-플레이스토어에 앱을 출시한 경우, 앱의 플레이스토어 URL을 보면 `...?id=com.company.appname` 형태로 **`id=` 뒤에 패키지명이 표기**됩니다. 이 부분이 곧 앱 ID이며, 딥링크의 `AOS_id`에 그대로 넣으면 됩니다. 예를 들어 플레이스토어 URL이 `https://play.google.com/store/apps/details?id=com.project.nachocode` 라면 `AOS_id=com.project.nachocode` 로 지정합니다.
-
-### iOS – 앱스토어 앱 ID
-
-**iOS 앱스토어의 앱 ID**는 Apple에서 발급하는 **고유한 숫자 ID**입니다. 앱스토어 URL에서 확인할 수 있는데, 보통 `apps.apple.com` 주소 중에 `/id<숫자>` 형태로 포함되어 있습니다. 예를 들어 앱스토어 URL이 `https://apps.apple.com/kr/app/앱이름/id123456789` 인 경우 `id123456789`가 해당 앱의 ID입니다. 딥링크의 `iOS_id` 파라미터에는 이 **"id"를 포함한 문자열** 전체를 넣어야 합니다 (`iOS_id=id123456789`). nachocode 대시보드의 iOS 앱 정보나 App Store Connect의 앱 정보 화면에서도 **Apple ID** 항목으로 이 값을 확인할 수 있습니다.
-
-> **Note:** iOS의 App Store ID는 앱 생성 시 자동 부여되며, 개발 단계에서는 아직 없을 수 있습니다. 만약 앱스토어에 출시 전이라면 `iOS_id`를 딥링크에 넣어도 소용없으므로, 우선은 Android에 한해 딥링크-스토어 연결을 사용하거나 출시 후 해당 값을 업데이트하세요.
+➡️ [**스토어 앱 ID 확인하기**](/docs/guide/check-store-id)
+:::

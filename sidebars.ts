@@ -71,6 +71,7 @@ const sidebars: SidebarsConfig = {
         'guide/user-agent/user-agent-configuration',
       ],
     },
+    'guide/check-store-id',
   ],
   api: [
     'api/intro',
