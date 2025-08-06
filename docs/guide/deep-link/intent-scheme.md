@@ -171,6 +171,10 @@ nachocode 앱에서 **인텐트 스킴 딥링크**를 활용하려면, 우선 [*
 인텐트 스킴을 사용할 때는 **사용자 동작**(ex. 클릭)으로 호출해야 하며, 브라우저 주소창에 직접 입력하거나 자동 리디렉션으로 열 경우 동작이 제한될 수 있습니다. 또한 제조사 브라우저나 구형 브라우저에서는 지원되지 않을 수 있으므로, 인텐트 URI가 실패할 경우 대비도 필요합니다.
 :::
 
+:::info 공식 문서
+➡️ [Android Developer Docs – Intents and Intent Filters](https://developer.android.com/guide/components/intents-filters)
+:::
+
 :::tip 기술 지원
 nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다.  
 기술적인 질문이나 피드백이 있다면 언제든지 [**support@nachocode.io**](mailto:support@nachocode.io)에 **이메일**을 보내주세요.

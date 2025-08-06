@@ -27,6 +27,7 @@
     "hideable",
     "kakao",
     "kakaotalk",
+    "keytool",
     "Ktown",
     "lastupdated",
     "MMDD",
@@ -38,6 +39,7 @@
     "rgba",
     "tabbar",
     "targeturl",
-    "touchstart"
+    "touchstart",
+    "visibilitychange"
   ]
 }

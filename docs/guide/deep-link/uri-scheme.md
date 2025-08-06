@@ -6,7 +6,11 @@ keywords:
   [
     딥링크,
     딥 링크,
+    딥 링크 구현하기,
     URI 스킴,
+    URI 스킴 연동하기,
+    URL 스킴,
+    URL 스킴 연동하기,
     앱스킴,
     앱 스킴,
     Scheme 링크,
@@ -180,9 +184,6 @@ developer://open?targeturl=https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2
     // fallback 스토어 URL 지정
     let storeUrl = `https://apps.apple.com/app/id${appleAppStoreId}`;
 
-    const start = Date.now();
-    const timeout = 1500;
-
     // 기기 OS 구분
     const userAgent =
       window.navigator.userAgent || window.navigator.vendor || window.opera;
@@ -193,13 +194,17 @@ developer://open?targeturl=https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2
     // 커스텀 앱 스킴 호출 (앱 열기)
     window.location = schemeUrl;
 
+    const timeout = 1500; // 약 1.5초
     // 앱이 설치되어 있지 않을 경우, 일정 시간 후에 마켓으로 이동
-    setTimeout(() => {
-      const elapsed = Date.now() - start;
-      if (elapsed < timeout + 200) {
-        window.location.href = storeUrl;
-      }
+    const timerRef = setTimeout(() => {
+      // 스토어 주소로 이동
+      window.location.href = storeUrl;
     }, timeout);
+
+    // window의 `visibilitychange` 이벤트가 발생하면 앱이 실행됐다고 가정한다.
+    window.addEventListener('visibilitychange', () => {
+      clearTimeout(timerRef);
+    });
   }
 </script>
 ```
@@ -252,20 +257,22 @@ iOS에서는 [유니버셜 링크 (Universal Link)](./universal-link)를 사용�
 
     // 앱 실행 환경이 아닐 경우
     if (!Nachocode.env.isApp()) {
-      const start = Date.now();
-      const timeout = 1500;
       // 커스텀 앱 스킴 호출 (앱 열기)
       window.location = schemeUrl;
+
+      const timeout = 1500; // 약 1.5초
       // 앱이 설치되어 있지 않을 경우, 일정 시간 후에 마켓으로 이동
-      setTimeout(() => {
-        const elapsed = Date.now() - start;
-        if (elapsed < timeout + 200) {
-          Nachocode.store.openStore({
-            androidAppId: androidPackageName, // Android 앱 패키지명
-            iOSAppId: appleAppStoreId, // iOS Apple 앱 ID
-          });
-        }
+      const timerRef = setTimeout(() => {
+        Nachocode.store.openStore({
+          androidAppId: androidPackageName, // Android 앱 패키지명
+          iOSAppId: appleAppStoreId, // iOS Apple 앱 ID
+        });
       }, timeout);
+
+      // window의 `visibilitychange` 이벤트가 발생하면 앱이 실행됐다고 가정한다.
+      window.addEventListener('visibilitychange', () => {
+        clearTimeout(timerRef);
+      });
     }
   }
 </script>
@@ -292,7 +299,7 @@ window.location.href = `${scheme}://${path}`;
 예를 들어 카카오톡 앱을 열려면 `kakaotalk://launch`, nachocode developer 앱을 열려면 `developer://open`와 같이 그 앱의 스킴을 알맞게 호출하면 됩니다. 구현 방법은 웹에서 딥링크를 여는 것과 유사하게 **`window.location` 변경 또는 `<a>` 태그**를 사용하면 됩니다.
 
 :::warning 참고
-외부 앱의 스킴 및 지원 여부는 각 앱 개발사의 문서를 참고해야 합니다.
+기본적으로 다른 앱의 스킴은 공개된 값이 아닙니다. 외부 앱의 스킴 및 지원 여부는 **각 앱 개발사의 문서를 참고**해야 합니다.
 :::
 
 ```html
