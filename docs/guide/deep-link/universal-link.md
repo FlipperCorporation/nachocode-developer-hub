@@ -1,12 +1,13 @@
 ---
 sidebar_label: 유니버셜 링크
 pagination_label: 유니버셜 링크 (Universal Link)
-description: nachocode에서의 iOS Universal Link를 설정하는 방법과 활용법을 안내합니다.
+description: nachocode에서의 Apple iOS의 표준 딥링크 방식인 유니버셜 링크 (Universal Link)를 설정하는 방법과 활용법을 안내합니다.
 keywords:
   [
     딥링크,
     딥 링크,
     유니버셜 링크,
+    유니버셜 링크 설정하기,
     Deep Link,
     Deep-Link,
     Universal Link,
@@ -30,7 +31,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 겉보기에는 평범한 웹 URL이지만, 조건을 만족한다면 사용자가 특정 도메인의 HTTPS 링크를 열었을 때 **iPhone, iPad에서 Safari 브라우저 대신 자동으로 대응되는 앱이 실행**됩니다. 예를 들어 [**nachocode developer**](https://apps.apple.com/us/app/nachocode-developer/id6514317160) 앱과 [**https://nachocode.link**](https://nachocode.link) URL을 Universal Link로 연동해두면, iPhone의 Safari 등에서 해당 링크를 클릭했을 때 **동일 도메인을 지원하는 앱**([**nachocode developer**](https://apps.apple.com/us/app/nachocode-developer/id6514317160))이 **설치되어 있으면 앱이 곧바로 열리고**, 설치되지 않은 경우에는 **그 URL의 웹페이지**([**https://nachocode.link**](https://nachocode.link))**를 그대로 열어주는** 형태입니다.
 
-유니버셜 링크 (Universal Link)는 사용 편의성이 높습니다. 사용자는 별도의 스킴 링크를 인지하지 않아도 **익숙한 웹 URL을 클릭**하는 것만으로 앱을 열 수 있고, 앱이 설치되어 있지 않으면 **자동으로 웹 콘텐츠를 확인**할 수 있습니다. 또한 iOS에서 유니버셜 링크가 **한 번 승인**되면 이후로는 사용자의 추가 동의나 선택 창 없이 곧바로 앱이 열리기 때문에 매끄러운 사용자 경험을 제공합니다.
+유니버셜 링크 (Universal Link)는 iOS의 표준 딥링크 방식인 만큼 좋은 사용자 경험을 제공합니다. 사용자는 별도의 스킴 링크를 인지하지 않아도 **익숙한 웹 URL을 클릭**하는 것만으로 앱을 열 수 있고, 앱이 설치되어 있지 않으면 **동일한 URL이 브라우저에서 열려 여전히 콘텐츠를 확인**할 수 있습니다. 또한 iOS에서 유니버셜 링크가 **한 번 승인**되면 이후로는 사용자의 추가 동의나 선택 창 없이 곧바로 앱이 열리기 때문에 매끄러운 사용자 경험을 제공합니다.
 
 :::info
 nachocode 앱소스 <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />부터 iOS 유니버설 링크를 지원합니다.
@@ -38,7 +39,7 @@ nachocode 앱소스 <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/re
 
 ---
 
-### 유니버셜 링크 동작 원리
+### 유니버셜 링크 동작 원리 {#how-it-works}
 
 유니버셜 링크 (Universal Link)는 **도메인 소유 증명**과 **OS 설정**을 통해 동작합니다. iOS에서는 **Associated Domains**(연관 도메인)라는 기능을 이용하여, "**특정 웹 도메인의 링크가 이 앱을 열 수 있다**"는 정보를 사전에 등록합니다.
 
@@ -48,7 +49,7 @@ nachocode 앱소스 <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/re
 
 ---
 
-### 유니버셜 링크 구현 요건
+### 유니버셜 링크 구현 요건 {#requirements}
 
 유니버셜 링크 (Universal Link)를 적용하려면 **도메인 소유권 인증**, **앱 설정** 그리고 **Apple 개발자 계정 설정** 세 가지가 필요합니다.
 
@@ -67,7 +68,7 @@ nachocode 앱소스 <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/re
 
 ---
 
-### 유니버셜 링크 특징
+### 유니버셜 링크 특징 {#features}
 
 유니버셜 링크 (Universal Link)는 **iOS 9 이상**에서 동작하며, iPhone/iPad의 Safari, Mail, Messages 등 **Apple 기본 앱 및 WebView 등**에서 동작합니다. 사용자가 링크를 클릭하면 **Safari를 거치지 않고 바로 앱이 실행**되기 때문에, 이전의 스킴 방식처럼 별도 팝업이나 확인 없이도 자연스러운 전환이 가능합니다.
 
@@ -101,11 +102,11 @@ Universal Link가 동작하면 iOS에서는 **앱을 바로 실행**하기 때�
 
 ---
 
-## 유니버셜 링크 설정하기
+## 유니버셜 링크 설정하기 {#set-up}
 
 nachocode를 통해 빌드한 iOS 앱에서 유니버셜 링크 (Universal Link)를 사용하려면, **웹 도메인 소유자**로서 몇 가지 설정을 직접 해주어야 합니다. nachocode 플랫폼은 유니버셜 링크 (Universal Link) 동작을 위한 **앱 측 설정을 지원**하지만, **웹사이트 측 설정은 사용자가 직접 관리**해야 합니다.
 
-### 1. 도메인 준비 및 인증
+### 1. 도메인 준비 및 인증 {#domain-preparation}
 
 유니버셜 링크 (Universal Link)에 사용할 자신의 웹 도메인이 있어야 합니다. 해당 도메인에서 **SSL 인증서**가 설치되어 **https로 접근 가능**해야 하며, 도메인에 대한 관리 권한이 필요합니다.
 
@@ -115,7 +116,7 @@ nachocode를 통해 빌드한 iOS 앱에서 유니버셜 링크 (Universal Link)
 
 ---
 
-### 2. 웹 서버에 AASA 파일 추가
+### 2. 웹 서버에 AASA 파일 추가 {#set-aasa}
 
 iOS의 유니버설 링크 (Universal Link)를 쓰려면, 자신의 웹사이트 서버에 **Apple 앱 사이트 연관 파일**을 제공해야 합니다. 이 파일의 이름은 **apple-app-site-association** (**AASA**)이고, `.well-known/apple-app-site-association` 경로에 HTTPS로 호스팅되어 제공되어야 합니다. AASA 파일에는 앱 ID와 경로 규칙같은 연결할 iOS 앱의 정보가 담깁니다.
 
@@ -130,7 +131,7 @@ AASA 파일은 **JSON 포맷이지만 확장자가 없고** `Content-Type`은 �
 ➡️ [Apple Developer Documentation - **Supporting associated domains**](https://developer.apple.com/documentation/xcode/supporting-associated-domains)
 :::
 
-#### apple-app-site-association 파일 예시
+#### apple-app-site-association 파일 예시 {#example-aasa}
 
 ```json
 {
@@ -165,7 +166,7 @@ AASA 파일은 **JSON 포맷이지만 확장자가 없고** `Content-Type`은 �
 
 ---
 
-### 3. Developer Apple Associated Domains 설정
+### 3. Developer Apple Associated Domains 설정 {#set-associated-domains}
 
 AASA 파일이 정상적으로 서빙되는지 확인이 되었다면 아래 설정을 진행해야 합니다.
 
@@ -177,12 +178,11 @@ AASA 파일이 정상적으로 서빙되는지 확인이 되었다면 아래 설
 
 ---
 
-### 4. nachocode 대시보드 설정
+### 4. nachocode 대시보드 설정 {#set-nachocode-dashboard}
 
 :::warning 공지
-대시보드 유니버셜 링크 설정 기능은 현재 개발 중이며 아직 제공되고 있지 않습니다.  
-nachocode 팀에서 현재 업데이트를 준비 중이니 조금만 기다려주시면 감사하겠습니다.  
-지금 유니버셜 링크 사용을 희망한다면 [support@nachocode.io](mailto:support@nachocode.io)로 문의해주세요.
+유니버셜 링크 설정 기능은 아직 대시보드에서 제공되고 있지 않습니다.  
+현재는 수동 설정이 필요하오니 지금 사용을 희망하신다면 **nachocode 지원팀** [**support@nachocode.io**](mailto:support@nachocode.io)으로 요청바랍니다.  
 :::
 
 AASA 파일은 **HTTPS로 호스팅**되어야 하며, `https://<내도메인>/.well-known/apple-app-site-association`으로 반드시 접근 가능해야 합니다.
@@ -193,7 +193,7 @@ nachocode로 빌드된 iOS 앱의 경우, nachocode 측에서 **앱 서명 시 �
 
 ---
 
-### 5. associated 적용 확인
+### 5. associated 적용 확인 {#check-associated}
 
 :::tip 참고
 `/.well-known/apple-app-site-association` 설정 이후 즉각적으로 반영되지 않습니다.  
@@ -220,6 +220,13 @@ nachocode로 빌드된 iOS 앱의 경우, nachocode 측에서 **앱 서명 시 �
 <button onclick="location.href ='https://{domain}/{path}'">앱에서 보기</button>
 ```
 
+:::info 버튼을 클릭하면
+
+1. 앱이 설치된 경우 → 앱 실행 후 해당 주소의 페이지 열기
+2. 앱이 미설치된 경우 → 브라우저에서 해당 주소의 웹페이지 열기
+
+:::
+
 쿼리파라미터에 `targeturl`이 없으면 앱을 열었을 때 진입한 유니버셜 링크의 주소를 열게됩니다.
 
 예시로 `https://www.myapp.com/item1234` 로 유니버셜링크를 통해 앱을 열면 앱이 열린 후 앱 내에서 `https://www.myapp.com/item1234` 링크를 로드하게됩니다.
@@ -230,11 +237,18 @@ nachocode로 빌드된 iOS 앱의 경우, nachocode 측에서 **앱 서명 시 �
 
 ```html
 <button
-  onclick="location.href ='https://{domain}/{path}?targeturl={딥링크 통해 앱을 열었을 때 로드 할 URL}'"
+  onclick="location.href ='https://{domain}/{path}?targeturl={인코딩된 URL}'"
 >
   앱에서 보기
 </button>
 ```
+
+:::info 버튼을 클릭하면
+
+1. 앱이 설치된 경우 → 앱 실행 후 `targeturl` 페이지 열기
+2. 앱이 미설치된 경우 → 브라우저에서 해당 주소의 웹페이지 열기
+
+:::
 
 nachocode 딥링크에서는 `targeturl` 파라미터를 활용하여 앱을 열 때 곧바로 특정 페이지를 로드하도록 지정합니다. 쿼리 파라미터에 `targeturl`을 붙여주면 앱을 열었을 때 로드 할 페이지를 설정할 수 있습니다.
 유니버셜 링크가 적용된 도메인 혹은 경로가 실제로 앱에서 열어야 할 url과 다르다면 `targeturl`을 사용해주세요.
@@ -245,7 +259,7 @@ nachocode 딥링크에서는 `targeturl` 파라미터를 활용하여 앱을 열
 
 ---
 
-### 앱 미설치 시 처리
+### 앱 미설치 시 처리 {#uninstalled-ux}
 
 유니버설 링크 (Universal Link)도 [Android의 앱 링크](./app-link)와 마찬가지로, **앱이 설치되어 있지 않으면 브라우저에서 해당 URL의 웹 사이트가 열리게 됩니다.** 따라서 해당 도메인의 웹 페이지를 제공하고, 앱이 없는 사용자에게 **회원가입 유도 또는 앱 설치 안내**를 하는 것이 일반적입니다. iOS에서는 별도의 앱 미설치 감지 스크립트를 제공하지 않으므로, **웹 컨텐츠 자체를 적절히 구성**하는 것으로 대응합니다.
 
