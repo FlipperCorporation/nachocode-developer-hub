@@ -45,7 +45,7 @@ nachocode 앱소스 <BadgeWithVersion type="Android" version="v1.6.1" link="/doc
 
 ---
 
-### 앱 링크와 URI 스킴, 인텐트 스킴의 차이
+### 앱 링크와 URI 스킴, 인텐트 스킴의 차이 {#deference-from-scheme}
 
 | 구분                  | URI 스킴                                                                                                                    | 인텐트 스킴                                                                  | 앱 링크 (App Link)                                                           |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
@@ -57,7 +57,7 @@ nachocode 앱소스 <BadgeWithVersion type="Android" version="v1.6.1" link="/doc
 
 ---
 
-### 앱 링크 동작 흐름
+### 앱 링크 동작 흐름 {#how-app-link-works}
 
 앱 링크는 다음과 같은 과정을 거쳐 동작합니다.
 
@@ -70,7 +70,7 @@ nachocode 앱소스 <BadgeWithVersion type="Android" version="v1.6.1" link="/doc
 
 ---
 
-### 앱 링크 구현 요건
+### 앱 링크 구현 요건 {#app-link-requirements}
 
 Android 앱 링크 (App Link)도 iOS의 [**유니버셜 링크** (Universal Link)](./universal-link)와 마찬가지로 **도메인 소유 인증**과 **앱 설정**이 필요합니다.
 
@@ -85,7 +85,7 @@ Android 앱 링크 (App Link)도 iOS의 [**유니버셜 링크** (Universal Link
 
 ---
 
-### 앱 링크 특징
+### 앱 링크 특징 {#app-link-features}
 
 앱 링크 (App Link)는 Android 6.0 (Marshmallow, API 23) 이상에서 지원되며, 한 번 자동으로 인증이 성공하여 승인되거나 사용자가 직접 승인한 이후에는 **링크 클릭 시 바로 앱이 실행**됩니다. 만약 기기에 여러 앱이 동일 도메인에 대한 App Link를 선언했거나 인증이 안 된 경우, 사용자에게 어떤 앱으로 열지 물어볼 수 있습니다. **사용자가 "항상 이 앱으로 열기"를 선택**하면 이후로는 해당 도메인의 링크는 곧바로 그 앱으로 연결됩니다.
 
@@ -114,13 +114,13 @@ Android OS 버전 6.0 (Marshmallow, API 23)부터 사용이 가능하고, 그 �
 
 ---
 
-## 앱 링크 설정하기 {#set-up}
+## 앱 링크 설정하기 {#set-up-app-link}
 
 nachocode를 통해 빌드한 Android 앱에서 앱 링크 (App Link)를 사용하려면, **웹 도메인 소유자**로서 몇 가지 설정을 직접 해주어야 합니다. nachocode 플랫폼은 앱 링크 (App Link) 동작을 위한 **앱 측 설정을 지원**하지만, **웹사이트 측 설정은 사용자가 직접 관리**해야 합니다.
 
 아래 단계를 순서대로 진행해주세요.
 
-### 1. 도메인 준비 및 인증
+### 1. 도메인 준비 및 인증 {#domain-preparation}
 
 Android의 앱 링크 (App Link)에 사용할 HTTPS를 지원하는 본인 소유의 도메인이 필요합니다.  
 이 도메인에 대한 소유권을 Android에 증명하기 위해 `assetlinks.json` 파일을 배포할 수 있어야 합니다.
@@ -131,16 +131,16 @@ Android의 앱 링크 (App Link)에 사용할 HTTPS를 지원하는 본인 소�
 
 ---
 
-### 2. 앱 서명 키 확인
+### 2. 앱 서명 키 확인 {#check-sha256-fingerprints}
 
-#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [SHA-256 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인 {#step-1}
+#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [SHA-256 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인 {#check-sha256-fingerprints-step-1}
 
 ![nachocode_developer_android_sha](/img/docs/android/nachcoode_developer_android_sha.png)
 :::info
 지문키를 확인하기 위해서는 안드로이드 빌드가 선행되어야 합니다.
 :::
 
-#### 2. 빌드된 aab 파일을 [Google Play Console](https://play.google.com/console)에 업로드 후 [ 테스트 및 출시 > 설정 > 앱 서명 ]에서 앱 서명키 인증서의 [ SHA-256 인증서 지문 ]을 확인 {#step-2}
+#### 2. 빌드된 aab 파일을 [Google Play Console](https://play.google.com/console)에 업로드 후 [ 테스트 및 출시 > 설정 > 앱 서명 ]에서 앱 서명키 인증서의 [ SHA-256 인증서 지문 ]을 확인 {#check-sha256-fingerprints-step-2}
 
 ![google_console_fingerprint](/img/docs/google/google_console_fingerprint.png)
 
@@ -159,7 +159,7 @@ nachocode에서는 앱 출시에 **Google Play에서 생성한 앱 서명 키를
 
 ---
 
-### 3. 웹 서버에 Asset Links 파일 배포
+### 3. 웹 서버에 Asset Links 파일 배포 {#publish-asset-links}
 
 Android의 앱 링크 (App Link)를 구현하려면, 자신의 웹사이트 서버에서 **Asset Links** 파일을 제공해야 합니다. 이 파일의 이름은 **assetlinks.json**이고, `.well-known/assetlinks.json` **경로에 HTTPS로 호스팅되어 제공**되어야 합니다. **Asset Links** 파일은 **도메인 소유 권한**과 **해당 도메인과 앱이 상호 인증되었음**을 Android에 증명합니다.
 
@@ -171,7 +171,7 @@ nachocode에서 만들어진 앱의 패키지명은 일반적으로 `com.nachoco
 만약 사용자의 자체 서명으로 앱을 출시한 경우, Play 스토어 콘솔이나 `keytool`을 통해 서명을 추출해야 합니다.
 :::
 
-#### assetlinks.json 파일 예시
+#### assetlinks.json 파일 예시 {#asset-links-example}
 
 `assetlinks.json`은 아래와 같이 구성됩니다.
 
@@ -204,7 +204,7 @@ nachocode에서 만들어진 앱의 패키지명은 일반적으로 `com.nachoco
 `assetlinks.json` 파일은 반드시 **HTTPS로 제공**되어야 하며, **Content-Type: application/json** 헤더와 함께 제공되는지 확인해야 합니다. 파일을 업로드한 후, `https://<내도메인>/.well-known/assetlinks.json` 주소로 접근하여 내용이 노출되는지 테스트해야합니다.
 :::
 
-#### assetlinks.json 포맷 예시
+#### assetlinks.json 포맷 예시 {#asset-links-format}
 
 - **단일 앱 연결:** 한 도메인을 하나의 Android 앱에 연결하는 기본 예시는 위 JSON과 같습니다.
 - **다중 앱 연결:** 하나의 도메인을 여러 앱과 연결해야 하는 경우 assetlinks.json 배열에 여러 객체를 넣으면 됩니다. 각 객체마다 다른 앱의 `package_name`과 `sha256_cert_fingerprints`를 나열하면 됩니다.
@@ -234,7 +234,7 @@ nachocode로 빌드된 Android 앱의 경우, nachocode 측에서 `AndroidManife
 
 ---
 
-### 5. 앱 링크 적용 확인
+### 5. 앱 링크 적용 확인 {#check-app-link-works}
 
 설정을 완료했다면 아래 순서로 테스트하세요.
 
@@ -245,9 +245,9 @@ nachocode로 빌드된 Android 앱의 경우, nachocode 측에서 `AndroidManife
 
 ---
 
-## 앱 링크 활용하기 {#usage}
+## 앱 링크 활용하기 {#app-link-usage}
 
-### 앱 링크 사용 예시
+### 앱 링크 사용 예시 {#app-link-usage-example}
 
 웹 서버와 앱에 모든 설정이 완료되면, **사용자는 해당 도메인의 URL을 클릭하는 것만으로 앱을 바로 열 수 있게** 됩니다.
 
@@ -259,7 +259,7 @@ nachocode로 빌드된 Android 앱의 경우, nachocode 측에서 `AndroidManife
 
 ---
 
-### 앱 링크로 내 앱 열기 (딥링크 실행)
+### 앱 링크로 내 앱 열기 (딥링크 실행) {#open-my-app}
 
 ```html
 <a href="https://{host}/{path}">앱에서 보기</a>
