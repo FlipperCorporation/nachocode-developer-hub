@@ -6,11 +6,16 @@ keywords:
   [
     딥링크,
     딥 링크,
+    딥 링크 구현하기,
     유니버셜 링크,
+    유니버셜링크,
     유니버셜 링크 설정하기,
+    유니버셜 링크 구현하기,
     Deep Link,
     Deep-Link,
     Universal Link,
+    UniversalLink,
+    Universal-Link,
     App Links,
     iOS,
   ]
@@ -25,13 +30,13 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 ![iOS Only](https://img.shields.io/badge/iOS-Only-gray?logo=apple)
 
-## 유니버설 링크 이해하기 {#understand}
+## 유니버설 링크 이해하기 {#understand-universal-link}
 
-**유니버설 링크**(**Universal Link**)는 Apple에서 도입한 **표준 딥링크 방식**으로, **iOS에서 정규 웹 URL을 이용해 앱을 여는 기술**입니다. **하나의 HTTPS 링크로 앱과 웹을 모두 연결**할 수 있어 사용성, 보안성 면에서 우수합니다.
+**유니버설 링크** (**Universal Link**)는 Apple에서 도입한 **표준 딥링크 방식**으로, **iOS에서 정규 웹 URL을 이용해 앱을 여는 기술**입니다. **하나의 HTTPS 링크로 앱과 웹을 모두 연결**할 수 있어 사용성, 보안성 면에서 우수합니다.
 
-겉보기에는 평범한 웹 URL이지만, 조건을 만족한다면 사용자가 특정 도메인의 HTTPS 링크를 열었을 때 **iPhone, iPad에서 Safari 브라우저 대신 자동으로 대응되는 앱이 실행**됩니다. 예를 들어 [**nachocode developer**](https://apps.apple.com/us/app/nachocode-developer/id6514317160) 앱과 [**https://nachocode.link**](https://nachocode.link) URL을 Universal Link로 연동해두면, iPhone의 Safari 등에서 해당 링크를 클릭했을 때 **동일 도메인을 지원하는 앱**([**nachocode developer**](https://apps.apple.com/us/app/nachocode-developer/id6514317160))이 **설치되어 있으면 앱이 곧바로 열리고**, 설치되지 않은 경우에는 **그 URL의 웹페이지**([**https://nachocode.link**](https://nachocode.link))**를 그대로 열어주는** 형태입니다.
+겉보기에는 평범한 웹 URL이지만, 조건을 만족한다면 사용자가 특정 도메인의 HTTPS 링크를 열었을 때 **iPhone, iPad에서 Safari 브라우저 대신 자동으로 대응되는 앱이 실행**됩니다. 예를 들어 [**nachocode developer**](https://apps.apple.com/us/app/nachocode-developer/id6514317160) 앱과 [**https://nachocode.link**](https://nachocode.link) URL을 유니버셜 링크로 연동해두면, iPhone의 Safari 등에서 해당 링크를 클릭했을 때 **동일 도메인을 지원하는 앱**([**nachocode developer**](https://apps.apple.com/us/app/nachocode-developer/id6514317160))이 **설치되어 있으면 앱이 곧바로 실행되고 해당 URL을 앱 내에서 처리**합니다. 설치되지 않은 경우에는 **동일한 URL의 웹페이지**([**https://nachocode.link**](https://nachocode.link))**를 그대로 브라우저에서 열어 웹 콘텐츠를 표시**하는 형태입니다.
 
-유니버셜 링크 (Universal Link)는 iOS의 표준 딥링크 방식인 만큼 좋은 사용자 경험을 제공합니다. 사용자는 별도의 스킴 링크를 인지하지 않아도 **익숙한 웹 URL을 클릭**하는 것만으로 앱을 열 수 있고, 앱이 설치되어 있지 않으면 **동일한 URL이 브라우저에서 열려 여전히 콘텐츠를 확인**할 수 있습니다. 또한 iOS에서 유니버셜 링크가 **한 번 승인**되면 이후로는 사용자의 추가 동의나 선택 창 없이 곧바로 앱이 열리기 때문에 매끄러운 사용자 경험을 제공합니다.
+유니버셜 링크는 Android의 공식 딥링크 방식인 [**앱 링크** (App Link)](./app-link)와 유사하며, iOS의 표준 딥링크 방식인 만큼 **좋은 사용자 경험을 제공**합니다. 사용자는 별도의 스킴 링크를 인지하지 않아도 **익숙한 웹 URL을 클릭**하는 것만으로 앱을 열 수 있고, 앱이 설치되어 있지 않으면 **동일한 URL이 브라우저에서 열려 여전히 콘텐츠를 확인**할 수 있습니다. 또한 iOS에서 유니버셜 링크가 **한 번 승인**되면 이후로는 사용자의 추가 동의나 선택 창 없이 곧바로 앱이 열리기 때문에 매끄러운 사용자 경험을 제공합니다.
 
 :::info
 nachocode 앱소스 <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />부터 iOS 유니버설 링크를 지원합니다.
@@ -61,7 +66,7 @@ nachocode 앱소스 <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/re
 2. **앱에 Associated Domains 설정**
    - 앱의 코드 서명에 **Associated Domains** 권한(entitlement)을 추가하고, 거기에 `applinks:your.domain.com` 형식으로 해당 도메인을 명시해야 합니다.
    - iOS는 앱 설치 시 이 값을 확인하여, 추후 해당 도메인의 링크를 클릭하면 이 앱으로 열어줄 수 있게 연결짓습니다.
-   - nachocode 플랫폼에서는 **해당 설정을 대행하여 앱에 적용**합니다.
+   - nachocode 플랫폼에서는 **해당 앱 설정을 시스템 상에서 자동으로 앱에 적용**합니다.
 3. **Apple 개발자 계정 설정 및 프로비저닝**
    - Apple 개발자 계정에서 해당 앱의 App ID에 **Associated Domains** 기능이 활성화되어 있어야 합니다.
    - nachocode를 통해 빌드한 앱이라도, 사용자 측의 **Apple 개발자 계정 설정 및 프로비저닝**이 필요합니다.
@@ -70,7 +75,7 @@ nachocode 앱소스 <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/re
 
 ### 유니버셜 링크 특징 {#features}
 
-유니버셜 링크 (Universal Link)는 **iOS 9 이상**에서 동작하며, iPhone/iPad의 Safari, Mail, Messages 등 **Apple 기본 앱 및 WebView 등**에서 동작합니다. 사용자가 링크를 클릭하면 **Safari를 거치지 않고 바로 앱이 실행**되기 때문에, 이전의 스킴 방식처럼 별도 팝업이나 확인 없이도 자연스러운 전환이 가능합니다.
+유니버셜 링크 (Universal Link)는 **iOS 9 이상**에서 동작하며, iPhone/iPad의 Safari, Mail, Messages 등 **Apple 기본 앱 및 WebView 등**에서 동작합니다. 사용자가 링크를 클릭하면 **Safari를 거치지 않고 바로 앱이 실행**되기 때문에, 이전의 [**URI 스킴** (URI Scheme)](./uri-scheme) 방식처럼 별도 팝업이나 확인 없이도 자연스러운 전환이 가능합니다.
 
 iOS에서는 한 번 유니버설 링크가 앱으로 연결되면 **추후에도 계속 앱으로 열리는 것이 기본 동작**이므로, 사용자가 특별히 링크를 길게 눌러 "**웹으로 열기**"를 선택하지 않는 한 **사용자에게 “앱으로 열까요?” 같은 확인 팝업을 표시하지 않고** 편리하게 앱으로 연결됩니다.
 사용자가 이전에 해당 도메인을 웹으로 열도록 설정했을 때만 예외적으로 웹이 열릴 수 있습니다.
@@ -89,10 +94,10 @@ Apple이 제공하는 표준 방식이므로 **보안과 사용자 경험이 뛰
 4. **단일 링크 사용**
    - 하나의 URL로 웹과 앱을 모두 처리할 수 있어, 마케팅/운영 측면에서 **URL 관리가 단순**해집니다.
 
-유니버셜 링크 (Universal Link)는 사용자가 **링크를 주소창에 직접 입력**하거나 JavaScript 등을 통해 **리다이렉트로 해당 링크를 열 경우**에는 동작하지 않습니다. **오직 사용자가 링크를 터치하여 이동**하는 시나리오에서만 연동됩니다. 만약 설정이 잘못되었거나 조건이 안 맞으면, 링크가 앱이 아닌 웹으로만 열리므로 설정을 꼼꼼히 검증해야 합니다.
+유니버셜 링크는 사용자가 **링크를 주소창에 직접 입력**하거나 JavaScript 등을 통해 **리다이렉트로 해당 링크를 열 경우**에는 동작하지 않습니다. **오직 사용자가 링크를 터치하여 이동**하는 시나리오에서만 연동됩니다. 만약 설정이 잘못되었거나 조건이 안 맞으면, 링크가 앱이 아닌 웹으로만 열리므로 설정을 꼼꼼히 검증해야 합니다.
 
 :::warning 주의사항
-유니버셜 링크 (Universal Link)를 적용할 때는 **HTTPS 보안**이 필수이므로 HTTP나 IP주소 링크 등은 동작하지 않습니다.  
+유니버셜 링크를 적용할 때는 **HTTPS 보안**이 필수이므로 HTTP나 IP주소 링크 등은 동작하지 않습니다.  
 또한 Apple 개발자 계정 팀 ID와 앱 ID 구성 등 정확한 설정이 필요합니다.
 
 Universal Link가 동작하면 iOS에서는 **앱을 바로 실행**하기 때문에, 만약 웹 콘텐츠도 제공해야 하는 경우라면 **"이 페이지를 앱에서 여시겠습니까?" 같은 중간 안내**를 구현할 수 없으므로 사용자가 원래 웹페이지를 보려고 한 것인지, 앱으로 바로 이동해도 되는지에 대한 고려가 필요합니다.
@@ -104,7 +109,7 @@ Universal Link가 동작하면 iOS에서는 **앱을 바로 실행**하기 때�
 
 ## 유니버셜 링크 설정하기 {#set-up}
 
-nachocode를 통해 빌드한 iOS 앱에서 유니버셜 링크 (Universal Link)를 사용하려면, **웹 도메인 소유자**로서 몇 가지 설정을 직접 해주어야 합니다. nachocode 플랫폼은 유니버셜 링크 (Universal Link) 동작을 위한 **앱 측 설정을 지원**하지만, **웹사이트 측 설정은 사용자가 직접 관리**해야 합니다.
+nachocode를 통해 빌드한 iOS 앱에서 유니버셜 링크 (Universal Link)를 사용하려면, **웹 도메인 소유자**로서 몇 가지 설정을 직접 해주어야 합니다. nachocode 플랫폼은 유니버셜 링크 동작을 위한 **앱 측 설정을 지원**하지만, **웹사이트 측 설정은 사용자가 직접 관리**해야 합니다.
 
 ### 1. 도메인 준비 및 인증 {#domain-preparation}
 
@@ -116,11 +121,11 @@ nachocode를 통해 빌드한 iOS 앱에서 유니버셜 링크 (Universal Link)
 
 ---
 
-### 2. 웹 서버에 AASA 파일 추가 {#set-aasa}
+### 2. 웹 서버에 AASA 파일 배포 {#set-aasa}
 
-iOS의 유니버설 링크 (Universal Link)를 쓰려면, 자신의 웹사이트 서버에 **Apple 앱 사이트 연관 파일**을 제공해야 합니다. 이 파일의 이름은 **apple-app-site-association** (**AASA**)이고, `.well-known/apple-app-site-association` 경로에 HTTPS로 호스팅되어 제공되어야 합니다. AASA 파일에는 앱 ID와 경로 규칙같은 연결할 iOS 앱의 정보가 담깁니다.
+iOS의 유니버설 링크 (Universal Link)를 쓰려면, 자신의 웹사이트 서버에서 **Apple 앱 사이트 연관 파일**을 제공해야 합니다. 이 파일의 이름은 **apple-app-site-association** (**AASA**)이고, `.well-known/apple-app-site-association` 경로에 HTTPS로 호스팅되어 제공되어야 합니다. AASA 파일에는 앱 ID와 경로 규칙같은 연결할 iOS 앱의 정보가 담깁니다.
 
-nachocode 앱의 **앱 식별자**(Apple Team ID와 Bundle ID 조합)를 이 파일에 포함시켜야 합니다. nachocode 앱의 번들 ID는 일반적으로 `com.nachocode.앱이름` 형식이며, Team ID는 사용자의 Apple 개발자 계정에 따라 다릅니다.
+iOS 앱의 **앱 식별자**(Apple Team ID와 Bundle ID 조합)를 이 파일에 포함시켜야 합니다. nachocode에서 만들어진 앱의 번들 ID는 일반적으로 `com.nachocode.서비스명` 형식이며, Team ID는 사용자의 Apple 개발자 계정에 따라 다릅니다.
 
 :::warning 주의사항
 AASA 파일은 **JSON 포맷이지만 확장자가 없고** `Content-Type`은 반드시 `application/json`으로 보내야 합니다.  
@@ -157,7 +162,7 @@ AASA 파일은 **JSON 포맷이지만 확장자가 없고** `Content-Type`은 �
   - `ABCDE12345`는 Apple 개발자 계정의 팀 ID 예시이고, `com.nachocode.myapp`은 앱의 Bundle ID입니다.
   - **개발자 팀 ID**는 [**Apple Developer**](https://developer.apple.com/) - 멤버십 세부 사항에서 확인 가능합니다.
   - 앱의 **번들 ID**는 [**App Store Connect**](https://appstoreconnect.apple.com/) - 앱 정보에서 확인 가능합니다.
-    ![appstore-connect-bundle-id](/img/docs/apple/appstore_connect_bundle_id.webp)
+    ![appstore-connect-bundle-id](/img/docs/apple/appstore_connect_bundle_id.png)
 - `paths`: 유니버설 링크로 연결할 경로 패턴 목록입니다.
   - 위 예시는 `/path1/` 이하 모든 경로와 `/path2/detail/` 이하 모든 경로를 유니버설 링크로 허용한다는 뜻입니다.
   - `"*"` 와 `"?*"` 와일드카드로 세부 조정도 가능합니다.
@@ -204,10 +209,10 @@ nachocode로 빌드된 iOS 앱의 경우, nachocode 측에서 **앱 서명 시 �
 
 설정이 완료되면 Safari에서 접속했을 때, **앱 열기 배너가 자동으로 노출**되는 것을 확인할 수 있습니다. (해당 기능은 **Safari에서 지원**하는 기능입니다.)
 
-![universal-link-associated-check](/img/docs/deep-link/universal_link_associated_check.webp)
+![universal-link-associated-check](/img/docs/deep-link/universal_link_associated_check.png)
 
 :::info 참고
-유니버셜 링크 (Universal Link)를 제대로 설정했고 앱이 설치되어 있음에도 웹으로 이동한다면, 딥링크가 동작하지 않은 경우입니다.
+유니버셜 링크를 제대로 설정했고 앱이 설치되어 있음에도 웹으로 이동한다면, 딥링크가 동작하지 않은 경우입니다.
 :::
 
 ---
@@ -217,7 +222,7 @@ nachocode로 빌드된 iOS 앱의 경우, nachocode 측에서 **앱 서명 시 �
 ### 유니버셜 링크로 내 앱 열기 (딥링크 실행) {#open-my-app}
 
 ```html
-<button onclick="location.href ='https://{domain}/{path}'">앱에서 보기</button>
+<button onclick="location.href ='https://{host}/{path}'">앱에서 보기</button>
 ```
 
 :::info 버튼을 클릭하면
@@ -237,7 +242,7 @@ nachocode로 빌드된 iOS 앱의 경우, nachocode 측에서 **앱 서명 시 �
 
 ```html
 <button
-  onclick="location.href ='https://{domain}/{path}?targeturl={인코딩된 URL}'"
+  onclick="location.href ='https://{host}/{path}?targeturl={인코딩된 URL}'"
 >
   앱에서 보기
 </button>
