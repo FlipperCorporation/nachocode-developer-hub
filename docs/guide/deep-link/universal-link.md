@@ -132,7 +132,7 @@ AASA 파일은 **JSON 포맷이지만 확장자가 없고** `Content-Type`은 �
 이 파일은 반드시 **JSON 구조가 깨지지 않아야하고** **정확한 위치** (`./well-known/`)에 **호스팅** 되어야 합니다.
 :::
 
-:::tip AASA 공식 가이드
+:::tip AASA 공식 문서
 ➡️ [Apple Developer Documentation - **Supporting associated domains**](https://developer.apple.com/documentation/xcode/supporting-associated-domains)
 :::
 
@@ -187,14 +187,14 @@ AASA 파일이 정상적으로 서빙되는지 확인이 되었다면 아래 설
 
 :::warning 공지
 유니버셜 링크 설정 기능은 아직 대시보드에서 제공되고 있지 않습니다.  
-현재는 수동 설정이 필요하오니 지금 사용을 희망하신다면 **nachocode 지원팀** [**support@nachocode.io**](mailto:support@nachocode.io)으로 요청바랍니다.  
+현재는 수동 설정이 필요하오니 지금 사용을 희망하신다면 **nachocode 지원팀** [**support@nachocode.io**](mailto:support@nachocode.io)으로 요청 바랍니다.  
 :::
 
 AASA 파일은 **HTTPS로 호스팅**되어야 하며, `https://<내도메인>/.well-known/apple-app-site-association`으로 반드시 접근 가능해야 합니다.
 
 nachocode로 빌드된 iOS 앱의 경우, nachocode 측에서 **앱 서명 시 연관 도메인(Associated Domains)** 설정에 도메인을 포함해야 유효한 유니버설 링크가 완성됩니다. 그러므로 AASA 파일을 준비한 후 [nachocode 지원팀](mailto:support@nachocode.io)에 **해당 도메인과 앱 정보를 전달**하여 앱에 연관도메인 설정을 할 수 있도록 요청 바랍니다.
 
-도메인을 추가 및 설정이 완료된 후 **앱을 재빌드**해야 변경 사항이 적용됩니다. 빌드된 앱의 `.entitlements`에 해당 도메인이 포함되어 있게 됩니다.
+도메인 추가 및 설정이 완료된 후 **앱을 재빌드**해야 변경 사항이 적용됩니다. 빌드된 앱의 `.entitlements`에 해당 도메인이 포함되어 있게 됩니다.
 
 ---
 
@@ -275,6 +275,5 @@ nachocode 딥링크에서는 `targeturl` 파라미터를 활용하여 앱을 열
 ---
 
 :::tip 기술 지원
-nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다.  
-기술적인 질문이나 피드백이 있다면 언제든지 [**support@nachocode.io**](mailto:support@nachocode.io)에 **이메일**을 보내주세요.
+nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다. **유니버셜 링크 설정에 어려움**이 있거나 **추가적인 기술적인 질문이나 피드백**이 있다면 언제든지 [**support@nachocode.io**](mailto:support@nachocode.io)에 **이메일**을 보내주세요.
 :::
