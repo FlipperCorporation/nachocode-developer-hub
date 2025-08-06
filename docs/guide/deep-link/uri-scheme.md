@@ -326,7 +326,7 @@ nachocode 앱에서 외부 앱을 호출할 때의 fallback 처리는 좀 더 �
 :::info 스토어 ID 확인법
 구글 플레이스토어와 앱스토어에서의 앱 ID를 확인하기 어렵다면 아래 문서를 참고해보세요.
 
-➡️ [**스토어 ID 확인하기**](./check-store-id)
+➡️ [**스토어 ID 확인하기**](/docs/guide/check-store-id)
 :::
 
 :::tip 기술 지원
