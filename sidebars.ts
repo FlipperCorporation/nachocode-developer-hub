@@ -18,6 +18,23 @@ const sidebars: SidebarsConfig = {
         'guide/push/topic-push',
       ],
     },
+    {
+      type: 'category',
+      label: '딥링크',
+      link: {
+        type: 'generated-index',
+        title: '딥링크 (Deep Link)',
+        slug: '/guide/deep-link',
+      },
+      items: [
+        'guide/deep-link/intro',
+        'guide/deep-link/uri-scheme',
+        'guide/deep-link/intent-scheme',
+        'guide/deep-link/universal-link',
+        'guide/deep-link/app-link',
+        'guide/deep-link/nachocode-link',
+      ],
+    },
     'guide/iap',
     {
       type: 'category',
@@ -54,6 +71,7 @@ const sidebars: SidebarsConfig = {
         'guide/user-agent/user-agent-configuration',
       ],
     },
+    'guide/check-store-id',
   ],
   api: [
     'api/intro',
@@ -168,6 +186,7 @@ const sidebars: SidebarsConfig = {
             'releases/v1/app-source/android/release-v-1-6-2',
             'releases/v1/app-source/android/release-v-1-6-1',
             'releases/v1/app-source/android/release-v-1-6-0',
+            'releases/v1/app-source/android/release-v-1-5-1',
             'releases/v1/app-source/android/release-v-1-5-0',
             'releases/v1/app-source/android/release-v-1-4-2',
             'releases/v1/app-source/android/release-v-1-4-1',

@@ -21,7 +21,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> <BadgeWithVersion type="Android" version="v1.6.0" link="/docs/releases/v1/app-source/android/release-v-1-6-0" /> <BadgeWithVersion type="iOS" version="v1.6.0" link="/docs/releases/v1/app-source/ios/release-v-1-6-0" />  
-> 🔔 **최신화 일자:** 2025-07-18
+> 🔔 **최신화 일자:** 2025-08-05
 
 ## **개요** {#overview}
 
@@ -57,6 +57,12 @@ export declare type StoreInfo =
 | -------------- | -------- | ---------------- | -------------------------------------------------------------------------------------------------------- |
 | `androidAppId` | `string` | 조건부 (Android) | **Google Play Store**의 앱 ID (패키지 이름)                                                              |
 | `iOSAppId`     | `string` | 조건부 (iOS)     | **Apple App Store**의 앱 ID ([**Apple App Store Connect**](https://appstoreconnect.apple.com/)에서 확인) |
+
+:::info 스토어 ID 확인법
+구글 플레이스토어와 앱스토어에서의 앱 ID를 확인하기 어렵다면 아래 문서를 참고해보세요.
+
+➡️ [**스토어 앱 ID 확인하기**](/docs/guide/check-store-id)
+:::
 
 ---
 
@@ -108,6 +114,12 @@ Web 환경에서는 OS에 따라 각각 적절한 스토어 페이지로 이동�
 Android에서는 `androidAppId`,  
 iOS에서는 `iOSAppId`가 활용되기에  
 최소한 하나의 **App ID**를 포함해야 합니다.
+:::
+
+:::info 스토어 ID 확인법
+구글 플레이스토어와 앱스토어에서의 앱 ID를 확인하기 어렵다면 아래 문서를 참고해보세요.
+
+➡️ [**스토어 앱 ID 확인하기**](/docs/guide/check-store-id)
 :::
 
 #### 예제 {#open-store-examples}
@@ -187,6 +199,12 @@ Nachocode.store.openStore({
 Android에서는 `androidAppId`,  
 iOS에서는 `iOSAppId`가 활용되기에  
 최소한 하나의 **App ID**를 포함해야 합니다.
+:::
+
+:::info 스토어 ID 확인법
+구글 플레이스토어와 앱스토어에서의 앱 ID를 확인하기 어렵다면 아래 문서를 참고해보세요.
+
+➡️ [**스토어 앱 ID 확인하기**](/docs/guide/check-store-id)
 :::
 
 #### 예제 {#open-review-in-store-examples}

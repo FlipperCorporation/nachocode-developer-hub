@@ -14,15 +14,25 @@
   "prettier.enable": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "cSpell.words": [
+    "AASA",
+    "applinks",
+    "applist",
+    "appstore",
+    "assetlinks",
     "backkey",
     "birthyear",
+    "Deeplink",
     "faceid",
     "Geocoder",
     "Geolocation",
     "hideable",
     "kakao",
+    "kakaotalk",
+    "keytool",
+    "Ktown",
     "lastupdated",
     "MMDD",
+    "myapp",
     "nachocode",
     "networkchanged",
     "nohup",
@@ -30,6 +40,8 @@
     "pretendard",
     "rgba",
     "tabbar",
-    "touchstart"
+    "targeturl",
+    "touchstart",
+    "visibilitychange"
   ]
 }
