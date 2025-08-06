@@ -26,7 +26,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />  
-> 🔔 **최신화 일자:** 2025-08-06
+> 🔔 **최신화 일자:** 2025-08-07
 
 ![iOS Only](https://img.shields.io/badge/iOS-Only-gray?logo=apple)
 
@@ -255,11 +255,13 @@ nachocode로 빌드된 iOS 앱의 경우, nachocode 측에서 **앱 서명 시 �
 
 :::
 
-nachocode 딥링크에서는 `targeturl` 파라미터를 활용하여 앱을 열 때 곧바로 특정 페이지를 로드하도록 지정합니다. 쿼리 파라미터에 `targeturl`을 붙여주면 앱을 열었을 때 로드 할 페이지를 설정할 수 있습니다.
+nachocode 딥링크에서는 `targeturl` 쿼리 파라미터를 활용하여 앱을 열 때 곧바로 특정 페이지를 로드하도록 지정 할 수 있습니다.  
 유니버셜 링크가 적용된 도메인 혹은 경로가 실제로 앱에서 열어야 할 url과 다르다면 `targeturl`을 사용해주세요.
 
 :::warning **주의**
-`targeturl`에 사용하는 URL 값은 반드시 **URI 인코딩**된 형태로 넣어야 합니다. 예를 들어 `https://developer.nachocode.io/docs/guide/deep-link/universal-link`를 타겟 URL로 지정하려면 `https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2Fdeep-link%2Funiversal-link` 처럼 인코딩해야 합니다.
+`targeturl`에 사용하는 URL 값은 반드시 **URI 인코딩**된 형태로 넣어야 합니다.
+
+예를 들어 `https://developer.nachocode.io/docs/guide/deep-link/universal-link`를 타겟 URL로 지정하려면 `https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2Fdeep-link%2Funiversal-link` 처럼 인코딩해야 합니다.
 :::
 
 ---
