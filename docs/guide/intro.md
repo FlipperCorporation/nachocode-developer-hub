@@ -10,6 +10,7 @@ keywords:
     네이티브 앱,
     웹뷰 앱,
     푸시 알림,
+    딥링크,
     인앱 결제,
     Hybrid App,
     안드로이드,
@@ -26,7 +27,7 @@ keywords:
 
 ![nachocode](/img/docs/nachocode.png)
 
-> 🔔 **최신화 일자:** 2025-08-01
+> 🔔 **최신화 일자:** 2025-08-07
 
 ## nachocode 서비스
 
@@ -112,8 +113,8 @@ nachocode 개발자 가이드 문서는 아래와 같은 구조로 구성되어 
 
 nachocode 플랫폼에서 제공하는 **앱 소스코드**에 대한 내용을 다룹니다.
 
-:::info 가이드 바로가기
-➡️ [앱소스(App Source) 가이드 바로가기](./app-source)
+:::info 앱소스 가이드 보러가기
+➡️ [앱소스(App Source) 가이드](./app-source)
 :::
 
 ### 2. [**푸시 알림** (**Push Notification**)](./push) {#push-notification}
@@ -121,53 +122,67 @@ nachocode 플랫폼에서 제공하는 **앱 소스코드**에 대한 내용을 
 nachocode 플랫폼에서 제공하는 **개인화 푸시**와 **토픽 푸시**에 대한 내용을 다룹니다.
 개인화 푸시 전송에 필요한 준비 과정과 프로세스를 확인할 수 있습니다.
 
-:::info 가이드 바로가기
-➡️ [개인화 푸시 가이드 바로가기](./push/personal-push)
-➡️ [토픽 푸시 가이드 바로가기](./push/topic-push)
+:::info 푸시 가이드 보러가기
+➡️ [개인화 푸시 가이드](./push/personal-push)
+➡️ [토픽 푸시 가이드](./push/topic-push)
 :::
 
-### 3. [**인앱 결제** (**In App Purchase**)](./iap) {#in-app-purchase}
+### 3. [**딥링크** (**Deep Link**)](./deep-link) {#deep-link}
 
-nachocode 플랫폼에서 제공하는 **인앱결제** 기능 사용 시 필요한 설정에 대한 내용을 다룹니다.
+nachocode 플랫폼에서 제공하는 **딥링크**에 대한 내용을 다룹니다.
+딥링크 기능에 대한 기본 구조와 역할, 설정에 필요한 준비 과정과 어떤 방식으로 활용할 수 있는지 확인할 수 있습니다.
+
+:::info 딥링크 가이드 보러가기
+➡️ [딥링크 개요](./deep-link/intro)  
+➡️ [URI 스킴](./deep-link/uri-scheme)  
+➡️ [인텐트 스킴](./deep-link/intent-scheme)  
+➡️ [유니버셜 링크](./deep-link/universal-link)  
+➡️ [앱 링크](./deep-link/app-link)  
+➡️ [나쵸 링크](./deep-link/nachocode-link)
+:::
+
+### 4. [**인앱 결제** (**In App Purchase**)](./iap) {#in-app-purchase}
+
+nachocode 플랫폼에서 제공하는 **인앱 결제** 기능 사용 시 필요한 설정에 대한 내용을 다룹니다.
 **인앱 결제** 기능에 대한 정보 및 정책, 처리 예시 등을 확인할 수 있습니다.
 
-:::info 가이드 바로가기
-➡️ [인앱 결제 가이드 바로가기](./iap)
+:::info 인앱 결제 가이드 보러가기
+➡️ [인앱 결제 가이드](./iap)
 :::
 
-### 4. [**웹훅** (**Web Hook**)](./webhook/overview) {#web-hook}
+### 5. [**웹훅** (**Web Hook**)](./webhook/overview) {#web-hook}
 
 nachocode 플랫폼에서 제공하는 **웹훅**에 대한 내용을 다룹니다.
 
 웹훅의 공통적인 요청 정보 및 테스트 방법 등을 확인할 수 있습니다.
 
-:::info 가이드 바로가기
-➡️ [웹훅 가이드 바로가기](./webhook/overview)
+:::info 웹훅 가이드 보러가기
+➡️ [웹훅 가이드](./webhook/overview)
 :::
 
-#### 4-1. 인앱결제 구매 웹훅 {#web-hook-iap-purchase}
+#### 5-1. 인앱결제 구매 웹훅 {#web-hook-iap-purchase}
 
 구매 이벤트에 관한 정보 및 요청 본문 예시를 확인할 수 있습니다.
 
-:::info 가이드 바로가기
-➡️ [인앱결제 구매 이벤트 가이드 바로가기](./webhook/iap/purchase)
+:::info 인앱결제 구매 웹훅 가이드 보러가기
+➡️ [인앱결제 구매 웹훅 가이드](./webhook/iap/purchase)
 :::
 
-#### 4-2. 인앱결제 환불 웹훅 {#web-hook-iap-refund}
+#### 5-2. 인앱결제 환불 웹훅 {#web-hook-iap-refund}
 
 환불 이벤트에 관한 정보 및 요청 본문 예시를 확인할 수 있습니다.
 
-:::info 가이드 바로가기
-➡️ [인앱결제 환불 이벤트 가이드 바로가기](./webhook/iap/refund)
+:::info 인앱결제 환불 웹훅 가이드 보러가기
+➡️ [인앱결제 환불 웹훅 가이드](./webhook/iap/refund)
 :::
 
-### 5. [**유저 에이전트** (**User Agent**)](./user-agent) {#user-agent}
+### 6. [**유저 에이전트** (**User Agent**)](./user-agent) {#user-agent}
 
 nachocode 플랫폼에서 제공하는 커스텀 User Agent에 대한 내용을 다룹니다.
 **User Agent** 기능에 대한 기본 구조와 역할, 어떤 방식으로 활용할 수 있는지 확인할 수 있습니다.
 
-:::info 가이드 바로가기
-➡️ [User Agent 가이드 바로가기](./user-agent/user-agent-definition)
+:::info 유저 에이전트 가이드 보러가기
+➡️ [User Agent 가이드](./user-agent/user-agent-definition)
 :::
 
 ---

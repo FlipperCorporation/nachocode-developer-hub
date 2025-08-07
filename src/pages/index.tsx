@@ -503,8 +503,8 @@ const BottomBanner = () => {
 export default function Home(): JSX.Element {
   return (
     <Layout
-      title="가장 쉬운 네이티브 웹뷰 앱 개발"
-      description="nachocode는 웹 개발자가 JavaScript만으로 고도화된 모바일 네이티브 앱을 개발할 수 있도록 돕는 로우코드 앱 빌드 플랫폼입니다."
+      title="가장 쉬운 하이브리드 앱 개발"
+      description="nachocode는 웹 개발자가 JavaScript만으로 고도화된 모바일 하이브리드 앱을 개발할 수 있도록 돕는 로우코드 앱 빌드 플랫폼입니다."
     >
       <main>
         <AdvancedAppFeaturesSection />
