@@ -1,7 +1,7 @@
 ---
 sidebar_label: 유니버셜 링크
 pagination_label: 유니버셜 링크 (Universal Link)
-description: nachocode에서의 Apple iOS의 표준 딥링크 방식인 유니버셜 링크 (Universal Link)를 설정하는 방법과 활용법을 안내합니다.
+description: Apple iOS의 표준 딥링크 방식인 유니버셜 링크 (Universal Link)에 대한 개념과 nachocode에서 유니버셜 링크를 설정하는 방법, 활용법을 안내합니다.
 keywords:
   [
     딥링크,
@@ -277,5 +277,5 @@ nachocode 딥링크에서는 `targeturl` 쿼리 파라미터를 활용하여 앱
 ---
 
 :::tip 기술 지원
-nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다. **유니버셜 링크 설정에 어려움**이 있거나 **추가적인 기술적인 질문이나 피드백**이 있다면 언제든지 [**support@nachocode.io**](mailto:support@nachocode.io)에 **이메일**을 보내주세요.
+nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다. **유니버셜 링크 설정에 어려움**이 있거나 **추가적인 기술적인 질문이나 피드백**이 있다면 언제든지 [**nachocode 지원팀**](mailto:support@nachocode.io)에 문의 해주세요.
 :::

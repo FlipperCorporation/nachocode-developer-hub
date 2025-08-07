@@ -1,7 +1,7 @@
 ---
 sidebar_label: URI 스킴
 pagination_label: URI 스킴 (URI Scheme)
-description: 가장 기본적인 모바일 앱 딥링크인 URI 스킴의 개념과 nachocode 대시보드에서 앱 설정하는 방법, URI 앱 스킴 활용법을 안내합니다.
+description: 가장 기본적인 모바일 앱 딥링크인 URI 스킴 (URI Scheme)의 개념과 nachocode 대시보드에서 앱 설정하는 방법, nachocode에서의 URI 앱 스킴 활용법을 안내합니다.
 keywords:
   [
     딥링크,
@@ -333,6 +333,5 @@ nachocode 앱에서 외부 앱을 호출할 때의 fallback 처리는 좀 더 �
 :::
 
 :::tip 기술 지원
-nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다.  
-기술적인 질문이나 피드백이 있다면 언제든지 [**support@nachocode.io**](mailto:support@nachocode.io)에 **이메일**을 보내주세요.
+nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다. **URI 스킴 설정에 어려움**이 있거나 **추가적인 기술적인 질문이나 피드백**이 있다면 언제든지 [**nachocode 지원팀**](mailto:support@nachocode.io)에 문의 해주세요.
 :::
