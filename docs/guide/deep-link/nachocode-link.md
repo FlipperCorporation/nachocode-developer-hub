@@ -1,7 +1,7 @@
 ---
 sidebar_label: 나쵸 링크 (nachocode.link)
 pagination_label: 나쵸 링크 (nachocode.link)
-description: nachocode에서 제공하는 적응형 딥링크 서비스, 나쵸 링크 (nachocode.link)의 개념과 사용 방법을 안내합니다.
+description: nachocode에서 제공하는 적응형 통합 딥링크 서비스, 나쵸 링크 (nachocode.link)의 개념과 설정하는 방법, 사용 방법 등을 안내합니다. 나쵸 링크로 특정 페이지를 여는 방법과 실제 고객 활용 사례도 함께 소개합니다.
 keywords:
   [
     딥링크,
@@ -56,7 +56,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 ---
 
-### nachocode.link란?
+### nachocode.link란? {#what-is-nachocode-link}
 
 **nachocode.link**는 nachocode가 제공하는 공식 딥링크 도메인으로, **각 앱별로 고유한 서브도메인**을 통해 동작합니다.
 
@@ -72,35 +72,72 @@ https://{서비스명}.nachocode.link
 
 ---
 
-### 나쵸 링크의 주요 특징
-
-나쵸 링크 (nachocode.link)는 **모든 플랫폼에서 호환되는 크로스플랫폼 딥링크입니다**.  
-각 플랫폼의 설정은 nachocode 앱 빌더의 시스템에서 미리 구성됩니다.
+### 나쵸 링크의 주요 특징 {#nachocode-link-features}
 
 ```scheme
 https://{서비스명}.nachocode.link
 ```
 
-**Android, iOS, PC 모든 플랫폼에서 공통적으로 사용할 수 있는 기능**과 **각각의 플랫폼 환경에 맞춘 전용 기능**을 추가로 제공합니다.
+나쵸 링크 (nachocode.link)는 **모든 플랫폼에서 호환되는 크로스플랫폼 딥링크입니다**.
 
-- **PC**
-  - **PC전용 랜딩 페이지**를 표시하여 모바일에서 편하게 열 수 있도록 QR 코드와 앱 소개를 제공합니다.
-  - `targeturl`로 지정된 웹링크의 미리보기를 보여줍니다.
-  - 해당 앱의 **Play Store / App Store 다운로드 버튼**도 함께 제공하여 사용자가 앱을 설치할 수 있게 돕습니다.
-  - 앱에 대한 간략한 소개 (이름, 아이콘, 설명 등)도 포함되어 있어 앱 홍보 페이지로 활용할 수도 있습니다.
+각 플랫폼의 설정은 nachocode 앱 빌더의 시스템에서 미리 구성되고 **원하는 특정 페이지를 원하는 파라미터와 함께 여는** 딥링크 기능을 기본적으로 제공합니다. ([**`targeturl`**](#open-app-specific-page) Query Parameter 활용)
 
-- **Android**
-  - 나쵸 링크 도메인을 통해 [**앱 링크** (**App Link**)](./app-link)가 제공이 가능하도록 구현되어 있습니다.
-  - **`/.well-known/assetlinks.json`** 경로에 **디지털 에셋 링크** JSON 파일이 호스팅되어 있습니다.
-  - 내부 페이지에서는 [**인텐트 스킴** (**Intent Scheme**)](./intent-scheme)을 활용하여 앱을 열거나 스토어 상세페이지를 여는 스크립트를 실행합니다.
-  - **Android 사용자**가 앱 미설치 상태로 나쵸 링크를 누르면 **Google Play 스토어**의 해당 앱 상세 페이지로 이동합니다.
+**Android, iOS, PC 모든 플랫폼에서 공통적으로 사용할 수 있는 기능**과 **각각의 플랫폼 환경에 맞춘 전용 화면과 기능**을 적응형으로 제공합니다.
 
-- **iOS**
-  - iOS 기기에서는 [**유니버설 링크** (**Universal Link**)](./universal-link)로 동작하여 앱을 열도록 구현되었습니다.
-  - **`.well-known/apple-app-site-association`** 경로에 Apple 앱 사이트 연관 파일이 호스팅되어 있습니다.
-  - 유니버셜 링크가 동작할 수 없는 상황을 대비하여 [**루트 경로와 오픈 경로**](#root-open-difference)에서의 동작에 차이를 두었습니다.
-  - 내부 페이지에서는 [**앱 URI 스킴** (**URI Scheme**)](./uri-scheme)을 활용하여 앱을 여는 스크립트를 실행합니다.
-  - **iOS 사용자**는 앱 미설치 상태로 나쵸 링크를 누르면 **Apple 앱 스토어**의 앱 상세페이지로 이동합니다.
+---
+
+<hr style={{borderBottom:"1px solid #dbdbdb"}} />
+
+#### **PC** {#nachocode-link-feature-pc}
+
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-link-PC" src="/img/docs/deep-link/nachocode-link_PC.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb"}} />
+</div>
+
+---
+
+- **PC 전용 랜딩 페이지** 제공
+- 모바일에서 편하게 열 수 있도록 **QR 코드** 제공
+- **앱에 대한 간략한 소개** (이름, 아이콘, 설명 등)도 포함되어 있어 앱 홍보 페이지로 활용 가능
+- 해당 앱의 **Play Store / App Store 다운로드 버튼**도 함께 제공
+- `targeturl`로 지정된 **웹 페이지의 미리보기** 제공
+
+---
+
+<hr style={{borderBottom:"1px solid #dbdbdb"}} />
+
+#### **Android** {#nachocode-link-feature-android}
+
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-link-Android" src="/img/docs/deep-link/nachocode-link_Android.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb"}} />
+</div>
+
+---
+
+- 나쵸 링크 도메인을 통해 [**앱 링크** (**App Link**)](./app-link)가 동작하도록 구현
+- **`/.well-known/assetlinks.json`** 경로에 **디지털 에셋 링크** JSON 파일 호스팅
+- 앱 링크가 지원되는 디바이스에서는 앱이 설치되어 있을 경우 **브라우저를 경유하지 않고 바로 앱을 실행**
+- 페이지 내부에서는 [**인텐트 스킴** (**Intent Scheme**)](./intent-scheme)을 활용하여 앱을 열거나 스토어 상세페이지를 여는 스크립트 실행
+- **Android 사용자**가 앱 미설치 상태로 링크를 누르면 **Google Play 스토어**의 해당 앱 상세 페이지로 이동
+
+---
+
+<hr style={{borderBottom:"1px solid #dbdbdb"}} />
+
+#### **iOS** {#nachocode-link-feature-ios}
+
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-link-iOS" src="/img/docs/deep-link/nachocode-link_iOS.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb"}} />
+</div>
+
+---
+
+- iOS 기기에서는 [**유니버설 링크** (**Universal Link**)](./universal-link)로 동작하여 앱을 열도록 구현
+- **`.well-known/apple-app-site-association`** 경로에 Apple 앱 사이트 연관 파일 호스팅
+- 유니버셜 링크가 지원되는 디바이스에서는 앱이 설치되어 있을 경우 **브라우저를 경유하지 않고 바로 앱을 실행**
+- 유니버셜 링크가 동작할 수 없는 상황을 대비하여 [**루트 경로와 오픈 경로**](#root-open-difference)에서의 동작 차이 구현
+- 내부 페이지에서는 [**앱 URI 스킴** (**URI Scheme**)](./uri-scheme)을 활용하여 앱을 여는 스크립트 실행
+- **iOS 사용자**는 앱 미설치 상태로 링크를 누르면 **Apple 앱 스토어**의 앱 상세 페이지로 이동
 
 ---
 
@@ -124,7 +161,7 @@ https://{서비스명}.nachocode.link
 
 ---
 
-#### 나쵸 링크의 장점
+#### 나쵸 링크의 장점 {#nachocode-link-advantages}
 
 나쵸 링크 (nachocode.link) 서비스를 이용하면 **개발 및 설정 부담을 크게 줄일 수 있습니다.**
 
@@ -143,7 +180,7 @@ https://{서비스명}.nachocode.link
 현재 나쵸 링크는 [**비즈니스 플랜 이상의 고객사**](https://nachocode.io/pricing/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에게 우선 제공되고 있습니다.
 :::
 
-### 필수 제공 정보 준비
+### 필수 제공 정보 준비 {#set-requirements-ready}
 
 나쵸 링크 (nachocode.link)를 사용하려면 아래 정보들을 미리 준비해두어야 합니다.
 
@@ -230,7 +267,7 @@ https://{서비스명}.nachocode.link
 
 ---
 
-## 나쵸 링크 활용하기
+## 나쵸 링크 활용하기 {#nachocode-link-usage}
 
 ### 나쵸 링크로 특정 페이지 열기 {#open-app-specific-page}
 
@@ -267,11 +304,23 @@ https://{서비스명}.nachocode.link
 
 ![Ktown4u Case](/img/docs/deep-link/client-ktown4u/ktown4u_case.png)
 
-**Ktown4u는 nachocode로 개발된 앱 서비스**로, 자사의 앱 전환 링크로 [**https://ktown4u.nachocode.link**](https://ktown4u.nachocode.link)을 사용했습니다.
+**Ktown4u는 nachocode로 개발된 앱 서비스**로, 자사의 앱 전환 링크로 [**https://ktown4u.nachocode.link**](https://ktown4u.nachocode.link)를 사용했습니다.
 
-기존에는 Android와 iOS 안내를 별도로 만들어 **“안드로이드 사용자 클릭 / 아이폰 사용자 클릭”** 식으로 나눴다면, 나쵸링크 도입 후에는 **단 하나의 URL**만으로 모든 사용자에게 안내가 가능해졌습니다. 그 결과 **마케팅 캠페인**에서 링크 관리가 단순해지고, 클릭한 사용자도 **기기 구분 없이 동일한 URL**로 앱을 설치하거나 열 수 있어 편의성이 향상되었습니다.
+---
 
-또 다른 이점으로, ktown4u 팀은 나쵸링크를 쓰면서 **딥링크 관련 구현 부담을 줄일 수 있었다**고 합니다. 개발자가 직접 `apple-app-site-association`이나 `assetlinks.json` 파일을 호스팅하고 관리할 필요가 없고, nachocode가 제공하는 기본 도메인을 활용하므로 **별도 도메인 비용이나 HTTPS 인증서 관리 부담도 없습니다.** 딥링크의 복잡한 부분을 nachocode가 대신 처리해주므로, 개발팀은 **서비스 로직 구현과 콘텐츠 준비에 집중**할 수 있었습니다.
+<div class="underlined-subtitle">“하나의 URL로 관리할 수 있어 아주 편리합니다.”</div>
+
+기존에는 Android와 iOS 안내를 별도로 만들어 **“플레이스토어에서 설치하기 / 앱스토어에서 설치하기”** 식으로 나눴다면, 나쵸링크 도입 후에는 **단 하나의 URL**만으로 모든 사용자에게 안내가 가능해졌습니다.
+
+그 결과 **마케팅 캠페인**에서 링크 관리가 단순해지고, 클릭한 사용자도 **기기 구분 없이 동일한 URL**로 앱을 설치하거나 열 수 있어 편의성이 향상되었습니다.
+
+---
+
+<div class="underlined-subtitle">“유니버셜 링크를 아주 쉽게 구현할 수 있었어요!”</div>
+
+또 다른 이점으로, ktown4u 팀은 나쵸링크를 쓰면서 **딥링크 관련 구현 부담을 줄일 수 있었다**고 합니다.
+
+개발자가 직접 `apple-app-site-association`이나 `assetlinks.json` 파일을 호스팅하고 관리할 필요가 없고, nachocode가 제공하는 기본 도메인을 활용하므로 **별도 도메인 비용이나 HTTPS 인증서 관리 부담도 없습니다.** 딥링크의 복잡한 부분을 nachocode가 대신 처리해주므로, 개발팀은 **서비스 로직 구현과 콘텐츠 준비에 집중**할 수 있었습니다.
 
 ---
 
@@ -299,5 +348,5 @@ https://{서비스명}.nachocode.link
 ---
 
 :::tip 기술 지원
-nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다. **나쵸 링크 설정 요청이나 추가적인 기술적인 질문이나 피드백**이 있다면 언제든지 [**support@nachocode.io**](mailto:support@nachocode.io)로 문의해 주세요.
+nachocode 팀은 여러분의 성공적인 프로젝트 구현을 위해 항상 도움을 준비하고 있습니다. **나쵸 링크 설정 요청이나 추가적인 기술적인 질문이나 피드백**이 있다면 언제든지 [**nachocode 지원팀**](mailto:support@nachocode.io)에 문의 해주세요.
 :::
