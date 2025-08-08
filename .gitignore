@@ -54,6 +54,7 @@ coverage
 # Temp
 .temp
 tmp
+temp**.md
 
 # Logs
 logs
