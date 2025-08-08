@@ -36,7 +36,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 ![thumbnail](/img/docs/deep-link/deep-link_thumbnail.png)
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.6.2" link="/docs/releases/v1/app-source/android/release-v-1-6-2" /> <BadgeWithVersion type="iOS" version="v1.6.2" link="/docs/releases/v1/app-source/ios/release-v-1-6-2" />  
-> 🔔 **최신화 일자:** 2025-08-07
+> 🔔 **최신화 일자:** 2025-08-08
 
 ![Android](https://img.shields.io/badge/Android-gray?logo=android)
 ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)
@@ -80,9 +80,7 @@ https://{서비스명}.nachocode.link
 
 나쵸 링크 (nachocode.link)는 **모든 플랫폼에서 호환되는 크로스플랫폼 딥링크입니다**.
 
-각 플랫폼의 설정은 nachocode 앱 빌더의 시스템에서 미리 구성되고 **원하는 특정 페이지를 원하는 파라미터와 함께 여는** 딥링크 기능을 기본적으로 제공합니다. ([**`targeturl`**](#open-app-specific-page) Query Parameter 활용)
-
-**Android, iOS, PC 모든 플랫폼에서 공통적으로 사용할 수 있는 기능**과 **각각의 플랫폼 환경에 맞춘 전용 화면과 기능**을 적응형으로 제공합니다.
+각 플랫폼의 설정은 nachocode 앱 빌더의 시스템에서 미리 구성되고 **원하는 특정 페이지를 원하는 파라미터와 함께 여는** 딥링크 기능을 기본적으로 제공합니다. 그 외에도, **Android, iOS, PC 모든 플랫폼에서 공통적으로 사용할 수 있는 기능**과 **각각의 플랫폼 환경에 맞춘 전용 화면과 기능**을 적응형으로 제공합니다.
 
 ---
 
@@ -154,7 +152,7 @@ https://{서비스명}.nachocode.link
 - **오픈 경로(`/open`) - 앱 열기 시도 경로**
   - 해당 도메인에 단순 접속하면, nachocode 서버가 **앱 설치 여부를 체크**하여 설치된 경우 **앱의 URI 스킴으로 열기**를 시도합니다.
   - 앱이 설치되지 않은 경우에는 iOS에서 "유효하지 않은 URL입니다"라는 팝업이 뜨지만, 나쵸 링크에서 곧바로 **App Store로 이동할 수 있는 버튼이 포함된 안내 페이지**를 표시합니다.
-  - 사용자는 팝업을 닫은 뒤 그 페이지에서 다운로드를 진행할 수 있습니다.
+  - 사용자는 팝업을 닫은 뒤 스토어 앱 상세 페이지에서 다운로드를 진행할 수 있습니다.
   - 이미 앱을 설치한 기존 사용자에게 발송하는 메시지에서 유용합니다.
 
 :::
@@ -167,7 +165,7 @@ https://{서비스명}.nachocode.link
 
 - **범용성**
   - 하나의 링크를 모든 채널(SMS, 이메일, 웹 배너, SNS 등)에 공유해도, 사용자의 디바이스에 맞춰 동작하므로 일일이 플랫폼별 링크를 나눌 필요가 없습니다.
-- **무설치 대응**
+- **미설치 대응**
   - 앱이 없는 사용자도 자동으로 웹 콘텐츠로 안내되므로 이탈을 최소화하고, 필요하면 그 페이지에서 앱 설치를 유도할 수 있습니다. (ex. 상단 배너 등)
 - **도메인/인증 불필요**
   - 개발자가 직접 Apple Associated Domain이나 Android Asset Links 설정을 하지 않아도, `nachocode.link` 도메인으로 이러한 딥링크를 구현해줍니다. 즉 **노코드에 가깝게** 강력한 딥링크 기능을 활용할 수 있습니다.
@@ -205,12 +203,12 @@ https://{서비스명}.nachocode.link
    - **description**
 
    :::note 예시
-   Ktown4u, K-POP 글로벌 이커머스 플랫폼. 전 세계 243개국 K-POP 팬들을 위한 최강 덕질 성지! K-POP음반, 굿즈, 화장품, 패션, MD, 응원봉, 잡지까지 찾고 싶은 모든 K-POP 상품을 한 번에 GET!
+   Ktown4u, K-POP 글로벌 이커머스 플랫폼. 전 세계 243개국 K-POP 팬들을 위한 최강 덕질 성지! K-POP 음반, 굿즈, 화장품, 패션, MD, 응원봉, 잡지까지 찾고 싶은 모든 K-POP 상품을 한 번에 GET!
    :::
 
 3. **favicon.ico 파일**
 
-   :::note 에시
+   :::note 예시
    <img
    alt="favicon.ico"
    src="/img/docs/deep-link/client-ktown4u/ktown4u_favicon.ico"
@@ -219,7 +217,7 @@ https://{서비스명}.nachocode.link
 
 4. **Open Graph에 사용될 이미지 (w: 1200px, h: 630px 권장)**
 
-   :::note 에시
+   :::note 예시
    ![Graphic Image](/img/docs/deep-link/client-ktown4u/ktown4u_graphic_image.png)
    :::
 
