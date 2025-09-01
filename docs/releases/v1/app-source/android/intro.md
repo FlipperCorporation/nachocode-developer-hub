@@ -9,7 +9,7 @@ image: /img/docs/releases/release_note_android.png
 
 ![android](/img/docs/releases/release_note_android.png)
 
-> 🔔 **최신화 일자:** 2025-07-30
+> 🔔 **최신화 일자:** 2025-08-22
 
 nachocode Android App Source **Version 1**의 버전별 업데이트 내용을 정리한 릴리즈 노트입니다.
 
