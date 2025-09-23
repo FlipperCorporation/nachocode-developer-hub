@@ -9,7 +9,7 @@ image: /img/docs/releases/release_note_sdk.png
 
 ![sdk](/img/docs/releases/release_note_sdk.png)
 
-> 🔔 **최신화 일자:** 2025-07-28
+> 🔔 **최신화 일자:** 2025-09-23
 
 nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 정리한 릴리즈 노트입니다.
 
@@ -17,7 +17,7 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
 
 ## 🚀 최신 SDK 릴리즈
 
-- [ver.1.6.3 릴리즈 노트](./release-v-1-6-3)
+- [ver.1.7.0 릴리즈 노트](./release-v-1-7-0)
 
 - **항상 최신 버전 가져오기 (`@latest`)**
 
@@ -25,10 +25,10 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
   <script src="https://cdn.nachocode.io/nachocode/client-sdk/@latest/client-sdk.min.js"></script>
   ```
 
-- **현재 배포된 최신 버전 가져오기 (`@1.6.3`)**
+- **현재 배포된 최신 버전 가져오기 (`@1.7.0`)**
 
   ```html
-  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.6.3/client-sdk.min.js"></script>
+  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.7.0/client-sdk.min.js"></script>
   ```
 
 ---
@@ -39,6 +39,7 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
 
 | 버전                           | 릴리즈 날짜 | 주요 내용                                                |
 | ------------------------------ | ----------- | -------------------------------------------------------- |
+| [ver.1.7.0](./release-v-1-7-0) | 2025-09-23  | 앱스플라이어 연동 기능 추가                              |
 | [ver.1.6.3](./release-v-1-6-3) | 2025-07-28  | OS 기본 브라우저 엔진으로 링크 열기, 내부 로직 최적화 등 |
 | [ver.1.6.2](./release-v-1-6-2) | 2025-07-09  | 위치 정보 가져오기, 사용성 개선 등                       |
 | [ver.1.6.1](./release-v-1-6-1) | 2025-06-20  | 토픽 구독 반환 방식 수정, 클립보드 버그 수정 등          |

@@ -119,8 +119,8 @@ nachocode JavaScript Client SDK **ver.1.6.3**를 사용하려면 아래의 스�
 <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.6.3/client-sdk.min.js"></script>
 ```
 
-:::tip
-감사합니다.  
+:::tip 문의하기
 nachocode는 지속적으로 사용자의 개발 경험 향상을 위해 최선을 다하겠습니다.  
-추가적인 요청이나 문의사항은 언제든지 [이메일](mailto:support@nachocode.io)을 보내주세요.
+추가적인 요청이나 문의사항은 언제든지 지원팀에게 [이메일](mailto:support@nachocode.io)을 보내주세요.  
+감사합니다.  
 :::
