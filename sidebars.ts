@@ -127,6 +127,17 @@ const sidebars: SidebarsConfig = {
         'sdk/namespaces/vibration',
       ],
     },
+    {
+      type: 'category',
+      label: '외부연동',
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+        title: '외부연동',
+        slug: '/sdk/integrations',
+      },
+      items: ['sdk/integrations/appsflyer'],
+    },
   ],
   releases: [
     {
