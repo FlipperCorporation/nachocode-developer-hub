@@ -177,14 +177,14 @@ SDK 초기화 상태, 실행 환경(웹/앱) 등을 확인할 수 있습니다.
 
 Facebook 계정을 통한 소셜 로그인 기능을 제공합니다.  
 :::info facebook
-➡️ [Facebook 네임스페이스 문서 바로가기](./namespaces/facebook)
+➡️ [Facebook 네임스페이스 문서 바로가기](./integrations/facebook)
 :::
 
 ### 11. **구글 소셜 기능 (`google`)**
 
 Google 계정을 통한 소셜 로그인 기능을 제공합니다.  
 :::info google
-➡️ [Google 네임스페이스 문서 바로가기](./namespaces/google)
+➡️ [Google 네임스페이스 문서 바로가기](./integrations/google)
 :::
 
 ### 12. **인앱결제 기능 (`iap`)**
@@ -198,7 +198,7 @@ Android 및 iOS 환경에서 네이티브 인앱결제를 손쉽게 처리할 �
 
 Kakao 계정을 통한 소셜 로그인 기능을 제공합니다.  
 :::info kakao
-➡️ [Kakao 네임스페이스 문서 바로가기](./namespaces/kakao)
+➡️ [Kakao 네임스페이스 문서 바로가기](./integrations/kakao)
 :::
 
 ### 14. **위치 기능 (`location`)**

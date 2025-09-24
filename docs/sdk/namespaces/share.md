@@ -30,7 +30,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 :::info **공지**  
 카카오톡 공유 관련 기능은 **nachocode SDK v1.5.0**부터 `kakao` 네임스페이스로 이동되었습니다.  
 따라서 `share.sendKakao`, `share.KakaoShareType` 등은 더 이상 사용을 권장하지 않습니다.  
-➡️ [kakao 네임스페이스로 이동된 공유 기능 문서 보기](./kakao#share)
+➡️ [kakao 네임스페이스로 이동된 공유 기능 문서 보기](../integrations/kakao#share)
 
 :::
 
@@ -125,6 +125,6 @@ Nachocode.share.openSharing({
 ### **추가 정보** {#share-additional-info}
 
 - `share` 네임스페이스는 **일반 콘텐츠 공유(openSharing)** 전용으로 유지됩니다.
-- **카카오톡 공유 기능은 앞으로 [`kakao`](/docs/sdk/namespaces/kakao) 네임스페이스를 통해 사용해야 합니다.**
+- **카카오톡 공유 기능은 앞으로 [`kakao`](/docs/sdk/integrations/kakao) 네임스페이스를 통해 사용해야 합니다.**
 
 ---
