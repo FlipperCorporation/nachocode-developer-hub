@@ -1,10 +1,10 @@
 ---
-description: nachocode SDK의 `appsflyer` 네임스페이스는 AppsFlyer 마케팅 애트리뷰션 및 사용자 트래킹, 커스텀 이벤트 로깅, 유저 ID 관리 등 AppsFlyer 연동 기능을 쉽게 구현할 수 있습니다.
+description: nachocode SDK의 `appsflyer` 네임스페이스는 AppsFlyer 마케팅 어트리뷰션 및 사용자 트래킹, 커스텀 이벤트 로깅, 유저 ID 관리 등 AppsFlyer 연동 기능을 쉽게 구현할 수 있습니다.
 keywords:
   [
+    앱 마케팅,
     앱스플라이어 연동,
-    웹뷰앱 앱스플라이어 연동,
-    앱스플라이어 애트리뷰션,
+    앱스플라이어 어트리뷰션,
     앱스플라이어 사용자 추적,
     앱스플라이어 이벤트 로깅,
     앱스플라이어 커스텀 유저 아이디,
@@ -12,7 +12,7 @@ keywords:
     AppsFlyer User Tracking,
     AppsFlyer Event Logging,
     AppsFlyer Custom User ID,
-    AppsFlyer 마케팅 애트리뷰션,
+    AppsFlyer 마케팅 어트리뷰션,
     AppsFlyer Marketing Attribution,
   ]
 ---
@@ -22,13 +22,13 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />  
-> 🔔 **최신화 일자:** 2025-09-23
+> 🔔 **최신화 일자:** 2025-09-24
 
 ## **개요** {#overview}
 
-`appsflyer` 네임스페이스는 **AppsFlyer 마케팅 애트리뷰션 및 사용자 트래킹 기능을 제공**하며, 사용자는 **AppsFlyer를 통해 마케팅 성과를 추적**할 수 있습니다.
+`appsflyer` 네임스페이스는 **AppsFlyer 마케팅 어트리뷰션 및 사용자 트래킹 기능을 제공**하며, 사용자는 **AppsFlyer를 통해 마케팅 성과를 추적**할 수 있습니다.
 
-이 네임스페이스를 사용하여 **커스텀 유저 ID 관리, 애트리뷰션 데이터 조회, 커스텀 이벤트 로깅**과 같은 기능을 수행할 수 있습니다.
+이 네임스페이스를 사용하여 **커스텀 유저 ID 관리, 어트리뷰션 데이터 조회, 커스텀 이벤트 로깅**과 같은 기능을 수행할 수 있습니다.
 
 ---
 
@@ -115,7 +115,7 @@ export declare interface ConversionData {
 | `event_type`      | `'conversion_data'`          | 이벤트 타입 (전환 데이터)                   |
 | `install_time`    | `string`                     | 앱 설치 시간                                |
 | `af_message`      | `string`                     | AppsFlyer 메시지                            |
-| `af_status`       | `'Organic' \| 'Non-organic'` | 설치 애트리뷰션 타입 (유기적/비유기적 설치) |
+| `af_status`       | `'Organic' \| 'Non-organic'` | 설치 어트리뷰션 타입 (유기적/비유기적 설치) |
 | `is_first_launch` | `boolean`                    | 첫 번째 실행 여부                           |
 
 ---
@@ -155,22 +155,22 @@ export declare type DeepLinkData = BaseDeepLinkData &
 
 ### **`AttributionData`** {#attribution-data}
 
-AppsFlyer 애트리뷰션 데이터를 나타내는 유니온 타입입니다.
+AppsFlyer 어트리뷰션 데이터를 나타내는 유니온 타입입니다.
 
 ```typescript
 export declare type AttributionData = ConversionData | DeepLinkData;
 ```
 
-애트리뷰션 데이터는 다음 중 하나의 타입을 가집니다:
+어트리뷰션 데이터는 다음 중 하나의 타입을 가집니다.
 
-- [`ConversionData`](#conversion-data): 전환 데이터 (설치, 실행 애트리뷰션 정보)
+- [`ConversionData`](#conversion-data): 전환 데이터 (설치, 실행 어트리뷰션 정보)
 - [`DeepLinkData`](#deep-link-data): 딥링크 데이터 (링크 클릭을 통한 앱 실행 정보)
 
 ---
 
 ### **`GetAttributionDataResult`** {#get-attribution-data-result}
 
-애트리뷰션 데이터 조회 결과를 나타내는 타입입니다.
+어트리뷰션 데이터 조회 결과를 나타내는 타입입니다.
 
 ```typescript
 interface GetAttributionDataSuccessResult extends AppsflyerSuccessResult {
@@ -186,7 +186,7 @@ export declare type GetAttributionDataResult =
 
 ### **`GetAttributionListResult`** {#get-attribution-list-result}
 
-애트리뷰션 데이터 목록 조회 결과를 나타내는 타입입니다.
+어트리뷰션 데이터 목록 조회 결과를 나타내는 타입입니다.
 
 ```typescript
 interface GetAttributionListSuccessResult extends AppsflyerSuccessResult {
@@ -207,10 +207,10 @@ export declare type GetAttributionListResult =
 | [`setCustomUserId(userId)`](#set-custom-user-id)    | 커스텀 유저 ID 설정         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
 | [`getCustomUserId()`](#get-custom-user-id)          | 커스텀 유저 ID 조회         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
 | [`deleteCustomUserId()`](#delete-custom-user-id)    | 커스텀 유저 ID 삭제         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`getAttributionData()`](#get-attribution-data)     | 애트리뷰션 데이터 조회      | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`clearAttributionData()`](#clear-attribution-data) | 애트리뷰션 데이터 삭제      | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`getAttributionList()`](#get-attribution-list)     | 애트리뷰션 데이터 목록 조회 | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`clearAttributionList()`](#clear-attribution-list) | 애트리뷰션 데이터 목록 삭제 | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
+| [`getAttributionData()`](#get-attribution-data)     | 어트리뷰션 데이터 조회      | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
+| [`clearAttributionData()`](#clear-attribution-data) | 어트리뷰션 데이터 삭제      | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
+| [`getAttributionList()`](#get-attribution-list)     | 어트리뷰션 데이터 목록 조회 | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
+| [`clearAttributionList()`](#clear-attribution-list) | 어트리뷰션 데이터 목록 삭제 | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
 | [`logEvent(eventName, values)`](#log-event)         | 커스텀 이벤트 로깅          | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
 
 ---
@@ -308,20 +308,20 @@ if (result.status === 'success') {
 
 #### 설명 {#get-attribution-data-summary}
 
-AppsFlyer 애트리뷰션 데이터를 조회합니다.
+AppsFlyer 어트리뷰션 데이터를 조회합니다.
 사용자의 설치 경로 및 마케팅 캠페인 정보를 확인할 수 있습니다.
 
 #### 반환 값 {#get-attribution-data-returns}
 
-[`Promise<GetAttributionDataResult>`](#get-attribution-data-result) - 애트리뷰션 데이터를 포함하는 Promise
+[`Promise<GetAttributionDataResult>`](#get-attribution-data-result) - 어트리뷰션 데이터를 포함하는 Promise
 
 #### 사용 예제 {#get-attribution-data-examples}
 
 ```javascript
-// 애트리뷰션 데이터 조회
+// 어트리뷰션 데이터 조회
 const result = await Nachocode.appsflyer.getAttributionData();
 if (result.status === 'success') {
-  console.log('애트리뷰션 데이터:', result.data);
+  console.log('어트리뷰션 데이터:', result.data);
 
   // 이벤트 타입에 따라 처리
   if (result.data.event_type === 'conversion_data') {
@@ -337,7 +337,7 @@ if (result.status === 'success') {
   }
 } else {
   console.error(
-    '애트리뷰션 데이터 조회 실패:',
+    '어트리뷰션 데이터 조회 실패:',
     result.errorCode,
     result.message
   );
@@ -352,7 +352,7 @@ if (result.status === 'success') {
 
 #### 설명 {#clear-attribution-data-summary}
 
-저장된 애트리뷰션 데이터를 삭제합니다.
+저장된 어트리뷰션 데이터를 삭제합니다.
 
 #### 반환 값 {#clear-attribution-data-returns}
 
@@ -361,13 +361,13 @@ if (result.status === 'success') {
 #### 사용 예제 {#clear-attribution-data-examples}
 
 ```javascript
-// 애트리뷰션 데이터 삭제
+// 어트리뷰션 데이터 삭제
 const result = await Nachocode.appsflyer.clearAttributionData();
 if (result.status === 'success') {
-  console.log('애트리뷰션 데이터 삭제 성공:', result.message);
+  console.log('어트리뷰션 데이터 삭제 성공:', result.message);
 } else {
   console.error(
-    '애트리뷰션 데이터 삭제 실패:',
+    '어트리뷰션 데이터 삭제 실패:',
     result.errorCode,
     result.message
   );
@@ -382,19 +382,19 @@ if (result.status === 'success') {
 
 #### 설명 {#get-attribution-list-summary}
 
-저장된 애트리뷰션 데이터 목록을 조회합니다.
+저장된 어트리뷰션 데이터 목록을 조회합니다.
 
 #### 반환 값 {#get-attribution-list-returns}
 
-[`Promise<GetAttributionListResult>`](#get-attribution-list-result) - 애트리뷰션 데이터 목록을 포함하는 Promise
+[`Promise<GetAttributionListResult>`](#get-attribution-list-result) - 어트리뷰션 데이터 목록을 포함하는 Promise
 
 #### 사용 예제 {#get-attribution-list-examples}
 
 ```javascript
-// 애트리뷰션 데이터 목록 조회
+// 어트리뷰션 데이터 목록 조회
 const result = await Nachocode.appsflyer.getAttributionList();
 if (result.status === 'success') {
-  console.log('애트리뷰션 데이터 목록:', result.data);
+  console.log('어트리뷰션 데이터 목록:', result.data);
   result.data.forEach((attribution, index) => {
     console.log(`${index + 1}. 이벤트 타입: ${attribution.event_type}`);
 
@@ -407,7 +407,7 @@ if (result.status === 'success') {
     }
   });
 } else {
-  console.error('애트리뷰션 목록 조회 실패:', result.errorCode, result.message);
+  console.error('어트리뷰션 목록 조회 실패:', result.errorCode, result.message);
 }
 ```
 
@@ -419,7 +419,7 @@ if (result.status === 'success') {
 
 #### 설명 {#clear-attribution-list-summary}
 
-저장된 애트리뷰션 데이터 목록을 삭제합니다.
+저장된 어트리뷰션 데이터 목록을 삭제합니다.
 
 #### 반환 값 {#clear-attribution-list-returns}
 
@@ -428,12 +428,12 @@ if (result.status === 'success') {
 #### 사용 예제 {#clear-attribution-list-examples}
 
 ```javascript
-// 애트리뷰션 데이터 목록 삭제
+// 어트리뷰션 데이터 목록 삭제
 const result = await Nachocode.appsflyer.clearAttributionList();
 if (result.status === 'success') {
-  console.log('애트리뷰션 목록 삭제 성공:', result.message);
+  console.log('어트리뷰션 목록 삭제 성공:', result.message);
 } else {
-  console.error('애트리뷰션 목록 삭제 실패:', result.errorCode, result.message);
+  console.error('어트리뷰션 목록 삭제 실패:', result.errorCode, result.message);
 }
 ```
 
@@ -481,9 +481,9 @@ if (result.status === 'success') {
 
 :::info **추가 정보**
 
-- AppsFlyer 네임스페이스는 **마케팅 애트리뷰션 추적**에 특화된 기능을 제공합니다.
+- AppsFlyer 네임스페이스는 **마케팅 어트리뷰션 추적**에 특화된 기능을 제공합니다.
 - 모든 메서드는 **Promise 기반**으로 동작하며, `async/await` 패턴을 사용할 수 있습니다.
 - 커스텀 이벤트 로깅은 **마케팅 캠페인 성과 측정**에 중요한 데이터를 제공합니다.
-- 애트리뷰션 데이터는 사용자의 **설치 경로 및 마케팅 채널 분석**에 활용할 수 있습니다.
+- 어트리뷰션 데이터는 사용자의 **설치 경로 및 마케팅 채널 분석**에 활용할 수 있습니다.
 
 :::

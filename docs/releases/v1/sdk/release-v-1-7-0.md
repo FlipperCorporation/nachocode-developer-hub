@@ -10,17 +10,17 @@ image: /img/docs/releases/release_note_sdk_detail.png
 
 > 🔔 **배포 일자:** 2025-09-23
 
-이번 업데이트 **v1.7.0**에서는 **AppsFlyer 마케팅 애트리뷰션 및 사용자 트래킹 기능**이 새롭게 추가되었습니다.
+이번 업데이트 **v1.7.0**에서는 **AppsFlyer 마케팅 어트리뷰션 및 사용자 트래킹 기능**이 새롭게 추가되었습니다.
 
-**AppsFlyer 연동**을 통해 마케팅 캠페인 성과 추적, 사용자 애트리뷰션 분석, 커스텀 이벤트 로깅 등의 고급 마케팅 분석 기능을 사용할 수 있습니다.
+**AppsFlyer 연동**을 통해 마케팅 캠페인 성과 추적, 사용자 어트리뷰션 분석, 커스텀 이벤트 로깅 등의 고급 마케팅 분석 기능을 사용할 수 있습니다.
 
 ## 주요 변경 사항 (ver.1.7.0)
 
 ### 새로운 기능 {#new-features}
 
-- **`appsflyer` 네임스페이스**: AppsFlyer 마케팅 애트리뷰션 및 사용자 트래킹 기능 추가
+- **`appsflyer` 네임스페이스**: AppsFlyer 마케팅 어트리뷰션 및 사용자 트래킹 기능 추가
   - AppsFlyer를 통한 **마케팅 캠페인 성과 추적** 기능을 제공합니다.
-  - **커스텀 유저 ID 관리**, **애트리뷰션 데이터 조회**, **커스텀 이벤트 로깅** 등의 기능을 지원합니다.
+  - **커스텀 유저 ID 관리**, **어트리뷰션 데이터 조회**, **커스텀 이벤트 로깅** 등의 기능을 지원합니다.
   - 모든 메서드는 **Promise 기반**으로 동작하여 `async/await` 패턴을 사용할 수 있습니다.
 
 :::info
@@ -29,7 +29,7 @@ image: /img/docs/releases/release_note_sdk_detail.png
 
 ---
 
-### AppsFlyer 마케팅 애트리뷰션 기능 (`appsflyer` 네임스페이스)
+### AppsFlyer 마케팅 어트리뷰션 기능 (`appsflyer` 네임스페이스)
 
 AppsFlyer 연동을 통해 마케팅 캠페인의 성과를 정확히 추적하고 분석할 수 있는 기능이 추가되었습니다.
 
@@ -40,10 +40,10 @@ AppsFlyer 연동을 통해 마케팅 캠페인의 성과를 정확히 추적하�
 | [`setCustomUserId(userId)`](/docs/sdk/integrations/appsflyer#set-custom-user-id)    | 커스텀 유저 ID 설정         |
 | [`getCustomUserId()`](/docs/sdk/integrations/appsflyer#get-custom-user-id)          | 커스텀 유저 ID 조회         |
 | [`deleteCustomUserId()`](/docs/sdk/integrations/appsflyer#delete-custom-user-id)    | 커스텀 유저 ID 삭제         |
-| [`getAttributionData()`](/docs/sdk/integrations/appsflyer#get-attribution-data)     | 애트리뷰션 데이터 조회      |
-| [`clearAttributionData()`](/docs/sdk/integrations/appsflyer#clear-attribution-data) | 애트리뷰션 데이터 삭제      |
-| [`getAttributionList()`](/docs/sdk/integrations/appsflyer#get-attribution-list)     | 애트리뷰션 데이터 목록 조회 |
-| [`clearAttributionList()`](/docs/sdk/integrations/appsflyer#clear-attribution-list) | 애트리뷰션 데이터 목록 삭제 |
+| [`getAttributionData()`](/docs/sdk/integrations/appsflyer#get-attribution-data)     | 어트리뷰션 데이터 조회      |
+| [`clearAttributionData()`](/docs/sdk/integrations/appsflyer#clear-attribution-data) | 어트리뷰션 데이터 삭제      |
+| [`getAttributionList()`](/docs/sdk/integrations/appsflyer#get-attribution-list)     | 어트리뷰션 데이터 목록 조회 |
+| [`clearAttributionList()`](/docs/sdk/integrations/appsflyer#clear-attribution-list) | 어트리뷰션 데이터 목록 삭제 |
 | [`logEvent(eventName, values)`](/docs/sdk/integrations/appsflyer#log-event)         | 커스텀 이벤트 로깅          |
 
 #### 사용 예제
@@ -60,13 +60,13 @@ if (result.status === 'success') {
 }
 ```
 
-##### **애트리뷰션 데이터 조회**
+##### **어트리뷰션 데이터 조회**
 
 ```javascript
-// 마케팅 캠페인 애트리뷰션 정보 확인
+// 마케팅 캠페인 어트리뷰션 정보 확인
 const result = await Nachocode.appsflyer.getAttributionData();
 if (result.status === 'success') {
-  console.log('애트리뷰션 데이터:', result.data);
+  console.log('어트리뷰션 데이터:', result.data);
 
   // 이벤트 타입에 따라 처리
   if (result.data.event_type === 'conversion_data') {
@@ -98,15 +98,15 @@ if (result.status === 'success') {
 
 #### 지원하는 데이터 타입
 
-**애트리뷰션 데이터** (`AttributionData`)
+**어트리뷰션 데이터** (`AttributionData`)
 
-애트리뷰션 데이터는 두 가지 타입으로 나뉩니다.
+어트리뷰션 데이터는 두 가지 타입으로 나뉩니다.
 
 **전환 데이터** (`ConversionData`)
 
 - `event_type`: 'conversion_data'
 - `install_time`: 앱 설치 시간
-- `af_status`: 설치 애트리뷰션 타입 ('Organic' 또는 'Non-organic')
+- `af_status`: 설치 어트리뷰션 타입 ('Organic' 또는 'Non-organic')
 - `is_first_launch`: 첫 번째 실행 여부
 - `af_message`: AppsFlyer 메시지
 - `timestamp`: 수신 시간
@@ -129,7 +129,7 @@ if (result.status === 'success') {
 - **TypeScript 정의**(`Nachocode.d.ts`) **업데이트**
   - v.1.7.0 변경 사항을 반영하여 AppsFlyer 네임스페이스 관련 타입 정의가 추가되었습니다.
   - `AppsflyerResult`, `GetCustomUserIdResult`, `ConversionData`, `DeepLinkData`, `AttributionData` 등의 새로운 타입이 정의되었습니다.
-  - 개발자 경험 향상을 위해 상세한 주석과 설명이 포함되었습니다.
+  - 개발자 경험 향상을 위해 주석과 설명이 추가되었습니다.
 
 :::info
 ➡️ [`Nachocode.d.ts`](https://github.com/FlipperCorporation/nachocode-client-sdk-js/blob/main/releases/Nachocode.d.ts)에서 최신 정의를 확인하세요.
