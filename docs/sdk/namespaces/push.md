@@ -23,7 +23,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2025-07-28
+> 🔔 **최신화 일자:** 2025-09-25
 
 ## **개요** {#overview}
 
@@ -424,6 +424,27 @@ _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습�
 nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.
 이때, 특정 사용자(`userId`)를 식별자로 사용하여 **푸시 알림을 해당 사용자에게 전송할 수 있도록 설정**합니다.
 
+:::info **토큰 등록에 대한 상세 정보**
+
+##### **재등록 시 덮어쓰기 동작** {#register-push-token-reregister}
+
+- **같은 디바이스**에서 `registerPushToken`을 다시 호출하면 **가장 마지막으로 전달된 `userId`로 매핑이 덮어씌워집니다**
+- 로그아웃 후 다른 계정으로 재로그인 시 호출한다면, 새로운 `userId`로 자동 업데이트됩니다
+
+##### **userId 매개변수의 유연성** {#register-push-token-flexible}
+
+- **서비스 서버의 실제 사용자 ID가 아니어도 상관없습니다**
+- **구별 가능한 고유한 식별자**라면 어떤 값이든 사용할 수 있습니다 (ex. 이메일, 닉네임, 커스텀 ID, UUID 등)
+
+##### **디바이스별 관리가 필요한 경우** {#register-push-token-each-device}
+
+- 한 사용자가 **여러 디바이스를 사용**하는 환경에서 디바이스별로 푸시를 관리하고 싶은 경우
+  1. **UUID로** 유니크한 식별자를 생성 후 사용자와 매칭하여 저장 ( 1:N )
+  2. **서비스 서버의 `userId` + 고유한 디바이스 ID**를 조합하여 유니크한 식별자를 생성 ( 1:N )
+     - ex. `"user123_device_abc"`, `"user123_ios_main"` 등의 형태로 전달
+
+:::
+
 :::tip 푸시 토큰이란?
 [푸시 토큰 가이드](../../guide/push/push-token)에서 상세 설명을 확인해보세요.
 :::
@@ -471,7 +492,23 @@ _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습�
 #### 설명 {#delete-push-token-summary}
 
 nachocode 서버에서 **해당 사용자(`userId`)와 연결된 푸시 토큰을 삭제**합니다.
-사용자가 로그아웃하거나 푸시 알림을 더 이상 사용하지 않도록 설정할 경우 이 메서드를 호출해야 합니다.
+
+:::info **토큰 삭제 시점에 대한 고려사항**
+
+##### **삭제하지 않는 경우** {#delete-push-token-when-to-delete}
+
+- **로그아웃된 유저에게도 시스템 알림, 이벤트 알림 등 개인화된 푸시 알림을 전송**해야 하는 UX인 경우
+- `registerPushToken` 함수는 같은 디바이스에서 다시 호출될 때 **가장 마지막 `userId`로 매핑을 덮어씌우므로**, 로그아웃 후 다른 계정으로 재로그인 시 자동으로 새로운 계정으로 매핑됩니다.
+
+##### **삭제하는 경우** {#delete-push-token-when-not-to-delete}
+
+- **푸시 알림 수신 거부** 설정 시 토큰 매핑을 삭제하여 알림을 완전히 차단
+- **로그아웃된 유저에게 개인화 푸시 알림을 보내지 않는** UX이거나 보내면 안 되는 경우 매핑을 삭제하여 실수로 발송되는 것을 방지
+- **앱 탈퇴나 계정 삭제** 시 개인정보 보호를 위한 토큰 매핑 제거
+
+:::
+
+**대부분의 경우 로그아웃 시마다 토큰을 삭제할 필요는 없으며**, 앱의 UX 정책에 따라 선택적으로 사용하세요.
 
 :::tip 푸시 토큰이란?
 [푸시 토큰 가이드](../../guide/push/push-token)에서 상세 설명을 확인해보세요.
