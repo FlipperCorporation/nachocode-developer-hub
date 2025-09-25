@@ -27,13 +27,13 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.6.1" link="/docs/releases/v1/app-source/android/release-v-1-6-1" />  
-> 🔔 **최신화 일자:** 2025-08-07
+> 🔔 **최신화 일자:** 2025-09-25
 
 ![Android Only](https://img.shields.io/badge/Android-Only-gray?logo=android)
 
 ## 앱 링크 이해하기 {#understand-app-link}
 
-**앱 링크**(**App Link**)는 Android 6.0 (Marshmallow, API 23)부터 도입된 **Android 공식 표준 딥링크 방식**으로, **HTTPS 도메인을 통해 앱을 실행**할 수 있는 기능입니다. 일반적인 웹 URL과 앱을 연결하여, 사용자가 특정 도메인의 링크를 클릭하면 웹 대신 **해당 앱이 실행**되도록 할 수 있어 사용성, 보안성 면에서 우수합니다.
+**앱 링크**(**App Link**)는 Android 6.0 (Marshmallow, API 23)부터 도입된 **Android 공식 표준 딥링크 방식**으로, **HTTPS 기반 도메인을 통해 앱을 실행**할 수 있는 기능입니다. 일반적인 웹 URL과 앱을 연결하여, 사용자가 특정 도메인의 링크를 클릭하면 웹 대신 **해당 앱이 실행**되도록 할 수 있어 사용성, 보안성 면에서 우수합니다.
 
 **웹 URL과 앱을 연계**한다는 점에서 iOS의 [**유니버셜 링크** (Universal Link)](./universal-link)와 유사하며, 사용자가 특정 도메인의 HTTPS 링크를 열었을 때 **브라우저 대신 자동으로 대응되는 앱이 실행**됩니다. 예를 들어 [**nachocode developer**](https://play.google.com/store/apps/details?id=com.nachocode.developer) 앱과 [**https://nachocode.link**](https://nachocode.link) URL을 앱 링크로 연동해두면, 해당 링크를 클릭했을 때 **동일 도메인을 지원하는 앱**([**nachocode developer**](https://play.google.com/store/apps/details?id=com.nachocode.developer))이 **설치되어 있으면 앱이 곧바로 실행되고 해당 URL을 앱 내에서 처리**합니다. 설치되지 않은 경우에는 **동일한 URL의 웹페이지**([**https://nachocode.link**](https://nachocode.link))**를 그대로 브라우저에서 열어 웹 콘텐츠를 표시**하는 형태입니다.
 
@@ -53,7 +53,7 @@ nachocode 앱소스 <BadgeWithVersion type="Android" version="v1.6.1" link="/doc
 | **지원 플랫폼**       | ![Android](https://img.shields.io/badge/Android-gray?logo=android) ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple) | ![Android Only](https://img.shields.io/badge/Android-Only-gray?logo=android) | ![Android Only](https://img.shields.io/badge/Android-Only-gray?logo=android) |
 | **안정성**            | 낮음 (고유성 보장 X)                                                                                                        | 낮음                                                                         | 높음 (도메인 인증 필요)                                                      |
 | **앱 미설치 시 처리** | 아무 동작 없음                                                                                                              | 브라우저에서 fallback URL 열림                                               | 브라우저에서 웹으로 열림                                                     |
-| **특징**              | 널리 사용되지만 다른 앱에서 같은 스킴을 사용할 수 있음                                                                      | 스킴, 패키지, 대체 URL 등 많은 정보를 담을 수 있음                           | Google에서 출시한 Android 표준 딥링크                                        |
+| **특징**              | 널리 사용되지만 다른 앱에서 같은 스킴을 사용할 수 있음                                                                      | scheme, package, fallback URL 등 많은 정보를 담을 수 있음                    | Google에서 출시한 Android 표준 딥링크                                        |
 
 ---
 
@@ -140,7 +140,7 @@ Android의 앱 링크 (App Link)에 사용할 HTTPS를 지원하는 본인 소�
 지문키를 확인하기 위해서는 안드로이드 빌드가 선행되어야 합니다.
 :::
 
-#### 2. 빌드된 aab 파일을 [Google Play Console](https://play.google.com/console)에 업로드 후 [ 테스트 및 출시 > 설정 > 앱 서명 ]에서 앱 서명키 인증서의 [ SHA-256 인증서 지문 ]을 확인 {#check-sha256-fingerprints-step-2}
+#### 2. 빌드된 aab 파일을 [Google Play Console](https://play.google.com/console)에 업로드 후 [ 테스트 및 출시 > 앱 무결성 > 앱 서명 ]에서 앱 서명키 인증서의 [ SHA-256 인증서 지문 ]을 확인 {#check-sha256-fingerprints-step-2}
 
 ![google_console_fingerprint](/img/docs/google/google_console_fingerprint.png)
 
@@ -149,7 +149,7 @@ nachocode에서는 앱 출시에 **Google Play에서 생성한 앱 서명 키를
 앱에 [**Play 앱 서명**](https://support.google.com/googleplay/android-developer/answer/9842756)을 사용 중인 경우 로컬에서 생성된 인증서 지문은 일반적으로 사용자 기기의 인증서 지문과 일치하지 않습니다.  
 [**Play Console**](https://play.google.com/console) 개발자 계정의 아래 탭에서 앱에 Play 앱 서명을 사용하고 있는지 확인할 수 있습니다.
 
-**[ 테스트 및 출시 (Release) > 설정 (Setup) > 앱 서명 (App signing) ]**
+**[ 테스트 및 출시 (Release) > 앱 무결성 (App integrity) > 앱 서명 (App signing) ]**
 
 사용하고 있다면 같은 페이지에서 앱에 적합한 디지털 애셋 링크 JSON 스니펫도 확인할 수 있습니다.
 
@@ -211,7 +211,7 @@ nachocode에서 만들어진 앱의 패키지명은 일반적으로 `com.nachoco
 
 `assetlinks.json`의 양식은 구글 플레이 콘솔에서 확인 가능합니다.
 
-![google-play-console-digital-asset-link](/img/docs/deep-link/google_play_console_digital_asset_link_json.webp)
+![google-play-console-digital-asset-link](/img/docs/deep-link/google_play_console_digital_asset_link_json.png)
 
 :::info 구글 공식 문서
 ➡️ [Google Digital Asset Links](https://developers.google.com/digital-asset-links/v1/getting-started)
