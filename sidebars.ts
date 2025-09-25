@@ -16,6 +16,7 @@ const sidebars: SidebarsConfig = {
         'guide/push/push-token',
         'guide/push/personal-push',
         'guide/push/topic-push',
+        'guide/push/local-push',
       ],
     },
     {
