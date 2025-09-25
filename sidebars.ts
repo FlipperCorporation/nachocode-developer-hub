@@ -135,10 +135,58 @@ const sidebars: SidebarsConfig = {
         slug: '/sdk/integrations',
       },
       items: [
-        'sdk/integrations/appsflyer',
-        'sdk/integrations/facebook',
-        'sdk/integrations/google',
-        'sdk/integrations/kakao',
+        {
+          type: 'category',
+          label: '앱스플라이어 (appsflyer)',
+          link: {
+            type: 'generated-index',
+            title: '앱스플라이어 (appsflyer)',
+            slug: '/sdk/integrations/appsflyer',
+          },
+          items: [
+            'sdk/integrations/appsflyer/prerequisite',
+            'sdk/integrations/appsflyer/reference',
+          ],
+        },
+        {
+          type: 'category',
+          label: '페이스북 (facebook)',
+          link: {
+            type: 'generated-index',
+            title: '페이스북 (facebook)',
+            slug: '/sdk/integrations/facebook',
+          },
+          items: [
+            'sdk/integrations/facebook/prerequisite',
+            'sdk/integrations/facebook/reference',
+          ],
+        },
+        {
+          type: 'category',
+          label: '구글 (google)',
+          link: {
+            type: 'generated-index',
+            title: '구글 (google)',
+            slug: '/sdk/integrations/google',
+          },
+          items: [
+            'sdk/integrations/google/prerequisite',
+            'sdk/integrations/google/reference',
+          ],
+        },
+        {
+          type: 'category',
+          label: '카카오 (kakao)',
+          link: {
+            type: 'generated-index',
+            title: '카카오 (kakao)',
+            slug: '/sdk/integrations/kakao',
+          },
+          items: [
+            'sdk/integrations/kakao/prerequisite',
+            'sdk/integrations/kakao/reference',
+          ],
+        },
       ],
     },
   ],

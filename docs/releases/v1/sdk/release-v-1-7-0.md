@@ -24,7 +24,7 @@ image: /img/docs/releases/release_note_sdk_detail.png
   - 모든 메서드는 **Promise 기반**으로 동작하여 `async/await` 패턴을 사용할 수 있습니다.
 
 :::info
-➡️ [`appsflyer` 네임스페이스 문서](/docs/sdk/integrations/appsflyer)에서 상세 내용을 확인할 수 있습니다.
+➡️ [`appsflyer` 네임스페이스 문서](/docs/sdk/integrations/appsflyer/reference)에서 상세 내용을 확인할 수 있습니다.
 :::
 
 ---
@@ -35,16 +35,16 @@ AppsFlyer 연동을 통해 마케팅 캠페인의 성과를 정확히 추적하�
 
 #### 추가된 메서드 (`appsflyer`)
 
-| 메서드                                                                              | 설명                        |
-| ----------------------------------------------------------------------------------- | --------------------------- |
-| [`setCustomUserId(userId)`](/docs/sdk/integrations/appsflyer#set-custom-user-id)    | 커스텀 유저 ID 설정         |
-| [`getCustomUserId()`](/docs/sdk/integrations/appsflyer#get-custom-user-id)          | 커스텀 유저 ID 조회         |
-| [`deleteCustomUserId()`](/docs/sdk/integrations/appsflyer#delete-custom-user-id)    | 커스텀 유저 ID 삭제         |
-| [`getAttributionData()`](/docs/sdk/integrations/appsflyer#get-attribution-data)     | 어트리뷰션 데이터 조회      |
-| [`clearAttributionData()`](/docs/sdk/integrations/appsflyer#clear-attribution-data) | 어트리뷰션 데이터 삭제      |
-| [`getAttributionList()`](/docs/sdk/integrations/appsflyer#get-attribution-list)     | 어트리뷰션 데이터 목록 조회 |
-| [`clearAttributionList()`](/docs/sdk/integrations/appsflyer#clear-attribution-list) | 어트리뷰션 데이터 목록 삭제 |
-| [`logEvent(eventName, values)`](/docs/sdk/integrations/appsflyer#log-event)         | 커스텀 이벤트 로깅          |
+| 메서드                                                                                        | 설명                        |
+| --------------------------------------------------------------------------------------------- | --------------------------- |
+| [`setCustomUserId(userId)`](/docs/sdk/integrations/appsflyer/reference#set-custom-user-id)    | 커스텀 유저 ID 설정         |
+| [`getCustomUserId()`](/docs/sdk/integrations/appsflyer/reference#get-custom-user-id)          | 커스텀 유저 ID 조회         |
+| [`deleteCustomUserId()`](/docs/sdk/integrations/appsflyer/reference#delete-custom-user-id)    | 커스텀 유저 ID 삭제         |
+| [`getAttributionData()`](/docs/sdk/integrations/appsflyer/reference#get-attribution-data)     | 어트리뷰션 데이터 조회      |
+| [`clearAttributionData()`](/docs/sdk/integrations/appsflyer/reference#clear-attribution-data) | 어트리뷰션 데이터 삭제      |
+| [`getAttributionList()`](/docs/sdk/integrations/appsflyer/reference#get-attribution-list)     | 어트리뷰션 데이터 목록 조회 |
+| [`clearAttributionList()`](/docs/sdk/integrations/appsflyer/reference#clear-attribution-list) | 어트리뷰션 데이터 목록 삭제 |
+| [`logEvent(eventName, values)`](/docs/sdk/integrations/appsflyer/reference#log-event)         | 커스텀 이벤트 로깅          |
 
 #### 사용 예제
 

@@ -33,7 +33,7 @@ image: /img/docs/releases/release_note_sdk_detail.png
 - 로그인 성공 시 `idToken` 및 유저 정보(`GoogleUserData`)를 제공합니다.
 - 로그인 상태 확인, 유저 데이터 조회, 로그아웃 기능을 지원합니다.
 
-➡️ [`google` 네임스페이스 문서](/docs/sdk/integrations/google)에서 상세 정보를 확인할 수 있습니다.
+➡️ [`google` 네임스페이스 문서](/docs/sdk/integrations/google/reference)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`google`)
 
@@ -64,7 +64,7 @@ Nachocode.google.login((result, idToken, userData) => {
 - 로그인 상태 확인, 유저 데이터 조회, 로그아웃, 연결 끊기(`unlink`) 기능을 지원합니다.
 - 기존 `share.sendKakao` 메서드가 `kakao.share` 메서드로 통합 및 개선되었습니다.
 
-➡️ [`kakao` 네임스페이스 문서 확인하기](/docs/sdk/integrations/kakao)
+➡️ [`kakao` 네임스페이스 문서 확인하기](/docs/sdk/integrations/kakao/reference)
 
 #### 추가된 메서드 (`kakao`)
 

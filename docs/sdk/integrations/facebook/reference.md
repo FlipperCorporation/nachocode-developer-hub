@@ -1,4 +1,6 @@
 ---
+sidebar_label: 레퍼런스 (Reference)
+pagination_label: 레퍼런스 (Reference)
 description: nachocode SDK의 `facebook` 네임스페이스로 페이스북 네이티브 로그인 연동 및 사용자 데이터 조회, 로그인 상태 확인, 로그아웃 등 페이스북 인증 기능을 쉽게 구현할 수 있습니다.
 keywords:
   [
@@ -27,101 +29,6 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 이 네임스페이스를 사용하여 **로그인, 사용자 정보 조회, 로그아웃**과 같은 기능을 수행할 수 있습니다.  
 지원되는 **권한(permissions)** 목록은 [페이스북 권한 공식 문서](https://developers.facebook.com/docs/permissions)에서 확인할 수 있습니다.
-
----
-
-## **필수 선행 작업** {#prerequisite}
-
-nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
-
-### 안드로이드 설정
-
-#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 안드로이드 네이티브 설정 ]에서 [해시키](https://developers.google.com/android/guides/client-auth?hl=ko) 확인{#prerequisite-android-step-1}
-
-![nachocode_developer_android_hash_key](/img/docs/android/nachcodoe_developer_android_hash_key.png)
-
-<br/>
-
-#### 2. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 고급 설정 > 패키지 이름 ]에서 패키지 이름 확인{#prerequisite-android-step-2}
-
-![nachocode_developer_android_hash_key](/img/docs/facebook/nachocode_advanced_package_name.png)
-
-<br/>
-
-#### 3. [Facebook Developer](https://developer.facebook.com)의 [ 앱 설정 > 기본 설정 ]에서 앱을 등록하고 정보 입력 {#prerequisite-android-step-3}
-
-- **`앱 ID`는 [nachocode 대시보드 설정](#prerequisite-android-step-6) 시 필요합니다.**
-
-![developer_facebook_create_app](/img/docs/facebook/developer_facebook_create_app.png)
-
-<br/>
-
-#### 4. [1. 해시키 확인](#prerequisite-android-step-1)에서 복사한 **해시키** 와 [2. 패키지 이름 확인](#prerequisite-android-step-2)에서 복사한 **패키지 이름** 등록 {#prerequisite-android-step-4}
-
-![developer_facebook_android](/img/docs/facebook/developer_facebook_android.png)
-<br/>
-
-#### 5. [Facebook Developer](https://developer.facebook.com)의 [ **앱 설정** > **고급 설정** ] 에서 클라이언트 토큰 확인 {#prerequisite-android-step-5}
-
-- **`클라이언트 토큰`은 [nachocode 대시보드 설정](#prerequisite-android-step-6) 시 필요합니다.**
-
-![developer_facebook_client_token](/img/docs/facebook/developer_facebook_client_token.png)
-
-<br/>
-
-#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장{#prerequisite-android-step-6}
-
-![nachocode_developer_facebook](/img/docs/facebook/nachocode_developer_facebook.png)
-
-<br/>
-
-#### 7. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > 안드로이드 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-android-step-7}
-
-![nachocode_build_android_new_version](/img/docs/android/nachocode_build_android_new_version.png)
-
-- **페이스북 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.**
-
----
-
-### iOS 설정
-
-#### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 고급 설정 > 패키지 이름 ]에서 패키지 이름 확인 {#prerequisite-ios-step-1}
-
-![nachocode_developer_android_hash_key](/img/docs/facebook/nachocode_advanced_package_name.png)
-
-<br/>
-
-#### 2. [Facebook Developer](https://developer.facebook.com)의 [ 앱 설정 > 기본 설정 ]에서 앱을 등록하고 정보 입력 {#prerequisite-ios-step-2}
-
-![developer_facebook_create_app](/img/docs/facebook/developer_facebook_create_app.png)
-
-<br/>
-
-#### 3. iOS 설정에서 nachocode 대시보드에서 확인한 패키지 이름 입력 {#prerequisite-ios-step-3}
-
-![developer_facebook_ios](/img/docs/facebook/developer_facebook_ios.png)
-
-<br/>
-
-#### 4. [Facebook Developer](https://developer.facebook.com)의 [ 앱 설정 > 고급 설정 ] 에서 클라이언트 토큰 확인 {#prerequisite-ios-step-4}
-
-- **클라이언트 토큰**은 [nachocode 대시보드 설정](#prerequisite-ios-step-5) 시 필요합니다.
-
-![developer_facebook_client_token](/img/docs/facebook/developer_facebook_client_token.png)
-
-<br/>
-
-#### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장{#prerequisite-ios-step-5}
-
-![nachocode_developer_facebook](/img/docs/facebook/nachocode_developer_facebook.png)
-
-<br/>
-
-#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-ios-step-6}
-
-![nachocode_google_login_toggle](/img/docs/apple/nachocode_build_ios_new_version.png)
-
-- 페이스북 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.
 
 ---
 
@@ -252,7 +159,7 @@ export declare type FacebookUserData = {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#login-summary}
@@ -298,7 +205,7 @@ Nachocode.facebook.login(
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#is-logged-in-summary}
@@ -338,7 +245,7 @@ Nachocode.facebook.isLoggedIn((result, isLoggedIn, accessToken, userId) => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-user-data-summary}
@@ -384,7 +291,7 @@ Nachocode.facebook.getUserData(
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#logout-summary}

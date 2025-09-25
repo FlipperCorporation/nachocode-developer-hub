@@ -1,4 +1,6 @@
 ---
+sidebar_label: 레퍼런스 (Reference)
+pagination_label: 레퍼런스 (Reference)
 description: nachocode SDK의 `appsflyer` 네임스페이스는 AppsFlyer 마케팅 어트리뷰션 및 사용자 트래킹, 커스텀 이벤트 로깅, 유저 ID 관리 등 AppsFlyer 연동 기능을 쉽게 구현할 수 있습니다.
 keywords:
   [
@@ -22,7 +24,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />  
-> 🔔 **최신화 일자:** 2025-09-24
+> 🔔 **최신화 일자:** 2025-09-25
 
 ## **개요** {#overview}
 
@@ -101,7 +103,7 @@ AppsFlyer 전환 데이터를 나타내는 타입입니다.
 ```typescript
 export declare interface ConversionData {
   timestamp: number;
-  event_type: 'conversion_data';
+  data_type: 'conversion_data';
   install_time: string;
   af_message: string;
   af_status: 'Organic' | 'Non-organic';
@@ -112,7 +114,7 @@ export declare interface ConversionData {
 | 필드              | 타입                         | 설명                                        |
 | ----------------- | ---------------------------- | ------------------------------------------- |
 | `timestamp`       | `number`                     | 전환 데이터 수신 시간 (Unix 에포크 밀리초)  |
-| `event_type`      | `'conversion_data'`          | 이벤트 타입 (전환 데이터)                   |
+| `data_type`       | `'conversion_data'`          | 데이터 타입 (전환 데이터)                   |
 | `install_time`    | `string`                     | 앱 설치 시간                                |
 | `af_message`      | `string`                     | AppsFlyer 메시지                            |
 | `af_status`       | `'Organic' \| 'Non-organic'` | 설치 어트리뷰션 타입 (유기적/비유기적 설치) |
@@ -127,7 +129,7 @@ AppsFlyer 딥링크 데이터를 나타내는 타입입니다.
 ```typescript
 export declare interface BaseDeepLinkData {
   timestamp: number;
-  event_type: 'deeplink_data';
+  data_type: 'deeplink_data';
   link_type: 'app_link' | 'universal_link' | 'uri_scheme';
   scheme: string;
   host: string;
@@ -143,7 +145,7 @@ export declare type DeepLinkData = BaseDeepLinkData &
 | 필드                 | 타입                                             | 설명                                         |
 | -------------------- | ------------------------------------------------ | -------------------------------------------- |
 | `timestamp`          | `number`                                         | 딥링크 데이터 수신 시간 (Unix 에포크 밀리초) |
-| `event_type`         | `'deeplink_data'`                                | 이벤트 타입 (딥링크 데이터)                  |
+| `data_type`          | `'deeplink_data'`                                | 데이터 타입 (딥링크 데이터)                  |
 | `link_type`          | `'app_link' \| 'universal_link' \| 'uri_scheme'` | 링크 타입                                    |
 | `scheme`             | `string`                                         | 앱 스킴 스킴                                 |
 | `host`               | `string`                                         | 호스트 이름                                  |
@@ -221,6 +223,10 @@ export declare type GetAttributionListResult =
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
+:::warning 주의
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
 #### 설명 {#set-custom-user-id-summary}
 
 AppsFlyer에 커스텀 유저 ID를 설정합니다.
@@ -254,6 +260,10 @@ if (result.status === 'success') {
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
+:::warning 주의
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
 #### 설명 {#get-custom-user-id-summary}
 
 AppsFlyer에서 등록된 커스텀 유저 ID를 조회합니다.
@@ -279,6 +289,10 @@ if (result.status === 'success') {
 ### **`deleteCustomUserId(): Promise<AppsflyerResult>`** {#delete-custom-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
+
+:::warning 주의
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 {#delete-custom-user-id-summary}
 
@@ -306,6 +320,10 @@ if (result.status === 'success') {
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
+:::warning 주의
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
 #### 설명 {#get-attribution-data-summary}
 
 AppsFlyer 어트리뷰션 데이터를 조회합니다.
@@ -323,13 +341,13 @@ const result = await Nachocode.appsflyer.getAttributionData();
 if (result.status === 'success') {
   console.log('어트리뷰션 데이터:', result.data);
 
-  // 이벤트 타입에 따라 처리
-  if (result.data.event_type === 'conversion_data') {
+  // 데이터 타입에 따라 처리
+  if (result.data.data_type === 'conversion_data') {
     // 전환 데이터인 경우
     console.log('설치 타입:', result.data.af_status);
     console.log('첫 실행 여부:', result.data.is_first_launch);
     console.log('설치 시간:', result.data.install_time);
-  } else if (result.data.event_type === 'deeplink_data') {
+  } else if (result.data.data_type === 'deeplink_data') {
     // 딥링크 데이터인 경우
     console.log('링크 타입:', result.data.link_type);
     console.log('스킴:', result.data.scheme);
@@ -349,6 +367,10 @@ if (result.status === 'success') {
 ### **`clearAttributionData(): Promise<AppsflyerResult>`** {#clear-attribution-data}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
+
+:::warning 주의
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 {#clear-attribution-data-summary}
 
@@ -380,6 +402,10 @@ if (result.status === 'success') {
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
+:::warning 주의
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
 #### 설명 {#get-attribution-list-summary}
 
 저장된 어트리뷰션 데이터 목록을 조회합니다.
@@ -396,12 +422,12 @@ const result = await Nachocode.appsflyer.getAttributionList();
 if (result.status === 'success') {
   console.log('어트리뷰션 데이터 목록:', result.data);
   result.data.forEach((attribution, index) => {
-    console.log(`${index + 1}. 이벤트 타입: ${attribution.event_type}`);
+    console.log(`${index + 1}. 데이터 타입: ${attribution.data_type}`);
 
-    if (attribution.event_type === 'conversion_data') {
+    if (attribution.data_type === 'conversion_data') {
       console.log(`   설치 타입: ${attribution.af_status}`);
       console.log(`   첫 실행 여부: ${attribution.is_first_launch}`);
-    } else if (attribution.event_type === 'deeplink_data') {
+    } else if (attribution.data_type === 'deeplink_data') {
       console.log(`   링크 타입: ${attribution.link_type}`);
       console.log(`   링크: ${attribution.link}`);
     }
@@ -416,6 +442,10 @@ if (result.status === 'success') {
 ### **`clearAttributionList(): Promise<AppsflyerResult>`** {#clear-attribution-list}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
+
+:::warning 주의
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 {#clear-attribution-list-summary}
 
@@ -442,6 +472,10 @@ if (result.status === 'success') {
 ### **`logEvent(eventName: string, values: Record<string, any>): Promise<AppsflyerResult>`** {#log-event}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
+
+:::warning 주의
+_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
 
 #### 설명 {#log-event-summary}
 

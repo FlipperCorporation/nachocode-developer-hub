@@ -25,7 +25,7 @@ nachocode iOS App Source **1.6.9** 버전이 반영되었습니다.
 ➡️ [**구글 도움말 센터**](https://support.google.com/accounts/answer/7675428)
 
 이번 업데이트 변경 사항은 임시 조치이며 언젠가 다시 문제가 생길 여지가 있습니다.  
-nachocode에서는 [**SDK의 Google 네임스페이스**](/docs/sdk/integrations/google)를 활용하여 네이티브 로그인을 구현하는 방식을 권장합니다.
+nachocode에서는 [**SDK의 Google 네임스페이스**](/docs/sdk/integrations/google/reference)를 활용하여 네이티브 로그인을 구현하는 방식을 권장합니다.
 :::
 
 ## 업데이트 적용 방법

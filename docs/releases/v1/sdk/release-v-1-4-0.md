@@ -36,7 +36,7 @@ image: /img/docs/releases/release_note_sdk_detail.png
 
 - [QR 코드 스캐너 지원](#1-qr-코드-스캐너-기능-추가-scanner-네임스페이스) ([`scanner`](/docs/sdk/namespaces/scanner))
 - [Apple 로그인 (iOS 전용)](#2-apple-소셜-로그인-지원-apple-네임스페이스-ios-전용) ([`apple`](/docs/sdk/namespaces/apple))
-- [Facebook 로그인 지원](#3-facebook-소셜-로그인-지원-facebook-네임스페이스) ([`facebook`](/docs/sdk/integrations/facebook))
+- [Facebook 로그인 지원](#3-facebook-소셜-로그인-지원-facebook-네임스페이스) ([`facebook`](/docs/sdk/integrations/facebook/reference))
 - [클립보드 복사/붙여넣기](#4-클립보드-기능-추가-clipboard-네임스페이스) ([`clipboard`](/docs/sdk/namespaces/clipboard))
 - [첫 실행 여부 확인](#5-앱-첫-실행-여부-확인-app-네임스페이스) ([`app`](/docs/sdk/namespaces/app))
 - [디바이스 언어 확인](#6-디바이스-언어-확인-기능-추가-device-네임스페이스) ([`device`](/docs/sdk/namespaces/device))
@@ -109,7 +109,7 @@ Nachocode.apple.login(['email', 'fullName'], (result, userData) => {
 - `facebook.login` 메서드로 네이티브 Facebook 로그인을 요청할 수 있으며 요구할 권한 범위를 지정할 수 있습니다.
 - 인증 결과와 사용자 정보는 콜백으로 받을 수 있습니다.
 - 이와 함께 `facebook.isLoggedIn`, `facebook.getUserData`, `facebook.logout` 등의 메서드가 추가되었습니다.
-- ➡️ [`facebook` 네임스페이스 문서](/docs/sdk/integrations/facebook)에서 상세 정보를 확인할 수 있습니다.
+- ➡️ [`facebook` 네임스페이스 문서](/docs/sdk/integrations/facebook/reference)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`facebook`)
 
