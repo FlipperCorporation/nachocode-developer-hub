@@ -222,6 +222,13 @@ const config: Config = {
     },
     prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
   } satisfies Preset.ThemeConfig,
+
+  scripts: [
+    {
+      src: '/js/copy-heading-link.js',
+      async: true,
+    },
+  ],
 };
 
 export default config;
