@@ -5,17 +5,25 @@ description: nachocode SDK의 `appsflyer` 네임스페이스는 AppsFlyer 마케
 keywords:
   [
     앱 마케팅,
-    앱스플라이어 연동,
     앱스플라이어 어트리뷰션,
     앱스플라이어 사용자 추적,
     앱스플라이어 이벤트 로깅,
     앱스플라이어 커스텀 유저 아이디,
+    AppsFlyer 마케팅 어트리뷰션,
+    AppsFlyer 연동,
+    앱스플라이어 연동,
+    앱스플라이어 Dev Key,
+    앱스플라이어 원링크,
+    앱스플라이어 인게이지,
+    AppsFlyer Marketing Attribution,
     AppsFlyer Attribution,
     AppsFlyer User Tracking,
     AppsFlyer Event Logging,
     AppsFlyer Custom User ID,
-    AppsFlyer 마케팅 어트리뷰션,
-    AppsFlyer Marketing Attribution,
+    AppsFlyer Dev Key,
+    AppsFlyer OneLink,
+    AppsFlyer Engage,
+    AppsFlyer Integration,
   ]
 ---
 
@@ -24,7 +32,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />  
-> 🔔 **최신화 일자:** 2025-09-25
+> 🔔 **최신화 일자:** 2025-09-26
 
 ## **개요** {#overview}
 
@@ -135,7 +143,7 @@ export declare interface BaseDeepLinkData {
   host: string;
   path: string;
   link: string;
-  is_deferred?: boolean;
+  is_deferred: false;
 }
 
 export declare type DeepLinkData = BaseDeepLinkData &
@@ -147,11 +155,61 @@ export declare type DeepLinkData = BaseDeepLinkData &
 | `timestamp`          | `number`                                         | 딥링크 데이터 수신 시간 (Unix 에포크 밀리초) |
 | `data_type`          | `'deeplink_data'`                                | 데이터 타입 (딥링크 데이터)                  |
 | `link_type`          | `'app_link' \| 'universal_link' \| 'uri_scheme'` | 링크 타입                                    |
-| `scheme`             | `string`                                         | 앱 스킴 스킴                                 |
+| `scheme`             | `string`                                         | 앱 스킴                                      |
 | `host`               | `string`                                         | 호스트 이름                                  |
 | `path`               | `string`                                         | URL 경로                                     |
 | `link`               | `string`                                         | 전체 링크 URL                                |
+| `is_deferred`        | `false`                                          | 디퍼드 딥링크 여부 (일반 딥링크는 false)     |
 | 기타 커스텀 파라미터 | `string`                                         | 추가 커스텀 쿼리 파라미터들                  |
+
+---
+
+### **`DeferredDeepLinkData`** {#deferred-deep-link-data}
+
+AppsFlyer 디퍼드 딥링크 데이터를 나타내는 타입입니다.
+
+:::info 앱스플라이어 공식문서
+[](https://dev.appsflyer.com/hc/docs/android-sdk-reference-deeplink)
+:::
+
+```typescript
+export declare interface BaseDeferredDeepLinkData {
+  timestamp: number;
+  data_type: 'deeplink_data';
+  link_type: 'deferred_link';
+  is_deferred: true;
+  match_type:
+    | 'referrer' // Google Play referrer string
+    | 'id_matching'
+    | 'probabilistic'
+    | 'srn'; // self-reporting network
+  media_source: string;
+  campaign: string;
+  campaign_id: string;
+  click_http_referrer: string;
+  deep_link_value: string;
+  af_sub1: string;
+  af_sub2: string;
+  af_sub3: string;
+  af_sub4: string;
+  af_sub5: string;
+}
+
+export declare type DeferredDeepLinkData = BaseDeferredDeepLinkData &
+  Omit<Record<string, string>, keyof BaseDeepLinkData>;
+```
+
+| 필드                 | 타입                                                      | 설명                                         |
+| -------------------- | --------------------------------------------------------- | -------------------------------------------- |
+| `timestamp`          | `number`                                                  | 딥링크 데이터 수신 시간 (Unix 에포크 밀리초) |
+| `data_type`          | `'deeplink_data'`                                         | 데이터 타입 (딥링크 데이터)                  |
+| `link_type`          | `'deferred_link'`                                         | 링크 타입                                    |
+| `is_deferred`        | `true`                                                    | 디퍼드 딥링크 여부 (디퍼드 딥링크는 true)    |
+| `match_type`         | `'referrer' \| 'id_matching' \| 'probabilistic' \| 'srn'` | 어트리뷰션 매칭 방식                         |
+| `media_source`       | `string`                                                  | 미디어 소스 (광고 플랫폼)                    |
+| `campaign`           | `string` _(optional)_                                     | 캠페인 이름                                  |
+| `campaign_id`        | `string` _(optional)_                                     | 캠페인 ID                                    |
+| 기타 커스텀 파라미터 | `string`                                                  | 추가 커스텀 쿼리 파라미터들                  |
 
 ---
 
@@ -160,13 +218,17 @@ export declare type DeepLinkData = BaseDeepLinkData &
 AppsFlyer 어트리뷰션 데이터를 나타내는 유니온 타입입니다.
 
 ```typescript
-export declare type AttributionData = ConversionData | DeepLinkData;
+export declare type AttributionData =
+  | ConversionData
+  | DeepLinkData
+  | DeferredDeepLinkData;
 ```
 
 어트리뷰션 데이터는 다음 중 하나의 타입을 가집니다.
 
 - [`ConversionData`](#conversion-data): 전환 데이터 (설치, 실행 어트리뷰션 정보)
 - [`DeepLinkData`](#deep-link-data): 딥링크 데이터 (링크 클릭을 통한 앱 실행 정보)
+- [`DeferredDeepLinkData`](#deferred-deep-link-data): 디퍼드 딥링크 데이터 (설치 후 첫 실행 시 어트리뷰션 정보)
 
 ---
 
@@ -352,6 +414,20 @@ if (result.status === 'success') {
     console.log('링크 타입:', result.data.link_type);
     console.log('스킴:', result.data.scheme);
     console.log('전체 링크:', result.data.link);
+
+    // 디퍼드 딥링크인지 확인
+    if (result.data.is_deferred) {
+      // 디퍼드 딥링크 추가 정보
+      console.log('매칭 방식:', result.data.match_type);
+      console.log('미디어 소스:', result.data.media_source);
+      console.log('클릭 시간:', result.data.click_time);
+      console.log('설치 시간:', result.data.install_time);
+      if (result.data.campaign) {
+        console.log('캠페인:', result.data.campaign);
+      }
+    } else {
+      console.log('일반 딥링크');
+    }
   }
 } else {
   console.error(
@@ -430,6 +506,17 @@ if (result.status === 'success') {
     } else if (attribution.data_type === 'deeplink_data') {
       console.log(`   링크 타입: ${attribution.link_type}`);
       console.log(`   링크: ${attribution.link}`);
+
+      // 디퍼드 딥링크인지 확인
+      if (attribution.is_deferred) {
+        console.log(`   디퍼드 딥링크 - 매칭 방식: ${attribution.match_type}`);
+        console.log(`   미디어 소스: ${attribution.media_source}`);
+        if (attribution.campaign) {
+          console.log(`   캠페인: ${attribution.campaign}`);
+        }
+      } else {
+        console.log(`   일반 딥링크`);
+      }
     }
   });
 } else {

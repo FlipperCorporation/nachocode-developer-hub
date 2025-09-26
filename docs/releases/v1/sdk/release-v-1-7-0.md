@@ -1,14 +1,14 @@
 ---
-sidebar_label: 'ver.1.7.0 (25.09.23)'
+sidebar_label: 'ver.1.7.0 (25.09.26)'
 description: nachocode Client SDK ver.1.7.0의 릴리즈노트입니다.
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 
-# Release: ver.1.7.0 (2025-09-23)
+# Release: ver.1.7.0 (2025-09-26)
 
 ![sdk_detail](/img/docs/releases/release_note_sdk_detail.png)
 
-> 🔔 **배포 일자:** 2025-09-23
+> 🔔 **배포 일자:** 2025-09-26
 
 이번 업데이트 **v1.7.0**에서는 **AppsFlyer 마케팅 어트리뷰션 및 사용자 트래킹 기능**이 새롭게 추가되었습니다.
 
@@ -68,14 +68,27 @@ const result = await Nachocode.appsflyer.getAttributionData();
 if (result.status === 'success') {
   console.log('어트리뷰션 데이터:', result.data);
 
-  // 이벤트 타입에 따라 처리
-  if (result.data.event_type === 'conversion_data') {
+  // 데이터 타입에 따라 처리
+  if (result.data.data_type === 'conversion_data') {
     console.log('설치 타입:', result.data.af_status); // 'Organic' 또는 'Non-organic'
     console.log('첫 실행 여부:', result.data.is_first_launch);
     console.log('설치 시간:', result.data.install_time);
-  } else if (result.data.event_type === 'deeplink_data') {
+  } else if (result.data.data_type === 'deeplink_data') {
     console.log('링크 타입:', result.data.link_type);
     console.log('딥링크 URL:', result.data.link);
+
+    // 디퍼드 딥링크인지 확인
+    if (result.data.is_deferred) {
+      console.log('디퍼드 딥링크 - 매칭 방식:', result.data.match_type);
+      console.log('미디어 소스:', result.data.media_source);
+      console.log('클릭 시간:', result.data.click_time);
+      console.log('설치 시간:', result.data.install_time);
+      if (result.data.campaign) {
+        console.log('캠페인:', result.data.campaign);
+      }
+    } else {
+      console.log('일반 딥링크');
+    }
   }
 }
 ```
@@ -104,22 +117,35 @@ if (result.status === 'success') {
 
 **전환 데이터** (`ConversionData`)
 
-- `event_type`: 'conversion_data'
-- `install_time`: 앱 설치 시간
-- `af_status`: 설치 어트리뷰션 타입 ('Organic' 또는 'Non-organic')
-- `is_first_launch`: 첫 번째 실행 여부
-- `af_message`: AppsFlyer 메시지
 - `timestamp`: 수신 시간
+- `data_type`: 'conversion_data'
+- `install_time`: 앱 설치 시간
+- `is_first_launch`: 첫 번째 실행 여부
+- `af_status`: 설치 어트리뷰션 타입 ('Organic' 또는 'Non-organic')
+- `af_message`: AppsFlyer 메시지
 
 **딥링크 데이터** (`DeepLinkData`)
 
-- `event_type`: 'deeplink_data'
+- `timestamp`: 수신 시간
+- `data_type`: 'deeplink_data'
 - `link_type`: 링크 타입 ('app_link', 'universal_link', 'uri_scheme')
 - `scheme`: 앱 스킴
 - `host`: 호스트 이름
 - `path`: URL 경로
 - `link`: 전체 링크 URL
+- `is_deferred`: 디퍼드 딥링크 여부 (false)
+- 기타 커스텀 쿼리 파라미터들
+
+**디퍼드 딥링크 데이터** (`DeferredDeepLinkData`)
+
 - `timestamp`: 수신 시간
+- `data_type`: 'deeplink_data'
+- `link_type`: 'deferred_link'
+- `is_deferred`: 디퍼드 딥링크 여부 (true)
+- `match_type`: 어트리뷰션 매칭 방식 ('referrer', 'id_matching', 'probabilistic', 'srn')
+- `media_source`: 미디어 소스 (광고 플랫폼)
+- `campaign`: 캠페인 이름 (선택적)
+- `campaign_id`: 캠페인 ID (선택적)
 - 기타 커스텀 쿼리 파라미터들
 
 ---
@@ -128,7 +154,9 @@ if (result.status === 'success') {
 
 - **TypeScript 정의**(`Nachocode.d.ts`) **업데이트**
   - v.1.7.0 변경 사항을 반영하여 AppsFlyer 네임스페이스 관련 타입 정의가 추가되었습니다.
-  - `AppsflyerResult`, `GetCustomUserIdResult`, `ConversionData`, `DeepLinkData`, `AttributionData` 등의 새로운 타입이 정의되었습니다.
+  - `AppsflyerResult`, `GetCustomUserIdResult`, `ConversionData`, `DeepLinkData`, `DeferredDeepLinkData`, `AttributionData` 등의 새로운 타입이 정의되었습니다.
+  - **디퍼드 딥링크** (`DeferredDeepLinkData`) 타입이 새로 추가되어, 설치 후 첫 실행 시 어트리뷰션 정보를 더 상세하게 제공합니다.
+  - `DeepLinkData`와 `DeferredDeepLinkData`를 구분하는 `is_deferred` 필드가 추가되었습니다.
   - 개발자 경험 향상을 위해 주석과 설명이 추가되었습니다.
 
 :::info
