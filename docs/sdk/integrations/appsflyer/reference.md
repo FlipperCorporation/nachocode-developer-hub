@@ -168,10 +168,6 @@ export declare type DeepLinkData = BaseDeepLinkData &
 
 AppsFlyer 디퍼드 딥링크 데이터를 나타내는 타입입니다.
 
-:::info 앱스플라이어 공식문서
-[](https://dev.appsflyer.com/hc/docs/android-sdk-reference-deeplink)
-:::
-
 ```typescript
 export declare interface BaseDeferredDeepLinkData {
   timestamp: number;

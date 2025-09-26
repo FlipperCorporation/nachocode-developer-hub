@@ -31,7 +31,7 @@ keywords:
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/app-source/android/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/app-source/ios/release-v-1-7-0" />
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/app-source/android/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/app-source/ios/release-v-1-7-0" />  
 > 🔔 **최신화 일자:** 2025-09-26
 
 ## **필수 선행 작업** {#prerequisite}
@@ -220,7 +220,7 @@ if (result.status === 'success') {
 #### 1. AppsFlyer 데이터가 수집되지 않는 경우
 
 - **원인**: Dev Key 설정이 올바르지 않거나 빌드가 완료되지 않았을 때
-- **해결방법**:
+- **해결방법**
   - 지원팀 설정 완료 확인
   - 새 버전으로 재빌드
   - Dev Key 정확성 재확인
@@ -228,14 +228,14 @@ if (result.status === 'success') {
 #### 2. 원링크가 동작하지 않는 경우
 
 - **원인**: 원링크 도메인이 nachocode에 등록되지 않았을 때
-- **해결방법**:
+- **해결방법**
   - [5단계](#prerequisite-step-5) 원링크 도메인 등록 확인
   - AppsFlyer 대시보드에서 원링크 설정 재확인
 
 #### 3. 어트리뷰션 데이터가 부정확한 경우
 
 - **원인**: 앱 스토어 정보와 AppsFlyer 설정이 일치하지 않을 때
-- **해결방법**:
+- **해결방법**
   - 패키지 이름/Bundle ID 일치 여부 확인
   - AppsFlyer 앱 설정에서 스토어 정보 재확인
 
@@ -245,7 +245,7 @@ if (result.status === 'success') {
 
 설정 과정에서 문제가 발생하거나 질문이 있으시면 언제든지 연락주세요.
 
-**이메일**: [support@nachocode.io](mailto:support@nachocode.io)
+**이메일**: [support@nachocode.io](mailto:support@nachocode.io)  
 **응답 시간**: 영업일 기준 1~2일 이내
 
 :::
