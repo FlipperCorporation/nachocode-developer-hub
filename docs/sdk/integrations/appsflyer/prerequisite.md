@@ -174,15 +174,13 @@ AppsFlyer 원링크 도메인 등록을 위해 아래 정보로 설정 부탁드
 
 ---
 
-### 6. 재빌드 수행 {#prerequisite-step-6}
+### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 재빌드 수행 {#prerequisite-step-6}
 
-#### 6-1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > 안드로이드 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-step-6-1}
+#### 6-1. [ 앱 빌드 ] → [ 안드로이드 앱 빌드 ] 혹은 [ iOS 앱 빌드 ] 접속 {#prerequisite-step-6-1}
+
+#### 6-2. [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-step-6-2}
 
 ![nachocode_build_android_new_version](/img/docs/android/nachocode_build_android_new_version.png)
-
-#### 6-2. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-step-6-2}
-
-![nachocode_build_ios_new_version](/img/docs/apple/nachocode_build_ios_new_version.png)
 
 :::info **빌드 필수!**
 
@@ -217,10 +215,6 @@ if (result.status === 'success') {
   console.error('AppsFlyer 연동 확인 필요: ', result.errorCode, result.message);
 }
 ```
-
-### 3. AppsFlyer 대시보드에서 데이터 수신 확인 {#verification-3}
-
-앱 실행 후 AppsFlyer 대시보드의 [ Overview ] → [ Real Time ] 에서 실시간 데이터를 확인할 수 있습니다.
 
 ---
 
