@@ -32,20 +32,26 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/app-source/android/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/app-source/ios/release-v-1-7-0" />  
-> 🔔 **최신화 일자:** 2025-09-26
+> 🔔 **최신화 일자:** 2025-09-29
 
 ## **필수 선행 작업** {#prerequisite}
 
 nachocode SDK로 **AppsFlyer 연동 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-### 1. AppsFlyer 대시보드에서 앱 등록 {#prerequisite-step-1}
+### 1. AppsFlyer 대시보드에서 앱 추가 {#prerequisite-step-1}
 
 #### 1-1. [AppsFlyer 대시보드](https://hq1.appsflyer.com/)에 로그인 후 새로운 앱 추가 {#prerequisite-step-1-1}
 
 #### 1-2. 앱 정보 입력 및 플랫폼 선택 {#prerequisite-step-1-2}
 
-- **Android**: Google Play Store URL 또는 패키지 이름 입력
-- **iOS**: App Store URL 또는 Bundle ID 입력
+- **Android**
+  - 출시된 앱: 구글 플레이 스토어 URL 입력
+  - 승인 대기 중, 배포되지 않음: 안드로이드 패키지명 입력
+- **iOS**
+  - 출시된 앱: 앱스토어 URL 입력
+  - 승인 대기 중, 배포되지 않음: 국가, iOS App ID 입력
+
+![appsflyer_prerequisite_step_1_2](/img/docs/appsflyer/appsflyer_prerequisite_step_1_2.png)
 
 :::info 앱스플라이어 공식 문서 바로가기
 ➡️ [앱스플라이어에 앱 추가하기](https://support.appsflyer.com/hc/ko/articles/207377436-%EC%95%B1%EC%8A%A4%ED%94%8C%EB%9D%BC%EC%9D%B4%EC%96%B4%EC%97%90-%EC%95%B1-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0)
@@ -59,22 +65,22 @@ nachocode SDK로 **AppsFlyer 연동 기능**을 사용하기 위해서는 아래
 
 #### 2-1. AppsFlyer 대시보드에서 [ 설정 ] → [ 앱 설정 ] 접속 {#prerequisite-step-2-1}
 
-#### 2-2. **Dev Key** 복사 {#prerequisite-step-2-2}
+#### 2-2. [ SDK 인증 ] → **Dev Key** 복사 {#prerequisite-step-2-2}
 
 - **Dev Key**는 [nachocode 연동 설정](#prerequisite-step-3) 시 필요합니다.
 
-![appsflyer_dashboard_dev_key](/img/docs/appsflyer/appsflyer_dashboard_sdk_dev_key.png)
+![appsflyer_dashboard_dev_key](/img/docs/appsflyer/appsflyer_prerequisite_step_2_2.png)
 
 <br/>
 
 ---
 
-### 3. nachocode에 Dev Key 전달 {#prerequisite-step-3}
+### 3. nachocode에 AppsFlyer Dev Key 등록 {#prerequisite-step-3}
 
 :::warning **현재 수동 설정 필요**
 
-AppsFlyer 연동 설정이 아직 nachocode 대시보드에 구현되지 않았습니다.
-**[지원팀 이메일](mailto:support@nachocode.io)로 연락주시면 수동으로 설정해드립니다.**
+AppsFlyer 연동 설정 기능은 아직 nachocode 대시보드에서 제공되지 않습니다.  
+**설정을 원하실 경우 지원팀 이메일 [support@nachocode.io](mailto:support@nachocode.io)로 연락주시면 수동으로 설정해드립니다.**
 
 :::
 
@@ -112,18 +118,23 @@ AppsFlyer 연동을 위해 아래 정보로 설정 부탁드립니다.
 
 #### 4-1. AppsFlyer 대시보드에서 [ 인게이지 ] → [ 원링크 관리 ] 접속 {#prerequisite-step-4-1}
 
-<!-- ![appsflyer_dashboard_engage_onelink](/img/docs/appsflyer/appsflyer_dashboard_engage_onelink.png) -->
+![appsflyer_prerequisite_step_4_1](/img/docs/appsflyer/appsflyer_prerequisite_step_4_1.png)
 
-#### 4-2. 새로운 원링크 생성 {#prerequisite-step-4-2}
+#### 4-2. 새로운 원링크 템플릿 생성 {#prerequisite-step-4-2}
 
-<!-- ![appsflyer_dashboard_create_onelink](/img/docs/appsflyer/appsflyer_dashboard_create_onelink.png) -->
+![appsflyer_prerequisite_step_4_2](/img/docs/appsflyer/appsflyer_prerequisite_step_4_2.png)
 
-#### 4-3. 원링크 설정 완료 후 **원링크 도메인** 복사 {#prerequisite-step-4-3}
+#### 4-3. 새로운 원링크 생성 {#prerequisite-step-4-3}
 
-- ex. `yourapp.onelink.me`
+![appsflyer_prerequisite_step_4_3](/img/docs/appsflyer/appsflyer_prerequisite_step_4_3.png)
+
+#### 4-4. 원링크 설정 완료 후 **원링크 도메인** 복사 {#prerequisite-step-4-4}
+
 - **원링크 도메인**은 [nachocode 연동 설정](#prerequisite-step-5) 시 필요합니다.
+- **원링크 도메인**은 [ 템플릿 ] → [ 하위 도메인 ]에서 등록한 **서브도메인**을 의미합니다.
+- ex. `https://yourapp.onelink.me`
 
-![appsflyer_dashboard_onelink_domain](/img/docs/appsflyer/appsflyer_dashboard_onelink_domain.png)
+![appsflyer_prerequisite_step_4_4](/img/docs/appsflyer/appsflyer_prerequisite_step_4_4.png)
 
 <br/>
 
@@ -135,8 +146,8 @@ AppsFlyer 연동을 위해 아래 정보로 설정 부탁드립니다.
 
 :::warning **현재 수동 설정 필요**
 
-원링크 도메인 설정이 아직 nachocode 대시보드에 구현되지 않았습니다.
-**[지원팀 이메일](mailto:support@nachocode.io)로 연락주시면 수동으로 설정해드립니다.**
+AppsFlyer 원링크 도메인 설정 기능은 아직 nachocode 대시보드에서 제공되지 않습니다.  
+**설정을 원하실 경우 지원팀 이메일 [support@nachocode.io](mailto:support@nachocode.io)로 연락주시면 수동으로 설정해드립니다.**
 
 :::
 
@@ -154,7 +165,7 @@ AppsFlyer 연동을 위해 아래 정보로 설정 부탁드립니다.
 AppsFlyer 원링크 도메인 등록을 위해 아래 정보로 설정 부탁드립니다.
 
 - nachocode 앱 Key: your_app_key_here
-- 원링크 도메인: yourapp.onelink.me
+- 원링크 도메인: https://yourapp.onelink.me
 
 감사합니다.
 ```
