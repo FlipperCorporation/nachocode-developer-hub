@@ -1,4 +1,6 @@
 ---
+sidebar_label: 레퍼런스
+pagination_label: 레퍼런스 (Reference)
 description: nachocode SDK의 `apple` 네임스페이스는 Apple 소셜 로그인과 사용자 정보 조회 기능을 제공하여 iOS 네이티브 기능과의 통합을 지원합니다.
 keywords:
   [
@@ -14,48 +16,26 @@ keywords:
   ]
 ---
 
-# 애플 (`apple`)
+# 애플 (`apple`) - 레퍼런스
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-07-16
+> 🔔 **최신화 일자:** 2025-09-30
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
-:::warning 주의
+:::info 참고
 **이 네임스페이스는 현재 iOS에서만 지원됩니다.**
+:::
+
+:::warning 연동을 마치셨나요?
+SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
 :::
 
 ## **개요** {#overview}
 
-`apple` 네임스페이스는 **디바이스의 Apple 네이티브 기능**을 활용할 수 있도록 지원합니다.
-
-현재는 **Apple 로그인** 및 **사용자 정보 조회** 기능을 제공합니다.
-
----
-
-### **필수 선행 작업** {#prerequisite}
-
-nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
-
-#### 1. [Apple Developer](https://developer.apple.com/account/resources/identifiers/list)에서 **Identifier**에 Capabilities 중 [ Sign In with Apple ] 추가 {#prerequisite-step-1}
-
-![developer_apple_capabilities_sign_in_with_apple](../../../static/img/docs/apple/developer_apple_capabilities_sign_in_with_apple.png)
-
-<br/>
-
-#### 2. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 애플 로그인 사용 ] 토글을 활성화하여 앱 설정 완료 {#prerequisite-step-2}
-
-![nachocode_developer_apple_login](../../../static/img/docs/apple/nachocode_developer_apple_login.png)
-
-<br/>
-
-#### 3. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-step-3}
-
-![nachocode_google_login_toggle](../../../static/img/docs/apple/nachocode_build_ios_new_version.png)
-
-- 애플 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.
+`apple` 네임스페이스는 **Apple 로그인** 및 **사용자 정보 조회** 등 **디바이스의 Apple 네이티브 기능**을 활용할 수 있도록 지원합니다.
 
 ---
 
@@ -86,8 +66,8 @@ export declare type AppleResult = AppleSuccessResult | AppleErrorResult;
 | 필드                     | 타입     | 설명                                 |
 | ------------------------ | -------- | ------------------------------------ |
 | `status`                 | `string` | 요청 결과 상태 (`success` / `error`) |
-| `errorCode` (_optional_) | `string` | 오류 코드 (선택적)                   |
-| `message` (_optional_)   | `string` | 오류 메시지 (선택적)                 |
+| `errorCode` (_optional_) | `string` | 오류 코드                            |
+| `message` (_optional_)   | `string` | 오류 메시지                          |
 
 ---
 
@@ -114,6 +94,10 @@ export declare type ApplePermissions = (typeof ApplePermissionTypes)[string][];
 
 Apple 로그인 성공 시 반환되는 사용자 정보 객체입니다.
 
+:::warning 주의
+사용자의 이메일 및 이름 정보는 **최초 로그인 시에만 제공될 수 있으며, 이후 재로그인 시 반환되지 않을 수 있습니다.** 또한, 사용자가 제공하는 것을 거부하거나 요청할 때 권한에서 누락된다면 반환 데이터에서도 생략되게 되니 사용에 주의하시기 바랍니다.
+:::
+
 ```typescript
 export declare type AppleUserData = {
   identifier: string;
@@ -128,15 +112,15 @@ export declare type AppleUserData = {
 };
 ```
 
-| 필드                           | 타입     | 설명                        |
-| ------------------------------ | -------- | --------------------------- |
-| `identifier`                   | `string` | Apple 사용자 고유 식별자    |
-| `token`                        | `string` | 사용자 토큰                 |
-| `authorizationCode`            | `string` | Apple 인증 코드             |
-| `email` (_optional_)           | `string` | 사용자 이메일 (선택적)      |
-| `name.familyName` (_optional_) | `string` | 사용자 성                   |
-| `name.givenName` (_optional_)  | `string` | 사용자 이름                 |
-| `[fields: string]`             | `any`    | 기타 사용자 데이터 (선택적) |
+| 필드                           | 타입     | 설명                     |
+| ------------------------------ | -------- | ------------------------ |
+| `identifier`                   | `string` | Apple 사용자 고유 식별자 |
+| `token`                        | `string` | 사용자 토큰              |
+| `authorizationCode`            | `string` | Apple 인증 코드          |
+| `email` (_optional_)           | `string` | 사용자 이메일            |
+| `name.familyName` (_optional_) | `string` | 사용자 성                |
+| `name.givenName` (_optional_)  | `string` | 사용자 이름              |
+| `[fields: string]`             | `any`    | 기타 사용자 데이터       |
 
 ---
 
@@ -157,12 +141,16 @@ export declare type AppleUserData = {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#login-summary}
 
 Apple 네이티브 소셜 로그인을 수행하고 사용자 정보를 반환합니다.
+
+#### 주의사항 {#login-warning}
+
+사용자의 이메일 및 이름 정보는 **최초 로그인 시에만 제공될 수 있으며, 이후 재로그인 시 반환되지 않을 수 있습니다.** 또한, 사용자가 제공하는 것을 거부하거나 요청할 때 권한에서 누락된다면 반환 데이터에서도 생략되게 되니 사용에 주의하시기 바랍니다.
 
 #### 매개변수 {#login-parameters}
 
@@ -200,7 +188,7 @@ Nachocode.apple.login(['email', 'fullName'], (result, userData) => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#is-logged-in-summary}
@@ -239,7 +227,7 @@ Nachocode.apple.isLoggedIn('user_identifier_here', (result, isLoggedIn) => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-user-identifier-summary}

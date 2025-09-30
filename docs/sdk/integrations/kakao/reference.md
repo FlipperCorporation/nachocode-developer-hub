@@ -1,5 +1,5 @@
 ---
-sidebar_label: 레퍼런스 (Reference)
+sidebar_label: 레퍼런스
 pagination_label: 레퍼런스 (Reference)
 description: nachocode SDK의 `kakao` 네임스페이스로 카카오 네이티브 로그인 연동, 사용자 데이터 조회, 및 카카오톡 공유 기능을 쉽게 구현할 수 있습니다.
 keywords:
@@ -17,12 +17,16 @@ keywords:
   ]
 ---
 
-# 카카오 (`kakao`)
+# 카카오 (`kakao`) - 레퍼런스
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
 > 🔔 **최신화 일자:** 2025-07-16
+
+:::warning 연동을 마치셨나요?
+SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
+:::
 
 ## **개요** {#overview}
 
@@ -275,7 +279,7 @@ type KakaoShareStatusCode = 102 | 103 | 104 | 105 | 106 | 108 | 199 | 200 | 201;
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#login-summary}
@@ -312,7 +316,7 @@ Nachocode.kakao.login((result, loginData) => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#is-logged-in-summary}
@@ -348,7 +352,7 @@ Nachocode.kakao.isLoggedIn((result, isLoggedIn, loginData) => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-user-data-summary}
@@ -384,7 +388,7 @@ Nachocode.kakao.getUserData((result, userData) => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#logout-summary}
@@ -422,7 +426,7 @@ Nachocode.kakao.logout(result => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#unlink-summary}
@@ -460,7 +464,7 @@ Nachocode.kakao.unlink(result => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#share-summary}

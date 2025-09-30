@@ -119,7 +119,7 @@ nachocode Client SDK는 다음과 같은 기능을 제공합니다:
 
 Apple 계정을 통한 소셜 로그인 기능을 네이티브로 제공합니다.  
 :::info apple
-➡️ [Apple 네임스페이스 문서 바로가기](./namespaces/apple)
+➡️ [Apple 네임스페이스 문서 바로가기](./integrations/apple/integrate)
 :::
 
 ### 3. **사용자 인증 (`authentication`)**

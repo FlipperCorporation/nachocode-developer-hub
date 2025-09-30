@@ -1,5 +1,5 @@
 ---
-sidebar_label: 레퍼런스 (Reference)
+sidebar_label: 레퍼런스
 pagination_label: 레퍼런스 (Reference)
 description: nachocode SDK의 `facebook` 네임스페이스로 페이스북 네이티브 로그인 연동 및 사용자 데이터 조회, 로그인 상태 확인, 로그아웃 등 페이스북 인증 기능을 쉽게 구현할 수 있습니다.
 keywords:
@@ -16,12 +16,16 @@ keywords:
   ]
 ---
 
-# 페이스북 (`facebook`)
+# 페이스북 (`facebook`) - 레퍼런스
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-07-16
+> 🔔 **최신화 일자:** 2025-09-30
+
+:::warning 연동을 마치셨나요?
+SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
+:::
 
 ## **개요** {#overview}
 
@@ -159,14 +163,14 @@ export declare type FacebookUserData = {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#login-summary}
 
 페이스북 네이티브 로그인 요청을 수행합니다.  
 사용자가 지정한 **권한(permissions)** 목록에 따라 필요한 권한을 요청할 수 있습니다.  
-로그인 성공 시 **`accessToken`, `userId`, `userData`**가 콜백 함수로 전달됩니다.
+로그인 성공 시 `accessToken`, `userId`, `userData`가 콜백 함수로 전달됩니다.
 
 #### 매개변수 {#login-parameters}
 
@@ -205,7 +209,7 @@ Nachocode.facebook.login(
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#is-logged-in-summary}
@@ -245,7 +249,7 @@ Nachocode.facebook.isLoggedIn((result, isLoggedIn, accessToken, userId) => {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-user-data-summary}
@@ -291,7 +295,7 @@ Nachocode.facebook.getUserData(
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#logout-summary}

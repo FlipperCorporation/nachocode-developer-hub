@@ -67,3 +67,6 @@ yarn-error.log*
 # nohup File
 developer_nohup.out
 developer_nohup.err
+
+# Temp
+temp*

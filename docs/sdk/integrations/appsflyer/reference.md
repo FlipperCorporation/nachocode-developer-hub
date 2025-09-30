@@ -1,5 +1,5 @@
 ---
-sidebar_label: 레퍼런스 (Reference)
+sidebar_label: 레퍼런스
 pagination_label: 레퍼런스 (Reference)
 description: nachocode SDK의 `appsflyer` 네임스페이스는 AppsFlyer 마케팅 어트리뷰션 및 사용자 트래킹, 커스텀 이벤트 로깅, 유저 ID 관리 등 AppsFlyer 연동 기능을 쉽게 구현할 수 있습니다.
 keywords:
@@ -27,12 +27,16 @@ keywords:
   ]
 ---
 
-# 앱스플라이어 (`appsflyer`)
+# 앱스플라이어 (`appsflyer`) - 레퍼런스
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/app-source/android/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/app-source/ios/release-v-1-7-0" />  
-> 🔔 **최신화 일자:** 2025-09-26
+> 🔔 **최신화 일자:** 2025-09-30
+
+:::warning 연동을 마치셨나요?
+SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
+:::
 
 ## **개요** {#overview}
 
@@ -282,7 +286,7 @@ export declare type GetAttributionListResult =
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#set-custom-user-id-summary}
@@ -319,7 +323,7 @@ if (result.status === 'success') {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-custom-user-id-summary}
@@ -349,7 +353,7 @@ if (result.status === 'success') {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#delete-custom-user-id-summary}
@@ -379,7 +383,7 @@ if (result.status === 'success') {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-attribution-data-summary}
@@ -441,7 +445,7 @@ if (result.status === 'success') {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#clear-attribution-data-summary}
@@ -475,7 +479,7 @@ if (result.status === 'success') {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#get-attribution-list-summary}
@@ -527,7 +531,7 @@ if (result.status === 'success') {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#clear-attribution-list-summary}
@@ -557,7 +561,7 @@ if (result.status === 'success') {
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
-_[필수 선행 작업](./prerequisite#prerequisite)이 완료되어야 사용할 수 있습니다._
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
 #### 설명 {#log-event-summary}

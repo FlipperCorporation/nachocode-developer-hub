@@ -1,6 +1,6 @@
 ---
-sidebar_label: 필수 선행 작업 (Prerequisite)
-pagination_label: 필수 선행 작업 (Prerequisite)
+sidebar_label: 연동하기
+pagination_label: 연동하기 (Integrate)
 description: nachocode SDK의 `kakao` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. 카카오 개발자 대시보드, nachocode 대시보드에서 네이티브 로그인 및 카카오톡 공유 기능을 쉽게 연동하는 방법을 제공합니다.
 keywords:
   [
@@ -17,7 +17,7 @@ keywords:
   ]
 ---
 
-# 카카오 (`kakao`) - 필수 선행 작업
+# 카카오 (`kakao`) - 연동하기
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
@@ -89,6 +89,14 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 - 카카오 공유를 위해서는 **카카오 개발자 센터**에서 앱 키 설정이 선행되어야 합니다.
 - `custom` 공유 방식의 경우, **카카오 개발자 센터에서 사전 등록된 템플릿 ID**가 필요합니다.
 - `scrap` 방식은 카카오 서버가 스크랩 API를 통해 대상 URL의 메타데이터를 가져와 미리보기를 생성합니다.
-- 카카오 설정 시 어려움이 있으시면 언제든지 [support@nachocode.io](mailto:support@nachocode.io)로 문의해 주세요.
 
 :::
+
+:::tip **지원팀 연락처**
+설정 과정에서 문제가 발생하거나 질문이 있으시면 언제든지 연락주세요.
+
+**이메일**: [support@nachocode.io](mailto:support@nachocode.io)  
+**응답 시간**: 영업일 기준 1~2일 이내
+:::
+
+---

@@ -103,7 +103,6 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'sdk/namespaces/app',
-        'sdk/namespaces/apple',
         'sdk/namespaces/authentication',
         'sdk/namespaces/backkey',
         'sdk/namespaces/browser',
@@ -127,14 +126,27 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '외부연동',
+      label: '네임스페이스 (외부연동)',
       collapsed: false,
       link: {
         type: 'generated-index',
-        title: '외부연동',
+        title: '네임스페이스 (외부연동)',
         slug: '/sdk/integrations',
       },
       items: [
+        {
+          type: 'category',
+          label: '애플 (apple)',
+          link: {
+            type: 'generated-index',
+            title: '애플 (apple)',
+            slug: 'sdk/integrations/apple',
+          },
+          items: [
+            'sdk/integrations/apple/integrate',
+            'sdk/integrations/apple/reference',
+          ],
+        },
         {
           type: 'category',
           label: '앱스플라이어 (appsflyer)',
@@ -144,7 +156,7 @@ const sidebars: SidebarsConfig = {
             slug: '/sdk/integrations/appsflyer',
           },
           items: [
-            'sdk/integrations/appsflyer/prerequisite',
+            'sdk/integrations/appsflyer/integrate',
             'sdk/integrations/appsflyer/reference',
           ],
         },
@@ -157,7 +169,7 @@ const sidebars: SidebarsConfig = {
             slug: '/sdk/integrations/facebook',
           },
           items: [
-            'sdk/integrations/facebook/prerequisite',
+            'sdk/integrations/facebook/integrate',
             'sdk/integrations/facebook/reference',
           ],
         },
@@ -170,7 +182,7 @@ const sidebars: SidebarsConfig = {
             slug: '/sdk/integrations/google',
           },
           items: [
-            'sdk/integrations/google/prerequisite',
+            'sdk/integrations/google/integrate',
             'sdk/integrations/google/reference',
           ],
         },
@@ -183,7 +195,7 @@ const sidebars: SidebarsConfig = {
             slug: '/sdk/integrations/kakao',
           },
           items: [
-            'sdk/integrations/kakao/prerequisite',
+            'sdk/integrations/kakao/integrate',
             'sdk/integrations/kakao/reference',
           ],
         },

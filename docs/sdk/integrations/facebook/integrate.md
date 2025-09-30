@@ -1,6 +1,6 @@
 ---
-sidebar_label: 필수 선행 작업 (Prerequisite)
-pagination_label: 필수 선행 작업 (Prerequisite)
+sidebar_label: 연동하기
+pagination_label: 연동하기 (Integrate)
 description: nachocode SDK의 `facebook` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. 페이스북 개발자 센터와 nachocode 대시보드에서의 네이티브 로그인 연동 설정하는 상세한 방법을 제공합니다.
 keywords:
   [
@@ -16,12 +16,12 @@ keywords:
   ]
 ---
 
-# 페이스북 (`facebook`) - 필수 선행 작업
+# 페이스북 (`facebook`) - 연동하기
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-07-16
+> 🔔 **최신화 일자:** 2025-09-30
 
 ## **필수 선행 작업** {#prerequisite}
 
@@ -115,5 +115,14 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 ![nachocode_google_login_toggle](/img/docs/apple/nachocode_build_ios_new_version.png)
 
 - 페이스북 관련 네이티브 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.
+
+---
+
+:::tip **지원팀 연락처**
+설정 과정에서 문제가 발생하거나 질문이 있으시면 언제든지 연락주세요.
+
+**이메일**: [support@nachocode.io](mailto:support@nachocode.io)  
+**응답 시간**: 영업일 기준 1~2일 이내
+:::
 
 ---

@@ -1,6 +1,6 @@
 ---
-sidebar_label: 필수 선행 작업 (Prerequisite)
-pagination_label: 필수 선행 작업 (Prerequisite)
+sidebar_label: 연동하기
+pagination_label: 연동하기 (Integrate)
 description: nachocode SDK의 `appsflyer` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. AppsFlyer 대시보드에서 앱 등록부터 nachocode 연동까지의 상세한 방법을 제공합니다.
 keywords:
   [
@@ -27,7 +27,7 @@ keywords:
   ]
 ---
 
-# 앱스플라이어 (`appsflyer`) - 필수 선행 작업
+# 앱스플라이어 (`appsflyer`) - 연동하기
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
@@ -247,12 +247,10 @@ if (result.status === 'success') {
 ---
 
 :::tip **지원팀 연락처**
-
 설정 과정에서 문제가 발생하거나 질문이 있으시면 언제든지 연락주세요.
 
 **이메일**: [support@nachocode.io](mailto:support@nachocode.io)  
 **응답 시간**: 영업일 기준 1~2일 이내
-
 :::
 
 ---

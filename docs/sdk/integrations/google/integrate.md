@@ -1,6 +1,6 @@
 ---
-sidebar_label: 필수 선행 작업 (Prerequisite)
-pagination_label: 필수 선행 작업 (Prerequisite)
+sidebar_label: 연동하기
+pagination_label: 연동하기 (Integrate)
 description: nachocode SDK의 `google` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. Firebase, Play Console, nachocode 대시보드에서 구글 네이티브 로그인을 연동하는 상세한 방법을 제공합니다.
 keywords:
   [
@@ -16,7 +16,7 @@ keywords:
   ]
 ---
 
-# 구글 (`google`) - 필수 선행 작업
+# 구글 (`google`) - 연동하기
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
@@ -104,5 +104,14 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 ![firebase_android_save_fingerprint](/img/docs/google/firebase_android_save_fingerprint.png)
 
 <br/>
+
+---
+
+:::tip **지원팀 연락처**
+설정 과정에서 문제가 발생하거나 질문이 있으시면 언제든지 연락주세요.
+
+**이메일**: [support@nachocode.io](mailto:support@nachocode.io)  
+**응답 시간**: 영업일 기준 1~2일 이내
+:::
 
 ---
