@@ -121,6 +121,12 @@ const config: Config = {
         docs: { sidebarPath: './sidebars.ts' },
         blog: false,
         theme: { customCss: './src/css/custom.css' },
+        gtag:
+          process.env.NODE_ENV === 'production'
+            ? {
+                trackingID: 'G-E023WXQCL8', // Google Analytics 4 측정 ID
+              }
+            : undefined,
       } satisfies Preset.Options,
     ],
   ],
