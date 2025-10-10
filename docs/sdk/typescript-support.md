@@ -16,9 +16,9 @@ keywords:
 
 # TypeScript 지원
 
-![typescript](../../static/img/docs/typescript.png)
+![typescript](/img/docs/typescript.png)
 
-> 🔔 **최신화 일자:** 2025-04-25
+> 🔔 **최신화 일자:** 2025-10-10
 
 nachocode Client SDK는 타입스크립트(`TypeScript`) 지원을 제공합니다.
 
@@ -46,7 +46,7 @@ curl -O https://cdn.nachocode.io/nachocode/client-sdk/@latest/Nachocode.d.ts
 
 웹 브라우저에서 아래 링크를 클릭하여 수동으로 다운로드 받을 수 있습니다.
 
-- [Nachocode.d.ts 파일 다운로드](https://cdn.nachocode.io/nachocode/client-sdk/@latest/Nachocode.d.ts)
+- [📂 Nachocode.d.ts 파일 다운로드](https://cdn.nachocode.io/nachocode/client-sdk/@latest/Nachocode.d.ts)
 
 ---
 
@@ -64,7 +64,9 @@ project-root/
 └─ tsconfig.json
 ```
 
-> 📌 타입스크립트 프로젝트의 `tsconfig.json`에서 타입 선언을 인식할 수 있도록 `typeRoots` 옵션을 설정하세요.
+:::info
+타입스크립트 프로젝트의 `tsconfig.json`에서 타입 선언을 인식할 수 있도록 `typeRoots` 옵션을 설정하세요.
+:::
 
 ```json
 {
@@ -75,8 +77,9 @@ project-root/
 }
 ```
 
-> 💡 **설명:**  
-> `typeRoots` 옵션은 컴파일러가 타입 선언 파일을 찾을 위치를 지정합니다.
+:::tip
+`typeRoots` 옵션은 컴파일러가 타입 선언 파일을 찾을 위치를 지정합니다.
+:::
 
 ---
 
@@ -126,11 +129,14 @@ nachocode Client SDK는 `Promise`를 반환하는 비동기 초기화 기능을 
 
 SDK의 전체 타입 정의 및 API 세부 사항을 확인하고 싶다면 아래 링크에서 직접 확인할 수 있습니다.
 
-- [📘 Nachocode.d.ts 타입 선언 파일 보기](https://cdn.nachocode.io/nachocode/client-sdk/@latest/Nachocode.d.ts)
+- [📘 Nachocode.d.ts 타입 선언 파일 보기](https://github.com/FlipperCorporation/nachocode-client-sdk/blob/main/types/Nachocode.d.ts)
+- [📂 Nachocode.d.ts 타입 선언 파일 다운로드](https://cdn.nachocode.io/nachocode/client-sdk/@latest/Nachocode.d.ts)
 
 ---
 
-> **ℹ️ 추가 지원 안내**
->
-> 향후 여러 프론트엔드 프레임워크에 대한 지원도 계획 중입니다.
-> 추가적인 지원이 필요하거나 기능 제안이 있으면 언제든지 [support@nachocode.io](mailto:support@nachocode.io)에 의견을 남겨주세요.
+:::info **추가 지원 안내**
+
+향후 여러 프론트엔드 프레임워크에 대한 지원도 계획 중입니다.  
+추가적인 지원이 필요하거나 기능 제안이 있으면 언제든지 지원팀 이메일 [support@nachocode.io](mailto:support@nachocode.io)에 의견을 남겨주세요.
+
+:::
