@@ -8,7 +8,7 @@ keywords:
     앱스플라이어 어트리뷰션,
     앱스플라이어 사용자 추적,
     앱스플라이어 이벤트 로깅,
-    앱스플라이어 커스텀 유저 아이디,
+    앱스플라이어 고객 사용자 아이디,
     AppsFlyer 마케팅 어트리뷰션,
     AppsFlyer 연동,
     앱스플라이어 연동,
@@ -32,7 +32,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/app-source/android/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/app-source/ios/release-v-1-7-0" />  
-> 🔔 **최신화 일자:** 2025-09-30
+> 🔔 **최신화 일자:** 2025-10-13
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -42,7 +42,13 @@ SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하�
 
 `appsflyer` 네임스페이스는 **AppsFlyer 마케팅 어트리뷰션 및 사용자 트래킹 기능을 제공**하며, 사용자는 **AppsFlyer를 통해 마케팅 성과를 추적**할 수 있습니다.
 
-이 네임스페이스를 사용하여 **커스텀 유저 ID 관리, 어트리뷰션 데이터 조회, 커스텀 이벤트 로깅**과 같은 기능을 수행할 수 있습니다.
+이 네임스페이스를 사용하여 **고객 유저 ID 관리, 어트리뷰션 데이터 조회, 커스텀 이벤트 로깅**과 같은 기능을 수행할 수 있습니다.
+
+:::warning 주의
+`customUserId`, `logEvent`의 `values`와 같은 일부 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.
+
+참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
+:::
 
 ---
 
@@ -86,7 +92,7 @@ export declare type AppsflyerResult =
 
 ### **`GetCustomUserIdResult`** {#get-custom-user-id-result}
 
-커스텀 유저 ID 조회 결과를 나타내는 타입입니다.
+고객 사용자 ID 조회 결과를 나타내는 타입입니다.
 
 ```typescript
 interface GetCustomUserIdSuccessResult extends AppsflyerSuccessResult {
@@ -104,7 +110,7 @@ export declare type GetCustomUserIdResult =
 | `statusCode` | `number`               | 상태 코드 (성공 시 200)           |
 | `message`    | `string`               | 응답 메시지                       |
 | `errorCode`  | `string` _(optional)_  | 오류 코드 (실패 시 반환)          |
-| `userId`     | `string`               | 등록된 커스텀 유저 ID (성공 시만) |
+| `userId`     | `string`               | 등록된 고객 사용자 ID (성공 시만) |
 
 ---
 
@@ -268,9 +274,9 @@ export declare type GetAttributionListResult =
 
 | 메서드                                              | 설명                        | 추가된 버전                                                                                   |
 | --------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------- |
-| [`setCustomUserId(userId)`](#set-custom-user-id)    | 커스텀 유저 ID 설정         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`getCustomUserId()`](#get-custom-user-id)          | 커스텀 유저 ID 조회         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`deleteCustomUserId()`](#delete-custom-user-id)    | 커스텀 유저 ID 삭제         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
+| [`setCustomUserId(userId)`](#set-custom-user-id)    | 고객 사용자 ID 설정         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
+| [`getCustomUserId()`](#get-custom-user-id)          | 고객 사용자 ID 조회         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
+| [`deleteCustomUserId()`](#delete-custom-user-id)    | 고객 사용자 ID 삭제         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
 | [`getAttributionData()`](#get-attribution-data)     | 어트리뷰션 데이터 조회      | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
 | [`clearAttributionData()`](#clear-attribution-data) | 어트리뷰션 데이터 삭제      | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
 | [`getAttributionList()`](#get-attribution-list)     | 어트리뷰션 데이터 목록 조회 | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
@@ -291,8 +297,15 @@ _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있�
 
 #### 설명 {#set-custom-user-id-summary}
 
-AppsFlyer에 커스텀 유저 ID를 설정합니다.
+AppsFlyer에 고객 사용자 ID를 설정합니다.
 이 ID는 사용자를 고유하게 식별하는 데 사용됩니다.
+
+:::warning 주의
+`customUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
+무료 플랜의 앱스플라이어 대시보드에서는 통계 집계 확인이 불가하오니 참고 바랍니다.
+
+참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
+:::
 
 #### 매개변수 {#set-custom-user-id-parameters}
 
@@ -307,12 +320,12 @@ AppsFlyer에 커스텀 유저 ID를 설정합니다.
 #### 사용 예제 {#set-custom-user-id-examples}
 
 ```javascript
-// 커스텀 유저 ID 설정
+// 고객 사용자 ID 설정
 const result = await Nachocode.appsflyer.setCustomUserId('user123');
 if (result.status === 'success') {
-  console.log('커스텀 유저 ID 설정 성공:', result.message);
+  console.log('고객 사용자 ID 설정 성공:', result.message);
 } else {
-  console.error('커스텀 유저 ID 설정 실패:', result.errorCode, result.message);
+  console.error('고객 사용자 ID 설정 실패:', result.errorCode, result.message);
 }
 ```
 
@@ -328,21 +341,28 @@ _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있�
 
 #### 설명 {#get-custom-user-id-summary}
 
-AppsFlyer에서 등록된 커스텀 유저 ID를 조회합니다.
+AppsFlyer에서 등록된 고객 사용자 ID를 조회합니다.
+
+:::warning 주의
+`customUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
+무료 플랜의 앱스플라이어 대시보드에서는 통계 집계 확인이 불가하오니 참고 바랍니다.
+
+참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
+:::
 
 #### 반환 값 {#get-custom-user-id-returns}
 
-[`Promise<GetCustomUserIdResult>`](#get-custom-user-id-result) - 커스텀 유저 ID와 결과를 포함하는 Promise
+[`Promise<GetCustomUserIdResult>`](#get-custom-user-id-result) - 고객 사용자 ID와 결과를 포함하는 Promise
 
 #### 사용 예제 {#get-custom-user-id-examples}
 
 ```javascript
-// 커스텀 유저 ID 조회
+// 고객 사용자 ID 조회
 const result = await Nachocode.appsflyer.getCustomUserId();
 if (result.status === 'success') {
-  console.log('커스텀 유저 ID:', result.userId);
+  console.log('고객 사용자 ID:', result.userId);
 } else {
-  console.error('커스텀 유저 ID 조회 실패:', result.errorCode, result.message);
+  console.error('고객 사용자 ID 조회 실패:', result.errorCode, result.message);
 }
 ```
 
@@ -358,7 +378,14 @@ _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있�
 
 #### 설명 {#delete-custom-user-id-summary}
 
-AppsFlyer에서 등록된 커스텀 유저 ID를 삭제합니다.
+AppsFlyer에서 등록된 고객 사용자 ID를 삭제합니다.
+
+:::warning 주의
+`customUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
+무료 플랜의 앱스플라이어 대시보드에서는 통계 집계 확인이 불가하오니 참고 바랍니다.
+
+참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
+:::
 
 #### 반환 값 {#delete-custom-user-id-returns}
 
@@ -367,12 +394,12 @@ AppsFlyer에서 등록된 커스텀 유저 ID를 삭제합니다.
 #### 사용 예제 {#delete-custom-user-id-examples}
 
 ```javascript
-// 커스텀 유저 ID 삭제
+// 고객 사용자 ID 삭제
 const result = await Nachocode.appsflyer.deleteCustomUserId();
 if (result.status === 'success') {
-  console.log('커스텀 유저 ID 삭제 성공:', result.message);
+  console.log('고객 사용자 ID 삭제 성공:', result.message);
 } else {
-  console.error('커스텀 유저 ID 삭제 실패:', result.errorCode, result.message);
+  console.error('고객 사용자 ID 삭제 실패:', result.errorCode, result.message);
 }
 ```
 
@@ -575,6 +602,13 @@ AppsFlyer에 커스텀 이벤트를 로깅합니다.
 | ----------- | --------------------- | --------- | ----------------------- |
 | `eventName` | `string`              | ✅        | 이벤트 이름             |
 | `values`    | `Record<string, any>` | ✅        | 이벤트와 함께 전송할 값 |
+
+:::warning 주의
+이벤트와 함께 전송되는 `values`는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
+무료 플랜에서는 `eventName`만 앱스플라이어 대시보드에서 집계 확인이 가능합니다.
+
+참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
+:::
 
 #### 반환 값 {#log-event-returns}
 
