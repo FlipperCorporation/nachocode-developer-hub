@@ -22,7 +22,7 @@ keywords:
 
 # 푸시알림 V2 API Endpoints
 
-> 🔔 **최신화 일자:** 2025-10-13
+> 🔔 **최신화 일자:** 2025-10-15
 
 <!-- 2024-11-27 최초 생성/ V0버전 제외 V1버전만 생성 -->
 <!-- 2025-03-27 V1버전 Deprecated처리 및 V2버전 신규 등록 -->
@@ -33,8 +33,6 @@ keywords:
 <!-- 2025-10-13 전송불가 유저 식별을 위한 웹훅 안내(팁) 컴포넌트 추가-->
 
 <br/>
-
-[**웹훅 기능**](../../../guide/webhook/overview.md)
 
 nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 관리 및 전송을 지원합니다.
 
@@ -47,8 +45,8 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 - 개별적으로 설정된 메시지를 각 유저 ID의 푸시 토큰에 전송합니다.
 - 요청된 유저의 총 푸시 토큰 수에 따라 요청 건수가 차감됩니다.
 
-:::tip
-토큰이 없거나, 토큰 만료 또는 앱 삭제의 이유로 전송불가한 유저의 목록을 [**웹훅**](../../../guide/webhook/overview.md)을 통해 확인할 수 있습니다.
+:::info
+토큰이 없거나, 토큰 만료 또는 앱 삭제의 이유로 전송 불가한 유저의 목록은 [**웹훅**](../../../guide/webhook/overview)을 통해서만 확인할 수 있습니다.
 :::
 
 :::warning
@@ -107,7 +105,6 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### Response {#post-v2-messages-response}
 
 - **Success Response**
-
   - **Property**
 
     | **Properties** | **Type** | **Description**           |
@@ -124,7 +121,6 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ---
 
 - **Error Response**
-
   - [Error Response Object](#error-response-object)
 
   - 에러코드  
@@ -200,7 +196,6 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### Response {#post-v2-users-response}
 
 - **Success Response**
-
   - **Property**
 
     | **Properties** | **Type** | **Description**           |
@@ -217,7 +212,6 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ---
 
 - **Error Response**
-
   - [Error Response Object](#error-response-object)
 
   - 에러코드  
@@ -284,7 +278,6 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### Response {#post-v2-topic-response}
 
 - **Success Response**
-
   - **Property**
 
     | **Properties** | **Type** | **Description**           |
@@ -301,7 +294,6 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ---
 
 - **Error Response**
-
   - [Error Response Object](#error-response-object)
 
   - 에러코드  
@@ -364,7 +356,6 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### Response {#post-v2-topic-subscription-response}
 
 - **Success Response**
-
   - **Property**
 
     | **Properties** | **Type**                                    | **Description**                                               |
@@ -385,7 +376,6 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ---
 
 - **Error Response**
-
   - [Error Response Object](#error-response-object)
 
   - 에러코드  
@@ -447,7 +437,6 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### Response {#delete-v2-topic-subscription-response}
 
 - **Success Response**
-
   - **Property**
 
     | **Properties** | **Type**                                    | **Description**                                                     |
@@ -468,7 +457,6 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ---
 
 - **Error Response**
-
   - [Error Response Object](#error-response-object)
 
   - 에러코드  
