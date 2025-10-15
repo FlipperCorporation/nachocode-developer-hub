@@ -45,14 +45,16 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 - 개별적으로 설정된 메시지를 각 유저 ID의 푸시 토큰에 전송합니다.
 - 요청된 유저의 총 푸시 토큰 수에 따라 요청 건수가 차감됩니다.
 
-:::info
-토큰이 없거나, 토큰 만료 또는 앱 삭제의 이유로 전송 불가한 유저의 목록은 [**웹훅**](../../../guide/webhook/overview)을 통해서만 확인할 수 있습니다.
-:::
-
 :::warning
 
 **요청 당 메세지의 최대 개수는 200개이며, Body의 크기는 150KB를 초과하지 않아야 합니다.**
 
+:::
+
+:::info
+토큰이 없거나, 토큰 만료 또는 앱 삭제의 이유로 전송 불가한 유저의 목록은 웹훅을 통해 확인할 수 있습니다.  
+➡️ [전송불가 유저 웹훅 개요](../../../guide/webhook/overview.md)  
+➡️ [전송불가 유저 웹훅 등록](https://docs.nachocode.io/ko/articles/4-%EC%9B%B9%ED%9B%85-%EC%84%A4%EC%A0%95-4ab8a296)
 :::
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
@@ -105,6 +107,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### Response {#post-v2-messages-response}
 
 - **Success Response**
+
   - **Property**
 
     | **Properties** | **Type** | **Description**           |
@@ -121,6 +124,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ---
 
 - **Error Response**
+
   - [Error Response Object](#error-response-object)
 
   - 에러코드  
@@ -141,13 +145,16 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 - 유저 ID로 조회된 모든 푸시 토큰을 대상으로 전송합니다.
 - 유저 1명당 요청 건수를 차감합니다.
 
-:::tip
-토큰이 없거나, 토큰 만료 또는 앱 삭제의 이유로 전송불가한 유저의 목록을 [**웹훅**](../../../guide/webhook/overview.md)을 통해 확인할 수 있습니다.
-:::
-
 :::warning
 
 **요청 당 userId의 최대 개수는 500개입니다.**
+
+:::
+
+:::info
+토큰이 없거나, 토큰 만료 또는 앱 삭제의 이유로 전송 불가한 유저의 목록은 웹훅을 통해 확인할 수 있습니다.  
+➡️ [전송불가 유저 웹훅 개요](../../../guide/webhook/overview.md)  
+➡️ [전송불가 유저 웹훅 등록](https://docs.nachocode.io/ko/articles/4-%EC%9B%B9%ED%9B%85-%EC%84%A4%EC%A0%95-4ab8a296)
 
 :::
 
@@ -196,6 +203,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### Response {#post-v2-users-response}
 
 - **Success Response**
+
   - **Property**
 
     | **Properties** | **Type** | **Description**           |
@@ -212,6 +220,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ---
 
 - **Error Response**
+
   - [Error Response Object](#error-response-object)
 
   - 에러코드  
@@ -278,6 +287,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### Response {#post-v2-topic-response}
 
 - **Success Response**
+
   - **Property**
 
     | **Properties** | **Type** | **Description**           |
@@ -294,6 +304,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ---
 
 - **Error Response**
+
   - [Error Response Object](#error-response-object)
 
   - 에러코드  
@@ -356,6 +367,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### Response {#post-v2-topic-subscription-response}
 
 - **Success Response**
+
   - **Property**
 
     | **Properties** | **Type**                                    | **Description**                                               |
@@ -376,6 +388,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ---
 
 - **Error Response**
+
   - [Error Response Object](#error-response-object)
 
   - 에러코드  
@@ -437,6 +450,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### Response {#delete-v2-topic-subscription-response}
 
 - **Success Response**
+
   - **Property**
 
     | **Properties** | **Type**                                    | **Description**                                                     |
@@ -457,6 +471,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ---
 
 - **Error Response**
+
   - [Error Response Object](#error-response-object)
 
   - 에러코드  
