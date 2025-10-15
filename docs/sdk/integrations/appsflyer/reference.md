@@ -32,7 +32,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/app-source/android/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/app-source/ios/release-v-1-7-0" />  
-> 🔔 **최신화 일자:** 2025-10-13
+> 🔔 **최신화 일자:** 2025-10-15
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -45,7 +45,7 @@ SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하�
 이 네임스페이스를 사용하여 **고객 유저 ID 관리, 어트리뷰션 데이터 조회, 커스텀 이벤트 로깅**과 같은 기능을 수행할 수 있습니다.
 
 :::warning 주의
-`customUserId`, `logEvent`의 `values`와 같은 일부 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.
+`customUserId`, `logEvent`의 `values`와 같은 Raw Data는 **AppsFlyer의 Welcome 플랜**에서는 사용할 수 없습니다.
 
 참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
 :::
@@ -302,7 +302,7 @@ AppsFlyer에 고객 사용자 ID를 설정합니다.
 
 :::warning 주의
 `customUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
-무료 플랜의 앱스플라이어 대시보드에서는 통계 집계 확인이 불가하오니 참고 바랍니다.
+무료 플랜의 앱스플라이어 대시보드에서는 집계 확인이 불가하오니 참고 바랍니다.
 
 참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
 :::
@@ -345,7 +345,7 @@ AppsFlyer에서 등록된 고객 사용자 ID를 조회합니다.
 
 :::warning 주의
 `customUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
-무료 플랜의 앱스플라이어 대시보드에서는 통계 집계 확인이 불가하오니 참고 바랍니다.
+무료 플랜의 앱스플라이어 대시보드에서는 집계 확인이 불가하오니 참고 바랍니다.
 
 참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
 :::
@@ -382,7 +382,7 @@ AppsFlyer에서 등록된 고객 사용자 ID를 삭제합니다.
 
 :::warning 주의
 `customUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
-무료 플랜의 앱스플라이어 대시보드에서는 통계 집계 확인이 불가하오니 참고 바랍니다.
+무료 플랜의 앱스플라이어 대시보드에서는 집계 확인이 불가하오니 참고 바랍니다.
 
 참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
 :::
@@ -604,8 +604,8 @@ AppsFlyer에 커스텀 이벤트를 로깅합니다.
 | `values`    | `Record<string, any>` | ✅        | 이벤트와 함께 전송할 값 |
 
 :::warning 주의
-이벤트와 함께 전송되는 `values`는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
-무료 플랜에서는 `eventName`만 앱스플라이어 대시보드에서 집계 확인이 가능합니다.
+이벤트와 함께 전송되는 `values`에 포함된 상세 Parameter는 **AppsFlyer의 Business 플랜** 이상부터 지원되고 있습니다.  
+무료 플랜에서는 Raw Data Report 기능이 포함되어 있지 않아 `eventName`까지만 앱스플라이어 대시보드에서 집계 확인이 가능합니다.
 
 참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
 :::
