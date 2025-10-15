@@ -80,11 +80,11 @@ keywords:
 :::info 웹훅 등록 요청 본문
 
 - 인앱 결제  
-  ➡️ [인앱 결제 구매 웹훅](./iap/purchase.md)  
-  ➡️ [인앱 결제 환불 웹훅](./iap/refund.md)
+  ➡️ [인앱 결제 구매 웹훅](./iap/purchase)  
+  ➡️ [인앱 결제 환불 웹훅](./iap/refund)
 
 - 푸시 알림  
-  ➡️ [개인화 푸시 전송불가 유저 웹훅](./personal-push/unavailable-users.md)
+  ➡️ [개인화 푸시 전송불가 유저 웹훅](./personal-push/unavailable-users)
   :::
 
 ---
