@@ -57,6 +57,16 @@ const sidebars: SidebarsConfig = {
           },
           items: ['guide/webhook/iap/purchase', 'guide/webhook/iap/refund'],
         },
+        {
+          type: 'category',
+          label: '개인화 푸시',
+          link: {
+            type: 'generated-index',
+            title: '개인화 푸시',
+            slug: '/guide/webhook/personal-push',
+          },
+          items: ['guide/webhook/personal-push/unavailable-users'],
+        },
       ],
     },
     {

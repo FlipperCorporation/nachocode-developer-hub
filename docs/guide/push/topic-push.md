@@ -100,21 +100,18 @@ nachocode의 토픽 푸시는 "**디바이스 기준**"으로 이루어집니다
 ### 토픽 푸시 활용 예시
 
 - **마케팅 캠페인**
-
   - 상품 조회, 상품 검색 등을 통해 관심을 표시한 유저들에게 일괄적으로 푸시 알림을 전송할 수 있습니다.
   - 특정 이벤트에 대한 참여의사를 표시한 유저들에게 일괄적으로 푸시 알림을 전송할 수 있습니다.
 
 <br/>
 
 - **불특정 유저 알림 전송**
-
   - 유저를 식별할 수 없는 상황에서도 이벤트를 통한 구독으로 타겟팅하는 유저들에게 일괄적으로 푸시 알림 전송이 가능합니다.
   - 비로그인 사용자, 비로그인 서비스일지라도 간편한 그루핑(_Grouping_)을 통한 푸시 알림 전송이 가능합니다.
 
 <br/>
 
 - **이벤트 감지를 통한 알림 전송**
-
   - 이벤트 페이지 접속 등 특정 이벤트에 대한 참여의사를 표시한 유저들에게 푸시 알림을 전송할 수 있습니다.
   - 특정 주제의 게시물이 작성됐을 때, 주제를 구독하는 유저들에게 일괄적으로 알림을 전송할 수 있습니다.
 
@@ -128,7 +125,6 @@ nachocode 대시보드에서 **1)API Key, Secret Key 발급** 및 **2)Firebase �
 
 - **API Key, Secret Key**는 안전하고 원활한 API 통신을 위해 필요한 정보로 nachocode 대시보드 **[앱 설정]** > **[개발자 설정]** 탭에서 발급 가능합니다.
 - **Firebase 프로젝트 설정 파일 등록**에는 아래와 같은 파일이 요구되며, 자세한 과정과 내용은 [사용자 가이드](https://docs.nachocode.io/ko/articles/%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BC%EA%B0%9C%EC%9D%B8%ED%99%94-0eb97bdb) 탭에서 확인 가능합니다.
-
   - Firebase 계정 비공개 키
   - Firebase 프로젝트 안드로이드 앱 생성 시 다운로드 받은 파일(`google-service.json`)
   - Firebase 프로젝트 iOS 앱 생성 시 다운로드 받은 파일(`GoogleService-info.plist`)
@@ -197,7 +193,7 @@ API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전�
 <br/>
 
 :::tip
-_토픽에 대한 푸시가 전송된 뒤 특정 디바이스에 대한 전송을 원하지 않을 경우, 구독해제 [SDK](../../sdk/namespaces/push.md#unsubscribe-push-topic)(또는 [API](../../api/push/v2/endpoints#delete-v2-topic-subscription))호출이 요구됩니다.  
+_토픽에 대한 푸시가 전송된 뒤 특정 디바이스에 대한 전송을 원하지 않을 경우, 구독해제 [SDK](../../sdk/namespaces/push#unsubscribe-push-topic)(또는 [API](../../api/push/v2/endpoints#delete-v2-topic-subscription))호출이 요구됩니다.  
 일회성 이벤트 토픽일 경우, 사용 후 구독해제 없이 해당 토픽을 사용하지 않는 방식으로 폐기가 가능합니다._
 :::
 <br/>

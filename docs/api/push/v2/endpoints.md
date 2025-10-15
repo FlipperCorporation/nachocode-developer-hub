@@ -22,7 +22,7 @@ keywords:
 
 # 푸시알림 V2 API Endpoints
 
-> 🔔 **최신화 일자:** 2025-10-02
+> 🔔 **최신화 일자:** 2025-10-15
 
 <!-- 2024-11-27 최초 생성/ V0버전 제외 V1버전만 생성 -->
 <!-- 2025-03-27 V1버전 Deprecated처리 및 V2버전 신규 등록 -->
@@ -30,6 +30,7 @@ keywords:
 <!-- 2025-06-04 V1 / V2 세그먼트로 분리, 토픽 푸시 추가 -->
 <!-- 2025-08-25 PushOptions에 requestGroupId옵션 추가 -->
 <!-- 2025-10-02 문서 오기입 수정, App Source 링크 추가 -->
+<!-- 2025-10-13 전송불가 유저 식별을 위한 웹훅 안내(팁) 컴포넌트 추가-->
 
 <br/>
 
@@ -45,9 +46,13 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 - 요청된 유저의 총 푸시 토큰 수에 따라 요청 건수가 차감됩니다.
 
 :::warning
-
 **요청 당 메세지의 최대 개수는 200개이며, Body의 크기는 150KB를 초과하지 않아야 합니다.**
+:::
 
+:::info
+토큰이 없거나, 토큰 만료 또는 앱 삭제의 이유로 전송 불가한 유저의 목록은 웹훅을 통해 확인할 수 있습니다.  
+➡️ [전송불가 유저 웹훅 개요](../../../guide/webhook/overview)  
+➡️ [전송불가 유저 웹훅 등록](https://docs.nachocode.io/ko/articles/4-%EC%9B%B9%ED%9B%85-%EC%84%A4%EC%A0%95-4ab8a296)
 :::
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
@@ -139,6 +144,13 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 :::warning
 
 **요청 당 userId의 최대 개수는 500개입니다.**
+
+:::
+
+:::info
+토큰이 없거나, 토큰 만료 또는 앱 삭제의 이유로 전송 불가한 유저의 목록은 웹훅을 통해 확인할 수 있습니다.  
+➡️ [전송불가 유저 웹훅 개요](../../../guide/webhook/overview)  
+➡️ [전송불가 유저 웹훅 등록](https://docs.nachocode.io/ko/articles/4-%EC%9B%B9%ED%9B%85-%EC%84%A4%EC%A0%95-4ab8a296)
 
 :::
 
@@ -302,7 +314,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 ### 설명 {#post-v2-topic-subscription-summary}
 
-- SDK의 [`registerPushToken()`](../../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에 구독시킵니다.
+- SDK의 [`registerPushToken()`](../../../sdk/namespaces/push#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에 구독시킵니다.
 - FCM으로의 구독과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
 - 유저 1명당 요청 건수를 차감합니다.
 
@@ -383,7 +395,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 ### 설명 {#delete-v2-topic-subscription-summary}
 
-- SDK의 [`registerPushToken()`](../../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에서 구독을 해제합니다.
+- SDK의 [`registerPushToken()`](../../../sdk/namespaces/push#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에서 구독을 해제합니다.
 - FCM으로의 구독해제 과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
 - 유저 1명당 요청 건수를 차감합니다.
 
