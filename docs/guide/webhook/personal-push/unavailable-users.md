@@ -28,8 +28,8 @@ keywords:
 
 :::tip
 
-- nachocode에서는 만료, 앱 삭제 등의 이유로 사용 불가한 토큰 정보를 저장소에서 제거합니다.  
-  차감 수 관리 및 네트워크 효율성 향상을 위해 웹훅 사용을 통한 전송 불가 유저 관리가 권장됩니다.
+- nachocode에서는 만료, 앱 삭제 등의 이유로 사용 불가한 토큰 정보를 nachocode 저장소에서 제거합니다.  
+  차감 수 관리 및 네트워크 효율성 향상을 위해 사용자 또한 웹훅을 통한 전송 불가 유저 관리가 권장됩니다.
 
 :::
 
@@ -64,7 +64,7 @@ declare interface UnavailableUsers {
 
 ```json
 {
-  tokenNotFoundUserIds: ["noTokenUser1", "noTokenUser2", ...];
-  tokenInvalidUserIds: ["invalidTokenUser1", "invalidTokenUser2", ...];
+  "tokenNotFoundUserIds": ["nachoUser1", "nachoUser2", ...], // 토큰을 보유하지 않은 유저가 없을 경우 빈 배열
+  "tokenInvalidUserIds": ["nachoUser3", "nachoUser4", ...], // 유효하지 않은 토큰을 보유한 유저가 없을 경우 빈 배열
 }
 ```
