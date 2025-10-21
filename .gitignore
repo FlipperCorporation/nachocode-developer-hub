@@ -70,3 +70,7 @@ developer_nohup.err
 
 # Temp
 temp*
+
+# AI Tools
+.claude
+CLAUDE.md
