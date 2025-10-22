@@ -32,7 +32,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/app-source/android/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/app-source/ios/release-v-1-7-0" />  
-> 🔔 **최신화 일자:** 2025-10-15
+> 🔔 **최신화 일자:** 2025-10-22
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -45,7 +45,7 @@ SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하�
 이 네임스페이스를 사용하여 **고객 유저 ID 관리, 어트리뷰션 데이터 조회, 커스텀 이벤트 로깅**과 같은 기능을 수행할 수 있습니다.
 
 :::warning 주의
-`customUserId`, `logEvent`의 `values`와 같은 Raw Data는 **AppsFlyer의 Welcome 플랜**에서는 사용할 수 없습니다.
+`customerUserId`, `logEvent`의 `values`와 같은 Raw Data는 **AppsFlyer의 Welcome 플랜**에서는 사용할 수 없습니다.
 
 참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
 :::
@@ -90,17 +90,17 @@ export declare type AppsflyerResult =
 
 ---
 
-### **`GetCustomUserIdResult`** {#get-custom-user-id-result}
+### **`GetCustomerUserIdResult`** {#get-custom-user-id-result}
 
 고객 사용자 ID 조회 결과를 나타내는 타입입니다.
 
 ```typescript
-interface GetCustomUserIdSuccessResult extends AppsflyerSuccessResult {
+interface GetCustomerUserIdSuccessResult extends AppsflyerSuccessResult {
   userId: string;
 }
 
-export declare type GetCustomUserIdResult =
-  | GetCustomUserIdSuccessResult
+export declare type GetCustomerUserIdResult =
+  | GetCustomerUserIdSuccessResult
   | AppsflyerErrorResult;
 ```
 
@@ -131,7 +131,7 @@ export declare interface ConversionData {
 
 | 필드              | 타입                         | 설명                                        |
 | ----------------- | ---------------------------- | ------------------------------------------- |
-| `timestamp`       | `number`                     | 전환 데이터 수신 시간 (Unix 에포크 밀리초)  |
+| `timestamp`       | `number`                     | 전환 데이터 수신 시간 (Unix Epoch 밀리초)   |
 | `data_type`       | `'conversion_data'`          | 데이터 타입 (전환 데이터)                   |
 | `install_time`    | `string`                     | 앱 설치 시간                                |
 | `af_message`      | `string`                     | AppsFlyer 메시지                            |
@@ -160,17 +160,17 @@ export declare type DeepLinkData = BaseDeepLinkData &
   Omit<Record<string, string>, keyof BaseDeepLinkData>;
 ```
 
-| 필드                 | 타입                                             | 설명                                         |
-| -------------------- | ------------------------------------------------ | -------------------------------------------- |
-| `timestamp`          | `number`                                         | 딥링크 데이터 수신 시간 (Unix 에포크 밀리초) |
-| `data_type`          | `'deeplink_data'`                                | 데이터 타입 (딥링크 데이터)                  |
-| `link_type`          | `'app_link' \| 'universal_link' \| 'uri_scheme'` | 링크 타입                                    |
-| `scheme`             | `string`                                         | 앱 스킴                                      |
-| `host`               | `string`                                         | 호스트 이름                                  |
-| `path`               | `string`                                         | URL 경로                                     |
-| `link`               | `string`                                         | 전체 링크 URL                                |
-| `is_deferred`        | `false`                                          | 디퍼드 딥링크 여부 (일반 딥링크는 false)     |
-| 기타 커스텀 파라미터 | `string`                                         | 추가 커스텀 쿼리 파라미터들                  |
+| 필드                 | 타입                                             | 설명                                        |
+| -------------------- | ------------------------------------------------ | ------------------------------------------- |
+| `timestamp`          | `number`                                         | 딥링크 데이터 수신 시간 (Unix Epoch 밀리초) |
+| `data_type`          | `'deeplink_data'`                                | 데이터 타입 (딥링크 데이터)                 |
+| `link_type`          | `'app_link' \| 'universal_link' \| 'uri_scheme'` | 링크 타입                                   |
+| `scheme`             | `string`                                         | 앱 스킴                                     |
+| `host`               | `string`                                         | 호스트 이름                                 |
+| `path`               | `string`                                         | URL 경로                                    |
+| `link`               | `string`                                         | 전체 링크 URL                               |
+| `is_deferred`        | `false`                                          | 디퍼드 딥링크 여부 (일반 딥링크는 false)    |
+| 기타 커스텀 파라미터 | `string`                                         | 추가 커스텀 쿼리 파라미터들                 |
 
 ---
 
@@ -205,17 +205,17 @@ export declare type DeferredDeepLinkData = BaseDeferredDeepLinkData &
   Omit<Record<string, string>, keyof BaseDeepLinkData>;
 ```
 
-| 필드                 | 타입                                                      | 설명                                         |
-| -------------------- | --------------------------------------------------------- | -------------------------------------------- |
-| `timestamp`          | `number`                                                  | 딥링크 데이터 수신 시간 (Unix 에포크 밀리초) |
-| `data_type`          | `'deeplink_data'`                                         | 데이터 타입 (딥링크 데이터)                  |
-| `link_type`          | `'deferred_link'`                                         | 링크 타입                                    |
-| `is_deferred`        | `true`                                                    | 디퍼드 딥링크 여부 (디퍼드 딥링크는 true)    |
-| `match_type`         | `'referrer' \| 'id_matching' \| 'probabilistic' \| 'srn'` | 어트리뷰션 매칭 방식                         |
-| `media_source`       | `string`                                                  | 미디어 소스 (광고 플랫폼)                    |
-| `campaign`           | `string` _(optional)_                                     | 캠페인 이름                                  |
-| `campaign_id`        | `string` _(optional)_                                     | 캠페인 ID                                    |
-| 기타 커스텀 파라미터 | `string`                                                  | 추가 커스텀 쿼리 파라미터들                  |
+| 필드                 | 타입                                                      | 설명                                        |
+| -------------------- | --------------------------------------------------------- | ------------------------------------------- |
+| `timestamp`          | `number`                                                  | 딥링크 데이터 수신 시간 (Unix Epoch 밀리초) |
+| `data_type`          | `'deeplink_data'`                                         | 데이터 타입 (딥링크 데이터)                 |
+| `link_type`          | `'deferred_link'`                                         | 링크 타입                                   |
+| `is_deferred`        | `true`                                                    | 디퍼드 딥링크 여부 (디퍼드 딥링크는 true)   |
+| `match_type`         | `'referrer' \| 'id_matching' \| 'probabilistic' \| 'srn'` | 어트리뷰션 매칭 방식                        |
+| `media_source`       | `string`                                                  | 미디어 소스 (광고 플랫폼)                   |
+| `campaign`           | `string` _(optional)_                                     | 캠페인 이름                                 |
+| `campaign_id`        | `string` _(optional)_                                     | 캠페인 ID                                   |
+| 기타 커스텀 파라미터 | `string`                                                  | 추가 커스텀 쿼리 파라미터들                 |
 
 ---
 
@@ -272,56 +272,66 @@ export declare type GetAttributionListResult =
 
 ## **메서드 목록** {#method-list}
 
-| 메서드                                              | 설명                        | 추가된 버전                                                                                   |
-| --------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------- |
-| [`setCustomUserId(userId)`](#set-custom-user-id)    | 고객 사용자 ID 설정         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`getCustomUserId()`](#get-custom-user-id)          | 고객 사용자 ID 조회         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`deleteCustomUserId()`](#delete-custom-user-id)    | 고객 사용자 ID 삭제         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`getAttributionData()`](#get-attribution-data)     | 어트리뷰션 데이터 조회      | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`clearAttributionData()`](#clear-attribution-data) | 어트리뷰션 데이터 삭제      | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`getAttributionList()`](#get-attribution-list)     | 어트리뷰션 데이터 목록 조회 | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`clearAttributionList()`](#clear-attribution-list) | 어트리뷰션 데이터 목록 삭제 | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
-| [`logEvent(eventName, values)`](#log-event)         | 커스텀 이벤트 로깅          | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |
+| 메서드                                                        | 설명                        | 추가된 버전                                                                                   | 업데이트된 버전                                                                               |
+| ------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`setCustomerUserId(userId)`](#set-customer-user-id)          | 고객 사용자 ID 설정         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> | <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
+| [`getCustomerUserId()`](#get-customer-user-id)                | 고객 사용자 ID 조회         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> | <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
+| [`deleteCustomerUserId()`](#delete-customer-user-id)          | 고객 사용자 ID 삭제         | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> | <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
+| [`getAttributionData()`](#get-attribution-data)               | 어트리뷰션 데이터 조회      | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |                                                                                               |
+| [`clearAttributionData(timestamp?)`](#clear-attribution-data) | 어트리뷰션 데이터 삭제      | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |                                                                                               |
+| [`getAttributionList()`](#get-attribution-list)               | 어트리뷰션 데이터 목록 조회 | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |                                                                                               |
+| [`clearAttributionList()`](#clear-attribution-list)           | 어트리뷰션 데이터 목록 삭제 | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |                                                                                               |
+| [`logEvent(eventName, values)`](#log-event)                   | 커스텀 이벤트 로깅          | <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> |                                                                                               |
 
 ---
 
 ## **메서드 상세** {#method-details}
 
-### **`setCustomUserId(userId: string): Promise<AppsflyerResult>`** {#set-custom-user-id}
+### **`setCustomerUserId(userId: string): Promise<AppsflyerResult>`** {#set-customer-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> - 메서드명 변경
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
-#### 설명 {#set-custom-user-id-summary}
+#### 설명 {#set-customer-user-id-summary}
 
-AppsFlyer에 고객 사용자 ID를 설정합니다.
+AppsFlyer에 **고객 사용자 ID를 설정**합니다.
 이 ID는 사용자를 고유하게 식별하는 데 사용됩니다.
 
+:::info 메서드 이름 변경
+**v1.8.0**부터 AppsFlyer 공식 문서와의 일관성을 위해 메서드 이름이 변경되었습니다.
+
+- **v1.7.0**: `setCustomUserId(userId)`
+- **v1.8.0**: `setCustomerUserId(userId)` ← 현재 메서드명
+
+기존 코드를 사용 중이라면 메서드 이름을 업데이트해 주세요.
+:::
+
 :::warning 주의
-`customUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
+`customerUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.
 무료 플랜의 앱스플라이어 대시보드에서는 집계 확인이 불가하오니 참고 바랍니다.
 
 참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
 :::
 
-#### 매개변수 {#set-custom-user-id-parameters}
+#### 매개변수 {#set-customer-user-id-parameters}
 
 | 이름     | 타입     | 필수 여부 | 설명               |
 | -------- | -------- | --------- | ------------------ |
 | `userId` | `string` | ✅        | 설정할 유저 식별자 |
 
-#### 반환 값 {#set-custom-user-id-returns}
+#### 반환 값 {#set-customer-user-id-returns}
 
 [`Promise<AppsflyerResult>`](#appsflyer-result) - 설정 결과를 포함하는 Promise
 
-#### 사용 예제 {#set-custom-user-id-examples}
+#### 사용 예제 {#set-customer-user-id-examples}
 
 ```javascript
 // 고객 사용자 ID 설정
-const result = await Nachocode.appsflyer.setCustomUserId('user123');
+const result = await Nachocode.appsflyer.setCustomerUserId('user123');
 if (result.status === 'success') {
   console.log('고객 사용자 ID 설정 성공:', result.message);
 } else {
@@ -331,34 +341,44 @@ if (result.status === 'success') {
 
 ---
 
-### **`getCustomUserId(): Promise<GetCustomUserIdResult>`** {#get-custom-user-id}
+### **`getCustomerUserId(): Promise<GetCustomerUserIdResult>`** {#get-customer-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> - 메서드명 변경
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
-#### 설명 {#get-custom-user-id-summary}
+#### 설명 {#get-customer-user-id-summary}
 
-AppsFlyer에서 등록된 고객 사용자 ID를 조회합니다.
+AppsFlyer에서 **등록된 고객 사용자 ID를 조회**합니다.
+
+:::info 메서드 이름 변경
+**v1.8.0**부터 AppsFlyer 공식 문서와의 일관성을 위해 메서드 이름이 변경되었습니다.
+
+- **v1.7.0**: `getCustomUserId()`
+- **v1.8.0**: `getCustomerUserId()` ← 현재 메서드명
+
+기존 코드를 사용 중이라면 메서드 이름을 업데이트해 주세요.
+:::
 
 :::warning 주의
-`customUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
+`customerUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.
 무료 플랜의 앱스플라이어 대시보드에서는 집계 확인이 불가하오니 참고 바랍니다.
 
 참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
 :::
 
-#### 반환 값 {#get-custom-user-id-returns}
+#### 반환 값 {#get-customer-user-id-returns}
 
-[`Promise<GetCustomUserIdResult>`](#get-custom-user-id-result) - 고객 사용자 ID와 결과를 포함하는 Promise
+[`Promise<GetCustomerUserIdResult>`](#get-custom-user-id-result) - 고객 사용자 ID와 결과를 포함하는 Promise
 
-#### 사용 예제 {#get-custom-user-id-examples}
+#### 사용 예제 {#get-customer-user-id-examples}
 
 ```javascript
 // 고객 사용자 ID 조회
-const result = await Nachocode.appsflyer.getCustomUserId();
+const result = await Nachocode.appsflyer.getCustomerUserId();
 if (result.status === 'success') {
   console.log('고객 사용자 ID:', result.userId);
 } else {
@@ -368,34 +388,44 @@ if (result.status === 'success') {
 
 ---
 
-### **`deleteCustomUserId(): Promise<AppsflyerResult>`** {#delete-custom-user-id}
+### **`deleteCustomerUserId(): Promise<AppsflyerResult>`** {#delete-customer-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> - 메서드명 변경
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
-#### 설명 {#delete-custom-user-id-summary}
+#### 설명 {#delete-customer-user-id-summary}
 
-AppsFlyer에서 등록된 고객 사용자 ID를 삭제합니다.
+AppsFlyer에서 **등록된 고객 사용자 ID를 삭제**합니다.
+
+:::info 메서드 이름 변경
+**v1.8.0**부터 AppsFlyer 공식 문서와의 일관성을 위해 메서드 이름이 변경되었습니다.
+
+- **v1.7.0**: `deleteCustomUserId()`
+- **v1.8.0**: `deleteCustomerUserId()` ← 현재 메서드명
+
+기존 코드를 사용 중이라면 메서드 이름을 업데이트해 주세요.
+:::
 
 :::warning 주의
-`customUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.  
+`customerUserId` 데이터는 **AppsFlyer의 커스텀 패키지**(**엔터프라이즈 플랜**)로의 업그레이드 후 사용할 수 있습니다.
 무료 플랜의 앱스플라이어 대시보드에서는 집계 확인이 불가하오니 참고 바랍니다.
 
 참고 - [앱스플라이어 플랜 및 요율표](https://www.appsflyer.com/ko/pricing/)
 :::
 
-#### 반환 값 {#delete-custom-user-id-returns}
+#### 반환 값 {#delete-customer-user-id-returns}
 
 [`Promise<AppsflyerResult>`](#appsflyer-result) - 삭제 결과를 포함하는 Promise
 
-#### 사용 예제 {#delete-custom-user-id-examples}
+#### 사용 예제 {#delete-customer-user-id-examples}
 
 ```javascript
 // 고객 사용자 ID 삭제
-const result = await Nachocode.appsflyer.deleteCustomUserId();
+const result = await Nachocode.appsflyer.deleteCustomerUserId();
 if (result.status === 'success') {
   console.log('고객 사용자 ID 삭제 성공:', result.message);
 } else {
@@ -467,7 +497,7 @@ if (result.status === 'success') {
 
 ---
 
-### **`clearAttributionData(): Promise<AppsflyerResult>`** {#clear-attribution-data}
+### **`clearAttributionData(timestamp?: number): Promise<AppsflyerResult>`** {#clear-attribution-data}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
@@ -478,6 +508,12 @@ _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있�
 #### 설명 {#clear-attribution-data-summary}
 
 저장된 어트리뷰션 데이터를 삭제합니다.
+
+#### 매개변수 {#clear-attribution-data-parameters}
+
+| 이름        | 타입     | 필수 여부 | 설명                                                           |
+| ----------- | -------- | --------- | -------------------------------------------------------------- |
+| `timestamp` | `number` | ❌        | 특정 어트리뷰션 데이터를 지울 때 키로 활용 (Unix Epoch 밀리초) |
 
 #### 반환 값 {#clear-attribution-data-returns}
 
