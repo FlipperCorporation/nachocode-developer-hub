@@ -18,7 +18,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2025-07-14
+> 🔔 **최신화 일자:** 2025-10-22
 
 ## **개요** {#overview}
 
@@ -35,6 +35,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 | [`getAppKey()`](#get-app-key)                        | nachocode 플랫폼에서 발급한 앱의 고유 키를 반환합니다. | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
 | [`getCurrentAppVersion()`](#get-current-app-version) | 현재 설치된 앱 버전을 반환합니다.                      | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
 | [`getPackageName()`](#get-package-name)              | 앱의 패키지명을 가져옵니다.                            | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
+| [`exitApp()`](#exit-app)                             | 앱을 종료합니다.                                       | <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
 
 ---
 
@@ -166,6 +167,68 @@ console.log(`현재 앱 버전: ${appVersion}`); // ex. "1.0.0"
 ```javascript
 const packageName = Nachocode.app.getPackageName();
 console.log(`패키지명: ${packageName}`); // ex. "com.nachocode.example"
+```
+
+---
+
+### **`exitApp(): void`** {#exit-app}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+#### 설명 {#exit-app-summary}
+
+앱을 **프로그래밍 방식으로 종료**합니다. **사용자가 명시적으로 종료를 선택**했거나 서비스에 필수적인 권한이 허용되지 않은 경우 등 **더 이상 앱을 지속할 수 없는 특정 상황**에서만 신중하게 사용하세요.
+
+:::info 기본 종료 흐름
+나쵸코드 Android 앱소스에서는 **루트 화면에서 뒤로가기를 누르면 “ '뒤로' 버튼을 한 번 더 누르면 종료됩니다. ” 안내 → 두 번째 뒤로가기 시 종료**되는 패턴이 **기본 제공**됩니다. 이 기본 동작을 대체하기 위해 `exitApp()`을 사용할 필요는 없습니다.
+:::
+
+:::warning 주의사항
+이 메서드는 앱을 즉시 종료하므로 사용에 주의가 필요합니다.  
+앱 스토어 가이드라인에 따르면 사용자의 명시적인 동의 없이 앱을 종료하는 것은 권장되지 않습니다.
+
+- **Android**: `exitApp()`은 현재 태스크를 최근 앱 목록에서 제거하며 종료합니다.
+- **iOS**: 시스템 정책상 정상적인 프로그램적 종료 방식이 없어, **의도적으로 크래시를 발생시켜 종료**합니다. 이 종료는 **크래시 리포트**(App Store Connect/Xcode Organizer, Crashlytics 등)에 집계됩니다. 추가적으로 의도적 크래시는 **크래시율 악화** 및 **심사 반려 리스크**가 있습니다. 상용(스토어) 배포에서는 사용을 지양하세요.
+
+:::
+
+#### 지원 플랫폼 {#exit-app-supported-platforms}
+
+| 플랫폼                                                             | 지원 여부 |
+| ------------------------------------------------------------------ | --------- |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        |
+| ![Web](/img/docs/chrome-badge.svg)                                 | ❌        |
+
+#### 반환 값 {#exit-app-returns}
+
+해당 메서드는 반환 값을 가지지 않습니다.
+
+#### 사용 예제 {#exit-app-examples}
+
+```javascript
+// 1) 사용자가 '로그아웃 후 닫기'를 명시적으로 선택하는 경우
+function handleLogout() {
+  // 로그아웃 로직 수행
+  clearUserData();
+
+  // 사용자에게 확인 요청
+  if (confirm('앱을 종료하시겠습니까?')) {
+    Nachocode.app.exitApp();
+  }
+}
+```
+
+```javascript
+// 2) 필수 권한 미허용 등 예외 상태: 사유 안내 후 사용자가 종료를 선택
+async function cannotProceed(reason) {
+  const ok = confirm(
+    `${reason}\n\n사유로 앱을 계속 사용할 수 없습니다.\n앱을 종료하시겠습니까?`
+  );
+  if (ok) {
+    Nachocode.app.exitApp();
+  }
+}
 ```
 
 ---
