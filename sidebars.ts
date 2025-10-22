@@ -123,6 +123,7 @@ const sidebars: SidebarsConfig = {
         'sdk/namespaces/iap',
         'sdk/namespaces/loading',
         'sdk/namespaces/location',
+        'sdk/namespaces/navigation',
         'sdk/namespaces/permission',
         'sdk/namespaces/preference',
         'sdk/namespaces/push',
