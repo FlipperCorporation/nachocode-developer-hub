@@ -121,6 +121,7 @@ const sidebars: SidebarsConfig = {
         'sdk/namespaces/env',
         'sdk/namespaces/event',
         'sdk/namespaces/iap',
+        'sdk/namespaces/loading',
         'sdk/namespaces/location',
         'sdk/namespaces/permission',
         'sdk/namespaces/preference',
