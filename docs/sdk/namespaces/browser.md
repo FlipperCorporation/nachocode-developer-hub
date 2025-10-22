@@ -26,7 +26,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />  
-> 🔔 **최신화 일자:** 2025-07-30
+> 🔔 **최신화 일자:** 2025-10-22
 
 ## **개요** {#overview}
 
@@ -84,11 +84,30 @@ export declare type OpenURLOption =
 
 ---
 
+### **`SetInternalBrowserOption`** {#set-internal-browser-option}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+내부 브라우저의 옵션을 설정하는 타입입니다.
+
+```typescript
+export declare type SetInternalBrowserOption = {
+  usingUrl: boolean; // URL 바를 표시할지 여부
+};
+```
+
+| 필드       | 타입      | 설명                               |
+| ---------- | --------- | ---------------------------------- |
+| `usingUrl` | `boolean` | 내부 브라우저에서 URL 바 표시 여부 |
+
+---
+
 ## **메서드 목록** {#method-list}
 
-| 메서드                                 | 설명                                             | 추가된 버전                                                                                   | 업데이트된 버전                                                                               |
-| -------------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`openLink(url, option?)`](#open-link) | 지정한 URL을 내부 또는 외부 브라우저에서 엽니다. | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> | <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" /> |
+| 메서드                                                | 설명                                             | 추가된 버전                                                                                   | 업데이트된 버전                                                                               |
+| ----------------------------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`openLink(url, option?)`](#open-link)                | 지정한 URL을 내부 또는 외부 브라우저에서 엽니다. | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> | <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" /> |
+| [`setInternalBrowser(option)`](#set-internal-browser) | 내부 브라우저의 옵션을 설정합니다.               | <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |                                                                                               |
 
 ---
 
@@ -167,3 +186,78 @@ Nachocode.browser.openLink('https://nachocode.io', 'internal');
 // 앱 내부에서 기본 브라우저 엔진으로 URL 열기
 Nachocode.browser.openLink('https://nachocode.io', 'internal_default');
 ```
+
+---
+
+### **`setInternalBrowser(option: SetInternalBrowserOption): void`** {#set-internal-browser}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+#### 설명 {#set-internal-browser-summary}
+
+내부 브라우저의 **옵션을 설정**합니다.
+현재는 **URL 바 표시 여부**만 제어할 수 있습니다.
+
+이 설정은 `openLink` 메서드에서 `'internal'` 옵션을 사용할 때, `<a>` 태그로 새 창을 열었을 때 실행되는 내부 브라우저에 적용됩니다.
+
+#### 지원 플랫폼 {#set-internal-browser-supported-platforms}
+
+| 플랫폼                                                             | 지원 여부 |
+| ------------------------------------------------------------------ | --------- |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        |
+| ![Web](/img/docs/chrome-badge.svg)                                 | ❌        |
+
+#### 매개변수 {#set-internal-browser-parameters}
+
+| 이름     | 타입                                                       | 필수 여부 | 설명                    |
+| -------- | ---------------------------------------------------------- | --------- | ----------------------- |
+| `option` | [`SetInternalBrowserOption`](#set-internal-browser-option) | ✅        | 내부 브라우저 옵션 설정 |
+
+#### 반환 값 {#set-internal-browser-returns}
+
+해당 메서드는 반환 값을 가지지 않습니다.
+
+#### 사용 예제 {#set-internal-browser-examples}
+
+##### URL 바를 표시하지 않는 내부 브라우저 {#set-internal-browser-example-no-url}
+
+```javascript
+// URL 바를 숨긴 상태로 내부 브라우저 설정
+Nachocode.browser.setInternalBrowser({
+  usingUrl: false,
+});
+
+// 이후 내부 브라우저로 열리는 링크는 URL 바가 표시되지 않음
+Nachocode.browser.openLink('https://nachocode.io', 'internal');
+```
+
+##### URL 바를 표시하는 내부 브라우저 {#set-internal-browser-example-with-url}
+
+```javascript
+// URL 바를 표시하는 내부 브라우저 설정 (기본값)
+Nachocode.browser.setInternalBrowser({
+  usingUrl: true,
+});
+
+// 이후 내부 브라우저로 열리는 링크는 URL 바가 표시됨
+Nachocode.browser.openLink('https://nachocode.io', 'internal');
+```
+
+##### 사용 사례: 보안이 중요한 페이지 {#set-internal-browser-example-security}
+
+```javascript
+// 보안이 중요한 페이지는 URL 바를 숨겨서 표시
+function openSecurePage(page) {
+  Nachocode.browser.setInternalBrowser({ usingUrl: false });
+  Nachocode.browser.openLink(page, 'internal');
+}
+
+// 일반 콘텐츠 페이지는 URL 바를 표시
+function openContentPage(page) {
+  Nachocode.browser.setInternalBrowser({ usingUrl: true });
+  Nachocode.browser.openLink(page, 'internal');
+}
+```
+
+---
