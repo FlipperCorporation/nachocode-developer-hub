@@ -26,7 +26,7 @@ image: /img/docs/releases/release_note_sdk_detail.png
 
 ![sdk](/img/docs/releases/release_note_sdk_detail.png)
 
-> 🔔 **최신화 일자:** 2025-07-10
+> 🔔 **최신화 일자:** 2025-10-22
 
 **nachocode Client SDK**를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.
 
@@ -41,22 +41,22 @@ nachocode Client SDK는 웹 클라이언트에서 **네이티브 앱의 기능**
 
 - 웹 페이지의 `<body>` 태그 안에 다음과 같은 스크립트 태그를 추가합니다. 이 스크립트는 **nachocode Client SDK**를 웹 페이지에 로드합니다.
 
-  ### 최신 버전 불러오기
+### 최신 버전 불러오기
 
-  - 현재 최신 버전 v1.6.2
+- 현재 최신 버전 v1.8.0
 
-  - 최신 버전의 SDK를 항상 유지하려면 아래 코드를 사용하세요
+- 최신 버전의 SDK를 항상 유지하려면 아래 코드를 사용하세요
 
   ```html
   <script src="https://cdn.nachocode.io/nachocode/client-sdk/@latest/client-sdk.min.js"></script>
   ```
 
-  ### 특정 버전 사용
+### 특정 버전 사용
 
-  - 특정 버전으로 고정하려면 다음과 같이 사용합니다
+- 특정 버전으로 고정하려면 다음과 같이 사용합니다
 
   ```html
-  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.6.2/client-sdk.min.js"></script>
+  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.8.0/client-sdk.min.js"></script>
   ```
 
 :::info
@@ -166,7 +166,6 @@ nachocode Client SDK 초기화는 두 가지 방식으로 가능합니다.
 - nachocode Client SDK가 초기화가 완료되면, `Nachocode` 네임스페이스 아래에 정의된 다양한 네이티브 기능을 사용할 수 있습니다.
 
 - 아래 예시는 SDK의 일부 기능을 사용하는 방법을 보여줍니다.
-
   - **앱 정보 가져오기**
 
   ```javascript
@@ -200,4 +199,4 @@ nachocode Client SDK 초기화는 두 가지 방식으로 가능합니다.
 
 - 현재 대부분의 기능은 웹 실행환경에선 무시되고, 앱 실행환경에서 정상 작동합니다.
 
-- 일부 기능은 앱 뿐아니라 웹 실행환경도 지원하며, 점차 지원을 계속 확대할 예정입니다.
+- 일부 기능은 앱 뿐아니라 웹 실행환경도 지원하며, 점차 지원을 확대해 나갈 예정입니다.
