@@ -37,9 +37,9 @@ AppsFlyer 연동을 통해 마케팅 캠페인의 성과를 정확히 추적하�
 
 | 메서드                                                                                        | 설명                        |
 | --------------------------------------------------------------------------------------------- | --------------------------- |
-| [`setCustomUserId(userId)`](/docs/sdk/integrations/appsflyer/reference#set-custom-user-id)    | 커스텀 유저 ID 설정         |
-| [`getCustomUserId()`](/docs/sdk/integrations/appsflyer/reference#get-custom-user-id)          | 커스텀 유저 ID 조회         |
-| [`deleteCustomUserId()`](/docs/sdk/integrations/appsflyer/reference#delete-custom-user-id)    | 커스텀 유저 ID 삭제         |
+| [`setCustomUserId(userId)`](/docs/sdk/integrations/appsflyer/reference#set-customer-user-id)  | 커스텀 유저 ID 설정         |
+| [`getCustomUserId()`](/docs/sdk/integrations/appsflyer/reference#get-customer-user-id)        | 커스텀 유저 ID 조회         |
+| [`deleteCustomUserId()`](/docs/sdk/integrations/appsflyer/reference#delete-customer-user-id)  | 커스텀 유저 ID 삭제         |
 | [`getAttributionData()`](/docs/sdk/integrations/appsflyer/reference#get-attribution-data)     | 어트리뷰션 데이터 조회      |
 | [`clearAttributionData()`](/docs/sdk/integrations/appsflyer/reference#clear-attribution-data) | 어트리뷰션 데이터 삭제      |
 | [`getAttributionList()`](/docs/sdk/integrations/appsflyer/reference#get-attribution-list)     | 어트리뷰션 데이터 목록 조회 |
