@@ -113,26 +113,25 @@ export declare type SafeAreaInsets = {
 
 ---
 
-### **`GetSafeAreaResult`** {#get-safe-area-result}
+### **`GetSafeAreaInsetsResult`** {#get-safe-area-insets-result}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
 
-Safe Area 조회 결과를 나타내는 타입입니다.
+Safe Area Insets 조회 결과를 나타내는 타입입니다.
 
 ```typescript
-export declare type GetSafeAreaSuccessResult = {
+export declare type GetSafeAreaInsetsSuccessResult = {
   isError: false;
-  scale: number;
 } & SafeAreaInsets;
 
-export declare type GetSafeAreaErrorResult = {
+export declare type GetSafeAreaInsetsErrorResult = {
   isError: true;
   errorMessage: string;
 };
 
-export declare type GetSafeAreaResult =
-  | GetSafeAreaSuccessResult
-  | GetSafeAreaErrorResult;
+export declare type GetSafeAreaInsetsResult =
+  | GetSafeAreaInsetsSuccessResult
+  | GetSafeAreaInsetsErrorResult;
 ```
 
 #### 성공 시 반환 값
@@ -144,7 +143,6 @@ export declare type GetSafeAreaResult =
 | `bottom`  | `number` | 하단 여백 (pt)                 |
 | `left`    | `number` | 좌측 여백 (pt)                 |
 | `right`   | `number` | 우측 여백 (pt)                 |
-| `scale`   | `number` | 화면 스케일 (픽셀 밀도)        |
 
 #### 실패 시 반환 값
 
@@ -164,7 +162,7 @@ export declare type GetSafeAreaResult =
 | [`getDeviceModel()`](#get-device-model)                 | 디바이스의 모델명을 반환합니다.         | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> |
 | [`getDeviceOS()`](#get-device-os)                       | 디바이스의 OS 유형과 버전을 반환합니다. | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> |
 | [`getNetworkStatus(callback)`](#get-network-status)     | 네트워크 연결 상태를 반환합니다.        | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> |
-| [`getSafeArea()`](#get-safe-area)                       | 디바이스의 안전 영역 크기를 반환합니다. | <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
+| [`getSafeAreaInsets()`](#get-safe-area-insets)          | 디바이스의 안전 영역 크기를 반환합니다. | <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
 | [`getType()`](#get-type)                                | 현재 디바이스의 유형을 반환합니다.      | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
 | [`isAndroid()`](#is-android)                            | 현재 디바이스가 Android인지 확인합니다. | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
 | [`isIOS()`](#is-ios)                                    | 현재 디바이스가 iOS인지 확인합니다.     | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
@@ -331,23 +329,25 @@ Nachocode.device.getNetworkStatus(status => {
 
 ---
 
-### **`getSafeArea(): Promise<GetSafeAreaResult>`** {#get-safe-area}
+### **`getSafeAreaInsets(): Promise<GetSafeAreaInsetsResult>`** {#get-safe-area-insets}
 
 - ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 - _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
 
-#### 설명 {#get-safe-area-summary}
+#### 설명 {#get-safe-area-insets-summary}
 
-디바이스의 **Safe Area Insets 정보**와 **픽셀 밀도(Scale) 정보**를 비동기적으로 조회합니다.
+디바이스의 **Safe Area Insets 정보**를 비동기적으로 조회합니다.
 
 Safe Area는 디바이스의 **노치, 홈 인디케이터 등으로 인해 가려지지 않는 안전한 영역**을 나타냅니다.
 이 정보를 활용하여 **UI 요소가 가려지지 않도록 레이아웃을 조정**할 수 있습니다.
+
+반환되는 값은 **포인트(pt) 단위**로 제공되며, CSS padding 속성에 바로 적용할 수 있습니다.
 
 :::info iOS 전용 기능
 현재 이 기능은 **iPhone X 이상의 iOS 기기에서만 지원**됩니다.
 :::
 
-#### 지원 플랫폼 {#get-safe-area-supported-platforms}
+#### 지원 플랫폼 {#get-safe-area-insets-supported-platforms}
 
 | 플랫폼                                                             | 지원 여부 | 비고          |
 | ------------------------------------------------------------------ | --------- | ------------- |
@@ -355,55 +355,51 @@ Safe Area는 디바이스의 **노치, 홈 인디케이터 등으로 인해 가�
 | ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | iPhone X 이상 |
 | ![Web](/img/docs/chrome-badge.svg)                                 | ❌        | 지원하지 않음 |
 
-#### 반환 값 {#get-safe-area-returns}
+#### 반환 값 {#get-safe-area-insets-returns}
 
-| 타입                                                      | 설명                |
-| --------------------------------------------------------- | ------------------- |
-| `Promise<`[`GetSafeAreaResult`](#get-safe-area-result)`>` | Safe Area 조회 결과 |
+| 타입                                                                   | 설명                       |
+| ---------------------------------------------------------------------- | -------------------------- |
+| `Promise<`[`GetSafeAreaInsetsResult`](#get-safe-area-insets-result)`>` | Safe Area Insets 조회 결과 |
 
-#### 사용 예제 {#get-safe-area-examples}
+#### 사용 예제 {#get-safe-area-insets-examples}
 
-##### 기본 사용법 {#get-safe-area-example-basic}
+##### 기본 사용법 {#get-safe-area-insets-example-basic}
 
 ```javascript
 // Safe Area Insets 조회
-const safeArea = await Nachocode.device.getSafeArea();
+const safeAreaInsets = await Nachocode.device.getSafeAreaInsets();
 
-if (!safeArea.isError) {
-  console.log(`Top: ${safeArea.top}pt`);
-  console.log(`Bottom: ${safeArea.bottom}pt`);
-  console.log(`Left: ${safeArea.left}pt`);
-  console.log(`Right: ${safeArea.right}pt`);
-  console.log(`Scale: ${safeArea.scale}`);
+if (!safeAreaInsets.isError) {
+  console.log(`Top: ${safeAreaInsets.top}pt`);
+  console.log(`Bottom: ${safeAreaInsets.bottom}pt`);
+  console.log(`Left: ${safeAreaInsets.left}pt`);
+  console.log(`Right: ${safeAreaInsets.right}pt`);
 } else {
-  console.error(`Safe Area 조회 실패: ${safeArea.errorMessage}`);
+  console.error(`Safe Area Insets 조회 실패: ${safeAreaInsets.errorMessage}`);
 }
 ```
 
-##### CSS 변수로 설정 {#get-safe-area-example-css}
+##### CSS 변수로 설정 {#get-safe-area-insets-example-css}
 
 ```javascript
-// Safe Area 정보를 CSS 변수로 설정하여 레이아웃에 활용
-async function applySafeArea() {
-  const safeArea = await Nachocode.device.getSafeArea();
+// Safe Area Insets 정보를 CSS 변수로 설정하여 레이아웃에 활용
+async function applySafeAreaInsets() {
+  const safeAreaInsets = await Nachocode.device.getSafeAreaInsets();
 
-  if (!safeArea.isError) {
+  if (!safeAreaInsets.isError) {
     const root = document.documentElement;
+    root.style.setProperty('--safe-area-inset-top', `${safeAreaInsets.top}pt`);
     root.style.setProperty(
-      '--safe-area-top',
-      `${safeArea.top * safeArea.scale}px`
+      '--safe-area-inset-bottom',
+      `${safeAreaInsets.bottom}pt`
     );
     root.style.setProperty(
-      '--safe-area-bottom',
-      `${safeArea.bottom * safeArea.scale}px`
+      '--safe-area-inset-left',
+      `${safeAreaInsets.left}pt`
     );
     root.style.setProperty(
-      '--safe-area-left',
-      `${safeArea.left * safeArea.scale}px`
-    );
-    root.style.setProperty(
-      '--safe-area-right',
-      `${safeArea.right * safeArea.scale}px`
+      '--safe-area-inset-right',
+      `${safeAreaInsets.right}pt`
     );
   }
 }
@@ -412,57 +408,45 @@ async function applySafeArea() {
 ```css
 /* CSS에서 사용 */
 .header {
-  padding-top: var(--safe-area-top);
+  padding-top: var(--safe-area-inset-top);
 }
 
 .footer {
-  padding-bottom: var(--safe-area-bottom);
+  padding-bottom: var(--safe-area-inset-bottom);
 }
 
 .bottom-nav {
-  padding-bottom: var(--safe-area-bottom);
+  padding-bottom: var(--safe-area-inset-bottom);
 }
 ```
 
-##### 레이아웃 동적 조정 {#get-safe-area-example-layout}
+##### 레이아웃 동적 조정 {#get-safe-area-insets-example-layout}
 
 ```javascript
-// Safe Area를 고려한 레이아웃 동적 조정
-async function adjustLayoutForSafeArea() {
-  const safeArea = await Nachocode.device.getSafeArea();
+// Safe Area Insets를 고려한 레이아웃 동적 조정
+async function adjustLayoutForSafeAreaInsets() {
+  const safeAreaInsets = await Nachocode.device.getSafeAreaInsets();
 
-  if (!safeArea.isError) {
-    // 헤더 영역을 Safe Area만큼 위로 패딩 추가
+  if (!safeAreaInsets.isError) {
+    // 헤더 영역에 상단 Safe Area Insets 적용
     const header = document.querySelector('.header');
-    header.style.paddingTop = `${safeArea.top}pt`;
+    header.style.paddingTop = `${safeAreaInsets.top}pt`;
 
-    // 하단 네비게이션을 Safe Area만큼 아래로 패딩 추가
+    // 하단 네비게이션에 하단 Safe Area Insets 적용
     const bottomNav = document.querySelector('.bottom-nav');
-    bottomNav.style.paddingBottom = `${safeArea.bottom}pt`;
+    bottomNav.style.paddingBottom = `${safeAreaInsets.bottom}pt`;
 
-    // 전체 컨테이너에 좌우 Safe Area 적용
+    // 전체 컨테이너에 좌우 Safe Area Insets 적용
     const container = document.querySelector('.container');
-    container.style.paddingLeft = `${safeArea.left}pt`;
-    container.style.paddingRight = `${safeArea.right}pt`;
+    container.style.paddingLeft = `${safeAreaInsets.left}pt`;
+    container.style.paddingRight = `${safeAreaInsets.right}pt`;
   }
 }
 ```
 
-##### 픽셀 단위로 변환 {#get-safe-area-example-pixels}
-
-```javascript
-// Safe Area를 픽셀 단위로 변환 (scale 활용)
-const safeArea = await Nachocode.device.getSafeArea();
-
-if (!safeArea.isError) {
-  // 포인트를 픽셀로 변환
-  const topInPixels = safeArea.top * safeArea.scale;
-  const bottomInPixels = safeArea.bottom * safeArea.scale;
-
-  console.log(`Top (pixels): ${topInPixels}px`);
-  console.log(`Bottom (pixels): ${bottomInPixels}px`);
-}
-```
+:::tip CSS에 적용하기
+Safe Area Insets 값은 포인트(pt) 단위로 제공되고, 별도의 변환 없이 CSS padding 속성에 포인트(pt) 단위로 바로 적용할 수 있습니다.
+:::
 
 ---
 
