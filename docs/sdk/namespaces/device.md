@@ -20,7 +20,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2025-07-16
+> 🔔 **최신화 일자:** 2025-10-22
 
 ## **개요** {#overview}
 
@@ -89,6 +89,72 @@ export declare type NetworkConnectionType =
 
 ---
 
+### **`SafeAreaInsets`** {#safe-area-insets}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+디바이스의 Safe Area Insets 정보를 나타내는 타입입니다.
+
+```typescript
+export declare type SafeAreaInsets = {
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+};
+```
+
+| 필드     | 타입     | 설명           |
+| -------- | -------- | -------------- |
+| `top`    | `number` | 상단 여백 (pt) |
+| `bottom` | `number` | 하단 여백 (pt) |
+| `left`   | `number` | 좌측 여백 (pt) |
+| `right`  | `number` | 우측 여백 (pt) |
+
+---
+
+### **`GetSafeAreaResult`** {#get-safe-area-result}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+Safe Area 조회 결과를 나타내는 타입입니다.
+
+```typescript
+export declare type GetSafeAreaSuccessResult = {
+  isError: false;
+  scale: number;
+} & SafeAreaInsets;
+
+export declare type GetSafeAreaErrorResult = {
+  isError: true;
+  errorMessage: string;
+};
+
+export declare type GetSafeAreaResult =
+  | GetSafeAreaSuccessResult
+  | GetSafeAreaErrorResult;
+```
+
+#### 성공 시 반환 값
+
+| 필드      | 타입     | 설명                           |
+| --------- | -------- | ------------------------------ |
+| `isError` | `false`  | 오류 발생 여부 (성공 시 false) |
+| `top`     | `number` | 상단 여백 (pt)                 |
+| `bottom`  | `number` | 하단 여백 (pt)                 |
+| `left`    | `number` | 좌측 여백 (pt)                 |
+| `right`   | `number` | 우측 여백 (pt)                 |
+| `scale`   | `number` | 화면 스케일 (픽셀 밀도)        |
+
+#### 실패 시 반환 값
+
+| 필드           | 타입     | 설명                          |
+| -------------- | -------- | ----------------------------- |
+| `isError`      | `true`   | 오류 발생 여부 (실패 시 true) |
+| `errorMessage` | `string` | 오류 메시지                   |
+
+---
+
 ## **메서드 목록** {#method-list}
 
 | 메서드                                                  | 설명                                    | 추가된 버전                                                                                   |
@@ -98,6 +164,7 @@ export declare type NetworkConnectionType =
 | [`getDeviceModel()`](#get-device-model)                 | 디바이스의 모델명을 반환합니다.         | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> |
 | [`getDeviceOS()`](#get-device-os)                       | 디바이스의 OS 유형과 버전을 반환합니다. | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> |
 | [`getNetworkStatus(callback)`](#get-network-status)     | 네트워크 연결 상태를 반환합니다.        | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> |
+| [`getSafeArea()`](#get-safe-area)                       | 디바이스의 안전 영역 크기를 반환합니다. | <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
 | [`getType()`](#get-type)                                | 현재 디바이스의 유형을 반환합니다.      | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
 | [`isAndroid()`](#is-android)                            | 현재 디바이스가 Android인지 확인합니다. | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
 | [`isIOS()`](#is-ios)                                    | 현재 디바이스가 iOS인지 확인합니다.     | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
@@ -260,6 +327,141 @@ Nachocode.device.getNetworkStatus(status => {
   const connectionInfo = `네트워크 상태: ${status.isConnected ? '연결됨' : '연결되지 않음'}\n연결 유형: ${status.connectionType}`;
   alert(connectionInfo);
 });
+```
+
+---
+
+### **`getSafeArea(): Promise<GetSafeAreaResult>`** {#get-safe-area}
+
+- ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
+- _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+#### 설명 {#get-safe-area-summary}
+
+디바이스의 **Safe Area Insets 정보**와 **픽셀 밀도(Scale) 정보**를 비동기적으로 조회합니다.
+
+Safe Area는 디바이스의 **노치, 홈 인디케이터 등으로 인해 가려지지 않는 안전한 영역**을 나타냅니다.
+이 정보를 활용하여 **UI 요소가 가려지지 않도록 레이아웃을 조정**할 수 있습니다.
+
+:::info iOS 전용 기능
+현재 이 기능은 **iPhone X 이상의 iOS 기기에서만 지원**됩니다.
+:::
+
+#### 지원 플랫폼 {#get-safe-area-supported-platforms}
+
+| 플랫폼                                                             | 지원 여부 | 비고          |
+| ------------------------------------------------------------------ | --------- | ------------- |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ❌        | 지원하지 않음 |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | iPhone X 이상 |
+| ![Web](/img/docs/chrome-badge.svg)                                 | ❌        | 지원하지 않음 |
+
+#### 반환 값 {#get-safe-area-returns}
+
+| 타입                                                      | 설명                |
+| --------------------------------------------------------- | ------------------- |
+| `Promise<`[`GetSafeAreaResult`](#get-safe-area-result)`>` | Safe Area 조회 결과 |
+
+#### 사용 예제 {#get-safe-area-examples}
+
+##### 기본 사용법 {#get-safe-area-example-basic}
+
+```javascript
+// Safe Area Insets 조회
+const safeArea = await Nachocode.device.getSafeArea();
+
+if (!safeArea.isError) {
+  console.log(`Top: ${safeArea.top}pt`);
+  console.log(`Bottom: ${safeArea.bottom}pt`);
+  console.log(`Left: ${safeArea.left}pt`);
+  console.log(`Right: ${safeArea.right}pt`);
+  console.log(`Scale: ${safeArea.scale}`);
+} else {
+  console.error(`Safe Area 조회 실패: ${safeArea.errorMessage}`);
+}
+```
+
+##### CSS 변수로 설정 {#get-safe-area-example-css}
+
+```javascript
+// Safe Area 정보를 CSS 변수로 설정하여 레이아웃에 활용
+async function applySafeArea() {
+  const safeArea = await Nachocode.device.getSafeArea();
+
+  if (!safeArea.isError) {
+    const root = document.documentElement;
+    root.style.setProperty(
+      '--safe-area-top',
+      `${safeArea.top * safeArea.scale}px`
+    );
+    root.style.setProperty(
+      '--safe-area-bottom',
+      `${safeArea.bottom * safeArea.scale}px`
+    );
+    root.style.setProperty(
+      '--safe-area-left',
+      `${safeArea.left * safeArea.scale}px`
+    );
+    root.style.setProperty(
+      '--safe-area-right',
+      `${safeArea.right * safeArea.scale}px`
+    );
+  }
+}
+```
+
+```css
+/* CSS에서 사용 */
+.header {
+  padding-top: var(--safe-area-top);
+}
+
+.footer {
+  padding-bottom: var(--safe-area-bottom);
+}
+
+.bottom-nav {
+  padding-bottom: var(--safe-area-bottom);
+}
+```
+
+##### 레이아웃 동적 조정 {#get-safe-area-example-layout}
+
+```javascript
+// Safe Area를 고려한 레이아웃 동적 조정
+async function adjustLayoutForSafeArea() {
+  const safeArea = await Nachocode.device.getSafeArea();
+
+  if (!safeArea.isError) {
+    // 헤더 영역을 Safe Area만큼 위로 패딩 추가
+    const header = document.querySelector('.header');
+    header.style.paddingTop = `${safeArea.top}pt`;
+
+    // 하단 네비게이션을 Safe Area만큼 아래로 패딩 추가
+    const bottomNav = document.querySelector('.bottom-nav');
+    bottomNav.style.paddingBottom = `${safeArea.bottom}pt`;
+
+    // 전체 컨테이너에 좌우 Safe Area 적용
+    const container = document.querySelector('.container');
+    container.style.paddingLeft = `${safeArea.left}pt`;
+    container.style.paddingRight = `${safeArea.right}pt`;
+  }
+}
+```
+
+##### 픽셀 단위로 변환 {#get-safe-area-example-pixels}
+
+```javascript
+// Safe Area를 픽셀 단위로 변환 (scale 활용)
+const safeArea = await Nachocode.device.getSafeArea();
+
+if (!safeArea.isError) {
+  // 포인트를 픽셀로 변환
+  const topInPixels = safeArea.top * safeArea.scale;
+  const bottomInPixels = safeArea.bottom * safeArea.scale;
+
+  console.log(`Top (pixels): ${topInPixels}px`);
+  console.log(`Bottom (pixels): ${bottomInPixels}px`);
+}
 ```
 
 ---
