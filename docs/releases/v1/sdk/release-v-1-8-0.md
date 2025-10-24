@@ -1,14 +1,14 @@
 ---
-sidebar_label: 'ver.1.8.0 (25.10.23)'
+sidebar_label: 'ver.1.8.0 (25.10.27)'
 description: nachocode Client SDK ver.1.8.0의 릴리즈노트입니다.
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 
-# Release: ver.1.8.0 (2025-10-23)
+# Release: ver.1.8.0 (2025-10-27)
 
 ![sdk_detail](/img/docs/releases/release_note_sdk_detail.png)
 
-> 🔔 **배포 일자:** 2025-10-23
+> 🔔 **배포 일자:** 2025-10-27
 
 이번 업데이트 **v1.8.0**에서는 **네비게이션 제어 기능**, **로딩 인디케이터 제어**, **안전 영역 (Safe Area) 조회**, **내부 브라우저 설정** 등 다양한 신규 기능이 추가되었습니다.
 
@@ -42,6 +42,12 @@ image: /img/docs/releases/release_note_sdk_detail.png
   - 앱의 **네비게이션 스택 제어**, **스와이프 제스처 설정**, **루트로 리셋** 등의 기능을 제공합니다.
   - 플랫폼별 특화 기능을 지원하여 더욱 세밀한 제어가 가능합니다.
   - ➡️ [**`navigation` 네임스페이스 문서 바로가기**](/docs/sdk/namespaces/navigation)
+
+- **`vibration` 네임스페이스**: 플랫폼별 햅틱 피드백 기능 추가
+  - **iOS 전용 햅틱 피드백**: Impact, Notification, Selection 피드백을 제공합니다.
+  - **Android 전용 햅틱 효과**: 시스템 정의 VibrationEffect를 사용할 수 있습니다.
+  - 기존 `HAPTICS_TYPES`가 `LIGHT`, `MEDIUM`, `HEAVY`로 개선되었습니다.
+  - ➡️ [**`vibration` 네임스페이스 문서 바로가기**](/docs/sdk/namespaces/vibration)
 
 ---
 
@@ -225,6 +231,128 @@ Nachocode.navigation.resetToRoot('https://developer.nachocode.io');
 
 ---
 
+### 플랫폼별 햅틱 피드백 기능 (`vibration` 네임스페이스)
+
+기존 햅틱 피드백 기능이 개선되고, **iOS와 Android 플랫폼별 전용 햅틱 피드백** 기능이 추가되었습니다.
+
+#### 개선된 타입 (`vibration`)
+
+기존 `HAPTICS_TYPES`의 값이 더 직관적으로 변경되었습니다.
+
+| 기존 (1.7.0 이하) | 새 버전 (1.8.0) | 설명                  |
+| ----------------- | --------------- | --------------------- |
+| `SUCCESS (0)`     | `LIGHT (0)`     | 가벼운 햅틱 피드백    |
+| `ERROR (1)`       | `MEDIUM (1)`    | 중간 강도 햅틱 피드백 |
+| -                 | `HEAVY (2)`     | 무거운 햅틱 피드백    |
+
+#### 추가된 메서드 (`vibration`)
+
+| 메서드                       | 설명                                       | 지원 플랫폼 |
+| ---------------------------- | ------------------------------------------ | ----------- |
+| `hapticsImpact(type?)`       | iOS 햅틱 Impact 피드백 트리거              | iOS         |
+| `hapticsNotification(type?)` | iOS 햅틱 Notification 피드백 트리거        | iOS         |
+| `hapticsSelection()`         | iOS 햅틱 Selection 피드백 트리거           | iOS         |
+| `hapticsEffect(type?)`       | Android 햅틱 VibrationEffect 피드백 트리거 | Android     |
+
+#### 사용 예제 (`vibration`)
+
+##### **iOS 전용 햅틱 피드백**
+
+```javascript
+// Impact 피드백 - 물리적 충격을 시뮬레이션
+if (Nachocode.device.isIOS()) {
+  // 가벼운 Impact
+  Nachocode.vibration.hapticsImpact(0); // LIGHT
+
+  // 중간 Impact
+  Nachocode.vibration.hapticsImpact(1); // MEDIUM
+
+  // 무거운 Impact
+  Nachocode.vibration.hapticsImpact(2); // HEAVY
+
+  // 부드러운 Impact (iOS 13.0+)
+  Nachocode.vibration.hapticsImpact(3); // SOFT
+
+  // 견고한 Impact (iOS 13.0+)
+  Nachocode.vibration.hapticsImpact(4); // RIGID
+}
+
+// Notification 피드백 - 작업 성공/경고/실패 알림
+if (Nachocode.device.isIOS()) {
+  // 성공 알림
+  Nachocode.vibration.hapticsNotification(0); // SUCCESS
+
+  // 경고 알림
+  Nachocode.vibration.hapticsNotification(1); // WARNING
+
+  // 오류 알림
+  Nachocode.vibration.hapticsNotification(2); // ERROR
+}
+
+// Selection 피드백 - 선택 항목 변경 시
+if (Nachocode.device.isIOS()) {
+  Nachocode.vibration.hapticsSelection();
+}
+```
+
+##### **Android 전용 햅틱 효과**
+
+```javascript
+// Android VibrationEffect 사용
+if (Nachocode.device.isAndroid()) {
+  // 클릭 효과
+  Nachocode.vibration.hapticsEffect(0); // EFFECT_CLICK
+
+  // 더블 클릭 효과
+  Nachocode.vibration.hapticsEffect(1); // EFFECT_DOUBLE_CLICK
+
+  // 틱 효과
+  Nachocode.vibration.hapticsEffect(2); // EFFECT_TICK
+
+  // 무거운 클릭 효과
+  Nachocode.vibration.hapticsEffect(5); // EFFECT_HEAVY_CLICK
+}
+```
+
+##### **개선된 기본 햅틱 피드백**
+
+```javascript
+// 기본 햅틱 피드백 (Android, iOS 모두 지원)
+Nachocode.vibration.haptics(0); // LIGHT (기본값)
+Nachocode.vibration.haptics(1); // MEDIUM
+Nachocode.vibration.haptics(2); // HEAVY
+```
+
+#### 새로운 타입 정의 (`vibration`)
+
+```typescript
+// iOS Impact 타입
+export declare const HAPTICS_IMPACT_TYPES = {
+  LIGHT: 0,
+  MEDIUM: 1,
+  HEAVY: 2,
+  SOFT: 3,
+  RIGID: 4,
+} as const;
+
+// iOS Notification 타입
+export declare const HAPTICS_NOTIFICATION_TYPES = {
+  SUCCESS: 0,
+  WARNING: 1,
+  ERROR: 2,
+} as const;
+
+// Android Effect 타입
+export declare const HAPTICS_EFFECT_TYPES = {
+  EFFECT_CLICK: 0,
+  EFFECT_DOUBLE_CLICK: 1,
+  EFFECT_TICK: 2,
+  EFFECT_HEAVY_CLICK: 5,
+} as const;
+```
+
+---
+
 ### 개선 사항 {#improvements}
 
 - **`appsflyer` 네임스페이스**: 메서드 네이밍 개선
@@ -244,10 +372,17 @@ Nachocode.navigation.resetToRoot('https://developer.nachocode.io');
   const result = await Nachocode.appsflyer.setCustomerUserId('user123');
   ```
 
+- **`vibration` 네임스페이스**: 햅틱 피드백 타입 개선
+  - 기존 `HAPTICS_TYPES`의 값이 `SUCCESS/ERROR`에서 `LIGHT/MEDIUM/HEAVY`로 변경되었습니다.
+  - iOS 전용 햅틱 타입 추가: `HapticsImpactType`, `HapticsNotificationType`
+  - Android 전용 햅틱 타입 추가: `HapticsEffectType`
+  - 플랫폼별 세밀한 햅틱 제어가 가능해졌습니다.
+
 - **TypeScript 정의**(`Nachocode.d.ts`) **업데이트**
   - v.1.8.0 변경 사항을 반영하여 새로운 네임스페이스와 메서드의 타입 정의가 추가되었습니다.
   - `navigation`, `loading` 네임스페이스가 새롭게 추가되었습니다.
-  - `SafeAreaInsets`, `GetSafeAreaInsetsResult`, `SetInternalBrowserOption` 등의 새로운 타입이 정의되었습니다.
+  - `vibration` 네임스페이스에 iOS/Android 전용 햅틱 타입과 메서드가 추가되었습니다.
+  - `SafeAreaInsets`, `GetSafeAreaInsetsResult`, `SetInternalBrowserOption`, `HapticsImpactType`, `HapticsNotificationType`, `HapticsEffectType` 등의 새로운 타입이 정의되었습니다.
   - 개발자 경험 향상을 위해 주석과 설명이 추가되었습니다.
 
 :::info
@@ -265,6 +400,7 @@ Nachocode.navigation.resetToRoot('https://developer.nachocode.io');
 3. **네비게이션 최적화**: 특정 시나리오에서 네비게이션 스택을 초기화하여 사용자 경험 개선
 4. **브라우저 커스터마이징**: 내부 브라우저의 URL 바 표시 여부를 조정하여 앱의 UI/UX에 맞게 최적화
 5. **깔끔한 앱 종료**: 특정 상황에서 앱을 안전하게 종료하는 기능 구현
+6. **고급 햅틱 피드백**: 플랫폼별 전용 햅틱 기능을 활용하여 더욱 세밀하고 정교한 촉각 피드백 구현
 
 ---
 
