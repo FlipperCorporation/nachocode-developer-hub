@@ -22,7 +22,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />  
-> 🔔 **최신화 일자:** 2025-10-22
+> 🔔 **최신화 일자:** 2025-10-29
 
 ## **개요** {#overview}
 
@@ -30,7 +30,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 Android에서 **네비게이션 스택을 초기화**하거나, iOS의 **스와이프 제스처를 제어**하거나, **루트 화면으로 리셋**하는 등의 작업을 수행할 수 있습니다.
 
-:::info 플랫폼별 기능
+:::warning 플랫폼별 기능
 일부 메서드는 특정 플랫폼에서만 동작합니다. 각 메서드의 지원 플랫폼을 확인해주세요.
 :::
 

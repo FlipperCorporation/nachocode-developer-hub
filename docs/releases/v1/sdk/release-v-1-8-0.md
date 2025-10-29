@@ -1,14 +1,14 @@
 ---
-sidebar_label: 'ver.1.8.0 (25.10.27)'
+sidebar_label: 'ver.1.8.0 (25.10.29)'
 description: nachocode Client SDK ver.1.8.0의 릴리즈노트입니다.
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 
-# Release: ver.1.8.0 (2025-10-27)
+# Release: ver.1.8.0 (2025-10-29)
 
 ![sdk_detail](/img/docs/releases/release_note_sdk_detail.png)
 
-> 🔔 **배포 일자:** 2025-10-27
+> 🔔 **배포 일자:** 2025-10-29
 
 이번 업데이트 **v1.8.0**에서는 **네비게이션 제어 기능**, **로딩 인디케이터 제어**, **안전 영역 (Safe Area) 조회**, **내부 브라우저 설정** 등 다양한 신규 기능이 추가되었습니다.
 

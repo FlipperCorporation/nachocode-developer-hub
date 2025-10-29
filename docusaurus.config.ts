@@ -146,7 +146,7 @@ const config: Config = {
     image: 'img/og_image.png',
     docs: { sidebar: { hideable: true, autoCollapseCategories: true } },
     announcementBar: {
-      content: `📢 <b><a target="_blank" href="https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-8-0">nachocode Client SDK v1.8.0</a>이 배포되었습니다!</b> 🚀`,
+      content: `📢 <b><a target="_blank" href="/docs/releases/v1/sdk/release-v-1-8-0">nachocode Client SDK v1.8.0</a>이 배포되었습니다!</b> 🚀`,
     },
     navbar: {
       title: 'nachocode',
