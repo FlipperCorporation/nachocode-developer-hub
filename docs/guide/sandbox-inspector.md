@@ -64,9 +64,9 @@ description: nachocode 샌드박스 앱에서 Android/iOS 웹 인스펙터를 �
 1. Android 디바이스에서 **샌드박스 앱을 실행**
 2. Chrome의 `chrome://inspect` 페이지에서 **디바이스 목록을 확인**
 3. 앱 이름 옆의 **"inspect"** 버튼을 클릭
-   ![android_inspect_7](/img/docs/sandbox/chrome_inspect_1.png)
+   ![chrome_inspect_1-1](/img/docs/sandbox/chrome_inspect_1-1.png)
 4. **Chrome DevTools 창**이 새로 열리면 디버깅 시작
-   ![android_inspect_8](/img/docs/sandbox/chrome_inspect_2.png)
+   ![chrome_inspect_2](/img/docs/sandbox/chrome_inspect_2.png)
 
 **디버깅 기능 활용**
 
@@ -143,7 +143,7 @@ Nachocode.push.getToken().then(token => {
 
 4. **웹 개발자를 위한 기능 보기** 체크
 
-   ![safari_configuration_2](/img/docs/sandbox/safari_configuration_2.png)
+   ![safari_configuration_2-1](/img/docs/sandbox/safari_configuration_2-1.png)
 
 **디버깅 시작**
 
@@ -168,8 +168,8 @@ Nachocode.push.getToken().then(token => {
 
 7. Safari 인스펙터 창이 열리면 디버깅 시작
 
-   ![safari_inspect_5](/img/docs/sandbox/safari_inspect_5.png)
-   ![ios_inspect_6](/img/docs/sandbox/ios_inspect_6.png)
+   | ![safari_inspect_5](/img/docs/sandbox/safari_inspect_5.png) | ![ios_inspect_6](/img/docs/sandbox/ios_inspect_6.png) |
+   | ----------------------------------------------------------- | ----------------------------------------------------- |
 
 **디버깅 기능 활용**
 
@@ -187,7 +187,6 @@ Safari Web Inspector에서 다음 기능들을 사용할 수 있습니다:
 // iOS 샌드박스 앱에서 SDK 디버깅
 Nachocode.init({
   logger: true,
-  // iOS 특화 설정
 });
 
 // 디바이스 정보 확인
@@ -210,28 +209,33 @@ Nachocode.push.getPermissionStatus().then(status => {
 2. **방화벽 설정**: 개발 서버가 외부 접근을 허용하도록 설정
 3. **포트 개방**: 사용하는 포트가 방화벽에서 허용되어야 함
 
-#### 인덱스 페이지 접속 테스트
+#### 개발 서버 접속 테스트
 
-샌드박스 앱에서 로컬 서버의 인덱스 페이지에 직접 접속할 수 있습니다:
+샌드박스 앱에서 로컬 서버의 URL을 통해 접속할 수 있습니다:
 
 **예시 URL (인덱스 페이지 포함):**
 
 ```
-✅ http://192.168.0.105:3000/index.html
-✅ http://192.168.1.100:8080/index.html
-✅ http://10.0.0.20:4000/index.html
-✅ https://example.com/index.html
+✅ http://192.168.0.105:3000
+✅ http://192.168.1.100:8080
+✅ http://10.0.0.20:4000
+✅ https://example.com
 ```
 
 **테스트 과정:**
 
 1. 샌드박스 앱을 실행
-2. 메인 화면에서 **"테스트하실 URL을 입력해주세요"** 필드를 찾기
-3. 위 예시 중 하나의 URL을 입력 (본인의 네트워크 IP로 수정)
-4. **이동** 버튼을 클릭
-5. 웹 인스펙터를 연결하여 실시간 디버깅
+2. 메인 화면에서 테스트 URL 입력
 
-#### HTTP 환경에서의 주의사항
+   ![sandbox_test_1](/img/docs/sandbox/sandbox_test_1.png)
+
+3. **연결하기** 버튼을 클릭
+
+   ![sandbox_test_2](/img/docs/sandbox/sandbox_test_2.png)
+
+4. 웹 인스펙터를 연결하여 실시간 디버깅
+
+<!-- #### HTTP 환경에서의 주의사항
 
 안드로이드에서 HTTP 접속 시 일부 디바이스나 Android 버전에서 다음과 같은 경고 화면이 나타날 수 있습니다:
 
@@ -239,6 +243,6 @@ Nachocode.push.getPermissionStatus().then(status => {
 - "연결할 수 없음" 메시지
 - 고장난 화면 아이콘 표시
 
-이는 정상적인 현상이며, 실제로는 샌드박스 앱에서 HTTP 접속이 가능합니다. URL과 네트워크 연결 상태를 다시 한번 확인해보시기 바랍니다.
+이는 정상적인 현상이며, 실제로는 샌드박스 앱에서 HTTP 접속이 가능합니다. URL과 네트워크 연결 상태를 다시 한번 확인해보시기 바랍니다. -->
 
 ---
