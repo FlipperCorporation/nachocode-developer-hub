@@ -6,12 +6,6 @@ const sidebars: SidebarsConfig = {
     'guide/app-source',
     {
       type: 'category',
-      label: '샌드박스 앱',
-      collapsed: false,
-      items: ['guide/sandbox-overview', 'guide/sandbox-inspector'],
-    },
-    {
-      type: 'category',
       label: '푸시 알림',
       link: {
         type: 'generated-index',
@@ -87,6 +81,12 @@ const sidebars: SidebarsConfig = {
         'guide/user-agent/user-agent-definition',
         'guide/user-agent/user-agent-configuration',
       ],
+    },
+    {
+      type: 'category',
+      label: '샌드박스 앱',
+      collapsed: false,
+      items: ['guide/sandbox-overview', 'guide/sandbox-inspector'],
     },
     'guide/check-store-id',
   ],
