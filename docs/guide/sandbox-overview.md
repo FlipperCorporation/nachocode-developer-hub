@@ -135,7 +135,7 @@ nachocode 샌드박스 앱은 운영 배포 목적이 아닌, **개발과 테스
 
 #### 3. 동적인 앱 URL 설정 가능
 
-샌드박스 앱의 메인 URL은 나쵸코드에서 제공하는 [테스트 페이지]('https://cdn.nachocode.io/nachocode/client-sdk/@latest/index.html')로 설정됩니다.
+샌드박스 앱의 메인 URL은 나쵸코드에서 제공하는 [테스트 페이지](https://cdn.nachocode.io/nachocode/client-sdk/@latest/index.html)로 설정됩니다.
 따라서 제공된 테스트 페이지에서 동적으로 앱 URL을 변경하며 테스트할 수 있습니다.
 
 <div style={{"textAlign":"center"}}>
