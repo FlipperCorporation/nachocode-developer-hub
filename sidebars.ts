@@ -84,10 +84,10 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '샌드박스 앱(Sandbox App)',
+      label: '샌드박스 앱',
       link: {
         type: 'generated-index',
-        title: '샌드박스 앱(Sandbox App)',
+        title: '샌드박스 앱',
         slug: '/guide/sandbox',
       },
       items: ['guide/sandbox-overview', 'guide/sandbox-inspector'],

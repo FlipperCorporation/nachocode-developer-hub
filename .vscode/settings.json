@@ -44,6 +44,7 @@
     "tabbar",
     "targeturl",
     "touchstart",
+    "UDID",
     "visibilitychange"
   ]
 }
