@@ -197,11 +197,10 @@ nachocode 플랫폼에서 제공하는 **샌드박스 앱**에 대한 내용을 
 
 :::info 샌드박스 앱 가이드 보러가기
 ➡️ [샌드박스 앱 개요](./sandbox-overview)  
-➡️ [인스펙터 설정하기](./sandbox-inspector)
+➡️ [디버깅하기](./sandbox-inspector)
 :::
 
 ---
-
 
 :::tip 문의하기
 **nachocode 가이드**를 활용하여 다양하고 강력한 기능들을 사용하기 위한 설정을 진행해보세요!

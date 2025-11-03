@@ -126,7 +126,7 @@ nachocode 샌드박스 앱은 운영 배포 목적이 아닌, **개발과 테스
 나쵸코드의 보안 정책으로 인해 출시 앱에서는 웹 인스펙터가 **비활성화**됩니다. 하지만 **샌드박스 앱**에서는 웹 인스펙터가 **활성화** 되어있어 이제 실제 앱 환경에서도 **Chrome DevTools**와 **Safari Web Inspector**를 통한 웹 및 앱 디버깅이 가능해졌습니다.
 
 :::warning 샌드박스 앱 관련 주의사항
-인스펙터는 활성화 되어있으나 샌드박스 앱은 출시용으로 빌드돼 이론적으로는 출시가 가능하므로 이 점을 유의하여 출시 전 테스트 단계에서만 사용해주시기 바랍니다.
+인스펙터는 활성화 되어있으나 샌드박스 앱은 출시용으로 빌드돼 이론적으로는 출시가 가능하므로 이 점을 유의하여 반드시 출시 전 테스트 단계에서만 사용해주시기 바랍니다.
 :::
 
 #### 2. HTTP 환경 테스트 지원
@@ -135,7 +135,12 @@ nachocode 샌드박스 앱은 운영 배포 목적이 아닌, **개발과 테스
 
 #### 3. 동적인 앱 URL 설정 가능
 
-동적으로 앱 URL을 변경하며 테스트할 수 있습니다.
+샌드박스 앱의 메인 URL은 나쵸코드에서 제공하는 [테스트 페이지]('https://cdn.nachocode.io/nachocode/client-sdk/@latest/index.html')로 설정됩니다.
+따라서 제공된 테스트 페이지에서 동적으로 앱 URL을 변경하며 테스트할 수 있습니다.
+
+<div style={{"textAlign":"center"}}>
+  <img alt="sandbox-test-1" src="/img/docs/sandbox/sandbox_test_1.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb"}} />
+</div>
 
 #### 4. 실제 운영 앱과 동일한 설정 공유
 
@@ -159,7 +164,7 @@ nachocode 샌드박스 앱은 운영 배포 목적이 아닌, **개발과 테스
 - 홈 화면에서 한눈에 샌드박스 앱임을 확인할 수 있음
 
 <div style={{"textAlign":"center"}}>
-  <img alt="nachocode-link-iOS" src="/img/docs/sandbox/ios_sandbox_icon.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb"}} />
+  <img alt="ios-sandbox-icon" src="/img/docs/sandbox/ios_sandbox_icon.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb"}} />
 </div>
 
 #### 설치 파일명 구분

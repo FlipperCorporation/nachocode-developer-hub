@@ -1,13 +1,27 @@
 ---
-sidebar_label: '인스펙터 설정하기'
+sidebar_label: '디버깅하기'
 description: nachocode 샌드박스 앱에서 Android/iOS 웹 인스펙터를 활용해 실기기에서 웹 디버깅을 할 수 있는 방법을 안내합니다.
 ---
 
-# 샌드박스 앱 인스펙터 설정하기
+# 샌드박스 앱 디버깅하기
 
 ## 개요
 
 샌드박스 앱의 가장 강력한 기능은 **실제 앱 환경에서 웹 인스펙터를 통한 디버깅**입니다. 브라우저에서는 정상 동작하지만 앱에서만 발생하는 문제들을 실시간으로 추적하고 해결할 수 있습니다.
+
+:::tip 웹 인스펙터란?
+<strong>웹 인스펙터(Web Inspector)</strong>는 웹 개발자 도구로, HTML/CSS/JavaScript 코드를 실시간으로 검사하고 수정할 수 있는 디버깅 도구입니다. Chrome DevTools(안드로이드)와 Safari Web Inspector(iOS)를 통해 앱 내 웹뷰에서 발생하는 문제를 브라우저에서와 동일하게 디버깅할 수 있습니다.
+:::
+
+샌드박스 앱을 디버깅하기 위해서는 다음과 같은 선행작업이 필요합니다.
+
+#### 1. 안드로이드, iOS 인스펙터 설정하기
+
+#### 2. SDK 로거 활용하기(선택)
+
+#### 3. 로컬 서버 테스트
+
+## 인스펙터 설정하기 {#configure-inspector}
 
 ### Android에서 웹 인스펙터 사용하기
 
@@ -68,7 +82,7 @@ description: nachocode 샌드박스 앱에서 Android/iOS 웹 인스펙터를 �
 
    ![chrome_inspect_1-1](/img/docs/sandbox/chrome_inspect_1-1.png)
 
-4. **Chrome DevTools 창**이 새로 열리면 디버깅 시작
+4. **Chrome DevTools 창**이 열리면 디버깅 준비 완료
 
    ![chrome_inspect_2](/img/docs/sandbox/chrome_inspect_2.png)
 
@@ -109,7 +123,7 @@ description: nachocode 샌드박스 앱에서 Android/iOS 웹 인스펙터를 �
 - Lightning 또는 USB-C 케이블
 - Safari 브라우저
 
-**선행작업 - Safari 개발자 메뉴 활성화**
+**설정 과정**
 
 1. Mac에서 **Safari**를 실행
 
@@ -146,7 +160,7 @@ description: nachocode 샌드박스 앱에서 Android/iOS 웹 인스펙터를 �
 
    ![safari_inspect_4](/img/docs/sandbox/safari_inspect_4.png)
 
-7. Safari 인스펙터 창이 열리면 디버깅 시작
+7. Safari 인스펙터 창이 열리면 디버깅 준비 완료
 
    | ![safari_inspect_5](/img/docs/sandbox/safari_inspect_5.png) | ![ios_inspect_6](/img/docs/sandbox/ios_inspect_6.png) |
    | ----------------------------------------------------------- | ----------------------------------------------------- |
@@ -161,11 +175,11 @@ Safari Web Inspector에서 다음 기능들을 사용할 수 있습니다:
 - **Debugger**: JavaScript 디버깅
 - **Storage**: 로컬 스토리지, 세션 스토리지 확인
 
-### SDK 로거 활용하기
+## SDK 로거 활용하기
 
 샌드박스 앱에서 `Nachocode.init({ logger: true })` 설정을 사용하면 SDK API 호출과 결과를 콘솔에서 확인할 수 있습니다:
 
-#### 디버깅 예시
+#### 예시 코드
 
 ```javascript
 (async () => {
@@ -194,27 +208,21 @@ Safari Web Inspector에서 다음 기능들을 사용할 수 있습니다:
 })();
 ```
 
-**콘솔에서 확인 가능한 정보:**
+## 로컬 서버 테스트
 
-- SDK 초기화 과정
-- API 호출 파라미터 및 응답
-- 에러 발생 시 상세한 스택 트레이스
-- 네이티브 브릿지 통신 로그
+선행작업(인스펙터 설정, 로거 설정)을 모두 완료하셨다면 로컬 서버에서 샌드박스 앱을 테스트하실 수 있습니다.
 
-### 로컬 서버 테스트
-
-#### 네트워크 환경 설정
+### 네트워크 환경 설정
 
 로컬 서버 테스트를 위해서는 다음 조건이 필요합니다:
 
-1. **동일 네트워크**: PC와 모바일 디바이스가 같은 Wi-Fi에 연결
+1. **동일 네트워크**: PC와 모바일 디바이스를 같은 Wi-Fi에 연결(IP주소로 접속할 경우)
 2. **방화벽 설정**: 개발 서버가 외부 접근을 허용하도록 설정
 3. **포트 개방**: 사용하는 포트가 방화벽에서 허용되어야 함
 
-#### 개발 서버 접속 테스트
+### 개발 서버 접속 테스트
 
 샌드박스 앱에서 로컬 서버의 URL을 통해 접속할 수 있습니다:
-
 **예시 URL**
 
 ```
@@ -224,7 +232,7 @@ Safari Web Inspector에서 다음 기능들을 사용할 수 있습니다:
 ✅ https://example.com
 ```
 
-**테스트 과정:**
+### 테스트 방법
 
 1. 샌드박스 앱을 실행
 2. 메인 화면에서 테스트 URL 입력
@@ -247,7 +255,7 @@ Safari Web Inspector에서 다음 기능들을 사용할 수 있습니다:
 
 **Q1. Safari에서는 Chrome처럼 디바이스 미러링이 안되나요?**
 
-- 네. Safari에서는 디바이스 미러링 기능을 지원하지 않습니다. 디바이스 혹은 Xcode 시뮬레이터를 통해 디바이스 화면을 확인할 수 있습니다.
+- 네. Safari에서는 디바이스 미러링 기능을 지원하지 않습니다. 디바이스 혹은 Xcode 시뮬레이터를 통해 실행되고 있는 화면을 확인할 수 있습니다.
 </details>
 
 ---
