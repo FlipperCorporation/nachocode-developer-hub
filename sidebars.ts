@@ -84,8 +84,12 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '샌드박스 앱',
-      collapsed: false,
+      label: '샌드박스 앱(Sandbox App)',
+      link: {
+        type: 'generated-index',
+        title: '샌드박스 앱(Sandbox App)',
+        slug: '/guide/sandbox',
+      },
       items: ['guide/sandbox-overview', 'guide/sandbox-inspector'],
     },
     'guide/check-store-id',
