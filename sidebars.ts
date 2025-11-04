@@ -90,7 +90,10 @@ const sidebars: SidebarsConfig = {
         title: '샌드박스 앱',
         slug: '/guide/sandbox',
       },
-      items: ['guide/sandbox-overview', 'guide/sandbox-inspector'],
+      items: [
+        'guide/sandbox/sandbox-overview',
+        'guide/sandbox/sandbox-inspector',
+      ],
     },
     'guide/check-store-id',
   ],
