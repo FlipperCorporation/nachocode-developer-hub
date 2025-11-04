@@ -190,14 +190,14 @@ nachocode 플랫폼에서 제공하는 커스텀 User Agent에 대한 내용을 
 ➡️ [User Agent 가이드](./user-agent/user-agent-definition)
 :::
 
-### 7. [**샌드박스 앱** (**Sandbox App**)](./sandbox-overview) {#sandbox-app}
+### 7. [**샌드박스 앱** (**Sandbox App**)](./sandbox/sandbox-overview) {#sandbox-app}
 
 nachocode 플랫폼에서 제공하는 **샌드박스 앱**에 대한 내용을 다룹니다.
 샌드박스 앱을 통해 실제 앱 환경에서 웹 개발을 테스트하고 디버깅할 수 있는 방법을 확인할 수 있습니다.
 
 :::info 샌드박스 앱 가이드 보러가기
-➡️ [샌드박스 앱 개요](./sandbox-overview)  
-➡️ [디버깅하기](./sandbox-inspector)
+➡️ [샌드박스 앱 개요](./sandbox/sandbox-overview)  
+➡️ [디버깅하기](./sandbox/sandbox-inspector)
 :::
 
 ---
