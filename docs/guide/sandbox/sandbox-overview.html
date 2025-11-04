@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-guide/sandbox/sandbox-overview" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">샌드박스 앱 이해하기 | nachocode Developer</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.nachocode.io/docs/guide/sandbox/sandbox-overview"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="샌드박스 앱 이해하기 | nachocode Developer"><meta data-rh="true" name="description" content="nachocode에서 제공하는 샌드박스 앱 빌드란 무엇이고, 왜 필요한지, 어떤 점이 좋은지 상세히 설명합니다."><meta data-rh="true" property="og:description" content="nachocode에서 제공하는 샌드박스 앱 빌드란 무엇이고, 왜 필요한지, 어떤 점이 좋은지 상세히 설명합니다."><meta data-rh="true" name="keywords" content="샌드박스 앱,샌드박스 빌드,나쵸코드 샌드박스,웹뷰 디버그,Debug WebView,WebView Local 테스트,Web Dev Tools"><meta data-rh="true" property="og:image" content="https://developer.nachocode.io/img/docs/sandbox/sandbox_thumbnail.png"><meta data-rh="true" name="twitter:image" content="https://developer.nachocode.io/img/docs/sandbox/sandbox_thumbnail.png"><link data-rh="true" rel="icon" href="/favicon-32x32.png"><link data-rh="true" rel="canonical" href="https://developer.nachocode.io/docs/guide/sandbox/sandbox-overview"><link data-rh="true" rel="alternate" href="https://developer.nachocode.io/docs/guide/sandbox/sandbox-overview" hreflang="ko"><link data-rh="true" rel="alternate" href="https://developer.nachocode.io/docs/guide/sandbox/sandbox-overview" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"샌드박스 앱","item":"https://developer.nachocode.io/docs/guide/sandbox"},{"@type":"ListItem","position":2,"name":"이해하기","item":"https://developer.nachocode.io/docs/guide/sandbox/sandbox-overview"}]}</script><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E023WXQCL8"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-E023WXQCL8",{})</script>
+
+
+
+<link rel="preload" href="/fonts/pretendard/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-Bold.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-ExtraBold.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-ExtraLight.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-Light.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-Medium.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-Thin.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<script src="/js/copy-heading-link.js" async></script><link rel="stylesheet" href="/assets/css/styles.3612c183.css">
+<script src="/assets/js/runtime~main.955d50b0.js" defer="defer"></script>
+<script src="/assets/js/main.3ea06a71.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><div class="theme-announcement-bar announcementBar_mb4j" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">📢 <b><a target="_blank" href="/docs/releases/v1/sdk/release-v-1-8-0">nachocode Client SDK v1.8.0</a>이 배포되었습니다!</b> 🚀</div><button type="button" aria-label="닫기" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="nachocode" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="nachocode" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">nachocode</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/guide/intro">가이드</a><a class="navbar__item navbar__link" href="/docs/api/intro">API</a><a class="navbar__item navbar__link" href="/docs/sdk/intro">SDK</a><a class="navbar__item navbar__link" href="/docs/releases/v1/sdk/intro">릴리즈노트</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/FlipperCorporation" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG menuWithAnnouncementBar_GW3s"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/guide/intro"><span title="서비스 소개" class="linkLabel_WmDU">서비스 소개</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/guide/app-source"><span title="앱소스(App Source)" class="linkLabel_WmDU">앱소스(App Source)</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/guide/push"><span title="푸시 알림" class="categoryLinkLabel_W154">푸시 알림</span></a><button aria-label="사이드바 분류 &#x27;푸시 알림&#x27; 펼치기" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/guide/deep-link"><span title="딥링크" class="categoryLinkLabel_W154">딥링크</span></a><button aria-label="사이드바 분류 &#x27;딥링크&#x27; 펼치기" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/guide/iap"><span title="인앱 결제" class="linkLabel_WmDU">인앱 결제</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/guide/webhook"><span title="웹훅" class="categoryLinkLabel_W154">웹훅</span></a><button aria-label="사이드바 분류 &#x27;웹훅&#x27; 펼치기" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/guide/user-agent"><span title="User Agent" class="categoryLinkLabel_W154">User Agent</span></a><button aria-label="사이드바 분류 &#x27;User Agent&#x27; 펼치기" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/docs/guide/sandbox"><span title="샌드박스 앱" class="categoryLinkLabel_W154">샌드박스 앱</span></a><button aria-label="사이드바 분류 &#x27;샌드박스 앱&#x27; 접기" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/guide/sandbox/sandbox-overview"><span title="이해하기" class="linkLabel_WmDU">이해하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/guide/sandbox/sandbox-inspector"><span title="웹 인스펙터 설정하기" class="linkLabel_WmDU">웹 인스펙터 설정하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/guide/sandbox/sandbox-debugging"><span title="디버깅하기" class="linkLabel_WmDU">디버깅하기</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/guide/check-store-id"><span title="스토어 앱 ID 확인하기" class="linkLabel_WmDU">스토어 앱 ID 확인하기</span></a></li></ul></nav><button type="button" title="사이드바 숨기기" aria-label="사이드바 숨기기" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/guide/sandbox"><span>샌드박스 앱</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">이해하기</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>샌드박스 앱 이해하기</h1></header>
+<p><img decoding="async" loading="lazy" alt="sandbox_thumbnail" src="/assets/images/sandbox_thumbnail-632f96d2449ca6fda3ae2fc4c1268f1d.png" width="1400" height="732" class="img_ev3q"></p>
+<blockquote>
+<p>🔔 <strong>최신화 일자:</strong> 2025-11-04</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="개요">개요<a href="#개요" class="hash-link" aria-label="개요에 대한 직접 링크" title="개요에 대한 직접 링크" translate="no">​</a></h2>
+<p><strong>nachocode 샌드박스 앱 빌드</strong>는 프로덕션(운영) 배포 목적의 빌드가 아닌, <strong>개발과 테스트를 위한 별도 앱 빌드</strong>입니다. 실제 유저에게 배포되는 프로덕션 앱과 빌드 타입은 <strong>출시용</strong>(<strong>Release</strong>)으로 같지만, 개발자들이 안전하게 테스트하고 디버깅할 수 있도록 추가 기능이 제공됩니다.</p>
+<hr>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="안드로이드와-ios-빌드-타입">안드로이드와 iOS 빌드 타입<a href="#안드로이드와-ios-빌드-타입" class="hash-link" aria-label="안드로이드와 iOS 빌드 타입에 대한 직접 링크" title="안드로이드와 iOS 빌드 타입에 대한 직접 링크" translate="no">​</a></h3></summary><div><div class="collapsibleContent_i85q"><p>안드로이드와 iOS는 목적에 따라 빌드 타입을 설정할 수 있으며 종류는 아래와 같습니다.</p><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="안드로이드-빌드-타입">안드로이드 빌드 타입<a href="#안드로이드-빌드-타입" class="hash-link" aria-label="안드로이드 빌드 타입에 대한 직접 링크" title="안드로이드 빌드 타입에 대한 직접 링크" translate="no">​</a></h4><h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-debug-빌드">1. <strong>Debug 빌드</strong><a href="#1-debug-빌드" class="hash-link" aria-label="1-debug-빌드에 대한 직접 링크" title="1-debug-빌드에 대한 직접 링크" translate="no">​</a></h5><ul>
+<li class=""><strong>목적</strong>: 개발 및 테스트용</li>
+<li class=""><strong>특징</strong>:<!-- -->
+<ul>
+<li class="">디버깅 정보 포함으로 앱 크기 증가</li>
+<li class="">코드 난독화 없어 보안 취약</li>
+<li class="">개발자 서명으로 자동 서명 (임시)</li>
+<li class="">최적화되지 않은 성능</li>
+<li class="">로그 출력으로 인한 성능 저하</li>
+</ul>
+</li>
+</ul><h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-release-빌드-nachocode-제공">2. <strong>Release 빌드</strong> <em>(nachocode 제공)</em><a href="#2-release-빌드-nachocode-제공" class="hash-link" aria-label="2-release-빌드-nachocode-제공에 대한 직접 링크" title="2-release-빌드-nachocode-제공에 대한 직접 링크" translate="no">​</a></h5><ul>
+<li class=""><strong>목적</strong>: 스토어 배포용 최종 버전</li>
+<li class=""><strong>특징</strong>:<!-- -->
+<ul>
+<li class="">코드 최적화 및 난독화로 보안 강화</li>
+<li class="">디버깅 정보 제거로 앱 크기 최소화</li>
+<li class="">배포용 키스토어로 정식 서명</li>
+<li class="">최고 성능 최적화</li>
+<li class="">프로덕션 환경에 적합</li>
+</ul>
+</li>
+</ul><hr><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ios-빌드-타입">iOS 빌드 타입<a href="#ios-빌드-타입" class="hash-link" aria-label="iOS 빌드 타입에 대한 직접 링크" title="iOS 빌드 타입에 대한 직접 링크" translate="no">​</a></h4><h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-development">1. <strong>Development</strong><a href="#1-development" class="hash-link" aria-label="1-development에 대한 직접 링크" title="1-development에 대한 직접 링크" translate="no">​</a></h5><ul>
+<li class=""><strong>목적</strong>: 개발 및 초기 테스트용</li>
+<li class=""><strong>특징</strong>:<!-- -->
+<ul>
+<li class="">디버깅 심볼 포함으로 앱 크기 증가</li>
+<li class="">최적화 비활성화로 성능 저하</li>
+<li class="">개발자 인증서 (임시)</li>
+<li class="">등록된 디바이스에서만 실행 가능</li>
+</ul>
+</li>
+</ul><h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-ad-hoc">2. <strong>Ad Hoc</strong><a href="#2-ad-hoc" class="hash-link" aria-label="2-ad-hoc에 대한 직접 링크" title="2-ad-hoc에 대한 직접 링크" translate="no">​</a></h5><ul>
+<li class=""><strong>목적</strong>: 내부 테스트용</li>
+<li class=""><strong>특징</strong>:<!-- -->
+<ul>
+<li class="">특정 디바이스 UDID에 종속</li>
+<li class="">최대 100개 디바이스 제한</li>
+<li class="">관리 복잡성 증가</li>
+<li class="">배포 범위 제한적</li>
+</ul>
+</li>
+</ul><h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-app-store-nachocode-제공">3. <strong>App Store</strong> <em>(nachocode 제공)</em><a href="#3-app-store-nachocode-  제공" class="hash-link" aria-label="3-app-store-nachocode-제공에 대한 직접 링크" title="3-app-store-nachocode-제공에 대한 직접 링크" translate="no">​</a></h5><ul>
+<li class="">
+<p><strong>목적</strong>: App Store 배포용 최종 버전</p>
+</li>
+<li class="">
+<p><strong>특징</strong>:</p>
+<ul>
+<li class="">완전한 코드 최적화</li>
+<li class="">Apple 보안 검증 통과</li>
+<li class="">전체 사용자 대상 배포 가능</li>
+<li class="">최고 품질 보장</li>
+</ul>
+</li>
+</ul></div></div></details>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>나쵸코드 앱 빌드 정책</div><div class="admonitionContent_BuS1"><p>나쵸코드는 출시 앱과 샌드박스 앱 모두 <strong>출시용</strong>으로 빌드하여 제공하고 있으며 이는 안드로이드의 <strong>Release</strong>, iOS의 <strong>App Store</strong>에 해당합니다.</p></div></div>
+<p>샌드박스 앱 빌드를 활용하여 출시 앱과 동일한 설정으로 로컬 서버나 테스트 URL을 입력해 앱 동작을 검증할 수 있습니다.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="샌드박스-앱의-필요성">샌드박스 앱의 필요성<a href="#샌드박스-앱의-필요성" class="hash-link" aria-label="샌드박스 앱의 필요성에 대한 직접 링크" title="샌드박스 앱의 필요성에 대한 직접 링크" translate="no">​</a></h2>
+<p>웹뷰에서 동작하는 웹 클라이언트와 브라우저에서 동작하는 웹 클라이언트의 동작은 동일한 부분도 많지만 다음과 같이 상이한 부분도 존재합니다.</p>
+<ul>
+<li class=""><strong>User Agent 차이</strong>: 앱 내 웹뷰는 고유한 User Agent를 가짐</li>
+<li class=""><strong>터치 이벤트 처리</strong>: 모바일 터치 이벤트의 동작 방식</li>
+<li class=""><strong>웹 표준 지원 범위 차이</strong>: 최신 웹 표준 지원이 OS 버전에 따라 편차가 큼</li>
+<li class=""><strong>렌더링·CSS 차이</strong>: 엔진에 의해 자동 스타일이 개입될 수 있어 조정이 필요할 수 있음</li>
+<li class=""><strong>네이티브 API 연동</strong>: 푸시 알림, 카메라, 위치 정보 등</li>
+</ul>
+<p>즉, 똑같은 HTML, CSS, JavaScript 코드여도 앱 안에서의 웹 동작 차이가 발생하거나, 네이티브 동작에 대한 <strong>디버깅</strong>이 필요할 수 있습니다.<br>
+<!-- -->나쵸코드에서는 보안 정책으로 출시용 앱에서는 웹 인스펙터를 비활성화하기 때문에 샌드박스 앱에서만 이러한 디버깅이 가능합니다.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="샌드박스-앱의-장점">샌드박스 앱의 장점<a href="#샌드박스-앱의-장점" class="hash-link" aria-label="샌드박스 앱의 장점에 대한 직접 링크" title="샌드박스 앱의 장점에 대한 직접 링크" translate="no">​</a></h2>
+<p>샌드박스 앱은 앱 디버깅을 위해 필요한 설정이 포함된 앱으로 다음과 같은 편의성을 제공합니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-실제-앱-환경에서-디버깅-가능">1. 실제 앱 환경에서 디버깅 가능<a href="#1-실제-앱-환경에서-디버깅-가능" class="hash-link" aria-label="1. 실제 앱 환경에서 디버깅 가능에 대한 직접 링크" title="1. 실제 앱 환경에서 디버깅 가능에 대한 직접 링크" translate="no"> ​</a></h3>
+<p>나쵸코드의 보안 정책으로 인해 출시 앱에서는 웹 인스펙터가 <strong>비활성화</strong>됩니다. 하지만 <strong>샌드박스 앱</strong>에서는 웹 인스펙터가 <strong>활성화</strong> 되어있어 실제 앱과 동일한 환경에서 <strong>Chrome DevTools</strong>와 <strong>Safari Web Inspector</strong>를 통한 웹 및 앱 디버깅이 가능해졌습니다.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-http-환경-테스트-지원">2. HTTP 환경 테스트 지원<a href="#2-http-환경-테스트-지원" class="hash-link" aria-label="2. HTTP 환경 테스트 지원에 대한 직접 링크" title="2. HTTP 환경 테스트 지원에 대한 직접 링크" translate="no">​</a></h3>
+<p>안드로이드 앱은 네트워크 보안 정책상 기본적으로 HTTPS 연결만 허용하지만, <strong>샌드박스 앱에서는</strong> SSL 설정이 되지 않은 로컬 개발 서버(<code>http://192.168.0.2:3000</code>)나 개발 서버(<code>http://dev.example.com</code>)에도 자유롭게 접근할 수 있어 개발 과정이 훨씬 편리해졌습니다.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-동적인-앱-메인-url-설정-가능">3. 동적인 앱 메인 URL 설정 가능<a href="#3-동적인-앱-메인-url-설정-가능" class="hash-link" aria-label="3. 동적인 앱 메인 URL 설정 가능에 대한 직접 링크" title="3. 동적인 앱 메인 URL 설정 가능에 대한 직접 링크" translate="no">​</a></h3>
+<p>샌드박스 앱의 메인 URL은 나쵸코드에서 제공하는 <a href="https://cdn.nachocode.io/nachocode/client-sdk/@latest/index.html" target="_blank" rel="noopener noreferrer" class="">테스트 페이지</a>로 설정됩니다.
+따라서 제공된 테스트 페이지에서 동적으로 앱 URL을 변경하며 테스트할 수 있습니다.</p>
+<div style="text-align:center"><img alt="sandbox-test-1" src="/img/docs/sandbox/sandbox_test_1.png" style="max-height:600px;border:1px solid #dbdbdb"></div>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-실제-운영-앱과-동일한-설정-공유">4. 실제 운영 앱과 동일한 설정 공유<a href="#4-실제-운영-앱과-동일한-설정-공유" class="hash-link" aria-label="4. 실제 운영 앱과 동일한 설정 공유에 대한 직접 링크" title="4. 실제 운영 앱과 동일한 설정 공유에 대한 직접 링크" translate="no">​</a></h3>
+<p>샌드박스 앱은 운영 앱과 <strong>완전히 동일한 설정</strong>을 공유합니다.</p>
+<ul>
+<li class="">앱 아이콘 및 스플래시 이미지</li>
+<li class="">탭 바 디자인 및 색상 테마</li>
+<li class="">고급 앱 설정 및 개발자 설정</li>
+<li class="">네이티브 기능 연동 방식</li>
+</ul>
+<p>이를 통해 <strong>실제 사용자가 경험할 환경</strong>에서 정확한 테스트가 가능합니다.</p>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>샌드박스 앱 관련 주의사항</div><div class="admonitionContent_BuS1"><p>인스펙터는 활성화 되어있으나 샌드박스 앱은 출시용으로 빌드돼 동일한 프로세스로 실기기에 설치하여 테스트를 진행합니다. 프로덕션 앱과 앱 세팅 정보를 공유하며, Google Play Console, Apple App Store Connect 대시보드를 똑같이 활용합니다. 이 점을 유의하여 반드시 출시 전 테스트 단계에서만 사용해야하며, 신규 버전 업데이트 배포 시 주의해야 합니다.</p></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="운영-앱과-구분되는-특징">운영 앱과 구 분되는 특징<a href="#운영-앱과-구분되는-특징" class="hash-link" aria-label="운영 앱과 구분되는 특징에 대한 직접 링크" title="운영 앱과 구분되는 특징에 대한 직접 링크" translate="no">​</a></h2>
+<p>운영 앱과의 혼동을 방지하기 위해 샌드박스 앱은 <strong>명확한 구분 표시</strong>를 제공합니다.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="앱-아이콘-구분">앱 아이콘 구분<a href="#앱-아이콘-구분" class="hash-link" aria-label="앱 아이콘 구분에 대한 직접 링크" title="앱 아이콘 구분에 대한 직접 링크" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>기본 앱 아이콘</strong>에 <strong>&quot;SANDBOX&quot;</strong> 라벨 오버레이 표시</li>
+<li class="">운영 앱과 시각적으로 명확하게 구분 가능</li>
+<li class="">홈 화면에서 한눈에 샌드박스 앱임을 확인할 수 있음</li>
+</ul>
+<div style="text-align:center"><img alt="ios-sandbox-icon" src="/img/docs/sandbox/ios_sandbox_icon.png" style="max-height:600px;border:1px solid #dbdbdb"></div>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="설치-파일명-구분">설치 파일명 구분<a href="#설치-파일명-구분" class="hash-link" aria-label="설치 파일명 구분에 대한 직접 링크" title="설치 파일명 구분에 대한 직접 링크" translate="no">​</a></h3>
+<p>다운로드 시 파일명으로 샌드박스 앱임을 명확히 구분할 수 있습니다.</p>
+<ul>
+<li class=""><strong>Android</strong>
+<ul>
+<li class="">형식: <code>앱이름(Sandbox)(버전).apk</code></li>
+<li class="">ex. <code>Nachocode Developer(Sandbox)(1.0.0).apk</code></li>
+</ul>
+</li>
+<li class=""><strong>iOS</strong>
+<ul>
+<li class="">형식: <code>앱이름(Sandbox)(버전).ipa</code></li>
+<li class="">ex. <code>Nachocode Developer(Sandbox)(1.0.0).ipa</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="샌드박스-앱-빌드하기">샌드박스 앱 빌드하기<a href="#샌드박스-앱-빌드하기" class="hash-link" aria-label="샌드박스 앱 빌드하기에 대한 직접 링크" title="샌드박스 앱 빌드하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>샌드박스 앱 기능을 사용하고 싶다면 나쵸코드 대시보드에서 <strong>샌드박스 앱 빌드</strong> 기능을 활용하여 새로운 버전으로 빌드해야 합니다.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>샌드박스 앱 빌드하기</div><div class="admonitionContent_BuS1"><p><a href="https://nachocode.io/?utm_source=docs&amp;utm_medium=documentation&amp;utm_campaign=devguide" target="_blank" rel="noopener noreferrer" class=""><strong>나쵸코드 대시보드</strong></a> &gt; <strong>앱 빌드</strong> &gt; <strong>안드로이드/iOS 앱 빌드</strong> &gt; <strong>샌드박스 앱</strong> &gt; <strong>새 버전 만들기</strong></p><p>➡️ <a href="https://docs.nachocode.io/ko/articles/%EC%83%8C%EB%93%9C%EB%B0%95%EC%8A%A4-%EC%95%B1-%EB%B9%8C%EB%93%9C-b4ffeb83" target="_blank" rel="noopener noreferrer" class="">샌드박스 앱 빌드 유저 가이드 바로가기</a></p></div></div>
+<hr>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="faq">자주 묻는 질문 (FAQ)<a href="#faq" class="hash-link" aria-label="자주 묻는 질문 (FAQ)에 대한 직접 링크" title="자주 묻는 질문 (FAQ)에 대한 직접 링크" translate="no">​</a></h2></summary><div><div class="collapsibleContent_i85q"><p><strong>Q1. localhost로 접속이 안돼요.</strong></p><ul>
+<li class="">앱 환  경에서의 localhost는 디바이스를 뜻합니다. 따라서 디바이스에서 웹 서버로 접속하기 위해서는 <code>localhost</code>나 <code>127.0.0.1</code>이 아닌 <code>IP 주소</code> 혹은 <code>도메인</code>을 사용하셔야 합니다.</li>
+</ul><p><strong>Q2. 샌드박스 앱 설치에 실패해요.</strong></p><ul>
+<li class="">스토어에서 다운받은 출시앱이 설치된 상태이거나 설치된 앱보다 설치하려는 앱의 버전이 더 낮은 경우 설치에 실패할 수 있습니다. 기존에 설치된 앱을 삭제한 후 샌드박스 앱을 설치하셔야 합니다.</li>
+</ul></div></div></details>
+<hr></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/guide/sandbox"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">샌드박스 앱</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/guide/sandbox/sandbox-inspector"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">웹 인스펙터 설정하기</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#개요" class="table-of-contents__link toc-highlight">개요</a><ul><li><a href="#안드로이드와-ios-빌드-타입" class="table-of-contents__link toc-highlight">안드로이드와 iOS 빌드 타입</a></li></ul></li><li><a href="#샌드박스-앱의-필요성" class="table-of-contents__link toc-highlight">샌드박스 앱의 필요성</a></li><li><a href="#샌드박스-앱의-장점" class="table-of-contents__link toc-highlight">샌드박스 앱의 장점</a><ul><li><a href="#1-실제-앱-환경에서-디버깅-가능" class="table-of-contents__link toc-highlight">1. 실제 앱 환경에서 디버깅 가능</a></li><li><a href="#2-http-환경-테스트-지원" class="table-of-contents__link toc-highlight">2. HTTP 환경 테스트 지원</a></li><li><a href="#3-동적인-앱-메인-url-설정-가능" class="table-of-contents__link toc-highlight">3. 동적인 앱 메인 URL 설정 가능</a></li><li><a href="#4-실제-운영-앱과-동일한-설정-공유" class="table-of-contents__link toc-highlight">4. 실제 운영 앱과 동일한 설정 공유</a></li></ul></li><li><a href="#운영-앱과-구분되는-특징" class="table-of-contents__link toc-highlight">운영 앱과 구분되는 특징</a><ul><li><a href="#앱-아이콘-구분" class="table-of-contents__link toc-highlight">앱 아이콘 구분</a></li><li><a href="#설치-파일명-구분" class="table-of-contents__link toc-highlight">설치 파일명 구분</a></li></ul></li><li><a href="#샌드박스-앱-빌드하기" class="table-of-contents__link toc-highlight">샌드박스 앱 빌드하기</a></li><li><a href="#faq" class="table-of-contents__link toc-highlight">자주 묻는 질문 (FAQ)</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://docs.nachocode.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">User Guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/guide/intro">Developer Guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/api/intro">API</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/sdk/intro">SDK</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.linkedin.com/company/nachocode" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.instagram.com/nachocode.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Instagram<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.facebook.com/people/Nachocodeofficial/61554676677985" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://nachocode.io/?utm_source=docs&amp;utm_medium=documentation&amp;utm_campaign=devguide" target="_blank" rel="noopener noreferrer" class="footer__link-item">nachocode.io<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/FlipperCorporation" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discord.gg/SU5wFmRw" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Flipper Corporation, Inc. All Rights Reserved.</div></div></div></footer></div>
+</body>
+</html>

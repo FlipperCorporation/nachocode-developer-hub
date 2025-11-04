@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-guide/sandbox/sandbox-inspector" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">웹 인스펙터 설정하기 | nachocode Developer</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.nachocode.io/docs/guide/sandbox/sandbox-inspector"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="웹 인스펙터 설정하기 | nachocode Developer"><meta data-rh="true" name="description" content="Android, iOS 웹 인스펙터를 활용해 실기기에서 웹뷰(WebView)의 웹 클라이언트 디버깅을 할 수 있는 방법을 안내합니다. 웹뷰(WebView) 앱을 개발하다 보면 실제 모바일 디바이스에서의 동작을 확인하고 디버깅해야 할 때가 많습니다. 웹 인스펙터는 Android/iOS 디바이스와의 연결을 통해 이러한 작업을 가능하게 합니다."><meta data-rh="true" property="og:description" content="Android, iOS 웹 인스펙터를 활용해 실기기에서 웹뷰(WebView)의 웹 클라이언트 디버깅을 할 수 있는 방법을 안내합니다. 웹뷰(WebView) 앱을 개발하다 보면 실제 모바일 디바이스에서의 동작을 확인하고 디버깅해야 할 때가 많습니다. 웹 인스펙터는 Android/iOS 디바이스와의 연결을 통해 이러한 작업을 가능하게 합니다."><meta data-rh="true" name="keywords" content="웹 인스펙터,WebView 디버깅,WebView 앱 디버깅,WebView 웹 디버깅,웹뷰 웹 디버깅,웹뷰 앱 디버깅,모바일 브라우저 디버깅,Chrome 개발자 도구,Safari 웹 인스펙터,Web Inspector,Chrome DevTools,Safari Web Inspector,Debug WebView App,Debug WebView Web,Debug Mobile Browser,Web 개발자 도구,웹 개발자 도구,Web Dev Tools"><meta data-rh="true" property="og:image" content="https://developer.nachocode.io/img/docs/sandbox/sandbox_inspector_thumbnail.png"><meta data-rh="true" name="twitter:image" content="https://developer.nachocode.io/img/docs/sandbox/sandbox_inspector_thumbnail.png"><link data-rh="true" rel="icon" href="/favicon-32x32.png"><link data-rh="true" rel="canonical" href="https://developer.nachocode.io/docs/guide/sandbox/sandbox-inspector"><link data-rh="true" rel="alternate" href="https://developer.nachocode.io/docs/guide/sandbox/sandbox-inspector" hreflang="ko"><link data-rh="true" rel="alternate" href="https://developer.nachocode.io/docs/guide/sandbox/sandbox-inspector" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"샌드박스 앱","item":"https://developer.nachocode.io/docs/guide/sandbox"},{"@type":"ListItem","position":2,"name":"웹 인스펙터 설정하기","item":"https://developer.nachocode.io/docs/guide/sandbox/sandbox-inspector"}]}</script><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E023WXQCL8"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-E023WXQCL8",{})</script>
+
+
+
+<link rel="preload" href="/fonts/pretendard/Pretendard-Black.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-Bold.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-ExtraBold.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-ExtraLight.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-Light.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-Medium.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/pretendard/Pretendard-Thin.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<script src="/js/copy-heading-link.js" async></script><link rel="stylesheet" href="/assets/css/styles.3612c183.css">
+<script src="/assets/js/runtime~main.955d50b0.js" defer="defer"></script>
+<script src="/assets/js/main.3ea06a71.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><div class="theme-announcement-bar announcementBar_mb4j" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">📢 <b><a target="_blank" href="/docs/releases/v1/sdk/release-v-1-8-0">nachocode Client SDK v1.8.0</a>이 배포되었습니다!</b> 🚀</div><button type="button" aria-label="닫기" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="nachocode" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="nachocode" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">nachocode</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/guide/intro">가이드</a><a class="navbar__item navbar__link" href="/docs/api/intro">API</a><a class="navbar__item navbar__link" href="/docs/sdk/intro">SDK</a><a class="navbar__item navbar__link" href="/docs/releases/v1/sdk/intro">릴리즈노트</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/FlipperCorporation" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG menuWithAnnouncementBar_GW3s"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/guide/intro"><span title="서비스 소개" class="linkLabel_WmDU">서비스 소개</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/guide/app-source"><span title="앱소스(App Source)" class="linkLabel_WmDU">앱소스(App Source)</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/guide/push"><span title="푸시 알림" class="categoryLinkLabel_W154">푸시 알림</span></a><button aria-label="사이드바 분류 &#x27;푸시 알림&#x27; 펼치기" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/guide/deep-link"><span title="딥링크" class="categoryLinkLabel_W154">딥링크</span></a><button aria-label="사이드바 분류 &#x27;딥링크&#x27; 펼치기" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/guide/iap"><span title="인앱 결제" class="linkLabel_WmDU">인앱 결제</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/guide/webhook"><span title="웹훅" class="categoryLinkLabel_W154">웹훅</span></a><button aria-label="사이드바 분류 &#x27;웹훅&#x27; 펼치기" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/guide/user-agent"><span title="User Agent" class="categoryLinkLabel_W154">User Agent</span></a><button aria-label="사이드바 분류 &#x27;User Agent&#x27; 펼치기" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/docs/guide/sandbox"><span title="샌드박스 앱" class="categoryLinkLabel_W154">샌드박스 앱</span></a><button aria-label="사이드바 분류 &#x27;샌드박스 앱&#x27; 접기" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/guide/sandbox/sandbox-overview"><span title="이해하기" class="linkLabel_WmDU">이해하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/guide/sandbox/sandbox-inspector"><span title="웹 인스펙터 설정하기" class="linkLabel_WmDU">웹 인스펙터 설정하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/guide/sandbox/sandbox-debugging"><span title="디버깅하기" class="linkLabel_WmDU">디버깅하기</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/guide/check-store-id"><span title="스토어 앱 ID 확인하기" class="linkLabel_WmDU">스토어 앱 ID 확인하기</span></a></li></ul></nav><button type="button" title="사이드바 숨기기" aria-label="사이드바 숨기기" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/guide/sandbox"><span>샌드박스 앱</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">웹 인스펙터 설정하기</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>웹 인스펙터 설정하기</h1></header>
+<p><img decoding="async" loading="lazy" alt="sandbox_inspector_thumbnail" src="/assets/images/sandbox_inspector_thumbnail-0640ea56e720fe78b7e3fa7505e82737.png" width="1400" height="732" class="img_ev3q"></p>
+<blockquote>
+<p>🔔 <strong>최신화 일자:</strong> 2025-11-04</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="웹-인스펙터-이해하기">웹 인스펙터 이해하기<a href="#웹-인스펙터-이해하기" class="hash-link" aria-label="웹 인스펙터 이해하기에 대한 직접 링크" title="웹 인스펙터 이해하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>웹뷰(WebView) 앱을 개발하다 보면 실제 모바일 디바이스에서의 동작을 확인하고 디버깅해야 할 때가 많습니다. 웹 인스펙터는 Android/iOS 디바이스와의 연결을 통해 이러한 작업을 가능하게 합니다.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>웹 인스펙터란?</div><div class="admonitionContent_BuS1"><p><strong>웹 인스펙터(Web Inspector)</strong>는 웹 개발자 도구로, HTML/CSS/JavaScript 코드를 실시간으로 검사하고 수정할 수 있는 디버깅 도구입니다. Chrome DevTools(Android)와 Safari Web Inspector(iOS)를 통해 앱 내 웹뷰에서 발생하는 문제를 브라우저에서와 동일하게 디버깅할 수 있습니다.</p></div></div>
+<p>Android, iOS 웹 인스펙터를 활용해 실기기에서 웹뷰(WebView)의 웹 클라이언트를 디버깅하여 브라우저에서는 정상 동작하지만 앱에서만 발생하는 문제들을 실시간으로 추적하고 해결할 수 있습니다.</p>
+<ol>
+<li class=""><a href="#configure-inspector-android" class=""><strong>Android에서 웹 인스펙터 사용하기</strong></a></li>
+<li class=""><a href="#configure-inspector-ios" class=""><strong>iOS에서 웹 인스펙터 사용하기</strong></a></li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="configure-inspector-android">Android에서 웹 인스펙터 사용하기<a href="#configure-inspector-android" class="hash-link" aria-label="Android에서 웹 인스펙터 사용하기에 대한 직접 링크" title="Android에서 웹 인스펙터 사용하기에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-android-디바이스-  설정">1단계: Android 디바이스 설정<a href="#1단계-android-디바이스-설정" class="hash-link" aria-label="1단계: Android 디바이스 설정에 대한 직접 링크" title="1단계: Android 디바이스 설정에 대한 직접 링크" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="개발자-옵션-활성화">개발자 옵션 활성화<a href="#개발자-옵션-활성화" class="hash-link" aria-label="개발자 옵션 활성화에 대한 직접 링크" title="개발자 옵션 활성화에 대한 직접 링크" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p><strong>설정</strong> &gt; <strong>휴대전화 정보</strong> 이동</p>
+<p><img decoding="async" loading="lazy" alt="android_inspect_1" src="/assets/images/android_inspect_1-a93ace6d03110d0383fac5f733143206.png" width="292" height="600" class="img_ev3q"></p>
+</li>
+<li class="">
+<p><strong>소프트웨어 정보</strong>로 이동</p>
+<p><img decoding="async" loading="lazy" alt="android_inspect_2" src="/assets/images/android_inspect_2-6eb09f8a377b2797c3bd0ceee2d804b4.png" width="292" height="600" class="img_ev3q"></p>
+</li>
+<li class="">
+<p><strong>빌드번호</strong>를 <strong>7번 연속 탭</strong></p>
+<p><img decoding="async" loading="lazy" alt="android_inspect_3" src="/assets/images/android_inspect_3-a481ec62ce33ed76d60d315ab46933cf.png" width="292" height="600" class="img_ev3q"></p>
+</li>
+<li class="">
+<p><strong>&quot;개발자 모드를 켰습니다.&quot;</strong> 메시지 확인</p>
+<p><img decoding="async" loading="lazy" alt="android_inspect_4" src="/assets/images/android_inspect_4-261201b648bafc66bf4ffc60e72c888e.png" width="292" height="600" class="img_ev3q"></p>
+</li>
+</ol>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="usb-디버깅-활성화">USB 디버깅 활성화<a href="#usb-디버깅-활성화" class="hash-link" aria-label="USB 디버깅 활성화에 대한 직접 링크" title="USB 디버깅 활성화에 대한 직접 링크" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p><strong>설정</strong> &gt; <strong>개발자 옵션</strong> 이동</p>
+<p><img decoding="async" loading="lazy" alt="android_inspect_5" src="/assets/images/android_inspect_5-4ba7b90d99f1e247895e1f7975fa279e.png" width="292" height="600" class="img_ev3q"></p>
+</li>
+<li class="">
+<p><strong>USB 디버깅</strong> 토글을 <strong>ON</strong>으로 설정 후 권한 허용 팝업에서 <strong>확인</strong> 선택</p>
+<p><img decoding="async" loading="lazy" alt="android_inspect_6" src="/assets/images/android_inspect_6-88574a0df9b92cbd1ebe75bdd0a55acf.png" width="292" height="600" class="img_ev3q"></p>
+</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-pc-설정-및-연결">2단계: PC 설정 및 연결<a href="#2단계-pc-설정-및-연결" class="hash-link" aria-label="2단계: PC 설정 및 연결에 대한 직접 링크" title="2단계: PC 설정 및 연결에 대한 직접 링크" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비-사항">준비 사항<a href="#준비-사항" class="hash-link" aria-label="준비 사항에 대한 직접 링크" title="준비 사항에 대한 직접 링크" translate="no">​</a></h4>
+<ul>
+<li class="">Windows/Mac/Linux PC</li>
+<li class="">USB 케이블 (디바이스와 PC 연결용)</li>
+<li class="">Chrome 브라우저 (최신 버전 권장)</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="연결-과정">연결 과정<a href="#연결-과정" class="hash-link" aria-label="연결 과정에 대한 직접 링크" title="연결 과정에 대한 직접 링크" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>USB 케이블로 Android 디바이스와 PC를 연결</p>
+</li>
+<li class="">
+<p>디바이스에서 &quot;USB 디버깅 허용&quot; 팝업이 나타나면 <strong>확인</strong> 선택</p>
+</li>
+<li class="">
+<p>PC에서 Chrome 브라우저를 실행</p>
+</li>
+<li class="">
+<p>주소창에 <code>chrome://inspect</code> 입력하여 접속</p>
+<p><img decoding="async" loading="lazy" alt="chrome_inspect_1" src="/assets/images/chrome_inspect_1-579ad6cf0f6687b90e23e2e8d7fc0201.png" width="927" height="570" class="img_ev3q"></p>
+</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configure-inspector-android-debugging">3단계: 웹 클라이언트 디버깅<a href="#configure-inspector-android-debugging" class="hash-link" aria-label="3단계: 웹 클라이언트 디버깅에 대한 직접 링크" title="3단계: 웹 클라이언트 디버깅에 대한 직접 링크" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="디버깅-시작"><strong>디버깅 시작</strong><a href="#디버깅-시작" class="hash-link" aria-label="디버깅-시작에 대한 직접 링크" title="디버깅-시작에 대한 직접 링크" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>Android 디바이스에서 <strong>샌드박스 앱을 실행</strong></p>
+</li>
+<li class="">
+<p>Chrome의 <code>chrome://inspect</code> 페이지에서 <strong>디바이스 목록을 확인</strong></p>
+</li>
+<li class="">
+<p>앱 이름 옆의 <strong>&quot;inspect&quot;</strong> 버튼을 클릭</p>
+<p><img decoding="async" loading="lazy" alt="chrome_inspect_1-1" src="/assets/images/chrome_inspect_1-1-5cc0cbcb54debae2690ee56c3e58aef5.png" width="927" height="570" class="img_ev3q"></p>
+</li>
+<li class="">
+<p><strong>Chrome DevTools 창</strong>이 열리면 디버깅 준비 완료</p>
+<p><img decoding="async" loading="lazy" alt="chrome_inspect_2" src="/assets/images/chrome_inspect_2-854f69275a0b9aa071ced19fec4636c5.png" width="1188" height="974" class="img_ev3q"></p>
+</li>
+</ol>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="디버깅-기능-활용"><strong>디버깅 기능 활용</strong><a href="#디버깅-기능-활용" class="hash-link" aria-label="디버깅-기능-활용에 대한 직접 링크" title="디버깅-기능-활용에 대한 직접 링크" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Console</strong>: JavaScript 오류, 로그 메시지 실시간 확인</li>
+<li class=""><strong>Elements</strong>: HTML/CSS 실시간 수정 및 테스트</li>
+<li class=""><strong>Network</strong>: API 요청/응답, 로딩 시간 모니터링</li>
+<li class=""><strong>Sources</strong>: JavaScript 코드 디버깅, 브레이크포인트 설정</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="configure-inspector-ios">iOS에서 웹 인스펙터 사용하기<a href="#configure-inspector-ios" class="hash-link" aria-label="iOS에서 웹 인스펙터 사용하기에 대한 직접 링크" title="iOS에서 웹 인스펙터 사용하기에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-ios-디바이스-설정">1단계: iOS 디바이스 설정<a href="#1단계-ios-디바이스-설정" class="hash-link" aria-label="1단계: iOS 디바이스 설정에 대한 직접 링크" title="1단계: iOS 디바이스 설정에 대한 직접 링크" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="웹-인스펙터-활성화">웹 인스펙터 활성화<a href="#웹-인스펙터-활성화" class="hash-link" aria-label="웹 인스펙터 활성화에 대한 직접 링크" title="웹 인스펙터 활성화에 대한 직접 링크" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>iOS 디바이스에서 <strong>설정</strong> 앱을 실행</p>
+<p><img decoding="async" loading="lazy" alt="ios_inspect_1" src="/assets/images/ios_inspect_1-e3d0dfe70a58db138115c6afaebe632f.png" width="278" height="600" class="img_ev3q"></p>
+</li>
+<li class="">
+<p>검색창에 <strong>Safari</strong> 입력 후 앱 선택</p>
+<p><img decoding="async" loading="lazy" alt="ios_inspect_2" src="/assets/images/ios_inspect_2-f784a9bd084041cc6dc8bd303980de83.png" width="278" height="600" class="img_ev3q"></p>
+</li>
+<li class="">
+<p><strong>고급</strong>을 선택</p>
+<p><img decoding="async" loading="lazy" alt="ios_inspect_3" src="/assets/images/ios_inspect_3-dd337c624bb78cf78e958efcfbbbf38d.png" width="278" height="600" class="img_ev3q"></p>
+</li>
+<li class="">
+<p><strong>웹 인스펙터</strong> 토글을 <strong>ON</strong>으로 설정</p>
+<p><img decoding="async" loading="lazy" alt="ios_inspect_4" src="/assets/images/ios_inspect_4-a0f0d99adb8a5365318167dbffe5d5b3.png" width="278" height="600" class="img_ev3q"></p>
+</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-mac-설정-및-연결">2단계: Mac 설정 및 연결<a href="#2단계-mac-설정-및-연결" class="hash-link" aria-label="2단계: Mac 설정 및 연결에 대한 직접 링크" title="2단계: Mac 설정 및 연결에 대한 직접 링크" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="configure-inspector-prerequisite">준비 사항<a href="#configure-inspector-prerequisite" class="hash-link" aria-label="준비 사항에 대한 직접 링크" title="준비 사항에 대한 직접 링크" translate="no">​</a></h4>
+<ul>
+<li class="">Mac 컴퓨터 (Windows/Linux는 지원하지 않음)</li>
+<li class="">Lightning 또는 USB-C 케이블</li>
+<li class="">Safari 브라우저</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="설정-과정">설정 과정<a href="#설정-과정" class="hash-link" aria-label="설정 과정에 대한 직접 링크" title="설정 과정에 대한 직접 링크" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>Mac에서 <strong>Safari</strong>를 실행</p>
+</li>
+<li class="">
+<p><strong>Safari</strong> &gt; <strong>설정</strong> 선택 (또는 <code>Cmd + ,</code>)</p>
+<p><img decoding="async" loading="lazy" alt="safari_configuration_1" src="/assets/images/safari_configuration_1-91508f0ba052a175f9c9a423bc3f73ce.png" width="938" height="517" class="img_ev3q"></p>
+</li>
+<li class="">
+<p><strong>고급</strong> 탭 선택</p>
+<p><img decoding="async" loading="lazy" alt="safari_configuration_2" src="/assets/images/safari_configuration_2-07fb037678f861a0f371ec7a243b30e3.png" width="839" height="598" class="img_ev3q"></p>
+</li>
+<li class="">
+<p><strong>웹 개발자를 위한 기능 보기</strong> 체크</p>
+<p><img decoding="async" loading="lazy" alt="safari_configuration_2-1" src="/assets/images/safari_configuration_2-1-c5fa8e6149f23e06208673adc12601bf.png" width="839" height="632" class="img_ev3q"></p>
+</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-웹-클라이언트-디버깅">3단계: 웹 클라이언트 디버깅<a href="#3단계-웹-클라이언트-디버깅" class="hash-link" aria-label="3단계: 웹 클라이언트 디버깅에 대한 직접 링크" title="3단계: 웹 클라이언트 디버깅에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p>iOS 디바이스와 Mac을 케이블로 연결</p>
+</li>
+<li class="">
+<p>디바이스에서 <strong>신뢰 요청</strong> 팝업이 나타나면 <strong>신뢰</strong> 선택</p>
+<p><img decoding="async" loading="lazy" alt="ios_inspect_5" src="/assets/images/ios_inspect_5-4e24d82cabeac7734c27948031251f13.png" width="278" height="600" class="img_ev3q"></p>
+</li>
+<li class="">
+<p>맥북에서 액세서리 <strong>허용 요청</strong> 팝업이 나타나면 <strong>허용</strong> 선택</p>
+<p><img decoding="async" loading="lazy" alt="safari_inspect_1" src="/assets/images/safari_inspect_1-e43dda149b196a0030aee3301ef8b285.png" width="332" height="264" class="img_ev3q"></p>
+</li>
+<li class="">
+<p>iOS 디바이스에서 <strong>샌드박스 앱을 실행</strong></p>
+</li>
+<li class="">
+<p>Mac Safari 실행 후 상단 탭에서 <strong>개발자용</strong> 메뉴 클릭</p>
+<p><img decoding="async" loading="lazy" alt="safari_inspect_2" src="/assets/images/safari_inspect_2-5573b00099d860f4f30bb8c395cbe173.png" width="1086" height="266" class="img_ev3q"></p>
+</li>
+<li class="">
+<p>디바이스명 하위에 표시되는 <strong>앱명</strong>을 선택</p>
+<p><img decoding="async" loading="lazy" alt="safari_inspect_4" src="/assets/images/safari_inspect_4-c1481b41abc9ce8b04721dd6692f0cb6.png" width="3430" height="1436" class="img_ev3q"></p>
+</li>
+<li class="">
+<p>Safari 인스펙터 창이 열리면 디버깅 준비 완료</p>
+<table><thead><tr><th><img decoding="async" loading="lazy" alt="safari_inspect_5" src="/assets/images/safari_inspect_5-b90ae9dbb6bee4f42e12cf3af0f9cb02.png" width="919" height="565" class="img_ev3q"></th><th><img decoding="async" loading="lazy" alt="ios_inspect_6" src="/assets/images/ios_inspect_6-d7932e7cf80529417c48694dcf3941a7.png" width="277" height="600" class="img_ev3q"></th></tr></thead></table>
+</li>
+</ol>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="디버깅-기능-활용-1">디버깅 기능 활용<a href="#디버깅-기능-활용-1" class="hash-link" aria-label="디버깅 기능 활용에 대한 직접 링크" title="디버깅 기능 활용에 대한 직접 링크" translate="no">​</a></h4>
+<p>Safari Web Inspector에서 다음 기능들을 사용할 수 있습니다.</p>
+<ul>
+<li class=""><strong>Console</strong>: JavaScript 실행, 로그 확인</li>
+<li class=""><strong>Elements</strong>: DOM 구조 확인 및 CSS 수정</li>
+<li class=""><strong>Network</strong>: 네트워크 요청 모니터링</li>
+<li class=""><strong>Debugger</strong>: JavaScript 디버깅</li>
+<li class=""><strong>Storage</strong>: 로컬 스토리지, 세션 스토리지 확인</li>
+</ul>
+<hr></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/guide/sandbox/sandbox-overview"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">샌드박스 앱 이해하기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/guide/sandbox/sandbox-debugging"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">샌드박스 앱 디버깅하기</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#웹- 인스펙터-이해하기" class="table-of-contents__link toc-highlight">웹 인스펙터 이해하기</a></li><li><a href="#configure-inspector-android" class="table-of-contents__link toc-highlight">Android에서 웹 인스펙터 사용하기</a><ul><li><a href="#1단계-android-디바이스-설정" class="table-of-contents__link toc-highlight">1단계: Android 디바이스 설정</a></li><li><a href="#2단계-pc-설정-및-연결" class="table-of-contents__link toc-highlight">2단계: PC 설정 및 연결</a></li><li><a href="#configure-inspector-android-debugging" class="table-of-contents__link toc-highlight">3단계: 웹 클라이언트 디버깅</a></li></ul></li><li><a href="#configure-inspector-ios" class="table-of-contents__link toc-highlight">iOS에서 웹 인스펙터 사용하기</a><ul><li><a href="#1단계-ios-디바이스-설정" class="table-of-contents__link toc-highlight">1단계: iOS 디바이스 설정</a></li><li><a href="#2단계-mac-설정-및-연결" class="table-of-contents__link toc-highlight">2단계: Mac 설정 및 연결</a></li><li><a href="#3단계-웹-클라이언트-디버깅" class="table-of-contents__link toc-highlight">3단계: 웹 클라이언트 디버깅</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://docs.nachocode.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">User Guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/guide/intro">Developer Guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/api/intro">API</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/sdk/intro">SDK</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.linkedin.com/company/nachocode" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.instagram.com/nachocode.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Instagram<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.facebook.com/people/Nachocodeofficial/61554676677985" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://nachocode.io/?utm_source=docs&amp;utm_medium=documentation&amp;utm_campaign=devguide" target="_blank" rel="noopener noreferrer" class="footer__link-item">nachocode.io<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/FlipperCorporation" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discord.gg/SU5wFmRw" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Flipper Corporation, Inc. All Rights Reserved.</div></div></div></footer></div>
+</body>
+</html>
