@@ -93,6 +93,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'guide/sandbox/sandbox-overview',
         'guide/sandbox/sandbox-inspector',
+        'guide/sandbox/sandbox-debugging',
       ],
     },
     'guide/check-store-id',

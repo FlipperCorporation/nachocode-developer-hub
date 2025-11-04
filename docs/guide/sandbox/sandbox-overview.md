@@ -1,10 +1,23 @@
 ---
 sidebar_label: '이해하기'
 pagination_label: 샌드박스 앱 이해하기
-description: nachocode에서 제공하는 샌드박스 앱이란 무엇이고, 왜 필요한지, 어떤 점이 좋은지 상세히 설명합니다.
+description: nachocode에서 제공하는 샌드박스 앱 빌드란 무엇이고, 왜 필요한지, 어떤 점이 좋은지 상세히 설명합니다.
+keywords:
+  [
+    샌드박스 앱,
+    샌드박스 빌드,
+    나쵸코드 샌드박스,
+    웹뷰 디버그,
+    Debug WebView,
+    WebView Local 테스트,
+    Web Dev Tools,
+  ]
+image: /img/docs/sandbox/sandbox_thumbnail.png
 ---
 
 # 샌드박스 앱 이해하기
+
+![sandbox_thumbnail](/img/docs/sandbox/sandbox_thumbnail.png)
 
 > 🔔 **최신화 일자:** 2025-11-04
 
