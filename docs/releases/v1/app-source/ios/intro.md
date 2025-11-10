@@ -9,7 +9,7 @@ image: /img/docs/releases/release_note_ios.png
 
 ![ios](/img/docs/releases/release_note_ios.png)
 
-> 🔔 **최신화 일자:** 2025-10-29
+> 🔔 **최신화 일자:** 2025-11-10
 
 nachocode iOS App Source **Version 1**의 버전별 업데이트 내용을 정리한 릴리즈 노트입니다.
 
@@ -25,6 +25,7 @@ nachocode iOS App Source **Version 1**의 버전별 업데이트 내용을 정�
 
 | 버전                           | 릴리즈 날짜 | 주요 내용                                                    |
 | ------------------------------ | ----------- | ------------------------------------------------------------ |
+| [ver.1.8.1](./release-v-1-8-1)   | 2025-11-06  | 버그 수정, 코드 개선                                              |
 | [ver.1.8.0](./release-v-1-8-0)   | 2025-10-29  | SDK 사용자 편의 기능들 추가                                              |
 | [ver.1.7.1](./release-v-1-7-1)   | 2025-10-27  | 샌드박스 빌드 지원                                                       |
 | [ver.1.7.0](./release-v-1-7-0) | 2025-09-29 | AppsFlyer 연동 지원                                        |
