@@ -27,15 +27,19 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [SHA-1 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인 {#prerequisite-step-1}
+### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 SHA-1 디지털 지문 확인 {#prerequisite-step-1}
+
+- [ **앱 설정** > **개발자 설정** > **안드로이드 네이티브 설정** ]에서 [SHA-1 디지털 지문](https://developers.google.com/android/guides/client-auth?hl=ko) 확인
 
 ![nachocode_developer_android_sha](/img/docs/android/nachcoode_developer_android_sha.png)
-:::info
+:::warning 참고
 지문키를 확인하기 위해서는 안드로이드 빌드가 선행되어야 합니다.
 :::
 <br/>
 
-### 2. [Firebase 대시보드](https://console.firebase.google.com/)의 [ 프로젝트 > Authentication > 로그인 방법 ]에서 추가 제공 업체로 [ Google ] 선택 후 사용설정 {#prerequisite-step-2}
+### 2. [Firebase 대시보드](https://console.firebase.google.com/)에서 사용 설정 {#prerequisite-step-2}
+
+- **[ 프로젝트 > Authentication > 로그인 방법 ]에서 추가 제공 업체로 [ Google ] 선택 후 사용설정**
 
 ![firebase_authentication_login_methods](/img/docs/google/firebase_authentication_login_methods.png)
 
@@ -59,28 +63,35 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 <br/>
 
-### 6. [나쵸코드 대시보드](#prerequisite-step-1)에서 복사한 [ SHA-1 디지털 지문 ]을 입력 후 저장 {#prerequisite-step-6}
+### 6. [nachocode 대시보드](#prerequisite-step-1)에서 복사한 [ SHA-1 디지털 지문 ]을 입력 후 저장 {#prerequisite-step-6}
 
 ![firebase_android_save_fingerprint](/img/docs/google/firebase_android_save_fingerprint.png)
 
 <br/>
 
-### 7. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 기능 > 푸시 알림 > 앱 푸시 설정 ]에 다운받은 파일(`GoogleService-Info.plist`, `google-services.json`)을 업로드 {#prerequisite-step-7}
+### 7. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에 구성파일 업로드 {#prerequisite-step-7}
+
+- **[ 앱 기능 > 푸시 알림 > 앱 푸시 설정 ]에 다운받은 파일(`GoogleService-Info.plist`, `google-services.json`)을 업로드**
 
 ![nachocode_google_push_notification_setting](/img/docs/google/nachocode_google_push_notification_setting.png)
+
 :::warning
-이미 푸시 설정이 되어있더라도 최신 구성 파일을 업로드해야 합니다.
+**이미 푸시 설정이 되어있더라도 최신 구성 파일을 업로드해야 합니다.**
 :::
 
 <br/>
 
-### 8. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 구글 네이티브 설정 ]에서 [ 구글 로그인 ] 토글을 활성화하여 앱 설정 완료 {#prerequisite-step-8}
+### 8. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 토글 활성화 {#prerequisite-step-8}
+
+- **[ 앱 설정 > 연동 > Google ]에서 [ 구글 로그인 ] 토글을 활성화하여 앱 설정 완료**
 
 ![nachocode_developer_google_login](/img/docs/google/nachocode_developer_google_login.png)
 
 <br/>
 
-### 9. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > 안드로이드 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-step-9}
+### 9. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 재빌드 {#prerequisite-step-9}
+
+- **[ 앱 빌드 > 안드로이드 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드**
 
 ![nachocode_build_android_new_version](/img/docs/android/nachocode_build_android_new_version.png)
 
@@ -90,7 +101,10 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 <br/>
 
-### 10. 빌드된 aab 파일을 [Google Play Console](https://play.google.com/console)에 업로드 후 [ 테스트 및 출시 > 설정 > 앱 서명 ]에서 앱 서명키 인증서의 [ SHA-1 인증서 지문 ]을 확인 {#prerequisite-step-10}
+### 10. [Google Play Console](https://play.google.com/console)에서 앱 서명키 인증서 지문 확인 {#prerequisite-step-10}
+
+- **빌드된 aab 파일을 [Google Play Console](https://play.google.com/console)에 업로드 후**  
+  **[ 테스트 및 출시 > 설정 > 앱 서명 ]에서 앱 서명키 인증서의 [ SHA-1 인증서 지문 ]을 확인**
 
 ![google_console_fingerprint](/img/docs/google/google_console_fingerprint.png)
 :::warning
@@ -99,7 +113,7 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 
 <br/>
 
-### 11. [ Google Play Console ]에서 복사한 [ SHA-1 디지털 지문 ]을 입력 후 저장 {#prerequisite-step-11}
+### 11. [Google Play Console](https://play.google.com/console)에서 복사한 [ SHA-1 디지털 지문 ]을 입력 후 저장 {#prerequisite-step-11}
 
 ![firebase_android_save_fingerprint](/img/docs/google/firebase_android_save_fingerprint.png)
 

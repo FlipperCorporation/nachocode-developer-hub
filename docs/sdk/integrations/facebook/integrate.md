@@ -21,7 +21,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-09-30
+> 🔔 **최신화 일자:** 2025-11-14
 
 ## **필수 선행 작업** {#prerequisite}
 
@@ -62,13 +62,17 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 <br/>
 
-#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장{#prerequisite-android-step-6}
+#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 토글 활성화 {#prerequisite-android-step-6}
+
+- **[ 앱 설정 > 연동 > Facebook ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, appId 및 clientToken 입력 후 저장**
 
 ![nachocode_developer_facebook](/img/docs/facebook/nachocode_developer_facebook.png)
 
 <br/>
 
-#### 7. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > 안드로이드 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-android-step-7}
+#### 7. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 재빌드 {#prerequisite-android-step-7}
+
+- **[ 앱 빌드 > 안드로이드 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드**
 
 ![nachocode_build_android_new_version](/img/docs/android/nachocode_build_android_new_version.png)
 
@@ -104,13 +108,17 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 <br/>
 
-#### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 설정 > 개발자 설정 > 페이스북 네이티브 설정 ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, **appId** 및 **clientToken** 입력 후 저장{#prerequisite-ios-step-5}
+#### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 토글 활성화 {#prerequisite-ios-step-5}
+
+- **[ 앱 설정 > 연동 > Facebook ] 에서 [ 페이스북 네이티브 활성화 ] 토글 활성화, appId 및 clientToken 입력 후 저장**
 
 ![nachocode_developer_facebook](/img/docs/facebook/nachocode_developer_facebook.png)
 
 <br/>
 
-#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-ios-step-6}
+#### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 재빌드 {#prerequisite-ios-step-6}
+
+- **[ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드**
 
 ![nachocode_google_login_toggle](/img/docs/apple/nachocode_build_ios_new_version.png)
 

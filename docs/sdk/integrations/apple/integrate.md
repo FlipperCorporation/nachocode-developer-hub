@@ -21,7 +21,7 @@ keywords:
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-09-30
+> 🔔 **최신화 일자:** 2025-11-14
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
@@ -45,7 +45,7 @@ nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아
 
 ### 2. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 토글 활성화 {#prerequisite-step-2}
 
-- **[ 앱 설정 > 개발자 설정 > 애플 네이티브 설정 ]에서 [ 애플 로그인 사용 ] 토글을 활성화하여 앱 설정 완료**
+- **[ 앱 설정 > 연동 > Apple ]에서 [ 애플 로그인 사용 ] 토글을 활성화하여 앱 설정 완료**
 
 ![nachocode_developer_apple_login](/img/docs/apple/nachocode_developer_apple_login.png)
 
