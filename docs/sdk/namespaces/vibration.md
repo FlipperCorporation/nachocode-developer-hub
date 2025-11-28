@@ -14,9 +14,12 @@ keywords:
     vibration,
     haptics,
   ]
+image: /img/docs/thumbnails/SDK/vibration.svg
 ---
 
 # 진동 (`vibration`)
+
+![thumbnails](/img/docs/thumbnails/SDK/vibration.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

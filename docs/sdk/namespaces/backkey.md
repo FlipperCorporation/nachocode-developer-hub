@@ -11,9 +11,12 @@ keywords:
     Android backkey,
     native backkey,
   ]
+image: /img/docs/thumbnails/SDK/backkey.svg
 ---
 
 # 백 키 (`backkey`)
+
+![thumbnails](/img/docs/thumbnails/SDK/backkey.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

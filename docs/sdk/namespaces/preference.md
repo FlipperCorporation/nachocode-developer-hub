@@ -13,9 +13,12 @@ keywords:
     iOS preference,
     Android preference,
   ]
+image: /img/docs/thumbnails/SDK/preference.svg
 ---
 
 # 내부 저장소 (`preference`)
+
+![thumbnails](/img/docs/thumbnails/SDK/preference.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

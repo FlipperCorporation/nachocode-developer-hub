@@ -14,9 +14,12 @@ keywords:
     Google Play Store,
     store link,
   ]
+image: /img/docs/thumbnails/SDK/store.svg
 ---
 
 # 스토어 (`store`)
+
+![thumbnails](/img/docs/thumbnails/SDK/store.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

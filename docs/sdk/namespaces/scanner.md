@@ -9,9 +9,12 @@ keywords:
     웹뷰 QR 코드 스캔,
     WebView QR Code Scan,
   ]
+image: /img/docs/thumbnails/SDK/scanner.svg
 ---
 
 # 스캐너 (`scanner`)
+
+![thumbnails](/img/docs/thumbnails/SDK/scanner.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

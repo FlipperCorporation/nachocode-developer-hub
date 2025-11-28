@@ -12,9 +12,12 @@ keywords:
     contents share,
     Web Share API,
   ]
+image: /img/docs/thumbnails/SDK/share.svg
 ---
 
 # 공유 (`share`)
+
+![thumbnails](/img/docs/thumbnails/SDK/share.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

@@ -9,9 +9,12 @@ keywords:
     웹앱 UX 구분,
     nachocode 실행 환경,
   ]
+image: /img/docs/thumbnails/SDK/environment.svg
 ---
 
 # 환경 (`env`)
+
+![thumbnails](/img/docs/thumbnails/SDK/environment.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

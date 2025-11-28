@@ -12,9 +12,12 @@ keywords:
     Google Play Store,
     Apple App Store,
   ]
+image: /img/docs/thumbnails/SDK/iap.svg
 ---
 
 # 인앱결제 (`iap`)
+
+![thumbnails](/img/docs/thumbnails/SDK/iap.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

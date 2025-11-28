@@ -15,9 +15,12 @@ keywords:
     biometrics authentication,
     biometrics login,
   ]
+image: /img/docs/thumbnails/SDK/authentication.svg
 ---
 
 # 인증 (`authentication`)
+
+![thumbnails](/img/docs/thumbnails/SDK/authentication.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

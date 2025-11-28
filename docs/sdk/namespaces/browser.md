@@ -19,9 +19,12 @@ keywords:
     Safari,
     Chrome,
   ]
+image: /img/docs/thumbnails/SDK/browser.svg
 ---
 
 # 브라우저 (`browser`)
+
+![thumbnails](/img/docs/thumbnails/SDK/browser.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
@@ -67,11 +70,13 @@ export declare type OpenURLOption =
 | `'internal_default'` | 앱 내부 기본 브라우저   | <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" /> <br/> <BadgeWithVersion type="Android" version="v1.6.9" link="/docs/releases/v1/app-source/android/release-v-1-6-9" /> <br/> <BadgeWithVersion type="iOS" version="v1.6.10" link="/docs/releases/v1/app-source/ios/release-v-1-6-10" /> |
 
 - `'external'`
+
   - 링크를 사용자 설정에 따른 **앱 외부의 기본 브라우저**(Chrome, Safari 등)에서 여는 방식입니다.
   - 타 앱을 열거나, 앱과 다른 도메인의 페이지를 보여주어야 할 때 유용
   - 앱과의 **세션이 분리되어 쿠키 등이 공유되지 않음**
 
 - `'internal'`
+
   - 링크를 **앱 내 WebView**에서 인앱 브라우저로 여는 방식입니다.
   - 메인 WebView와의 **세션이 유지됨**
   - 메인 WebView와 **쿠키 공유 가능**

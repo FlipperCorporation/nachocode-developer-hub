@@ -14,9 +14,12 @@ keywords:
     app network change,
     WebView keyboard detect,
   ]
+image: /img/docs/thumbnails/SDK/event.svg
 ---
 
 # 이벤트 (`event`)
+
+![thumbnails](/img/docs/thumbnails/SDK/event.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

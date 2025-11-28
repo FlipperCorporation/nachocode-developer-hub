@@ -16,9 +16,12 @@ keywords:
     personal push notification,
     FCM Device Token,
   ]
+image: /img/docs/thumbnails/SDK/push.svg
 ---
 
 # 푸시 알림 (`push`)
+
+![thumbnails](/img/docs/thumbnails/SDK/push.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

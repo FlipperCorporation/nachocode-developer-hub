@@ -14,9 +14,12 @@ keywords:
     native tab bar,
     native navigation bar,
   ]
+image: /img/docs/thumbnails/SDK/tabbar.svg
 ---
 
 # 탭바 (`tabbar`)
+
+![thumbnails](/img/docs/thumbnails/SDK/tabbar.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

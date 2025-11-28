@@ -13,9 +13,12 @@ keywords:
     progress bar,
     progress control,
   ]
+image: /img/docs/thumbnails/SDK/loading.svg
 ---
 
 # 로딩 (`loading`)
+
+![thumbnails](/img/docs/thumbnails/SDK/loading.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

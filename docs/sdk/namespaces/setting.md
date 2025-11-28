@@ -12,9 +12,12 @@ keywords:
     Open app settings,
     Control app settings,
   ]
+image: /img/docs/thumbnails/SDK/setting.svg
 ---
 
 # 설정 (`setting`)
+
+![thumbnails](/img/docs/thumbnails/SDK/setting.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

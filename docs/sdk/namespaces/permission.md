@@ -12,9 +12,12 @@ keywords:
     Android permission,
     iOS permission,
   ]
+image: /img/docs/thumbnails/SDK/permission.svg
 ---
 
 # 권한 (`permission`)
+
+![thumbnails](/img/docs/thumbnails/SDK/permission.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

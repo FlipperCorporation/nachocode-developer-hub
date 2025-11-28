@@ -15,9 +15,12 @@ keywords:
     reset to root,
     clear history,
   ]
+image: /img/docs/thumbnails/SDK/navigation.svg
 ---
 
 # 네비게이션 (`navigation`)
+
+![thumbnails](/img/docs/thumbnails/SDK/navigation.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

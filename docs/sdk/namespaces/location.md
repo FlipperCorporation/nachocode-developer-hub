@@ -13,9 +13,12 @@ keywords:
     getCurrentPosition,
     location permission,
   ]
+image: /img/docs/thumbnails/SDK/location.svg
 ---
 
 # 위치 (`location`)
+
+![thumbnails](/img/docs/thumbnails/SDK/location.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

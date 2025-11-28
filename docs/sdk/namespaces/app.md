@@ -11,9 +11,12 @@ keywords:
     hybrid app,
     native app,
   ]
+image: /img/docs/thumbnails/SDK/app.svg
 ---
 
 # 애플리케이션 (`app`)
+
+![thumbnails](/img/docs/thumbnails/SDK/app.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 

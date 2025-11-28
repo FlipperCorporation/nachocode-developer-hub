@@ -13,9 +13,12 @@ keywords:
     check device language,
     check device model,
   ]
+image: /img/docs/thumbnails/SDK/device.svg
 ---
 
 # 디바이스 (`device`)
+
+![thumbnails](/img/docs/thumbnails/SDK/device.svg)
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
