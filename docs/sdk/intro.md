@@ -1,20 +1,21 @@
 ---
 sidebar_position: 1
 sidebar_label: 개요
-pagination_label: nachocode 클라이언트 SDK 개요
-description: nachocode 클라이언트 SDK는 웹 개발자를 위한 강력한 개발 도구로, 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어, QR 스캐너 등)을 손쉽게 웹에 통합할 수 있도록 지원합니다. SDK를 활용하여 혁신적으로 네이티브 앱을 개발하세요.
+pagination_label: nachocode Client SDK 개요
+description: nachocode Javascript Client SDK는 웹 개발자를 위한 강력한 개발 도구로, 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어, QR 스캐너 등)을 손쉽게 웹에 통합할 수 있도록 지원합니다. SDK를 활용하여 혁신적으로 네이티브 앱을 개발하세요.
 keywords:
   [
     앱 빌더,
     웹뷰 앱,
     하이브리드 앱,
     네이티브 앱,
+    로우 코드,
     푸시 알림,
     인앱 결제,
+    WebView,
     안드로이드,
     Android,
     iOS,
-    WebView,
     WKWebView,
     나쵸코드,
     nachocode,
@@ -43,7 +44,7 @@ nachocode Client SDK 문서는 아래와 같은 구조로 구성되어 있습니
 1. **시작하기**  
    nachocode Client SDK를 웹 클라이언트에 설치하고 설정하는 방법을 안내합니다.  
    :::info SDK 시작하기
-   ➡️ [nachocode 클라이언트 SDK 시작하기](./getting-started)
+   ➡️ [nachocode Client SDK 시작하기](./getting-started)
    :::
 
 2. **TypeScript 지원**  
@@ -99,7 +100,7 @@ nachocode를 활용하여 만들어진 네이티브 앱들은 nachocode Client S
 nachocode Client SDK를 처음 사용하시나요?
 
 :::info SDK 시작하기
-➡️ [nachocode 클라이언트 SDK 시작하기](./getting-started)를 확인하여 SDK 설치 및 초기화를 진행하세요.
+➡️ [nachocode Client SDK 시작하기](./getting-started)를 확인하여 SDK 설치 및 초기화를 진행하세요.
 :::
 
 ---

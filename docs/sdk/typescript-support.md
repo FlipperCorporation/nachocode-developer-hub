@@ -35,7 +35,7 @@ nachocode Client SDK는 타입스크립트(`TypeScript`) 지원을 제공합니�
 
 타입 선언 파일(`Nachocode.d.ts`)은 다음 두 가지 방법 중 하나로 설치할 수 있습니다.
 
-### ✅ 방법 1: CDN에서 직접 다운로드
+### 방법 1: CDN에서 직접 다운로드
 
 다음 명령어로 최신 타입 선언 파일을 다운로드 받습니다.
 
@@ -45,11 +45,11 @@ curl -O https://cdn.nachocode.io/nachocode/client-sdk/@latest/Nachocode.d.ts
 
 다운로드한 파일을 프로젝트 내의 타입 정의 디렉터리(`types` 또는 원하는 경로)에 추가하세요.
 
-### ✅ 방법 2: 수동 다운로드
+### 방법 2: 수동 다운로드
 
 웹 브라우저에서 아래 링크를 클릭하여 수동으로 다운로드 받을 수 있습니다.
 
-- [📂 Nachocode.d.ts 선언 파일 다운로드](https://cdn.nachocode.io/nachocode/client-sdk/@latest/Nachocode.d.ts)
+- [Nachocode.d.ts 선언 파일 다운로드](https://cdn.nachocode.io/nachocode/client-sdk/@latest/Nachocode.d.ts)
 
 ---
 
@@ -57,7 +57,7 @@ curl -O https://cdn.nachocode.io/nachocode/client-sdk/@latest/Nachocode.d.ts
 
 SDK의 전체 타입 정의 및 API 세부 사항을 확인하고 싶다면 아래 링크에서 직접 확인할 수 있습니다.
 
-- [📘 Nachocode.d.ts 타입 선언 파일 보기](https://github.com/FlipperCorporation/nachocode-client-sdk/blob/main/types/Nachocode.d.ts)
+- [Nachocode.d.ts 타입 선언 파일 보기](https://github.com/FlipperCorporation/nachocode-client-sdk/blob/main/types/Nachocode.d.ts)
 
 ---
 
@@ -71,7 +71,7 @@ project-root/
 │  ├─ index.ts
 │  └─ ...
 ├─ types/
-│  └─ Nachocode.d.ts  ✅ 타입 선언 파일 위치
+│  └─ Nachocode.d.ts  // 타입 선언 파일 위치
 └─ tsconfig.json
 ```
 
@@ -191,13 +191,13 @@ nachocode Client SDK는 `Promise`를 반환하는 비동기 초기화 기능을 
    - `Nachocode.d.ts` 파일이 지정된 경로에 올바르게 위치하는지 확인
    - 파일명이 정확한지 확인 (대소문자 구분)
 
-3. **IDE 캐시 초기화**
+3. **TS 서버 재시작**
 
    ```bash
    # VS Code
    Ctrl + Shift + P → "TypeScript: Restart TS Server"
 
-   # 프로젝트 재시작
+   # Terminal
    npm run typecheck
    ```
 

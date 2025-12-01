@@ -1,20 +1,21 @@
 ---
 sidebar_position: 2
 sidebar_label: 시작하기
-pagination_label: nachocode 클라이언트 SDK 시작하기
-description: nachocode Javascript 클라이언트 SDK 설치부터 초기화, 기본 사용법까지 한 번에 익히는 시작 가이드입니다. SDK를 활용하여 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어, QR 스캐너 등)을 손쉽게 웹에 통합하여 네이티브 앱을 개발하세요.
+pagination_label: nachocode Client SDK 시작하기
+description: nachocode Javascript Client SDK 설치부터 초기화, 기본 사용법까지 한 번에 익히는 시작 가이드입니다. SDK를 활용하여 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어, QR 스캐너 등)을 손쉽게 웹에 통합하여 네이티브 앱을 개발하세요.
 keywords:
   [
     앱 빌더,
     웹뷰 앱,
     하이브리드 앱,
     네이티브 앱,
+    로우 코드,
     푸시 알림,
     인앱 결제,
+    WebView,
     안드로이드,
     Android,
     iOS,
-    WebView,
     WKWebView,
     나쵸코드,
     nachocode,
@@ -22,7 +23,7 @@ keywords:
 image: /img/docs/thumbnails/SDK/getting-started.svg
 ---
 
-# nachocode 클라이언트 SDK 시작하기
+# nachocode Client SDK 시작하기
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 

@@ -132,9 +132,13 @@ function ExampleComponent() {
 
 `Nachocode` 객체가 준비되면, 이제 SDK의 다양한 기능을 호출하여 사용할 수 있습니다.
 
-> **참고**: nachocode-client-sdk는 CDN을 통해 로드되는 **외부 스크립트**를 내부적으로 사용합니다.  
-> `NachoProvider`나 제공된 훅을 사용하면 이 스크립트를 비동기로 불러오고 초기화해주므로, 별도로 `<script>` 태그를 삽입할 필요가 없습니다.
-> (만약 React가 아닌 순수 웹 환경에서 사용한다면 nachocode 제공 CDN 경로를 `<script>`로 삽입하여 `window.Nachocode`를 사용할 수도 있습니다.)
+:::tip 참고
+
+nachocode-client-sdk는 CDN을 통해 로드되는 **외부 스크립트**를 내부적으로 사용합니다.  
+`NachoProvider`나 제공된 훅을 사용하면 이 스크립트를 비동기로 불러오고 초기화해주므로, 별도로 `<script>` 태그를 삽입할 필요가 없습니다.
+(만약 React가 아닌 순수 웹 환경에서 사용한다면 nachocode 제공 CDN 경로를 `<script>`로 삽입하여 `window.Nachocode`를 사용할 수도 있습니다.)
+
+:::
 
 ---
 
@@ -178,7 +182,7 @@ function AppLifecycleListener() {
 }
 ```
 
-주요 이벤트:
+주요 이벤트
 
 - `'background'`: 앱이 백그라운드로 전환될 때
 - `'foreground'`: 백그라운드에 있던 앱이 다시 활성화될 때
