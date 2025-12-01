@@ -6,13 +6,15 @@ image: /img/docs/releases/release_note_ios_detail.png
 
 # Release: ver.1.6.11 (2025-08-19)
 
-![ios_detail](/img/docs/releases/release_note_ios_detail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/releases/release_note_ios_detail.png'/>
 
 > 🔔 **배포 일자:** 2025-08-19
 
 nachocode iOS App Source **1.6.11** 버전이 반영되었습니다.
 
-이번 업데이트 **ver.1.6.11**에서는 웹 확대 스크립트 삽입 부분이 옵션화 되었습니다. 
+이번 업데이트 **ver.1.6.11**에서는 웹 확대 스크립트 삽입 부분이 옵션화 되었습니다.
 
 ## 개선 및 수정 사항
 

@@ -6,7 +6,9 @@ image: /img/docs/releases/release_note_ios_detail.png
 
 # Release: ver.1.6.12 (2025-09-08)
 
-![ios_detail](/img/docs/releases/release_note_ios_detail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/releases/release_note_ios_detail.png'/>
 
 > 🔔 **배포 일자:** 2025-09-08
 
@@ -38,4 +40,3 @@ nachocode iOS AppSource **ver.1.6.12**의 변경 사항을 앱에 반영하려�
 :::info 업데이트 적용
 [**나쵸코드 대시보드**](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) > **앱 빌드** > **안드로이드 앱 빌드** > **새 버전 만들기**
 :::
-

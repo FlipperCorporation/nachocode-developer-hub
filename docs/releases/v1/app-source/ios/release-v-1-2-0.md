@@ -6,7 +6,9 @@ image: /img/docs/releases/release_note_ios_detail.png
 
 # Release: ver.1.2.0 (2024-10-02)
 
-![ios_detail](../../../../../static/img/docs/releases/release_note_ios_detail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/releases/release_note_ios_detail.png'/>
 
 > 🔔 **배포 일자:** 2024-10-02
 
