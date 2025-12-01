@@ -19,11 +19,14 @@ keywords:
     나쵸코드,
     nachocode,
   ]
+image: /img/docs/thumbnails/SDK/intro.svg
 ---
 
 # nachocode Client SDK 개요
 
-![sdk](/img/docs/releases/release_note_sdk.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/SDK/intro.svg'/>
 
 > 🔔 **최신화 일자:** 2025-10-22
 

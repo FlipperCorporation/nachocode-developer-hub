@@ -12,11 +12,14 @@ keywords:
     nachocode SDK,
     declare,
   ]
+image: /img/docs/thumbnails/SDK/typescript-support.svg
 ---
 
 # TypeScript 지원
 
-![typescript](/img/docs/typescript.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/SDK/typescript-support.svg'/>
 
 > 🔔 **최신화 일자:** 2025-10-10
 
@@ -184,6 +187,7 @@ nachocode Client SDK는 `Promise`를 반환하는 비동기 초기화 기능을 
    ```
 
 2. **파일 경로 확인**
+
    - `Nachocode.d.ts` 파일이 지정된 경로에 올바르게 위치하는지 확인
    - 파일명이 정확한지 확인 (대소문자 구분)
 

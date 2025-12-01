@@ -20,9 +20,10 @@ image: /img/docs/thumbnails/SDK/navigation.svg
 
 # 네비게이션 (`navigation`)
 
-![thumbnails](/img/docs/thumbnails/SDK/navigation.svg)
-
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/SDK/navigation.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />  
 > 🔔 **최신화 일자:** 2025-10-29

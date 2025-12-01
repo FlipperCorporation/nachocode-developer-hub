@@ -19,12 +19,14 @@ keywords:
     나쵸코드,
     nachocode,
   ]
-image: /img/docs/releases/release_note_sdk_detail.png
+image: /img/docs/thumbnails/SDK/getting-started.svg
 ---
 
 # nachocode 클라이언트 SDK 시작하기
 
-![sdk](/img/docs/releases/release_note_sdk_detail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/SDK/getting-started.svg'/>
 
 > 🔔 **최신화 일자:** 2025-10-22
 
@@ -166,6 +168,7 @@ nachocode Client SDK 초기화는 두 가지 방식으로 가능합니다.
 - nachocode Client SDK가 초기화가 완료되면, `Nachocode` 네임스페이스 아래에 정의된 다양한 네이티브 기능을 사용할 수 있습니다.
 
 - 아래 예시는 SDK의 일부 기능을 사용하는 방법을 보여줍니다.
+
   - **앱 정보 가져오기**
 
   ```javascript
