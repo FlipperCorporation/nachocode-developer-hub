@@ -6,7 +6,9 @@ image: /img/docs/releases/release_note_sdk_detail.png
 
 # Release: ver.1.1.0 (2024-08-20)
 
-![sdk_detail](/img/docs/releases/release_note_sdk_detail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/releases/release_note_sdk_detail.png'/>
 
 > 🔔 **배포 일자:** 2024-08-20
 

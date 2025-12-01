@@ -7,7 +7,9 @@ image: /img/docs/releases/release_note_sdk.png
 
 # nachocode Client SDK 릴리즈 노트
 
-![sdk](/img/docs/releases/release_note_sdk.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/releases/release_note_sdk.png'/>
 
 > 🔔 **최신화 일자:** 2025-10-23
 

@@ -6,7 +6,9 @@ image: /img/docs/releases/release_note_sdk_detail.png
 
 # Release: ver.1.6.3 (2025-07-28)
 
-![sdk_detail](/img/docs/releases/release_note_sdk_detail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/releases/release_note_sdk_detail.png'/>
 
 > 🔔 **배포 일자:** 2025-07-28
 
@@ -19,6 +21,7 @@ image: /img/docs/releases/release_note_sdk_detail.png
 ### 새로운 기능 {#new-features}
 
 - **`browser` 네임스페이스**: 앱 내부에서 기본 브라우저 엔진으로 링크 열기 옵션 추가
+
   - [`browser.openLink`](/docs/sdk/namespaces/browser#open-link) 메서드에 새로운 옵션인 `'internal_default'`가 추가되었습니다.
   - `'internal_default'` 옵션은 앱 내에서 OS의 기본 브라우저 엔진 ([`SFSafariViewController`](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller), [`Chrome Custom Tabs`](https://developer.chrome.com/docs/android/custom-tabs?hl=ko))을 사용하여 URL을 열도록 지원합니다.
   - `WebView` 환경과 달리 세션 및 상태 공유가 되지 않으나, 기본 모바일 브라우저의 모든 기능을 완벽히 지원합니다.
@@ -38,6 +41,7 @@ image: /img/docs/releases/release_note_sdk_detail.png
 ### 개선 사항 {#improvements}
 
 - **`clipboard` 네임스페이스**: 클립보드 기능 웹(Web) 플랫폼 지원 추가
+
   - [`clipboard.getText`](/docs/sdk/namespaces/clipboard#get-text)와 [`clipboard.setText`](/docs/sdk/namespaces/clipboard#set-text) 메서드가 이제 웹 환경을 공식적으로 지원합니다.
   - 웹과 네이티브(iOS, Android)에서 **하나의 인터페이스로 일관된 클립보드 제어 경험을 제공**합니다.
   - 사용 예시
@@ -58,6 +62,7 @@ image: /img/docs/releases/release_note_sdk_detail.png
 :::
 
 - **`push` 네임스페이스**: 푸시 토큰 관리 기능 강화
+
   - [`push.registerPushToken`](/docs/sdk/namespaces/push#register-push-token)과 [`push.deletePushToken`](/docs/sdk/namespaces/push#delete-push-token) 메서드의 로직과 반환 타입이 개선되었습니다.
   - 이제 두 메서드는 [`Promise<PushTokenResult>`](/docs/sdk/namespaces/push#push-token-result)를 반환하여, 서버와의 통신 결과를 더 명확하게 처리할 수 있습니다.
   - `deletePushToken` 메서드에서 `userId` 파라미터가 선택 사항으로 변경되었습니다. `userId`를 전달하지 않으면 현재 기기의 토큰을 삭제합니다.
@@ -97,6 +102,7 @@ image: /img/docs/releases/release_note_sdk_detail.png
     ```
 
 - **웹 환경 안정성 및 성능 향상**
+
   - 웹 환경에서 불필요한 인증 및 네이티브 호출을 조기에 반환(early return)하도록 로직을 개선하여 전반적인 성능과 안정성을 높였습니다.
 
 - **TypeScript 정의**(`Nachocode.d.ts`) **업데이트**

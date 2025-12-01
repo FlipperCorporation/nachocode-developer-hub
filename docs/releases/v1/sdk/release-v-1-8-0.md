@@ -6,7 +6,9 @@ image: /img/docs/releases/release_note_sdk_detail.png
 
 # Release: ver.1.8.0 (2025-10-29)
 
-![sdk_detail](/img/docs/releases/release_note_sdk_detail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/releases/release_note_sdk_detail.png'/>
 
 > 🔔 **배포 일자:** 2025-10-29
 
@@ -19,26 +21,31 @@ image: /img/docs/releases/release_note_sdk_detail.png
 ### 새로운 기능 {#new-features}
 
 - **`app` 네임스페이스**: 앱 종료 기능 추가
+
   - 앱을 프로그래밍 방식으로 종료할 수 있는 기능이 추가되었습니다.
   - ➡️ [**`app` 네임스페이스 문서 바로가기**](/docs/sdk/namespaces/app)
 
 - **`browser` 네임스페이스**: 내부 브라우저 옵션 설정 기능 추가
+
   - 내부 브라우저에서 **URL 바 표시 여부**를 제어할 수 있습니다.
   - 사용자 경험에 맞게 브라우저 UI를 커스터마이징할 수 있습니다.
   - ➡️ [**`browser` 네임스페이스 문서 바로가기**](/docs/sdk/namespaces/browser)
 
 - **`device` 네임스페이스**: 안전 영역(Safe Area) 조회 기능 추가
+
   - iOS 기기의 **Safe Area Insets** 정보를 조회할 수 있습니다.
   - 노치가 있는 기기에서 화면 레이아웃을 정확히 구성할 수 있습니다.
   - 하단 홈 인디케이터 영역을 확인하여 웹에서 구현된 탭바에 정확한 `padding`을 부여할 수 있습니다.
   - ➡️ [**`device` 네임스페이스 문서 바로가기**](/docs/sdk/namespaces/device)
 
 - **`loading` 네임스페이스**: 로딩 인디케이터 제어 기능 추가
+
   - 네이티브 로딩 인디케이터를 숨기는 기능을 제공합니다.
   - 앱 시작 시 표시되는 로딩 화면을 JavaScript에서 직접 제어할 수 있습니다.
   - ➡️ [**`loading` 네임스페이스 문서 바로가기**](/docs/sdk/namespaces/loading)
 
 - **`navigation` 네임스페이스**: 네비게이션 제어 기능 추가
+
   - 앱의 **네비게이션 스택 제어**, **스와이프 제스처 설정**, **루트로 리셋** 등의 기능을 제공합니다.
   - 플랫폼별 특화 기능을 지원하여 더욱 세밀한 제어가 가능합니다.
   - ➡️ [**`navigation` 네임스페이스 문서 바로가기**](/docs/sdk/namespaces/navigation)
@@ -356,6 +363,7 @@ export declare const HAPTICS_EFFECT_TYPES = {
 ### 개선 사항 {#improvements}
 
 - **`appsflyer` 네임스페이스**: 메서드 네이밍 개선
+
   - ➡️ [**`appsflyer` 네임스페이스 문서 바로가기**](/docs/sdk/integrations/appsflyer/reference)
   - AppsFlyer 공식 문서와의 일관성을 위해 메서드 이름이 변경되었습니다.
 
@@ -373,6 +381,7 @@ export declare const HAPTICS_EFFECT_TYPES = {
   ```
 
 - **`vibration` 네임스페이스**: 햅틱 피드백 타입 개선
+
   - 기존 `HAPTICS_TYPES`의 값이 `SUCCESS/ERROR`에서 `LIGHT/MEDIUM/HEAVY`로 변경되었습니다.
   - iOS 전용 햅틱 타입 추가: `HapticsImpactType`, `HapticsNotificationType`
   - Android 전용 햅틱 타입 추가: `HapticsEffectType`
