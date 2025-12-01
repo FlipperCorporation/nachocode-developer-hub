@@ -6,7 +6,9 @@ image: /img/docs/releases/release_note_android_detail.png
 
 # Release: ver.1.4.2 (2025-02-20)
 
-![android_detail](../../../../../static/img/docs/releases/release_note_android_detail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/releases/release_note_android_detail.png'/>
 
 > 🔔 **배포 일자:** 2025-02-20
 

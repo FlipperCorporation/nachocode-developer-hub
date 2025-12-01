@@ -6,7 +6,9 @@ image: /img/docs/releases/release_note_android_detail.png
 
 # Release: ver.1.7.1 (2025-10-27)
 
-![android_detail](/img/docs/releases/release_note_android_detail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/releases/release_note_android_detail.png'/>
 
 > 🔔 **배포 일자:** 2025-10-27
 
@@ -21,20 +23,24 @@ nachocode Android App Source **1.7.1** 버전이 반영되었습니다.
 개발 및 테스트를 위한 샌드박스 환경 앱 빌드가 가능해졌습니다.
 
 - **HTTP 환경 테스트 지원**
+
   - 앱 실행 시 메인 페이지에서 테스트할 URL을 직접 입력할 수 있습니다.
   - HTTP 환경에서의 테스트가 가능하여, 로컬 서버 환경에서도 자유롭게 테스트하실 수 있습니다.
   - ex. `http://192.168.0.2:8080`과 같은 로컬 IP 및 포트로 접속 가능
 
 - **샌드박스 앱 구분 표시**
+
   - 운영 앱과의 혼동을 방지하기 위해 샌드박스 앱에는 **SANDBOX** 라벨이 포함됩니다.
   - 앱 설치 시 파일명에 `(Sandbox)` 표기가 추가됩니다.
   - ex. `Nachocode Developer(Sandbox)(1.0.0).apk`
 
 - **대시보드 설정 공유**
+
   - 아이콘, 스플래시 이미지, 탭 바, 구글 로그인, 카카오 로그인 등 대시보드에서 구성한 디자인 및 설정이 샌드박스 앱에도 동일하게 적용됩니다.
   - 운영 앱과 동일한 UI/UX로 테스트할 수 있어 더욱 정확한 테스트가 가능합니다.
 
 - **웹 인스펙터 디버깅**
+
   - Chrome 개발자 도구를 통한 웹 인스펙터 디버깅이 가능합니다.
   - 웹뷰 내의 JavaScript 코드를 실시간으로 디버깅하고 네트워크 요청을 모니터링할 수 있습니다.
 
