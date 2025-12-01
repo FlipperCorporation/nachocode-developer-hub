@@ -16,9 +16,14 @@ keywords:
     푸시 스케줄링,
     nachocode 로컬 푸시,
   ]
+image: /img/docs/thumbnails/GUIDE/push.svg
 ---
 
 # 로컬 푸시
+
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
 > 🔔 **최신화 일자:** 2025-09-25
 

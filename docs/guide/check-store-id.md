@@ -11,9 +11,14 @@ keywords:
     Google Play Store,
     Apple App Store,
   ]
+image: /img/docs/thumbnails/GUIDE/check-store-id.svg
 ---
 
 # 스토어 앱 ID 확인하기 {#check-store-id}
+
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/check-store-id.svg'/>
 
 본 가이드에서는 Android와 iOS에서 **자신의 앱 스토어 ID를 찾는 방법**을 안내합니다.
 

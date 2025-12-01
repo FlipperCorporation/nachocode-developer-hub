@@ -18,11 +18,15 @@ keywords:
     Intent Scheme,
     App Scheme,
   ]
+image: /img/docs/thumbnails/GUIDE/deep-link.svg
 ---
 
 # 인텐트 스킴 (Intent Scheme) {#intent-scheme}
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.svg'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" />  
 > 🔔 **최신화 일자:** 2025-08-07
@@ -133,12 +137,14 @@ nachocode 앱에서 **인텐트 스킴 딥링크**를 활용하려면, 우선 [*
 :::
 
 1. **패키지 이름 확인**
+
    - nachocode 대시보드 **고급 앱 설정**에서 해당 앱의 **패키지 이름**(Android Package Name)을 확인합니다.
    - 인텐트 링크의 `package=` 부분에 이 값을 정확히 넣어야 합니다. _(ex. `com.nachocode.developer`)_
 
    ![nachocode-package-name](/img/docs/settings/nachocode_dashboard_advanced_settings_pacakge_name.png)
 
 2. **인텐트 링크 구성**
+
    - 앱에서 열고자 하는 페이지 경로와 쿼리 정보를 포함해 인텐트 URL을 만듭니다.
    - `scheme=`에는 앞서 설정한 URI 스킴 이름을, `package=`에는 앱 패키지명을 넣습니다.
    - 또한 **fallback URL**로 사용할 웹 페이지 URL을 `S.browser_fallback_url`에 인코딩하여 추가합니다.
@@ -159,6 +165,7 @@ nachocode 앱에서 **인텐트 스킴 딥링크**를 활용하려면, 우선 [*
    - 이렇게 하면 **Android 사용자가 웹 페이지에서 해당 링크를 클릭했을 때** 앱이 설치되어 있으면 바로 앱으로 보고, 없으면 스토어의 앱 상세페이를 열어 설치를 유도할 수 있습니다.
 
 3. **웹 페이지에 적용**
+
    - 생성한 인텐트 링크를 여러분의 **모바일 웹 페이지, 이메일, SMS 등**에 삽입합니다.
    - Android 기기에서 Chrome이나 대부분의 웹뷰 환경에서 이 링크를 클릭하면 자동으로 위에서 구성한 흐름에 따라 동작합니다.
    - 특히 **PWA나 모바일 웹과 네이티브 앱을 병행**하는 경우, 웹에 이런 링크를 심어 앱 전환을 유도할 수 있습니다.

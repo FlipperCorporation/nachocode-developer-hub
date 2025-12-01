@@ -20,11 +20,15 @@ keywords:
     안드로이드,
     Android,
   ]
+image: /img/docs/thumbnails/GUIDE/deep-link.svg
 ---
 
 # 앱 링크 (App Link) {#app-link}
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.svg'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.6.1" link="/docs/releases/v1/app-source/android/release-v-1-6-1" />  
 > 🔔 **최신화 일자:** 2025-09-25

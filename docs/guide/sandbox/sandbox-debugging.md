@@ -17,7 +17,9 @@ image: /img/docs/sandbox/sandbox_thumbnail.png
 
 # 샌드박스 앱 디버깅하기
 
-![sandbox_thumbnail](/img/docs/sandbox/sandbox_thumbnail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/sandbox/sandbox_thumbnail.png'/>
 
 > 🔔 **최신화 일자:** 2025-11-04
 

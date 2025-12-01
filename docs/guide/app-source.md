@@ -2,7 +2,6 @@
 sidebar_label: '앱소스(App Source)'
 pagination_label: 앱소스 (App Source) 가이드
 description: nachocode의 앱소스 (App Source)는 웹사이트를 네이티브 앱으로 만들어줄 때 사용되는 앱의 기반 소스 코드입니다. 푸시알림, 생체 인증, QR 스캐너, 디바이스 제어 등 고급 네이티브 기능이 포함되어있습니다. 새로운 기능이 나오면 버전이 올라갑니다.
-image: /img/docs/releases/release_note_app_source.png
 keywords:
   [
     하이브리드 앱,
@@ -19,11 +18,14 @@ keywords:
     나쵸코드,
     nachocode,
   ]
+image: /img/docs/thumbnails/GUIDE/app-source.svg
 ---
 
 # 앱소스 (App Source) {#app-source}
 
-![app-source](/img/docs/releases/release_note_app_source.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/app-source.svg'/>
 
 > 🔔 **최신화 일자:** 2025-07-31
 

@@ -32,8 +32,9 @@ image: /img/docs/deep-link/deep-link_thumbnail.png
 # 나쵸 링크 (nachocode.link) {#nachocode-link}
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-![thumbnail](/img/docs/deep-link/deep-link_thumbnail.png)
+<ThumbnailImage src='/img/docs/deep-link/deep-link_thumbnail.png'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.6.2" link="/docs/releases/v1/app-source/android/release-v-1-6-2" /> <BadgeWithVersion type="iOS" version="v1.6.2" link="/docs/releases/v1/app-source/ios/release-v-1-6-2" />  
 > 🔔 **최신화 일자:** 2025-08-08
@@ -145,6 +146,7 @@ https://{서비스명}.nachocode.link
 만약 사용자가 **Safari 주소창에 직접 해당 URL을 입력**하거나 할 경우, 유니버셜 링크는 바로 동작하지 않을 수 있습니다. iOS 정책상 **같은 도메인 내에서 리디렉션되는 링크**는 웹으로 열리도록 할 때도 있기 때문입니다. 이런 상황을 대비해 nachocode.link는 두 가지 전용 경로를 제공합니다.
 
 - **루트 경로(`/`) - 직접 다운로드 경로**
+
   - 이 경로로 접속하면 **항상 앱 스토어(App Store)의 해당 앱 설치 페이지로 바로 이동**합니다.
   - 즉, 기기에 앱이 이미 설치되어 있더라도 무조건 스토어를 여는 동작입니다.
   - 이 모드는 **마케팅 캠페인 등에서 설치 유도를 최우선**으로 할 때 유용합니다.
@@ -183,11 +185,13 @@ https://{서비스명}.nachocode.link
 나쵸 링크 (nachocode.link)를 사용하려면 아래 정보들을 미리 준비해두어야 합니다.
 
 1. **앱 소개 페이지에 노출될 앱 이름과 설명**
+
    - **앱 이름**
 
    :::note 예시
    케이타운포유 - Ktown4u
    :::
+
    - **앱 설명**
 
    :::note 예시
@@ -195,11 +199,13 @@ https://{서비스명}.nachocode.link
    :::
 
 2. **메타데이터에 쓰일 `title`, `description`**
+
    - **title**
 
    :::note 예시
    케이타운포유 - Ktown4u 앱 설치하기
    :::
+
    - **description**
 
    :::note 예시
@@ -222,11 +228,13 @@ https://{서비스명}.nachocode.link
    :::
 
 5. **앱 스토어 다운로드 링크 (Android, iOS)**
+
    - **Android**
 
    :::note 예시
    [https://play.google.com/store/apps/details?id=com.nachocode.developer](https://play.google.com/store/apps/details?id=com.nachocode.developer)
    :::
+
    - **iOS**
 
    :::note 예시
@@ -234,6 +242,7 @@ https://{서비스명}.nachocode.link
    :::
 
 6. **앱에 사용할 서브도메인 작성 (`https://{서비스명}.nachocode.link`)**
+
    - **서비스명**
 
    :::note 예시

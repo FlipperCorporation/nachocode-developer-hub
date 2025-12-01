@@ -19,11 +19,15 @@ keywords:
     URI Scheme,
     App Scheme,
   ]
+image: /img/docs/thumbnails/GUIDE/deep-link.svg
 ---
 
 # URI 스킴 (URI Scheme) {#uri-scheme}
 
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.svg'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" /> <BadgeWithVersion type="iOS" version="v1.2.0" link="/docs/releases/v1/app-source/ios/release-v-1-2-0" />  
 > 🛠️ **개선된 버전:** <BadgeWithVersion type="Android" version="v1.5.1" link="/docs/releases/v1/app-source/android/release-v-1-5-1" /> <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" /> - `targeturl` 파라미터 추가  
@@ -86,16 +90,19 @@ URI 스킴의 한계 때문에, **Apple과 Google은 각각 더 안전한 딥링
 :::
 
 1. **커스텀 스킴 이름 결정**
+
    - 앱에서 사용할 고유 스킴 이름을 정합니다.
    - 보통 서비스나 앱의 영문명으로 작성하며, 공백이나 특수문자 없이 짧고 명확하게 정합니다.
 
 2. **대시보드에서 스킴 등록**
+
    - nachocode 대시보드의 앱 설정 메뉴에서 **개발자 설정**의 **앱 스킴 설정** 섹션을 찾습니다.
    - 여기에서 **"딥링크 앱 스킴명"** 항목에 앞서 결정한 스킴 이름을 입력합니다.
    - 예를 들어 스킴 이름을 `myapp`으로 입력했다면, 해당 앱은 `myapp://`으로 시작하는 딥링크를 처리할 수 있게 됩니다.
    - 이 설정은 Android의 **AndroidManifest.xml** (인텐트 필터)와 iOS의 **Info.plist** (URL Types)에 자동으로 반영되어 앱이 해당 스킴을 인식하도록 합니다.
 
 3. **앱 빌드 및 배포**
+
    - 스킴 설정을 저장한 후 **앱을 다시 빌드**해야 변경 사항이 적용됩니다.
    - nachocode 대시보드의 **앱 빌드** 메뉴에서 새로운 버전을 빌드하세요.
    - 빌드된 앱을 기기에 설치하거나 스토어에 업데이트하면, 이제 해당 스킴의 딥링크를 사용할 준비가 됩니다.
@@ -218,6 +225,7 @@ developer://open?targeturl=https%3A%2F%2Fdeveloper.nachocode.io%2Fdocs%2Fguide%2
   :::
 
 1. **앱이 설치되어 있는 경우**
+
    - 앱은 정상적으로 열림
    - 하지만 백그라운드에서는 여전히 JavaScript를 중단하지 않고 백그라운드에서 계속 실행
    - `setTimeout`을 이용한 앱스토어 이동용 스크립트가 실행됨

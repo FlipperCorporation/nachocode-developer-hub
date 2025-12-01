@@ -14,9 +14,14 @@ keywords:
     커스텀 User Agent,
     외부 서비스 호환성,
   ]
+image: /img/docs/thumbnails/GUIDE/user-agent.svg
 ---
 
 # User Agent 이해하기
+
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/user-agent.svg'/>
 
 > 🔔 **최신화 일자:** 2025-06-13
 

@@ -28,7 +28,9 @@ image: /img/docs/sandbox/sandbox_inspector_thumbnail.png
 
 # 웹 인스펙터 설정하기
 
-![sandbox_inspector_thumbnail](/img/docs/sandbox/sandbox_inspector_thumbnail.png)
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/sandbox/sandbox_inspector_thumbnail.png'/>
 
 > 🔔 **최신화 일자:** 2025-11-04
 

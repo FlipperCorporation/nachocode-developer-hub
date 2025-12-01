@@ -14,13 +14,18 @@ keywords:
     Apple 앱스토어,
     인앱 결제 검증,
   ]
+image: /img/docs/thumbnails/GUIDE/iap.svg
 ---
 
 # 인앱결제 환불 웹훅
 
-## **환불 이벤트 타입 정의**
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/iap.svg'/>
 
 > 🔔 **최신화 일자:** 2025-10-13
+
+## **환불 이벤트 타입 정의**
 
 <!-- 2025-10-13 개인화푸시 unavailable users 웹훅 추가에 따른 소제목 변경 -->
 

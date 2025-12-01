@@ -17,9 +17,14 @@ keywords:
     FCM 디바이스 토큰,
     nachocode 푸시,
   ]
+image: /img/docs/thumbnails/GUIDE/push.svg
 ---
 
 # 토픽 푸시
+
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
 > 🔔 **최신화 일자:** 2025-06-20
 

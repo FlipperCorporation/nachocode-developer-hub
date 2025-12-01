@@ -18,9 +18,14 @@ keywords:
     nachocode 푸시,
     푸시 API,
   ]
+image: /img/docs/thumbnails/GUIDE/push.svg
 ---
 
 # 개인화 푸시 전송불가 유저 웹훅
+
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
 > 🔔 **최신화 일자:** 2025-10-15
 

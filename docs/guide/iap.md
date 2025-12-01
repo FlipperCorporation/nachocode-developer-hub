@@ -15,9 +15,14 @@ keywords:
     Apple 앱스토어,
     인앱 결제 검증,
   ]
+image: /img/docs/thumbnails/GUIDE/iap.svg
 ---
 
 # 인앱 결제
+
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/iap.svg'/>
 
 > 🔔 **최신화 일자:** 2025-02-21
 
@@ -87,7 +92,7 @@ keywords:
 
 ## 인앱결제 에러 케이스
 
-### **안드로이드 & 검증 서버 ![Android](https://img.shields.io/badge/Android-A4C639?logo=android)**
+### **안드로이드 & 검증 서버 ![Android](https://img.shields.io/badge/Android-gray?logo=android)**
 
 안드로이드 인앱결제 응답 코드 문서는 [다음 링크](https://developer.android.com/reference/com/android/billingclient/api/BillingClient.BillingResponseCode)
 에서 확인할 수 있습니다.
@@ -107,7 +112,7 @@ keywords:
 
 ---
 
-### **iOS & 검증 서버 ![iOS](https://img.shields.io/badge/ios-000000?logo=apple&color=lightgray)**
+### **iOS & 검증 서버 ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)**
 
 **샌드박스** 혹은 **운영환경**에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.
 

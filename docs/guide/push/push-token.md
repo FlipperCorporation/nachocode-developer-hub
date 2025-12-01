@@ -18,9 +18,14 @@ keywords:
     나쵸코드 푸시,
     nachocode 푸시,
   ]
+image: /img/docs/thumbnails/GUIDE/push.svg
 ---
 
 # 푸시 토큰
+
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
 > 🔔 **최신화 일자:** 2025-09-25
 
@@ -53,9 +58,11 @@ nachocode는 이를 활용해 **정확한 대상 디바이스에 푸시 알림�
 ### 푸시 토큰 생명 주기 {#token-lifecycle}
 
 1. **생성 시점**
+
    - 사용자가 앱을 처음 실행할 경우 토큰이 자동으로 발급됩니다.
 
 2. **변경 시점**
+
    - 앱이 삭제되었다가 재설치된 경우
    - 앱의 데이터가 삭제된 경우
    - 새 기기에서 앱을 복원한 경우

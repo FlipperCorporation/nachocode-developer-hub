@@ -17,9 +17,14 @@ keywords:
     푸시 웹훅,
     개인화 푸시 웹훅,
   ]
+image: /img/docs/thumbnails/GUIDE/webhook.svg
 ---
 
 # 웹훅 개요
+
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/webhook.svg'/>
 
 > 🔔 **최신화 일자:** 2025-10-15
 
