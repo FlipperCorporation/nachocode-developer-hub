@@ -27,7 +27,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
-> 🔔 **최신화 일자:** 2025-09-25
+> 🔔 **최신화 일자:** 2025-12-05
 
 ## 푸시 토큰 이해하기 {#push-token-summary}
 
@@ -58,11 +58,9 @@ nachocode는 이를 활용해 **정확한 대상 디바이스에 푸시 알림�
 ### 푸시 토큰 생명 주기 {#token-lifecycle}
 
 1. **생성 시점**
-
    - 사용자가 앱을 처음 실행할 경우 토큰이 자동으로 발급됩니다.
 
 2. **변경 시점**
-
    - 앱이 삭제되었다가 재설치된 경우
    - 앱의 데이터가 삭제된 경우
    - 새 기기에서 앱을 복원한 경우
@@ -212,27 +210,41 @@ function onAccountDeletion(userId) {
 
 ```javascript
 // 로그인 성공 후 권한 확인 및 토큰 등록
-async function onLoginSuccess(userData) {
+async function onLoginSuccess(userId) {
   try {
-    // 1. 먼저 푸시 권한 확인 (권한이 없다면 요청)
+    // 1. Nachocode SDK 로드 여부 확인
+    if (!window.Nachocode) {
+      console.error('Nachocode SDK가 로드되지 않았습니다.');
+      return;
+    }
+
+    // 2. SDK 초기화
+    await Nachocode.initAsync('your_api_key_here');
+
+    // 3. 앱 환경 여부 확인
+    if (!Nachocode.env.isApp()) {
+      console.warn('앱 환경이 아닙니다. 푸시 토큰 등록을 건너뜁니다.');
+      return;
+    }
+
+    // 4. 푸시 권한 확인 (권한이 없다면 요청)
     Nachocode.permission.checkPermission(
       { type: 'push', ask: true },
-      granted => {
+      async granted => {
         if (granted) {
           console.log('푸시 권한 허용됨');
 
-          // 2. 권한이 있을 때만 토큰 등록
-          Nachocode.push.registerPushToken(userData.userId).then(result => {
-            if (result.status === 'success') {
-              console.log('푸시 토큰 등록 성공');
-            } else {
-              console.error('푸시 토큰 등록 실패:', result.message);
-            }
-          });
+          // 5. 권한이 있을 때만 토큰 등록
+          const result = await Nachocode.push.registerPushToken(userId);
+
+          if (result.status === 'success') {
+            console.log('푸시 토큰 등록 성공');
+          } else {
+            console.error('푸시 토큰 등록 실패:', result.message);
+          }
         } else {
           console.warn('푸시 권한 거부됨. 토큰 등록 건너뜀.');
-          // 필요시 사용자에게 권한의 중요성 안내
-          showPushPermissionImportanceGuide();
+          // 필요시 사용자에게 푸시 권한의 중요성 안내
         }
       }
     );
