@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'ver.1.8.2 (25.12.18)'
+sidebar_label: 'ver.1.8.2 (25.11.24)'
 description: nachocode Android App Source ver.1.8.2의 릴리즈노트입니다.
 image: /img/docs/releases/release_note_android_detail.png
 ---
@@ -18,7 +18,7 @@ nachocode Android App Source **1.8.2** 버전이 반영되었습니다.
 
 ## 개선 및 수정 사항
 
-- **버그 수정**: SDK 기능과 내부 호환 문제를 개선하였습니다. 
+- **버그 수정**: SDK 기능과 내부 호환 문제를 개선하였습니다.
 
 ## 업데이트 적용 방법
 

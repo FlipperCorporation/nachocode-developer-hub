@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'ver.1.8.2 (25.12.18)'
+sidebar_label: 'ver.1.8.2 (25.12.11)'
 description: nachocode iOS App Source ver.1.8.2의 릴리즈노트입니다.
 image: /img/docs/releases/release_note_ios_detail.png
 ---
@@ -14,11 +14,11 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 nachocode iOS App Source **1.8.2** 버전이 반영되었습니다.
 
-이번 업데이트 **ver.1.8.2**에서는 다운로드 기능이 추가되었습니다.
+이번 업데이트 **ver.1.8.2**에서는 다운로드 기능이 개선되었습니다.
 
 ## 새로운 기능
 
-- **다운로드** : 웹뷰에서 파일을 다운로드 받는 기능이 추가되었습니다.
+- **다운로드** : 웹뷰에서 파일을 다운로드 받는 기능이 개선되었습니다.
 
 ## 업데이트 적용 방법
 

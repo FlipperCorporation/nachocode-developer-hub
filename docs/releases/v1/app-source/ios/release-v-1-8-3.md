@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'ver.1.8.3 (25.12.18)'
+sidebar_label: 'ver.1.8.3 (25.12.12)'
 description: nachocode iOS App Source ver.1.8.3의 릴리즈노트입니다.
 image: /img/docs/releases/release_note_ios_detail.png
 ---
@@ -18,7 +18,7 @@ nachocode iOS App Source **1.8.3** 버전이 반영되었습니다.
 
 ## 개선 및 수정 사항
 
-- **버그 수정**: 앱 업데이트 시 웹 캐시 문제가 개선되었습니다.
+- **버그 수정**: 앱 업데이트 시 발생하던 웹 캐시 문제가 개선되었습니다.
 
 ## 업데이트 적용 방법
 
