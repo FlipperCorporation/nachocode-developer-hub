@@ -187,18 +187,36 @@ AASA 파일이 정상적으로 서빙되는지 확인이 되었다면 아래 설
 
 ---
 
-### 4. nachocode 대시보드 설정 {#set-nachocode-dashboard}
+### 4. nachocode 대시보드에서 앱 링크 설정 후 재빌드 {#set-nachocode-dashboard}
+
+#### 4-1. [ nachocode 대시보드 접속 ] → [ 앱 설정 ] → [ 개발자 설정 ] → [ iOS 네이티브 설정 ] → [ UniversalLink 설정 ] 접속
+
+![nachocode_dashboard_universal_link](/img/docs/deep-link/nachocode_dashboard_universal_link.png)
+
+#### 4-2. 앱과 연결할 도메인을 추가하여 [ 저장하기 ] 버튼 클릭
+
+![nachocode_dashboard_universal_link_example](/img/docs/deep-link/nachocode_dashboard_universal_link_example.png)
+
+#### 4-3. [ 앱 빌드 ] → [ iOS 앱 빌드 ] → [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+
+![nachocode_build_ios_new_version](/img/docs/apple/nachocode_build_ios_new_version.png)
+
+:::info 공지
+대시보드에서 유니버셜 링크 설정이 완료된 후 앱을 다시 빌드 시 빌드된 앱의 `.entitlements`에 해당 도메인이 포함되어 있게 됩니다.
+:::
+
+<!-- ### 4. nachocode 대시보드 설정 {#set-nachocode-dashboard}
 
 :::warning 공지
-유니버셜 링크 설정 기능은 아직 대시보드에서 제공되고 있지 않습니다.  
-현재는 수동 설정이 필요하오니 지금 사용을 희망하신다면 **nachocode 지원팀** [**support@nachocode.io**](mailto:support@nachocode.io)으로 요청 바랍니다.  
+유니버셜 링크 설정 기능은 아직 대시보드에서 제공되고 있지 않습니다.
+현재는 수동 설정이 필요하오니 지금 사용을 희망하신다면 **nachocode 지원팀** [**support@nachocode.io**](mailto:support@nachocode.io)으로 요청 바랍니다.
 :::
 
 AASA 파일은 **HTTPS로 호스팅**되어야 하며, `https://<내도메인>/.well-known/apple-app-site-association`으로 반드시 접근 가능해야 합니다.
 
 nachocode로 빌드된 iOS 앱의 경우, nachocode 측에서 **앱 서명 시 연관 도메인(Associated Domains)** 설정에 도메인을 포함해야 유효한 유니버설 링크가 완성됩니다. 그러므로 AASA 파일을 준비한 후 [nachocode 지원팀](mailto:support@nachocode.io)에 **해당 도메인과 앱 정보를 전달**하여 앱에 연관도메인 설정을 할 수 있도록 요청 바랍니다.
 
-도메인 추가 및 설정이 완료된 후 **앱을 재빌드**해야 변경 사항이 적용됩니다. 빌드된 앱의 `.entitlements`에 해당 도메인이 포함되어 있게 됩니다.
+도메인 추가 및 설정이 완료된 후 **앱을 재빌드**해야 변경 사항이 적용됩니다. 빌드된 앱의 `.entitlements`에 해당 도메인이 포함되어 있게 됩니다. -->
 
 ---
 

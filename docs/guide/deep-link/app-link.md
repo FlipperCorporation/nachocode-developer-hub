@@ -223,18 +223,25 @@ nachocode에서 만들어진 앱의 패키지명은 일반적으로 `com.nachoco
 
 ---
 
-### 4. nachocode 대시보드 설정 {#set-nachocode-dashboard}
-
-:::warning 공지
-앱 링크 설정 기능은 아직 대시보드에서 제공되고 있지 않습니다.  
-현재는 수동 설정이 필요하오니 지금 사용을 희망하신다면 **nachocode 지원팀** [**support@nachocode.io**](mailto:support@nachocode.io)으로 요청 바랍니다.  
-:::
+### 4. nachocode 대시보드에서 앱 링크 설정 후 재빌드 {#set-nachocode-dashboard}
 
 `.well-known/assetlinks.json` 파일이 준비가 되었다면 Android 앱이 해당 도메인에 대한 앱 링크를 인식하도록 **앱 설정에도 도메인 정보를 추가**해야 합니다.
 
-nachocode로 빌드된 Android 앱의 경우, nachocode 측에서 `AndroidManifest.xml` 설정에 도메인의 특정 URL 패턴을 비롯한 설정을 포함시켜주어야 유효한 앱 링크가 완성됩니다. 그러므로 `assetlinks.json` 파일을 준비한 후 [nachocode 지원팀](mailto:support@nachocode.io)에 **해당 도메인과 앱 정보를 전달**하여 앱에 알맞은 설정을 할 수 있도록 요청 바랍니다.
+#### 4-1. [ nachocode 대시보드 접속 ] → [ 앱 설정 ] → [ 개발자 설정 ] → [ 안드로이드 네이티브 설정 ] → [ AppLink 설정 ] 접속
 
-도메인 추가 및 최초 설정이 완료된 후, 앱을 다시 빌드 시 `AndroidManifest.xml`에 **앱 링크 관련 설정을 자동 반영**합니다.
+![nachocode_dashboard_app_link](/img/docs/deep-link/nachocode_dashboard_app_link.png)
+
+#### 4-2. 앱과 연결할 URL 혹은 도메인 패턴을 추가하여 [ 저장하기 ] 버튼 클릭
+
+![nachocode_dashboard_app_link_example](/img/docs/deep-link/nachocode_dashboard_app_link_example.png)
+
+#### 4-3. [ 앱 빌드 ] → [ 안드로이드 앱 빌드 ] → [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
+
+![nachocode_build_android_new_version](/img/docs/android/nachocode_build_android_new_version.png)
+
+:::info 공지
+대시보드에서 앱 링크 설정이 완료된 후, 앱을 다시 빌드하면 빌드된 앱의 `AndroidManifest.xml`에 **앱 링크 관련 설정이 자동 반영**됩니다.
+:::
 
 ---
 
