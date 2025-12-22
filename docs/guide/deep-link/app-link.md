@@ -31,7 +31,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.svg'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.6.1" link="/docs/releases/v1/app-source/android/release-v-1-6-1" />  
-> 🔔 **최신화 일자:** 2025-09-25
+> 🔔 **최신화 일자:** 2025-12-22
 
 ![Android Only](https://img.shields.io/badge/Android-Only-gray?logo=android)
 
@@ -225,18 +225,25 @@ nachocode에서 만들어진 앱의 패키지명은 일반적으로 `com.nachoco
 
 ### 4. nachocode 대시보드에서 앱 링크 설정 후 재빌드 {#set-nachocode-dashboard}
 
+:::info 공지
 `.well-known/assetlinks.json` 파일이 준비가 되었다면 Android 앱이 해당 도메인에 대한 앱 링크를 인식하도록 **앱 설정에도 도메인 정보를 추가**해야 합니다.
+:::
 
-#### 4-1. [ nachocode 대시보드 접속 ] → [ 앱 설정 ] → [ 개발자 설정 ] → [ 안드로이드 네이티브 설정 ] → [ AppLink 설정 ] 열기
+#### 4-1. [ [nachocode 대시보드 접속](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) ] → [ 앱 설정 ] → [ 개발자 설정 ] → [ 안드로이드 네이티브 설정 ] → [ AppLink 설정 ] 열기
 
 ![nachocode_dashboard_app_link](/img/docs/deep-link/nachocode_dashboard_app_link.png)
+
+---
 
 #### 4-2. 앱과 연결할 URL 혹은 도메인 패턴을 추가하여 [ 저장하기 ] 버튼 클릭
 
 ![nachocode_dashboard_app_link_example](/img/docs/deep-link/nachocode_dashboard_app_link_example.png)
+
 :::info 공지
-앱 링크는 서브 도메인에 대한 와일드카드(\*), 경로에 대한 와일드카드를 적용할 수 있습니다.
+앱 링크는 **서브 도메인에 대한 와일드카드**(\*), **경로에 대한 와일드카드**를 적용할 수 있습니다.
 :::
+
+---
 
 #### 4-3. [ 앱 빌드 ] → [ 안드로이드 앱 빌드 ] → [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
 

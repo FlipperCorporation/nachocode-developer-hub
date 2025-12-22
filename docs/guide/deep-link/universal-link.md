@@ -30,7 +30,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.svg'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />  
-> 🔔 **최신화 일자:** 2025-08-07
+> 🔔 **최신화 일자:** 2025-12-22
 
 ![iOS Only](https://img.shields.io/badge/iOS-Only-gray?logo=apple)
 
@@ -189,13 +189,17 @@ AASA 파일이 정상적으로 서빙되는지 확인이 되었다면 아래 설
 
 ### 4. nachocode 대시보드에서 앱 링크 설정 후 재빌드 {#set-nachocode-dashboard}
 
-#### 4-1. [ nachocode 대시보드 접속 ] → [ 앱 설정 ] → [ 개발자 설정 ] → [ iOS 네이티브 설정 ] → [ UniversalLink 설정 ] 열기
+#### 4-1. [ [nachocode 대시보드 접속](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) ] → [ 앱 설정 ] → [ 개발자 설정 ] → [ iOS 네이티브 설정 ] → [ UniversalLink 설정 ] 열기
 
 ![nachocode_dashboard_universal_link](/img/docs/deep-link/nachocode_dashboard_universal_link.png)
+
+---
 
 #### 4-2. 앱과 연결할 도메인을 추가하여 [ 저장하기 ] 버튼 클릭
 
 ![nachocode_dashboard_universal_link_example](/img/docs/deep-link/nachocode_dashboard_universal_link_example.png)
+
+---
 
 #### 4-3. [ 앱 빌드 ] → [ iOS 앱 빌드 ] → [ 새 버전 만들기 ] 버튼을 클릭하여 빌드
 
