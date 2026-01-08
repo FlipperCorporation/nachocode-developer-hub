@@ -138,7 +138,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 - **Error Response**
 
-  - [Error Response](#v2-error-response-definition)
+  - [Error Response](#v2-error-response-object-definition)
 
   - 에러코드
 
