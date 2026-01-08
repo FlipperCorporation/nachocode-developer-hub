@@ -142,7 +142,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
   - 에러코드
 
-    <small>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</small>
+    <i style={{fontSize: "14px"}}>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</i>
 
     | **ErrorCode** | **Status Code** | **Message**                 | **Description**                |
     | ------------- | --------------- | --------------------------- | ------------------------------ |
@@ -257,7 +257,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
   - 에러코드
 
-    <small>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</small>
+    <i style={{fontSize: "14px"}}>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</i>
 
     | **ErrorCode** | **Status Code** | \*_Message_)\*              | **Description**                |
     | ------------- | --------------- | --------------------------- | ------------------------------ |
@@ -358,7 +358,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
   - 에러코드
 
-    <small>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</small>
+    <i style={{fontSize: "14px"}}>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</i>
 
     | **ErrorCode** | **Status Code** | **Message**                 | **Description**                |
     | ------------- | --------------- | --------------------------- | ------------------------------ |
@@ -453,7 +453,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
   - 에러코드
 
-    <small>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</small>
+    <i style={{fontSize: "14px"}}>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</i>
 
     | **ErrorCode** | **Status Code** | **Message**                      | **Description**                      |
     | ------------- | --------------- | -------------------------------- | ------------------------------------ |
@@ -538,7 +538,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
   - 에러코드
 
-    <small>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</small>
+    <i style={{fontSize: "14px"}}>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</i>
 
     | **ErrorCode** | **Status Code** | **Message**                 | **Description**                |
     | ------------- | --------------- | --------------------------- | ------------------------------ |
@@ -622,7 +622,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
   - 에러코드
 
-    <small>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</small>
+    <i style={{fontSize: "14px"}}>이 외 에러코드는 공통 [에러코드 명세](#v2-push-common-error-code-definition)에서 확인 가능합니다.</i>
 
     | **ErrorCode** | **Status Code** | **Message**                 | **Description**                |
     | ------------- | --------------- | --------------------------- | ------------------------------ |
@@ -701,7 +701,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
   - [Error Response](#v2-error-response-object-definition)
 
-  - [에러코드](v2-push-common-error-code-definition)
+  - [에러코드](#v2-push-common-error-code-definition)
 
 <br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
 
@@ -732,7 +732,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 ---
 
-  <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
+<br/><hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/><br/>
 
 ### Message {#v2-message-object-definition}
 
@@ -758,7 +758,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
   }
   ```
 
-<hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
+<br/><hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/><br/>
 
 ### NachoTopic {#v2-nacho-topic-constant-definition}
 
@@ -789,7 +789,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
   }
   ```
 
-<br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
+<br/><hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/><br/>
 
 ### SubscriptionResult {#v2-subscription-result-object-definition}
 
@@ -814,7 +814,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
   }
   ```
 
-<hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
+<br/><hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/><br/>
 
 ### PushTokenManipulationResult {#v2-push-token-manipulation-result-object-definition}
 
@@ -838,7 +838,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
   }
   ```
 
-<hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
+<br/><hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/><br/>
 
 ### Error Response {#v2-error-response-object-definition}
 
@@ -862,9 +862,9 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
   }
   ```
 
-<hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
+<br/><hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/><br/>
 
-## **공용 에러코드** {#v2-push-common-error-code-definition}
+## **공통 에러코드** {#v2-push-common-error-code-definition}
 
 샌드박스 혹은 운영환경에서 아래에 명세되지 않은 에러 코드를 수신받을 경우 나쵸코드로 문의해주세요.
 
