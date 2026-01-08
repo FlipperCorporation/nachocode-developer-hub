@@ -1,0 +1,40 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+    open-pull-requests-limit: 10
+    target-branch: 'main'
+    commit-message:
+      prefix: 'github-action'
+    labels:
+      - dependabot
+
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+    open-pull-requests-limit: 10
+    target-branch: 'main'
+    commit-message:
+      prefix: 'npm'
+    labels:
+      - dependabot
+
+  - package-ecosystem: yarn
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+    open-pull-requests-limit: 10
+    target-branch: 'main'
+    commit-message:
+      prefix: 'yarn'
+    labels:
+      - dependabot
