@@ -35,7 +35,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 :::warning V1 API 서비스 종료 안내
 
-[V2 버전](../v2/endpoints) Release에 따라 **V1 버전은 Obsolete 상태**로 전환되었습니다.  
+[V2 버전](../v2/endpoints)이 Release됨에 따라 **V1 버전은 Obsolete 상태**로 전환되었습니다.  
 아래 안내된 엔트포인트로 대체 가능합니다.
 
 | V1(Obsolete)                | V2                                                          |
@@ -45,20 +45,19 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 :::
 
-<br/><br/>
+<br/>
 
-nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 관리 및 전송을 지원합니다.
-
+nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 관리 및 전송을 지원합니다.  
 이 문서에서는 **API 사용법**, **요청/응답 형식**, **에러 케이스** 등을 다룹니다.
 
-## **[POST] `/api/push/v1/messages`** <span style={{color:"#EA3E3E", fontSize:"20px"}}> ⚠️ Obsolete</span> {#post-v1-messages}
+## **[POST] `/api/push/v1/messages`** <span style={{color:"#EA3E3E", fontSize:"20px"}}> ⚠️ (OBSOLETE)</span> {#post-v1-messages}
 
 ### 설명 {#post-v1-messages-summary}
 
 - 개별적으로 설정된 메시지를 각 유저 ID의 푸시 토큰에 전송합니다.
 - 요청된 유저의 총 푸시 토큰 수에 따라 요청 건수가 차감됩니다.
 
-:::warning Obsolete 버전입니다. V2버전([`/v2/messages`](../v2/endpoints#post-v2-messages))으로 대체 가능합니다.
+:::warning OBSOLETE 버전입니다. V2버전([`/api/push/v2/messages`](../v2/endpoints#post-v2-messages))으로 대체 가능합니다.
 :::
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
@@ -148,7 +147,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 <br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
 
-## **[POST] `/api/push/v1/users`**<span style={{color:"#EA3E3E", fontSize:"20px"}}> ⚠️ Obsolete</span> {#post-v1-users}
+## **[POST] `/api/push/v1/users`**<span style={{color:"#EA3E3E", fontSize:"20px"}}> ⚠️ (OBSOLETE)</span> {#post-v1-users}
 
 ### 설명 {#post-v1-users-summary}
 
@@ -156,7 +155,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 - 유저 ID로 조회된 모든 푸시 토큰을 대상으로 전송합니다.
 - 유저 1명당 요청 건수를 차감합니다.
 
-:::warning Obsolete 버전입니다. V2버전([`/v2/users`](../v2/endpoints#post-v2-users))으로 대체 가능합니다.
+:::warning OBSOLETE 버전입니다. V2버전([`/api/push/v2/users`](../v2/endpoints#post-v2-users))으로 대체 가능합니다.
 :::
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
