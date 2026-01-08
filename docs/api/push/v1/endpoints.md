@@ -17,11 +17,16 @@ keywords:
     nachocode 푸시,
     푸시 API,
   ]
+image: /img/docs/thumbnails/API/push.svg
 ---
 
 # 푸시알림 V1 API Endpoints ⚠️
 
-> 🔔 **최신화 일자:** 2026-01-07
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/API/push.svg'/>
+
+> 🔔 **최신화 일자:** 2026-01-08
 
 <!-- 2024-11-27 최초 생성/ V0버전 제외 V1버전만 생성 -->
 <!-- 2025-03-27 V1버전 Deprecated처리 및 V2버전 신규 등록 -->
