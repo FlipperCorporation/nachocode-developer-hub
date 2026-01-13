@@ -217,7 +217,7 @@ _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습�
 #### 설명 {#subscribe-push-topic-summary}
 
 지정한 푸시 토픽을 구독합니다.
-구독이 성공하면 [**nachocode 서버 API**](../../api/push/v2/endpoints#post-v2-topic)를 통해서 발송하거나
+구독이 성공하면 [**nachocode 서버 API**](../../api/push/topic-push.endpoints#post-v2-topic)를 통해서 발송하거나
 **FCM에서 해당 토픽으로 직접 발송**한 메시지를 수신할 수 있습니다.
 
 #### 매개변수 {#subscribe-push-topic-parameters}
@@ -471,7 +471,7 @@ nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.
 // ex. 유저의 로그인 성공 시 호출되는 콜백함수
 function onLoginSuccess(userId) {
   // ex. userId : "nacho123"
-  // "nacho123" 사용자 식별자로 푸시토큰을 nachocode 서버에 등록합니다.
+  // "nacho123" 사용자 식별자로 푸시 토큰을 nachocode 서버에 등록합니다.
   Nachocode.push.registerPushToken(userId).then(result => {
     if (result.status === 'success') {
       console.log('푸시 토큰이 성공적으로 등록되었습니다.');

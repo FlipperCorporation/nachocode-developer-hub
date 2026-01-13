@@ -24,16 +24,16 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/API/intro.svg'/>
 
-> 🔔 **최신화 일자:** 2025-07-10
+> 🔔 **최신화 일자:** 2026-01-13
 
-nachocode API는 nachocode 서비스의 기능을 활용할 수 있도록 강력한 API를 제공합니다.  
+nachocode API는 nachocode 서비스의 기능을 활용할 수 있도록 다양한 API를 제공합니다.  
 이 문서는 API의 개요, 주요 기능, 사용 방법 및 응답 구조를 안내합니다.
 
 ---
 
 ## 문서 구조
 
-nachocode API 문서는 아래와 같은 구조로 구성되어 있습니다:
+nachocode API 문서는 아래와 같은 구조로 구성되어 있습니다.
 
 1. **개요**  
    nachocode API의 주요 기능과 개념을 설명합니다.
@@ -48,22 +48,57 @@ nachocode API 문서는 아래와 같은 구조로 구성되어 있습니다:
 
 ## 지원 기능
 
-nachocode API는 아래와 같은 기능을 제공합니다:
+nachocode API는 아래와 같은 기능을 제공합니다.
 
-### **푸시 알림 API**
+### 푸시 알림
 
-nachocode 플랫폼의 푸시 알림 서비스를 활용하여 특정 대상에게 특정 메세지를 실시간으로 전달할 수 있습니다.
+nachocode 플랫폼의 푸시 알림 서비스를 활용하여 특정 대상에게 특정 메세지를 실시간으로 전달하고, 토큰 또는 구독에 대한 제어가 가능합니다.
 
-- **개인화 푸시 전송**: 특정 유저 ID에 대해 개별 메시지를 전송합니다.
+#### **개인화 푸시 알림 API**
 
-  :::info 개인화 푸시
-  ➡️ [개인화 푸시 알림 API](./push/v2/endpoints#post-v2-users) 바로가기
+- **유저 목록 형식 푸시 전송**: 유저 목록으로 동일한 메시지를 일괄 전송합니다.
+
+  :::info 유저 목록 형식 푸시
+  ➡️ [유저 목록 형식 푸시 알림 API](./push/personal-push.endpoints#post-v2-users) 바로가기
   :::
 
-- **토픽 푸시 전송**: 특정 토픽(집단)에 대해 메세지를 일괄 전송합니다.
+- **메세지 목록 형식 푸시 전송**: 각기 다른 유저에게 서로 다른 메시지를 전송합니다.
+  :::info 메세지 목록 형식 푸시
+  ➡️ [메세지 목록 형식 푸시 알림 API](./push/personal-push.endpoints#post-v2-messages) 바로가기
+  :::
 
+---
+
+#### **토픽 푸시 알림 API**
+
+- **토픽 푸시 전송**: 특정 토픽(집단)에 대해 동일한 메세지를 일괄 전송합니다.
   :::info 토픽 푸시
-  ➡️ [토픽 푸시 알림 API](./push/v2/endpoints#post-v2-topic) 바로가기
+  ➡️ [토픽 푸시 알림 API](./push/topic-push.endpoints#post-v2-topic) 바로가기
+  :::
+
+- **토픽 구독 제어**: 유저 식별자를 통해 지정한 토픽을 구독, 또는 구독 해제시킵니다.
+  :::info 구독/ 구독 해제
+  ➡️ [토픽 구독 API](./push/topic-push.endpoints#post-v2-topic-subscription) 바로가기  
+  ➡️ [토픽 구독 해제 API](./push/topic-push.endpoints#delete-v2-topic-subscription) 바로가기
+  :::
+
+---
+
+#### **전체 푸시 알림 API**
+
+- **전체 푸시 전송**: 앱을 설치한 모든 유저에 대해 동일한 메세지를 일괄 전송합니다.
+
+  :::info 전체 푸시
+  ➡️ [전체 푸시 알림 API](./push/all-push.endpoints#post-v2-all) 바로가기
+  :::
+
+---
+
+#### **푸시 토큰 제어 API**
+
+- **푸시 토큰 제거**: 유저 식별자를 통해 푸시 토큰을 등록 해제시킵니다.
+  :::info 구독/ 구독 해제
+  ➡️ [토픽 푸시 알림 API](./push/push-token.endpoints#delete-v2-token) 바로가기
   :::
 
 ---
@@ -116,19 +151,15 @@ HTTP 요청의 **Header**에는 인증 정보를 포함하며, **Body**에는 �
 
 #### 요청 예시
 
-```http
-POST /api/push/v2/users HTTP/1.1
-Host: app.nachocode.io
-Content-Type: application/json
-x-api-key: your_api_key
-x-secret-key: your_secret_key
-
-{
-  "userIds": ["user1", "user2"],
-  "title": "Welcome to nachocode!",
-  "content": "Discover the new features of nachocode.",
-  "linkURL": "https://nachocode.io"
-}
+```bash
+curl -X POST https://app.nachocode.io/api/push/TARGET_ENDPOINT \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -H "x-secret-key: YOUR_SECRET_KEY" \
+  -d '{
+    "title": "TITLE_DATA",
+    "content": "CONTENT_DATA"
+  }'
 ```
 
 ---

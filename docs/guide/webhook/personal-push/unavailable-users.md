@@ -41,7 +41,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 :::note
 
 - [**전송불가 유저 웹훅 등록**](https://docs.nachocode.io/ko/articles/4-%EC%9B%B9%ED%9B%85-%EC%84%A4%EC%A0%95-4ab8a296) 후, **v2 버전 이상의 개인화 푸시 알림** 전송 시 웹훅이 발송됩니다.  
-  ([`[POST]/api/push/v2/messages`](../../../api/push/v2/endpoints#post-v2-messages),[`[POST]/api/push/v2/users`](../../../api/push/v2/endpoints#post-v2-users))
+  ([`[POST]/api/push/v2/messages`](../../../api/push/personal-push.endpoints#post-v2-messages),[`[POST]/api/push/v2/users`](../../../api/push/personal-push.endpoints#post-v2-users))
 
 - 모든 유저에게 정상적으로 푸시가 발송되었을 경우에는 웹훅이 발송되지 않습니다.
 
