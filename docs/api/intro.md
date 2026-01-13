@@ -24,16 +24,16 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/API/intro.svg'/>
 
-> 🔔 **최신화 일자:** 2025-07-10
+> 🔔 **최신화 일자:** 2026-01-13
 
-nachocode API는 nachocode 서비스의 기능을 활용할 수 있도록 강력한 API를 제공합니다.  
+nachocode API는 nachocode 서비스의 기능을 활용할 수 있도록 다양한 API를 제공합니다.  
 이 문서는 API의 개요, 주요 기능, 사용 방법 및 응답 구조를 안내합니다.
 
 ---
 
 ## 문서 구조
 
-nachocode API 문서는 아래와 같은 구조로 구성되어 있습니다:
+nachocode API 문서는 아래와 같은 구조로 구성되어 있습니다.
 
 1. **개요**  
    nachocode API의 주요 기능과 개념을 설명합니다.
@@ -48,17 +48,18 @@ nachocode API 문서는 아래와 같은 구조로 구성되어 있습니다:
 
 ## 지원 기능
 
-nachocode API는 아래와 같은 기능을 제공합니다.  
-nachocode 플랫폼의 푸시 알림 서비스를 활용하여 특정 대상에게 특정 메세지를 실시간으로 전달하고, 토큰 또는 구독에 대한 제어가 가능합니다.
+nachocode API는 아래와 같은 기능을 제공합니다.
 
 ### 푸시 알림
+
+nachocode 플랫폼의 푸시 알림 서비스를 활용하여 특정 대상에게 특정 메세지를 실시간으로 전달하고, 토큰 또는 구독에 대한 제어가 가능합니다.
 
 #### **개인화 푸시 알림 API**
 
 - **유저 목록 형식 푸시 전송**: 유저 목록으로 동일한 메시지를 일괄 전송합니다.
 
   :::info 유저 목록 형식 푸시
-  ➡️ [유저목록 형식 푸시 알림 API](./push/personal-push.endpoints#post-v2-users) 바로가기
+  ➡️ [유저 목록 형식 푸시 알림 API](./push/personal-push.endpoints#post-v2-users) 바로가기
   :::
 
 - **메세지 목록 형식 푸시 전송**: 각기 다른 유저에게 서로 다른 메시지를 전송합니다.
@@ -75,7 +76,7 @@ nachocode 플랫폼의 푸시 알림 서비스를 활용하여 특정 대상에�
   ➡️ [토픽 푸시 알림 API](./push/topic-push.endpoints#post-v2-topic) 바로가기
   :::
 
-- **토픽 구독 제어**: 유저 식별자를 통해 지정한 토픽에 구독, 또는 구독 해제시킵니다.
+- **토픽 구독 제어**: 유저 식별자를 통해 지정한 토픽을 구독, 또는 구독 해제시킵니다.
   :::info 구독/ 구독 해제
   ➡️ [토픽 구독 API](./push/topic-push.endpoints#post-v2-topic-subscription) 바로가기  
   ➡️ [토픽 구독 해제 API](./push/topic-push.endpoints#delete-v2-topic-subscription) 바로가기

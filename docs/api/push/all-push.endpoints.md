@@ -5,7 +5,7 @@ description: nachocode 전체 푸시 API의 모든 엔드포인트에 대한 요
 keywords:
   [
     전체 푸시,
-    전체 알림,
+    전체 푸시 알림,
     토픽 푸시,
     그룹 푸시,
     구독 알림,
@@ -29,7 +29,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/API/push.svg'/>
 
-> 🔔 **최신화 일자:** 2026-01-12
+> 🔔 **최신화 일자:** 2026-01-13
 
 <!-- 2026-01-12 최초 생성(endpoint페이지 분리) / 전체푸시 API 생성 -->
 
@@ -43,7 +43,7 @@ nachocode 전체 푸시 API는 다양한 엔드포인트를 제공하여 푸시 
 
 ### 설명 {#post-v2-all-summary}
 
-- 나쵸코드에서 관리하는 푸시로, 회원 여부에 관계없이 **앱이 설치된 모든 디바이스**로 푸시를 전송합니다.
+- 토큰 등록 여부, 회원 여부에 관계없이 **앱이 설치된 모든 디바이스**로 푸시 알림을 전송합니다.
 - 전체 푸시 전송 요청 건수에 따라 차감됩니다.
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>

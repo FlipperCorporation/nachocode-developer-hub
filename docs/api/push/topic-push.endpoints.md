@@ -36,7 +36,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <br/>
 
-nachocode 토픽 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 관리 및 전송을 지원합니다.
+nachocode 토픽 푸시 API는 다양한 엔드포인트를 제공하여 푸시 토픽 관리 및 전송을 지원합니다.
 
 이 문서에서는 **API 사용법**, **요청/응답 형식**, **에러 케이스** 등을 다룹니다.
 

@@ -31,13 +31,13 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/API/push.svg'/>
 
-> 🔔 **최신화 일자:** 2026-01-12
+> 🔔 **최신화 일자:** 2026-01-13
 
 <!-- 2026-01-12 최초 생성(endpoint페이지 분리) / User ID로 토큰 삭제 API 생성 -->
 
 <br/>
 
-nachocode 푸시 토큰 관리 API 엔드포인트를 제공하여 푸시 토큰 관리를 지원합니다.
+nachocode 푸시 토큰 관리 API를 활용하여 푸시 토큰을 관리 할 수 있습니다.
 
 이 문서에서는 **API 사용법**, **요청/응답 형식**, **에러 케이스** 등을 다룹니다.
 
@@ -45,7 +45,7 @@ nachocode 푸시 토큰 관리 API 엔드포인트를 제공하여 푸시 토큰
 
 ### 설명 {#delete-v2-token-summary}
 
-- SDK의 [`registerPushToken()`](../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 삭제합니다.
+- SDK의 [`registerPushToken()`](../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, **해당 유저에게 매칭된 토큰을 모두** 삭제합니다.
 - 유저 1명당 요청 건수를 차감합니다.
 
 :::warning 제한
@@ -110,7 +110,25 @@ nachocode 푸시 토큰 관리 API 엔드포인트를 제공하여 푸시 토큰
 
 - **Error Response**
 
-  - [Error Response](#push-token-error-response-object-definition)
+  - **Property**
+
+    | **Parameter** | **Type** | **Description** |
+    | ------------- | -------- | --------------- |
+    | statusCode    | `number` | 상태 코드       |
+    | path          | `string` | 요청 경로       |
+    | code          | `string` | 에러 코드       |
+    | message       | `string` | 에러 메세지     |
+
+  - **Example**
+
+    ```json
+    {
+      "statusCode": 400,
+      "path": "/api/push/v2/token",
+      "code": "ERR-AB-VAL-00",
+      "message": "Incorrect request. Server cannot understand request."
+    }
+    ```
 
   - [에러코드](#push-token-common-error-code-definition)
 
@@ -137,30 +155,6 @@ nachocode 푸시 토큰 관리 API 엔드포인트를 제공하여 푸시 토큰
     "success": ["USER_ID_1", "USER_ID_2", "USER_ID_3"],
     "tokenNotFound": ["USER_ID_5", "USER_ID_6"],
     "failed": ["USER_ID_4"]
-  }
-  ```
-
-<br/><hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/><br/>
-
-### Error Response {#push-token-error-response-object-definition}
-
-- **Property**
-
-  | **Parameter** | **Type** | **Description** |
-  | ------------- | -------- | --------------- |
-  | statusCode    | `number` | 상태 코드       |
-  | path          | `string` | 요청 경로       |
-  | code          | `string` | 에러 코드       |
-  | message       | `string` | 에러 메세지     |
-
-- **Example**
-
-  ```json
-  {
-    "statusCode": 400,
-    "path": "api/nacho/example",
-    "code": "ERR-NA-CHO-00",
-    "message": "Oops! Something went wrong!"
   }
   ```
 

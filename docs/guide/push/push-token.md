@@ -32,7 +32,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
-> 🔔 **최신화 일자:** 2025-12-05
+> 🔔 **최신화 일자:** 2026-01-13
 
 ## 푸시 토큰 이해하기 {#push-token-summary}
 
@@ -279,6 +279,6 @@ async function onLoginSuccess(userId) {
 
 [➡️ SDK 푸시 토큰 삭제 메서드 보기](/docs/sdk/namespaces/push#delete-push-token)
 
-[➡️ API 푸시 토큰 삭제 메서드 보기](../../api/push/push-token.endpoints.md#delete-v2-token)
+[➡️ API 푸시 토큰 삭제 엔드포인트 보기](../../api/push/push-token.endpoints.md#delete-v2-token)
 
 :::
