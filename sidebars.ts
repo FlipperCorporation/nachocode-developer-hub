@@ -16,6 +16,7 @@ const sidebars: SidebarsConfig = {
         'guide/push/push-token',
         'guide/push/personal-push',
         'guide/push/topic-push',
+        'guide/push/all-push',
         'guide/push/local-push',
       ],
     },
@@ -108,7 +109,12 @@ const sidebars: SidebarsConfig = {
         title: '푸시 알림 (Push Notification)',
         slug: '/api/push',
       },
-      items: ['api/push/v2/endpoints', 'api/push/v1/endpoints'],
+      items: [
+        'api/push/push-token.endpoints',
+        'api/push/personal-push.endpoints',
+        'api/push/topic-push.endpoints',
+        'api/push/all-push.endpoints',
+      ],
     },
   ],
   sdk: [

@@ -8,15 +8,20 @@ keywords:
     FCM 디바이스 토큰,
     FCM Device Token,
     푸시 토큰,
+    푸시 토큰 등록해재,
+    푸시 토큰 관리,
+    푸시 토큰 제어,
+    푸시 토픽 API,
     푸시 알림,
     개인화 푸시,
     타겟 푸시,
     타겟 알림,
     마케팅 푸시,
-    개인화 메시지,
+    고객 마케팅,
     사용자 맞춤 메시지,
     나쵸코드 푸시,
     nachocode 푸시,
+    푸시 API,
   ]
 image: /img/docs/thumbnails/GUIDE/push.svg
 ---
@@ -58,9 +63,11 @@ nachocode는 이를 활용해 **정확한 대상 디바이스에 푸시 알림�
 ### 푸시 토큰 생명 주기 {#token-lifecycle}
 
 1. **생성 시점**
+
    - 사용자가 앱을 처음 실행할 경우 토큰이 자동으로 발급됩니다.
 
 2. **변경 시점**
+
    - 앱이 삭제되었다가 재설치된 경우
    - 앱의 데이터가 삭제된 경우
    - 새 기기에서 앱을 복원한 경우
@@ -92,8 +99,8 @@ nachocode에서는 SDK를 통해 **푸시 토큰과 사용자 식별자를 매�
 
 - 한 유저는 **여러 디바이스**에서 앱을 사용할 수 있으므로, **디바이스별 푸시 토큰이 각각 등록**됩니다.
 - **유저 ID와 매칭 등록이 완료**된 후 아래 기능을 이용할 수 있습니다.
-  - [**개인화 푸시 전송**](../../api/push/v2/endpoints#post-v2-users)
-  - **유저 식별자로 토픽** [**구독**](../../api/push/v2/endpoints#post-v2-topic-subscription), [**취소**](../../api/push/v2/endpoints#delete-v2-topic-subscription)
+  - [**개인화 푸시 전송**](../../api/push/personal-push.endpoints#post-v2-users)
+  - **유저 식별자로 토픽** [**구독**](../../api/push/topic-push.endpoints#post-v2-topic-subscription), [**취소**](../../api/push/topic-push.endpoints#delete-v2-topic-subscription)
 
 ---
 
@@ -182,25 +189,33 @@ Nachocode.push.registerPushToken(deviceUUID);
 
 #### 실제 삭제 구현
 
-```javascript
-// 사용자 푸시 수신 거부 시
-function onPushNotificationDisabled() {
-  Nachocode.push.deletePushToken().then(result => {
-    if (result.status === 'success') {
-      console.log('푸시 수신이 완전히 비활성화되었습니다.');
-    }
-  });
-}
+- **API**
 
-// 계정 탈퇴 시
-function onAccountDeletion(userId) {
-  Nachocode.push.deletePushToken(userId).then(result => {
-    if (result.status === 'success') {
-      console.log('계정과 연관된 푸시 토큰이 삭제되었습니다.');
-    }
-  });
-}
-```
+  - 유저가 보유한 모든 디바이스 토큰 매핑 삭제 ➡️[API](../../api/push/push-token.endpoints.md#delete-v2-token) 바로가기
+
+- **SDK**
+
+  - 단일 디바이스의 토큰 매핑 삭제
+
+  ```javascript
+  // 사용자 푸시 수신 거부 시
+  function onPushNotificationDisabled() {
+    Nachocode.push.deletePushToken().then(result => {
+      if (result.status === 'success') {
+        console.log('푸시 수신이 완전히 비활성화되었습니다.');
+      }
+    });
+  }
+
+  // 계정 탈퇴 시
+  function onAccountDeletion(userId) {
+    Nachocode.push.deletePushToken(userId).then(result => {
+      if (result.status === 'success') {
+        console.log('계정과 연관된 푸시 토큰이 삭제되었습니다.');
+      }
+    });
+  }
+  ```
 
 ---
 
@@ -258,10 +273,12 @@ async function onLoginSuccess(userId) {
 
 ## **관련 문서**
 
-:::info 기술 명세는 SDK 문서를 참고하세요
+:::info 기술 명세는 아래 문서를 참고하세요
 
 [➡️ SDK 푸시 토큰 등록 메서드 보기](/docs/sdk/namespaces/push#register-push-token)
 
 [➡️ SDK 푸시 토큰 삭제 메서드 보기](/docs/sdk/namespaces/push#delete-push-token)
+
+[➡️ API 푸시 토큰 삭제 메서드 보기](../../api/push/push-token.endpoints.md#delete-v2-token)
 
 :::

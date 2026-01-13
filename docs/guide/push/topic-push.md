@@ -5,17 +5,23 @@ pagination_label: 토픽 푸시 가이드
 description: nachocode 토픽 푸시 가이드는 SDK 및 API를 활용한 구독형 푸시 알림 전송 방법을 안내합니다. 토픽 구독부터 구독해제, 전송, 결과 분석까지 쉽고 효율적으로 관리할 수 있습니다.
 keywords:
   [
-    푸시 알림,
     토픽 푸시,
-    구독 알림,
     그룹 푸시,
+    세그먼트 푸시,
+    그룹화 푸시,
+    구독형 푸시,
+    예약 푸시,
+    스케줄 푸시,
+    푸시 알림,
     타겟 푸시,
     타겟 알림,
     마케팅 푸시,
-    개인화 푸시,
+    고객 마케팅,
     사용자 맞춤 메시지,
-    FCM 디바이스 토큰,
+    나쵸코드 푸시,
     nachocode 푸시,
+    푸시 API,
+    FCM 디바이스 토큰,
   ]
 image: /img/docs/thumbnails/GUIDE/push.svg
 ---
@@ -47,7 +53,7 @@ nachocode의 토픽 푸시 기능은 특정 상황이나 행동을 한 사용자
 **구독**(_subscribe_)을 통해 디바이스를 토픽에 포함시켜두면 해당 토픽에 대한 푸시 알림을 수신 받을 수 있습니다.  
 더이상 해당 토픽에 대한 알림이 전송되지 않기를 원하는 디바이스는 **구독해제**(_unsubscribe_)를 통해 토픽에서 제외시킬 수 있습니다.
 
-푸시 전송이 필요한 시점에 [nachocode 토픽 푸시 전송 API](../../api/push/v2/endpoints#post-v2-topic)를 호출하여 **구독된 모든 디바이스**에게 **일괄적으로 푸시 알림을 전송**할 수 있습니다.
+푸시 전송이 필요한 시점에 [nachocode 토픽 푸시 전송 API](../../api/push/topic-push.endpoints#post-v2-topic)를 호출하여 **구독된 모든 디바이스**에게 **일괄적으로 푸시 알림을 전송**할 수 있습니다.
 
 <br/><hr style={{ border: "0.2px solid grey", opacity: "0.1"}} /><br/>
 
@@ -76,7 +82,7 @@ Nachocode.push.subscribePushTopic('토픽이름');
 
 <div class="underlined-subtitle">전송 할 때는 토픽 이름만 알려주세요</div>
 
-푸시 알림 전송 시, "**어떤 토픽**"을 구독한 디바이스로 "**어떤 내용**"을 보낼지만 설정하여 [**nachocode Topic API로 요청**](../../api/push/v2/endpoints#post-v2-topic)하면 푸시 전송이 완료됩니다.
+푸시 알림 전송 시, "**어떤 토픽**"을 구독한 디바이스로 "**어떤 내용**"을 보낼지만 설정하여 [**nachocode Topic API로 요청**](../../api/push/topic-push.endpoints#post-v2-topic)하면 푸시 전송이 완료됩니다.
 
 **단 한번의 전송 요청**으로 수 많은 디바이스로 **일괄적인 푸시 전송**이 가능합니다.
 
@@ -155,8 +161,8 @@ SDK를 활용한 구독은 유저 식별자를 요구하지 않아 **유저가 �
 특정 이벤트 발생 시점에 디바이스 [구독](../../sdk/namespaces/push#subscribe-push-topic)과 [구독해제](../../sdk/namespaces/push#unsubscribe-push-topic) 메서드 호출을 통해 구독 여부를 즉시 설정할 수 있습니다.
 
 :::note 예시
-"나쵸코드"를 검색한 식별 불가한 유저에게도 알림이 보내지기를 원할 때 -> [_구독 SDK_](../../sdk/namespaces/push#subscribe-push-topic)  
-"이벤트 참여 취소"를 클릭한 디바이스로 이벤트 알림이 보내지지 않도록 할 때 -> [_구독해제 SDK_](../../sdk/namespaces/push#unsubscribe-push-topic)
+"나쵸코드"를 검색한 식별 불가한 유저에게도 알림이 보내지기를 원할 때 ➡️ [_구독 SDK_](../../sdk/namespaces/push#subscribe-push-topic)  
+"이벤트 참여 취소"를 클릭한 디바이스로 이벤트 알림이 보내지지 않도록 할 때 ➡️ [_구독해제 SDK_](../../sdk/namespaces/push#unsubscribe-push-topic)
 
 :::
 
@@ -170,8 +176,8 @@ API를 활용한 구독은 **유저를 식별**할 수 있고 유저의 모든 �
 
 :::note 예시
 
-"나쵸코드" 토픽을 팔로우한 계정 소유자의 모든 디바이스로 알림이 보내지도록 할 때 -> [_구독 API_](../../api/push/v2/endpoints#post-v2-topic-subscription)  
-"나쵸코드" 토픽을 언팔로우한 계정 소유자의 모든 디바이스로 알림이 보내지지 않도록 할 때 -> [_구독해제 API_](../../api/push/v2/endpoints#delete-v2-topic-subscription)
+"나쵸코드" 토픽을 팔로우한 계정 소유자의 모든 디바이스로 알림이 보내지도록 할 때 ➡️ [_구독 API_](../../api/push/topic-push.endpoints#post-v2-topic-subscription)  
+"나쵸코드" 토픽을 언팔로우한 계정 소유자의 모든 디바이스로 알림이 보내지지 않도록 할 때 ➡️ [_구독해제 API_](../../api/push/topic-push.endpoints#delete-v2-topic-subscription)
 
 :::
 
@@ -181,14 +187,14 @@ API를 활용한 구독은 **유저를 식별**할 수 있고 유저의 모든 �
 
 <br/><br/><br/>
 
-### 3. 토픽 푸시 전송 ([API](../../api/push/v2/endpoints#post-v2-topic))
+### 3. 토픽 푸시 전송 ([API](../../api/push/topic-push.endpoints#post-v2-topic))
 
 :::info **토픽 이름만으로 구독된 모든 유저에게 일괄 전송이 가능합니다.**
 :::
 
 <br/>
 
-[`/topic`](../../api/push/v2/endpoints#post-v2-topic) API Endpoint를 사용하여 **특정 토픽을 구독** 중인 모든 디바이스를 대상으로 푸시 알림을 전송합니다.
+[`/topic`](../../api/push/topic-push.endpoints#post-v2-topic) API Endpoint를 사용하여 **특정 토픽을 구독** 중인 모든 디바이스를 대상으로 푸시 알림을 전송합니다.
 
 API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전송 시점을 선정하여 개발자가 **Server Side 로직에 추가**하여야 합니다.  
 **전송하고자 하는 내용**과 대시보드에서 발급받은 **API Key, Secret Key**로 요청 데이터를 구성하여 API Endpoint로 푸시 전송을 요청할 수 있습니다.
@@ -198,7 +204,7 @@ API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전�
 <br/>
 
 :::tip
-_토픽에 대한 푸시가 전송된 뒤 특정 디바이스에 대한 전송을 원하지 않을 경우, 구독해제 [SDK](../../sdk/namespaces/push#unsubscribe-push-topic)(또는 [API](../../api/push/v2/endpoints#delete-v2-topic-subscription))호출이 요구됩니다.  
+_토픽에 대한 푸시가 전송된 뒤 특정 디바이스에 대한 전송을 원하지 않을 경우, 구독해제 [SDK](../../sdk/namespaces/push#unsubscribe-push-topic)(또는 [API](../../api/push/topic-push.endpoints#delete-v2-topic-subscription))호출이 요구됩니다.  
 일회성 이벤트 토픽일 경우, 사용 후 구독해제 없이 해당 토픽을 사용하지 않는 방식으로 폐기가 가능합니다._
 :::
 <br/>
