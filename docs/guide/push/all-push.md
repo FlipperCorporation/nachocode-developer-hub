@@ -111,7 +111,7 @@ nachocode 대시보드에서 **1)API Key, Secret Key 발급** 및 **2)Firebase �
 
 <br/>
 
-[`/all`](../../api/push/all-push.endpoints#post-v2-all) API Endpoint를 사용하여 **앱을 설치한 모든 디바이스**를 대상으로 푸시 알림을 전송합니다.
+[`/api/push/v2/all`](../../api/push/all-push.endpoints#post-v2-all) API Endpoint를 사용하여 **앱을 설치한 모든 디바이스**를 대상으로 푸시 알림을 전송합니다.
 
 API 호출은 Server 대 Server 요청을 통해 이루어지므로, 푸시 전송 시점을 선정하여 개발자가 **Server Side 로직에 추가**하여야 합니다.  
 **전송하고자 하는 내용**과 대시보드에서 발급받은 **API Key, Secret Key**로 요청 데이터를 구성하여 API Endpoint로 푸시 전송을 요청할 수 있습니다.
