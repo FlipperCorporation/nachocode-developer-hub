@@ -31,11 +31,11 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 앱 정보 확인 {#prerequisite-step-1}
+### 1. [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 앱 정보 확인 {#prerequisite-step-1}
 
 #### 1-1. 딥링크 앱 스킴명 확인 {#prerequisite-step-1-1}
 
-- [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 **[ 앱 설정 > 개발자 설정 > 앱 스킴 설정 ]에** 접속하여 딥링크 앱 스킴명 확인
+- [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 **[ 앱 설정 > 개발자 설정 > 앱 스킴 설정 ]에** 접속하여 딥링크 앱 스킴명 확인
 - 앱 스킴명은 [**iOS 환경 추가**](#prerequisite-step-2-3)에서 **URL Scheme** 등록 시 활용됩니다.
 
 ![nachocode_dashboard_developer_settings_app_scheme](/img/docs/deep-link/nachocode_dashboard_developer_settings_app_scheme.png)
@@ -44,7 +44,7 @@ nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 
 
 #### 1-2. 앱 식별자 (패키지 이름) 확인 {#prerequisite-step-1-2}
 
-- [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 **[ 앱 빌드 > 빌드 설정 > 설정 열기 ]에** 접속하여 패키지 이름 확인
+- [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 **[ 앱 빌드 > 빌드 설정 > 설정 열기 ]에** 접속하여 패키지 이름 확인
 - 패키지 이름은 [**안드로이드 환경 추가**](#prerequisite-step-2-3)에서 **안드로이드 앱 패키지 이름** 등록 시 활용됩니다.
 
 ![nachocode_build_android_settings_package_name](/img/docs/android/nachocode_build_android_settings_package_name.png)
@@ -92,7 +92,7 @@ nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 
     - **출시된 앱**: 앱스토어 URL 입력
     - **승인 대기 중, 배포되지 않음**: 임의의 URL (ex. 개발사 홈페이지 URL)을 입력하고 등록된 이후에 변경
   - **URL Scheme**
-    - nachocode 대시보드에서 [딥링크 앱 스킴명을 확인](#prerequisite-step-1-1)하여 등록
+    - nachocode에서 [딥링크 앱 스킴명을 확인](#prerequisite-step-1-1)하여 등록
 
 ---
 
@@ -101,7 +101,7 @@ nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 
     - **출시된 앱**: 구글 플레이 스토어 URL 입력
     - **승인 대기 중, 배포되지 않음**: 임의의 URL (ex. 개발사 홈페이지 URL)을 입력하고 등록된 이후에 변경
   - **안드로이드 앱 패키지 이름**
-    - nachocode 대시보드에서 [패키지 이름을 확인](#prerequisite-step-1-2)하여 등록
+    - nachocode에서 [패키지 이름을 확인](#prerequisite-step-1-2)하여 등록
 
 :::info 네이버 공식 문서 보러가기
 ➡️ [로그인 오픈 API 서비스 환경](https://developers.naver.com/docs/common/openapiguide/appregister.md#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%98%A4%ED%94%88-api-%EC%84%9C%EB%B9%84%EC%8A%A4-%ED%99%98%EA%B2%BD)
@@ -117,7 +117,7 @@ nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 
 
 - 네이버 개발자 센터의 [ **내 애플리케이션** > **개요** ] 탭 접속
 - 애플리케이션에 부여된 **클라이언트 아이디**(`Client ID`)와 **클라이언트 시크릿**(`Client Secret`) 확인
-- **`Client ID`, `Client Secret`은 [nachocode 대시보드에서 네이버 네이티브 설정](#prerequisite-step-4) 시 필요합니다.**
+- **`Client ID`, `Client Secret`은 [nachocode에서 네이버 네이티브 설정](#prerequisite-step-4) 시 필요합니다.**
 
 ![developers_naver_step_06](/img/docs/naver/developers_naver_step_06.png)
 
@@ -127,7 +127,7 @@ nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 
 
 ---
 
-### 4. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 네이버 네이티브 토글 활성화 {#prerequisite-step-4}
+### 4. [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 네이버 네이티브 토글 활성화 {#prerequisite-step-4}
 
 - **[ 앱 설정 > 연동 > Naver ] 에서 [ 네이버 네이티브 활성화 ] 토글 활성화, Client ID 및 Client Secret 입력 후 저장**
 
@@ -135,7 +135,7 @@ nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 
 
 ---
 
-### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 앱 재빌드 {#prerequisite-step-5}
+### 5. [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 앱 재빌드 {#prerequisite-step-5}
 
 - **[ 앱 빌드 > iOS/안드로이드 앱 > 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드**
 
