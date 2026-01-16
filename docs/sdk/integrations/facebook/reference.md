@@ -25,7 +25,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/facebook.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-09-30
+> 🔔 **최신화 일자:** 2025-01-16
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -157,6 +157,7 @@ export declare type FacebookUserData = {
 | [`isLoggedIn(callback)`](#is-logged-in)                | 로그인 상태 확인           | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
 | [`getUserData(permissions, callback)`](#get-user-data) | 사용자 데이터 요청         | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
 | [`logout()`](#logout)                                  | 페이스북 네이티브 로그아웃 | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
+| [`logEvent(eventName, parameters?)`](#log-event)       | Meta 앱 이벤트 로깅        | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
 
 ---
 
@@ -313,6 +314,48 @@ _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있�
 // 페이스북 로그아웃
 Nachocode.facebook.logout();
 console.log('페이스북에서 로그아웃되었습니다.');
+```
+
+---
+
+### **`logEvent(eventName: string, parameters?: Record<string, string>): void`** {#log-event}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+:::warning 주의
+_[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
+:::
+
+#### 설명 {#log-event-summary}
+
+Facebook에 커스텀 앱 이벤트를 로깅합니다.
+사용자의 행동이나 앱 내 활동을 추적하는 데 사용됩니다.
+
+:::info
+집계된 이벤트 로그는 [Meta 이벤트 관리자](https://eventsmanager.facebook.com/events_manager2/overview)에서 확인이 가능합니다.
+:::
+
+#### 매개변수 {#log-event-parameters}
+
+| 이름         | 타입                     | 필수 여부 | 설명                    |
+| ------------ | ------------------------ | --------- | ----------------------- |
+| `eventName`  | `string`                 | ✅        | 이벤트 이름             |
+| `parameters` | `Record<string, string>` |           | 이벤트와 함께 전송할 값 |
+
+#### 반환 값 {#log-event-returns}
+
+해당 메서드는 반환 값을 가지지 않습니다.
+
+#### 사용 예제 {#log-event-examples}
+
+```javascript
+// 커스텀 앱 이벤트 로깅
+Nachocode.facebook.logEvent('purchase', {
+  product_id: 'item_001',
+  price: 9.99,
+  currency: 'USD',
+  category: 'electronics',
+});
 ```
 
 ---
