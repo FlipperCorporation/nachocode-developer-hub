@@ -123,7 +123,7 @@ nachocode SDK로 **AppsFlyer 연동 기능**을 사용하기 위해서는 아래
 
 ### 5. (선택사항) 발급한 원링크 도메인 [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에 등록 {#prerequisite-step-5}
 
-원링크를 사용하는 경우, 도메인을 nachocode에 등록해야 합니다.
+원링크를 사용하는 경우, OneLink 도메인을 nachocode에 등록해야 합니다.
 
 ![nachocode_dashboard_linked_services_appsflyer_onelink](/img/docs/appsflyer/nachocode_dashboard_linked_services_appsflyer_onelink.png)
 
