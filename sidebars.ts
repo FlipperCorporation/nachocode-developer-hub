@@ -241,6 +241,7 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'sdk/integrations/naver/integrate',
+            'sdk/integrations/naver/reference',
           ],
         },
       ],
