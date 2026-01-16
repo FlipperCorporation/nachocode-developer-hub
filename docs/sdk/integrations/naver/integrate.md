@@ -116,8 +116,8 @@ nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 
 :::
 
 - 네이버 개발자 센터의 [ **내 애플리케이션** > **개요** ] 탭 접속
-- 애플리케이션에 부여된 클라이언트 아이디와 클라이언트 시크릿 확인
-- **`Client ID`, `Client Secret`은 [nachocode 대시보드 설정](#prerequisite-step-4) 시 필요합니다.**
+- 애플리케이션에 부여된 **클라이언트 아이디**(`Client ID`)와 **클라이언트 시크릿**(`Client Secret`) 확인
+- **`Client ID`, `Client Secret`은 [nachocode 대시보드에서 네이버 네이티브 설정](#prerequisite-step-4) 시 필요합니다.**
 
 ![developers_naver_step_06](/img/docs/naver/developers_naver_step_06.png)
 
@@ -127,7 +127,7 @@ nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 
 
 ---
 
-### 4. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 토글 활성화 {#prerequisite-step-4}
+### 4. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 네이버 네이티브 토글 활성화 {#prerequisite-step-4}
 
 - **[ 앱 설정 > 연동 > Naver ] 에서 [ 네이버 네이티브 활성화 ] 토글 활성화, Client ID 및 Client Secret 입력 후 저장**
 
@@ -135,7 +135,7 @@ nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 
 
 ---
 
-### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 재빌드 {#prerequisite-step-5}
+### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 앱 재빌드 {#prerequisite-step-5}
 
 - **[ 앱 빌드 > iOS/안드로이드 앱 > 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드**
 
@@ -145,9 +145,9 @@ nachocode SDK로 **네이버 네이티브 기능**을 사용하기 위해서는 
 
 ---
 
-### 6. 네이버 로그인 검수 신청 {#prerequisite-step-6}
+### 6. 네이버 개발자 센터에서 로그인 검수 신청 {#prerequisite-step-6}
 
-네이버 로그인의 필요한 유저 데이터는 꼭 사전 검수 요청 가이드를 확인하고 검수를 진행해주세요.
+네이버 로그인에서 필요한 유저 데이터는 꼭 사전 검수 요청 가이드를 확인하고 검수를 진행해주세요.
 
 ![developers_naver_step_07](/img/docs/naver/developers_naver_step_07.png)
 
