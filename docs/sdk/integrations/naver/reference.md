@@ -24,7 +24,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/SDK/naver.png'/>
 
-> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" /> <BadgeWithVersion type="Android" version="v1.9.0" link="/docs/releases/v1/app-source/android/release-v-1-9-0" /> <BadgeWithVersion type="iOS" version="v1.9.0" link="/docs/releases/v1/app-source/ios/release-v-1-9-0" />  
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> <BadgeWithVersion type="Android" version="v1.9.0" link="/docs/releases/v1/app-source/android/release-v-1-8-0" /> <BadgeWithVersion type="iOS" version="v1.9.0" link="/docs/releases/v1/app-source/ios/release-v-1-8-0" />  
 > 🔔 **최신화 일자:** 2026-01-16
 
 :::warning 연동을 마치셨나요?
