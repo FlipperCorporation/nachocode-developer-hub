@@ -231,6 +231,18 @@ const sidebars: SidebarsConfig = {
             'sdk/integrations/kakao/reference',
           ],
         },
+        {
+          type: 'category',
+          label: '네이버 (naver)',
+          link: {
+            type: 'generated-index',
+            title: '네이버 (naver)',
+            slug: '/sdk/integrations/naver',
+          },
+          items: [
+            'sdk/integrations/naver/integrate',
+          ],
+        },
       ],
     },
   ],
