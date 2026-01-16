@@ -157,7 +157,7 @@ export declare type FacebookUserData = {
 | [`isLoggedIn(callback)`](#is-logged-in)                | 로그인 상태 확인           | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
 | [`getUserData(permissions, callback)`](#get-user-data) | 사용자 데이터 요청         | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
 | [`logout()`](#logout)                                  | 페이스북 네이티브 로그아웃 | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
-| [`logEvent(eventName, parameters?)`](#log-event)       | Meta 앱 이벤트 로깅        | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
+| [`logEvent(eventName, parameters?)`](#log-event)       | Meta 앱 이벤트 로깅        | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" /> |
 
 ---
 
@@ -320,7 +320,7 @@ console.log('페이스북에서 로그아웃되었습니다.');
 
 ### **`logEvent(eventName: string, parameters?: Record<string, string>): void`** {#log-event}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._

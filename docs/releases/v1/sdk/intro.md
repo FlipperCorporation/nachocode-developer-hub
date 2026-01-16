@@ -11,7 +11,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/releases/release_note_sdk.png'/>
 
-> 🔔 **최신화 일자:** 2025-10-23
+> 🔔 **최신화 일자:** 2026-01-16
 
 nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 정리한 릴리즈 노트입니다.
 
@@ -19,7 +19,7 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
 
 ## 🚀 최신 SDK 릴리즈
 
-- [ver.1.8.0 릴리즈 노트](./release-v-1-8-0)
+- [ver.1.9.0 릴리즈 노트](./release-v-1-9-0)
 
 - **항상 최신 버전 가져오기 (`@latest`)**
 
@@ -27,10 +27,10 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
   <script src="https://cdn.nachocode.io/nachocode/client-sdk/@latest/client-sdk.min.js"></script>
   ```
 
-- **현재 배포된 최신 버전 가져오기 (`@1.8.0`)**
+- **현재 배포된 최신 버전 가져오기 (`@1.9.0`)**
 
   ```html
-  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.8.0/client-sdk.min.js"></script>
+  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.9.0/client-sdk.min.js"></script>
   ```
 
 ---
@@ -41,8 +41,9 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
 
 | 버전                           | 릴리즈 날짜 | 주요 내용                                                |
 | ------------------------------ | ----------- | -------------------------------------------------------- |
+| [ver.1.9.0](./release-v-1-9-0) | 2026-01-15  | Naver 연동 기능, Facebook Meta 앱 이벤트 로깅 등         |
 | [ver.1.8.0](./release-v-1-8-0) | 2025-10-23  | 네비게이션, 로딩 인디케이터 제어, 안전 영역 조회 등      |
-| [ver.1.7.0](./release-v-1-7-0) | 2025-09-23  | 앱스플라이어 연동 기능 추가                              |
+| [ver.1.7.0](./release-v-1-7-0) | 2025-09-23  | AppsFlyer 연동 기능 추가                                 |
 | [ver.1.6.3](./release-v-1-6-3) | 2025-07-28  | OS 기본 브라우저 엔진으로 링크 열기, 내부 로직 최적화 등 |
 | [ver.1.6.2](./release-v-1-6-2) | 2025-07-09  | 위치 정보 가져오기, 사용성 개선 등                       |
 | [ver.1.6.1](./release-v-1-6-1) | 2025-06-20  | 토픽 구독 반환 방식 수정, 클립보드 버그 수정 등          |

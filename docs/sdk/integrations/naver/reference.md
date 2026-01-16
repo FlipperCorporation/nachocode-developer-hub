@@ -24,7 +24,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/SDK/naver.png'/>
 
-> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> <BadgeWithVersion type="Android" version="v1.9.0" link="/docs/releases/v1/app-source/android/release-v-1-8-0" /> <BadgeWithVersion type="iOS" version="v1.9.0" link="/docs/releases/v1/app-source/ios/release-v-1-8-0" />  
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" /> <BadgeWithVersion type="Android" version="v1.9.0" link="/docs/releases/v1/app-source/android/release-v-1-8-0" /> <BadgeWithVersion type="iOS" version="v1.9.0" link="/docs/releases/v1/app-source/ios/release-v-1-8-0" />  
 > 🔔 **최신화 일자:** 2026-01-16
 
 :::warning 연동을 마치셨나요?
@@ -115,7 +115,7 @@ export declare type NaverUserData = {
 | `mobile_e164`   | `string`     | 사용자의 핸드폰번호 (E.164 포맷) | ex. `"+821012345678"`                                                                  |
 | `age`           | `string`     | 사용자의 연령대                  | ex. `"20-29"`                                                                          |
 | `birthyear`     | `string`     | 사용자의 생년                    | ex. `"2000"`                                                                           |
-| `birthday`      | `string`     | 사용자의 생일 (월-일)            | ex. `"12-31"`                                                                          |
+| `birthday`      | `string`     | 사용자의 생일 (MM-DD 형식)       | ex. `"12-31"`                                                                          |
 | `profile_image` | `string`     | 사용자의 프로필 이미지 주소      | ex. `"https://phinf.pstatic.net/contact/20241227_20/1735275960557XUHqT_PNG/image.png"` |
 
 ---
@@ -124,11 +124,11 @@ export declare type NaverUserData = {
 
 | 메서드                                    | 설명                   | 추가된 버전                                                                                   |
 | ----------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------- |
-| [`login(callback)`](#login)               | 네이버 네이티브 로그인 | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
-| [`isLoggedIn(callback)`](#is-logged-in)   | 로그인 상태 확인       | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
-| [`getUserData(callback)`](#get-user-data) | 사용자 데이터 요청     | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
-| [`logout(callback?)`](#logout)            | 네이버 사용자 로그아웃 | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
-| [`disconnect(callback?)`](#logout)        | 네이버 사용자 연결끊기 | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
+| [`login(callback)`](#login)               | 네이버 네이티브 로그인 | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" /> |
+| [`isLoggedIn(callback)`](#is-logged-in)   | 로그인 상태 확인       | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" /> |
+| [`getUserData(callback)`](#get-user-data) | 사용자 데이터 요청     | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" /> |
+| [`logout(callback?)`](#logout)            | 네이버 사용자 로그아웃 | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" /> |
+| [`disconnect(callback?)`](#logout)        | 네이버 사용자 연결끊기 | <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" /> |
 
 ---
 
@@ -136,7 +136,7 @@ export declare type NaverUserData = {
 
 ### **`login(callback: (result: NaverResult, loginData?: NaverLoginData) => void): void`** {#login}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
@@ -177,7 +177,7 @@ Nachocode.naver.login((result, loginData) => {
 
 ### **`isLoggedIn(callback: (result: NaverResult, isLoggedIn: boolean, accessToken?: string) => void): void`** {#is-logged-in}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
@@ -216,7 +216,7 @@ Nachocode.naver.isLoggedIn((result, isLoggedIn, accessToken) => {
 
 ### **`getUserData(callback: (result: NaverResult, userData?: NaverUserData) => void): void`** {#get-user-data}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
@@ -254,7 +254,7 @@ Nachocode.naver.getUserData((result, userData) => {
 
 ### **`logout(callback?: (result: NaverResult) => void): void`** {#logout}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
@@ -286,7 +286,7 @@ console.log('네이버에서 로그아웃되었습니다.');
 
 ### **`disconnect(callback?: (result: NaverResult) => void): void`** {#disconnect}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
