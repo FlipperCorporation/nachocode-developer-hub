@@ -25,7 +25,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/facebook.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-01-16
+> 🔔 **최신화 일자:** 2026-01-19
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -328,19 +328,31 @@ _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있�
 
 #### 설명 {#log-event-summary}
 
-Facebook에 커스텀 앱 이벤트를 로깅합니다.
+Facebook에 맞춤 앱 이벤트를 로깅합니다.
 사용자의 행동이나 앱 내 활동을 추적하는 데 사용됩니다.
 
-:::info
+:::warning 주의
+서로 다른 이벤트 이름을 최대 1,000개까지 사용할 수 있습니다.  
+한도에 도달하면 새로운 이벤트 유형이 로깅되지 않으므로 더 이상 사용하지 않는 이벤트는 비활성화해야 합니다.
+:::
+
+:::tip
 집계된 이벤트 로그는 [Meta 이벤트 관리자](https://eventsmanager.facebook.com/events_manager2/overview)에서 확인이 가능합니다.
+:::
+
+:::info Meta 앱 이벤트 공식 문서 보러가기
+➡️[https://developers.facebook.com/docs/app-events/overview](https://developers.facebook.com/docs/app-events/overview)
 :::
 
 #### 매개변수 {#log-event-parameters}
 
-| 이름         | 타입                     | 필수 여부 | 설명                    |
-| ------------ | ------------------------ | --------- | ----------------------- |
-| `eventName`  | `string`                 | ✅        | 이벤트 이름             |
-| `parameters` | `Record<string, string>` |           | 이벤트와 함께 전송할 값 |
+| 이름         | 타입                     | 필수 여부 | 설명                                |
+| ------------ | ------------------------ | --------- | ----------------------------------- |
+| `eventName`  | `string`                 | ✅        | 이벤트 이름                         |
+| `parameters` | `Record<string, string>` |           | 이벤트와 함께 전송할 값 (최대 25개) |
+
+- 이벤트와 매개변수 이름은 2~40자의 영숫자로 구성되어야 합니다.
+- 각 매개변수 값의 길이는 100자 이하여야 합니다.
 
 #### 반환 값 {#log-event-returns}
 
