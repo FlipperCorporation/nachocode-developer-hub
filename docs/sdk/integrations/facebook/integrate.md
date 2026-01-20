@@ -26,7 +26,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/facebook.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2026-01-19
+> 🔔 **최신화 일자:** 2026-01-20
 
 ## **필수 선행 작업** {#prerequisite}
 
@@ -177,14 +177,14 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 
 ### 앱 이벤트 설정하기 {#meta-app-events-set-ups}
 
-[필수 선행 작업](/docs/sdk/integrations/facebook/integrate#prerequisite)을 통해 Facebook 앱을 구성 후 아래 단계를 진행하세요.
+[필수 선행 작업](/docs/sdk/integrations/facebook/integrate#prerequisite)을 통해 Facebook 앱 구성을 완료한 후 아래 단계를 진행하세요.
 
 #### 1. Facebook 광고와 비즈니스 포트폴리오 연결 {#meta-app-events-set-up-step-1}
 
 광고를 게재하고 [광고 관리자](https://www.facebook.com/ads/manager)에서 설치를 측정하려면 하나 이상의 [광고 계정](https://www.facebook.com/ads/manager/accounts)과 하나의 [비즈니스 포트폴리오](https://business.facebook.com)를 앱과 연결해야합니다.
 
-1. 앱 대시보드에서 [**설정 > 고급**]을 클릭합니다.
-2. **승인된 광고 계정 ID**에 광고 계정 ID를 추가합니다. (광고 계정 ID는 **광고 관리자**에서 가져올 수 있습니다.)
+1. [Facebook 앱 대시보드](https://developers.facebook.com/apps)에서 [**설정 > 고급**]을 클릭합니다.
+2. **승인된 광고 계정 ID**에 광고 계정 ID를 추가합니다. (광고 계정 ID는 [**Facebook 광고 관리자**](https://admanager.facebook.com)에서 가져올 수 있습니다.)
 3. **광고 계정** 패널에서 **시작하기**를 클릭하고 지침에 따라 앱과 비즈니스를 연결합니다.
 
 ---
@@ -200,6 +200,8 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 <br/>
 
 #### 3. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 재빌드 {#meta-app-events-set-up-step-3}
+
+광고 추적 권한을 활성화하였다면 새 버전을 빌드하여 적용이 가능합니다.
 
 - **[ 앱 빌드 > 안드로이드/iOS > 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드**
 
@@ -218,7 +220,7 @@ nachocode SDK로 **페이스북 네이티브 기능**을 사용하기 위해서�
 1. [앱 광고 지원 도구](https://developers.facebook.com/tools/app-ads-helper)를 엽니다.
 2. **앱 선택**에서 앱을 선택한 후 **제출**을 선택합니다.
 3. 하단으로 스크롤하여 **이벤트 테스트**를 선택합니다.
-4. 앱을 시작한 후 이벤트를 보냅니다. 그러면 이벤트가 페이지에 표시됩니다.
+4. 앱을 시작한 후 이벤트를 보내면 앱 이벤트가 페이지에 표시됩니다.
 
 ---
 
