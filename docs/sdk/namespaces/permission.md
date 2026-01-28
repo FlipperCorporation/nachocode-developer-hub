@@ -23,13 +23,12 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/permission.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" /> <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" /> <BadgeWithVersion type="iOS" version="v1.2.0" link="/docs/releases/v1/app-source/ios/release-v-1-2-0" />  
-> 🔔 **최신화 일자:** 2025-07-16
+> 🛠️ **개선된 버전 :** <BadgeWithVersion type="Android" version="v1.9.1" link="/docs/releases/v1/app-source/android/release-v-1-9-1" /> <BadgeWithVersion type="iOS" version="v1.9.1" link="/docs/releases/v1/app-source/ios/release-v-1-9-1" />  
+> 🔔 **최신화 일자:** 2026-01-18
 
 ## **개요** {#overview}
 
-`permission` 네임스페이스는 **디바이스의 주요 권한(카메라, 위치, 마이크, 푸시 알림 등)의**  
-**상태를 확인하고 요청하는 기능**을 제공합니다.
-
+`permission` 네임스페이스는 **디바이스의 주요 권한(카메라, 위치, 마이크, 푸시 알림 등)의 상태를 확인하고 요청하는 기능**을 제공합니다.  
 앱이 특정 권한을 필요로 할 경우, **해당 권한이 허용되었는지 확인하고, 필요 시 사용자에게 권한 요청을 수행**할 수 있습니다.
 
 ---
@@ -38,13 +37,13 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 #### (선택사항) `microphone` 권한 사용 {#prerequisite-microphone}
 
-[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **마이크 사용** ] 토글을 활성화하여 앱 설정 완료
+[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 빌드** > **안드로이드 앱** > **빌드** > **고급 기능** ]에서 [ **마이크** ] 토글을 활성화하여 앱 설정 완료
 
 #### (선택사항) `location` 권한 사용 {#prerequisite-location}
 
-[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **고급 설정** > **안드로이드 고급 설정** ]에서 [ **위치/지도 사용** ] 토글을 활성화하여 앱 설정 완료
+[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 빌드** > **안드로이드 앱** > **빌드** > **고급 기능** ]에서 [ **위치/지도** ] 토글을 활성화하여 앱 설정 완료
 
-![nachocode_advanced_android_setting](../../../static/img/docs/android/nachocode_advanced_android_setting.png)
+![nachocode_advanced_android_setting](/img/docs/android/nachocode_build_android_advanced.png)
 
 <br/>
 
@@ -109,6 +108,7 @@ const PERMISSION_TYPES = {
 ### **`checkPermission(option: { type: PermissionType, ask?: boolean }, callback?: (granted: boolean) => void): void`** {#check-permission}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" />
+- _updated :_ <BadgeWithVersion type="Android" version="v1.9.1" link="/docs/releases/v1/app-source/android/release-v-1-9-1" /> <BadgeWithVersion type="iOS" version="v1.9.1" link="/docs/releases/v1/app-source/ios/release-v-1-9-1" />
 
 :::warning
 _`microphone`과 `location` 권한은 [필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
@@ -117,7 +117,17 @@ _`microphone`과 `location` 권한은 [필수 선행 작업](#prerequisite)이 �
 #### 설명 {#check-permission-summary}
 
 지정된 권한(`type`)이 **이미 허용되었는지 여부를 확인**합니다.  
-`ask` 옵션이 `true`일 경우, **사용자가 권한을 허용하지 않았다면 권한 요청 팝업을 표시**합니다. 콜백 함수의 매개 변수로 허용 여부를 전달합니다.
+콜백 함수의 매개 변수(`granted`)로 허용 여부를 전달합니다.
+
+:::info 정보
+**26년 01월 27일 배포된 앱소스 v.1.9.1 버전 이전과 이후의 동작이 다릅니다.**
+
+- **이전** : `ask` 옵션이 `false`여도 최초 권한 요청이었다면 기본 OS 권한 요청 팝업이 노출되었습니다.
+- **이후** : `ask` 옵션이 `false`일 경우 최초 여부와 상관 없이 기본 OS 권한 요청 팝업이 노출되지 않습니다.
+
+:::
+
+`ask` 옵션이 `true`일 경우, **사용자가 권한을 허용하지 않았다면 권한 요청 팝업을 표시**합니다.
 
 #### 매개변수 {#check-permission-parameters}
 
@@ -132,7 +142,7 @@ _`microphone`과 `location` 권한은 [필수 선행 작업](#prerequisite)이 �
 #### 반환 값 {#check-permission-returns}
 
 해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.  
-콜백 함수는 권한이 **허용되었을 경우 `true`**, 거부되었을 경우 `false` 값을 전달받습니다.
+콜백 함수는 권한이 **허용되었을 경우 `true`**, **거부되었을 경우 `false`** 값을 전달받습니다.
 
 #### 사용 예제 {#check-permission-examples}
 

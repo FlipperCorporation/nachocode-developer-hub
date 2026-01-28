@@ -14,11 +14,13 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 nachocode Android App Source **1.9.1** 버전이 반영되었습니다.
 
-이번 업데이트 **ver.1.9.1**에서는 일부 버그가 수정되었습니다. 
+이번 업데이트 **ver.1.9.1**에서는 [SDK](/docs/sdk/namespaces/permission#check-permission)를 통한 일부 기능의 동작이 수정되었습니다.
 
 ## 개선 및 수정 사항
 
-- **버그 수정**: 네이티브 권한 요청에 대한 버그가 수정되었습니다. 
+- **권한 제어**: [SDK](/docs/sdk/namespaces/permission#check-permission)를 통한 네이티브 권한 요청 제어 동작이 수정되었습니다.
+  - **이전** : `ask` 옵션이 `false`여도 최초 권한 요청이었다면 기본 OS 권한 요청 팝업이 노출되었습니다.
+  - **이후** : `ask` 옵션이 `false`일 경우 최초 여부와 상관 없이 기본 OS 권한 요청 팝업이 노출되지 않습니다.
 
 ## 업데이트 적용 방법
 
