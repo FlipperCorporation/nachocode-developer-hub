@@ -24,7 +24,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/device.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2025-10-22
+> 🔔 **최신화 일자:** 2026-03-05
 
 ## **개요** {#overview}
 
@@ -159,25 +159,32 @@ export declare type GetSafeAreaInsetsResult =
 
 ## **메서드 목록** {#method-list}
 
-| 메서드                                                  | 설명                                    | 추가된 버전                                                                                   |
-| ------------------------------------------------------- | --------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`getCurrentLanguage(callback)`](#get-current-language) | 디바이스의 현재 언어 코드를 반환합니다. | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
-| [`getBatteryLevel(callback)`](#get-battery-level)       | 디바이스의 배터리 상태를 반환합니다.    | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> |
-| [`getDeviceModel()`](#get-device-model)                 | 디바이스의 모델명을 반환합니다.         | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> |
-| [`getDeviceOS()`](#get-device-os)                       | 디바이스의 OS 유형과 버전을 반환합니다. | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> |
-| [`getNetworkStatus(callback)`](#get-network-status)     | 네트워크 연결 상태를 반환합니다.        | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> |
-| [`getSafeAreaInsets()`](#get-safe-area-insets)          | 디바이스의 안전 영역 크기를 반환합니다. | <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> |
-| [`getType()`](#get-type)                                | 현재 디바이스의 유형을 반환합니다.      | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
-| [`isAndroid()`](#is-android)                            | 현재 디바이스가 Android인지 확인합니다. | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
-| [`isIOS()`](#is-ios)                                    | 현재 디바이스가 iOS인지 확인합니다.     | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
+| 메서드                                                  | 설명                                       | 추가된 버전                                                                                     |
+| ------------------------------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| [`getCurrentLanguage(callback)`](#get-current-language) | 디바이스의 현재 언어 코드를 반환합니다.    | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />   |
+| [`getBatteryLevel(callback)`](#get-battery-level)       | 디바이스의 배터리 상태를 반환합니다.       | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />   |
+| [`getDeviceModel()`](#get-device-model)                 | 디바이스의 모델명을 반환합니다.            | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />   |
+| [`getDeviceOS()`](#get-device-os)                       | 디바이스의 OS 유형과 버전을 반환합니다.    | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />   |
+| [`getNachoDeviceToken()`](#get-nacho-device-token)      | nachocode 고유 디바이스 토큰을 반환합니다. | <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> |
+| [`getNetworkStatus(callback)`](#get-network-status)     | 네트워크 연결 상태를 반환합니다.           | <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />   |
+| [`getSafeAreaInsets()`](#get-safe-area-insets)          | 디바이스의 안전 영역 크기를 반환합니다.    | <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />   |
+| [`getType()`](#get-type)                                | 현재 디바이스의 유형을 반환합니다.         | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />   |
+| [`isAndroid()`](#is-android)                            | 현재 디바이스가 Android인지 확인합니다.    | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />   |
+| [`isIOS()`](#is-ios)                                    | 현재 디바이스가 iOS인지 확인합니다.        | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />   |
 
 ---
 
 ## **메서드 상세** {#method-details}
 
-### **`getCurrentLanguage(callback: (language: string) => void): void`** {#get-current-language}
+### **`getCurrentLanguage(callback)`** {#get-current-language}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
+
+#### 타입 정의 {#get-current-language-types}
+
+```typescript
+function getCurrentLanguage(callback: (language: string) => void): void;
+```
 
 #### 설명 {#get-current-language-summary}
 
@@ -206,9 +213,17 @@ Nachocode.device.getCurrentLanguage(language => {
 
 ---
 
-### **`getBatteryLevel(callback: (status: { batteryLevel: number, isCharging: boolean }) => void): void`** {#get-battery-level}
+### **`getBatteryLevel(callback)`** {#get-battery-level}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />
+
+#### 타입 정의 {#get-battery-level-types}
+
+```typescript
+function getBatteryLevel(
+  callback: (status: { batteryLevel: number; isCharging: boolean }) => void
+): void;
+```
 
 #### 설명 {#get-battery-level-summary}
 
@@ -243,9 +258,15 @@ Nachocode.device.getBatteryLevel(status => {
 
 ---
 
-### **`getDeviceModel(): string`** {#get-device-model}
+### **`getDeviceModel()`** {#get-device-model}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />
+
+#### 타입 정의 {#get-device-model-types}
+
+```typescript
+function getDeviceModel(): string;
+```
 
 #### 설명 {#get-device-model-summary}
 
@@ -277,9 +298,15 @@ console.log(`디바이스 모델명: ${deviceModel}`); // ex. 'SM-S928N'
 
 ---
 
-### **`getDeviceOS(): { os: DeviceType, version: string }`** {#get-device-os}
+### **`getDeviceOS()`** {#get-device-os}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />
+
+#### 타입 정의 {#get-device-os-types}
+
+```typescript
+function getDeviceOS(): { os: DeviceType; version: string };
+```
 
 #### 설명 {#get-device-os-summary}
 
@@ -301,9 +328,73 @@ console.log(`OS: ${deviceOS.os}, 버전: ${deviceOS.version}`); // ex. { os: 'An
 
 ---
 
-### **`getNetworkStatus(callback: (status: { isConnected: boolean, connectionType: NetworkConnectionType }) => void): void`** {#get-network-status}
+### **`getNachoDeviceToken()`** {#get-nacho-device-token}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+
+#### 타입 정의 {#get-nacho-device-token-types}
+
+```typescript
+function getNachoDeviceToken(): string;
+```
+
+#### 설명 {#get-nacho-device-token-summary}
+
+nachocode에서 생성한 **고유 디바이스 토큰**을 조회합니다.
+
+이 토큰은 디바이스를 고유하게 식별하는 데 사용되며, 사용자 행동 분석 및 추적에 활용할 수 있습니다.
+
+:::warning 네이티브 환경 전용
+이 메서드는 **네이티브 환경(Android, iOS)에서만** 정상 작동합니다.  
+웹 환경에서 호출 시 빈 문자열(`''`)을 반환합니다.
+:::
+
+#### 지원 플랫폼 {#get-nacho-device-token-supported-platforms}
+
+| 플랫폼                                                             | 지원 여부 | 비고           |
+| ------------------------------------------------------------------ | --------- | -------------- |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        | 정상 동작      |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | 정상 동작      |
+| ![Web](/img/docs/chrome-badge.svg)                                 | ⚠️        | 빈 문자열 반환 |
+
+#### 반환 값 {#get-nacho-device-token-returns}
+
+| 타입     | 설명                                              |
+| -------- | ------------------------------------------------- |
+| `string` | nachocode 디바이스 토큰 (웹 환경에서는 빈 문자열) |
+
+#### 사용 예제 {#get-nacho-device-token-examples}
+
+##### 기본 사용법 {#get-nacho-device-token-example-basic}
+
+```javascript
+// 웹 환경에서는 디바이스 토큰을 사용할 수 없습니다.
+// 네이티브 환경에서만 사용
+if (Nachocode.env.isApp()) {
+  // nachocode 디바이스 토큰 조회
+  const deviceToken = Nachocode.device.getNachoDeviceToken();
+  console.log('nachocode 디바이스 토큰:', deviceToken);
+  // 디바이스 토큰 활용 로직 작성
+  // ...
+}
+```
+
+---
+
+### **`getNetworkStatus(callback)`** {#get-network-status}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />
+
+#### 타입 정의 {#get-network-status-types}
+
+```typescript
+function getNetworkStatus(
+  callback: (status: {
+    isConnected: boolean;
+    connectionType: NetworkConnectionType;
+  }) => void
+): void;
+```
 
 #### 설명 {#get-network-status-summary}
 
@@ -333,10 +424,16 @@ Nachocode.device.getNetworkStatus(status => {
 
 ---
 
-### **`getSafeAreaInsets(): Promise<GetSafeAreaInsetsResult>`** {#get-safe-area-insets}
+### **`getSafeAreaInsets()`** {#get-safe-area-insets}
 
 - ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 - _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+#### 타입 정의 {#get-safe-area-insets-types}
+
+```typescript
+function getSafeAreaInsets(): Promise<GetSafeAreaInsetsResult>;
+```
 
 #### 설명 {#get-safe-area-insets-summary}
 
@@ -454,21 +551,27 @@ Safe Area Insets 값은 포인트(pt) 단위로 제공되고, 별도의 변환 �
 
 ---
 
-### **`getType(): DeviceType`** {#get-type}
+### **`getType()`** {#get-type}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
 
-#### 설명 {#get-type}
+#### 타입 정의 {#get-type-types}
+
+```typescript
+function getType(): DeviceType;
+```
+
+#### 설명 {#get-type-summary}
 
 현재 디바이스의 **유형(Android, iOS, Unknown)** 을 탐지 및 반환합니다.
 
-#### 반환 값 {#get-type}
+#### 반환 값 {#get-type-returns}
 
 | 타입         | 설명                        |
 | ------------ | --------------------------- |
 | `DeviceType` | 디바이스 유형을 반환합니다. |
 
-#### 사용 예제 {#get-type}
+#### 사용 예제 {#get-type-examples}
 
 ```javascript
 // 유저 디바이스 유형을 확인합니다.
@@ -492,9 +595,15 @@ switch (deviceType) {
 
 ---
 
-### **`isAndroid(): boolean`** {#is-android}
+### **`isAndroid()`** {#is-android}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
+
+#### 타입 정의 {#is-android-types}
+
+```typescript
+function isAndroid(): boolean;
+```
 
 #### 설명 {#is-android-summary}
 
@@ -517,9 +626,15 @@ if (Nachocode.device.isAndroid()) {
 
 ---
 
-### **`isIOS(): boolean`** {#is-ios}
+### **`isIOS()`** {#is-ios}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
+
+#### 타입 정의 {#is-ios-types}
+
+```typescript
+function isIOS(): boolean;
+```
 
 #### 설명 {#is-ios-summary}
 
