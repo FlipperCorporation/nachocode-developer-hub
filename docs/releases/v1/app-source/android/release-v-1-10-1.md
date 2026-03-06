@@ -1,24 +1,26 @@
 ---
-sidebar_label: 'ver.1.10.1 (26.03.05)'
+sidebar_label: 'ver.1.10.1 (26.03.06)'
 description: nachocode Android App Source ver.1.10.1의 릴리즈노트입니다.
 image: /img/docs/releases/release_note_android_detail.png
 ---
 
-# Release: ver.1.10.1 (2026-03-05)
+# Release: ver.1.10.1 (2026-03-06)
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
 <ThumbnailImage src='/img/docs/releases/release_note_android_detail.png'/>
 
-> 🔔 **배포 일자:** 2026-03-05
+> 🔔 **배포 일자:** 2026-03-06
 
 nachocode Android App Source **1.10.1** 버전이 반영되었습니다.
 
-이번 업데이트 **ver.1.10.1**에서는[SDK](../../sdk/release-v-1-9-0)의 일부 기능이 추가되었습니다.
+이번 업데이트 **ver.1.10.1**에서는[SDK](../../sdk/release-v-1-10-0)의 일부 기능이 추가되었습니다.
 
 ## 새로운 기능
 
 - **마케팅 수신 동의** : 마케팅 수신 동의 여부에 따라 푸시 토픽을 자동으로 관리하는 기능이 추가되었습니다.
+- **사용자 관리** : 클라이언트의 사용자 ID를 네이티브 레이어에 설정하여 관리할 수 있는 기능이 추가되었습니다.
+- **나쵸 디바이스 토큰** : nachocode에서 생성한 고유 디바이스 토큰을 조회하는 기능이 추가되었습니다.
 
 ## 업데이트 적용 방법
 
