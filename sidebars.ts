@@ -300,6 +300,7 @@ const sidebars: SidebarsConfig = {
             'releases/v1/app-source/android/intro',
             'releases/v1/app-source/android/release-v-1-10-1',
             'releases/v1/app-source/android/release-v-1-10-0',
+            'releases/v1/app-source/android/release-v-1-9-2',
             'releases/v1/app-source/android/release-v-1-9-1',
             'releases/v1/app-source/android/release-v-1-9-0',
             'releases/v1/app-source/android/release-v-1-8-7',
