@@ -27,7 +27,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/push.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2025-09-25
+> 🔔 **최신화 일자:** 2026-03-06
 
 ## **개요** {#overview}
 
@@ -37,6 +37,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 - **로컬 푸시 알림을 예약 및 취소**
 - **푸시 토픽 구독 및 취소**
 - **디바이스의 구독된 토픽 조회**
+- **마케팅/야간 푸시 동의 관리**
 
 **푸시 알림 사용법**을 더 자세히 알아보려면 아래 가이드를 참고해보세요.
 
@@ -189,239 +190,59 @@ export declare type LocalPushResult = {
 
 ---
 
-## **메서드 목록**
+### **`MarketingAllowedResult`** {#marketing-allowed-result}
 
-| 메서드                                                    | 설명                                                       | 추가된 버전                                                                                   |
-| --------------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`subscribePushTopic(topic)`](#subscribe-push-topic)      | **푸시 토픽을 구독**합니다.                                | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
-| [`unsubscribePushTopic(topic)`](#unsubscribe-push-topic)  | **푸시 토픽 구독을 취소**합니다.                           | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
-| [`getSubscriptionList(callback)`](#get-subscription-list) | 디바이스의 현재 **구독 중인 푸시 토픽 목록을 조회**합니다. | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
-| [`sendLocalPush(payload, callback?)`](#send-local-push)   | **로컬 푸시 알림을 예약**합니다.                           | <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" /> |
-| [`cancelLocalPush(id)`](#cancel-local-push)               | **예약된 로컬 푸시 알림을 취소**합니다.                    | <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" /> |
-| [`registerPushToken(userId)`](#register-push-token)       | nachocode 서버에 **푸시 토큰을 등록**합니다.               | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
-| [`deletePushToken(userId?)`](#delete-push-token)          | nachocode 서버에서 **푸시 토큰을 삭제**합니다.             | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> |
+- _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+
+```typescript
+export declare type MarketingAllowedResult = {
+  guest: boolean | null;
+  user: boolean | null;
+};
+```
+
+| 속성명  | 타입              | 필수 여부 | 설명                                                        |
+| ------- | ----------------- | --------- | ----------------------------------------------------------- |
+| `guest` | `boolean \| null` | ✅        | 게스트 사용자의 마케팅 푸시 동의 여부 (`null`: 미선택 상태) |
+| `user`  | `boolean \| null` | ✅        | 로그인 사용자의 마케팅 푸시 동의 여부 (`null`: 미선택 상태) |
 
 ---
 
-## **메서드 상세**
+## **메서드 목록** {#method-list}
 
-### **`subscribePushTopic(topic: string): Promise<PushTopicResult>`** {#subscribe-push-topic}
-
-- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
-- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.1" link="/docs/releases/v1/sdk/release-v-1-6-1" />
-
-:::warning 주의
-_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
-:::
-
-#### 설명 {#subscribe-push-topic-summary}
-
-지정한 푸시 토픽을 구독합니다.
-구독이 성공하면 [**nachocode 서버 API**](../../api/push/topic-push.endpoints#post-v2-topic)를 통해서 발송하거나
-**FCM에서 해당 토픽으로 직접 발송**한 메시지를 수신할 수 있습니다.
-
-#### 매개변수 {#subscribe-push-topic-parameters}
-
-| 이름    | 타입     | 필수 여부 | 설명             |
-| ------- | -------- | --------- | ---------------- |
-| `topic` | `string` | ✅        | 구독할 토픽 이름 |
-
-#### 반환 값 {#subscribe-push-topic-returns}
-
-| 타입                       | 설명                              |
-| -------------------------- | --------------------------------- |
-| `Promise<PushTopicResult>` | 구독 성공 또는 실패 정보를 포함함 |
-
-#### 사용 예제 {#subscribe-push-topic-examples}
-
-```javascript
-try {
-  const result = await Nachocode.push.subscribePushTopic('event-promotion');
-  if (result.status === 'success') {
-    console.log('토픽 구독 성공');
-  } else {
-    console.error('토픽 구독 실패:', result.message);
-  }
-} catch (err) {
-  console.error('토픽 구독 중 오류 발생:', err);
-}
-```
+| 메서드                                                    | 설명                                                       | 추가된 버전                                                                                     |
+| --------------------------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [`registerPushToken(userId)`](#register-push-token)       | nachocode 서버에 **푸시 토큰을 등록**합니다.               | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />   |
+| [`deletePushToken(userId?)`](#delete-push-token)          | nachocode 서버에서 **푸시 토큰을 삭제**합니다.             | <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />   |
+| [`sendLocalPush(payload, callback?)`](#send-local-push)   | **로컬 푸시 알림을 예약**합니다.                           | <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />   |
+| [`cancelLocalPush(id)`](#cancel-local-push)               | **예약된 로컬 푸시 알림을 취소**합니다.                    | <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />   |
+| [`subscribePushTopic(topic)`](#subscribe-push-topic)      | **푸시 토픽을 구독**합니다.                                | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />   |
+| [`unsubscribePushTopic(topic)`](#unsubscribe-push-topic)  | **푸시 토픽 구독을 취소**합니다.                           | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />   |
+| [`getSubscriptionList(callback)`](#get-subscription-list) | 디바이스의 현재 **구독 중인 푸시 토픽 목록을 조회**합니다. | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />   |
+| [`setMarketingAllowed(allowed)`](#set-marketing-allowed)  | **마케팅 푸시 동의 여부를 설정**합니다.                    | <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> |
+| [`getMarketingAllowed()`](#get-marketing-allowed)         | **마케팅 푸시 동의 상태를 조회**합니다.                    | <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> |
+| [`setNightAllowed(allowed)`](#set-night-allowed)          | **야간 푸시 동의 여부를 설정**합니다.                      | <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> |
+| [`getNightAllowed()`](#get-night-allowed)                 | **야간 푸시 동의 상태를 조회**합니다.                      | <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> |
 
 ---
 
-### **`unsubscribePushTopic(topic: string): Promise<PushTopicResult>`** {#unsubscribe-push-topic}
+## **메서드 상세** {#method-details}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
-- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.1" link="/docs/releases/v1/sdk/release-v-1-6-1" />
-
-:::warning 주의
-_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
-:::
-
-#### 설명 {#unsubscribe-push-topic-summary}
-
-지정한 푸시 토픽 구독을 해지합니다.
-이후 해당 토픽으로 발송된 메시지를 더 이상 수신하지 않게 됩니다.
-
-#### 매개변수 {#unsubscribe-push-topic-parameters}
-
-| 이름    | 타입     | 필수 여부 | 설명             |
-| ------- | -------- | --------- | ---------------- |
-| `topic` | `string` | ✅        | 해지할 토픽 이름 |
-
-#### 반환 값 {#unsubscribe-push-topic-returns}
-
-| 타입                       | 설명                                 |
-| -------------------------- | ------------------------------------ |
-| `Promise<PushTopicResult>` | 구독 해지 성공 또는 실패 정보를 포함 |
-
-#### 사용 예제 {#unsubscribe-push-topic-examples}
-
-```javascript
-try {
-  const result = await Nachocode.push.unsubscribePushTopic('event-promotion');
-  if (result.status === 'success') {
-    console.log('토픽 구독 해지 성공');
-  } else {
-    console.error('토픽 구독 해지 실패:', result.message);
-  }
-} catch (err) {
-  console.error('토픽 구독 해지 중 오류 발생:', err);
-}
-```
-
----
-
-### **`getSubscriptionList(callback)`** {#get-subscription-list}
-
-- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
-
-:::warning 주의
-_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
-:::
-
-#### 설명 {#get-subscription-list-summary}
-
-현재 디바이스에서 구독 중인 **푸시 토픽 목록을 조회**합니다.
-
-#### 매개변수 {#get-subscription-list-parameters}
-
-| 이름       | 타입                                   | 필수 여부 | 설명                                  |
-| ---------- | -------------------------------------- | --------- | ------------------------------------- |
-| `callback` | `(subscriptionList: string[]) => void` | ✅        | 구독된 토픽 이름 목록을 콜백으로 수신 |
-
-#### 사용 예제 {#get-subscription-list-examples}
-
-```javascript
-Nachocode.push.getSubscriptionList(list => {
-  console.log('현재 구독 중인 토픽 목록:', list);
-});
-```
-
----
-
-### **`sendLocalPush(payload, callback?)`** {#send-local-push}
-
-- _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
-
-#### 설명 {#send-local-push-summary}
-
-로컬 푸시 알림을 예약하고, 특정 시각(`scheduledTime`)에 디바이스에서 푸시 알림을 표시할 수 있습니다.
-즉시 발송하거나 예약 발송이 가능하며, 예약된 알림은 `id` 값을 사용해 취소할 수도 있습니다.
-
-#### 매개변수 {#send-local-push-parameters}
-
-| 이름       | 타입                                                      | 필수 여부 | 설명                           |
-| ---------- | --------------------------------------------------------- | --------- | ------------------------------ |
-| `payload`  | [`LocalPushPayload`](#local-push-payload)                 | ✅        | 예약할 로컬 푸시 데이터        |
-| `callback` | [`(result: LocalPushResult) => void`](#local-push-result) | ❌        | 예약 성공 여부를 반환하는 콜백 |
-
-#### 반환 값 {#send-local-push-returns}
-
-해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
-
-#### 사용 예제 {#send-local-push-examples}
-
-```javascript
-// 1. 즉시 발송 (예약 시간 없이)
-// `scheduledTime`을 지정하지 않으면 즉시 발송됩니다.
-Nachocode.push.sendLocalPush(
-  {
-    title: '깜짝 쿠폰 발송!',
-    content: '지금 바로 앱에서 확인해보세요!.',
-    link: 'https://nachocode.io/pricing',
-  },
-  result => {
-    if (result.status === 'success') {
-      console.log(`푸시 알림이 즉시 발송되었습니다.`);
-    } else {
-      console.error(`푸시 알림 발송 실패: ${result.message}`);
-    }
-  }
-);
-```
-
-```javascript
-// 2. 예약 발송
-// `scheduledTime`을 지정하면 해당 시각에 알림이 표시됩니다.
-Nachocode.push.sendLocalPush(
-  {
-    title: '미팅 알림',
-    content: '회의 시작 10분 전입니다.',
-    scheduledTime: new Date('2025-03-01T10:00:00Z'),
-    id: 101,
-  },
-  result => {
-    if (result.status === 'success') {
-      console.log(`푸시 알림이 예약되었습니다. (ID: ${result.id})`);
-    } else {
-      console.error(`푸시 예약 실패: ${result.message}`);
-    }
-  }
-);
-```
-
----
-
-### **`cancelLocalPush(id: number)`** {#cancel-local-push}
-
-- _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
-
-#### 설명 {#cancel-local-push-summary}
-
-예약된 로컬 푸시 알림을 취소합니다.
-취소하려는 푸시 알림의 `id` 값을 전달해야 합니다.
-
-[`sendLocalPush`](#send-local-push)에서 반환된 `id`를 사용합니다.
-
-#### 매개변수 {#cancel-local-push-parameters}
-
-| 이름 | 타입     | 필수 여부 | 설명                         |
-| ---- | -------- | --------- | ---------------------------- |
-| `id` | `number` | ✅        | 취소할 예약된 푸시 알림의 ID |
-
-#### 반환 값 {#cancel-local-push-returns}
-
-해당 메서드는 반환 값을 가지지 않습니다.
-
-#### 사용 예제 {#cancel-local-push-examples}
-
-```javascript
-// 예약된 푸시 알림 취소
-Nachocode.push.cancelLocalPush(101);
-console.log('푸시 알림이 취소되었습니다.');
-```
-
----
-
-### **`registerPushToken(userId: string): Promise<PushTokenResult>`** {#register-push-token}
+### **`registerPushToken(userId)`** {#register-push-token}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
-- _lastupdated : 반환 타입 변경, 내부 로직 최적화_ <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" />
+- _updated : 반환 타입 변경, 내부 로직 최적화_ <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" />
+- _lastupdated : 내부에서 `Nachocode.user.setUserId` 호출_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
 
 :::warning 주의
 _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#register-push-token-types}
+
+```typescript
+function registerPushToken(userId: string): Promise<PushTokenResult>;
+```
 
 #### 설명 {#register-push-token-summary}
 
@@ -484,14 +305,21 @@ function onLoginSuccess(userId) {
 
 ---
 
-### **`deletePushToken(userId?: string): Promise<PushTokenResult>`** {#delete-push-token}
+### **`deletePushToken(userId?)`** {#delete-push-token}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
-- _lastupdated : 반환 타입 변경, 내부 로직 최적화_ <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" />
+- _updated : 반환 타입 변경, 내부 로직 최적화_ <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" />
+- _lastupdated : 내부에서 `Nachocode.user.deleteUserId` 호출_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
 
 :::warning 주의
 _[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#delete-push-token-types}
+
+```typescript
+function deletePushToken(userId?: string): Promise<PushTokenResult>;
+```
 
 #### 설명 {#delete-push-token-summary}
 
@@ -555,6 +383,435 @@ function onLogout(userId) {
       console.error(`푸시 토큰 삭제 실패: ${result.message}`);
     }
   });
+}
+```
+
+---
+
+### **`sendLocalPush(payload, callback?)`** {#send-local-push}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
+
+#### 타입 정의 {#send-local-push-types}
+
+```typescript
+function sendLocalPush(
+  payload: LocalPushPayload,
+  callback?: (result: LocalPushResult) => void
+): void;
+```
+
+#### 설명 {#send-local-push-summary}
+
+로컬 푸시 알림을 예약하고, 특정 시각(`scheduledTime`)에 디바이스에서 푸시 알림을 표시할 수 있습니다.
+즉시 발송하거나 예약 발송이 가능하며, 예약된 알림은 `id` 값을 사용해 취소할 수도 있습니다.
+
+#### 매개변수 {#send-local-push-parameters}
+
+| 이름       | 타입                                                      | 필수 여부 | 설명                           |
+| ---------- | --------------------------------------------------------- | --------- | ------------------------------ |
+| `payload`  | [`LocalPushPayload`](#local-push-payload)                 | ✅        | 예약할 로컬 푸시 데이터        |
+| `callback` | [`(result: LocalPushResult) => void`](#local-push-result) | ❌        | 예약 성공 여부를 반환하는 콜백 |
+
+#### 반환 값 {#send-local-push-returns}
+
+해당 메서드는 반환 값을 가지지 않으며, 결과는 `callback`을 통해 비동기적으로 제공됩니다.
+
+#### 사용 예제 {#send-local-push-examples}
+
+```javascript
+// 1. 즉시 발송 (예약 시간 없이)
+// `scheduledTime`을 지정하지 않으면 즉시 발송됩니다.
+Nachocode.push.sendLocalPush(
+  {
+    title: '깜짝 쿠폰 발송!',
+    content: '지금 바로 앱에서 확인해보세요!.',
+    link: 'https://nachocode.io/pricing',
+  },
+  result => {
+    if (result.status === 'success') {
+      console.log(`푸시 알림이 즉시 발송되었습니다.`);
+    } else {
+      console.error(`푸시 알림 발송 실패: ${result.message}`);
+    }
+  }
+);
+```
+
+```javascript
+// 2. 예약 발송
+// `scheduledTime`을 지정하면 해당 시각에 알림이 표시됩니다.
+Nachocode.push.sendLocalPush(
+  {
+    title: '미팅 알림',
+    content: '회의 시작 10분 전입니다.',
+    scheduledTime: new Date('2025-03-01T10:00:00Z'),
+    id: 101,
+  },
+  result => {
+    if (result.status === 'success') {
+      console.log(`푸시 알림이 예약되었습니다. (ID: ${result.id})`);
+    } else {
+      console.error(`푸시 예약 실패: ${result.message}`);
+    }
+  }
+);
+```
+
+---
+
+### **`cancelLocalPush(id)`** {#cancel-local-push}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
+
+#### 타입 정의 {#cancel-local-push-types}
+
+```typescript
+function cancelLocalPush(id: number): void;
+```
+
+#### 설명 {#cancel-local-push-summary}
+
+예약된 로컬 푸시 알림을 취소합니다.
+취소하려는 푸시 알림의 `id` 값을 전달해야 합니다.
+
+[`sendLocalPush`](#send-local-push)에서 반환된 `id`를 사용합니다.
+
+#### 매개변수 {#cancel-local-push-parameters}
+
+| 이름 | 타입     | 필수 여부 | 설명                         |
+| ---- | -------- | --------- | ---------------------------- |
+| `id` | `number` | ✅        | 취소할 예약된 푸시 알림의 ID |
+
+#### 반환 값 {#cancel-local-push-returns}
+
+해당 메서드는 반환 값을 가지지 않습니다.
+
+#### 사용 예제 {#cancel-local-push-examples}
+
+```javascript
+// 예약된 푸시 알림 취소
+Nachocode.push.cancelLocalPush(101);
+console.log('푸시 알림이 취소되었습니다.');
+```
+
+---
+
+### **`subscribePushTopic(topic)`** {#subscribe-push-topic}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.1" link="/docs/releases/v1/sdk/release-v-1-6-1" />
+
+:::warning 주의
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 타입 정의 {#subscribe-push-topic-types}
+
+```typescript
+function subscribePushTopic(topic: string): Promise<PushTopicResult>;
+```
+
+#### 설명 {#subscribe-push-topic-summary}
+
+지정한 푸시 토픽을 구독합니다.
+구독이 성공하면 [**nachocode 서버 API**](../../api/push/topic-push.endpoints#post-v2-topic)를 통해서 발송하거나
+**FCM에서 해당 토픽으로 직접 발송**한 메시지를 수신할 수 있습니다.
+
+#### 매개변수 {#subscribe-push-topic-parameters}
+
+| 이름    | 타입     | 필수 여부 | 설명             |
+| ------- | -------- | --------- | ---------------- |
+| `topic` | `string` | ✅        | 구독할 토픽 이름 |
+
+#### 반환 값 {#subscribe-push-topic-returns}
+
+| 타입                       | 설명                              |
+| -------------------------- | --------------------------------- |
+| `Promise<PushTopicResult>` | 구독 성공 또는 실패 정보를 포함함 |
+
+#### 사용 예제 {#subscribe-push-topic-examples}
+
+```javascript
+try {
+  const result = await Nachocode.push.subscribePushTopic('event-promotion');
+  if (result.status === 'success') {
+    console.log('토픽 구독 성공');
+  } else {
+    console.error('토픽 구독 실패:', result.message);
+  }
+} catch (err) {
+  console.error('토픽 구독 중 오류 발생:', err);
+}
+```
+
+---
+
+### **`unsubscribePushTopic(topic)`** {#unsubscribe-push-topic}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.1" link="/docs/releases/v1/sdk/release-v-1-6-1" />
+
+:::warning 주의
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 타입 정의 {#unsubscribe-push-topic-types}
+
+```typescript
+function unsubscribePushTopic(topic: string): Promise<PushTopicResult>;
+```
+
+#### 설명 {#unsubscribe-push-topic-summary}
+
+지정한 푸시 토픽 구독을 해지합니다.
+이후 해당 토픽으로 발송된 메시지를 더 이상 수신하지 않게 됩니다.
+
+#### 매개변수 {#unsubscribe-push-topic-parameters}
+
+| 이름    | 타입     | 필수 여부 | 설명             |
+| ------- | -------- | --------- | ---------------- |
+| `topic` | `string` | ✅        | 해지할 토픽 이름 |
+
+#### 반환 값 {#unsubscribe-push-topic-returns}
+
+| 타입                       | 설명                                 |
+| -------------------------- | ------------------------------------ |
+| `Promise<PushTopicResult>` | 구독 해지 성공 또는 실패 정보를 포함 |
+
+#### 사용 예제 {#unsubscribe-push-topic-examples}
+
+```javascript
+try {
+  const result = await Nachocode.push.unsubscribePushTopic('event-promotion');
+  if (result.status === 'success') {
+    console.log('토픽 구독 해지 성공');
+  } else {
+    console.error('토픽 구독 해지 실패:', result.message);
+  }
+} catch (err) {
+  console.error('토픽 구독 해지 중 오류 발생:', err);
+}
+```
+
+---
+
+### **`getSubscriptionList(callback)`** {#get-subscription-list}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
+
+:::warning 주의
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 타입 정의 {#get-subscription-list-types}
+
+```typescript
+function getSubscriptionList(
+  callback: (subscriptionList: Array<string>) => void
+): void;
+```
+
+#### 설명 {#get-subscription-list-summary}
+
+현재 디바이스에서 구독 중인 **푸시 토픽 목록을 조회**합니다.
+
+#### 매개변수 {#get-subscription-list-parameters}
+
+| 이름       | 타입                                   | 필수 여부 | 설명                                  |
+| ---------- | -------------------------------------- | --------- | ------------------------------------- |
+| `callback` | `(subscriptionList: string[]) => void` | ✅        | 구독된 토픽 이름 목록을 콜백으로 수신 |
+
+#### 사용 예제 {#get-subscription-list-examples}
+
+```javascript
+Nachocode.push.getSubscriptionList(list => {
+  console.log('현재 구독 중인 토픽 목록:', list);
+});
+```
+
+---
+
+### **`setMarketingAllowed(allowed)`** {#set-marketing-allowed}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+
+:::warning 주의
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 타입 정의 {#set-marketing-allowed-types}
+
+```typescript
+function setMarketingAllowed(allowed: boolean): Promise<void>;
+```
+
+#### 설명 {#set-marketing-allowed-summary}
+
+디바이스 사용자의 **광고성 푸시 알림 수신 동의 여부를 설정**합니다.
+
+:::info 정보통신망법 준수
+광고성 정보 알림 전송은 [**정보통신망 이용촉진 및 정보보보호 등에 관한 법률 제50조**](https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000688185&lsId=000030)에 따라 사용자의 **사전 동의**가 반드시 필요합니다.
+:::
+
+#### 매개변수 {#set-marketing-allowed-parameters}
+
+| 이름      | 타입      | 필수 여부 | 설명                                                   |
+| --------- | --------- | --------- | ------------------------------------------------------ |
+| `allowed` | `boolean` | ✅        | 마케팅 푸시 수신 동의 여부 (`true` 동의, `false` 거부) |
+
+#### 반환 값 {#set-marketing-allowed-returns}
+
+해당 메서드는 반환 값을 가지지 않습니다.
+
+#### 사용 예제 {#set-marketing-allowed-examples}
+
+```javascript
+// 마케팅 푸시 수신 동의
+Nachocode.push.setMarketingAllowed(true);
+console.log('마케팅 푸시 수신에 동의하였습니다.');
+
+// 마케팅 푸시 수신 거부
+Nachocode.push.setMarketingAllowed(false);
+console.log('마케팅 푸시 수신을 거부하였습니다.');
+```
+
+---
+
+### **`getMarketingAllowed()`** {#get-marketing-allowed}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+
+:::warning 주의
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 타입 정의 {#get-marketing-allowed-types}
+
+```typescript
+function getMarketingAllowed(): Promise<MarketingAllowedResult>;
+```
+
+#### 설명 {#get-marketing-allowed-summary}
+
+디바이스 사용자의 **광고성 푸시 알림 수신 동의 상태를 조회**합니다.  
+게스트 사용자와 로그인 사용자의 동의 상태를 별도로 반환합니다.
+
+#### 반환 값 {#get-marketing-allowed-returns}
+
+| 타입                                                           | 설명                       |
+| -------------------------------------------------------------- | -------------------------- |
+| [`Promise<MarketingAllowedResult>`](#marketing-allowed-result) | 마케팅 푸시 동의 상태 정보 |
+
+#### 사용 예제 {#get-marketing-allowed-examples}
+
+```javascript
+// 마케팅 푸시 동의 상태 조회
+// { guest: boolean | null, user: boolean | null } 형태로 반환
+const marketingAllowed = await Nachocode.push.getMarketingAllowed();
+
+console.log('게스트 사용자 동의 상태:', marketingAllowed.guest);
+console.log('로그인 사용자 동의 상태:', marketingAllowed.user);
+
+// 동의 상태에 따른 로직 작성
+if (marketingAllowed.user === true) {
+  // true: 마케팅 수신 동의한 상태
+  // ...
+} else if (marketingAllowed.user === false) {
+  // false: 마케팅 수신 거부한 상태
+  // ...
+} else {
+  // null: 아직 선택하지 않은 상태
+  // ...
+}
+```
+
+---
+
+### **`setNightAllowed(allowed)`** {#set-night-allowed}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+
+:::warning 주의
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 타입 정의 {#set-night-allowed-types}
+
+```typescript
+function setNightAllowed(allowed: boolean): Promise<void>;
+```
+
+#### 설명 {#set-night-allowed-summary}
+
+디바이스 사용자의 **야간(21:00 ~ 08:00) 푸시 알림 수신 동의 여부를 설정**합니다.
+
+:::info 정보통신망법 준수
+야간 시간대(21:00 ~ 08:00) 광고성 정보 전송은 [**정보통신망 이용촉진 및 정보보보호 등에 관한 법률 제50조 3항**](https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000688185&lsId=000030)에 따라 수신자의 **별도 사전 동의**가 반드시 필요합니다.
+:::
+
+#### 매개변수 {#set-night-allowed-parameters}
+
+| 이름      | 타입      | 필수 여부 | 설명                                                 |
+| --------- | --------- | --------- | ---------------------------------------------------- |
+| `allowed` | `boolean` | ✅        | 야간 푸시 수신 동의 여부 (`true` 동의, `false` 거부) |
+
+#### 반환 값 {#set-night-allowed-returns}
+
+해당 메서드는 반환 값을 가지지 않습니다.
+
+#### 사용 예제 {#set-night-allowed-examples}
+
+```javascript
+// 야간 푸시 수신 동의
+Nachocode.push.setNightAllowed(true);
+
+// 야간 푸시 수신 거부
+Nachocode.push.setNightAllowed(false);
+```
+
+---
+
+### **`getNightAllowed()`** {#get-night-allowed}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+
+:::warning 주의
+_[필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
+:::
+
+#### 타입 정의 {#get-night-allowed-types}
+
+```typescript
+function getNightAllowed(): Promise<boolean | null>;
+```
+
+#### 설명 {#get-night-allowed-summary}
+
+디바이스 사용자의 **야간 푸시 알림 수신 동의 상태를 조회**합니다.
+
+#### 반환 값 {#get-night-allowed-returns}
+
+| 타입                       | 설명                                                           |
+| -------------------------- | -------------------------------------------------------------- |
+| `Promise<boolean \| null>` | 야간 푸시 동의 상태 (`true` 동의, `false` 거부, `null` 미선택) |
+
+#### 사용 예제 {#get-night-allowed-examples}
+
+```javascript
+// 야간 푸시 동의 상태 조회
+const nightAllowed = await Nachocode.push.getNightAllowed();
+
+// 동의 상태에 따른 로직 작성
+if (nightAllowed === true) {
+  // true: 야간 수신 동의한 상태
+  // ...
+} else if (nightAllowed === false) {
+  // false: 야간 수신 거부한 상태
+  // ...
+} else {
+  // null: 아직 선택하지 않은 상태
+  // ...
 }
 ```
 

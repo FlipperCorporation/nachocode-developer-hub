@@ -1,0 +1,165 @@
+---
+description: nachocode SDK의 `user` 네임스페이스를 사용하여 네이티브 레이어에서 사용자 고유 ID를 설정, 조회, 삭제할 수 있습니다. 사용자 추적 및 분석에 활용할 수 있습니다.
+keywords:
+  [
+    앱 사용자 ID 관리,
+    앱 사용자 식별,
+    앱 사용자 추적,
+    app user ID management,
+    app user identification,
+    app user tracking,
+  ]
+image: /img/docs/thumbnails/SDK/user.png
+---
+
+# 사용자 (`user`)
+
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/SDK/user.png'/>
+
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.0" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.0" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
+> 🔔 **최신화 일자:** 2026-03-06
+
+## **개요** {#overview}
+
+`user` 네임스페이스는 **사용자 고유 ID를 네이티브 레이어에서 관리하는 기능**을 제공합니다.
+
+- **사용자 ID를 네이티브 레이어에 저장**
+- **저장된 사용자 ID를 조회**
+- **저장된 사용자 ID를 삭제**
+
+:::info
+**클라이언트의 사용자 ID를 설정**하면 사용자 추적, 분석, 개인화 푸시 알림 등의 기능에서 일관된 사용자 식별이 가능합니다.
+:::
+
+---
+
+## **메서드 목록** {#method-list}
+
+| 메서드                              | 설명                                             | 추가된 버전                                                                                     |
+| ----------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| [`setUserId(userId)`](#set-user-id) | 네이티브 레이어에 사용자 ID를 설정합니다.        | <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> |
+| [`getUserId()`](#get-user-id)       | 네이티브 레이어에 저장된 사용자 ID를 조회합니다. | <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> |
+| [`deleteUserId()`](#delete-user-id) | 네이티브 레이어에 저장된 사용자 ID를 삭제합니다. | <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> |
+
+---
+
+## **메서드 상세** {#method-details}
+
+### **`setUserId(userId)`** {#set-user-id}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+
+#### 타입 정의 {#set-user-id-types}
+
+```typescript
+function setUserId(userId: string): void;
+```
+
+#### 설명 {#set-user-id-summary}
+
+네이티브 레이어에 사용자 ID를 설정합니다.  
+사용자가 로그인할 때 호출하여 사용자를 식별할 수 있도록 합니다.
+
+#### 매개변수 {#set-user-id-parameters}
+
+| 파라미터 | 타입     | 필수 여부 | 설명                     |
+| -------- | -------- | --------- | ------------------------ |
+| `userId` | `string` | ✅        | 클라이언트 사용자 식별자 |
+
+#### 반환 값 {#set-user-id-returns}
+
+해당 메서드는 반환 값을 가지지 않습니다.
+
+#### 사용 예제 {#set-user-id-examples}
+
+```javascript
+// 사용자 로그인 시 사용자 ID 설정
+Nachocode.user.setUserId('user_12345');
+```
+
+```javascript
+// 로그인 핸들러에서 사용
+function handleLogin(userId) {
+  // 로그인 성공 후 사용자 ID 설정
+  Nachocode.user.setUserId(userId);
+
+  console.log('사용자 ID가 설정되었습니다:', userId);
+}
+```
+
+:::tip 푸시 토큰과 함께 사용
+`Nachocode.push.registerPushToken(userId)`는 내부적으로 `setUserId()`를 호출하므로, 푸시 토큰 등록 시 별도로 호출할 필요가 없습니다.
+:::
+
+---
+
+### **`getUserId()`** {#get-user-id}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+
+#### 타입 정의 {#get-user-id-types}
+
+```typescript
+function getUserId(): Promise<string | null>;
+```
+
+#### 설명 {#get-user-id-summary}
+
+네이티브 레이어에 저장된 사용자 ID를 비동기로 조회합니다.  
+저장된 사용자 ID가 없거나 조회할 수 없는 경우 `null`을 반환합니다.
+
+#### 반환값 {#get-user-id-types}
+
+| 타입                      | 설명                            |
+| ------------------------- | ------------------------------- |
+| `Promise<string \| null>` | 저장된 사용자 ID, 없으면 `null` |
+
+#### 사용 예제 {#get-user-id-examples}
+
+```javascript
+// 저장된 사용자 ID 조회
+const userId = await Nachocode.user.getUserId();
+
+if (userId) {
+  console.log('저장된 사용자 ID:', userId);
+} else {
+  console.log('저장된 사용자 ID가 없습니다.');
+}
+```
+
+---
+
+### **`deleteUserId()`** {#delete-user-id}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+
+#### 타입 정의 {#delete-user-id-types}
+
+```typescript
+function deleteUserId(): void;
+```
+
+#### 설명 {#delete-user-id-summary}
+
+네이티브 레이어에 저장된 사용자 ID를 삭제합니다.  
+사용자가 로그아웃할 때 호출하여 사용자 정보를 제거할 수 있습니다.
+
+#### 반환 값 {#delete-user-id-returns}
+
+해당 메서드는 반환 값을 가지지 않습니다.
+
+#### 사용 예제 {#delete-user-id-examples}
+
+```javascript
+// 사용자 로그아웃 시 저장된 사용자 ID 삭제
+Nachocode.user.deleteUserId();
+```
+
+:::tip 푸시 토큰 삭제와 함께 사용
+`Nachocode.push.deletePushToken()`은 내부적으로 `deleteUserId()`를 호출하므로, 푸시 토큰 삭제 시 별도로 호출할 필요가 없습니다.
+:::
+
+---
