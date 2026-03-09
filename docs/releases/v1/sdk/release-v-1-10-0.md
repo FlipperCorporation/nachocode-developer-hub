@@ -154,7 +154,7 @@ if (marketingAllowed.user === true) {
 ```
 
 :::info 정보통신망법 준수
-광고성 정보 알림 전송은 [**정보통신망 이용촉진 및 정보보보호 등에 관한 법률 제50조**](https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000688185&lsId=000030)에 따라 사용자의 **사전 동의**가 반드시 필요합니다.
+광고성 정보 알림 전송은 [**정보통신망 이용촉진 및 정보보호 등에 관한 법률 제50조**](https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000688185&lsId=000030)에 따라 사용자의 **사전 동의**가 반드시 필요합니다.
 :::
 
 ---
@@ -202,7 +202,7 @@ if (nightAllowed === true) {
 ```
 
 :::info 정보통신망법 준수
-야간 시간대(21:00 ~ 08:00) 광고성 정보 전송은 [**정보통신망 이용촉진 및 정보보보호 등에 관한 법률 제50조 3항**](https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000688185&lsId=000030)에 따라 수신자의 **별도 사전 동의**가 반드시 필요합니다.
+야간 시간대(21:00 ~ 08:00) 광고성 정보 전송은 [**정보통신망 이용촉진 및 정보보호 등에 관한 법률 제50조 3항**](https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000688185&lsId=000030)에 따라 수신자의 **별도 사전 동의**가 반드시 필요합니다.
 :::
 
 ---

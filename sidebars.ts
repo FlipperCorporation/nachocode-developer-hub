@@ -18,6 +18,7 @@ const sidebars: SidebarsConfig = {
         'guide/push/topic-push',
         'guide/push/all-push',
         'guide/push/local-push',
+        'guide/push/marketing-push',
       ],
     },
     {

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 sidebar_label: 전체 푸시
 pagination_label: 전체 푸시 가이드
 description: nachocode 전체 푸시 가이드는 API를 활용한 전체 푸시 알림 전송 방법을 안내합니다. 사전 작업 필요없이 유저의 모든 디바이스로 푸시 알림을 전송할 수 있습니다.
