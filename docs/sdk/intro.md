@@ -29,7 +29,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/SDK/intro.svg'/>
 
-> 🔔 **최신화 일자:** 2025-10-22
+> 🔔 **최신화 일자:** 2026-03-09
 
 **nachocode Client SDK**는 웹 클라이언트 개발자가 **모바일 네이티브 앱의 고유 기능**을 손쉽게 활용할 수 있도록 돕는 JavaScript SDK입니다. 웹 애플리케이션에 nachocode Client SDK를 연동하면 코드 몇 줄만으로도 간단하게 디바이스의 다양한 기능을 활용하여 **하이브리드 앱**을 개발할 수 있습니다. 웹 기술만으로도 모바일 기기의 네이티브 API를 호출하고 제어할 수 있으므로, **별도 네이티브**(**Android/iOS**) **개발** 없이도 앱 기능을 구현할 수 있습니다.
 
@@ -260,7 +260,14 @@ QR 코드 스캔 및 기타 스캔 기능을 제어할 수 있습니다.
 ➡️ [탭바 네임스페이스 문서 바로가기](./namespaces/tabbar)
 :::
 
-### 21. **진동 및 햅틱 피드백 (`vibration`)**
+### 21. **사용자 관리 (`user`)**
+
+사용자 고유 ID를 네이티브 레이어에서 관리하는 기능을 제공합니다.
+:::info user
+➡️ [사용자 네임스페이스 문서 바로가기](./namespaces/user)
+:::
+
+### 22. **진동 및 햅틱 피드백 (`vibration`)**
 
 디바이스의 진동 및 햅틱 피드백을 트리거할 수 있습니다.
 :::info vibration

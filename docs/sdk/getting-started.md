@@ -29,7 +29,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/SDK/getting-started.svg'/>
 
-> 🔔 **최신화 일자:** 2025-10-22
+> 🔔 **최신화 일자:** 2026-03-09
 
 **nachocode Client SDK**를 프로젝트에 통합하고 기본적으로 사용할 수 있도록 설정하는 방법을 안내합니다.
 
@@ -46,7 +46,7 @@ nachocode Client SDK는 웹 클라이언트에서 **네이티브 앱의 기능**
 
 ### 최신 버전 불러오기
 
-- 현재 최신 버전 v1.8.0
+- 현재 최신 버전 v1.10.0
 
 - 최신 버전의 SDK를 항상 유지하려면 아래 코드를 사용하세요
 
@@ -59,7 +59,7 @@ nachocode Client SDK는 웹 클라이언트에서 **네이티브 앱의 기능**
 - 특정 버전으로 고정하려면 다음과 같이 사용합니다
 
   ```html
-  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.8.0/client-sdk.min.js"></script>
+  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.10.0/client-sdk.min.js"></script>
   ```
 
 :::info
