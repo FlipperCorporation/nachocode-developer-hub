@@ -32,6 +32,9 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 :::info
 **클라이언트의 사용자 ID를 설정**하면 사용자 추적, 분석, 개인화 푸시 알림 등의 기능에서 일관된 사용자 식별이 가능합니다.
+
+**마케팅 푸시에 관련하여** 사용자 ID 설정 여부에 따라 **게스트(비로그인) 동의**와 **유저(로그인) 동의**가 구분되어 관리됩니다.  
+자세한 내용은 [마케팅 푸시 가이드](/docs/guide/push/marketing-push)를 참고하세요.
 :::
 
 ---
@@ -60,8 +63,13 @@ function setUserId(userId: string): void;
 
 #### 설명 {#set-user-id-summary}
 
-네이티브 레이어에 사용자 ID를 설정합니다.  
+네이티브 레이어에 사용자 ID를 설정합니다.
 사용자가 로그인할 때 호출하여 사용자를 식별할 수 있도록 합니다.
+
+:::info 마케팅 푸시 관련
+`setUserId()` 호출 시 앱이 **로그인 상태로 전환**되며, 이후 `Nachocode.push.setMarketingAllowed()`를 호출하면 **유저(로그인) 마케팅 동의**가 저장됩니다.
+자세한 내용은 [마케팅 푸시 가이드](/docs/guide/push/marketing-push)를 참고하세요.
+:::
 
 #### 매개변수 {#set-user-id-parameters}
 
@@ -144,8 +152,13 @@ function deleteUserId(): void;
 
 #### 설명 {#delete-user-id-summary}
 
-네이티브 레이어에 저장된 사용자 ID를 삭제합니다.  
+네이티브 레이어에 저장된 사용자 ID를 삭제합니다.
 사용자가 로그아웃할 때 호출하여 사용자 정보를 제거할 수 있습니다.
+
+:::info 마케팅 푸시 관련
+`deleteUserId()` 호출 시 앱이 **비로그인 상태(게스트)로 전환**되며, 이후 `Nachocode.push.setMarketingAllowed()`를 호출하면 **게스트(비로그인) 마케팅 동의**가 저장됩니다.
+자세한 내용은 [마케팅 푸시 가이드](/docs/guide/push/marketing-push)를 참고하세요.
+:::
 
 #### 반환 값 {#delete-user-id-returns}
 

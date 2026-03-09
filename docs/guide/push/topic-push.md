@@ -29,9 +29,11 @@ image: /img/docs/thumbnails/GUIDE/push.svg
 # 토픽 푸시
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
+> 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> <BadgeWithVersion type="Android" version="v1.6.0" link="/docs/releases/v1/app-source/android/release-v-1-6-0" /> <BadgeWithVersion type="iOS" version="v1.6.0" link="/docs/releases/v1/app-source/ios/release-v-1-6-0" />  
 > 🔔 **최신화 일자:** 2025-06-20
 
 <!-- 2025-06-04 최초 생성 -->

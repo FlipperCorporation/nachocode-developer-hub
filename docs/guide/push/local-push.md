@@ -22,9 +22,11 @@ image: /img/docs/thumbnails/GUIDE/push.svg
 # 로컬 푸시
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
+> 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" /> <BadgeWithVersion type="Android" version="v1.4.1" link="/docs/releases/v1/app-source/android/release-v-1-4-1" /> <BadgeWithVersion type="iOS" version="v1.4.1" link="/docs/releases/v1/app-source/ios/release-v-1-4-1" />  
 > 🔔 **최신화 일자:** 2025-09-25
 
 이 문서는 **로컬 푸시 알림**에 대한 설명과 **로컬 푸시 예약 및 관리**에 필요한 **프로세스**에 대해 안내합니다.
