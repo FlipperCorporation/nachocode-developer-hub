@@ -22,7 +22,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/backkey.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" /> <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" />  
-> 🔔 **최신화 일자:** 2025-07-16
+> 🔔 **최신화 일자:** 2026-03-17
 
 ![Android-Only](https://img.shields.io/badge/Android_only-gray?logo=android)
 
@@ -60,9 +60,18 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ## **메서드 상세** {#method-details}
 
-### **`addEvent(event: (eventId: string) => void, eventId?: string): string`** {#add-event}
+### **`addEvent(event, eventId?)`** {#add-event}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" />
+
+#### 타입 정의 {#add-event-types}
+
+```typescript
+function addEvent(
+  event: (eventId: string) => void,
+  eventId?: string
+): string | void;
+```
 
 #### **설명** {#add-event-summary}
 
@@ -71,16 +80,17 @@ Android의 **네이티브 백 키가 눌렸을 때 호출될 이벤트 리스너
 
 #### **매개변수** {#add-event-parameters}
 
-| 이름      | 타입                        | 필수 여부 | 설명                                                    |
-| --------- | --------------------------- | --------- | ------------------------------------------------------- |
-| `event`   | `(eventId: string) => void` | ✅        | 백 키 이벤트가 발생했을 때 실행할 콜백 함수             |
-| `eventId` | `string` (_optional_)       | ❌        | 특정 이벤트를 식별하기 위한 고유 ID (기본값: 자동 할당) |
+| 이름      | 타입                        | 필수 여부 | 설명                                                       |
+| --------- | --------------------------- | --------- | ---------------------------------------------------------- |
+| `event`   | `(eventId: string) => void` | ✅        | 백 키 이벤트가 발생했을 때 실행할 콜백 함수                |
+| `eventId` | `string` (_optional_)       | ❌        | 특정 이벤트를 식별하기 위한 고유 ID _(Default: 자동 할당)_ |
 
 #### **반환 값** {#add-event-returns}
 
 | 타입     | 설명                                    |
 | -------- | --------------------------------------- |
 | `string` | 등록된 이벤트의 `eventId`를 반환합니다. |
+| `void`   | 등록 실패 시 값을 반환하지 않습니다.    |
 
 #### **사용 예제** {#add-event-examples}
 
@@ -102,9 +112,15 @@ Nachocode.backkey.addEvent(eventId => {
 
 ---
 
-### **`clearEvent(): void`** {#clear-event}
+### **`clearEvent()`** {#clear-event}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" />
+
+#### 타입 정의 {#clear-event-types}
+
+```typescript
+function clearEvents(): void;
+```
 
 #### 설명 {#clear-event-summary}
 
@@ -124,9 +140,15 @@ Nachocode.backkey.clearEvent();
 
 ---
 
-### **`getLastEvent(): string`** {#get-last-event}
+### **`getLastEvent()`** {#get-last-event}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" />
+
+#### 타입 정의 {#get-last-event-types}
+
+```typescript
+function getLastEvent(): string | void;
+```
 
 #### 설명 {#get-last-event-summary}
 
@@ -134,9 +156,10 @@ Nachocode.backkey.clearEvent();
 
 #### 반환 값 {#get-last-event-returns}
 
-| 타입     | 설명                                        |
-| -------- | ------------------------------------------- |
-| `string` | 가장 최근에 추가된 백 키 이벤트의 `eventId` |
+| 타입     | 설명                                                                     |
+| -------- | ------------------------------------------------------------------------ |
+| `string` | 가장 최근에 등록된 백 키 이벤트의 `eventId`                              |
+| `void`   | 등록된 백 키 이벤트가 없거나 조회를 실패 할 경우 값을 반환하지 않습니다. |
 
 #### 사용 예제 {#get-last-event-examples}
 
@@ -158,9 +181,15 @@ console.log(`마지막 이벤트 ID: ${lastEventId}`); // "sample2"
 
 ---
 
-### **`removeEvent(eventId?: string): string`** {#remove-event}
+### **`removeEvent(eventId?)`** {#remove-event}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" />
+
+#### 타입 정의 {#remove-event-types}
+
+```typescript
+function removeEvent(eventId?: string): string | void;
+```
 
 #### 설명 {#remove-event-summary}
 
@@ -179,9 +208,10 @@ console.log(`마지막 이벤트 ID: ${lastEventId}`); // "sample2"
 
 #### 반환 값 {#remove-event-returns}
 
-| 타입     | 설명                                    |
-| -------- | --------------------------------------- |
-| `string` | 제거된 이벤트의 `eventId`를 반환합니다. |
+| 타입     | 설명                                                               |
+| -------- | ------------------------------------------------------------------ |
+| `string` | 제거된 이벤트의 `eventId`를 반환합니다.                            |
+| `void`   | 제거된 이벤트가 없거나, 제거를 실패할 경우 값을 반환하지 않습니다. |
 
 #### 사용 예제 {#remove-event-examples}
 
