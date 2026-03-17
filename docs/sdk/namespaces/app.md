@@ -22,7 +22,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/app.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2025-10-22
+> 🔔 **최신화 일자:** 2026-03-17
 
 ## **개요** {#overview}
 
@@ -45,9 +45,15 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ## **메서드 상세** {#method-details}
 
-### **`checkFirstLaunch(callback: (isFirstLaunch: boolean) => void): void`** {#check-first-launch}
+### **`checkFirstLaunch(callback)`** {#check-first-launch}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
+
+#### 타입 정의 {#check-first-launch-types}
+
+```typescript
+function checkFirstLaunch(callback: (isFirstLaunch: boolean) => void): void;
+```
 
 #### 설명 {#check-first-launch-summary}
 
@@ -79,9 +85,15 @@ Nachocode.app.checkFirstLaunch(isFirstLaunch => {
 
 ---
 
-### **`getAppName(): string`** {#get-app-name}
+### **`getAppName()`** {#get-app-name}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
+
+#### 타입 정의 {#get-app-name-types}
+
+```typescript
+function getAppName(): string;
+```
 
 #### 설명 {#get-app-name-summary}
 
@@ -90,9 +102,9 @@ Nachocode.app.checkFirstLaunch(isFirstLaunch => {
 
 #### 반환 값 {#get-app-name-returns}
 
-| 타입     | 설명                    |
-| -------- | ----------------------- |
-| `string` | 앱의 이름을 반환합니다. |
+| 타입     | 설명                                                                 |
+| -------- | -------------------------------------------------------------------- |
+| `string` | 앱의 이름을 반환합니다. Web 환경에서 호출 시 빈 문자열을 반환합니다. |
 
 #### 사용 예제 {#get-app-name-examples}
 
@@ -103,9 +115,15 @@ console.log(`앱 이름: ${appName}`);
 
 ---
 
-### **`getAppKey(): string`** {#get-app-key}
+### **`getAppKey()`** {#get-app-key}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
+
+#### 타입 정의 {#get-app-key-types}
+
+```typescript
+function getAppKey(): string;
+```
 
 #### 설명 {#get-app-key-summary}
 
@@ -114,9 +132,9 @@ console.log(`앱 이름: ${appName}`);
 
 #### 반환 값 {#get-app-key-returns}
 
-| 타입     | 설명                                          |
-| -------- | --------------------------------------------- |
-| `string` | nachocode에서 발급한 앱의 고유 식별 키입니다. |
+| 타입     | 설명                                                                                       |
+| -------- | ------------------------------------------------------------------------------------------ |
+| `string` | nachocode에서 발급한 앱의 고유 식별 키입니다. Web 환경에서 호출 시 빈 문자열을 반환합니다. |
 
 #### 사용 예제 {#get-app-key-examples}
 
@@ -127,9 +145,15 @@ console.log(`앱 키: ${appKey}`); // ex. 'APP-XXXXXXX'
 
 ---
 
-### **`getCurrentAppVersion(): string`** {#get-current-app-version}
+### **`getCurrentAppVersion()`** {#get-current-app-version}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
+
+#### 타입 정의 {#get-current-app-version-types}
+
+```typescript
+function getCurrentAppVersion(): `${number}.${number}.${number}` | void;
+```
 
 #### 설명 {#get-current-app-version-summary}
 
@@ -138,9 +162,10 @@ console.log(`앱 키: ${appKey}`); // ex. 'APP-XXXXXXX'
 
 #### 반환 값 {#get-current-app-version-returns}
 
-| 타입     | 설명                             |
-| -------- | -------------------------------- |
-| `string` | 설치된 앱의 버전 (예: `"1.0.0"`) |
+| 타입                            | 설명                                            |
+| ------------------------------- | ----------------------------------------------- |
+| `${number}.${number}.${number}` | 설치된 앱의 버전 (ex. `"1.0.0"`)                |
+| `void`                          | Web 환경에서 호출 시 반환 값을 가지지 않습니다. |
 
 #### 사용 예제 {#get-current-app-version-examples}
 
@@ -155,6 +180,12 @@ console.log(`현재 앱 버전: ${appVersion}`); // ex. "1.0.0"
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" />
 
+#### 타입 정의 {#get-package-name-types}
+
+```typescript
+function getPackageName(): string;
+```
+
 #### 설명 {#get-package-name-summary}
 
 현재 실행 중인 앱의 **패키지명**을 반환합니다.  
@@ -162,9 +193,9 @@ console.log(`현재 앱 버전: ${appVersion}`); // ex. "1.0.0"
 
 #### 반환 값 {#get-package-name-returns}
 
-| 타입     | 설명                                                    |
-| -------- | ------------------------------------------------------- |
-| `string` | 애플리케이션의 패키지명 (예: `"com.nachocode.example"`) |
+| 타입     | 설명                                                                        |
+| -------- | --------------------------------------------------------------------------- |
+| `string` | 애플리케이션의 패키지명입니다. Web 환경에서 호출 시 빈 문자열을 반환합니다. |
 
 #### 사용 예제 {#get-package-name-examples}
 
@@ -181,7 +212,7 @@ console.log(`패키지명: ${packageName}`); // ex. "com.nachocode.example"
 
 #### 설명 {#exit-app-summary}
 
-앱을 **프로그래밍 방식으로 종료**합니다. **사용자가 명시적으로 종료를 선택**했거나 서비스에 필수적인 권한이 허용되지 않은 경우 등 **더 이상 앱을 지속할 수 없는 특정 상황**에서만 신중하게 사용하세요.
+앱을 **프로그래밍적으로 강제 종료**합니다. **사용자가 명시적으로 종료를 선택**했거나 서비스에 필수적인 권한이 허용되지 않은 경우 등 **더 이상 앱을 지속할 수 없는 특정 상황**에서만 신중하게 사용하세요.
 
 :::info 기본 종료 흐름
 나쵸코드 Android 앱소스에서는 **루트 화면에서 뒤로가기를 누르면 “ '뒤로' 버튼을 한 번 더 누르면 종료됩니다. ” 안내 → 두 번째 뒤로가기 시 종료**되는 패턴이 **기본 제공**됩니다. 이 기본 동작을 대체하기 위해 `exitApp()`을 사용할 필요는 없습니다.
@@ -192,7 +223,7 @@ console.log(`패키지명: ${packageName}`); // ex. "com.nachocode.example"
 앱 스토어 가이드라인에 따르면 사용자의 명시적인 동의 없이 앱을 종료하는 것은 권장되지 않습니다.
 
 - **Android**: `exitApp()`은 현재 태스크를 최근 앱 목록에서 제거하며 종료합니다.
-- **iOS**: 시스템 정책상 정상적인 프로그램적 종료 방식이 없어, **의도적으로 크래시를 발생시켜 종료**합니다. 이 종료는 **크래시 리포트**(App Store Connect/Xcode Organizer, Crashlytics 등)에 집계됩니다. 추가적으로 의도적 크래시는 **크래시율 악화** 및 **심사 반려 리스크**가 있습니다. 상용(스토어) 배포에서는 사용을 지양하세요.
+- **iOS**: 시스템 정책상 정상적인 프로그래밍적 종료 방식이 없어, **의도적으로 크래시를 발생시켜 종료**합니다. 이 종료는 **크래시 리포트**(App Store Connect/Xcode Organizer, Crashlytics 등)에 집계됩니다. 추가적으로 의도적 크래시는 **크래시율 악화** 및 **심사 반려 리스크**가 있습니다. 상용(스토어) 배포에서는 가급적이면 사용을 지양하세요.
 
 :::
 
