@@ -30,7 +30,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/browser.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />  
-> 🔔 **최신화 일자:** 2025-10-22
+> 🔔 **최신화 일자:** 2026-03-17
 
 ## **개요** {#overview}
 
@@ -53,7 +53,7 @@ URL을 열 때 **외부 브라우저(Chrome, Safari 등) 또는 앱 내부 브�
 ### **`OpenURLOption`** {#open-url-option}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" />
-- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" />
+- _lastupdated :_ _`internal_default` 옵션 추가_ <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" />
 
 링크를 여는 브라우저 옵션을 나타내는 타입입니다.
 
@@ -64,11 +64,11 @@ export declare type OpenURLOption =
   | 'internal_default';
 ```
 
-| 옵션                 | 설명                    | 추가된 버전                                                                                                                                                                                                                                                                                                                           |
-| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `'external'`         | 앱 외부 기본 브라우저   | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <br/><BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <br/><BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />     |
-| `'internal'`         | 인앱 브라우저 (WebView) | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <br/><BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <br/><BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />     |
-| `'internal_default'` | 앱 내부 기본 브라우저   | <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" /> <br/> <BadgeWithVersion type="Android" version="v1.6.9" link="/docs/releases/v1/app-source/android/release-v-1-6-9" /> <br/> <BadgeWithVersion type="iOS" version="v1.6.10" link="/docs/releases/v1/app-source/ios/release-v-1-6-10" /> |
+| 옵션                 | 설명                                   | 추가된 버전                                                                                                                                                                                                                                                                                                                           |
+| -------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `'external'`         | 앱 외부 기본 브라우저                  | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <br/><BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <br/><BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />     |
+| `'internal'`         | 인앱 브라우저 (WebView)                | <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <br/><BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <br/><BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />     |
+| `'internal_default'` | 앱 내부 기본 브라우저 (Safari, Chrome) | <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" /> <br/> <BadgeWithVersion type="Android" version="v1.6.9" link="/docs/releases/v1/app-source/android/release-v-1-6-9" /> <br/> <BadgeWithVersion type="iOS" version="v1.6.10" link="/docs/releases/v1/app-source/ios/release-v-1-6-10" /> |
 
 - `'external'`
 
@@ -119,10 +119,16 @@ export declare type SetInternalBrowserOption = {
 
 ## **메서드 상세** {#method-details}
 
-### **`openLink(url: string, option?: OpenURLOption): void`** {#open-link}
+### **`openLink(url, option?)`** {#open-link}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" />
 - _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.3" link="/docs/releases/v1/sdk/release-v-1-6-3" />
+
+#### 타입 정의 {#open-link-types}
+
+```typescript
+function openLink(url: string, option?: OpenURLOption): void;
+```
 
 #### 설명 {#open-link-summary}
 
@@ -146,7 +152,7 @@ export declare type SetInternalBrowserOption = {
 | 이름     | 타입                                             | 필수 여부 | 설명                                                          |
 | -------- | ------------------------------------------------ | --------- | ------------------------------------------------------------- |
 | `url`    | `string`                                         | ✅        | 열고자 하는 웹 페이지 URL                                     |
-| `option` | [`OpenURLOption`](#open-url-option) (_optional_) | ❌        | `'external'`, `'internal'`, `'internal_default'` 중 선택 가능 |
+| `option` | [`OpenURLOption`](#open-url-option) _(optional)_ | ❌        | `'external'`, `'internal'`, `'internal_default'` 중 선택 가능 |
 
 #### 반환 값 {#open-link-returns}
 
@@ -195,16 +201,23 @@ Nachocode.browser.openLink('https://nachocode.io', 'internal_default');
 
 ---
 
-### **`setInternalBrowser(option: SetInternalBrowserOption): void`** {#set-internal-browser}
+### **`setInternalBrowser(option)`** {#set-internal-browser}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+#### 타입 정의 {#set-internal-browser-types}
+
+```typescript
+function setInternalBrowser(option: SetInternalBrowserOption): void;
+```
 
 #### 설명 {#set-internal-browser-summary}
 
 내부 브라우저의 **옵션을 설정**합니다.
 현재는 **URL 바 표시 여부**만 제어할 수 있습니다.
 
-이 설정은 `openLink` 메서드에서 `'internal'` 옵션을 사용할 때, `<a>` 태그로 새 창을 열었을 때 실행되는 내부 브라우저에 적용됩니다.
+이 설정은 `openLink` 메서드에서 `'internal'` 옵션을 사용할 때,  
+혹은 `<a target="_blank">` 태그로 새 창을 열었을 때 실행되는 **내부 브라우저**에 적용됩니다.
 
 #### 지원 플랫폼 {#set-internal-browser-supported-platforms}
 
