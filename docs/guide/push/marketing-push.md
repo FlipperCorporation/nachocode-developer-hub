@@ -31,7 +31,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
-> 🔔 **최신화 일자:** 2026-03-09
+> 🔔 **최신화 일자:** 2026-03-17
 
 이 문서는 **광고성 푸시 알림**(**마케팅 푸시**)의 법적 요구사항과 nachocode SDK를 활용한 구현 방법을 안내합니다.
 
@@ -140,14 +140,14 @@ console.log('회원 동의:', marketingAllowed.user); // boolean | null
 ```javascript
 // 비로그인 상태
 Nachocode.push.setMarketingAllowed(true);
-// → guest 동의만 설정됨
+// → `guest` 동의만 설정됨
 
-// 로그인 (registerPushToken 호출 시 자동으로 로그인 상태로 전환)
+// 로그인 (registerPushToken 호출 시 자동으로 `guest` → `user` 상태로 전환)
 await Nachocode.push.registerPushToken('user123');
 
 // 로그인 상태
 Nachocode.push.setMarketingAllowed(true);
-// → user 동의 설정됨
+// → `user` 동의 설정됨
 ```
 
 :::info 자동 처리되는 내용
