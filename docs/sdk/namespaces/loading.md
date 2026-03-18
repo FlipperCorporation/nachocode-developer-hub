@@ -24,7 +24,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/loading.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />  
-> 🔔 **최신화 일자:** 2025-10-29
+> 🔔 **최신화 일자:** 2026-03-18
 
 ## **개요** {#overview}
 
@@ -44,16 +44,22 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ## **메서드 상세** {#method-details}
 
-### **`hideIndicator(): void`** {#hide-indicator}
+### **`hideIndicator()`** {#hide-indicator}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+#### 타입 정의 {#hide-indicator-types}
+
+```typescript
+function hideIndicator(): void;
+```
 
 #### 설명 {#hide-indicator-summary}
 
 :::warning 주의
-[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 설정** > **고급 앱 설정** > **공통 고급 설정** ]에서 **로딩 인디케이터** 활성화가 된 상태로 빌드된 앱에서 사용 가능한 메서드입니다.
+[nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)의 [ **앱 디자인** > **로딩 스피너** ]에서 **로딩 스피너** 활성화가 된 상태로 빌드된 앱에서 사용 가능한 메서드입니다.
 
-![nachocode_dashboard_common_setting_loading_indicator](/img/docs/settings/nachocode_dashboard_common_setting_loading_indicator.png)
+![nachocode_dashboard_common_setting_loading_indicator](/img/docs/loading/nachocode_dashboard_loading_spinner.png)
 :::
 
 네이티브 **로딩 인디케이터를 숨깁니다**.
