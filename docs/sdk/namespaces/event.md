@@ -25,7 +25,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/event.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.2" link="/docs/releases/v1/sdk/release-v-1-0-2" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2025-07-16
+> 🔔 **최신화 일자:** 2026-03-18
 
 ## **개요** {#overview}
 
@@ -84,9 +84,15 @@ export declare type EventType = (typeof EVENT_TYPES)[keyof typeof EVENT_TYPES];
 
 ## **메서드 상세** {#method-details}
 
-### **`on(eventName: EventType, callback: (params?: any) => void): void`** {#on}
+### **`on(eventName, callback)`** {#on}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.2" link="/docs/releases/v1/sdk/release-v-1-0-2" />
+
+#### 타입 정의 {#on-types}
+
+```typescript
+function on(eventName: EventType, callback: (params?: any) => void): void;
+```
 
 #### 설명 {#on-summary}
 
@@ -176,9 +182,15 @@ Nachocode.event.on('keyboardhidden', () => {
 
 ---
 
-### **`off(eventName: EventType): void`** {#off}
+### **`off(eventName)`** {#off}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" />
+
+#### 타입 정의 {#off-types}
+
+```typescript
+function off(eventName: EventType): void;
+```
 
 #### 설명 {#off-summary}
 
@@ -285,14 +297,14 @@ Nachocode.event.on('foreground', () => {
   console.log('애플리케이션이 활성화되었습니다.');
   // ex) 데이터 새로고침, 배지 업데이트
   refreshContent();
-  updateNotificationBadge();
+  updateNotificationCount();
 });
 ```
 
 :::tip 언제 활용할까?
 
 - 유저 복귀 후 최신 상태로 UI 갱신
-- 배지, 알림 현황을 다시 체크하여 반영
+- 알림 현황을 다시 체크하여 반영
 
 :::
 
