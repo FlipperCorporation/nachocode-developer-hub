@@ -23,7 +23,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/setting.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-07-18
+> 🔔 **최신화 일자:** 2026-03-19
 
 ## **개요** {#overview}
 
@@ -50,9 +50,15 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ## **메서드 상세** {#method-details}
 
-### **`openSetting(): void`** {#open-setting}
+### **`openSetting()`** {#open-setting}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.2" link="/docs/releases/v1/sdk/release-v-1-4-2" />
+
+#### 타입 정의 {#open-setting-types}
+
+```typescript
+function openSetting(): void;
+```
 
 #### 설명 {#open-setting-summary}
 
@@ -76,9 +82,15 @@ Nachocode.setting.openSetting();
 
 ---
 
-### **`setPullToRefresh(enable: boolean): void`** {#set-pull-to-refresh}
+### **`setPullToRefresh(enable)`** {#set-pull-to-refresh}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
+
+#### 타입 정의 {#set-pull-to-refresh-types}
+
+```typescript
+function setPullToRefresh(enable: boolean): void;
+```
 
 #### 설명 {#set-pull-to-refresh-summary}
 
@@ -118,9 +130,15 @@ Nachocode.setting.setPullToRefresh(false);
 
 ---
 
-### **`setSupportZoom(enable: boolean): void`** {#set-support-zoom}
+### **`setSupportZoom(enable)`** {#set-support-zoom}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
+
+#### 타입 정의 {#set-support-zoom-types}
+
+```typescript
+function setSupportZoom(enable: boolean): void;
+```
 
 #### 설명 {#set-support-zoom-summary}
 
