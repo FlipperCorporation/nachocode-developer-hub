@@ -96,8 +96,8 @@ export declare type PushTokenResult =
 | `status`     | `'success' \| 'error'` | ✅        | 푸시 토큰 요청 성공 여부                       |
 | `statusCode` | `number`               | ✅        | 푸시 토큰 결과 상태 코드                       |
 | `message`    | `string`               | ✅        | 결과 상세 메시지. (에러 발생 시 사유 반환)     |
-| `desc`       | `string`               | ❌        | **(_optional_)** 오류 상세 내용 (에러 발생 시) |
-| `code`       | `string`               | ❌        | **(_optional_)** 오류 코드 (에러 발생 시)      |
+| `desc`       | `string`               | ❌        | **_(optional)_** 오류 상세 내용 (에러 발생 시) |
+| `code`       | `string`               | ❌        | **_(optional)_** 오류 코드 (에러 발생 시)      |
 
 ---
 
@@ -139,7 +139,7 @@ export declare type PushTopicResult =
 | ------------ | ---------------------- | --------- | ------------------------------------------ |
 | `status`     | `'success' \| 'error'` | ✅        | 푸시 토픽 구독 요청 성공 여부              |
 | `statusCode` | `number`               | ✅        | 푸시 토픽 구독 결과 상태 코드              |
-| `errorCode`  | `string`               | ❌        | **(_optional_)** 오류 코드 (에러 발생 시)  |
+| `errorCode`  | `string`               | ❌        | **_(optional)_** 오류 코드 (에러 발생 시)  |
 | `message`    | `string`               | ✅        | 결과 상세 메시지. (에러 발생 시 사유 반환) |
 
 ---
@@ -162,11 +162,11 @@ export declare type LocalPushPayload = {
 | 속성명          | 타입      | 필수 여부 | 설명                                                                        |
 | --------------- | --------- | --------- | --------------------------------------------------------------------------- |
 | `title`         | `string`  | ✅        | 푸시 알림의 제목                                                            |
-| `content`       | `string`  | ❌        | **(_optional_)** 푸시 알림의 본문 메시지 (지정하지 않으면 제목만 노출)      |
-| `link`          | `string`  | ❌        | **(_optional_)** 클릭 시 이동할 URL (지정하지 않으면 앱 열기)               |
-| `usingAppIcon`  | `boolean` | ❌        | **(_optional_)** 앱 아이콘을 푸시 아이콘으로 사용할지 여부 (기본값: `true`) |
-| `scheduledTime` | `Date`    | ❌        | **(_optional_)** 예약된 발송 시각 (지정하지 않으면 즉시 발송됨)             |
-| `id`            | `number`  | ❌        | **(_optional_)** 예약된 푸시를 식별할 ID (지정하지 않으면 자동 생성)        |
+| `content`       | `string`  | ❌        | **_(optional)_** 푸시 알림의 본문 메시지 (지정하지 않으면 제목만 노출)      |
+| `link`          | `string`  | ❌        | **_(optional)_** 클릭 시 이동할 URL (지정하지 않으면 앱 열기)               |
+| `usingAppIcon`  | `boolean` | ❌        | **_(optional)_** 앱 아이콘을 푸시 아이콘으로 사용할지 여부 (기본값: `true`) |
+| `scheduledTime` | `Date`    | ❌        | **_(optional)_** 예약된 발송 시각 (지정하지 않으면 즉시 발송됨)             |
+| `id`            | `number`  | ❌        | **_(optional)_** 예약된 푸시를 식별할 ID (지정하지 않으면 자동 생성)        |
 
 ---
 
@@ -186,9 +186,9 @@ export declare type LocalPushResult = {
 | 속성명       | 타입                   | 필수 여부 | 설명                                                         |
 | ------------ | ---------------------- | --------- | ------------------------------------------------------------ |
 | `status`     | `'success' \| 'error'` | ✅        | 푸시 알림 예약 성공 여부                                     |
-| `statusCode` | `string`               | ❌        | **(_optional_)** 오류 발생 시 반환되는 코드                  |
-| `message`    | `string`               | ❌        | **(_optional_)** 오류 발생 시 반환되는 메시지                |
-| `id`         | `number`               | ❌        | **(_optional_)** 예약된 푸시 알림의 ID (취소할 때 사용 가능) |
+| `statusCode` | `string`               | ❌        | **_(optional)_** 오류 발생 시 반환되는 코드                  |
+| `message`    | `string`               | ❌        | **_(optional)_** 오류 발생 시 반환되는 메시지                |
+| `id`         | `number`               | ❌        | **_(optional)_** 예약된 푸시 알림의 ID (취소할 때 사용 가능) |
 
 ---
 

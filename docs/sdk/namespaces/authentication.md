@@ -57,7 +57,7 @@ iOS에서 nachocode SDK로 **생체 인증 기능**을 사용하기 위해서는
 | 필드                 | 타입                                | 설명                                                |
 | -------------------- | ----------------------------------- | --------------------------------------------------- |
 | `authenticated`      | `boolean`                           | 인증 성공 여부 (`true`: 인증됨, `false`: 인증 실패) |
-| `error` (_optional_) | `{ code: string, message: string }` | 인증 실패 시 발생한 오류 코드 및 메시지             |
+| `error` _(optional)_ | `{ code: string, message: string }` | 인증 실패 시 발생한 오류 코드 및 메시지             |
 
 ---
 

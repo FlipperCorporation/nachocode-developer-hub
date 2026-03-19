@@ -70,8 +70,8 @@ export declare type AppleResult = AppleSuccessResult | AppleErrorResult;
 | 필드                     | 타입     | 설명                                 |
 | ------------------------ | -------- | ------------------------------------ |
 | `status`                 | `string` | 요청 결과 상태 (`success` / `error`) |
-| `errorCode` (_optional_) | `string` | 오류 코드                            |
-| `message` (_optional_)   | `string` | 오류 메시지                          |
+| `errorCode` _(optional)_ | `string` | 오류 코드                            |
+| `message` _(optional)_   | `string` | 오류 메시지                          |
 
 ---
 
@@ -121,9 +121,9 @@ export declare type AppleUserData = {
 | `identifier`                   | `string` | Apple 사용자 고유 식별자 |
 | `token`                        | `string` | 사용자 토큰              |
 | `authorizationCode`            | `string` | Apple 인증 코드          |
-| `email` (_optional_)           | `string` | 사용자 이메일            |
-| `name.familyName` (_optional_) | `string` | 사용자 성                |
-| `name.givenName` (_optional_)  | `string` | 사용자 이름              |
+| `email` _(optional)_           | `string` | 사용자 이메일            |
+| `name.familyName` _(optional)_ | `string` | 사용자 성                |
+| `name.givenName` _(optional)_  | `string` | 사용자 이름              |
 | `[fields: string]`             | `any`    | 기타 사용자 데이터       |
 
 ---
