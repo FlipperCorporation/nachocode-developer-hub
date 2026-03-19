@@ -20,7 +20,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/scanner.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-07-18
+> 🔔 **최신화 일자:** 2026-03-19
 
 ## **개요** {#overview}
 
@@ -40,9 +40,21 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ## **메서드 상세** {#method-details}
 
-### **`openQRCodeScanner(option: { openDirect: boolean, openType?: 'internal' | 'external' | 'main' }, callback?: (data: string, error?: SDKError) => void): void`** {#open-qr-code-scanner}
+### **`openQRCodeScanner(option, callback?)`** {#open-qr-code-scanner}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
+
+#### 타입 정의 {#open-qr-code-scanner-types}
+
+```typescript
+function openQRCodeScanner(
+  option: {
+    openDirect: boolean;
+    openType?: 'internal' | 'external' | 'main';
+  },
+  callback?: (data: string | undefined, error?: SDKError) => void
+): void;
+```
 
 #### 설명 {#open-qr-code-scanner-summary}
 
