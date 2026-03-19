@@ -23,7 +23,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/share.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> <BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />  
-> 🔔 **최신화 일자:** 2025-07-22
+> 🔔 **최신화 일자:** 2026-03-19
 
 ## **개요** {#overview}
 
@@ -50,10 +50,28 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ## **메서드 상세** {#method-details}
 
-### **`openSharing(shareData: { title?: string; url: string; text?: string } | { title?: string; url?: string; text: string }): void`** {#open-sharing}
+### **`openSharing(shareData)`** {#open-sharing}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
-- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> - _Web 플랫폼 지원 추가_
+
+#### 타입 정의 {#open-sharing-types}
+
+```typescript
+function openSharing(
+  shareData:
+    | {
+        title?: string;
+        url: string;
+        text?: string;
+      }
+    | {
+        title?: string;
+        url?: string;
+        text: string;
+      }
+): void;
+```
 
 #### 설명 {#open-sharing-summary}
 
@@ -62,7 +80,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 네이티브 공유 UI는 **기본적으로 사용자의 디바이스에 설치된 공유 가능한 앱 목록**을 표시합니다.
 
 **웹 공유 API와 동일한 구조**의 `{ title, url, text }` 형식을 지원합니다.  
-공유하기 기능은 [**SDK ver.1.6.0**](/docs/releases/v1/sdk/release-v-1-6-0)부터 **웹, Android, iOS 플랫폼 모두에서 사용 가능**합니다.
+공유하기 기능은 [**SDK ver.1.6.0**](/docs/releases/v1/sdk/release-v-1-6-0)부터 **Web, Android, iOS 모든 플랫폼에서 사용 가능**합니다.
 
 :::tip 참고
 [MDN - Navigator: share( ) method](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)
@@ -70,7 +88,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 #### 지원 플랫폼 {#open-sharing-supported-platforms}
 
-`openSharing` 메서드는 **App과 Web 모든 환경을 지원**합니다.
+`openSharing` 메서드는 **App과 Web 환경을 모두 지원**합니다.
 
 | 플랫폼                                                             | 지원 여부 | 비고                     |
 | ------------------------------------------------------------------ | --------- | ------------------------ |
