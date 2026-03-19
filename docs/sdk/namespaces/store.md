@@ -25,7 +25,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/store.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> <BadgeWithVersion type="Android" version="v1.6.0" link="/docs/releases/v1/app-source/android/release-v-1-6-0" /> <BadgeWithVersion type="iOS" version="v1.6.0" link="/docs/releases/v1/app-source/ios/release-v-1-6-0" />  
-> 🔔 **최신화 일자:** 2025-08-05
+> 🔔 **최신화 일자:** 2026-03-19
 
 ## **개요** {#overview}
 
@@ -36,6 +36,14 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 - **네이티브 인앱 리뷰 팝업 호출**
 
 모바일 앱 또는 모바일 웹 환경에서 **앱 인게이지먼트 향상**에 유용합니다.
+
+:::tip **활용 팁**
+
+- **사용자 피드백 유도**: 중요한 작업 완료 직후 [`requestReview()`](#request-review) 호출로 자연스럽게 리뷰 요청 가능
+- **앱 설치 유도**: 웹페이지에서 [`openStore()`](#open-store) 호출로 바로 다운로드 페이지로 이동
+- **리뷰 리마인더**: 앱을 일정 기간 사용한 사용자 대상으로 재방문 시 [`openReviewInStore()`](#open-review-in-store) 호출
+
+:::
 
 ---
 
@@ -82,9 +90,15 @@ export declare type StoreInfo =
 
 ## **메서드 상세** {#method-details}
 
-### **`openStore(storeInfo: StoreInfo): void`** {#open-store}
+### **`openStore(storeInfo)`** {#open-store}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
+
+#### 타입 정의 {#open-store-types}
+
+```typescript
+function openStore(storeInfo: StoreInfo): void;
+```
 
 #### 설명 {#open-store-summary}
 
@@ -160,14 +174,20 @@ Nachocode.store.openStore({
 
 ---
 
-### **`openReviewInStore(storeInfo: StoreInfo): void`** {#open-review-in-store}
+### **`openReviewInStore(storeInfo)`** {#open-review-in-store}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
 
+#### 타입 정의 {#open-review-in-store-types}
+
+```typescript
+function openReviewInStore(storeInfo: StoreInfo): void;
+```
+
 #### 설명 {#open-review-in-store-summary}
 
-:::info
-스토어 출시가 완료된 후 사용이 가능합니다.
+:::warning 주의사항
+해당 메서드는 스토어 출시가 완료된 후 사용이 가능합니다.
 :::
 
 사용자를 **스토어 내 리뷰 작성 페이지**로 직접 연결합니다.
@@ -246,9 +266,15 @@ Nachocode.store.openReviewInStore({
 
 ---
 
-### **`requestReview(): void`** {#request-review}
+### **`requestReview()`** {#request-review}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />
+
+#### 타입 정의 {#request-review-types}
+
+```typescript
+function requestReview(): void;
+```
 
 #### 설명 {#request-review-summary}
 
@@ -266,7 +292,7 @@ Nachocode.store.openReviewInStore({
 
 - **최근에 리뷰 요청이 없었는가**
   - 스토어에서는 과도한 리뷰 요청을 막기위해 리뷰 대화상자를 표시할 수 있는 빈도에 관한 시간제한 할당량을 적용합니다.
-  - 이 할당량으로 인해 짧은 기간(예: 1개월 미만) 메서드를 두 번 이상 호출할 경우 대화상자가 표시되지 않을 수도 있습니다.
+  - 이 할당량으로 인해 짧은 기간(ex. 1개월 미만) 메서드를 두 번 이상 호출할 경우 대화상자가 표시되지 않을 수도 있습니다.
 - **사용자가 충분히 긴 사용 시간을 가졌는가**
   - 사용자가 앱을 충분히 사용해 유용한 의견을 제공할 수 있을 때 인앱 리뷰를 트리거합니다.
 - **앱이 스토어에서 설치되었는가**
@@ -296,11 +322,3 @@ Nachocode.store.requestReview();
 ```
 
 ---
-
-:::tip **활용 팁**
-
-- **사용자 피드백 유도**: 중요한 작업 완료 직후 `requestReview()` 호출로 자연스럽게 리뷰 요청 가능
-- **앱 설치 유도**: 웹페이지에서 `openStore()` 호출로 바로 다운로드 페이지로 이동
-- **리뷰 리마인더**: 앱을 일정 기간 사용한 사용자 대상으로 재방문 시 `openReviewInStore()` 호출
-
-:::
