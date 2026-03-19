@@ -24,16 +24,24 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/preference.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" /> <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" /> <BadgeWithVersion type="iOS" version="v1.2.0" link="/docs/releases/v1/app-source/ios/release-v-1-2-0" />  
-> 🔔 **최신화 일자:** 2025-07-17
+> 🔔 **최신화 일자:** 2026-03-19
 
 ## **개요** {#overview}
 
-`preference` 네임스페이스는 **네이티브 환경의 내부 저장소를 활용하여 앱 내 데이터를 저장, 조회 및 삭제하는 기능**을 제공합니다.
+`preference` 네임스페이스는 **네이티브 환경의 내부 저장소를 활용하여 앱 내 데이터를 저장, 조회 및 삭제하는 기능**을 제공합니다.  
+**앱 내부 설정, 자동 로그인 여부, 임시 데이터 등** 소량의 데이터를 영구적으로 저장하고 유지할 수 있습니다.
 
-**앱 내부 설정, 사용자 정보, 임시 데이터 등**을 저장하고 유지할 수 있습니다.
+`preference` 네임스페이스에서 사용하는 앱 내부 저장소는 고유한 **Key와 Value의 쌍**으로 데이터를 저장하고 관리합니다.
 
 :::tip 언제 활용하면 좋나요?
 유저의 **'다크모드 여부', '푸시 수신 여부', '선호 언어'** 같은 개인 설정을 앱 종료 후에도 유지하고 싶을 때, 사용자가 **마지막으로 본 탭, 검색어, 필터 등을 저장해두고 다음 방문 시 자연스럽게 복구**시킬 때 등 여러 상황에서 활용 할 수 있습니다.
+:::
+
+:::warning 주의사항
+
+- 데이터가 **암호화되지 않고 기기에 저장**되므로 민감 정보는 저장전 암호화하여 저장해야합니다.
+- **너무 많은 데이터를 저장하면 성능 저하가 발생**할 수 있으므로, 소량의 데이터를 저장하고 유지하는 것을 권장드립니다.
+
 :::
 
 ---
@@ -50,14 +58,27 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ## **메서드 상세** {#method-details}
 
-### **`setData(key: string, data: string): void`** {#set-data}
+### **`setData(key, data)`** {#set-data}
 
 - _since:_ <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" />
+
+#### 타입 정의 {#set-data-types}
+
+```typescript
+function setData(key: string, data: string): void;
+```
 
 #### 설명 {#set-data-summary}
 
 앱 내부 저장소에 **지정한 키(`key`)로 데이터를 저장**합니다.  
-저장된 데이터는 앱이 종료되더라도 유지됩니다.
+저장된 데이터는 앱이 종료되더라도 영구적으로 유지됩니다.
+
+:::warning 주의사항
+
+- 데이터가 **암호화되지 않고 기기에 저장**되므로 민감 정보는 저장전 암호화하여 저장해야합니다.
+- **너무 많은 데이터를 저장하면 성능 저하가 발생**할 수 있으므로, 소량의 데이터를 저장하고 유지하는 것을 권장드립니다.
+
+:::
 
 #### 매개변수 {#set-data-parameters}
 
@@ -88,9 +109,15 @@ Nachocode.preference.setData('sample', data => {
 
 ---
 
-### **`getData(key: string, callback: (data: string) => void): void`** {#get-data}
+### **`getData(key, callback)`** {#get-data}
 
 - _since:_ <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" />
+
+#### 타입 정의 {#get-data-types}
+
+```typescript
+function getData(key: string, callback: (data: string) => void): void;
+```
 
 #### 설명 {#get-data-summary}
 
@@ -99,10 +126,10 @@ Nachocode.preference.setData('sample', data => {
 
 #### 매개변수 {#get-data-parameters}
 
-| 이름       | 타입                              | 필수 여부 | 설명                          |
-| ---------- | --------------------------------- | --------- | ----------------------------- |
-| `key`      | `string`                          | ✅        | 조회할 데이터의 키 값         |
-| `callback` | `(data: string) => void` _(옵션)_ | ✅        | 조회한 데이터를 전달하는 함수 |
+| 이름       | 타입                     | 필수 여부 | 설명                          |
+| ---------- | ------------------------ | --------- | ----------------------------- |
+| `key`      | `string`                 | ✅        | 조회할 데이터의 키 값         |
+| `callback` | `(data: string) => void` | ✅        | 조회한 데이터를 전달하는 함수 |
 
 #### 반환 값 {#get-data-returns}
 
@@ -123,9 +150,15 @@ Nachocode.preference.getData('sample', data => {
 
 ---
 
-### **`deleteData(key: string): void`** {#delete-data}
+### **`deleteData(key)`** {#delete-data}
 
 - _since:_ <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />
+
+#### 타입 정의 {#delete-data-types}
+
+```typescript
+function deleteData(key: string): void;
+```
 
 #### 설명 {#delete-data-summary}
 
