@@ -20,7 +20,7 @@
 <link rel="preload" href="/fonts/pretendard/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/fonts/pretendard/Pretendard-Thin.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <script src="/js/copy-heading-link.js" async></script><link rel="stylesheet" href="/assets/css/styles.9b5da6e7.css">
-<script src="/assets/js/runtime~main.0a868a99.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.a6295ba6.js" defer="defer"></script>
 <script src="/assets/js/main.eed46f11.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -56,7 +56,7 @@
 <p>Android의 <strong>네이티브 백 키가 눌렸을 때 호출될 이벤트 리스너를 등록</strong>합니다.<br>
 <!-- -->이벤트는 기본적으로 <strong>FILO(First In Last Out) 방식</strong>으로 처리되며, 가장 최근에 추가된 이벤트가 먼저 실행됩니다.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="add-event-parameters"><strong>매개변수</strong><a href="#add-event-parameters" class="hash-link" aria-label="add-event-parameters에 대한 직접 링크" title="add-event-parameters에 대한 직접 링크" translate="no">​</a></h4>
-<table><thead><tr><th>이름</th><th>타입</th><th>필수 여부</th><th>설명</th></tr></thead><tbody><tr><td><code>event</code></td><td><code>(eventId: string) =&gt; void</code></td><td>✅</td><td>백 키 이벤트가 발생했을 때 실행할 콜백 함수</td></tr><tr><td><code>eventId</code></td><td><code>string</code> (<em>optional</em>)</td><td>❌</td><td>특정 이벤트를 식별하기 위한 고유 ID <em>(Default: 자동 할당)</em></td></tr></tbody></table>
+<table><thead><tr><th>이름</th><th>타입</th><th>필수 여부</th><th>설명</th></tr></thead><tbody><tr><td><code>event</code></td><td><code>(eventId: string) =&gt; void</code></td><td>✅</td><td>백 키 이벤트가 발생했을 때 실행할 콜백 함수</td></tr><tr><td><code>eventId</code></td><td><code>string</code> <em>(optional)</em></td><td>❌</td><td>특정 이벤트를 식별하기 위한 고유 ID <em>(Default: 자동 할당)</em></td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="add-event-returns"><strong>반환 값</strong><a href="#add-event-returns" class="hash-link" aria-label="add-event-returns에 대한 직접 링크" title="add-event-returns에 대한 직접 링크" translate="no">​</a></h4>
 <table><thead><tr><th>타입</th><th>설명</th></tr></thead><tbody><tr><td><code>string</code></td><td>등록된 이벤트의 <code>eventId</code>를 반환합니다.</td></tr><tr><td><code>void</code></td><td>등록 실패 시 값을 반환하지 않습니다.</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="add-event-examples"><strong>사용 예제</strong><a href="#add-event-examples" class="hash-link" aria-label="add-event-examples에 대한 직접 링크" title="add-event-examples에 대한 직접 링크" translate="no">​</a></h4>
@@ -110,7 +110,7 @@
 </li>
 </ul>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="remove-event-parameters">매개변수<a href="#remove-event-parameters" class="hash-link" aria-label="매개변수에 대한 직접 링크" title="매개변수에 대한 직접 링크" translate="no">​</a></h4>
-<table><thead><tr><th>이름</th><th>타입</th><th>필수 여부</th><th>설명</th></tr></thead><tbody><tr><td><code>eventId</code></td><td><code>string</code> (<em>optional</em>)</td><td>❌</td><td>제거할 이벤트의 ID (기본값: 가장 최근 등록된 이벤트)</td></tr></tbody></table>
+<table><thead><tr><th>이름</th><th>타입</th><th>필수 여부</th><th>설명</th></tr></thead><tbody><tr><td><code>eventId</code></td><td><code>string</code> <em>(optional)</em></td><td>❌</td><td>제거할 이벤트의 ID (기본값: 가장 최근 등록된 이벤트)</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="remove-event-returns">반환 값<a href="#remove-event-returns" class="hash-link" aria-label="반환 값에 대한 직접 링크" title="반환 값에 대한 직접 링크" translate="no">​</a></h4>
 <table><thead><tr><th>타입</th><th>설명</th></tr></thead><tbody><tr><td><code>string</code></td><td>제거된 이벤트의 <code>eventId</code>를 반환합니다.</td></tr><tr><td><code>void</code></td><td>제거된 이벤트가 없거나, 제거를 실패할 경우 값을 반환하지 않습니다.</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="remove-event-examples">사용 예제<a href="#remove-event-examples" class="hash-link" aria-label="사용 예제에 대한 직접 링크" title="사용 예제에 대한 직접 링크" translate="no">​</a></h4>
