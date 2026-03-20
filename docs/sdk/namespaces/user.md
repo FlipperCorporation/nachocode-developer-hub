@@ -20,7 +20,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/user.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.0" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.0" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
-> 🔔 **최신화 일자:** 2026-03-06
+> 🔔 **최신화 일자:** 2026-03-20
 
 ## **개요** {#overview}
 
@@ -98,10 +98,6 @@ function handleLogin(userId) {
 }
 ```
 
-:::tip 푸시 토큰과 함께 사용
-`Nachocode.push.registerPushToken(userId)`는 내부적으로 `setUserId()`를 호출하므로, 푸시 토큰 등록 시 별도로 호출할 필요가 없습니다.
-:::
-
 ---
 
 ### **`getUserId()`** {#get-user-id}
@@ -170,9 +166,5 @@ function deleteUserId(): void;
 // 사용자 로그아웃 시 저장된 사용자 ID 삭제
 Nachocode.user.deleteUserId();
 ```
-
-:::tip 푸시 토큰 삭제와 함께 사용
-`Nachocode.push.deletePushToken()`은 내부적으로 `deleteUserId()`를 호출하므로, 푸시 토큰 삭제 시 별도로 호출할 필요가 없습니다.
-:::
 
 ---

@@ -148,7 +148,6 @@ const sidebars: SidebarsConfig = {
         'sdk/namespaces/permission',
         'sdk/namespaces/preference',
         'sdk/namespaces/push',
-        'sdk/namespaces/refresh',
         'sdk/namespaces/scanner',
         'sdk/namespaces/setting',
         'sdk/namespaces/share',

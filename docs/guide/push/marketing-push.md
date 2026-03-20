@@ -31,7 +31,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
-> 🔔 **최신화 일자:** 2026-03-17
+> 🔔 **최신화 일자:** 2026-03-20
 
 이 문서는 **광고성 푸시 알림**(**마케팅 푸시**)의 법적 요구사항과 nachocode SDK를 활용한 구현 방법을 안내합니다.
 
@@ -142,8 +142,8 @@ console.log('회원 동의:', marketingAllowed.user); // boolean | null
 Nachocode.push.setMarketingAllowed(true);
 // → `guest` 동의만 설정됨
 
-// 로그인 (registerPushToken 호출 시 자동으로 `guest` → `user` 상태로 전환)
-await Nachocode.push.registerPushToken('user123');
+// 로그인 (`Nachocode.user.setUserId` 호출 시 자동으로 `guest` → `user` 상태로 전환)
+Nachocode.user.setUserId('user123');
 
 // 로그인 상태
 Nachocode.push.setMarketingAllowed(true);
@@ -152,8 +152,8 @@ Nachocode.push.setMarketingAllowed(true);
 
 :::info 자동 처리되는 내용
 
-- [`registerPushToken()`](/docs/sdk/namespaces/push#register-push-token) 호출 시 내부적으로 [`Nachocode.user.setUserId()`](/docs/sdk/namespaces/user#set-user-id)를 호출하여 로그인 상태로 전환
-- [`deletePushToken()`](/docs/sdk/namespaces/push#delete-push-token) 호출 시 내부적으로 [`Nachocode.user.deleteUserId()`](/docs/sdk/namespaces/user#delete-user-id)를 호출하여 로그아웃 상태로 전환
+- [`Nachocode.user.setUserId()`](/docs/sdk/namespaces/user#set-user-id)를 호출하여 로그인 상태로 전환
+- [`Nachocode.user.deleteUserId()`](/docs/sdk/namespaces/user#delete-user-id)를 호출하여 로그아웃 상태로 전환
 - 마케팅 동의 상태에 따라 내부적으로 토픽 구독 자동 관리
 
 :::
@@ -182,14 +182,14 @@ Nachocode.push.setMarketingAllowed(true);
 // 결과: { guest: true, user: null }
 
 // 2. 로그인
-await Nachocode.push.registerPushToken('user123');
+Nachocode.user.setUserId('user123');
 
 // 3. 로그인 상태에서 거부
 Nachocode.push.setMarketingAllowed(false);
 // 결과: { guest: false, user: false } ← 게스트 동의도 함께 철회됩니다.
 
 // 4. 로그아웃 후
-await Nachocode.push.deletePushToken();
+Nachocode.user.deleteUserId();
 // 게스트 동의가 false이므로 마케팅 푸시 전송 불가
 ```
 
@@ -201,12 +201,12 @@ Nachocode.push.setMarketingAllowed(false);
 // 결과: { guest: false, user: null }
 
 // 2. 로그인 후 동의
-await Nachocode.push.registerPushToken('user123');
+Nachocode.user.setUserId('user123');
 Nachocode.push.setMarketingAllowed(true);
 // 결과: { guest: false, user: true }
 
 // 3. 로그아웃 후
-await Nachocode.push.deletePushToken();
+Nachocode.user.deleteUserId();
 // 게스트 동의가 false이므로 마케팅 푸시 전송 불가
 ```
 
@@ -214,7 +214,7 @@ await Nachocode.push.deletePushToken();
 
 ### 야간 푸시 별도 동의 {#night-push}
 
-**21:00 ~ 08:00** 시간대에 마케팅 푸시를 전송하려면 **별도의 야간 푸시 동의**가 필요합니다.
+**21:00 ~ 08:00** 야간 시간대에 마케팅 푸시를 전송하려면 **별도의 야간 마케팅 푸시 수신 동의**가 필요합니다.
 
 ```javascript
 // 야간 푸시 수신 동의
