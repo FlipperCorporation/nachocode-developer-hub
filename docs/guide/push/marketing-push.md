@@ -50,7 +50,8 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 :::
 
-마케팅 푸시는 **정보성 푸시**(주문 배송 안내, 결제 완료, 시스템 알림 등)와 구분되며, **정보통신망법에 따라 반드시 사용자의 사전 동의가 필요**합니다.
+마케팅 푸시는 **정보성 푸시**(주문 배송 안내, 결제 완료, 시스템 알림 등)와 구분되며,  
+**정보통신망법에 따라 반드시 사용자의 사전 동의가 필요**합니다.
 
 ---
 
@@ -150,12 +151,66 @@ Nachocode.push.setMarketingAllowed(true);
 // → `user` 동의 설정됨
 ```
 
-:::info 자동 처리되는 내용
+---
 
-- [`Nachocode.user.setUserId()`](/docs/sdk/namespaces/user#set-user-id)를 호출하여 로그인 상태로 전환
-- [`Nachocode.user.deleteUserId()`](/docs/sdk/namespaces/user#delete-user-id)를 호출하여 로그아웃 상태로 전환
-- 마케팅 동의 상태에 따라 내부적으로 토픽 구독 자동 관리
+### nachocode 서비스가 자동으로 관리해주는 것들 {#auto-management}
 
+nachocode는 마케팅 동의 관리를 **간편하고 안전하게** 처리할 수 있도록 다음과 같은 기능을 자동으로 제공합니다.
+
+#### 1. 로그인 시 마케팅 정보 자동 동기화
+
+```javascript
+// 사용자가 로그인할 때 단순히 userId만 설정
+Nachocode.user.setUserId('user123');
+```
+
+- 해당 `userId`의 기존 마케팅 동의 정보를 서버에서 조회
+- 다른 디바이스에서 설정한 마케팅 동의 정보를 현재 디바이스에 **자동 동기화**
+- 기존 회원이 다시 로그인한 경우 이전 동의 상태를 **자동 복원**
+
+:::tip
+앱 사용자가 여러 디바이스를 사용하더라도 마케팅 동의 설정이 **자동으로 일치**됩니다.  
+A 디바이스에서 마케팅 수신을 거부했다면, B 디바이스에서도 자동으로 거부 상태가 유지됩니다.
+:::
+
+<br/>
+
+#### 2. 동의 변경 시 모든 디바이스에 자동 전파
+
+```javascript
+// 한 디바이스에서 마케팅 동의 변경
+Nachocode.push.setMarketingAllowed(false);
+
+// 또는 야간 푸시 동의 변경
+Nachocode.push.setNightAllowed(false);
+```
+
+- 로그인 상태(`user`)인 경우, 해당 `userId`를 가진 **모든 디바이스**에 동의 상태 변경을 **자동 전파**
+- 각 디바이스의 마케팅 토픽 구독/구독해제를 **자동 처리**
+- 동의 변경 내역을 서버에 **자동 저장**
+
+:::tip
+앱 사용자가 한 번만 마케팅 수신을 거부하면, **소유한 모든 디바이스**에서 자동으로 마케팅 푸시 수신이 중단됩니다.  
+여러 디바이스에서 일일이 설정을 변경할 필요가 없습니다.
+:::
+
+<br/>
+
+#### 3. 로그아웃 시 자동 상태 전환
+
+```javascript
+// 사용자가 로그아웃할 때 단순히 userId 삭제
+Nachocode.user.deleteUserId();
+```
+
+- `user` 상태에서 `guest` 상태로 **자동 전환**
+- 저장된 `guest` 마케팅 동의 정보를 **자동 조회**
+- `user` 관련 마케팅 토픽 **자동 구독해제**
+- `guest` 관련 마케팅 토픽 **자동 구독** (동의한 경우에만)
+
+:::tip
+로그아웃 후에도 **법적으로 올바른 동의 상태**가 자동으로 유지됩니다.  
+개발자는 복잡한 토픽 관리 로직을 작성할 필요 없이, **SDK 메서드 호출만으로 모든 것이 자동 처리**됩니다.
 :::
 
 ---
@@ -169,6 +224,8 @@ Nachocode.push.setMarketingAllowed(true);
 1. **회원이 수신거부**하면 **게스트 동의도 함께 철회**됩니다
 2. **로그아웃 후에는 게스트 동의 상태를 기준**으로 마케팅 푸시 전송 여부 판단
 3. 게스트 동의가 거부 상태라면 로그아웃 후 마케팅 푸시 전송 금지
+
+**nachocode는 이러한 법적 요구사항을 자동으로 준수**하도록 설계되어 있습니다.
 
 :::
 
@@ -245,6 +302,25 @@ SDK를 통해 사용자의 마케팅 동의를 관리하면, nachocode 앱소스
 
 1. **nachocode 대시보드**: 푸시 전송 시 "광고성 알림 여부" 체크박스 제공
 2. **마케팅 푸시 전송 API**: 서버에서 직접 마케팅 푸시를 발송할 수 있는 API 또는 옵션 제공
+
+:::
+
+---
+
+## 관련 문서 {#related-docs}
+
+:::tip **SDK 문서**
+
+- [**Nachocode.push**](/docs/sdk/namespaces/push) - 푸시 알림 관련 SDK 메서드
+
+  - [`getMarketingAllowed()`](/docs/sdk/namespaces/push#get-marketing-allowed) - 마케팅 푸시 동의 상태 조회
+  - [`setMarketingAllowed()`](/docs/sdk/namespaces/push#set-marketing-allowed) - 마케팅 푸시 동의 설정
+  - [`getNightAllowed()`](/docs/sdk/namespaces/push#get-night-allowed) - 야간 푸시 동의 상태 조회
+  - [`setNightAllowed()`](/docs/sdk/namespaces/push#set-night-allowed) - 야간 푸시 동의 설정
+
+- [**Nachocode.user**](/docs/sdk/namespaces/user) - 사용자 식별 관련 SDK 메서드
+  - [`setUserId()`](/docs/sdk/namespaces/user#set-user-id) - 사용자 ID 설정 (로그인)
+  - [`deleteUserId()`](/docs/sdk/namespaces/user#delete-user-id) - 사용자 ID 삭제 (로그아웃)
 
 :::
 
