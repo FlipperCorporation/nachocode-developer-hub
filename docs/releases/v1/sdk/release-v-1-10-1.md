@@ -80,7 +80,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
   if (result.status === 'success') {
     console.log('사용자 ID가 성공적으로 설정되었습니다.');
   } else {
-    console.error('사용자 ID 설정 실패:', result.message);
+    console.error('사용자 ID 설정 실패: ', result.message);
   }
   ```
 
@@ -93,7 +93,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
   if (result.status === 'success') {
     console.log('사용자 ID가 성공적으로 삭제되었습니다.');
   } else {
-    console.error('사용자 ID 삭제 실패:', result.message);
+    console.error('사용자 ID 삭제 실패: ', result.message);
   }
   ```
 
@@ -135,7 +135,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
   if (result.status === 'success') {
     console.log('마케팅 푸시 동의가 성공적으로 설정되었습니다.');
   } else {
-    console.error('마케팅 푸시 동의 설정 실패:', result.message);
+    console.error('마케팅 푸시 동의 설정 실패: ', result.message);
   }
   ```
 
@@ -148,7 +148,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
   if (result.status === 'success') {
     console.log('야간 푸시 동의가 성공적으로 설정되었습니다.');
   } else {
-    console.error('야간 푸시 동의 설정 실패:', result.message);
+    console.error('야간 푸시 동의 설정 실패: ', result.message);
   }
   ```
 

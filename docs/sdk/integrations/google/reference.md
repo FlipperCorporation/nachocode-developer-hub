@@ -227,7 +227,7 @@ Nachocode.google.getUserData((result, userData) => {
   if (result.status === 'success') {
     console.log('사용자 데이터:', userData);
   } else {
-    console.error('사용자 데이터 요청 실패:', result.message);
+    console.error('사용자 데이터 요청 실패: ', result.message);
   }
 });
 ```
@@ -263,7 +263,7 @@ Nachocode.google.logout(result => {
   if (result.status === 'success') {
     console.log('구글 로그아웃 완료');
   } else {
-    console.error('구글 로그아웃 실패:', result.message);
+    console.error('구글 로그아웃 실패: ', result.message);
   }
 });
 ```

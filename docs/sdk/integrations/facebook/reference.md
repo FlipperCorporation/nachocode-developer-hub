@@ -201,7 +201,7 @@ Nachocode.facebook.login(
       console.log('User ID:', userId);
       console.log('User Data:', userData);
     } else {
-      console.error('페이스북 로그인 실패:', result.errorCode, result.message);
+      console.error('페이스북 로그인 실패: ', result.errorCode, result.message);
     }
   }
 );
@@ -284,7 +284,7 @@ Nachocode.facebook.getUserData(
       console.log('사용자 데이터:', userData);
     } else {
       console.error(
-        '사용자 데이터 요청 실패:',
+        '사용자 데이터 요청 실패: ',
         result.errorCode,
         result.message
       );

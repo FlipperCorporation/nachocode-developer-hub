@@ -46,7 +46,7 @@ Nachocode.push.sendLocalPush(
     if (result.status === 'success') {
       console.log(`푸시 알림이 등록되었습니다. ID: ${result.id}`);
     } else {
-      console.error('푸시 알림 등록 실패:', result.message);
+      console.error('푸시 알림 등록 실패: ', result.message);
     }
   }
 );

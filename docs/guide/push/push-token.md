@@ -255,7 +255,7 @@ async function onLoginSuccess(userId) {
           if (result.status === 'success') {
             console.log('푸시 토큰 등록 성공');
           } else {
-            console.error('푸시 토큰 등록 실패:', result.message);
+            console.error('푸시 토큰 등록 실패: ', result.message);
           }
         } else {
           console.warn('푸시 권한 거부됨. 토큰 등록 건너뜀.');

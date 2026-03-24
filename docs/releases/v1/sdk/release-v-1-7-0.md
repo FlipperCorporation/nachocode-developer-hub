@@ -58,7 +58,7 @@ const result = await Nachocode.appsflyer.setCustomUserId('user123');
 if (result.status === 'success') {
   console.log('커스텀 유저 ID 설정 성공:', result.message);
 } else {
-  console.error('커스텀 유저 ID 설정 실패:', result.errorCode, result.message);
+  console.error('커스텀 유저 ID 설정 실패: ', result.errorCode, result.message);
 }
 ```
 

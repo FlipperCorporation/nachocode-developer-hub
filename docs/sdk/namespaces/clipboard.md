@@ -161,7 +161,7 @@ Nachocode.clipboard.setText('Hello nachocode!', (status, message) => {
   if (status === 'success') {
     console.log('클립보드에 텍스트가 성공적으로 복사되었습니다.');
   } else {
-    console.error('클립보드에 복사 실패:', message);
+    console.error('클립보드에 복사 실패: ', message);
   }
 });
 ```

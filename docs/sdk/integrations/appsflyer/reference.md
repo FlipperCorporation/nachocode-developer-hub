@@ -339,7 +339,7 @@ const result = await Nachocode.appsflyer.setCustomerUserId('user123');
 if (result.status === 'success') {
   console.log('고객 사용자 ID 설정 성공:', result.message);
 } else {
-  console.error('고객 사용자 ID 설정 실패:', result.errorCode, result.message);
+  console.error('고객 사용자 ID 설정 실패: ', result.errorCode, result.message);
 }
 ```
 
@@ -386,7 +386,7 @@ const result = await Nachocode.appsflyer.getCustomerUserId();
 if (result.status === 'success') {
   console.log('고객 사용자 ID:', result.userId);
 } else {
-  console.error('고객 사용자 ID 조회 실패:', result.errorCode, result.message);
+  console.error('고객 사용자 ID 조회 실패: ', result.errorCode, result.message);
 }
 ```
 
@@ -433,7 +433,7 @@ const result = await Nachocode.appsflyer.deleteCustomerUserId();
 if (result.status === 'success') {
   console.log('고객 사용자 ID 삭제 성공:', result.message);
 } else {
-  console.error('고객 사용자 ID 삭제 실패:', result.errorCode, result.message);
+  console.error('고객 사용자 ID 삭제 실패: ', result.errorCode, result.message);
 }
 ```
 
@@ -492,7 +492,7 @@ if (result.status === 'success') {
   }
 } else {
   console.error(
-    '어트리뷰션 데이터 조회 실패:',
+    '어트리뷰션 데이터 조회 실패: ',
     result.errorCode,
     result.message
   );
@@ -532,7 +532,7 @@ if (result.status === 'success') {
   console.log('어트리뷰션 데이터 삭제 성공:', result.message);
 } else {
   console.error(
-    '어트리뷰션 데이터 삭제 실패:',
+    '어트리뷰션 데이터 삭제 실패: ',
     result.errorCode,
     result.message
   );
@@ -587,7 +587,11 @@ if (result.status === 'success') {
     }
   });
 } else {
-  console.error('어트리뷰션 목록 조회 실패:', result.errorCode, result.message);
+  console.error(
+    '어트리뷰션 목록 조회 실패: ',
+    result.errorCode,
+    result.message
+  );
 }
 ```
 
@@ -617,7 +621,11 @@ const result = await Nachocode.appsflyer.clearAttributionList();
 if (result.status === 'success') {
   console.log('어트리뷰션 목록 삭제 성공:', result.message);
 } else {
-  console.error('어트리뷰션 목록 삭제 실패:', result.errorCode, result.message);
+  console.error(
+    '어트리뷰션 목록 삭제 실패: ',
+    result.errorCode,
+    result.message
+  );
 }
 ```
 
@@ -668,7 +676,7 @@ const result = await Nachocode.appsflyer.logEvent('purchase', {
 if (result.status === 'success') {
   console.log('이벤트 로깅 성공:', result.message);
 } else {
-  console.error('이벤트 로깅 실패:', result.errorCode, result.message);
+  console.error('이벤트 로깅 실패: ', result.errorCode, result.message);
 }
 ```
 

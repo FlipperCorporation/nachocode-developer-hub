@@ -263,7 +263,7 @@ async function initSDK() {
     const Nachocode = await loadNachocode('your-api-key-here');
     console.log('Nachocode Client SDK 로드 완료:', Nachocode);
   } catch (error) {
-    console.error('Nachocode Client SDK 로드 실패:', error);
+    console.error('Nachocode Client SDK 로드 실패: ', error);
   }
 }
 

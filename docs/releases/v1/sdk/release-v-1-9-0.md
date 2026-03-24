@@ -63,7 +63,7 @@ Nachocode.naver.login((result, loginData) => {
     console.log('Refresh Token:', loginData.refreshToken);
     console.log('Expires At:', loginData.expiresAt);
   } else {
-    console.error('네이버 로그인 실패:', result.errorCode, result.message);
+    console.error('네이버 로그인 실패: ', result.errorCode, result.message);
   }
 });
 ```
@@ -94,7 +94,11 @@ Nachocode.naver.getUserData((result, userData) => {
     console.log('닉네임:', userData.nickName);
     console.log('프로필 이미지:', userData.profile_image);
   } else {
-    console.error('사용자 데이터 요청 실패:', result.errorCode, result.message);
+    console.error(
+      '사용자 데이터 요청 실패: ',
+      result.errorCode,
+      result.message
+    );
   }
 });
 ```
