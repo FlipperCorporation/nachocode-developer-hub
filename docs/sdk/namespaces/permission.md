@@ -146,7 +146,7 @@ function checkPermission(
 | 이름       | 타입                                      | 필수 여부 | 설명                                                           |
 | ---------- | ----------------------------------------- | --------- | -------------------------------------------------------------- |
 | `option`   | `{ type: PermissionType, ask?: boolean }` | ✅        | 확인할 권한 유형 및 권한 요청 여부 (`ask`) 포함 객체           |
-| `callback` | `(granted: boolean) => void`              | ❌        | 권한이 허용되었는지 여부를 전달받는 콜백 함수 **_(optional)_** |
+| `callback` | `(granted: boolean) => void`              | ❌        | **_(optional)_** 권한이 허용되었는지 여부를 전달받는 콜백 함수 |
 
 - `type`: 확인할 권한 유형 (`camera`, `location`, `microphone`, `photo`, `push`)
 - `ask`: `true`인 경우, 권한이 허용되지 않았을 때 요청 팝업을 표시 (`default: false`)

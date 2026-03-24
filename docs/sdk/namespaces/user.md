@@ -19,8 +19,8 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/SDK/user.png'/>
 
-> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.0" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.0" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
-> 🔔 **최신화 일자:** 2026-03-20
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
+> 🔔 **최신화 일자:** 2026-03-24
 
 ## **개요** {#overview}
 
@@ -39,6 +39,28 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ---
 
+## **타입 정의** {#types}
+
+### **`UserOperationResult`** {#user-operation-result}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.10.1" link="/docs/releases/v1/sdk/release-v-1-10-1" />
+
+```typescript
+export declare type UserOperationResult = {
+  status: 'success' | 'error';
+  statusCode: number;
+  message?: string;
+};
+```
+
+| 속성명       | 타입                   | 필수 여부 | 설명                                      |
+| ------------ | ---------------------- | --------- | ----------------------------------------- |
+| `status`     | `'success' \| 'error'` | ✅        | 사용자 ID 작업 성공 여부                  |
+| `statusCode` | `number`               | ✅        | 결과 상태 코드                            |
+| `message`    | `string`               | ❌        | **_(optional)_** 에러 발생 시 상세 메시지 |
+
+---
+
 ## **메서드 목록** {#method-list}
 
 | 메서드                              | 설명                                             | 추가된 버전                                                                                     |
@@ -54,11 +76,12 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 ### **`setUserId(userId)`** {#set-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.10.1" link="/docs/releases/v1/sdk/release-v-1-10-1" /> - _반환 형식 변경_
 
 #### 타입 정의 {#set-user-id-types}
 
 ```typescript
-function setUserId(userId: string): void;
+function setUserId(userId: string): Promise<UserOperationResult>;
 ```
 
 #### 설명 {#set-user-id-summary}
@@ -67,7 +90,7 @@ function setUserId(userId: string): void;
 사용자가 로그인할 때 호출하여 사용자를 식별할 수 있도록 합니다.
 
 :::info 마케팅 푸시 관련
-`setUserId()` 호출 시 앱이 **로그인 상태로 전환**되며, 이후 `Nachocode.push.setMarketingAllowed()`를 호출하면 **유저(로그인) 마케팅 동의**가 저장됩니다.
+`setUserId()` 호출 시 앱이 **로그인 상태로 전환**되며, 이후 [`Nachocode.push.setMarketingAllowed()`](/docs/sdk/namespaces/push#set-marketing-allowed)를 호출하면 **유저(로그인) 마케팅 동의**가 저장됩니다.
 자세한 내용은 [마케팅 푸시 가이드](/docs/guide/push/marketing-push)를 참고하세요.
 :::
 
@@ -79,22 +102,33 @@ function setUserId(userId: string): void;
 
 #### 반환 값 {#set-user-id-returns}
 
-해당 메서드는 반환 값을 가지지 않습니다.
+| 타입                                                     | 설명                     |
+| -------------------------------------------------------- | ------------------------ |
+| [`Promise<UserOperationResult>`](#user-operation-result) | 사용자 ID 설정 처리 결과 |
 
 #### 사용 예제 {#set-user-id-examples}
 
 ```javascript
 // 사용자 로그인 시 사용자 ID 설정
-Nachocode.user.setUserId('user_12345');
+const result = await Nachocode.user.setUserId('user_12345');
+if (result.status === 'success') {
+  console.log('사용자 ID가 성공적으로 설정되었습니다.');
+} else {
+  console.error('사용자 ID 설정 실패: ', result.message);
+}
 ```
 
 ```javascript
 // 로그인 핸들러에서 사용
-function handleLogin(userId) {
+async function handleLogin(userId) {
   // 로그인 성공 후 사용자 ID 설정
-  Nachocode.user.setUserId(userId);
+  const result = await Nachocode.user.setUserId(userId);
 
-  console.log('사용자 ID가 설정되었습니다:', userId);
+  if (result.status === 'success') {
+    console.log('사용자 ID가 설정되었습니다:', userId);
+  } else {
+    console.error('사용자 ID 설정 실패: ', result.message);
+  }
 }
 ```
 
@@ -139,11 +173,12 @@ if (userId) {
 ### **`deleteUserId()`** {#delete-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.10.1" link="/docs/releases/v1/sdk/release-v-1-10-1" /> - _반환 형식 변경_
 
 #### 타입 정의 {#delete-user-id-types}
 
 ```typescript
-function deleteUserId(): void;
+function deleteUserId(): Promise<UserOperationResult>;
 ```
 
 #### 설명 {#delete-user-id-summary}
@@ -152,19 +187,26 @@ function deleteUserId(): void;
 사용자가 로그아웃할 때 호출하여 사용자 정보를 제거할 수 있습니다.
 
 :::info 마케팅 푸시 관련
-`deleteUserId()` 호출 시 앱이 **비로그인 상태(게스트)로 전환**되며, 이후 `Nachocode.push.setMarketingAllowed()`를 호출하면 **게스트(비로그인) 마케팅 동의**가 저장됩니다.
+`deleteUserId()` 호출 시 앱이 **비로그인 상태(게스트)로 전환**되며, 이후 [`Nachocode.push.setMarketingAllowed()`](/docs/sdk/namespaces/push#set-marketing-allowed)를 호출하면 **게스트(비로그인) 마케팅 동의**가 저장됩니다.
 자세한 내용은 [마케팅 푸시 가이드](/docs/guide/push/marketing-push)를 참고하세요.
 :::
 
 #### 반환 값 {#delete-user-id-returns}
 
-해당 메서드는 반환 값을 가지지 않습니다.
+| 타입                                                     | 설명                     |
+| -------------------------------------------------------- | ------------------------ |
+| [`Promise<UserOperationResult>`](#user-operation-result) | 사용자 ID 삭제 처리 결과 |
 
 #### 사용 예제 {#delete-user-id-examples}
 
 ```javascript
 // 사용자 로그아웃 시 저장된 사용자 ID 삭제
-Nachocode.user.deleteUserId();
+const result = await Nachocode.user.deleteUserId();
+if (result.status === 'success') {
+  console.log('사용자 ID가 성공적으로 삭제되었습니다.');
+} else {
+  console.error('사용자 ID 삭제 실패: ', result.message);
+}
 ```
 
 ---
