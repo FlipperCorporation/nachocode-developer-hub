@@ -25,7 +25,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/vibration.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" /> <BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />  
-> 🔔 **최신화 일자:** 2025-10-24
+> 🔔 **최신화 일자:** 2026-03-25
 
 ## **개요** {#overview}
 
@@ -203,13 +203,20 @@ export declare type HapticsEffectType =
 
 ## **메서드 상세** {#method-details}
 
-### **`setVibration(enable: boolean): void`** {#set-vibration}
+### **`setVibration(enable)`** {#set-vibration}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
 
+#### 타입 정의 {#set-vibration-types}
+
+```typescript
+function setVibration(enable: boolean): void;
+```
+
 #### 설명 {#set-vibration-summary}
 
-앱 사용자의 진동 사용 여부를 설정합니다.
+앱 사용자의 진동 사용 여부를 설정합니다.  
+**진동 사용 여부를 `false`로 설정할 경우 진동 트리거 메서드를 호출하여도 진동이 울리지 않게됩니다.**
 
 :::info **스토어 정책**
 스토어 정책에서는 진동 기능을 사용할 경우, **앱 사용자가 직접 진동을 비활성화할 수 있는 옵션을 제공**하는 것을 권장하고 있습니다.
@@ -241,6 +248,9 @@ Nachocode.vibration.setVibration(true);
 ```javascript
 // 사용자의 선택에 따라 진동 사용을 중지합니다.
 Nachocode.vibration.setVibration(false);
+
+// 메서드를 호출해도 진동이 울리지 않습니다.
+Nachocode.vibration.vibrate(); // 진동 ❌
 ```
 
 ```javascript
@@ -252,9 +262,15 @@ function onVibrationToggleChange(enable) {
 
 ---
 
-### **`getVibration(callback: (enable: boolean) => void): void`** {#get-vibration}
+### **`getVibration(callback)`** {#get-vibration}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
+
+#### 타입 정의 {#get-vibration-types}
+
+```typescript
+function getVibration(callback: (enable: boolean) => void): void;
+```
 
 #### 설명 {#get-vibration-summary}
 
@@ -294,9 +310,15 @@ Nachocode.vibration.getVibration(enable => {
 
 ---
 
-### **`vibrate(): void`** {#vibrate}
+### **`vibrate()`** {#vibrate}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
+
+#### 타입 정의 {#vibrate-types}
+
+```typescript
+function vibrate(): void;
+```
 
 #### 설명 {#vibrate-summary}
 
@@ -328,13 +350,20 @@ document.getElementById('vibrateButton').addEventListener('click', function () {
 
 ---
 
-### **`setHaptics(enable: boolean): void`** {#set-haptics}
+### **`setHaptics(enable)`** {#set-haptics}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
 
+#### 타입 정의 {#set-haptics-types}
+
+```typescript
+function setHaptics(enable: boolean): void;
+```
+
 #### 설명 {#set-haptics-summary}
 
-앱 사용자의 햅틱 피드백 사용 여부를 설정합니다.
+앱 사용자의 햅틱 피드백 사용 여부를 설정합니다.  
+**햅틱 피드백 사용 여부를 `false`로 설정할 경우 햅틱 피드백 트리거 메서드를 호출하여도 햅틱 피드백이 발생하지 않게됩니다.**
 
 :::info **스토어 정책**
 스토어 정책에서는 진동 기능을 사용할 경우, **앱 사용자가 직접 진동을 비활성화할 수 있는 옵션을 제공**하는 것을 권장하고 있습니다.
@@ -370,6 +399,9 @@ Nachocode.vibration.setHaptics(true);
 ```javascript
 // 사용자의 선택에 따라 햅틱 피드백 사용을 중지합니다.
 Nachocode.vibration.setHaptics(false);
+
+// 메서드를 호출해도 햅틱이 발생하지 않습니다.
+Nachocode.vibration.haptics(); // 햅틱 피드백 ❌
 ```
 
 ```javascript
@@ -381,9 +413,15 @@ function onHapticsToggleChange(enable) {
 
 ---
 
-### **`getHaptics(callback: (enable: boolean) => void): void`** {#get-haptics}
+### **`getHaptics(callback)`** {#get-haptics}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
+
+#### 타입 정의 {#get-haptics-types}
+
+```typescript
+function getHaptics(callback: (enable: boolean) => void): void;
+```
 
 #### 설명 {#get-haptics-summary}
 
@@ -423,15 +461,21 @@ Nachocode.vibration.getHaptics(enable => {
 
 ---
 
-### **`haptics(hapticsType?: HapticsType): void`** {#haptics}
+### **`haptics(hapticsType?)`** {#haptics}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.1.0" link="/docs/releases/v1/sdk/release-v-1-1-0" />
-- _last updated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+- _last updated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> - _햅틱 타입 변경_
+
+#### 타입 정의 {#haptics-types}
+
+```typescript
+function haptics(hapticsType?: HapticsType): void;
+```
 
 #### 설명 {#haptics-summary}
 
 햅틱 피드백을 트리거합니다.
-`LIGHT = 0 | MEDIUM = 1 | HEAVY = 2` 중 하나를 선택할 수 있습니다.
+`LIGHT = 0 | MEDIUM = 1 | HEAVY = 2` 중 하나를 선택할 수 있습니다.  
 기본적으로 `LIGHT` 피드백을 사용하며, 선택적으로 다른 강도를 지정할 수 있습니다.
 
 #### 지원 플랫폼 {#haptics-supported-platforms}
@@ -492,16 +536,22 @@ document
 
 ---
 
-### **`hapticsImpact(hapticsType?: HapticsImpactType): void`** {#haptics-impact}
+### **`hapticsImpact(hapticsType?)`** {#haptics-impact}
 
 - ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 - _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+#### 타입 정의 {#haptics-impact-types}
+
+```typescript
+function hapticsImpact(hapticsType?: HapticsImpactType): void;
+```
 
 #### 설명 {#haptics-impact-summary}
 
 iOS 전용 **햅틱 Impact 피드백**을 트리거합니다.
 
-물리적 Impact를 시뮬레이션하는 피드백으로, 충돌이나 무게감을 표현할 때 사용합니다.
+물리적 Impact를 시뮬레이션하는 피드백으로, 충돌이나 무게감을 표현할 때 사용합니다.  
 `LIGHT = 0 | MEDIUM = 1 | HEAVY = 2 | SOFT = 3 | RIGID = 4` 중 하나를 선택할 수 있습니다.
 
 :::warning iOS 전용
@@ -532,6 +582,7 @@ iOS 전용 **햅틱 Impact 피드백**을 트리거합니다.
 
 ```javascript
 // 가벼운 Impact 피드백 (기본값)
+// iOS 10.0+ 디바이스에서만 지원됩니다.
 document
   .getElementById('lightButton')
   .addEventListener('touchstart', function () {
@@ -545,6 +596,7 @@ document
 
 ```javascript
 // 중간 강도 Impact 피드백
+// iOS 10.0+ 디바이스에서만 지원됩니다.
 document
   .getElementById('mediumButton')
   .addEventListener('touchstart', function () {
@@ -554,6 +606,7 @@ document
   });
 
 // 무거운 Impact 피드백
+// iOS 10.0+ 디바이스에서만 지원됩니다.
 document
   .getElementById('heavyButton')
   .addEventListener('touchstart', function () {
@@ -567,6 +620,7 @@ document
 
 ```javascript
 // 부드러운 Impact 피드백
+// iOS 13.0+ 디바이스에서만 지원됩니다.
 document
   .getElementById('softButton')
   .addEventListener('touchstart', function () {
@@ -576,6 +630,7 @@ document
   });
 
 // 견고한 Impact 피드백
+// iOS 13.0+ 디바이스에서만 지원됩니다.
 document
   .getElementById('rigidButton')
   .addEventListener('touchstart', function () {
@@ -587,16 +642,22 @@ document
 
 ---
 
-### **`hapticsNotification(hapticsType?: HapticsNotificationType): void`** {#haptics-notification}
+### **`hapticsNotification(hapticsType?)`** {#haptics-notification}
 
 - ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 - _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+#### 타입 정의 {#haptics-notification-types}
+
+```typescript
+function hapticsNotification(hapticsType?: HapticsNotificationType): void;
+```
 
 #### 설명 {#haptics-notification-summary}
 
 iOS 전용 **햅틱 Notification 피드백**을 트리거합니다.
 
-작업의 성공, 경고, 실패를 알리는 피드백으로, 사용자에게 결과를 직관적으로 전달할 때 사용합니다.
+작업의 성공, 경고, 실패를 알리는 피드백으로, 사용자에게 결과를 직관적으로 전달할 때 사용합니다.  
 `SUCCESS = 0 | WARNING = 1 | ERROR = 2` 중 하나를 선택할 수 있습니다.
 
 :::warning iOS 전용
@@ -681,10 +742,16 @@ async function processPayment() {
 
 ---
 
-### **`hapticsSelection(): void`** {#haptics-selection}
+### **`hapticsSelection()`** {#haptics-selection}
 
 - ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 - _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+
+#### 타입 정의 {#haptics-selection-types}
+
+```typescript
+function hapticsSelection(): void;
+```
 
 #### 설명 {#haptics-selection-summary}
 
@@ -764,16 +831,22 @@ function onScrollChange(newIndex) {
 
 ---
 
-### **`hapticsEffect(hapticsType?: HapticsEffectType): void`** {#haptics-effect}
+### **`hapticsEffect(hapticsType?)`** {#haptics-effect}
 
 - ![Android-Only](https://img.shields.io/badge/Android_only-gray?logo=android)
 - _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
 
+#### 타입 정의 {#haptics-effect-types}
+
+```typescript
+function hapticsEffect(hapticsType?: HapticsEffectType): void;
+```
+
 #### 설명 {#haptics-effect-summary}
 
-Android 전용 **햅틱 효과(VibrationEffect)**를 트리거합니다.
+Android 전용 **햅틱 효과(VibrationEffect)를 트리거**합니다.
 
-Android의 시스템 정의 햅틱 효과를 사용하여 클릭, 더블 클릭, 틱 등의 피드백을 제공합니다.
+Android의 시스템 정의 햅틱 효과를 사용하여 클릭, 더블 클릭, 틱 등의 피드백을 제공합니다.  
 `EFFECT_CLICK = 0 | EFFECT_DOUBLE_CLICK = 1 | EFFECT_TICK = 2 | EFFECT_HEAVY_CLICK = 5` 중 하나를 선택할 수 있습니다.
 
 :::warning Android 전용
