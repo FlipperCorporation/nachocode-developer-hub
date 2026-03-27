@@ -31,7 +31,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
-> 🔔 **최신화 일자:** 2026-03-24
+> 🔔 **최신화 일자:** 2026-03-27
 
 이 문서는 **광고성 푸시 알림**(**마케팅 푸시**)의 법적 요구사항과 nachocode SDK를 활용한 구현 방법을 안내합니다.
 
@@ -110,11 +110,25 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 nachocode SDK는 마케팅 푸시 동의 상태를 다음과 같이 관리합니다.
 
+#### 개별 조회 방식
+
 ```javascript
 const marketingAllowed = await Nachocode.push.getMarketingAllowed();
 
 console.log('게스트 동의:', marketingAllowed.guest); // boolean | null
 console.log('회원 동의:', marketingAllowed.user); // boolean | null
+```
+
+#### 일괄 조회 방식 ([v1.10.2](/docs/releases/v1/sdk/release-v-1-10-2)+)
+
+```javascript
+// 마케팅 푸시와 야간 푸시 동의를 한 번에 조회
+const preference = await Nachocode.push.getMarketingPreference();
+
+console.log('게스트 마케팅 동의:', preference.guest.marketingAllowed); // boolean | null
+console.log('게스트 야간 동의:', preference.guest.nightAllowed); // boolean | null
+console.log('회원 마케팅 동의:', preference.user.marketingAllowed); // boolean | null
+console.log('회원 야간 동의:', preference.user.nightAllowed); // boolean | null
 ```
 
 | 값      | 의미                               |
@@ -273,6 +287,8 @@ await Nachocode.user.deleteUserId();
 
 **21:00 ~ 08:00** 야간 시간대에 마케팅 푸시를 전송하려면 **별도의 야간 마케팅 푸시 수신 동의**가 필요합니다.
 
+#### 개별 설정 방식
+
 ```javascript
 // 야간 푸시 수신 동의
 await Nachocode.push.setNightAllowed(true);
@@ -280,6 +296,22 @@ await Nachocode.push.setNightAllowed(true);
 // 야간 푸시 동의 상태 조회
 const nightAllowed = await Nachocode.push.getNightAllowed();
 // true: 동의 / false: 거부 / null: 미선택
+```
+
+#### 일괄 설정 방식 ([v1.10.2](/docs/releases/v1/sdk/release-v-1-10-2)+)
+
+```javascript
+// 마케팅 푸시와 야간 푸시 동의를 한 번에 설정
+const result = await Nachocode.push.setMarketingPreference({
+  marketingAllowed: true,
+  nightAllowed: true,
+});
+
+if (result.status === 'success') {
+  console.log('마케팅 수신 동의가 설정되었습니다.');
+} else {
+  console.error('설정 실패:', result.message);
+}
 ```
 
 :::warning 야간 마케팅 푸시 요구사항
@@ -317,6 +349,8 @@ SDK를 통해 사용자의 마케팅 동의를 관리하면, nachocode 앱소스
   - [`setMarketingAllowed()`](/docs/sdk/namespaces/push#set-marketing-allowed) - 마케팅 푸시 동의 설정
   - [`getNightAllowed()`](/docs/sdk/namespaces/push#get-night-allowed) - 야간 푸시 동의 상태 조회
   - [`setNightAllowed()`](/docs/sdk/namespaces/push#set-night-allowed) - 야간 푸시 동의 설정
+  - [`getMarketingPreference()`](/docs/sdk/namespaces/push#get-marketing-preference) - 마케팅 수신 동의 일괄 조회 <BadgeWithVersion type="SDK" version="v1.10.2" link="/docs/releases/v1/sdk/release-v-1-10-2" />
+  - [`setMarketingPreference()`](/docs/sdk/namespaces/push#set-marketing-preference) - 마케팅 수신 동의 일괄 설정 <BadgeWithVersion type="SDK" version="v1.10.2" link="/docs/releases/v1/sdk/release-v-1-10-2" />
 
 - [**Nachocode.user**](/docs/sdk/namespaces/user) - 사용자 식별 관련 SDK 메서드
   - [`setUserId()`](/docs/sdk/namespaces/user#set-user-id) - 사용자 ID 설정 (로그인)
