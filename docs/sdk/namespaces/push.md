@@ -27,7 +27,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/push.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2026-03-27
+> 🔔 **최신화 일자:** 2026-03-30
 
 ## **개요** {#overview}
 
@@ -326,6 +326,10 @@ nachocode 서버에 **현재 디바이스의 푸시 토큰을 등록**합니다.
 
 :::tip 푸시 토큰이란?
 [푸시 토큰 가이드](../../guide/push/push-token)에서 상세 설명을 확인해보세요.
+:::
+
+:::warning 유저 설정 관련
+[`Nachocode.user.setUserId`](/docs/sdk/namespaces/user#set-user-id)를 호출하는 방식으로 로직 작성 시, `registerPushToken`을 중복해서 호출하지 않는 것을 권장 드립니다. `setUserId` 메서드는 기존 `registerPushToken`이 수행하는 모든 작업을 수행하며, 추가로 유저 정보 동기화도 수행합니다.
 :::
 
 #### 매개변수 {#register-push-token-parameters}

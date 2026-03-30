@@ -20,7 +20,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/user.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
-> 🔔 **최신화 일자:** 2026-03-24
+> 🔔 **최신화 일자:** 2026-03-30
 
 ## **개요** {#overview}
 
@@ -90,8 +90,11 @@ function setUserId(userId: string): Promise<UserOperationResult>;
 사용자가 로그인할 때 호출하여 사용자를 식별할 수 있도록 합니다.
 
 :::info 마케팅 푸시 관련
-`setUserId()` 호출 시 앱이 **로그인 상태로 전환**되며, 이후 [`Nachocode.push.setMarketingAllowed()`](/docs/sdk/namespaces/push#set-marketing-allowed)를 호출하면 **유저(로그인) 마케팅 동의**가 저장됩니다.
-자세한 내용은 [마케팅 푸시 가이드](/docs/guide/push/marketing-push)를 참고하세요.
+`setUserId` 호출 시 앱이 **로그인 상태로 전환**되며, 이후 [`Nachocode.push.setMarketingAllowed`](/docs/sdk/namespaces/push#set-marketing-allowed)를 호출하면 **유저(로그인) 마케팅 동의**가 저장됩니다. 자세한 내용은 [마케팅 푸시 가이드](/docs/guide/push/marketing-push)를 참고하세요.
+:::
+
+:::tip 푸시 토큰 관련
+`setUserId`를 호출하는 방식으로 로직 작성 시, [`Nachocode.push.registerPushToken`](/docs/sdk/namespaces/push#register-push-token)을 중복해서 호출하지 않는 것을 권장 드립니다. `setUserId` 메서드는 기존 `registerPushToken`이 수행하던 모든 작업을 수행하며, 추가로 유저 정보 동기화도 수행합니다.
 :::
 
 #### 매개변수 {#set-user-id-parameters}
