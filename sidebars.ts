@@ -13,6 +13,8 @@ const sidebars: SidebarsConfig = {
         slug: '/guide/push',
       },
       items: [
+        'guide/push/intro',
+        'guide/push/understanding',
         'guide/push/push-token',
         'guide/push/personal-push',
         'guide/push/topic-push',
