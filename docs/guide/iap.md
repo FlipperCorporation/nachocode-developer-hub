@@ -18,7 +18,7 @@ keywords:
 image: /img/docs/thumbnails/GUIDE/iap.svg
 ---
 
-# 인앱 결제
+# 인앱 결제 (In App Purchase)
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 

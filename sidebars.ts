@@ -89,7 +89,7 @@ const sidebars: SidebarsConfig = {
       label: '샌드박스 앱',
       link: {
         type: 'generated-index',
-        title: '샌드박스 앱',
+        title: '샌드박스 앱 (Sandbox App)',
         slug: '/guide/sandbox',
       },
       items: [
@@ -99,6 +99,7 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'guide/check-store-id',
+    'guide/faq',
   ],
   api: [
     'api/intro',
