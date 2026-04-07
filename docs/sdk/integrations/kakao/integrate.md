@@ -26,7 +26,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/kakao.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
-> 🔔 **최신화 일자:** 2025-11-14
+> 🔔 **최신화 일자:** 2026-04-07
 
 ## **필수 선행 작업** {#prerequisite}
 
@@ -38,6 +38,13 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 ![nachocode_developer_android_hash_key](/img/docs/android/nachcodoe_developer_android_hash_key.png)
 
+:::tip 키 해시란?
+키 해시(Key Hash)란 인증서(Certificate)의 인증서 지문 값(Certificate fingerprints)을 해시(hash)한 값으로,  
+카카오 연동 시 카카오 API 서버에서 악성 앱인지 판별하는 데 사용됩니다.
+
+➡️ [카카오 공식문서 보러가기 - 키 해시](https://developers.kakao.com/docs/latest/ko/android/getting-started#before-you-begin-add-key-hash)
+:::
+
 <br/>
 
 ### 2. [Kakao Developers](https://developers.kakao.com/console/app)에서 애플리케이션 생성 및 네이티브 앱 키 발급 {#prerequisite-step-2}
@@ -48,11 +55,33 @@ nachocode SDK로 **카카오 네이티브 기능**을 사용하기 위해서는 
 
 ![developer_kakao_app_key_register](/img/docs/kakao/developers_kakao_app_key_register.png)
 
-### 3. 플랫폼 등록 ([Android](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-android), [iOS](https://developers.kakao.com/docs/latest/ko/getting-started/app#platform-ios)) {#prerequisite-step-3}
+### 3. 플랫폼 등록 ([Android](https://developers.kakao.com/docs/latest/ko/android/getting-started#before-you-begin-platform), [iOS](https://developers.kakao.com/docs/latest/ko/ios/getting-started#before-you-begin-platform)) {#prerequisite-step-3}
 
 - **Android 및 iOS 플랫폼을 등록**합니다.
 - **패키지명 및 번들 ID**는 **나쵸코드 대시보드에 등록된 것**과 반드시 일치해야 합니다.
+
+#### Android 플랫폼 [키 해시](https://developers.kakao.com/docs/latest/ko/android/getting-started#before-you-begin-add-key-hash) 등록
+
+:::warning 중요
+nachocode 대시보드에서 확인 가능한 해시키는 Play Store 배포 이전, 다운 받은 APK를 직접 실기기에 설치하여 네이티브 기능의 동작을 테스트할 때 활용됩니다.
+
+[Google Play Console의 앱 서명(App Signing)](https://developer.android.com/studio/publish/app-signing#app-signing-google-play)을 사용할 경우, Google Play Console에서 얻은 SHA-1 인증서 지문(SHA-1 certificate fingerprint)을 Base64로 인코딩하여 사용해야 합니다.
+
+1. **[Google Play Console] > [설정] > [앱 무결성] 메뉴의 [앱 서명키 인증서]** 항목에서 **[SHA-1 인증서 지문]** 값을 복사
+2. SHA-1 인증서 지문 값을 터미널에 아래와 같이 입력합니다.
+
+   ```bash
+   PRINTCERT="YOUR_GOOGLE_PLAY_CONSOLE_SHA1"
+   echo "${PRINTCERT}" | xxd -r -p | openssl base64
+   ```
+
+3. 터미널에 출력된 키 해시를 복사합니다.
+
+:::
+
 - [대시보드에서 확인한 키 해시](#prerequisite-step-1)를 Android 플랫폼에 등록합니다.
+- Google Play Console의 SHA-1 지문 키를 Base64로 인코딩하여 만든 키 해시를 Android 플랫폼에 등록합니다.  
+  _(Google Play Console의 앱 서명 사용 시)_
 
 ![developer_kakao_add_platform](/img/docs/kakao/developers_kakao_add_platform.png)
 
