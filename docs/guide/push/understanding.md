@@ -2,7 +2,7 @@
 sidebar_position: 2
 sidebar_label: 푸시 알림 이해하기
 pagination_label: 푸시 알림 이해하기
-description: 푸시 알림(Push Notification)이 왜 중요한지, 언제 보내야 하는지, 어떻게 사용자 경험을 개선하는지, 왜 웹이 아닌 앱을 만들어야 하는지 상세히 안내합니다.
+description: 푸시 알림(Push Notification)이 왜 중요한지, 언제 보내야 하는지, 어떻게 사용자 경험을 개선하는지, 왜 웹을 앱으로 확장해야 하는지 상세히 안내합니다.
 keywords:
   [
     푸시 알림,
