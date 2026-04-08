@@ -291,7 +291,7 @@ export declare type GetAttributionListResult =
 
 ## **메서드 상세** {#method-details}
 
-### **`setCustomerUserId(userId: string): Promise<AppsflyerResult>`** {#set-customer-user-id}
+### **`setCustomerUserId(userId)`** {#set-customer-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 - _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> - 메서드명 변경
@@ -299,6 +299,12 @@ export declare type GetAttributionListResult =
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#set-customer-user-id-types}
+
+```typescript
+function setCustomerUserId(customUserId: string): Promise<AppsflyerResult>;
+```
 
 #### 설명 {#set-customer-user-id-summary}
 
@@ -345,7 +351,7 @@ if (result.status === 'success') {
 
 ---
 
-### **`getCustomerUserId(): Promise<GetCustomerUserIdResult>`** {#get-customer-user-id}
+### **`getCustomerUserId()`** {#get-customer-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 - _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> - 메서드명 변경
@@ -353,6 +359,12 @@ if (result.status === 'success') {
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-customer-user-id-types}
+
+```typescript
+function getCustomerUserId(): Promise<GetCustomerUserIdResult>;
+```
 
 #### 설명 {#get-customer-user-id-summary}
 
@@ -392,7 +404,7 @@ if (result.status === 'success') {
 
 ---
 
-### **`deleteCustomerUserId(): Promise<AppsflyerResult>`** {#delete-customer-user-id}
+### **`deleteCustomerUserId()`** {#delete-customer-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 - _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> - 메서드명 변경
@@ -400,6 +412,12 @@ if (result.status === 'success') {
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#delete-customer-user-id-types}
+
+```typescript
+function deleteCustomerUserId(): Promise<AppsflyerResult>;
+```
 
 #### 설명 {#delete-customer-user-id-summary}
 
@@ -439,13 +457,19 @@ if (result.status === 'success') {
 
 ---
 
-### **`getAttributionData(): Promise<GetAttributionDataResult>`** {#get-attribution-data}
+### **`getAttributionData()`** {#get-attribution-data}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-attribution-data-types}
+
+```typescript
+function getAttributionData(): Promise<GetAttributionDataResult>;
+```
 
 #### 설명 {#get-attribution-data-summary}
 
@@ -501,13 +525,19 @@ if (result.status === 'success') {
 
 ---
 
-### **`clearAttributionData(timestamp?: number): Promise<AppsflyerResult>`** {#clear-attribution-data}
+### **`clearAttributionData(timestamp?)`** {#clear-attribution-data}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#clear-attribution-data-types}
+
+```typescript
+function clearAttributionData(timestamp?: number): Promise<AppsflyerResult>;
+```
 
 #### 설명 {#clear-attribution-data-summary}
 
@@ -541,13 +571,19 @@ if (result.status === 'success') {
 
 ---
 
-### **`getAttributionList(): Promise<GetAttributionListResult>`** {#get-attribution-list}
+### **`getAttributionList()`** {#get-attribution-list}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-attribution-list-types}
+
+```typescript
+function getAttributionList(): Promise<GetAttributionListResult>;
+```
 
 #### 설명 {#get-attribution-list-summary}
 
@@ -597,13 +633,19 @@ if (result.status === 'success') {
 
 ---
 
-### **`clearAttributionList(): Promise<AppsflyerResult>`** {#clear-attribution-list}
+### **`clearAttributionList()`** {#clear-attribution-list}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#clear-attribution-list-types}
+
+```typescript
+function clearAttributionList(): Promise<AppsflyerResult>;
+```
 
 #### 설명 {#clear-attribution-list-summary}
 
@@ -631,13 +673,22 @@ if (result.status === 'success') {
 
 ---
 
-### **`logEvent(eventName: string, values: Record<string, any>): Promise<AppsflyerResult>`** {#log-event}
+### **`logEvent(eventName, values)`** {#log-event}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#log-event-types}
+
+```typescript
+function logEvent(
+  eventName: string,
+  values: Record<string, any>
+): Promise<AppsflyerResult>;
+```
 
 #### 설명 {#log-event-summary}
 
