@@ -26,7 +26,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/kakao.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
-> 🔔 **최신화 일자:** 2026-04-07
+> 🔔 **최신화 일자:** 2026-04-08
 
 ## **필수 선행 작업** {#prerequisite}
 
@@ -107,7 +107,7 @@ nachocode 대시보드에서 확인 가능한 해시키는 Play Store 배포 이
 
 ### 5. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 토글 활성화 {#prerequisite-step-5}
 
-- **[ 앱 설정 > 연동 > Kakao ]에서 [ 카카오 네이티브 활성화 ] 토글 활성화 후 Kakao Developers에서 발급한 네이티브 앱 키를 등록하여 앱 설정 완료**
+- **[ 앱 설정 > 연동 > Kakao ]에서 [ 카카오 네이티브 활성화 ] 토글 활성화 후 [Kakao Developers에서 발급한 네이티브 앱 키](#prerequisite-step-2)를 등록하여 앱 설정 완료**
 
 ![nachocode_developer_kakao_native_key](/img/docs/kakao/nachocode_developer_kakao_native_key.png)
 
