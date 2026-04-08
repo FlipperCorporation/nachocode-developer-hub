@@ -25,7 +25,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/facebook.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2026-01-19
+> 🔔 **최신화 일자:** 2026-04-08
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -163,13 +163,27 @@ export declare type FacebookUserData = {
 
 ## **메서드 상세** {#method-details}
 
-### **`login(permissions: FacebookPermissions, callback: (result: FacebookResult, accessToken?: string, userId?: string, userData?: FacebookUserData) => void): void`** {#login}
+### **`login(permissions, callback)`** {#login}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#login-types}
+
+```typescript
+function login(
+  permissions: FacebookPermissions,
+  callback: (
+    result: FacebookResult,
+    accessToken?: string,
+    userId?: string,
+    userData?: FacebookUserData
+  ) => void
+): void;
+```
 
 #### 설명 {#login-summary}
 
@@ -209,13 +223,26 @@ Nachocode.facebook.login(
 
 ---
 
-### **`isLoggedIn(callback: (result: FacebookResult, isLoggedIn: boolean, accessToken?: string, userId?: string) => void): void`** {#is-logged-in}
+### **`isLoggedIn(callback)`** {#is-logged-in}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#is-logged-in-types}
+
+```typescript
+function isLoggedIn(
+  callback: (
+    result: FacebookResult,
+    isLoggedIn: boolean,
+    accessToken?: string,
+    userId?: string
+  ) => void
+): void;
+```
 
 #### 설명 {#is-logged-in-summary}
 
@@ -249,13 +276,22 @@ Nachocode.facebook.isLoggedIn((result, isLoggedIn, accessToken, userId) => {
 
 ---
 
-### **`getUserData(permissions: FacebookPermissions, callback: (result: FacebookResult, userData?: FacebookUserData) => void): void`** {#get-user-data}
+### **`getUserData(permissions, callback)`** {#get-user-data}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-user-data-types}
+
+```typescript
+function getUserData(
+  permissions: FacebookPermissions,
+  callback: (result: FacebookResult, userData?: FacebookUserData) => void
+): void;
+```
 
 #### 설명 {#get-user-data-summary}
 
@@ -295,13 +331,19 @@ Nachocode.facebook.getUserData(
 
 ---
 
-### **`logout(): void`** {#logout}
+### **`logout()`** {#logout}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#logout-types}
+
+```typescript
+function logout(): void;
+```
 
 #### 설명 {#logout-summary}
 
@@ -318,13 +360,19 @@ console.log('페이스북에서 로그아웃되었습니다.');
 
 ---
 
-### **`logEvent(eventName: string, parameters?: Record<string, string>): void`** {#log-event}
+### **`logEvent(eventName, parameters?)`** {#log-event}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#log-event-types}
+
+```typescript
+function logEvent(eventName: string, parameters?: Record<string, string>): void;
+```
 
 #### 설명 {#log-event-summary}
 
