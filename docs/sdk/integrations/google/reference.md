@@ -25,7 +25,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/google.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
-> 🔔 **최신화 일자:** 2025-07-16
+> 🔔 **최신화 일자:** 2026-04-08
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -113,13 +113,25 @@ export declare type GoogleUserData = {
 
 ## **메서드 상세** {#method-details}
 
-### **`login(callback: (result: GoogleResult, idToken?: string, userData?: GoogleUserData) => void): void`** {#login}
+### **`login(callback)`** {#login}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#login-types}
+
+```typescript
+function login(
+  callback: (
+    result: GoogleResult,
+    idToken?: string,
+    userData?: GoogleUserData
+  ) => void
+): void;
+```
 
 #### 설명 {#login-summary}
 
@@ -150,13 +162,25 @@ Nachocode.google.login((result, idToken, userData) => {
 
 ---
 
-### **`isLoggedIn(callback: (result: GoogleResult, isLoggedIn: boolean, idToken?: string) => void): void`** {#is-logged-in}
+### **`isLoggedIn(callback)`** {#is-logged-in}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#is-logged-in-types}
+
+```typescript
+function isLoggedIn(
+  callback: (
+    result: GoogleResult,
+    isLoggedIn: boolean,
+    idToken?: string
+  ) => void
+): void;
+```
 
 #### 설명 {#is-logged-in-summary}
 
@@ -197,13 +221,21 @@ Nachocode.google.isLoggedIn((result, isLoggedIn, idToken) => {
 
 ---
 
-### **`getUserData(callback: (result: GoogleResult, userData?: GoogleUserData) => void): void`** {#get-user-data}
+### **`getUserData(callback)`** {#get-user-data}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-user-data-types}
+
+```typescript
+function getUserData(
+  callback: (result: GoogleResult, userData?: GoogleUserData) => void
+): void;
+```
 
 #### 설명 {#get-user-data-summary}
 
@@ -234,13 +266,19 @@ Nachocode.google.getUserData((result, userData) => {
 
 ---
 
-### **`logout(callback: (result: GoogleResult) => void): void`** {#logout}
+### **`logout(callback)`** {#logout}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#logout-types}
+
+```typescript
+function logout(callback?: (result: GoogleResult) => void): void;
+```
 
 #### 설명 {#logout-summary}
 
