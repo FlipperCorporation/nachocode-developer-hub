@@ -25,7 +25,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/naver.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" /> <BadgeWithVersion type="Android" version="v1.9.0" link="/docs/releases/v1/app-source/android/release-v-1-9-0" /> <BadgeWithVersion type="iOS" version="v1.9.0" link="/docs/releases/v1/app-source/ios/release-v-1-9-0" />  
-> 🔔 **최신화 일자:** 2026-01-16
+> 🔔 **최신화 일자:** 2026-04-08
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -134,13 +134,21 @@ export declare type NaverUserData = {
 
 ## **메서드 상세** {#method-details}
 
-### **`login(callback: (result: NaverResult, loginData?: NaverLoginData) => void): void`** {#login}
+### **`login(callback)`** {#login}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#login-types}
+
+```typescript
+function login(
+  callback: (result: NaverResult, loginData?: NaverLoginData) => void
+): void;
+```
 
 #### 설명 {#login-summary}
 
@@ -175,13 +183,25 @@ Nachocode.naver.login((result, loginData) => {
 
 ---
 
-### **`isLoggedIn(callback: (result: NaverResult, isLoggedIn: boolean, accessToken?: string) => void): void`** {#is-logged-in}
+### **`isLoggedIn(callback)`** {#is-logged-in}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#is-logged-in-types}
+
+```typescript
+function isLoggedIn(
+  callback: (
+    result: NaverResult,
+    isLoggedIn: boolean,
+    accessToken?: string
+  ) => void
+): void;
+```
 
 #### 설명 {#is-logged-in-summary}
 
@@ -214,13 +234,21 @@ Nachocode.naver.isLoggedIn((result, isLoggedIn, accessToken) => {
 
 ---
 
-### **`getUserData(callback: (result: NaverResult, userData?: NaverUserData) => void): void`** {#get-user-data}
+### **`getUserData(callback)`** {#get-user-data}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-user-data-types}
+
+```typescript
+function getUserData(
+  callback: (result: NaverResult, userData?: NaverUserData) => void
+): void;
+```
 
 #### 설명 {#get-user-data-summary}
 
@@ -256,13 +284,19 @@ Nachocode.naver.getUserData((result, userData) => {
 
 ---
 
-### **`logout(callback?: (result: NaverResult) => void): void`** {#logout}
+### **`logout(callback?)`** {#logout}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#logout-types}
+
+```typescript
+function logout(callback?: (result: NaverResult) => void): void;
+```
 
 #### 설명 {#logout-summary}
 
@@ -288,13 +322,19 @@ console.log('네이버에서 로그아웃되었습니다.');
 
 ---
 
-### **`disconnect(callback?: (result: NaverResult) => void): void`** {#disconnect}
+### **`disconnect(callback?)`** {#disconnect}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.9.0" link="/docs/releases/v1/sdk/release-v-1-9-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#disconnect-types}
+
+```typescript
+function disconnect(callback?: (result: NaverResult) => void): void;
+```
 
 #### 설명 {#disconnect-summary}
 
