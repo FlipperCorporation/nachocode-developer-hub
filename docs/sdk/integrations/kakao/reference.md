@@ -26,7 +26,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/kakao.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
-> 🔔 **최신화 일자:** 2025-07-16
+> 🔔 **최신화 일자:** 2026-04-08
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -278,13 +278,21 @@ type KakaoShareStatusCode = 102 | 103 | 104 | 105 | 106 | 108 | 199 | 200 | 201;
 
 ## **메서드 상세** {#method-details}
 
-### **`login(callback: (result: KakaoResult, loginData?: KakaoLoginData) => void): void`** {#login}
+### **`login(callback)`** {#login}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#login-types}
+
+```typescript
+function login(
+  callback: (result: KakaoResult, loginData?: KakaoLoginData) => void
+): void;
+```
 
 #### 설명 {#login-summary}
 
@@ -315,13 +323,25 @@ Nachocode.kakao.login((result, loginData) => {
 
 ---
 
-### **`isLoggedIn(callback: (result: KakaoResult, isLoggedIn: boolean, loginData?: KakaoLoginData) => void): void`** {#is-logged-in}
+### **`isLoggedIn(callback)`** {#is-logged-in}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#is-logged-in-types}
+
+```typescript
+function isLoggedIn(
+  callback: (
+    result: KakaoResult,
+    isLoggedIn: boolean,
+    loginData?: KakaoLoginData
+  ) => void
+): void;
+```
 
 #### 설명 {#is-logged-in-summary}
 
@@ -351,13 +371,21 @@ Nachocode.kakao.isLoggedIn((result, isLoggedIn, loginData) => {
 
 ---
 
-### **`getUserData(callback: (result: KakaoResult, userData?: KakaoUserData) => void): void`** {#get-user-data}
+### **`getUserData(callback)`** {#get-user-data}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-user-data-types}
+
+```typescript
+function getUserData(
+  callback: (result: KakaoResult, userData?: KakaoUserData) => void
+): void;
+```
 
 #### 설명 {#get-user-data-summary}
 
@@ -387,13 +415,19 @@ Nachocode.kakao.getUserData((result, userData) => {
 
 ---
 
-### **`logout(callback: (result: KakaoResult) => void): void`** {#logout}
+### **`logout(callback)`** {#logout}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#logout-types}
+
+```typescript
+function logout(callback?: (result: KakaoResult) => void): void;
+```
 
 #### 설명 {#logout-summary}
 
@@ -425,13 +459,19 @@ Nachocode.kakao.logout(result => {
 
 ---
 
-### **`unlink(callback: (result: KakaoResult) => void): void`** {#unlink}
+### **`unlink(callback)`** {#unlink}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#unlink-types}
+
+```typescript
+function unlink(callback?: (result: KakaoResult) => void): void;
+```
 
 #### 설명 {#unlink-summary}
 
@@ -463,13 +503,23 @@ Nachocode.kakao.unlink(result => {
 
 ---
 
-### **`share(type: KakaoShareType, data: KakaoShareCustom | KakaoShareScrap, callback?: (result: KakaoShareResult) => void): void`** {#share}
+### **`share(type, data, callback?)`** {#share}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#share-types}
+
+```typescript
+function share(
+  type: KakaoShareType,
+  data: KakaoShareCustom | KakaoShareScrap,
+  callback?: (result: KakaoShareResult) => void
+): void;
+```
 
 #### 설명 {#share-summary}
 
