@@ -2,7 +2,7 @@
 <html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-sdk/integrations/kakao/integrate" data-has-hydrated="false">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Docusaurus v3.9.2">
+<meta name="generator" content="Docusaurus v3.10.0">
 <title data-rh="true">카카오 (kakao) - 연동하기 | nachocode Developer</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.nachocode.io/docs/sdk/integrations/kakao/integrate"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="카카오 (kakao) - 연동하기 | nachocode Developer"><meta data-rh="true" name="description" content="nachocode SDK의 `kakao` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. 카카오 개발자 대시보드, nachocode 대시보드에서 네이티브 로그인 및 카카오톡 공유 기능을 쉽게 연동하는 방법을 제공합니다."><meta data-rh="true" property="og:description" content="nachocode SDK의 `kakao` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. 카카오 개발자 대시보드, nachocode 대시보드에서 네이티브 로그인 및 카카오톡 공유 기능을 쉽게 연동하는 방법을 제공합니다."><meta data-rh="true" name="keywords" content="카카오 소셜 로그인,카카오 네이티브 로그인,카카오 공유,카카오톡 공유,카카오톡 소셜 로그인,카카오톡 네이티브 로그인,kakao social login,kakao native login,kakao webview login,kakao share"><meta data-rh="true" property="og:image" content="https://developer.nachocode.io/img/docs/thumbnails/SDK/kakao.svg"><meta data-rh="true" name="twitter:image" content="https://developer.nachocode.io/img/docs/thumbnails/SDK/kakao.svg"><link data-rh="true" rel="icon" href="/favicon-32x32.png"><link data-rh="true" rel="canonical" href="https://developer.nachocode.io/docs/sdk/integrations/kakao/integrate"><link data-rh="true" rel="alternate" href="https://developer.nachocode.io/docs/sdk/integrations/kakao/integrate" hreflang="ko"><link data-rh="true" rel="alternate" href="https://developer.nachocode.io/docs/sdk/integrations/kakao/integrate" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"네임스페이스 (외부연동)","item":"https://developer.nachocode.io/docs/sdk/integrations"},{"@type":"ListItem","position":2,"name":"카카오 (kakao)","item":"https://developer.nachocode.io/docs/sdk/integrations/kakao"},{"@type":"ListItem","position":3,"name":"연동하기","item":"https://developer.nachocode.io/docs/sdk/integrations/kakao/integrate"}]}</script><link rel="preconnect" href="https://www.google-analytics.com">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E023WXQCL8"></script>
@@ -19,11 +19,11 @@
 <link rel="preload" href="/fonts/pretendard/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/fonts/pretendard/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/fonts/pretendard/Pretendard-Thin.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<script src="/js/copy-heading-link.js" async></script><link rel="stylesheet" href="/assets/css/styles.9b5da6e7.css">
-<script src="/assets/js/runtime~main.b87465fa.js" defer="defer"></script>
-<script src="/assets/js/main.aa7e4561.js" defer="defer"></script>
+<script src="/js/copy-heading-link.js" async></script><link rel="stylesheet" href="/assets/css/styles.9d04edac.css">
+<script src="/assets/js/runtime~main.33984954.js" defer="defer"></script>
+<script src="/assets/js/main.447686e9.js" defer="defer"></script>
 </head>
-<body class="navigation-with-keyboard">
+<body>
 <svg style="display: none;"><defs>
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
@@ -62,7 +62,7 @@
 </li>
 <li class="">
 <p>SHA-1 인증서 지문 값을 터미널에 아래와 같이 입력합니다.</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">PRINTCERT=&quot;YOUR_GOOGLE_PLAY_CONSOLE_SHA1&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">echo &quot;${PRINTCERT}&quot; | xxd -r -p | openssl base64</span><br></span></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">PRINTCERT=&quot;YOUR_GOOGLE_PLAY_CONSOLE_SHA1&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;${PRINTCERT}&quot; | xxd -r -p | openssl base64</span><br></div></code></pre></div></div>
 </li>
 <li class="">
 <p>터미널에 출력된 키 해시를 복사합니다.</p>
@@ -85,7 +85,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisite-step-4-2">4-2. (선택사항) 공유하기 사용 시, <a href="https://developers.kakao.com/docs/latest/ko/message-template/common" target="_blank" rel="noopener noreferrer" class="">메시지 템플릿</a> 등록 [ 도구 &gt; 메시지 템플릿 ]<a href="#prerequisite-step-4-2" class="hash-link" aria-label="prerequisite-step-4-2에 대한 직접 링크" title="prerequisite-step-4-2에 대한 직접 링크" translate="no">​</a></h3>
 <ul>
 <li class=""><strong>커스텀 템플릿 공유하기 기능</strong>을 이용하기 위해서는 카카오톡의 <strong>메시지 템플릿 빌더</strong>를 활용해 미리 <strong>메시지 템플릿</strong>을 만들어 저장해둬야 합니다.</li>
-<li class="">이 때 발급 받은 <strong>템플릿 ID</strong>를 활용하여 <strong>nachocode SDK</strong>를 통해 <strong>템플릿 메  시지 전송</strong>이 가능해집니다.</li>
+<li class="">이 때 발급 받은 <strong>템플릿 ID</strong>를 활용하여 <strong>nachocode SDK</strong>를 통해 <strong>템플릿 메시지 전송</strong>이 가능해집니다.</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="developer_kakao_message_template" src="/assets/images/developers_kakao_message_template-9b6b149b3d692c878f291f3055a2c4f6.png" width="713" height="340" class="img_ev3q"></p>
 <br>
