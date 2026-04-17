@@ -29,13 +29,6 @@ const config: Config = {
       },
     },
     {
-      tagName: 'meta',
-      attributes: {
-        name: 'theme-color',
-        content: '#000000',
-      },
-    },
-    {
       tagName: 'link',
       attributes: {
         rel: 'preload',
@@ -166,7 +159,7 @@ const config: Config = {
       isCloseable: true,
     },
     navbar: {
-      title: 'nachocode',
+      title: 'nachocode Developer',
       logo: { alt: 'nachocode', src: 'img/logo.png' },
       items: [
         {
@@ -206,7 +199,7 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            { label: 'User Guide', to: 'https://docs.nachocode.io' },
+            { label: 'User Guide', href: 'https://docs.nachocode.io' },
             { label: 'Developer Guide', to: '/docs/guide/intro' },
             { label: 'API', to: '/docs/api/intro' },
             { label: 'SDK', to: '/docs/sdk/intro' },
@@ -237,7 +230,7 @@ const config: Config = {
               href: 'https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide',
             },
             { label: 'GitHub', href: 'https://github.com/FlipperCorporation' },
-            { label: 'Discord', href: 'https://discord.gg/SU5wFmRw' },
+            { label: 'Discord', href: 'https://discord.gg/6uuw4vRMdk' },
           ],
         },
       ],
@@ -251,6 +244,47 @@ const config: Config = {
       src: '/js/copy-heading-link.js',
       async: true,
     },
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: false,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/android-chrome-192x192.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/site.webmanifest',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#000000',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: 'default',
+          },
+        ],
+      },
+    ],
   ],
 };
 
