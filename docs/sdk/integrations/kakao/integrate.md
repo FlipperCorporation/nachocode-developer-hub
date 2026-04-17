@@ -26,7 +26,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/kakao.svg'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
-> 🔔 **최신화 일자:** 2026-04-08
+> 🔔 **최신화 일자:** 2026-04-17
 
 ## **필수 선행 작업** {#prerequisite}
 
@@ -67,15 +67,20 @@ nachocode 대시보드에서 확인 가능한 해시키는 Play Store 배포 이
 
 [Google Play Console의 앱 서명(App Signing)](https://developer.android.com/studio/publish/app-signing#app-signing-google-play)을 사용할 경우, Google Play Console에서 얻은 SHA-1 인증서 지문(SHA-1 certificate fingerprint)을 Base64로 인코딩하여 사용해야 합니다.
 
-1. **[Google Play Console] > [설정] > [앱 무결성] 메뉴의 [앱 서명키 인증서]** 항목에서 **[SHA-1 인증서 지문]** 값을 복사
-2. SHA-1 인증서 지문 값을 터미널에 아래와 같이 입력합니다.
+1. **[Google Play Console] > [테스트 및 출시] > [앱 무결성] > [Play 앱 서명] > [설정]** 접속
+
+   - **[앱 서명키 인증서]** 항목에서 **[SHA-1 인증서 지문]** 값을 복사
+
+   ![google_console_fingerprint_sha1](/img/docs/google/google_console_fingerprint_sha1.png)
+
+1. SHA-1 인증서 지문 값을 터미널에 아래와 같이 입력합니다.
 
    ```bash
    PRINTCERT="YOUR_GOOGLE_PLAY_CONSOLE_SHA1"
    echo "${PRINTCERT}" | xxd -r -p | openssl base64
    ```
 
-3. 터미널에 출력된 키 해시를 복사합니다.
+1. 터미널에 출력된 키 해시를 복사합니다.
 
 :::
 
