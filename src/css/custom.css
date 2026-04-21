@@ -188,11 +188,11 @@
 :root {
   --ifm-color-primary: #f79e40;
   --ifm-color-primary-dark: #ffc53d;
-  --ifm-color-primary-darker: #ffb800;
+  --ifm-color-primary-darker: #f96d32;
   --ifm-color-primary-darkest: #f79340;
   --ifm-color-primary-light: #ffe58f;
   --ifm-color-primary-lighter: #fff1b8;
-  --ifm-color-primary-lightest: #fff7e6;
+  --ifm-color-primary-lightest: #fba37e;
   --ifm-menu-color-background-active: #fffbe7;
   --ifm-menu-color-background-hover: #f5f5f5;
   --ifm-breadcrumb-item-background-active: #fffbe7;
@@ -210,7 +210,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #ffb800;
+  --ifm-color-primary: #f96d32;
   --ifm-color-primary-dark: #aa6215;
   --ifm-color-primary-darker: #d87a16;
   --ifm-color-primary-darkest: #e89a3c;
