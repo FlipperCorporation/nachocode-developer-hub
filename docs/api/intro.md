@@ -15,14 +15,14 @@ keywords:
     nachocode 서비스,
     nachocode 연동,
   ]
-image: /img/docs/thumbnails/API/intro.svg
+image: /img/docs/thumbnails/API/intro.png
 ---
 
 # nachocode API 개요
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/API/intro.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/API/intro.png'/>
 
 > 🔔 **최신화 일자:** 2026-01-13
 
