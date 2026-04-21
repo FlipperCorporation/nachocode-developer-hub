@@ -12,7 +12,7 @@ keywords:
     clipboard,
     native clipboard,
   ]
-image: /img/docs/thumbnails/SDK/clipboard.svg
+image: /img/docs/thumbnails/SDK/clipboard.png
 ---
 
 # 클립보드 (`clipboard`)
@@ -20,7 +20,7 @@ image: /img/docs/thumbnails/SDK/clipboard.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/clipboard.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/clipboard.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
 > 🔔 **최신화 일자:** 2026-03-18

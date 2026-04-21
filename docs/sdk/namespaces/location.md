@@ -13,7 +13,7 @@ keywords:
     getCurrentPosition,
     location permission,
   ]
-image: /img/docs/thumbnails/SDK/location.svg
+image: /img/docs/thumbnails/SDK/location.png
 ---
 
 # 위치 (`location`)
@@ -21,7 +21,7 @@ image: /img/docs/thumbnails/SDK/location.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/location.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/location.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.6.2" link="/docs/releases/v1/sdk/release-v-1-6-2" /> <BadgeWithVersion type="Android" version="v1.6.7" link="/docs/releases/v1/app-source/android/release-v-1-6-7" /> <BadgeWithVersion type="iOS" version="v1.6.7" link="/docs/releases/v1/app-source/ios/release-v-1-6-7" />  
 > 🔔 **최신화 일자 :** 2026-03-18

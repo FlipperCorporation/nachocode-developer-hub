@@ -25,7 +25,7 @@ keywords:
     AppsFlyer Engage,
     AppsFlyer Integration,
   ]
-image: /img/docs/thumbnails/SDK/appsflyer.svg
+image: /img/docs/thumbnails/SDK/appsflyer.png
 ---
 
 # 앱스플라이어 (`appsflyer`) - 연동하기
@@ -33,7 +33,7 @@ image: /img/docs/thumbnails/SDK/appsflyer.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/appsflyer.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/appsflyer.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/app-source/android/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/app-source/ios/release-v-1-7-0" />  
 > 🔔 **최신화 일자:** 2026-01-16

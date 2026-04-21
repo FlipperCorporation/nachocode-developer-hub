@@ -14,7 +14,7 @@ keywords:
     google native login,
     google webview login,
   ]
-image: /img/docs/thumbnails/SDK/google.svg
+image: /img/docs/thumbnails/SDK/google.png
 ---
 
 # 구글 (`google`) - 레퍼런스
@@ -22,7 +22,7 @@ image: /img/docs/thumbnails/SDK/google.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/google.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/google.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
 > 🔔 **최신화 일자:** 2026-04-08

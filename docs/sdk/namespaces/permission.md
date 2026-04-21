@@ -12,7 +12,7 @@ keywords:
     Android permission,
     iOS permission,
   ]
-image: /img/docs/thumbnails/SDK/permission.svg
+image: /img/docs/thumbnails/SDK/permission.png
 ---
 
 # 권한 (`permission`)
@@ -20,7 +20,7 @@ image: /img/docs/thumbnails/SDK/permission.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/permission.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/permission.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" /> <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" /> <BadgeWithVersion type="iOS" version="v1.2.0" link="/docs/releases/v1/app-source/ios/release-v-1-2-0" />  
 > 🛠️ **개선된 버전 :** <BadgeWithVersion type="Android" version="v1.9.1" link="/docs/releases/v1/app-source/android/release-v-1-9-1" /> <BadgeWithVersion type="iOS" version="v1.9.1" link="/docs/releases/v1/app-source/ios/release-v-1-9-1" />  

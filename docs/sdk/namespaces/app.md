@@ -11,7 +11,7 @@ keywords:
     hybrid app,
     native app,
   ]
-image: /img/docs/thumbnails/SDK/app.svg
+image: /img/docs/thumbnails/SDK/app.png
 ---
 
 # 애플리케이션 (`app`)
@@ -19,7 +19,7 @@ image: /img/docs/thumbnails/SDK/app.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/app.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/app.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
 > 🔔 **최신화 일자:** 2026-03-17

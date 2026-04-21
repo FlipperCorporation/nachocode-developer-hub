@@ -11,7 +11,7 @@ keywords:
     Android backkey,
     native backkey,
   ]
-image: /img/docs/thumbnails/SDK/backkey.svg
+image: /img/docs/thumbnails/SDK/backkey.png
 ---
 
 # 백 키 (`backkey`)
@@ -19,7 +19,7 @@ image: /img/docs/thumbnails/SDK/backkey.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/backkey.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/backkey.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.2.0" link="/docs/releases/v1/sdk/release-v-1-2-0" /> <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" />  
 > 🔔 **최신화 일자:** 2026-03-17

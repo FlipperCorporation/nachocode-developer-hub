@@ -19,7 +19,7 @@ keywords:
     Safari,
     Chrome,
   ]
-image: /img/docs/thumbnails/SDK/browser.svg
+image: /img/docs/thumbnails/SDK/browser.png
 ---
 
 # 브라우저 (`browser`)
@@ -27,7 +27,7 @@ image: /img/docs/thumbnails/SDK/browser.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/browser.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/browser.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.3" link="/docs/releases/v1/sdk/release-v-1-0-3" /> <BadgeWithVersion type="Android" version="v1.1.0" link="/docs/releases/v1/app-source/android/release-v-1-1-0" /> <BadgeWithVersion type="iOS" version="v1.1.0" link="/docs/releases/v1/app-source/ios/release-v-1-1-0" />  
 > 🔔 **최신화 일자:** 2026-03-17

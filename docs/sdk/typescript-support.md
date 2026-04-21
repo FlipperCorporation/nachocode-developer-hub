@@ -12,14 +12,14 @@ keywords:
     nachocode SDK,
     declare,
   ]
-image: /img/docs/thumbnails/SDK/typescript-support.svg
+image: /img/docs/thumbnails/SDK/typescript-support.png
 ---
 
 # TypeScript 지원
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/typescript-support.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/typescript-support.png'/>
 
 > 🔔 **최신화 일자:** 2025-10-10
 

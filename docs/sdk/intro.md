@@ -20,14 +20,14 @@ keywords:
     나쵸코드,
     nachocode,
   ]
-image: /img/docs/thumbnails/SDK/intro.svg
+image: /img/docs/thumbnails/SDK/intro.png
 ---
 
 # nachocode Client SDK 개요
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/intro.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/intro.png'/>
 
 > 🔔 **최신화 일자:** 2026-03-18
 

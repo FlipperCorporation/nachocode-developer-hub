@@ -9,7 +9,7 @@ keywords:
     웹뷰 QR 코드 스캔,
     WebView QR Code Scan,
   ]
-image: /img/docs/thumbnails/SDK/scanner.svg
+image: /img/docs/thumbnails/SDK/scanner.png
 ---
 
 # 스캐너 (`scanner`)
@@ -17,7 +17,7 @@ image: /img/docs/thumbnails/SDK/scanner.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/scanner.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/scanner.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
 > 🔔 **최신화 일자:** 2026-03-19

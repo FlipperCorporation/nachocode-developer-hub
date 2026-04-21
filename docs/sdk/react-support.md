@@ -19,14 +19,14 @@ keywords:
     나쵸코드 SDK,
     nachocode Client SDK,
   ]
-image: /img/docs/thumbnails/SDK/react-support.svg
+image: /img/docs/thumbnails/SDK/react-support.png
 ---
 
 # React 지원
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/react-support.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/react-support.png'/>
 
 > 🔔 **최신화 일자:** 2025-04-25
 

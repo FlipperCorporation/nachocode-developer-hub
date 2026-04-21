@@ -15,7 +15,7 @@ keywords:
     kakao webview login,
     kakao share,
   ]
-image: /img/docs/thumbnails/SDK/kakao.svg
+image: /img/docs/thumbnails/SDK/kakao.png
 ---
 
 # 카카오 (`kakao`) - 연동하기
@@ -23,7 +23,7 @@ image: /img/docs/thumbnails/SDK/kakao.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/kakao.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/kakao.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
 > 🔔 **최신화 일자:** 2026-04-17

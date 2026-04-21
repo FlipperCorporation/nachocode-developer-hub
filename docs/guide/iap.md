@@ -15,14 +15,14 @@ keywords:
     Apple 앱스토어,
     인앱 결제 검증,
   ]
-image: /img/docs/thumbnails/GUIDE/iap.svg
+image: /img/docs/thumbnails/GUIDE/iap.png
 ---
 
 # 인앱 결제 (In App Purchase)
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/iap.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/iap.png'/>
 
 > 🔔 **최신화 일자:** 2025-02-21
 
