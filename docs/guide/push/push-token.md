@@ -23,14 +23,14 @@ keywords:
     nachocode 푸시,
     푸시 API,
   ]
-image: /img/docs/thumbnails/GUIDE/push.svg
+image: /img/docs/thumbnails/GUIDE/push.png
 ---
 
 # 푸시 토큰
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.png'/>
 
 > 🔔 **최신화 일자:** 2026-01-13
 

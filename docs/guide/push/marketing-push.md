@@ -20,7 +20,7 @@ keywords:
     nachocode 푸시,
     푸시 SDK,
   ]
-image: /img/docs/thumbnails/GUIDE/push.svg
+image: /img/docs/thumbnails/GUIDE/push.png
 ---
 
 # 마케팅 푸시
@@ -28,7 +28,7 @@ image: /img/docs/thumbnails/GUIDE/push.svg
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.png'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
 > 🔔 **최신화 일자:** 2026-03-27

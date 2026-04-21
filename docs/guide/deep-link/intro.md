@@ -22,7 +22,7 @@ keywords:
     나쵸링크,
     nacho Link,
   ]
-image: /img/docs/thumbnails/GUIDE/deep-link.svg
+image: /img/docs/thumbnails/GUIDE/deep-link.png
 ---
 
 # 딥링크 개요 {#intro}
@@ -30,7 +30,7 @@ image: /img/docs/thumbnails/GUIDE/deep-link.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.png'/>
 
 > 🔔 **최신화 일자:** 2025-08-07
 

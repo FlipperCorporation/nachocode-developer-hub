@@ -21,14 +21,14 @@ keywords:
     나쵸코드,
     nachocode,
   ]
-image: /img/docs/thumbnails/GUIDE/intro.svg
+image: /img/docs/thumbnails/GUIDE/intro.png
 ---
 
 # nachocode 서비스 소개 {#intro}
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/intro.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/intro.png'/>
 
 > 🔔 **최신화 일자:** 2025-10-15
 

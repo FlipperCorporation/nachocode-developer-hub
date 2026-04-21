@@ -15,14 +15,14 @@ keywords:
     Apple App Store ID,
     Check Store ID,
   ]
-image: /img/docs/thumbnails/GUIDE/check-store-id.svg
+image: /img/docs/thumbnails/GUIDE/check-store-id.png
 ---
 
 # 스토어 앱 ID 확인하기 {#check-store-id}
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/check-store-id.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/check-store-id.png'/>
 
 > 🔔 **최신화 일자:** 2026-01-29
 

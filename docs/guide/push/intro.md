@@ -23,7 +23,7 @@ keywords:
     나쵸코드 푸시,
     nachocode 푸시,
   ]
-image: /img/docs/thumbnails/GUIDE/push.svg
+image: /img/docs/thumbnails/GUIDE/push.png
 ---
 
 # 푸시 알림 개요 {#intro}
@@ -31,7 +31,7 @@ image: /img/docs/thumbnails/GUIDE/push.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.png'/>
 
 > 🔔 **최신화 일자:** 2026-04-04
 

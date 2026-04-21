@@ -23,7 +23,7 @@ keywords:
     푸시 API,
     FCM 디바이스 토큰,
   ]
-image: /img/docs/thumbnails/GUIDE/push.svg
+image: /img/docs/thumbnails/GUIDE/push.png
 ---
 
 # 토픽 푸시
@@ -31,7 +31,7 @@ image: /img/docs/thumbnails/GUIDE/push.svg
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.png'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> <BadgeWithVersion type="Android" version="v1.6.0" link="/docs/releases/v1/app-source/android/release-v-1-6-0" /> <BadgeWithVersion type="iOS" version="v1.6.0" link="/docs/releases/v1/app-source/ios/release-v-1-6-0" />  
 > 🔔 **최신화 일자:** 2025-06-20

@@ -18,14 +18,14 @@ keywords:
     나쵸코드,
     nachocode,
   ]
-image: /img/docs/thumbnails/GUIDE/app-source.svg
+image: /img/docs/thumbnails/GUIDE/app-source.png
 ---
 
 # 앱소스 (App Source) {#app-source}
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/app-source.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/app-source.png'/>
 
 > 🔔 **최신화 일자:** 2025-07-31
 

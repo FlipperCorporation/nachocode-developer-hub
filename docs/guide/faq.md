@@ -25,7 +25,7 @@ image: /img/docs/thumbnails/GUIDE/faq.svg
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/intro.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/intro.png'/>
 
 > 🔔 **최신화 일자:** 2026-04-03
 

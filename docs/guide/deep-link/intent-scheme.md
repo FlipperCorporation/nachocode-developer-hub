@@ -18,7 +18,7 @@ keywords:
     Intent Scheme,
     App Scheme,
   ]
-image: /img/docs/thumbnails/GUIDE/deep-link.svg
+image: /img/docs/thumbnails/GUIDE/deep-link.png
 ---
 
 # 인텐트 스킴 (Intent Scheme) {#intent-scheme}
@@ -26,7 +26,7 @@ image: /img/docs/thumbnails/GUIDE/deep-link.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.png'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" />  
 > 🔔 **최신화 일자:** 2025-08-07
