@@ -81,7 +81,7 @@ nachocode Client SDK 문서는 아래와 같은 구조로 구성되어 있습니
 
 ## nachocode 앱 구조
 
-![nachocode_application](/img/docs/nachocode_app.webp)
+![nachocode_application](/img/docs/nachocode_app.png)
 
 nachocode에서 빌드한 앱들은 위 구조를 통해 앱 사용자들에게 다양한 기능을 제공할 수 있게 설계되어 있습니다.
 
