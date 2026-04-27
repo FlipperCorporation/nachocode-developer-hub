@@ -186,18 +186,128 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #f79e40;
+  --ifm-color-primary: #f96d32;
   --ifm-color-primary-dark: #ffc53d;
   --ifm-color-primary-darker: #f96d32;
   --ifm-color-primary-darkest: #f79340;
   --ifm-color-primary-light: #ffe58f;
   --ifm-color-primary-lighter: #fff1b8;
   --ifm-color-primary-lightest: #fba37e;
-  --ifm-menu-color-background-active: #fffbe7;
-  --ifm-menu-color-background-hover: #f5f5f5;
-  --ifm-breadcrumb-item-background-active: #fffbe7;
+  --ifm-menu-color-background-active: #fef0eb;
+  --ifm-menu-color-background-hover: #f8f8f8;
+  --ifm-breadcrumb-item-background-active: #fef0eb;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* brand/primary */
+  --brand-primary-100: #fef0eb;
+  --brand-primary-200: #fedcce;
+  --brand-primary-300: #fcc0a7;
+  --brand-primary-400: #fba37e;
+  --brand-primary-500: #fa8757;
+  --brand-primary-600: #f96d32;
+  --brand-primary-700: #d45d2b;
+  --brand-primary-800: #b14d24;
+  --brand-primary-900: #8e3e1d;
+  --brand-primary-950: #703116;
+
+  /* brand/burgundy */
+  --brand-burgundy-100: #efe8ea;
+  --brand-burgundy-200: #d7c9cd;
+  --brand-burgundy-300: #b89ea6;
+  --brand-burgundy-400: #97717c;
+  --brand-burgundy-500: #784654;
+  --brand-burgundy-600: #5a1d2f;
+  --brand-burgundy-700: #4d1928;
+  --brand-burgundy-800: #401521;
+  --brand-burgundy-900: #33111b;
+  --brand-burgundy-950: #280d15;
+
+  /* brand/violet */
+  --brand-violet-100: #f6f1ff;
+  --brand-violet-200: #e9ddff;
+  --brand-violet-300: #d7c2ff;
+  --brand-violet-400: #c4a6ff;
+  --brand-violet-500: #b38bff;
+  --brand-violet-600: #a271ff;
+  --brand-violet-700: #8a60d9;
+  --brand-violet-800: #7350b5;
+  --brand-violet-900: #5c4091;
+  --brand-violet-950: #493373;
+
+  /* neutral/gray */
+  --neutral-gray-white: #ffffff;
+  --neutral-gray-50: #fafafa;
+  --neutral-gray-100: #f8f8f8;
+  --neutral-gray-150: #f0f0f0;
+  --neutral-gray-200: #e8e8e7;
+  --neutral-gray-300: #d3d3d2;
+  --neutral-gray-400: #bbbab9;
+  --neutral-gray-500: #a3a1a0;
+  --neutral-gray-600: #848380;
+  --neutral-gray-700: #6e6c69;
+  --neutral-gray-800: #524f4c;
+  --neutral-gray-900: #2d2a26;
+  --neutral-gray-950: #141311;
+  --neutral-gray-black: #000000;
+
+  /* neutral/text */
+  --neutral-text-black: #000000;
+  --neutral-text-1: #191919;
+  --neutral-text-2: #313131;
+  --neutral-text-3: #4b4b4b;
+  --neutral-text-4: #808080;
+  --neutral-text-5: #adadad;
+  --neutral-text-6: #dadada;
+  --neutral-text-white: #ffffff;
+
+  /* semantic/red */
+  --semantic-red-100: #fdeaed;
+  --semantic-red-200: #fbcbd3;
+  --semantic-red-300: #f8a3b0;
+  --semantic-red-400: #f4788c;
+  --semantic-red-500: #f14f69;
+  --semantic-red-600: #e82448;
+  --semantic-red-700: #ca223d;
+  --semantic-red-800: #a91c33;
+  --semantic-red-900: #881729;
+  --semantic-red-950: #6b1220;
+
+  /* semantic/blue */
+  --semantic-blue-100: #e8f3fe;
+  --semantic-blue-200: #c8e3fc;
+  --semantic-blue-300: #9dcdf9;
+  --semantic-blue-400: #6fb5f7;
+  --semantic-blue-500: #449ff4;
+  --semantic-blue-600: #1b8af2;
+  --semantic-blue-700: #1775ce;
+  --semantic-blue-800: #1362ac;
+  --semantic-blue-900: #0f4f8a;
+  --semantic-blue-950: #0c3e6d;
+
+  /* semantic/orange */
+  --semantic-orange-100: #fff4e8;
+  --semantic-orange-200: #ffe3c8;
+  --semantic-orange-300: #ffce9d;
+  --semantic-orange-400: #ffb76f;
+  --semantic-orange-500: #ffa143;
+  --semantic-orange-600: #ff8c1a;
+  --semantic-orange-700: #d97716;
+  --semantic-orange-800: #b56312;
+  --semantic-orange-900: #91500f;
+  --semantic-orange-950: #733f0c;
+
+  /* semantic/green */
+  --semantic-green-100: #e8f9ee;
+  --semantic-green-200: #c8efd5;
+  --semantic-green-300: #9ce3b4;
+  --semantic-green-400: #6dd691;
+  --semantic-green-500: #42ca70;
+  --semantic-green-600: #18be50;
+  --semantic-green-700: #14a244;
+  --semantic-green-800: #118739;
+  --semantic-green-900: #0e6c2e;
+  --semantic-green-950: #0b5524;
 }
 
 .menu__link:hover:not(.menu__link--active) {
