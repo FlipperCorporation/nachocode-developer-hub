@@ -12,9 +12,9 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 > 🔔 **배포 일자:** 2026-04-29
 
-이번 업데이트 **v1.10.3**에서는 **로컬 푸시 알림 그룹핑 기능**이 추가되었습니다.
+이번 업데이트 **v1.10.3**에서는 **로컬 푸시 알림 그룹핑 기능**이 추가되고, **마케팅 푸시 관련 함수의 성능이 개선**되었습니다.
 
-새로운 `groupId` 속성을 통해 로컬 푸시 알림을 그룹으로 묶어 관리할 수 있어, 여러 알림을 효율적으로 관리하고 사용자 경험을 개선할 수 있습니다.
+새로운 `groupId` 속성을 통해 로컬 푸시 알림을 그룹으로 묶어 관리할 수 있으며, 마케팅 푸시 함수들의 내부 로직 최적화로 더욱 빠르고 안정적인 동작이 가능해졌습니다.
 
 ## 주요 변경 사항 (ver.1.10.3)
 
@@ -75,7 +75,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
       groupId: 'order-notifications',
       scheduledTime: new Date(Date.now() + 60000), // 1분 후
     },
-    (result) => {
+    result => {
       if (result.status === 'success') {
         console.log('로컬 푸시가 예약되었습니다. ID:', result.localPushId);
       } else {
@@ -92,13 +92,38 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
       groupId: 'order-notifications', // 동일한 그룹 ID
       scheduledTime: new Date(Date.now() + 3600000), // 1시간 후
     },
-    (result) => {
+    result => {
       if (result.status === 'success') {
         console.log('배송 알림이 예약되었습니다.');
       }
     }
   );
   ```
+
+---
+
+### 개선 사항 {#improvements}
+
+#### `push` 네임스페이스 - 마케팅 푸시 함수 성능 최적화
+
+마케팅 푸시 관련 함수들의 내부 로직이 최적화되어 성능과 안정성이 향상되었습니다.
+
+- **개선된 메서드**
+
+  | 메서드                                                                           | 개선 내용                         |
+  | -------------------------------------------------------------------------------- | --------------------------------- |
+  | [`setMarketingAllowed()`](/docs/sdk/namespaces/push#set-marketing-allowed)       | 내부 로직 최적화로 응답 속도 개선 |
+  | [`getMarketingAllowed()`](/docs/sdk/namespaces/push#get-marketing-allowed)       | 내부 로직 최적화로 응답 속도 개선 |
+  | [`setNightAllowed()`](/docs/sdk/namespaces/push#set-night-allowed)               | 내부 로직 최적화로 응답 속도 개선 |
+  | [`getNightAllowed()`](/docs/sdk/namespaces/push#get-night-allowed)               | 내부 로직 최적화로 응답 속도 개선 |
+  | [`setMarketingPreference()`](/docs/sdk/namespaces/push#set-marketing-preference) | 내부 로직 최적화로 응답 속도 개선 |
+  | [`getMarketingPreference()`](/docs/sdk/namespaces/push#get-marketing-preference) | 내부 로직 최적화로 응답 속도 개선 |
+
+- **주요 개선 효과**
+
+  - 마케팅 수신 동의 설정 및 조회 시 응답 속도 향상
+  - 네이티브 레이어와의 통신 효율성 개선
+  - 메모리 사용량 최적화로 안정성 강화
 
 ---
 
