@@ -147,7 +147,7 @@ export declare type PushTopicResult =
 ### **`LocalPushPayload`** {#local-push-payload}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
-- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.10.3" link="/docs/releases/v1/sdk/release-v-1-10-3" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.10.3" link="/docs/releases/v1/sdk/release-v-1-10-3" /> - `groupId` 추가
 
 ```typescript
 export declare type LocalPushPayload = {
@@ -164,14 +164,15 @@ export declare type LocalPushPayload = {
 };
 ```
 
-| 속성명          | 타입      | 필수 여부 | 설명                                                                        |
-| --------------- | --------- | --------- | --------------------------------------------------------------------------- |
-| `title`         | `string`  | ✅        | 푸시 알림의 제목                                                            |
-| `content`       | `string`  | ❌        | **_(optional)_** 푸시 알림의 본문 메시지 (지정하지 않으면 제목만 노출)      |
-| `link`          | `string`  | ❌        | **_(optional)_** 클릭 시 이동할 URL (지정하지 않으면 앱 열기)               |
-| `usingAppIcon`  | `boolean` | ❌        | **_(optional)_** 앱 아이콘을 푸시 아이콘으로 사용할지 여부 (기본값: `true`) |
-| `scheduledTime` | `Date`    | ❌        | **_(optional)_** 예약된 발송 시각 (지정하지 않으면 즉시 발송됨)             |
-| `id`            | `number`  | ❌        | **_(optional)_** 예약된 푸시를 식별할 ID (지정하지 않으면 자동 생성)        |
+| 속성명          | 타입      | 필수 여부 | 설명                                                                         |
+| --------------- | --------- | --------- | ---------------------------------------------------------------------------- |
+| `title`         | `string`  | ✅        | 푸시 알림의 제목                                                             |
+| `content`       | `string`  | ❌        | **_(optional)_** 푸시 알림의 본문 메시지 (지정하지 않으면 제목만 노출)       |
+| `link`          | `string`  | ❌        | **_(optional)_** 클릭 시 이동할 URL (지정하지 않으면 앱 열기)                |
+| `usingAppIcon`  | `boolean` | ❌        | **_(optional)_** 앱 아이콘을 푸시 아이콘으로 사용할지 여부 (기본값: `true`)  |
+| `scheduledTime` | `Date`    | ❌        | **_(optional)_** 예약된 발송 시각 (지정하지 않으면 즉시 발송됨)              |
+| `id`            | `number`  | ❌        | **_(optional)_** 예약된 푸시를 식별할 ID (지정하지 않으면 자동 생성)         |
+| `groupId`       | `string`  | ❌        | **_(optional)_** 로컬 푸시 알림을 그룹으로 묶기 위한 그룹 ID (v.1.10.3 이상) |
 
 ---
 
@@ -516,6 +517,41 @@ Nachocode.push.sendLocalPush(
       console.log(`푸시 알림이 예약되었습니다. (ID: ${result.id})`);
     } else {
       console.error(`푸시 예약 실패: ${result.message}`);
+    }
+  }
+);
+```
+
+```javascript
+// 3. 그룹핑을 활용한 발송 (v1.10.3 이상)
+// `groupId`를 지정하여 여러 알림을 하나의 그룹으로 묶을 수 있습니다.
+Nachocode.push.sendLocalPush(
+  {
+    title: '주문 알림',
+    content: '주문이 접수되었습니다.',
+    groupId: 'order-notifications',
+    scheduledTime: new Date(Date.now() + 60000), // 1분 후
+  },
+  result => {
+    if (result.status === 'success') {
+      console.log('로컬 푸시가 예약되었습니다. ID:', result.id);
+    } else {
+      console.error('로컬 푸시 예약 실패:', result.message);
+    }
+  }
+);
+
+// 같은 그룹으로 여러 알림 예약
+Nachocode.push.sendLocalPush(
+  {
+    title: '배송 알림',
+    content: '상품이 배송 중입니다.',
+    groupId: 'order-notifications', // 동일한 그룹 ID
+    scheduledTime: new Date(Date.now() + 3600000), // 1시간 후
+  },
+  result => {
+    if (result.status === 'success') {
+      console.log('배송 알림이 예약되었습니다.');
     }
   }
 );
