@@ -27,7 +27,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/push.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2026-03-30
+> 🔔 **최신화 일자:** 2026-04-29
 
 ## **개요** {#overview}
 
@@ -147,6 +147,7 @@ export declare type PushTopicResult =
 ### **`LocalPushPayload`** {#local-push-payload}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.10.3" link="/docs/releases/v1/sdk/release-v-1-10-3" />
 
 ```typescript
 export declare type LocalPushPayload = {
@@ -156,6 +157,10 @@ export declare type LocalPushPayload = {
   usingAppIcon?: boolean; // default : true
   scheduledTime?: Date; // sends instantly if not set
   id?: number; // generates if not set
+  /**
+   * @since 1.10.3
+   */
+  groupId?: string; // default if not set
 };
 ```
 
@@ -448,6 +453,7 @@ function onLogout(userId) {
 ### **`sendLocalPush(payload, callback?)`** {#send-local-push}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.10.3" link="/docs/releases/v1/sdk/release-v-1-10-3" />
 
 #### 타입 정의 {#send-local-push-types}
 
