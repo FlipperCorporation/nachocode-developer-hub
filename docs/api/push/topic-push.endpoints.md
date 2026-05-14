@@ -87,8 +87,7 @@ nachocode 토픽 푸시 API는 다양한 엔드포인트를 제공하여 푸시 
       "linkURL": "https://SERVICE_DOMAIN",
       "imageURL": "https://IMAGE_DOMAIN/path/sample-image.jpg"
       "options": {
-        "isUsingBadge": true,
-        "scheduleTime": "2026-01-01T09:00"
+        "isUsingBadge": true
       }
     }'
   ```
