@@ -12,14 +12,14 @@ keywords:
     WebView Local 테스트,
     Web Dev Tools,
   ]
-image: /img/docs/thumbnails/GUIDE/sandbox.svg
+image: /img/docs/thumbnails/GUIDE/sandbox.png
 ---
 
 # 샌드박스 앱 이해하기
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/sandbox.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/sandbox.png'/>
 
 > 🔔 **최신화 일자:** 2025-11-04
 

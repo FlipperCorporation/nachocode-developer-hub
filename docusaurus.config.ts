@@ -6,7 +6,7 @@ const config: Config = {
   title: 'nachocode Developer',
   tagline: '가장 빠르고 쉬운 노코드 & 로우코드 앱 빌더, nachocode',
   url: 'https://developer.nachocode.io',
-  favicon: 'favicon-32x32.png',
+  favicon: 'favicon.ico',
   baseUrl: '/',
   trailingSlash: false,
   staticDirectories: ['static'],
@@ -20,6 +20,14 @@ const config: Config = {
   markdown: { hooks: { onBrokenMarkdownLinks: 'warn' } },
 
   headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'mask-icon',
+        href: '/favicon.svg',
+        color: '#000000',
+      },
+    },
     {
       tagName: 'link',
       attributes: {
@@ -143,13 +151,15 @@ const config: Config = {
       disableSwitch: true, // 다크모드 토글 버튼 비활성화
       defaultMode: 'light', // 기본 모드를 라이트로 설정
     },
-    image: 'img/og_image.png',
+    image: 'img/og-image.png',
     docs: { sidebar: { hideable: true, autoCollapseCategories: true } },
     announcementBar: {
-      content: `📢 <b><a target="_blank" href="/docs/releases/v1/sdk/release-v-1-8-0">nachocode Client SDK v1.8.0</a>이 배포되었습니다!</b> 🚀`,
+      id: 'sdk_release_v1_10_3',
+      content: `📢 <b><a target="_blank" href="/docs/releases/v1/sdk/release-v-1-10-3">nachocode Client SDK v1.10.3</a>이 배포되었습니다!</b> 🚀`,
+      isCloseable: true,
     },
     navbar: {
-      title: 'nachocode',
+      title: 'nachocode Developer',
       logo: { alt: 'nachocode', src: 'img/logo.png' },
       items: [
         {
@@ -189,7 +199,7 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            { label: 'User Guide', to: 'https://docs.nachocode.io' },
+            { label: 'User Guide', href: 'https://docs.nachocode.io' },
             { label: 'Developer Guide', to: '/docs/guide/intro' },
             { label: 'API', to: '/docs/api/intro' },
             { label: 'SDK', to: '/docs/sdk/intro' },
@@ -220,7 +230,7 @@ const config: Config = {
               href: 'https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide',
             },
             { label: 'GitHub', href: 'https://github.com/FlipperCorporation' },
-            { label: 'Discord', href: 'https://discord.gg/SU5wFmRw' },
+            { label: 'Discord', href: 'https://discord.gg/6uuw4vRMdk' },
           ],
         },
       ],
@@ -234,6 +244,47 @@ const config: Config = {
       src: '/js/copy-heading-link.js',
       async: true,
     },
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: false,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/android-chrome-192x192.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/site.webmanifest',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#000000',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: 'default',
+          },
+        ],
+      },
+    ],
   ],
 };
 

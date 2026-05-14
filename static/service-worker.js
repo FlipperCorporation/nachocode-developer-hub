@@ -14,11 +14,10 @@ debug('[SERVICE WORKER] Current cache name : ', CACHE_NAME);
 const CACHE_ITEMS = [
   '/favicon-16x16.png',
   '/favicon-32x32.png',
-  '/android-chrome-48x48.png',
+  '/favicon-48x48.png',
   '/android-chrome-72x72.png',
   '/android-chrome-96x96.png',
   '/android-chrome-144x144.png',
-  '/android-chrome-168x168.png',
   '/android-chrome-192x192.png',
   '/android-chrome-512x512.png',
   '/fonts/pretendard/Pretendard-Black.subset.woff2',

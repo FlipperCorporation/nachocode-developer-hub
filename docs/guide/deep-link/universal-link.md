@@ -19,7 +19,7 @@ keywords:
     App Links,
     iOS,
   ]
-image: /img/docs/thumbnails/GUIDE/deep-link.svg
+image: /img/docs/thumbnails/GUIDE/deep-link.png
 ---
 
 # 유니버셜 링크 (Universal Link) {#universal-link}
@@ -27,7 +27,7 @@ image: /img/docs/thumbnails/GUIDE/deep-link.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.png'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="iOS" version="v1.5.1" link="/docs/releases/v1/app-source/ios/release-v-1-5-1" />  
 > 🔔 **최신화 일자:** 2025-12-22

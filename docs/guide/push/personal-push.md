@@ -21,14 +21,14 @@ keywords:
     푸시 API,
     FCM 디바이스 토큰,
   ]
-image: /img/docs/thumbnails/GUIDE/push.svg
+image: /img/docs/thumbnails/GUIDE/push.png
 ---
 
 # 개인화 푸시
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.png'/>
 
 > 🔔 **최신화 일자:** 2026-01-13
 

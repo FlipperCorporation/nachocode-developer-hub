@@ -18,7 +18,7 @@ keywords:
     Intent Scheme,
     App Scheme,
   ]
-image: /img/docs/thumbnails/GUIDE/deep-link.svg
+image: /img/docs/thumbnails/GUIDE/deep-link.png
 ---
 
 # 인텐트 스킴 (Intent Scheme) {#intent-scheme}
@@ -26,7 +26,7 @@ image: /img/docs/thumbnails/GUIDE/deep-link.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/deep-link.png'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="Android" version="v1.2.0" link="/docs/releases/v1/app-source/android/release-v-1-2-0" />  
 > 🔔 **최신화 일자:** 2025-08-07
@@ -81,14 +81,14 @@ intent://open#Intent;
   - 인텐트 스킴의 시작을 알리는 구분자 입니다.
 - `scheme=developer;`
   - 호출에 사용할 URI 스킴 이름
-  - 앱이 지원하는 커스텀 스킴을 입니다. (ex. `developer://`)
+  - 앱이 지원하는 커스텀 스킴을 명시합니다. (ex. `developer://`)
 - `package=com.nachocode.developer;`
   - 열고자 하는 대상 앱의 **패키지 이름**(Application ID)을 명시합니다.
   - 이 패키지의 앱이 설치되어 있을 경우에만 인텐트를 처리합니다.
 - `S.browser_fallback_url=...;`
   - 대상 앱이 설치되지 않았을 때 **대신 열 웹 URL**을 지정합니다.
   - `S.`로 시작하는 것은 인텐트에 **Extra** 데이터를 넣는 문법입니다.
-  - `browser_fallback_url` 값으로 웹페이지 URL을 지정하면 앱 미설치 시 자동으로 해당 URL을 브라우저에서 열어 줍니다.
+  - `browser_fallback_url` 값으로 웹페이지 URL을 지정하면 앱 미설치 시 자동으로 해당 URL이 브라우저를 통해 열립니다.
 - `end;`
   - 인텐트 스킴 표현의 끝을 알립니다.
 

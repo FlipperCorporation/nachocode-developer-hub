@@ -64,7 +64,7 @@ if (window.Nachocode) {
 | `isApp()`          | 앱 환경 여부를 반환합니다.              |
 | `isWeb()`          | 웹 환경 여부를 반환합니다.              |
 | `isInitialized()`  | SDK가 초기화되었는지 여부를 반환합니다. |
-| `isUsingSandbox()` | Sandbox 서버 사용 여부를 반환합니다.    |
+| `isUsingSandbox()` | Sandbox 환경 사용 여부를 반환합니다.    |
 
 #### 사용 예제 (`env`)
 

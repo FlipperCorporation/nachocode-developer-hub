@@ -20,16 +20,16 @@ keywords:
     나쵸코드,
     nachocode,
   ]
-image: /img/docs/thumbnails/SDK/intro.svg
+image: /img/docs/thumbnails/SDK/intro.png
 ---
 
 # nachocode Client SDK 개요
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/intro.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/intro.png'/>
 
-> 🔔 **최신화 일자:** 2025-10-22
+> 🔔 **최신화 일자:** 2026-03-18
 
 **nachocode Client SDK**는 웹 클라이언트 개발자가 **모바일 네이티브 앱의 고유 기능**을 손쉽게 활용할 수 있도록 돕는 JavaScript SDK입니다. 웹 애플리케이션에 nachocode Client SDK를 연동하면 코드 몇 줄만으로도 간단하게 디바이스의 다양한 기능을 활용하여 **하이브리드 앱**을 개발할 수 있습니다. 웹 기술만으로도 모바일 기기의 네이티브 API를 호출하고 제어할 수 있으므로, **별도 네이티브**(**Android/iOS**) **개발** 없이도 앱 기능을 구현할 수 있습니다.
 
@@ -81,9 +81,9 @@ nachocode Client SDK 문서는 아래와 같은 구조로 구성되어 있습니
 
 ## nachocode 앱 구조
 
-![nachocode_application](/img/docs/nachocode_app.webp)
+![nachocode_application](/img/docs/nachocode_app.png)
 
-nachocode에서 빌드한 앱들은 위 구조를 통해 앱 사용자들에게 다양한 기능을 제공할 수 있게 설계돼있습니다.
+nachocode에서 빌드한 앱들은 위 구조를 통해 앱 사용자들에게 다양한 기능을 제공할 수 있게 설계되어 있습니다.
 
 nachocode를 활용하여 만들어진 네이티브 앱들은 nachocode Client SDK를 통해 웹 클라이언트에서 **Nacho Native APIs**에 접근할 수 있습니다.
 
@@ -260,7 +260,14 @@ QR 코드 스캔 및 기타 스캔 기능을 제어할 수 있습니다.
 ➡️ [탭바 네임스페이스 문서 바로가기](./namespaces/tabbar)
 :::
 
-### 21. **진동 및 햅틱 피드백 (`vibration`)**
+### 21. **사용자 관리 (`user`)**
+
+사용자 고유 ID를 네이티브 레이어에서 관리하는 기능을 제공합니다.
+:::info user
+➡️ [사용자 네임스페이스 문서 바로가기](./namespaces/user)
+:::
+
+### 22. **진동 및 햅틱 피드백 (`vibration`)**
 
 디바이스의 진동 및 햅틱 피드백을 트리거할 수 있습니다.
 :::info vibration
@@ -304,6 +311,13 @@ Google 계정을 통한 소셜 로그인 기능을 제공합니다.
 Kakao 계정을 통한 소셜 로그인 기능을 제공합니다.  
 :::info kakao
 ➡️ [Kakao 네임스페이스 문서 바로가기](./integrations/kakao/reference)
+:::
+
+### 6. **네이버 소셜 기능 (`naver`)**
+
+Naver 계정을 통한 소셜 로그인 기능을 제공합니다.  
+:::info naver
+➡️ [Naver 네임스페이스 문서 바로가기](./integrations/naver/reference)
 :::
 
 ---

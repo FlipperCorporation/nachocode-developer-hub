@@ -19,14 +19,14 @@ keywords:
     nachocode 푸시,
     푸시 API,
   ]
-image: /img/docs/thumbnails/API/push.svg
+image: /img/docs/thumbnails/API/push.png
 ---
 
 # 개인화 푸시 알림 API Endpoints
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/API/push.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/API/push.png'/>
 
 > 🔔 **최신화 일자:** 2026-01-12
 

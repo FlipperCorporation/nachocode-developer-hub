@@ -20,6 +20,7 @@ runs:
       shell: bash
       env:
         SLACK_WEBHOOK_URL: ${{ inputs.slack_webhook_url }}
+        COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
       run: |
         if [ "${{ inputs.environment }}" == "Production" ]; then
           ENV_NAME="Production ‼"
@@ -38,7 +39,7 @@ runs:
           STATUS_MESSAGE="*$ENV_NAME_KOR 서버 배포 실패*"
         fi
 
-        COMMIT_TITLE=$(echo "${{ github.event.head_commit.message }}" | head -n 1)
+        COMMIT_TITLE=$(echo "$COMMIT_MESSAGE" | head -n 1 | sed 's/[\"\\]/\\&/g')
 
         COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
 

@@ -74,7 +74,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
         }
       );
     } catch (error) {
-      console.error('nachocode Client SDK 초기화 실패:', error);
+      console.error('nachocode Client SDK 초기화 실패: ', error);
     }
   } else {
     console.error('nachocode Client SDK가 로드되지 않았습니다.');

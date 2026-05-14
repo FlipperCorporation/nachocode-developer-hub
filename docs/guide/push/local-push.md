@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 sidebar_label: 로컬 푸시
 pagination_label: 로컬 푸시 가이드
 description: nachocode 로컬 푸시 가이드는 SDK를 활용한 디바이스 내 푸시 알림 예약 및 취소 방법을 안내합니다. 즉시 발송부터 예약 발송, 알림 취소까지 효과적으로 관리할 수 있습니다.
@@ -16,15 +16,17 @@ keywords:
     푸시 스케줄링,
     nachocode 로컬 푸시,
   ]
-image: /img/docs/thumbnails/GUIDE/push.svg
+image: /img/docs/thumbnails/GUIDE/push.png
 ---
 
 # 로컬 푸시
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.png'/>
 
+> 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.4.1" link="/docs/releases/v1/sdk/release-v-1-4-1" /> <BadgeWithVersion type="Android" version="v1.4.1" link="/docs/releases/v1/app-source/android/release-v-1-4-1" /> <BadgeWithVersion type="iOS" version="v1.4.1" link="/docs/releases/v1/app-source/ios/release-v-1-4-1" />  
 > 🔔 **최신화 일자:** 2025-09-25
 
 이 문서는 **로컬 푸시 알림**에 대한 설명과 **로컬 푸시 예약 및 관리**에 필요한 **프로세스**에 대해 안내합니다.

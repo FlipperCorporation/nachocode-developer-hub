@@ -14,7 +14,7 @@ keywords:
     apple native login,
     apple webview login,
   ]
-image: /img/docs/thumbnails/SDK/apple.svg
+image: /img/docs/thumbnails/SDK/apple.png
 ---
 
 # 애플 (`apple`) - 레퍼런스
@@ -22,10 +22,10 @@ image: /img/docs/thumbnails/SDK/apple.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/apple.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/apple.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-09-30
+> 🔔 **최신화 일자:** 2026-03-25
 
 ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 
@@ -70,8 +70,8 @@ export declare type AppleResult = AppleSuccessResult | AppleErrorResult;
 | 필드                     | 타입     | 설명                                 |
 | ------------------------ | -------- | ------------------------------------ |
 | `status`                 | `string` | 요청 결과 상태 (`success` / `error`) |
-| `errorCode` (_optional_) | `string` | 오류 코드                            |
-| `message` (_optional_)   | `string` | 오류 메시지                          |
+| `errorCode` _(optional)_ | `string` | 오류 코드                            |
+| `message` _(optional)_   | `string` | 오류 메시지                          |
 
 ---
 
@@ -121,9 +121,9 @@ export declare type AppleUserData = {
 | `identifier`                   | `string` | Apple 사용자 고유 식별자 |
 | `token`                        | `string` | 사용자 토큰              |
 | `authorizationCode`            | `string` | Apple 인증 코드          |
-| `email` (_optional_)           | `string` | 사용자 이메일            |
-| `name.familyName` (_optional_) | `string` | 사용자 성                |
-| `name.givenName` (_optional_)  | `string` | 사용자 이름              |
+| `email` _(optional)_           | `string` | 사용자 이메일            |
+| `name.familyName` _(optional)_ | `string` | 사용자 성                |
+| `name.givenName` _(optional)_  | `string` | 사용자 이름              |
 | `[fields: string]`             | `any`    | 기타 사용자 데이터       |
 
 ---
@@ -140,7 +140,7 @@ export declare type AppleUserData = {
 
 ## **메서드 상세** {#method-details}
 
-### **`login(permissions: ApplePermissions, callback: (result: AppleResult, userData?: AppleUserData) => void): void`** {#login}
+### **`login(permissions, callback)`** {#login}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
@@ -148,13 +148,23 @@ export declare type AppleUserData = {
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
 
+#### 타입 정의 {#login-types}
+
+```typescript
+function login(
+  permissions: ApplePermissions,
+  callback: (result: AppleResult, userData?: AppleUserData) => void
+): void;
+```
+
 #### 설명 {#login-summary}
 
 Apple 네이티브 소셜 로그인을 수행하고 사용자 정보를 반환합니다.
 
-#### 주의사항 {#login-warning}
-
-사용자의 이메일 및 이름 정보는 **최초 로그인 시에만 제공될 수 있으며, 이후 재로그인 시 반환되지 않을 수 있습니다.** 또한, 사용자가 제공하는 것을 거부하거나 요청할 때 권한에서 누락된다면 반환 데이터에서도 생략되게 되니 사용에 주의하시기 바랍니다.
+:::danger 사용자 정보 활용 시 주의사항
+사용자의 이메일 및 이름 정보는 **최초 로그인 시에만 제공될 수 있으며, 이후 재로그인 시 반환되지 않을 수 있습니다.**  
+또한, 사용자가 제공하는 것을 거부하거나 **요청할 때 권한에서 누락된다면 반환 데이터에서도 생략**되게 되니 사용에 주의하시기 바랍니다.
+:::
 
 #### 매개변수 {#login-parameters}
 
@@ -187,13 +197,22 @@ Nachocode.apple.login(['email', 'fullName'], (result, userData) => {
 
 ---
 
-### **`isLoggedIn(identifier: string, callback: (result: AppleResult, isLoggedIn: boolean) => void): void`** {#is-logged-in}
+### **`isLoggedIn(identifier, callback)`** {#is-logged-in}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#is-logged-in-types}
+
+```typescript
+function isLoggedIn(
+  identifier: string,
+  callback: (result: AppleResult, isLoggedIn: boolean) => void
+): void;
+```
 
 #### 설명 {#is-logged-in-summary}
 
@@ -226,13 +245,21 @@ Nachocode.apple.isLoggedIn('user_identifier_here', (result, isLoggedIn) => {
 
 ---
 
-### **`getUserIdentifier(callback: (result: AppleResult, userIdentifier?: string) => void): void`** {#get-user-identifier}
+### **`getUserIdentifier(callback)`** {#get-user-identifier}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-user-identifier-types}
+
+```typescript
+function getUserIdentifier(
+  callback: (result: AppleResult, userIdentifier?: string) => void
+): void;
+```
 
 #### 설명 {#get-user-identifier-summary}
 

@@ -25,7 +25,7 @@ keywords:
     AppsFlyer Engage,
     AppsFlyer Integration,
   ]
-image: /img/docs/thumbnails/SDK/appsflyer.svg
+image: /img/docs/thumbnails/SDK/appsflyer.png
 ---
 
 # 앱스플라이어 (`appsflyer`) - 레퍼런스
@@ -33,7 +33,7 @@ image: /img/docs/thumbnails/SDK/appsflyer.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/appsflyer.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/appsflyer.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/app-source/android/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/app-source/ios/release-v-1-7-0" />  
 > 🔔 **최신화 일자:** 2025-10-22
@@ -291,7 +291,7 @@ export declare type GetAttributionListResult =
 
 ## **메서드 상세** {#method-details}
 
-### **`setCustomerUserId(userId: string): Promise<AppsflyerResult>`** {#set-customer-user-id}
+### **`setCustomerUserId(userId)`** {#set-customer-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 - _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> - 메서드명 변경
@@ -299,6 +299,12 @@ export declare type GetAttributionListResult =
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#set-customer-user-id-types}
+
+```typescript
+function setCustomerUserId(customUserId: string): Promise<AppsflyerResult>;
+```
 
 #### 설명 {#set-customer-user-id-summary}
 
@@ -339,13 +345,13 @@ const result = await Nachocode.appsflyer.setCustomerUserId('user123');
 if (result.status === 'success') {
   console.log('고객 사용자 ID 설정 성공:', result.message);
 } else {
-  console.error('고객 사용자 ID 설정 실패:', result.errorCode, result.message);
+  console.error('고객 사용자 ID 설정 실패: ', result.errorCode, result.message);
 }
 ```
 
 ---
 
-### **`getCustomerUserId(): Promise<GetCustomerUserIdResult>`** {#get-customer-user-id}
+### **`getCustomerUserId()`** {#get-customer-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 - _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> - 메서드명 변경
@@ -353,6 +359,12 @@ if (result.status === 'success') {
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-customer-user-id-types}
+
+```typescript
+function getCustomerUserId(): Promise<GetCustomerUserIdResult>;
+```
 
 #### 설명 {#get-customer-user-id-summary}
 
@@ -386,13 +398,13 @@ const result = await Nachocode.appsflyer.getCustomerUserId();
 if (result.status === 'success') {
   console.log('고객 사용자 ID:', result.userId);
 } else {
-  console.error('고객 사용자 ID 조회 실패:', result.errorCode, result.message);
+  console.error('고객 사용자 ID 조회 실패: ', result.errorCode, result.message);
 }
 ```
 
 ---
 
-### **`deleteCustomerUserId(): Promise<AppsflyerResult>`** {#delete-customer-user-id}
+### **`deleteCustomerUserId()`** {#delete-customer-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 - _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" /> - 메서드명 변경
@@ -400,6 +412,12 @@ if (result.status === 'success') {
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#delete-customer-user-id-types}
+
+```typescript
+function deleteCustomerUserId(): Promise<AppsflyerResult>;
+```
 
 #### 설명 {#delete-customer-user-id-summary}
 
@@ -433,19 +451,25 @@ const result = await Nachocode.appsflyer.deleteCustomerUserId();
 if (result.status === 'success') {
   console.log('고객 사용자 ID 삭제 성공:', result.message);
 } else {
-  console.error('고객 사용자 ID 삭제 실패:', result.errorCode, result.message);
+  console.error('고객 사용자 ID 삭제 실패: ', result.errorCode, result.message);
 }
 ```
 
 ---
 
-### **`getAttributionData(): Promise<GetAttributionDataResult>`** {#get-attribution-data}
+### **`getAttributionData()`** {#get-attribution-data}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-attribution-data-types}
+
+```typescript
+function getAttributionData(): Promise<GetAttributionDataResult>;
+```
 
 #### 설명 {#get-attribution-data-summary}
 
@@ -492,7 +516,7 @@ if (result.status === 'success') {
   }
 } else {
   console.error(
-    '어트리뷰션 데이터 조회 실패:',
+    '어트리뷰션 데이터 조회 실패: ',
     result.errorCode,
     result.message
   );
@@ -501,13 +525,19 @@ if (result.status === 'success') {
 
 ---
 
-### **`clearAttributionData(timestamp?: number): Promise<AppsflyerResult>`** {#clear-attribution-data}
+### **`clearAttributionData(timestamp?)`** {#clear-attribution-data}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#clear-attribution-data-types}
+
+```typescript
+function clearAttributionData(timestamp?: number): Promise<AppsflyerResult>;
+```
 
 #### 설명 {#clear-attribution-data-summary}
 
@@ -532,7 +562,7 @@ if (result.status === 'success') {
   console.log('어트리뷰션 데이터 삭제 성공:', result.message);
 } else {
   console.error(
-    '어트리뷰션 데이터 삭제 실패:',
+    '어트리뷰션 데이터 삭제 실패: ',
     result.errorCode,
     result.message
   );
@@ -541,13 +571,19 @@ if (result.status === 'success') {
 
 ---
 
-### **`getAttributionList(): Promise<GetAttributionListResult>`** {#get-attribution-list}
+### **`getAttributionList()`** {#get-attribution-list}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#get-attribution-list-types}
+
+```typescript
+function getAttributionList(): Promise<GetAttributionListResult>;
+```
 
 #### 설명 {#get-attribution-list-summary}
 
@@ -587,19 +623,29 @@ if (result.status === 'success') {
     }
   });
 } else {
-  console.error('어트리뷰션 목록 조회 실패:', result.errorCode, result.message);
+  console.error(
+    '어트리뷰션 목록 조회 실패: ',
+    result.errorCode,
+    result.message
+  );
 }
 ```
 
 ---
 
-### **`clearAttributionList(): Promise<AppsflyerResult>`** {#clear-attribution-list}
+### **`clearAttributionList()`** {#clear-attribution-list}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#clear-attribution-list-types}
+
+```typescript
+function clearAttributionList(): Promise<AppsflyerResult>;
+```
 
 #### 설명 {#clear-attribution-list-summary}
 
@@ -617,19 +663,32 @@ const result = await Nachocode.appsflyer.clearAttributionList();
 if (result.status === 'success') {
   console.log('어트리뷰션 목록 삭제 성공:', result.message);
 } else {
-  console.error('어트리뷰션 목록 삭제 실패:', result.errorCode, result.message);
+  console.error(
+    '어트리뷰션 목록 삭제 실패: ',
+    result.errorCode,
+    result.message
+  );
 }
 ```
 
 ---
 
-### **`logEvent(eventName: string, values: Record<string, any>): Promise<AppsflyerResult>`** {#log-event}
+### **`logEvent(eventName, values)`** {#log-event}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" />
 
 :::warning 주의
 _[연동하기](./integrate#prerequisite)가 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#log-event-types}
+
+```typescript
+function logEvent(
+  eventName: string,
+  values: Record<string, any>
+): Promise<AppsflyerResult>;
+```
 
 #### 설명 {#log-event-summary}
 
@@ -668,7 +727,7 @@ const result = await Nachocode.appsflyer.logEvent('purchase', {
 if (result.status === 'success') {
   console.log('이벤트 로깅 성공:', result.message);
 } else {
-  console.error('이벤트 로깅 실패:', result.errorCode, result.message);
+  console.error('이벤트 로깅 실패: ', result.errorCode, result.message);
 }
 ```
 

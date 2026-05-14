@@ -154,7 +154,7 @@ Nachocode.event.on('foreground', () => {
 
 - 현재 앱 소스 버전을 확인할 수 있는 `getAppSourceVersion` 메서드가 추가되었습니다.
 - 앱 소스 버전이란 nachocode에서 제공하는 기본 앱 소스코드의 버전을 의미합니다.
-- SDK 버젼보다 앱 소스 버젼이 낮을 경우 SDK 일부 기능 사용이 제한됩니다.
+- SDK 버전보다 앱 소스 버전이 낮을 경우 SDK 일부 기능 사용이 제한됩니다.
 - ➡️ [`env` 네임스페이스 문서](/docs/sdk/namespaces/env)에서 상세 정보를 확인할 수 있습니다.
 
 #### 추가된 메서드 (`env`)

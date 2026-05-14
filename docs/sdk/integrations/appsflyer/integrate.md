@@ -25,7 +25,7 @@ keywords:
     AppsFlyer Engage,
     AppsFlyer Integration,
   ]
-image: /img/docs/thumbnails/SDK/appsflyer.svg
+image: /img/docs/thumbnails/SDK/appsflyer.png
 ---
 
 # 앱스플라이어 (`appsflyer`) - 연동하기
@@ -33,10 +33,10 @@ image: /img/docs/thumbnails/SDK/appsflyer.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/appsflyer.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/appsflyer.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.7.0" link="/docs/releases/v1/sdk/release-v-1-7-0" /> <BadgeWithVersion type="Android" version="v1.7.0" link="/docs/releases/v1/app-source/android/release-v-1-7-0" /> <BadgeWithVersion type="iOS" version="v1.7.0" link="/docs/releases/v1/app-source/ios/release-v-1-7-0" />  
-> 🔔 **최신화 일자:** 2025-09-29
+> 🔔 **최신화 일자:** 2026-01-16
 
 ## **필수 선행 작업** {#prerequisite}
 
@@ -81,38 +81,15 @@ nachocode SDK로 **AppsFlyer 연동 기능**을 사용하기 위해서는 아래
 
 ### 3. nachocode에 AppsFlyer Dev Key 등록 {#prerequisite-step-3}
 
-:::warning **현재 수동 설정 필요**
+#### 3-1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 [ 앱 설정 ] → [ 연동 ] 접속 {#prerequisite-step-3-1}
 
-AppsFlyer 연동 설정 기능은 아직 nachocode 대시보드에서 제공되지 않습니다.  
-**설정을 원하실 경우 지원팀 이메일 [support@nachocode.io](mailto:support@nachocode.io)로 연락주시면 수동으로 설정해드립니다.**
+![nachocode_dashboard_linked_services](/img/docs/appsflyer/nachocode_dashboard_linked_services.png)
 
-:::
+#### 3-2. 앱스플라이어 토글 활성화 {#prerequisite-step-3-2}
 
-#### 지원팀에 전달해야 할 정보 {#prerequisite-step-3-support}
+![nachocode_dashboard_linked_services_appsflyer](/img/docs/appsflyer/nachocode_dashboard_linked_services_appsflyer.png)
 
-1. **nachocode 앱 Key** (대시보드에서 확인 가능)
-2. **AppsFlyer Dev Key** ([2단계](#prerequisite-step-2)에서 복사한 값)
-3. **앱 플랫폼** (Android, iOS 또는 둘 다)
-4. **패키지 이름/Bundle ID**
-
-#### 이메일 예시 {#prerequisite-step-3-email}
-
-```plane
-제목: AppsFlyer 연동 설정 요청
-
-안녕하세요.
-AppsFlyer 연동을 위해 아래 정보로 설정 부탁드립니다.
-
-- nachocode 앱 Key: your_app_key_here
-- AppsFlyer Dev Key: your_dev_key_here
-- 플랫폼: Android, iOS
-- Android 패키지명: com.yourcompany.yourapp
-- iOS Bundle ID: com.yourcompany.yourapp
-
-감사합니다.
-```
-
-<br/>
+#### 3-3. SDK 인증을 위해 [2-2](#prerequisite-step-2-2)에서 복사한 **Dev Key** 입력 {#prerequisite-step-3-3}
 
 ---
 
@@ -144,43 +121,19 @@ AppsFlyer 연동을 위해 아래 정보로 설정 부탁드립니다.
 
 ---
 
-### 5. (선택사항) 발급한 원링크 도메인 nachocode에 등록 {#prerequisite-step-5}
+### 5. (선택사항) 발급한 원링크 도메인 [nachocode](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에 등록 {#prerequisite-step-5}
 
-원링크를 사용하는 경우, 도메인을 nachocode에 등록해야 합니다.
+원링크를 사용하는 경우, OneLink 도메인을 nachocode에 등록해야 합니다.
 
-:::warning **현재 수동 설정 필요**
+![nachocode_dashboard_linked_services_appsflyer_onelink](/img/docs/appsflyer/nachocode_dashboard_linked_services_appsflyer_onelink.png)
 
-AppsFlyer 원링크 도메인 설정 기능은 아직 nachocode 대시보드에서 제공되지 않습니다.  
-**설정을 원하실 경우 지원팀 이메일 [support@nachocode.io](mailto:support@nachocode.io)로 연락주시면 수동으로 설정해드립니다.**
-
-:::
-
-#### 지원팀에 전달해야 할 정보 {#prerequisite-step-5-support}
-
-1. **nachocode 앱 Key**
-2. **원링크 도메인** ([4단계](#prerequisite-step-4)에서 복사한 값)
-
-#### 이메일 예시 {#prerequisite-step-5-email}
-
-```plane
-제목: AppsFlyer 원링크 도메인 등록 요청
-
-안녕하세요.
-AppsFlyer 원링크 도메인 등록을 위해 아래 정보로 설정 부탁드립니다.
-
-- nachocode 앱 Key: your_app_key_here
-- 원링크 도메인: https://yourapp.onelink.me
-
-감사합니다.
-```
-
-<br/>
+앱스플라이어에서 발급받은 **원링크 도메인** ([4단계](#prerequisite-step-4)에서 복사한 값)을 OneLink 도메인에 등록해주세요.
 
 ---
 
 ### 6. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 재빌드 수행 {#prerequisite-step-6}
 
-#### 6-1. [ 앱 빌드 ] → [ 안드로이드 앱 빌드 ] 혹은 [ iOS 앱 빌드 ] 접속 {#prerequisite-step-6-1}
+#### 6-1. [ 앱 빌드 ] → [ 안드로이드 앱 ] 혹은 [ iOS 앱 ] → [ 빌드 ] 접속 {#prerequisite-step-6-1}
 
 #### 6-2. [ 새 버전 만들기 ] 버튼을 클릭하여 빌드 {#prerequisite-step-6-2}
 
@@ -189,7 +142,6 @@ AppsFlyer 원링크 도메인 등록을 위해 아래 정보로 설정 부탁드
 :::info **빌드 필수!**
 
 - **AppsFlyer 관련 기능은 새로 빌드 된 버전의 앱부터 적용됩니다.**
-- 지원팀의 설정 완료 확인 후 빌드를 진행하세요.
 
 :::
 
@@ -201,11 +153,7 @@ AppsFlyer 원링크 도메인 등록을 위해 아래 정보로 설정 부탁드
 
 설정이 완료되면 다음 방법으로 확인할 수 있습니다.
 
-### 1. 지원팀 설정 완료 알림 수신 {#verification-1}
-
-지원팀에서 AppsFlyer 연동 설정 완료 시 이메일로 알림을 보내드립니다.
-
-### 2. 앱 빌드 후 SDK 테스트 {#verification-2}
+### 앱 빌드 후 SDK 테스트 {#verification-1}
 
 ```javascript
 // AppsFlyer 커스텀 이벤트 로깅
@@ -230,9 +178,8 @@ if (result.status === 'success') {
 
 - **원인**: Dev Key 설정이 올바르지 않거나 빌드가 완료되지 않았을 때
 - **해결방법**
-  - 지원팀 설정 완료 확인
-  - 새 버전으로 재빌드
   - Dev Key 정확성 재확인
+  - 새 버전으로 재빌드
 
 #### 2. 원링크가 동작하지 않는 경우
 

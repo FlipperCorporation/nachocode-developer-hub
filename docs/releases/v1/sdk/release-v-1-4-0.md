@@ -64,7 +64,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 ```javascript
 Nachocode.scanner.openQRCodeScanner({ openDirect: true }, (data, error) => {
   if (error) {
-    console.error('QR 코드 스캔 실패:', error.message);
+    console.error('QR 코드 스캔 실패: ', error.message);
   } else {
     console.log('QR 코드 데이터:', data);
   }
@@ -99,7 +99,7 @@ Nachocode.apple.login(['email', 'fullName'], (result, userData) => {
   if (result.status === 'success') {
     console.log('Apple 로그인 성공:', userData);
   } else {
-    console.error('Apple 로그인 실패:', result.errorCode, result.message);
+    console.error('Apple 로그인 실패: ', result.errorCode, result.message);
   }
 });
 ```
@@ -133,7 +133,7 @@ Nachocode.facebook.login(
     if (result.status === 'success') {
       console.log('Facebook 로그인 성공:', userData);
     } else {
-      console.error('Facebook 로그인 실패:', result.errorCode, result.message);
+      console.error('Facebook 로그인 실패: ', result.errorCode, result.message);
     }
   }
 );

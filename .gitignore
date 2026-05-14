@@ -74,3 +74,6 @@ temp*
 # AI Tools
 .claude
 CLAUDE.md
+
+# Analytics Setup
+ANALYTICS_SETUP.md

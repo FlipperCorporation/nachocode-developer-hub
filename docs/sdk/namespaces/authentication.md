@@ -15,7 +15,7 @@ keywords:
     biometrics authentication,
     biometrics login,
   ]
-image: /img/docs/thumbnails/SDK/authentication.svg
+image: /img/docs/thumbnails/SDK/authentication.png
 ---
 
 # 인증 (`authentication`)
@@ -23,10 +23,10 @@ image: /img/docs/thumbnails/SDK/authentication.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/authentication.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/authentication.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" /> <BadgeWithVersion type="Android" version="v1.3.0" link="/docs/releases/v1/app-source/android/release-v-1-3-0" /> <BadgeWithVersion type="iOS" version="v1.3.0" link="/docs/releases/v1/app-source/ios/release-v-1-3-0" />  
-> 🔔 **최신화 일자:** 2025-11-14
+> 🔔 **최신화 일자:** 2026-03-17
 
 ## **개요** {#overview}
 
@@ -57,7 +57,7 @@ iOS에서 nachocode SDK로 **생체 인증 기능**을 사용하기 위해서는
 | 필드                 | 타입                                | 설명                                                |
 | -------------------- | ----------------------------------- | --------------------------------------------------- |
 | `authenticated`      | `boolean`                           | 인증 성공 여부 (`true`: 인증됨, `false`: 인증 실패) |
-| `error` (_optional_) | `{ code: string, message: string }` | 인증 실패 시 발생한 오류 코드 및 메시지             |
+| `error` _(optional)_ | `{ code: string, message: string }` | 인증 실패 시 발생한 오류 코드 및 메시지             |
 
 ---
 
@@ -72,13 +72,21 @@ iOS에서 nachocode SDK로 **생체 인증 기능**을 사용하기 위해서는
 
 ## **메서드 상세** {#method-details}
 
-### **`canUseBiometrics(callback: (available: boolean, error?: { code: string, message: string }) => void): void`** {#can-use-biometrics}
+### **`canUseBiometrics(callback)`** {#can-use-biometrics}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />
 
 :::warning
 _iOS는 [필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#can-use-biometrics-types}
+
+```typescript
+function canUseBiometrics(
+  callback: (available: boolean, error?: SDKError) => void
+): void;
+```
 
 #### 설명 {#can-use-biometrics-summary}
 
@@ -112,13 +120,19 @@ Nachocode.authentication.canUseBiometrics((available, error) => {
 
 ---
 
-### **`useBiometrics(callback: (result: AuthenticationResult) => void): void`** {#use-biometrics}
+### **`useBiometrics(callback)`** {#use-biometrics}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.3.0" link="/docs/releases/v1/sdk/release-v-1-3-0" />
 
 :::warning
 _iOS는 [필수 선행 작업](#prerequisite)이 완료되어야 사용할 수 있습니다._
 :::
+
+#### 타입 정의 {#use-biometrics-types}
+
+```typescript
+function useBiometrics(callback: (result: AuthenticationResult) => void): void;
+```
 
 #### 설명 {#use-biometrics-summary}
 

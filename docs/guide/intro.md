@@ -21,14 +21,14 @@ keywords:
     나쵸코드,
     nachocode,
   ]
-image: /img/docs/thumbnails/GUIDE/intro.svg
+image: /img/docs/thumbnails/GUIDE/intro.png
 ---
 
 # nachocode 서비스 소개 {#intro}
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/intro.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/intro.png'/>
 
 > 🔔 **최신화 일자:** 2025-10-15
 
@@ -96,7 +96,7 @@ nachocode API는 현재 푸시 알림 전송에 중점을 두고 있으며, 앞�
 
 ## nachocode 앱 구조 {#nachocode-app-architecture}
 
-![nachocode_application](/img/docs/nachocode_app.webp)
+![nachocode_application](/img/docs/nachocode_app.png)
 
 nachocode에서 빌드한 앱들은 위 구조를 통해 앱 사용자들에게 다양한 기능을 제공할 수 있게 설계돼있습니다.
 

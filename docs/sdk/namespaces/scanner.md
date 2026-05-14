@@ -9,7 +9,7 @@ keywords:
     웹뷰 QR 코드 스캔,
     WebView QR Code Scan,
   ]
-image: /img/docs/thumbnails/SDK/scanner.svg
+image: /img/docs/thumbnails/SDK/scanner.png
 ---
 
 # 스캐너 (`scanner`)
@@ -17,10 +17,10 @@ image: /img/docs/thumbnails/SDK/scanner.svg
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/SDK/scanner.svg'/>
+<ThumbnailImage src='/img/docs/thumbnails/SDK/scanner.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2025-07-18
+> 🔔 **최신화 일자:** 2026-03-19
 
 ## **개요** {#overview}
 
@@ -40,9 +40,21 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ## **메서드 상세** {#method-details}
 
-### **`openQRCodeScanner(option: { openDirect: boolean, openType?: 'internal' | 'external' | 'main' }, callback?: (data: string, error?: SDKError) => void): void`** {#open-qr-code-scanner}
+### **`openQRCodeScanner(option, callback?)`** {#open-qr-code-scanner}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />
+
+#### 타입 정의 {#open-qr-code-scanner-types}
+
+```typescript
+function openQRCodeScanner(
+  option: {
+    openDirect: boolean;
+    openType?: 'internal' | 'external' | 'main';
+  },
+  callback?: (data: string | undefined, error?: SDKError) => void
+): void;
+```
 
 #### 설명 {#open-qr-code-scanner-summary}
 
@@ -85,7 +97,7 @@ QR 코드 스캐너를 실행하고, 스캔된 데이터를 **콜백 함수로 �
 // 기본 QR 코드 스캐너 실행 (데이터만 반환)
 Nachocode.scanner.openQRCodeScanner({ openDirect: false }, (data, error) => {
   if (error) {
-    console.error('QR 코드 스캔 실패:', error.message);
+    console.error('QR 코드 스캔 실패: ', error.message);
   } else {
     console.log('QR 코드 데이터:', data);
   }
@@ -98,7 +110,7 @@ Nachocode.scanner.openQRCodeScanner(
   { openDirect: true, openType: 'main' },
   (data, error) => {
     if (error) {
-      console.error('QR 코드 스캔 실패:', error.message);
+      console.error('QR 코드 스캔 실패: ', error.message);
     } else {
       console.log('QR 코드 데이터:', data);
     }
@@ -112,7 +124,7 @@ Nachocode.scanner.openQRCodeScanner(
   { openDirect: true, openType: 'internal' },
   (data, error) => {
     if (error) {
-      console.error('QR 코드 스캔 실패:', error.message);
+      console.error('QR 코드 스캔 실패: ', error.message);
     } else {
       console.log('내부 브라우저에서 QR 코드 실행:', data);
     }
@@ -126,7 +138,7 @@ Nachocode.scanner.openQRCodeScanner(
   { openDirect: true, openType: 'external' },
   (data, error) => {
     if (error) {
-      console.error('QR 코드 스캔 실패:', error.message);
+      console.error('QR 코드 스캔 실패: ', error.message);
     } else {
       console.log('외부 브라우저에서 QR 코드 실행:', data);
     }
