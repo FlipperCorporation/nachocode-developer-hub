@@ -25,7 +25,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/google.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.5.0" link="/docs/releases/v1/sdk/release-v-1-5-0" /> <BadgeWithVersion type="Android" version="v1.5.0" link="/docs/releases/v1/app-source/android/release-v-1-5-0" /> <BadgeWithVersion type="iOS" version="v1.5.0" link="/docs/releases/v1/app-source/ios/release-v-1-5-0" />  
-> 🔔 **최신화 일자:** 2025-07-16
+> 🔔 **최신화 일자:** 2026-06-04
 
 ## **필수 선행 작업** {#prerequisite}
 
@@ -108,9 +108,11 @@ nachocode SDK로 **구글 네이티브 기능**을 사용하기 위해서는 아
 ### 10. [Google Play Console](https://play.google.com/console)에서 앱 서명키 인증서 지문 확인 {#prerequisite-step-10}
 
 - **빌드된 aab 파일을 [Google Play Console](https://play.google.com/console)에 업로드 후**  
-  **[ 테스트 및 출시 > 설정 > 앱 서명 ]에서 앱 서명키 인증서의 [ SHA-1 인증서 지문 ]을 확인**
+  **[ Google Play로 보호됨 > Play 스토어 보호 > Play 앱 서명 관리 ]에서 앱 서명키 인증서의 [ SHA-1 인증서 지문 ]을 확인**
 
-![google_console_fingerprint](/img/docs/google/google_console_fingerprint.png)
+![google_console_app_sign](/img/docs/android/google_play_console_app_sign.png)
+
+![google_console_fingerprint_sha1](/img/docs/android/google_play_console_fingerprint_sha1.png)
 :::warning
 운영환경에서 구글 로그인을 사용하기 위한 필수 작업이므로 안드로이드 앱 출시 전 확인해주세요.
 :::
