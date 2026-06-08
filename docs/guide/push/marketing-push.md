@@ -227,17 +227,40 @@ await Nachocode.user.deleteUserId();
 개발자는 복잡한 토픽 관리 로직을 작성할 필요 없이, **SDK 메서드 호출만으로 모든 것이 자동 처리**됩니다.
 :::
 
+<br/>
+
+#### 4. 회원 탈퇴 시 모든 디바이스에 자동 전파
+
+```javascript
+// 앱 내 회원 탈퇴 시
+await Nachocode.user.withdrawUser();
+```
+
+- `user`상태에서 `guest`상태로 **자동 전환**
+- 모든 `user`, `guest`관련 마케팅 토픽 **자동 구독해제**
+- 해당 `userId`를 가진 **모든 디바이스**에 동의 상태 변경을 **자동 전파**
+
+:::tip
+
+회원 탈퇴 후에도 **법적으로 올바른 동의 상태**가 자동으로 유지됩니다.  
+개발자는 복잡한 토픽 관리 로직을 작성할 필요 없이, **SDK 메서드 호출만으로 모든 것이 자동 처리**됩니다.
+
+[**`[DELETE] /api/app-user/v2`**](../../api/app-user/user-preferences.endpoints#delete-apiapp-userv2-delete-app-user-v2) API Endpoint를 활용하여 웹 상에서도 회원 탈퇴처리가 가능합니다.
+
+:::
+
 ---
 
-### 로그아웃 시 중요한 법적 원칙 {#logout-principle}
+### 로그아웃, 회원 탈퇴 시 중요한 법적 원칙 {#logout-principle}
 
-:::warning 로그아웃 시 필수 준수 사항
+:::warning 로그아웃, 회원 탈퇴 시 필수 준수 사항
 
 **정보통신망법 준수를 위해 다음 규칙을 반드시 지켜야 합니다.**
 
 1. **회원이 수신거부**하면 **게스트 동의도 함께 철회**됩니다
 2. **로그아웃 후에는 게스트 동의 상태를 기준**으로 마케팅 푸시 전송 여부 판단
 3. 게스트 동의가 거부 상태라면 로그아웃 후 마케팅 푸시 전송 금지
+4. **회원 탈퇴** 시, 회원/게스트 여부에 상관없이 **모든 마케팅 동의** 철회
 
 **nachocode는 이러한 법적 요구사항을 자동으로 준수**하도록 설계되어 있습니다.
 
@@ -279,6 +302,24 @@ await Nachocode.push.setMarketingAllowed(true);
 // 3. 로그아웃 후
 await Nachocode.user.deleteUserId();
 // 게스트 동의가 false이므로 마케팅 푸시 전송 불가
+```
+
+##### 시나리오 3: 비로그인 동의 -> 로그인 후 동의 -> 회원 탈퇴
+
+```javascript
+// 1. 로그인 전 동의
+await Nachocode.push.setMarketingAllowed(true);
+// 결과: { guest: true, user: true }
+
+// 2. 로그인 후 동의
+await Nachocode.user.setUserId('user123');
+await Nachocode.push.setMarketingAllowed(true);
+// 결과: { guest: false, user: true }
+
+// 3. 회원 탈퇴 후
+await Nachocode.user.withdrawUser('user123');
+// 결과: { guest: null, user: null }
+// 'user123'으로 로그인된 모든 기기 동일
 ```
 
 ---
@@ -341,7 +382,7 @@ SDK를 통해 사용자의 마케팅 동의를 관리하면, nachocode 앱소스
 
 ## 관련 문서 {#related-docs}
 
-:::tip **SDK 문서**
+### SDK
 
 - [**Nachocode.push**](/docs/sdk/namespaces/push) - 푸시 알림 관련 SDK 메서드
 
@@ -355,7 +396,11 @@ SDK를 통해 사용자의 마케팅 동의를 관리하면, nachocode 앱소스
 - [**Nachocode.user**](/docs/sdk/namespaces/user) - 사용자 식별 관련 SDK 메서드
   - [`setUserId()`](/docs/sdk/namespaces/user#set-user-id) - 사용자 ID 설정 (로그인)
   - [`deleteUserId()`](/docs/sdk/namespaces/user#delete-user-id) - 사용자 ID 삭제 (로그아웃)
+  - [`withdrawUser()`] - 사용자 및 디바이스 초기화 (회원 탈퇴)
+  <!-- @todo: 여기 withdrawUser()관련 추가 작업 부탁드립니다.-->
 
-:::
+### API
+
+- [**[DELETE] api/app-user/v2**](../../api/app-user/user-preferences.endpoints#delete-app-user-v2) - 사용자 및 디바이스 초기화 API (회원 탈퇴)
 
 ---

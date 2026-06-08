@@ -124,7 +124,7 @@ nachocode 전체 푸시 API는 다양한 엔드포인트를 제공하여 푸시 
     | ERR-AB-PSS-91 | 404             | App data not found.         | 미등록 앱                      |
     | ERR-AB-PSS-92 | 404             | FCM Account data not found. | FCM Service Account파일 미등록 |
 
-  <br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
+<br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
 
 ## **상수 및 객체 상세 설명**
 
@@ -174,7 +174,7 @@ nachocode 전체 푸시 API는 다양한 엔드포인트를 제공하여 푸시 
   }
   ```
 
-<br/><hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/><br/>
+<br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
 
 ## **공통 에러코드** {#v2-push-common-error-code-definition}
 

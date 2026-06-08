@@ -373,7 +373,7 @@ nachocode 토픽 푸시 API는 다양한 엔드포인트를 제공하여 푸시 
   }
   ```
 
-<br/><hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/><br/>
+<br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
 
 ## **공통 에러코드** {#topic-push-common-error-code-definition}
 
