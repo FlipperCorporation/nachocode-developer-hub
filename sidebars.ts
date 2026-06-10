@@ -128,7 +128,10 @@ const sidebars: SidebarsConfig = {
         title: '앱 유저 관리 (App User Management)',
         slug: '/api/app-user',
       },
-      items: ['api/app-user/user-preferences.endpoints'],
+      items: [
+        'api/app-user/user-management.endpoints',
+        'api/app-user/user-preferences.endpoints',
+      ],
     },
   ],
   sdk: [
