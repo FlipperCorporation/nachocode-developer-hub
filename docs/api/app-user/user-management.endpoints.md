@@ -1,6 +1,6 @@
 ---
-sidebar_label: 앱 유저 관리
-pagination_label: 앱 유저 관리
+sidebar_label: 앱 유저 상태 관리
+pagination_label: 앱 유저 상태 관리
 description: nachocode 앱 유저 관리 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
 keywords:
   [
@@ -28,7 +28,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <br/>
 
-nachocode 회원 관리 API를 활용하여 회원 상태를 관리 할 수 있습니다.
+nachocode 회원 상태 관리 API를 활용하여 회원 상태를 관리 할 수 있습니다.
 
 이 문서에서는 **API 사용법**, **요청/응답 형식**, **에러 케이스** 등을 다룹니다.
 
