@@ -120,6 +120,19 @@ const sidebars: SidebarsConfig = {
         'api/push/all-push.endpoints',
       ],
     },
+    {
+      type: 'category',
+      label: '앱 유저 관리',
+      link: {
+        type: 'generated-index',
+        title: '앱 유저 관리 (App User Management)',
+        slug: '/api/app-user',
+      },
+      items: [
+        'api/app-user/user-management.endpoints',
+        'api/app-user/user-preferences.endpoints',
+      ],
+    },
   ],
   sdk: [
     'sdk/intro',
