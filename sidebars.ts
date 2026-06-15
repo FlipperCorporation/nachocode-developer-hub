@@ -319,6 +319,10 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'releases/v1/app-source/android/intro',
+            'releases/v1/app-source/android/release-v-1-10-10',
+            'releases/v1/app-source/android/release-v-1-10-9',
+            'releases/v1/app-source/android/release-v-1-10-8',
+            'releases/v1/app-source/android/release-v-1-10-7',
             'releases/v1/app-source/android/release-v-1-10-6',
             'releases/v1/app-source/android/release-v-1-10-5',
             'releases/v1/app-source/android/release-v-1-10-4',
@@ -375,6 +379,11 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'releases/v1/app-source/ios/intro',
+            'releases/v1/app-source/ios/release-v-1-10-10',
+            'releases/v1/app-source/ios/release-v-1-10-9',
+            'releases/v1/app-source/ios/release-v-1-10-8',
+            'releases/v1/app-source/ios/release-v-1-10-7',
+            'releases/v1/app-source/ios/release-v-1-10-6',
             'releases/v1/app-source/ios/release-v-1-10-5',
             'releases/v1/app-source/ios/release-v-1-10-4',
             'releases/v1/app-source/ios/release-v-1-10-3',
