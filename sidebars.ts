@@ -122,10 +122,10 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '앱 유저 관리',
+      label: '앱 유저',
       link: {
         type: 'generated-index',
-        title: '앱 유저 관리 (App User Management)',
+        title: '앱 유저 (App User)',
         slug: '/api/app-user',
       },
       items: [
