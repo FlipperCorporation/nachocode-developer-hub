@@ -12,14 +12,14 @@ keywords:
     사용자 상태 관리,
     CRM,
   ]
-image: /img/docs/thumbnails/API/push.png
+image: /img/docs/thumbnails/API/appuser.png
 ---
 
 # 유저 마케팅 동의 관리 API Endpoints
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/API/push.png'/>
+<ThumbnailImage src='/img/docs/thumbnails/API/appuser.png'/>
 
 > 🔔 **최신화 일자:** 2026-06-05
 
@@ -66,15 +66,30 @@ nachocode 회원 마케팅 동의 관리 API를 활용하여 회원의 마케팅
 
 - **Body**
 
-  | **Parameter**    | **Type**                                                                             | **Required** | **Constraints** | **Description**                                    |
-  | ---------------- | ------------------------------------------------------------------------------------ | ------------ | --------------- | -------------------------------------------------- |
-  | userId           | `string \| number`                                                                   | ✔           |                 | 동의값을 변경할 유저 ID                            |
-  | state            | [`UserMarketingPreferenceState`](#user-marketing-preference-state-object-definition) | ✔           |                 | 변경할 마케팅 동의값                               |
-  | ignoreWithdrawal | `boolean`                                                                            |              |                 | 요청된 사용자가 탈퇴된 회원일 시, 정상 유저로 전환 |
+  | **Parameter** | **Type**                                                                             | **Required** | **Constraints** | **Description**         |
+  | ------------- | ------------------------------------------------------------------------------------ | ------------ | --------------- | ----------------------- |
+  | userId        | `string \| number`                                                                   | ✔           |                 | 동의값을 변경할 유저 ID |
+  | state         | [`UserMarketingPreferenceState`](#user-marketing-preference-state-object-definition) | ✔           |                 | 변경할 마케팅 동의값    |
 
   <br/>
 
   #### UserMarketingPreferenceState \{#user-marketing-preference-state-object-definition}
+
+  ```typescript
+  declare type UserMarketingPreferenceState =
+    | {
+        marketing: boolean;
+        marketingNight?: boolean;
+      }
+    | {
+        marketing?: boolean;
+        marketingNight: boolean;
+      }
+    | {
+        marketing: boolean;
+        marketingNight: boolean;
+      };
+  ```
 
   | **Parameter**  | **Type**  | **Required** | **Constraints**                                                                                    | **Description**                 |
   | -------------- | --------- | ------------ | -------------------------------------------------------------------------------------------------- | ------------------------------- |
@@ -94,7 +109,6 @@ nachocode 회원 마케팅 동의 관리 API를 활용하여 회원의 마케팅
     -H "x-secret-key: SECRET_KEY_VALUE" \
     -d '{
         "userId": "USER_ID_VALUE",
-        "ignoreWithdrawal": true,
         "state": {
           "marketing": true,
           "marketingNight": true
@@ -110,10 +124,10 @@ nachocode 회원 마케팅 동의 관리 API를 활용하여 회원의 마케팅
 
   - **Property**
 
-    | **Properties** | **Type** | **Description**           |
-    | -------------- | -------- | ------------------------- |
-    | status         | `number` | HTTP 응답 상태 코드 (200) |
-    | response       | `@todo`  | 요청 결과                 |
+    | **Properties** | **Type**                                        | **Description**                    |
+    | -------------- | ----------------------------------------------- | ---------------------------------- |
+    | status         | `number`                                        | HTTP 응답 상태 코드 (200)          |
+    | response       | `{marketing: boolean, marketingNight: boolean}` | 변경이 적용된 유저의 마케팅 동의값 |
 
   - **Example**
 
@@ -133,8 +147,8 @@ nachocode 회원 마케팅 동의 관리 API를 활용하여 회원의 마케팅
 
     | **ErrorCode** | **Status Code** | **Message**                                   | **Description**                        |
     | ------------- | --------------- | --------------------------------------------- | -------------------------------------- |
-    | ERR-AB-ACS-02 | 400             | This app is unable to handle user preference. | 유저 동의값 관리 기능이 사용 불가한 앱 |
-    | ERR-AB-ACS-02 | 410             | User already withdrawn.                       | 이미 탈퇴처리된 유저                   |
+    | ERR-AB-ACS-31 | 403             | This app is unable to handle user preference. | 유저 동의값 관리 기능이 사용 불가한 앱 |
+    | ERR-AB-ACS-32 | 410             | User withdrawn. Please re-register.           | 이미 탈퇴처리된 유저                   |
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
@@ -153,10 +167,10 @@ nachocode 회원 마케팅 동의 관리 API를 활용하여 회원의 마케팅
 
   ```json
   {
-    "statusCode": 400,
-    "path": "api/nacho/example",
-    "code": "ERR-NA-CHO-00",
-    "message": "Oops! Something went wrong!"
+    "statusCode": 500,
+    "path": "api/app-user/example",
+    "code": "ERR-AB-ACS-03",
+    "message": "Something went wrong. Please try again later."
   }
   ```
 
