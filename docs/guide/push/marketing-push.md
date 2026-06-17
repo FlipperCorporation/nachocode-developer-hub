@@ -31,7 +31,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.png'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
-> 🔔 **최신화 일자:** 2026-03-27
+> 🔔 **최신화 일자:** 2026-06-17
 
 이 문서는 **광고성 푸시 알림**(**마케팅 푸시**)의 법적 요구사항과 nachocode SDK를 활용한 구현 방법을 안내합니다.
 
@@ -89,18 +89,17 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 #### 필수 준수 사항
 
-- [ ] **사전 동의 받기**: 마케팅 푸시 전송 전 반드시 사용자 동의 획득
-- [ ] **야간 푸시 별도 동의**: 21:00~08:00 시간대 전송 시 별도 동의 필요
-- [ ] **명확한 동의 문구**: 어떤 정보를 받게 되는지 구체적으로 설명
-- [ ] **선택적 동의**: 마케팅 동의는 서비스 이용의 필수 조건이 아님을 명시
-- [ ] **수신 거부 기능**: 설정에서 언제든 동의 철회 가능하도록 구현
-- [ ] **동의 기록 보관**: 서비스 서버에 동의 일시 및 내역 저장 (법적 분쟁 대비)
-- [ ] **로그아웃 시 게스트 동의 확인**: 회원이 수신거부한 경우 게스트 동의도 거부되므로 로그아웃 후 마케팅 푸시 전송 금지
+- [x] **사전 동의 받기**: 마케팅 푸시 전송 전 반드시 사용자 동의 획득
+- [x] **야간 푸시 별도 동의**: 21:00~08:00 시간대 전송 시 별도 동의 필요
+- [x] **명확한 동의 문구**: 어떤 정보를 받게 되는지 구체적으로 설명
+- [x] **선택적 동의**: 마케팅 동의는 서비스 이용의 필수 조건이 아님을 명시
+- [x] **수신 거부 기능**: 설정에서 언제든 동의 철회 가능하도록 구현
+- [x] **동의 기록 보관**: 서비스 서버에 동의 일시 및 내역 저장 (법적 분쟁 대비)
 
 #### 권장 사항
 
-- [ ] **정보성 푸시와 구분**: 시스템 알림과 마케팅 알림을 명확히 구분
-- [ ] **동의 철회 안내**: 마케팅 푸시 발송 시 수신 거부 방법 안내
+- [x] **정보성 푸시와 구분**: 시스템 알림과 마케팅 알림을 명확히 구분
+- [x] **동의 철회 안내**: 마케팅 푸시 발송 시 수신 거부 방법 안내
 
 ---
 
@@ -183,7 +182,7 @@ await Nachocode.user.setUserId('user123');
 - 기존 회원이 다시 로그인한 경우 이전 동의 상태를 **자동 복원**
 
 :::tip
-앱 사용자가 여러 디바이스를 사용하더라도 마케팅 동의 설정이 **자동으로 일치**됩니다.  
+앱 사용자가 여러 디바이스를 사용하더라도 마케팅 동의 설정이 **자동으로 동기화**됩니다.  
 A 디바이스에서 마케팅 수신을 거부했다면, B 디바이스에서도 자동으로 거부 상태가 유지됩니다.
 :::
 
@@ -213,7 +212,7 @@ await Nachocode.push.setNightAllowed(false);
 #### 3. 로그아웃 시 자동 상태 전환
 
 ```javascript
-// 사용자가 로그아웃할 때 단순히 userId 삭제
+// 사용자가 로그아웃할 때 단순히 userId 제거
 await Nachocode.user.deleteUserId();
 ```
 
@@ -227,17 +226,61 @@ await Nachocode.user.deleteUserId();
 개발자는 복잡한 토픽 관리 로직을 작성할 필요 없이, **SDK 메서드 호출만으로 모든 것이 자동 처리**됩니다.
 :::
 
+:::warning 주의사항
+명시적으로 사용자가 로그아웃 할 때뿐 아니라, **토큰, 세션 만료 등으로 인한 유저 로그아웃 시에도 반드시 `deleteUserId()`를 호출해서 유저 상태를 관리**해주세요.
+
+네이티브 레이어와 nachocode 측 서버에서는 해당 메서드를 호출하지 않을 경우 유저의 현재 로그인 상태를 자체적으로 알 수 없습니다.
+:::
+
+<br/>
+
+#### 4. 회원 탈퇴 시 모든 유저 및 디바이스 정보 초기화 ([v1.10.4](/docs/releases/v1/sdk/release-v-1-10-4)+)
+
+```javascript
+// 앱 내 회원 탈퇴 시
+await Nachocode.user.withdrawUser();
+```
+
+- **nachocode 서버에서 해당 userId의 모든 정보 완전 삭제**
+  - 해당 `userId`와 연결된 **모든 디바이스의 푸시 토큰 등록 해제**
+  - 해당 `userId`의 **마케팅 동의 정보 완전 삭제** (게스트, 유저 모두)
+  - 해당 `userId`의 **모든 사용자 설정 및 데이터 삭제**
+- 현재 디바이스가 `user` 상태에서 `guest` 상태로 **자동 전환**
+- 모든 `user`, `guest` 관련 마케팅 토픽 **자동 구독해제**
+
+:::tip GDPR 및 개인정보 보호법 준수
+
+nachocode는 GDPR 및 개인정보 보호법을 준수합니다.
+
+- **서버 측 완전 삭제**: nachocode 서버에 저장된 해당 userId의 모든 데이터가 복구 불가능하게 삭제됩니다
+- **다중 디바이스 지원**: 사용자가 여러 디바이스를 사용하더라도 모든 디바이스의 데이터가 삭제됩니다
+- **법적 요구사항 충족**: 탈퇴 즉시 모든 마케팅 푸시 전송이 중단되며 재가입 전까지 발송되지 않습니다
+
+개발자는 복잡한 데이터 삭제 로직을 작성할 필요 없이, **SDK 메서드 혹은 API 호출만으로 법적 요구사항을 완벽히 준수**할 수 있습니다.
+
+:::
+
+:::info 웹에서 회원 탈퇴 처리
+
+앱뿐만 아니라 웹 환경에서도 회원 탈퇴 처리가 가능합니다.
+
+- [**`[DELETE] /api/app-user/v2`**](../../api/app-user/user-management.endpoints#delete-app-user-v2) API Endpoint를 활용하여 서버에서 직접 탈퇴 처리
+- SDK의 `withdrawUser()`와 동일하게 모든 유저 및 디바이스 정보 완전 삭제
+
+:::
+
 ---
 
-### 로그아웃 시 중요한 법적 원칙 {#logout-principle}
+### 로그아웃, 회원 탈퇴 시 중요한 법적 원칙 {#logout-principle}
 
-:::warning 로그아웃 시 필수 준수 사항
+:::warning 로그아웃, 회원 탈퇴 시 필수 준수 사항
 
 **정보통신망법 준수를 위해 다음 규칙을 반드시 지켜야 합니다.**
 
 1. **회원이 수신거부**하면 **게스트 동의도 함께 철회**됩니다
 2. **로그아웃 후에는 게스트 동의 상태를 기준**으로 마케팅 푸시 전송 여부 판단
 3. 게스트 동의가 거부 상태라면 로그아웃 후 마케팅 푸시 전송 금지
+4. **회원 탈퇴** 시, 회원/게스트 여부에 상관없이 **모든 마케팅 동의** 철회
 
 **nachocode는 이러한 법적 요구사항을 자동으로 준수**하도록 설계되어 있습니다.
 
@@ -279,6 +322,25 @@ await Nachocode.push.setMarketingAllowed(true);
 // 3. 로그아웃 후
 await Nachocode.user.deleteUserId();
 // 게스트 동의가 false이므로 마케팅 푸시 전송 불가
+```
+
+##### 시나리오 3: 비로그인 동의 → 로그인 후 동의 → 회원 탈퇴 ([v1.10.4](/docs/releases/v1/sdk/release-v-1-10-4)+)
+
+```javascript
+// 1. 비로그인 상태에서 동의
+await Nachocode.push.setMarketingAllowed(true);
+// 결과: { guest: true, user: null }
+
+// 2. 로그인 후 동의
+await Nachocode.user.setUserId('user123');
+await Nachocode.push.setMarketingAllowed(true);
+// 결과: { guest: true, user: true }
+
+// 3. 회원 탈퇴 후
+await Nachocode.user.withdrawUser();
+// 결과: 현재 디바이스 { guest: null, user: null }
+// nachocode 서버에서 'user123'의 모든 유저 및 디바이스 정보 완전 삭제
+// 'user123'으로 로그인된 모든 디바이스에 데이터 초기화 전파
 ```
 
 ---
@@ -341,7 +403,7 @@ SDK를 통해 사용자의 마케팅 동의를 관리하면, nachocode 앱소스
 
 ## 관련 문서 {#related-docs}
 
-:::tip **SDK 문서**
+### SDK
 
 - [**Nachocode.push**](/docs/sdk/namespaces/push) - 푸시 알림 관련 SDK 메서드
 
@@ -354,8 +416,12 @@ SDK를 통해 사용자의 마케팅 동의를 관리하면, nachocode 앱소스
 
 - [**Nachocode.user**](/docs/sdk/namespaces/user) - 사용자 식별 관련 SDK 메서드
   - [`setUserId()`](/docs/sdk/namespaces/user#set-user-id) - 사용자 ID 설정 (로그인)
-  - [`deleteUserId()`](/docs/sdk/namespaces/user#delete-user-id) - 사용자 ID 삭제 (로그아웃)
+  - [`deleteUserId()`](/docs/sdk/namespaces/user#delete-user-id) - 사용자 ID 제거 (로그아웃)
+  - [`withdrawUser()`](/docs/sdk/namespaces/user#withdraw-user) - 사용자 및 디바이스 정보 초기화 (회원 탈퇴) <BadgeWithVersion type="SDK" version="v1.10.4" link="/docs/releases/v1/sdk/release-v-1-10-4" />
 
-:::
+### API
+
+- [**[DELETE] /api/app-user/v2**](../../api/app-user/user-management.endpoints#delete-app-user-v2) - 사용자 및 디바이스 정보 초기화 API (회원 탈퇴)
+- [**[PUT] /api/app-user/v2/marketing**](../../api/app-user/user-preferences.endpoints#put-app-user-v2-marketing) - 사용자 광고성 푸시 알림 수신 동의 여부 변경 API (마케팅 동의)
 
 ---
