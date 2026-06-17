@@ -15,10 +15,12 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "cSpell.words": [
     "AASA",
+    "Airbridge",
     "applinks",
     "applist",
     "appsflyer",
     "appstore",
+    "appuser",
     "assetlinks",
     "backkey",
     "birthyear",

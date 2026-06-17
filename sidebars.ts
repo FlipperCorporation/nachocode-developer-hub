@@ -120,6 +120,19 @@ const sidebars: SidebarsConfig = {
         'api/push/all-push.endpoints',
       ],
     },
+    {
+      type: 'category',
+      label: '앱 유저',
+      link: {
+        type: 'generated-index',
+        title: '앱 유저 (App User)',
+        slug: '/api/app-user',
+      },
+      items: [
+        'api/app-user/user-management.endpoints',
+        'api/app-user/user-preferences.endpoints',
+      ],
+    },
   ],
   sdk: [
     'sdk/intro',
@@ -263,6 +276,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'releases/v1/sdk/intro',
+        'releases/v1/sdk/release-v-1-10-4',
         'releases/v1/sdk/release-v-1-10-3',
         'releases/v1/sdk/release-v-1-10-2',
         'releases/v1/sdk/release-v-1-10-1',
