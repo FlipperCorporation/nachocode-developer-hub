@@ -191,7 +191,8 @@ Nachocode.push.registerPushToken(deviceUUID);
 
 - **API**
 
-  - 유저가 보유한 모든 디바이스 토큰 매핑 삭제 ➡️[API](../../api/push/push-token.endpoints.md#delete-v2-token) 바로가기
+  - 유저가 보유한 모든 디바이스 토큰 매핑 삭제  
+    ➡️[API 문서 보러가기](../../api/push/push-token.endpoints.md#delete-v2-token)
 
 - **SDK**
 
