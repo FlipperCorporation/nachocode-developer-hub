@@ -160,7 +160,7 @@ const config: Config = {
     },
     navbar: {
       title: 'nachocode Developer',
-      logo: { alt: 'nachocode', src: 'img/logo.png' },
+      logo: { alt: 'nachocode', src: 'android-chrome-512x512.png' },
       items: [
         {
           to: 'docs/guide/intro', // Guide의 시작 페이지로 이동

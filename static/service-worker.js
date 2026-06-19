@@ -5,7 +5,7 @@ function debug() {
   if (DEBUG_ENABLED) return console.log.apply(console, arguments);
 }
 
-const CACHE_VERSION = 1;
+const CACHE_VERSION = 2;
 debug('[SERVICE WORKER] Current cache version : ', CACHE_VERSION);
 
 const CACHE_NAME = `nachocode-${CACHE_VERSION}`;
@@ -14,12 +14,10 @@ debug('[SERVICE WORKER] Current cache name : ', CACHE_NAME);
 const CACHE_ITEMS = [
   '/favicon-16x16.png',
   '/favicon-32x32.png',
-  '/favicon-48x48.png',
-  '/android-chrome-72x72.png',
-  '/android-chrome-96x96.png',
-  '/android-chrome-144x144.png',
+  '/favicon.ico',
   '/android-chrome-192x192.png',
   '/android-chrome-512x512.png',
+  '/apple-touch-icon.png',
   '/fonts/pretendard/Pretendard-Black.subset.woff2',
   '/fonts/pretendard/Pretendard-Bold.subset.woff2',
   '/fonts/pretendard/Pretendard-ExtraBold.subset.woff2',
