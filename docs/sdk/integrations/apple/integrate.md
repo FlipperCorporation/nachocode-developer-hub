@@ -39,15 +39,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아래 사항이 먼저 완료되어야 합니다.
 
-### 1. [Apple Developer](https://developer.apple.com/account/resources/identifiers/list)에서 Identifier 설정 {#prerequisite-step-1}
-
-- **Identifier에 Capabilities 중 [ Sign In with Apple ] 추가**
-
-![developer_apple_capabilities_sign_in_with_apple](/img/docs/apple/developer_apple_capabilities_sign_in_with_apple.png)
-
-<br/>
-
-### 2. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 토글 활성화 {#prerequisite-step-2}
+### 1. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 토글 활성화 {#prerequisite-step-2}
 
 - **[ 앱 설정 > 연동 > Apple ]에서 [ 애플 로그인 사용 ] 토글을 활성화하여 앱 설정 완료**
 
@@ -55,7 +47,7 @@ nachocode SDK로 **애플 네이티브 기능**을 사용하기 위해서는 아
 
 <br/>
 
-### 3. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 재빌드 수행 {#prerequisite-step-3}
+### 2. [nachocode 대시보드](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)에서 재빌드 수행 {#prerequisite-step-3}
 
 - **[ 앱 빌드 > iOS 앱 빌드 ]에서 [ 새 버전 만들기 ] 버튼을 클릭하여 빌드**
 
