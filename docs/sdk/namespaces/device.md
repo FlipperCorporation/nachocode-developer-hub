@@ -426,8 +426,8 @@ Nachocode.device.getNetworkStatus(status => {
 
 ### **`getSafeAreaInsets()`** {#get-safe-area-insets}
 
-- ![iOS-Only](https://img.shields.io/badge/iOS_only-gray?logo=apple)
 - _since :_ <BadgeWithVersion type="SDK" version="v1.8.0" link="/docs/releases/v1/sdk/release-v-1-8-0" />
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.10.5" link="/docs/releases/v1/sdk/release-v-1-10-5" />
 
 #### 타입 정의 {#get-safe-area-insets-types}
 
@@ -439,21 +439,17 @@ function getSafeAreaInsets(): Promise<GetSafeAreaInsetsResult>;
 
 디바이스의 **Safe Area Insets 정보**를 비동기적으로 조회합니다.
 
-Safe Area는 디바이스의 **노치, 홈 인디케이터 등으로 인해 가려지지 않는 안전한 영역**을 나타냅니다.
+Safe Area는 디바이스의 **노치, 홈 인디케이터, 시스템 바 등으로 인해 가려지지 않는 안전한 영역**을 나타냅니다.
 이 정보를 활용하여 **UI 요소가 가려지지 않도록 레이아웃을 조정**할 수 있습니다.
 
 반환되는 값은 **포인트(pt) 단위**로 제공되며, CSS padding 속성에 바로 적용할 수 있습니다.
 
-:::info iOS 전용 기능
-현재 이 기능은 **iPhone X 이상의 iOS 기기에서만 지원**됩니다.
-:::
-
 #### 지원 플랫폼 {#get-safe-area-insets-supported-platforms}
 
-| 플랫폼                                                             | 지원 여부 | 비고          |
-| ------------------------------------------------------------------ | --------- | ------------- |
-| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ❌        | 지원하지 않음 |
-| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | iPhone X 이상 |
+| 플랫폼                                                             | 지원 여부 | 비고      |
+| ------------------------------------------------------------------ | --------- | --------- |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        | 정상 동작 |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | 정상 동작 |
 | ![Web](/img/docs/chrome-badge.svg)                                 | ❌        | 지원하지 않음 |
 
 #### 반환 값 {#get-safe-area-insets-returns}
