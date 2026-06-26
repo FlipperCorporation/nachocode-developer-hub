@@ -18,7 +18,7 @@ nachocode Android App Source **1.10.12** 버전이 반영되었습니다.
 
 ## 새로운 기능
 
-- **SafeArea 영역 확인** : [SDK](../../sdk/release-v-1-10-12)를 통해 안드로이드 디바이스의 window 안전영역을 확인하는 기능이 추가되었습니다.
+- **SafeArea 영역 확인** : [SDK](../../sdk/release-v-1-10-5)를 통해 안드로이드 디바이스의 window 안전영역을 확인하는 기능이 추가되었습니다.
 - **Safe Area CSS 변수 추가** : 네이티브에서 디바이스 안전 영역 값을 `--safe-area-top`, `--safe-area-right`, `--safe-area-bottom`, `--safe-area-left`로 주입합니다.
 
 ## 개선 및 수정 사항
