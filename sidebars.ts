@@ -100,6 +100,7 @@ const sidebars: SidebarsConfig = {
         'guide/sandbox/sandbox-debugging',
       ],
     },
+    'guide/safe-area',
     'guide/check-store-id',
     'guide/faq',
   ],
