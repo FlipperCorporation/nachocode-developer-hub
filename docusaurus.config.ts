@@ -154,8 +154,8 @@ const config: Config = {
     image: 'img/og-image.png',
     docs: { sidebar: { hideable: true, autoCollapseCategories: true } },
     announcementBar: {
-      id: 'sdk_release_v1_10_4',
-      content: `📢 <b><a target="_blank" href="/docs/releases/v1/sdk/release-v-1-10-4">nachocode Client SDK v1.10.4</a>이 배포되었습니다!</b> 🚀`,
+      id: 'sdk_release_v1_10_5',
+      content: `📢 <b><a target="_blank" href="/docs/releases/v1/sdk/release-v-1-10-5">nachocode Client SDK v1.10.5</a>이 배포되었습니다!</b> 🚀`,
       isCloseable: true,
     },
     navbar: {
