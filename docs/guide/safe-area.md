@@ -43,11 +43,11 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ---
 
-## 플랫폼별 Safe Area 개념 {#platform-concepts}
+## 플랫폼별 안전 영역 (Safe Area) 개념 {#platform-concepts}
 
 ### iOS의 Safe Area Insets {#ios-safe-area}
 
-iOS에서 Safe Area는 **UIView의 safeAreaInsets 프로퍼티**를 통해 제공됩니다.
+iOS에서 Safe Area는 **UIView의 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/safeareainsets) 프로퍼티**를 통해 제공됩니다.
 
 #### Safe Area가 필요한 주요 iOS 디바이스 요소
 
@@ -174,16 +174,16 @@ applySafeAreaInsets();
 ```css
 /* CSS에서 사용 */
 .header {
-  padding-top: var(--safe-area-inset-top);
+  padding-top: var(--safe-area-top, env(safe-area-inset-top, 0pt));
 }
 
 .footer {
-  padding-bottom: var(--safe-area-inset-bottom);
+  padding-bottom: var(--safe-area-bottom, env(safe-area-inset-bottom, 0pt));
 }
 
 .content {
-  padding-left: var(--safe-area-inset-left);
-  padding-right: var(--safe-area-inset-right);
+  padding-left: var(--safe-area-left, env(safe-area-inset-left, 0pt));
+  padding-right: var(--safe-area-right, env(safe-area-inset-right, 0pt));
 }
 ```
 
@@ -225,26 +225,28 @@ CSS에서 바로 변수를 활용할 수 있습니다.
 ```css
 /* 헤더에 상단 Safe Area 적용 */
 .header {
-  padding-top: var(--safe-area-top);
+  padding-top: var(--safe-area-top, env(safe-area-inset-top, 0pt));
   background-color: #fff;
 }
 
 /* 하단 네비게이션에 하단 Safe Area 적용 */
 .bottom-nav {
-  padding-bottom: var(--safe-area-bottom);
+  padding-bottom: var(--safe-area-bottom, env(safe-area-inset-bottom, 0pt));
   background-color: #f0f0f0;
 }
 
 /* 전체 컨테이너에 좌우 Safe Area 적용 */
 .container {
-  padding-left: var(--safe-area-left);
-  padding-right: var(--safe-area-right);
+  padding-left: var(--safe-area-left, env(safe-area-inset-left, 0pt));
+  padding-right: var(--safe-area-right, env(safe-area-inset-right, 0pt));
 }
 
 /* 모든 안전 영역을 한번에 적용 */
 .fullscreen-content {
-  padding: var(--safe-area-top) var(--safe-area-right) var(--safe-area-bottom)
-    var(--safe-area-left);
+  padding-top: var(--safe-area-top, env(safe-area-inset-top, 0pt));
+  padding-right: var(--safe-area-right, env(safe-area-inset-right, 0pt));
+  padding-bottom: var(--safe-area-bottom, env(safe-area-inset-bottom, 0pt));
+  padding-left: var(--safe-area-left, env(safe-area-inset-left, 0pt));
 }
 ```
 
@@ -277,7 +279,7 @@ CSS 변수 방식은 **별도의 JavaScript 코드 없이 CSS만으로 안전 �
   left: 0;
   right: 0;
   /* 하단 Safe Area만큼 여백 추가 */
-  padding-bottom: var(--safe-area-bottom);
+  padding-bottom: var(--safe-area-bottom, env(safe-area-inset-bottom, 0pt));
   background: rgba(0, 0, 0, 0.5);
 }
 ```
@@ -296,7 +298,9 @@ CSS 변수 방식은 **별도의 JavaScript 코드 없이 CSS만으로 안전 �
   right: 0;
   /* 기본 여백 + Safe Area 여백 */
   padding: 16px;
-  padding-bottom: calc(16px + var(--safe-area-bottom));
+  padding-bottom: calc(
+    16px + var(--safe-area-bottom, env(safe-area-inset-bottom, 0pt))
+  );
   background: #007aff;
   color: white;
 }
@@ -376,9 +380,9 @@ function App() {
 
       /* 헤더 - 상단 Safe Area 적용 */
       .header {
-        padding-top: var(--safe-area-top);
-        padding-left: var(--safe-area-left);
-        padding-right: var(--safe-area-right);
+        padding-top: var(--safe-area-top, env(safe-area-inset-top, 0pt));
+        padding-left: var(--safe-area-left, env(safe-area-inset-left, 0pt));
+        padding-right: var(--safe-area-right, env(safe-area-inset-right, 0pt));
         background: #007aff;
         color: white;
         padding-bottom: 16px;
@@ -392,8 +396,12 @@ function App() {
       /* 메인 콘텐츠 - 좌우 Safe Area 적용 */
       .main-content {
         flex: 1;
-        padding-left: calc(16px + var(--safe-area-left));
-        padding-right: calc(16px + var(--safe-area-right));
+        padding-left: calc(
+          16px + var(--safe-area-left, env(safe-area-inset-left, 0pt))
+        );
+        padding-right: calc(
+          16px + var(--safe-area-right, env(safe-area-inset-right, 0pt))
+        );
         padding-top: 16px;
         padding-bottom: 16px;
       }
@@ -403,9 +411,15 @@ function App() {
         display: flex;
         justify-content: space-around;
         padding: 12px;
-        padding-bottom: calc(12px + var(--safe-area-bottom));
-        padding-left: calc(12px + var(--safe-area-left));
-        padding-right: calc(12px + var(--safe-area-right));
+        padding-bottom: calc(
+          12px + var(--safe-area-bottom, env(safe-area-inset-bottom, 0pt))
+        );
+        padding-left: calc(
+          12px + var(--safe-area-left, env(safe-area-inset-left, 0pt))
+        );
+        padding-right: calc(
+          12px + var(--safe-area-right, env(safe-area-inset-right, 0pt))
+        );
         background: #f0f0f0;
         border-top: 1px solid #ddd;
       }
