@@ -24,7 +24,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/device.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.0.0" link="/docs/releases/v1/sdk/release-v-1-0-0" /> <BadgeWithVersion type="Android" version="v1.0.0" link="/docs/releases/v1/app-source/android/release-v-1-0-0" /> <BadgeWithVersion type="iOS" version="v1.0.0" link="/docs/releases/v1/app-source/ios/release-v-1-0-0" />  
-> 🔔 **최신화 일자:** 2026-03-05
+> 🔔 **최신화 일자:** 2026-07-01
 
 ## **개요** {#overview}
 
@@ -442,14 +442,27 @@ function getSafeAreaInsets(): Promise<GetSafeAreaInsetsResult>;
 Safe Area는 디바이스의 **노치, 홈 인디케이터, 시스템 바 등으로 인해 가려지지 않는 안전한 영역**을 나타냅니다.
 이 정보를 활용하여 **UI 요소가 가려지지 않도록 레이아웃을 조정**할 수 있습니다.
 
-반환되는 값은 **포인트(pt) 단위**로 제공되며, CSS padding 속성에 바로 적용할 수 있습니다.
+Safe Area Insets 값은 **포인트(pt) 단위**로 제공됩니다.  
+iOS의 포인트(pt) 값을 그대로 픽셀로 적용해도 올바르게 동작하므로, CSS에 적용 시 별도의 변환 없이 `px` 단위로 사용하면 됩니다.
+
+:::warning 주의
+
+전달받은 `pt` 값을 `px`로 그대로 쓰기 위해서는 반드시 올바른 **Viewport 메타 태그**가 설정되어 있어야 합니다.
+
+```html
+<meta name="viewport" content="width=width-device, initial-scale=1.0" />
+```
+
+이 태그가 누락되면 크기가 축소되거나 왜곡될 수 있습니다.
+
+:::
 
 #### 지원 플랫폼 {#get-safe-area-insets-supported-platforms}
 
-| 플랫폼                                                             | 지원 여부 | 비고      |
-| ------------------------------------------------------------------ | --------- | --------- |
-| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        | 정상 동작 |
-| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | 정상 동작 |
+| 플랫폼                                                             | 지원 여부 | 비고          |
+| ------------------------------------------------------------------ | --------- | ------------- |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        | 정상 동작     |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | 정상 동작     |
 | ![Web](/img/docs/chrome-badge.svg)                                 | ❌        | 지원하지 않음 |
 
 #### 반환 값 {#get-safe-area-insets-returns}
@@ -467,10 +480,10 @@ Safe Area는 디바이스의 **노치, 홈 인디케이터, 시스템 바 등으
 const safeAreaInsets = await Nachocode.device.getSafeAreaInsets();
 
 if (!safeAreaInsets.isError) {
-  console.log(`Top: ${safeAreaInsets.top}pt`);
-  console.log(`Bottom: ${safeAreaInsets.bottom}pt`);
-  console.log(`Left: ${safeAreaInsets.left}pt`);
-  console.log(`Right: ${safeAreaInsets.right}pt`);
+  console.log(`Top: ${safeAreaInsets.top}px`);
+  console.log(`Bottom: ${safeAreaInsets.bottom}px`);
+  console.log(`Left: ${safeAreaInsets.left}px`);
+  console.log(`Right: ${safeAreaInsets.right}px`);
 } else {
   console.error(`Safe Area Insets 조회 실패: ${safeAreaInsets.errorMessage}`);
 }
@@ -485,18 +498,18 @@ async function applySafeAreaInsets() {
 
   if (!safeAreaInsets.isError) {
     const root = document.documentElement;
-    root.style.setProperty('--safe-area-inset-top', `${safeAreaInsets.top}pt`);
+    root.style.setProperty('--safe-area-inset-top', `${safeAreaInsets.top}px`);
     root.style.setProperty(
       '--safe-area-inset-bottom',
-      `${safeAreaInsets.bottom}pt`
+      `${safeAreaInsets.bottom}px`
     );
     root.style.setProperty(
       '--safe-area-inset-left',
-      `${safeAreaInsets.left}pt`
+      `${safeAreaInsets.left}px`
     );
     root.style.setProperty(
       '--safe-area-inset-right',
-      `${safeAreaInsets.right}pt`
+      `${safeAreaInsets.right}px`
     );
   }
 }
@@ -527,22 +540,23 @@ async function adjustLayoutForSafeAreaInsets() {
   if (!safeAreaInsets.isError) {
     // 헤더 영역에 상단 Safe Area Insets 적용
     const header = document.querySelector('.header');
-    header.style.paddingTop = `${safeAreaInsets.top}pt`;
+    header.style.paddingTop = `${safeAreaInsets.top}px`;
 
     // 하단 네비게이션에 하단 Safe Area Insets 적용
     const bottomNav = document.querySelector('.bottom-nav');
-    bottomNav.style.paddingBottom = `${safeAreaInsets.bottom}pt`;
+    bottomNav.style.paddingBottom = `${safeAreaInsets.bottom}px`;
 
     // 전체 컨테이너에 좌우 Safe Area Insets 적용
     const container = document.querySelector('.container');
-    container.style.paddingLeft = `${safeAreaInsets.left}pt`;
-    container.style.paddingRight = `${safeAreaInsets.right}pt`;
+    container.style.paddingLeft = `${safeAreaInsets.left}px`;
+    container.style.paddingRight = `${safeAreaInsets.right}px`;
   }
 }
 ```
 
 :::tip CSS에 적용하기
-Safe Area Insets 값은 포인트(pt) 단위로 제공되고, 별도의 변환 없이 CSS padding 속성에 포인트(pt) 단위로 바로 적용할 수 있습니다.
+Safe Area Insets 값은 포인트(pt) 단위로 제공되지만,  
+별도의 변환 없이 CSS padding 속성에 픽셀(px) 단위로 바로 적용할 수 있습니다.
 :::
 
 ---
