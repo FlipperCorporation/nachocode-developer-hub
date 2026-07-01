@@ -16,7 +16,7 @@ keywords:
     Android Safe Area,
     nachocode Safe Area,
   ]
-image: /img/docs/thumbnails/GUIDE/app-source.png
+image: /img/docs/thumbnails/GUIDE/safe-area.png
 ---
 
 # 안전 영역 (Safe Area)
@@ -24,9 +24,9 @@ image: /img/docs/thumbnails/GUIDE/app-source.png
 import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
-<ThumbnailImage src='/img/docs/thumbnails/GUIDE/app-source.png'/>
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/safe-area.png'/>
 
-> 🔔 **최신화 일자:** 2026-06-26
+> 🔔 **최신화 일자:** 2026-07-01
 
 ## 안전 영역 (Safe Area) 이해하기 {#understand}
 
