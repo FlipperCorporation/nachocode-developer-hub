@@ -24,8 +24,8 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/SDK/store.png'/>
 
-> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> <BadgeWithVersion type="Android" version="v1.6.0" link="/docs/releases/v1/app-source/android/release-v-1-6-0" /> <BadgeWithVersion type="iOS" version="v1.6.0" link="/docs/releases/v1/app-source/ios/release-v-1-6-0" />  
-> 🔔 **최신화 일자:** 2026-03-19
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> <BadgeWithVersion type="Android" version="v1.6.0" link="/docs/releases/v1/app-source/android/release-v-1-6-0" /> <BadgeWithVersion type="iOS" version="v1.6.0" link="/docs/releases/v1/app-source/ios/release-v-1-6-0" />
+> 🔔 **최신화 일자:** 2026-07-15
 
 ## **개요** {#overview}
 
@@ -80,11 +80,12 @@ export declare type StoreInfo =
 
 ## **메서드 목록** {#method-list}
 
-| 메서드                                                  | 설명                                               | 추가된 버전                                                                                   |
-| ------------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`openStore(storeInfo)`](#open-store)                   | OS에 맞는 앱 스토어 설치/다운로드 페이지를 엽니다. | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
-| [`openReviewInStore(storeInfo)`](#open-review-in-store) | 앱 스토어 내 리뷰 작성 화면으로 이동합니다.        | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
-| [`requestReview()`](#request-review)                    | 네이티브 인앱 리뷰 팝업을 호출합니다.              | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" /> |
+| 메서드                                                  | 설명                                               | 추가된 버전                                                                                     |
+| ------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [`openStore(storeInfo)`](#open-store)                   | OS에 맞는 앱 스토어 설치/다운로드 페이지를 엽니다. | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />   |
+| [`openReviewInStore(storeInfo)`](#open-review-in-store) | 앱 스토어 내 리뷰 작성 화면으로 이동합니다.        | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />   |
+| [`requestReview()`](#request-review)                    | 네이티브 인앱 리뷰 팝업을 호출합니다.              | <BadgeWithVersion type="SDK" version="v1.6.0" link="/docs/releases/v1/sdk/release-v-1-6-0" />   |
+| [`getStoreCountryCode()`](#get-store-country-code)      | 앱 스토어의 국가 코드를 조회합니다.                | <BadgeWithVersion type="SDK" version="v1.11.0" link="/docs/releases/v1/sdk/release-v-1-11-0" /> |
 
 ---
 
@@ -319,6 +320,108 @@ function requestReview(): void;
 ```javascript
 // 네이티브 인앱 리뷰 창 호출
 Nachocode.store.requestReview();
+```
+
+---
+
+### **`getStoreCountryCode()`** {#get-store-country-code}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.11.0" link="/docs/releases/v1/sdk/release-v-1-11-0" />
+
+#### 타입 정의 {#get-store-country-code-types}
+
+```typescript
+function getStoreCountryCode(): Promise<GetStoreCountryCodeResult>;
+```
+
+```typescript
+export declare type GetStoreCountryCodeSuccessResult = {
+  status: 'success';
+  statusCode: 200;
+  message: string;
+  /**
+   * 국가 코드 (alpha-3 형식, ex. "KOR")
+   */
+  data: string;
+};
+
+export declare type GetStoreCountryCodeErrorResult = {
+  status: 'error';
+  statusCode: 400 | 500;
+  message: string;
+  errorCode?: string;
+};
+
+export declare type GetStoreCountryCodeResult =
+  | GetStoreCountryCodeSuccessResult
+  | GetStoreCountryCodeErrorResult;
+```
+
+#### 설명 {#get-store-country-code-summary}
+
+현재 디바이스의 **앱 스토어 기반 국가 코드**를 조회합니다.  
+국가 코드는 **ISO 3166-1 alpha-3** 형식으로 반환됩니다 (ex. "KOR", "USA", "JPN").
+
+이 메서드를 활용하여 **지역별 맞춤 콘텐츠 제공**이나 **국가별 기능 제어** 등을 구현할 수 있습니다.
+
+#### 지원 플랫폼 {#get-store-country-code-supported-platforms}
+
+`getStoreCountryCode` 메서드는 **App 환경만 지원**합니다.
+
+| 플랫폼                                                             | 지원 여부 | 비고                                        |
+| ------------------------------------------------------------------ | --------- | ------------------------------------------- |
+| ![Android](https://img.shields.io/badge/Android-gray?logo=android) | ✅        | 플레이스토어 `BillingConfig` 기반 국가 코드 |
+| ![iOS](https://img.shields.io/badge/iOS-gray?logo=apple)           | ✅        | 앱 스토어 `Storefront` 기반 국가 코드       |
+| ![Web](/img/docs/chrome-badge.svg)                                 | ❌        | 지원하지 않습니다.                          |
+
+#### 반환 값 {#get-store-country-code-returns}
+
+`Promise<GetStoreCountryCodeResult>`를 반환합니다.
+
+- **성공 시**: `data` 필드에 국가 코드 문자열 포함
+- **실패 시**: `message` 필드에 오류 메시지 포함
+
+#### 예제 {#get-store-country-code-examples}
+
+```javascript
+// 스토어 국가 코드 조회
+const result = await Nachocode.store.getStoreCountryCode();
+
+if (result.status === 'success') {
+  console.log('국가 코드:', result.data); // ex. "KOR", "USA", "JPN"
+
+  // 국가별 맞춤 콘텐츠 제공
+  switch (result.data) {
+    case 'KOR':
+      // 한국 사용자를 위한 콘텐츠 표시
+      break;
+    case 'USA':
+      // 미국 사용자를 위한 콘텐츠 표시
+      break;
+    case 'JPN':
+      // 일본 사용자를 위한 콘텐츠 표시
+      break;
+    default:
+    // 기본 콘텐츠 표시
+  }
+} else {
+  console.error('국가 코드 조회 실패:', result.message);
+}
+```
+
+```javascript
+// 특정 국가에서만 기능 활성화
+const result = await Nachocode.store.getStoreCountryCode();
+
+if (result.status === 'success') {
+  const allowedCountries = ['KOR', 'USA', 'JPN'];
+
+  if (allowedCountries.includes(result.data)) {
+    // 특정 국가에서만 사용 가능한 기능 활성화
+  } else {
+    // 다른 국가에서는 기본 기능만 제공
+  }
+}
 ```
 
 ---
