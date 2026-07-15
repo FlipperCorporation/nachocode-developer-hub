@@ -18,8 +18,8 @@ nachocode iOS App Source **1.11.0** 버전이 반영되었습니다.
 
 ## 새로운 기능
 
-- **스토어 나라 코드** : [SDK](../../sdk/release-v-1-11-0)를 통해 iOS 디바이스의 스토어 계정 나라 코드를 확인할 수 있습니다.
-- **Firebase Analytics** : [SDK](../../sdk/release-v-1-11-0)를 통해 LogEvent와 setUserProperty 등의 기능이 추가되었습니다.
+- **스토어 국가 코드** : [SDK](../../sdk/release-v-1-11-0)를 통해 iOS 디바이스의 스토어 계정 국가 코드를 확인할 수 있습니다.
+- **Firebase Analytics** : [SDK](../../sdk/release-v-1-11-0)를 통해 [`logEvent`](/docs/sdk/integrations/firebase/reference#log-event)와 [`setUserProperty`](/docs/sdk/integrations/firebase/reference#set-user-property) 등의 기능이 추가되었습니다.
 
 ## 개선 및 수정 사항
 
