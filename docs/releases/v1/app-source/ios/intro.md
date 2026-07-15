@@ -11,7 +11,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/releases/release_note_ios.png'/>
 
-> 🔔 **최신화 일자:** 2026-06-26
+> 🔔 **최신화 일자:** 2026-07-15
 
 nachocode iOS App Source **Version 1**의 버전별 업데이트 내용을 정리한 릴리즈 노트입니다.
 
@@ -27,6 +27,7 @@ nachocode iOS App Source **Version 1**의 버전별 업데이트 내용을 정�
 
 | 버전                               | 릴리즈 날짜 | 주요 내용                                                                 |
 | ---------------------------------- | ----------- | ------------------------------------------------------------------------- |
+| [ver.1.11.0](./release-v-1-11-0)   | 2026-07-15  | 일부 버그 수정, Firebase Analytics 등 기능 추가                           |
 | [ver.1.10.12](./release-v-1-10-12) | 2026-06-26  | Safe Area Insets CSS 변수 주입 기능 추가                                  |
 | [ver.1.10.11](./release-v-1-10-11) | 2026-06-17  | 앱 코드 개선                                                              |
 | [ver.1.10.10](./release-v-1-10-10) | 2026-06-11  | 회원 탈퇴 기능 추가                                                       |
