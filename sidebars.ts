@@ -225,6 +225,19 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
+          label: '파이어베이스 (firebase)',
+          link: {
+            type: 'generated-index',
+            title: '파이어베이스 (firebase)',
+            slug: '/sdk/integrations/firebase',
+          },
+          items: [
+            'sdk/integrations/firebase/integrate',
+            'sdk/integrations/firebase/reference',
+          ],
+        },
+        {
+          type: 'category',
           label: '구글 (google)',
           link: {
             type: 'generated-index',
@@ -277,6 +290,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'releases/v1/sdk/intro',
+        'releases/v1/sdk/release-v-1-11-0',
         'releases/v1/sdk/release-v-1-10-5',
         'releases/v1/sdk/release-v-1-10-4',
         'releases/v1/sdk/release-v-1-10-3',
