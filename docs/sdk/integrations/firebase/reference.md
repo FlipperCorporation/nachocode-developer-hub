@@ -25,7 +25,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <!-- <ThumbnailImage src='/img/docs/thumbnails/SDK/firebase.png'/> -->
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.11.0" link="/docs/releases/v1/sdk/release-v-1-11-0" />  
-> 🔔 **최신화 일자:** 2026-07-15
+> 🔔 **최신화 일자:** 2026-07-16
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -145,7 +145,7 @@ Firebase Analytics에 **커스텀 이벤트를 로깅**합니다.
 
 ```javascript
 // 매개변수 없이 이벤트 로깅
-const result = await Nachocode.firebase.logEvent('app_open');
+const result = await Nachocode.firebase.logEvent('event_name');
 
 if (result.status === 'success') {
   console.log('이벤트가 성공적으로 로깅되었습니다.');
@@ -157,44 +157,19 @@ if (result.status === 'success') {
 ##### **매개변수와 함께 이벤트 로깅**
 
 ```javascript
-// 구매 이벤트 로깅
-const result = await Nachocode.firebase.logEvent('purchase', {
-  item_id: 'SKU_12345',
-  item_name: 'Premium Subscription',
-  currency: 'USD',
-  value: 9.99,
-  quantity: 1,
+const result = await Nachocode.firebase.logEvent('event_name', {
+  parameter1: 'value1',
+  parameter2: 'value2',
+  parameter3: 'value3',
 });
 
 if (result.status === 'success') {
-  console.log('구매 이벤트가 성공적으로 로깅되었습니다.');
+  console.log('이벤트가 성공적으로 로깅되었습니다.');
 }
 ```
 
-##### **사용자 액션 추적**
-
-```javascript
-// 버튼 클릭 이벤트 로깅
-document.getElementById('signup-button').addEventListener('click', async () => {
-  const result = await Nachocode.firebase.logEvent('button_click', {
-    button_name: 'signup',
-    screen_name: 'home',
-  });
-});
-```
-
-##### **화면 조회 이벤트**
-
-```javascript
-// 화면 조회 이벤트 로깅
-const result = await Nachocode.firebase.logEvent('screen_view', {
-  screen_name: 'product_detail',
-  screen_class: 'ProductDetailScreen',
-});
-```
-
 :::tip Firebase 권장 이벤트
-Firebase는 많은 [**권장 이벤트 이름**](https://firebase.google.com/docs/analytics/ios/events?platform=android&hl=ko)을 제공합니다.
+Firebase는 많은 [**권장 이벤트 이름**](https://firebase.google.com/docs/analytics/ios/events?platform=android&hl=ko)을 제공합니다.  
 가능한 경우 권장 이벤트 이름을 사용하면 Firebase 콘솔에서 더 나은 자동 분석 리포트를 받을 수 있습니다.
 
 ex. `login`, `sign_up`, `purchase`, `add_to_cart`, `screen_view` 등
@@ -221,8 +196,19 @@ function setUserProperty(
 
 #### 설명 {#set-user-property-summary}
 
-Firebase Analytics에 **사용자 속성(User Property)을 설정**합니다.
-사용자 속성을 통해 사용자를 세그먼트하고 특정 그룹별로 분석할 수 있습니다.
+Firebase Analytics에 **사용자 속성(User Property)을 설정**합니다.  
+사용자 속성을 통해 사용자를 세분화하고 특정 그룹별로 분석할 수 있습니다.
+
+:::info 사용자 속성 제한사항
+
+- 사용자 속성 이름은 최대 24자까지 가능합니다.
+- 사용자 속성 값은 최대 36자까지 가능합니다.
+- 프로젝트당 최대 25개의 사용자 속성을 설정할 수 있습니다.
+- 일부 속성 이름은 Firebase에서 예약되어 있습니다.
+
+자세한 내용은 [**Firebase 공식 문서**](https://firebase.google.com/docs/analytics/ios/user-properties?hl=ko)를 참고하세요.
+
+:::
 
 #### 지원 플랫폼 {#set-user-property-supported-platforms}
 
@@ -265,14 +251,6 @@ if (result.status === 'success') {
 }
 ```
 
-:::info 사용자 속성 제한사항
-
-- 사용자 속성 이름은 최대 24자까지 가능합니다.
-- 사용자 속성 값은 최대 36자까지 가능합니다.
-- 프로젝트당 최대 25개의 사용자 속성을 설정할 수 있습니다.
-- 일부 속성 이름은 Firebase에서 예약되어 있습니다. 자세한 내용은 [**Firebase 문서**](https://firebase.google.com/docs/analytics/ios/user-properties?hl=ko)를 참고하세요.
-  :::
-
 ---
 
 ### **`deleteUserProperty(propertyName)`** {#delete-user-property}
@@ -291,7 +269,7 @@ function deleteUserProperty(propertyName: string): Promise<FirebaseResult>;
 
 #### 설명 {#delete-user-property-summary}
 
-Firebase Analytics에 설정된 **사용자 속성을 삭제**합니다.
+Firebase Analytics에 설정된 **사용자 속성을 삭제**합니다.  
 더 이상 필요하지 않은 사용자 속성을 제거할 때 사용합니다.
 
 #### 지원 플랫폼 {#delete-user-property-supported-platforms}
