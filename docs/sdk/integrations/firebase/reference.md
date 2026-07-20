@@ -7,6 +7,7 @@ keywords:
     Firebase Analytics,
     파이어베이스 애널리틱스,
     Firebase 연동,
+    웹뷰 Firebase 연동,
     Firebase 이벤트,
     Firebase 사용자 속성,
     firebase analytics,
@@ -24,8 +25,8 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <!-- <ThumbnailImage src='/img/docs/thumbnails/SDK/firebase.png'/> -->
 
-> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.11.0" link="/docs/releases/v1/sdk/release-v-1-11-0" />  
-> 🔔 **최신화 일자:** 2026-07-16
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.11.0" link="/docs/releases/v1/sdk/release-v-1-11-0" /> <BadgeWithVersion type="Android" version="v1.11.0" link="/docs/releases/v1/app-source/android/release-v-1-11-0" /> <BadgeWithVersion type="iOS" version="v1.11.0" link="/docs/releases/v1/app-source/ios/release-v-1-11-0" />  
+> 🔔 **최신화 일자:** 2026-07-20
 
 :::warning 연동을 마치셨나요?
 SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하기**](./integrate)를 마쳐야합니다.
@@ -43,6 +44,19 @@ SDK 메서드를 사용하기 위해선 필수 선행 작업으로 [**연동하�
 - **전환율 추적**: 구매, 가입 등 중요한 전환 이벤트를 로깅하여 마케팅 효과 측정
 - **사용자 세그멘테이션**: 사용자 속성을 설정하여 특정 그룹별 분석 및 타겟팅
 - **A/B 테스트**: 사용자 속성과 이벤트를 활용한 실험 및 최적화
+
+:::
+
+:::info 자동 호출되는 앱 이벤트
+
+Firebase 연동이 완료되고 Analytics가 활성화되었을 경우 nachocode 앱에서는 아래 이벤트를 자동으로 로깅합니다.
+
+| 이벤트명               | 발생 시점                                                | 매개변수                                                                                        |
+| ---------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `nachoapp_first_open`  | 앱을 여는 시점에, 첫 실행이었을 경우 전송                | 없음                                                                                            |
+| `nachoapp_open`        | 앱을 여는 시점에, 첫 실행이 아닐 경우 전송               | 없음                                                                                            |
+| `nachoapp_screen_view` | 메인 뷰의 페이지 전환마다 전송                           | `url` : Full URL 경로                                                                           |
+| `screen_view`          | 메인 뷰의 페이지 전환마다 Firebase 기본 화면 이벤트 전송 | `screen_name` : `"nachocode_android"` \|  `"nachocode_ios"` <br/> `screen_class`: Full URL 경로 |
 
 :::
 
@@ -199,7 +213,7 @@ function setUserProperty(
 Firebase Analytics에 **사용자 속성(User Property)을 설정**합니다.  
 사용자 속성을 통해 사용자를 세분화하고 특정 그룹별로 분석할 수 있습니다.
 
-:::info 사용자 속성 제한사항
+:::warning 사용자 속성 제한사항
 
 - 사용자 속성 이름은 최대 24자까지 가능합니다.
 - 사용자 속성 값은 최대 36자까지 가능합니다.
