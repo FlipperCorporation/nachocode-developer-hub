@@ -26,7 +26,7 @@
 <link rel="preload" href="/fonts/pretendard/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/fonts/pretendard/Pretendard-Thin.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <script src="/js/copy-heading-link.js" async></script><link rel="stylesheet" href="/assets/css/styles.14fcfbd3.css">
-<script src="/assets/js/runtime~main.b55e31f2.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8df3cbe8.js" defer="defer"></script>
 <script src="/assets/js/main.8221272d.js" defer="defer"></script>
 </head>
 <body>
@@ -46,7 +46,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="post-v2-topic-summary">설명<a href="#post-v2-topic-summary" class="hash-link" aria-label="설명에 대한 직접 링크" title="설명에 대한 직접 링크" translate="no">​</a></h3>
 <ul>
 <li class="">특정 토픽에 대한 구독 과정을 통해 구독된 모든 디바이스로 푸시를 전송합니다.</li>
-<li class="">토픽 푸시 전송 요청 건수에 따라 차감됩니다.</li>
+<li class="">한 번의 토픽 푸시 전송요청은 0.5 Server Action이 차감됩니다.</li>
 </ul>
 <hr>
 <hr style="border:1px dashed #8E8C8C;opacity:0.2">
@@ -58,7 +58,7 @@
 </li>
 <li class="">
 <p><strong>Body</strong></p>
-<table><thead><tr><th><strong>Parameter</strong></th><th><strong>Type</strong></th><th><strong>Required</strong></th><th><strong>Constraints</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>topicName</td><td><code>string</code></td><td>✔</td><td>길이 500이하의 문자열</td><td>푸시를 전송할 토픽명</td></tr><tr><td>title</td><td><code>string</code></td><td>✔</td><td></td><td>푸시 알림 제목</td></tr><tr><td>content</td><td><code>string</code></td><td>✔</td><td></td><td>푸시 알림 내용</td></tr><tr><td>linkURL</td><td><code>string</code></td><td></td><td>길이 255이하의 문자열</td><td>푸시 클릭 시 이동할 URL</td></tr><tr><td>imageURL</td><td><code>string</code></td><td></td><td>- 길 이 500이하의 문자열<br> - <a class="" href="/docs/guide/app-source">App Source</a> ver.1.6.0이상의 앱 <br> <i style="font-size:13px">  (25년 06월 11일 이후 빌드된 앱에서만 노출) <br><br> ⚠️FCM정책에 따라 아래 조건에서는 이미지가 노출되지 않을 수 있습니다.<br> - SSL인증이 되지 않은 <strong>http프로토콜 링크</strong><br> - 용량이 <strong>1MB</strong>를 초과하는 이미지<br> - <strong>리다이렉션 처리 되는 링크</strong></i></td><td>푸시에 표시될 이미지의 링크</td></tr><tr><td>options</td><td><a href="#topic-push-options-definition" class=""><code>PushOptions</code></a></td><td></td><td></td><td>푸시 상세 옵션</td></tr></tbody></table>
+<table><thead><tr><th><strong>Parameter</strong></th><th><strong>Type</strong></th><th><strong>Required</strong></th><th><strong>Constraints</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>topicName</td><td><code>string</code></td><td>✔</td><td>길이 500이하의 문자열</td><td>푸시를 전송할 토픽명</td></tr><tr><td>title</td><td><code>string</code></td><td>✔</td><td></td><td>푸시 알림 제목</td></tr><tr><td>content</td><td><code>string</code></td><td>✔</td><td></td><td>푸시 알림 내용</td></tr><tr><td>linkURL</td><td><code>string</code></td><td></td><td>길이 255이하의 문자열</td><td>푸시 클릭 시 이동할 URL</td></tr><tr><td>imageURL</td><td><code>string</code></td><td></td><td>- 길이 500이하의 문자열<br> - <a class="" href="/docs/guide/app-source">App Source</a> ver.1.6.0이상의 앱 <br> <i style="font-size:13px">  (25년 06월 11일 이후 빌드된 앱에서만 노출) <br><br> ⚠️FCM정책에 따라 아래 조건에서는 이미지가 노출되지 않을 수 있습니다.<br> - SSL인증이 되지 않은 <strong>http프로토콜 링크</strong><br> - 용량이 <strong>1MB</strong>를 초과하는 이미지<br> - <strong>리다이렉션 처리 되는 링크</strong></i></td><td>푸시에 표시될 이미지의 링크</td></tr><tr><td>options</td><td><a href="#topic-push-options-definition" class=""><code>PushOptions</code></a></td><td></td><td></td><td>푸시 상세 옵션</td></tr></tbody></table>
 <br>
 </li>
 <li class="">
