@@ -135,7 +135,7 @@ nachocode 토픽 푸시 API는 다양한 엔드포인트를 제공하여 푸시 
 
 - SDK의 [`registerPushToken()`](../../sdk/namespaces/push#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에 구독시킵니다.
 - FCM으로의 구독과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
-- 유저 1명당 요청 건수를 차감합니다.
+- 유저 1명당 0.5 Server Action을 차감합니다.
 
 :::warning 제한
 
@@ -221,7 +221,7 @@ nachocode 토픽 푸시 API는 다양한 엔드포인트를 제공하여 푸시 
 
 - SDK의 [`registerPushToken()`](../../sdk/namespaces/push#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에서 구독을 해제합니다.
 - FCM으로의 구독해제 과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
-- 유저 1명당 요청 건수를 차감합니다.
+- 유저 1명당 0.5 Server Action을 차감합니다.
 
 :::warning 제한
 

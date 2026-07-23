@@ -46,7 +46,7 @@ nachocode 푸시 토큰 관리 API를 활용하여 푸시 토큰을 관리 할 �
 ### 설명 {#delete-v2-token-summary}
 
 - SDK의 [`registerPushToken()`](../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, **해당 유저에게 매칭된 토큰을 모두** 삭제합니다.
-- 유저 1명당 요청 건수를 차감합니다.
+- 유저 1명당 0.5 Server Action을 차감합니다.
 
 :::warning 제한
 

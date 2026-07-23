@@ -276,7 +276,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### 설명 {#post-v2-nacho-topic-summary}
 
 - 나쵸코드에서 자동적으로 관리하는 토픽으로 구독된 모든 디바이스로 푸시를 전송합니다.
-- 나쵸 토픽 푸시 전송 요청 건수에 따라 차감됩니다.
+- 토픽 푸시 전송 요청 건수에 따라 0.5 Server Action이 차감됩니다.
 
 ---
 
@@ -377,7 +377,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### 설명 {#post-v2-topic-summary}
 
 - 특정 토픽에 대한 구독 과정을 통해 구독된 모든 디바이스로 푸시를 전송합니다.
-- 토픽 푸시 전송 요청 건수에 따라 차감됩니다.
+- 토픽 푸시 전송 요청 건수에 따라 0.5 Server Action이 차감됩니다.
 
 ---
 
@@ -474,7 +474,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 - SDK의 [`registerPushToken()`](../../../sdk/namespaces/push#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에 구독시킵니다.
 - FCM으로의 구독과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
-- 유저 1명당 요청 건수를 차감합니다.
+- 유저 1명당 0.5 Server Action을 차감합니다.
 
 :::warning 제한
 
@@ -558,7 +558,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 
 - SDK의 [`registerPushToken()`](../../../sdk/namespaces/push#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에서 구독을 해제합니다.
 - FCM으로의 구독해제 과정 중 발견된 유효하지 않은 토큰의 경우, nachocode server에서 자동 삭제됩니다.
-- 유저 1명당 요청 건수를 차감합니다.
+- 유저 1명당 0.5 Server Action을 차감합니다.
 
 :::warning 제한
 
@@ -641,7 +641,7 @@ nachocode 푸시 API는 다양한 엔드포인트를 제공하여 푸시 알림 
 ### 설명 {#delete-v2-token-summary}
 
 - SDK의 [`registerPushToken()`](../../../sdk/namespaces/push.md#register-push-token)을 통해 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 삭제합니다.
-- 유저 1명당 요청 건수를 차감합니다.
+- 유저 1명당 0.5 Server Action을 차감합니다.
 
 :::warning 제한
 
