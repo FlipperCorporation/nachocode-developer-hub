@@ -44,7 +44,7 @@ nachocode 전체 푸시 API는 다양한 엔드포인트를 제공하여 푸시 
 ### 설명 {#post-v2-all-summary}
 
 - 토큰 등록 여부, 회원 여부에 관계없이 **앱이 설치된 모든 디바이스**로 푸시 알림을 전송합니다.
-- 한 번의 전체 푸시 전송요청은 0.5건이 차감됩니다.
+- 한 번의 전체 푸시 전송요청은 0.5 Server Action이 차감됩니다.
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
