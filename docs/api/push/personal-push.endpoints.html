@@ -26,8 +26,8 @@
 <link rel="preload" href="/fonts/pretendard/Pretendard-SemiBold.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/fonts/pretendard/Pretendard-Thin.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <script src="/js/copy-heading-link.js" async></script><link rel="stylesheet" href="/assets/css/styles.14fcfbd3.css">
-<script src="/assets/js/runtime~main.6fc7f20f.js" defer="defer"></script>
-<script src="/assets/js/main.8221272d.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.929a5a83.js" defer="defer"></script>
+<script src="/assets/js/main.1775ddb9.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -117,7 +117,7 @@
 <ul>
 <li class="">동일한 제목과 내용으로 여러 유저에게 푸시 알림을 전송합니다.</li>
 <li class="">유저 ID로 조회된 모든 푸시 토큰을 대상으로 전송합니다.</li>
-<li class="">전송 요청된 유저 1명당 0.5건이 차감됩니다.</li>
+<li class="">전송 요청된 유저 1명당 0.5 Server Action이 차감됩니다.</li>
 </ul>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>제한</div><div class="admonitionContent_BuS1"><p><strong>요청 당 userId의 최대 개수는 500개입니다.</strong></p></div></div>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>정보</div><div class="admonitionContent_BuS1"><p>토큰이 없거나, 토큰 만료 또는 앱 삭제의 이유로 전송 불가한 유저의 목록은 웹훅을 통해 확인할 수 있습니다.<br>
@@ -170,7 +170,7 @@
 </li>
 <li class="">
 <p>에러코드</p>
-<i style="font-size:14px">이 외 에러코드는 공통 <a href="#personal-push-common-error-code-definition" class="">에러코드 명세</a>에서 확인 가능합니다.</i>
+<i style="font-size:14px">이 외 에러코드는 공통 <a href="#personal-push-common-error-code-definition" class="">에러코드 명  세</a>에서 확인 가능합니다.</i>
 <table><thead><tr><th><strong>ErrorCode</strong></th><th><strong>Status Code</strong></th><th>*<em>Message</em>)*</th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>ERR-AB-PSS-91</td><td>404</td><td>App data not found.</td><td>미등록 앱</td></tr><tr><td>ERR-AB-PSS-92</td><td>404</td><td>FCM Account data not found.</td><td>FCM Service Account파일 미등록</td></tr></tbody></table>
 </li>
 </ul>
@@ -194,7 +194,7 @@
 <ul>
 <li class="">
 <p><strong>Detail Description</strong></p>
-<table><thead><tr><th><strong>Name</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>isUsingBadge</td><td>이 설정은 플랫폼(android, ios)에 따라 동작 방식에 차이가 있습니다. <br><br> [<strong>Android</strong>] <br> OS레벨에서 뱃지 기능을 자동으로 처리하므로, <code>isUsingBadge</code>설정값과 관계없이<br> android정책에 따라 알림 뱃지가 자연스럽게 나타납니다. <br><br> [<strong>iOS</strong>] <br> 알림이 하나 이상 도착하면 앱 아이콘에 &#x27;<strong>1</strong>&#x27;이 이미지가 나타납니다. <br>실제 알림 개수와 관계없이 뱃지 숫자가 항상 &#x27;<strong>1</strong>&#x27;로 표시되고, 이는 <strong>푸시가 도착했음을 표시</strong>하는 용도로 활용 가능합니다. <br>알림 건수 누적 기능의 경우, 추후 업데이트 예정입니다. <br><br> ⚠️<br><i style="font-size:13px">- <strong>25년 04월 23일 이 후로 빌드된 앱</strong>(App Source ver.1.5.0)에만 뱃지가 노출됩니다.</i></td></tr><tr><td>requestGroupId</td><td><strong>여러 개의 분리된 푸시 요청을 하나의 히스토리로 묶어 관리</strong>할 수 있도록 하는 옵션입니다.<br>개수 제한으로 동일한 내용을 반복 전송하는 경우 또는 하나의 히스토리로써 관리할 푸시에 유용하게 사용됩니다.<br><br> ⚠️<br><i style="font-size:13px">- <strong>연관성이 약한 푸시 요청(ex: 서로 다른 내용)들에</strong> 대하여 동일한 <code>requestGroupId</code> 를 부여할 경우, 무관한 히스토리가 하나로 합쳐져 부정확한 데이터가 표시됩니다.</i><br>- <i style="font-size:13px">최대 20자리 문자열을 사용하므로 충돌 가능성은 낮지만, <strong>필요 시 별도의 관리 전략</strong>을 권장합니다.</i></td></tr><tr><td>scheduleTime</td><td>푸시 알림을 <strong>특정 시간에 예약하여 전송</strong>할 수 있도록 하는 옵션입니다.<br>ISO 8601 형식(<code>YYYY-MM-DDTHH:MM</code>)으로 시간을 지정하며, API 호출 시점 기준 <strong>최소 60초 이후</strong>의 시간만 예약 가능합니다.<br><br>예약된 푸시는 지정된 시간에 자동으로 전송되며, <strong>전송 시간 5분 전까지는 나쵸코드 대시보드를 통해 취소, 수정</strong>이 가능합니다.</td></tr></tbody></table>
+<table><thead><tr><th><strong>Name</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>isUsingBadge</td><td>이 설정은 플랫폼(android, ios)에 따라 동작 방식에 차이가 있습니다. <br><br> [<strong>Android</strong>] <br> OS레벨에서 뱃지 기능을 자동으로 처리하므로, <code>isUsingBadge</code>설정값과 관계없이<br> android정책에 따라 알림 뱃지가 자연스럽게 나타납니다. <br><br> [<strong>iOS</strong>] <br> 알림이 하나 이상 도착하면 앱 아이콘에 &#x27;<strong>1</strong>&#x27;이 이미지가 나타납니다. <br>실제 알림 개수와 관계없이 뱃지 숫자가 항상 &#x27;<strong>1</strong>&#x27;로 표시되고, 이는 <strong>푸시가 도착했음을 표시</strong>하는 용도로 활용 가능합니다. <br>알림 건수 누적 기능의 경우, 추후 업데이트 예정입니다. <br><br> ⚠️<br><i style="font-size:13px">- <strong>25년 04 월 23일 이후로 빌드된 앱</strong>(App Source ver.1.5.0)에만 뱃지가 노출됩니다.</i></td></tr><tr><td>requestGroupId</td><td><strong>여러 개의 분리된 푸시 요청을 하나의 히스토리로 묶어 관리</strong>할 수 있도록 하는 옵션입니다.<br>개수 제한으로 동일한 내용을 반복 전송하는 경우 또는 하나의 히스토리로써 관리할 푸시에 유용하게 사용됩니다.<br><br> ⚠️<br><i style="font-size:13px">- <strong>연관성이 약한 푸시 요청(ex: 서로 다른 내용)들에</strong> 대하여 동일한 <code>requestGroupId</code> 를 부여할 경우, 무관한 히스토리가 하나로 합쳐져 부정확한 데이터가 표시됩니다.</i><br>- <i style="font-size:13px">최대 20자리 문자열을 사용하므로 충돌 가능성은 낮지만, <strong>필요 시 별도의 관리 전략</strong>을 권장합니다.</i></td></tr><tr><td>scheduleTime</td><td>푸시 알림을 <strong>특정 시간에 예약하여 전송</strong>할 수 있도록 하는 옵션입니다.<br>ISO 8601 형식(<code>YYYY-MM-DDTHH:MM</code>)으로 시간을 지정하며, API 호출 시점 기준 <strong>최소 60초 이후</strong>의 시간만 예약 가능합니다.<br><br>예약된 푸시는 지정된 시간에 자동으로 전송되며, <strong>전송 시간 5분 전까지는 나쵸코드 대시보드를 통해 취소, 수정</strong>이 가능합니다.</td></tr></tbody></table>
 </li>
 </ul>
 <hr>
