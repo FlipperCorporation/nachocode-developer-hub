@@ -170,6 +170,7 @@ const sidebars: SidebarsConfig = {
         'sdk/namespaces/share',
         'sdk/namespaces/store',
         'sdk/namespaces/tabbar',
+        'sdk/namespaces/telecom',
         'sdk/namespaces/user',
         'sdk/namespaces/vibration',
       ],
@@ -290,6 +291,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'releases/v1/sdk/intro',
+        'releases/v1/sdk/release-v-1-11-1',
         'releases/v1/sdk/release-v-1-11-0',
         'releases/v1/sdk/release-v-1-10-5',
         'releases/v1/sdk/release-v-1-10-4',
