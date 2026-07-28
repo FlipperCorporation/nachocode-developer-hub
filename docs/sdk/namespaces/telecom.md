@@ -20,7 +20,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/device.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.11.1" link="/docs/releases/v1/sdk/release-v-1-11-1" />  
-> 🔔 **최신화 일자:** 2026-07-24
+> 🔔 **최신화 일자:** 2026-07-28
 
 ## **개요** {#overview}
 
@@ -28,6 +28,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 - **사용자 토큰을 네이티브 레이어에 저장**
 - **저장된 사용자 토큰을 삭제**
+- **사용자 토큰의 존재 여부를 확인**
 
 :::info 공지
 
@@ -60,14 +61,63 @@ export declare type TelecomUserTokenResult = {
 | `statusCode` | `number`               | ✅        | 결과 상태 코드                            |
 | `message`    | `string`               | ❌        | **_(optional)_** 에러 발생 시 상세 메시지 |
 
+### **`CheckTelecomUserTokenResult`** {#check-telecom-user-token-result}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.11.1" link="/docs/releases/v1/sdk/release-v-1-11-1" />
+
+토큰 존재 여부 확인 결과 타입으로,  
+성공 시 [`CheckTelecomUserTokenSuccessResult`](#check-telecom-user-token-success-result),  
+실패 시 [`CheckTelecomUserTokenErrorResult`](#check-telecom-user-token-error-result)를 반환합니다.
+
+```typescript
+export declare type CheckTelecomUserTokenResult =
+  | CheckTelecomUserTokenSuccessResult
+  | CheckTelecomUserTokenErrorResult;
+```
+
+#### **`CheckTelecomUserTokenSuccessResult`** {#check-telecom-user-token-success-result}
+
+```typescript
+export declare type CheckTelecomUserTokenSuccessResult = {
+  status: 'success';
+  statusCode: 200;
+  message: string;
+  data: boolean;
+};
+```
+
+| 속성명       | 타입        | 필수 여부 | 설명                                            |
+| ------------ | ----------- | --------- | ----------------------------------------------- |
+| `status`     | `'success'` | ✅        | 요청 성공 상태                                  |
+| `statusCode` | `200`       | ✅        | 결과 상태 코드                                  |
+| `message`    | `string`    | ✅        | 결과 메시지                                     |
+| `data`       | `boolean`   | ✅        | 토큰이 존재하면 `true`, 존재하지 않으면 `false` |
+
+#### **`CheckTelecomUserTokenErrorResult`** {#check-telecom-user-token-error-result}
+
+```typescript
+export declare type CheckTelecomUserTokenErrorResult = {
+  status: 'error';
+  statusCode: 400 | 500;
+  message: string;
+};
+```
+
+| 속성명       | 타입         | 필수 여부 | 설명           |
+| ------------ | ------------ | --------- | -------------- |
+| `status`     | `'error'`    | ✅        | 요청 실패 상태 |
+| `statusCode` | `400 \| 500` | ✅        | 에러 상태 코드 |
+| `message`    | `string`     | ✅        | 에러 메시지    |
+
 ---
 
 ## **메서드 목록** {#method-list}
 
-| 메서드                                                   | 설명                                               | 추가된 버전                                                                                     |
-| -------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| [`setTelecomUserToken(token)`](#set-telecom-user-token)  | 네이티브 레이어에 사용자 토큰을 설정합니다.        | <BadgeWithVersion type="SDK" version="v1.11.1" link="/docs/releases/v1/sdk/release-v-1-11-1" /> |
-| [`deleteTelecomUserToken()`](#delete-telecom-user-token) | 네이티브 레이어에 저장된 사용자 토큰을 삭제합니다. | <BadgeWithVersion type="SDK" version="v1.11.1" link="/docs/releases/v1/sdk/release-v-1-11-1" /> |
+| 메서드                                                   | 설명                                                           | 추가된 버전                                                                                     |
+| -------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [`setTelecomUserToken(token)`](#set-telecom-user-token)  | 네이티브 레이어에 사용자 토큰을 설정합니다.                    | <BadgeWithVersion type="SDK" version="v1.11.1" link="/docs/releases/v1/sdk/release-v-1-11-1" /> |
+| [`deleteTelecomUserToken()`](#delete-telecom-user-token) | 네이티브 레이어에 저장된 사용자 토큰을 삭제합니다.             | <BadgeWithVersion type="SDK" version="v1.11.1" link="/docs/releases/v1/sdk/release-v-1-11-1" /> |
+| [`checkTelecomUserToken()`](#check-telecom-user-token)   | 네이티브 레이어에 저장된 사용자 토큰의 존재 여부를 확인합니다. | <BadgeWithVersion type="SDK" version="v1.11.1" link="/docs/releases/v1/sdk/release-v-1-11-1" /> |
 
 ---
 
@@ -146,5 +196,51 @@ if (result.status === 'success') {
   console.log('사용자 토큰이 성공적으로 삭제되었습니다.');
 } else {
   console.error('사용자 토큰 삭제 실패: ', result.message);
+}
+```
+
+---
+
+### **`checkTelecomUserToken()`** {#check-telecom-user-token}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.11.1" link="/docs/releases/v1/sdk/release-v-1-11-1" />
+
+#### 타입 정의 {#check-telecom-user-token-types}
+
+```typescript
+function checkTelecomUserToken(): Promise<CheckTelecomUserTokenResult>;
+```
+
+#### 설명 {#check-telecom-user-token-summary}
+
+네이티브 앱 레이어에 통신사 앱의 사용자 토큰이 저장되어 있는지 존재 여부를 확인합니다.  
+성공 시 `data` 값으로 토큰의 존재 여부(`true` / `false`)를 반환합니다.
+
+:::tip 활용 방법
+쿠키나 세션 방식으로 로그인을 관리하는 경우, **웹에서는 로그인이 되어 있으나 네이티브 레이어의 토큰이 비어있는 상황**이 발생할 수 있습니다. 이때 `checkTelecomUserToken()`으로 토큰 존재 여부를 확인하여, 토큰이 없는 경우 [`setTelecomUserToken()`](#set-telecom-user-token)을 호출해 토큰을 다시 저장하는 방식으로 활용할 수 있습니다.
+:::
+
+#### 반환 값 {#check-telecom-user-token-returns}
+
+| 타입                                                                       | 설명                            |
+| -------------------------------------------------------------------------- | ------------------------------- |
+| [`Promise<CheckTelecomUserTokenResult>`](#check-telecom-user-token-result) | 사용자 토큰 존재 여부 확인 결과 |
+
+#### 사용 예제 {#check-telecom-user-token-examples}
+
+```javascript
+// 토큰 존재 여부 확인 후 없으면 다시 저장
+const result = await Nachocode.telecom.checkTelecomUserToken();
+
+if (result.status === 'success') {
+  if (result.data) {
+    console.log('사용자 토큰이 저장되어 있습니다.');
+  } else {
+    console.log('사용자 토큰이 없습니다. 토큰을 다시 저장합니다.');
+    // 웹 세션 등에서 토큰을 가져와 저장
+    await Nachocode.telecom.setTelecomUserToken(token);
+  }
+} else {
+  console.error('토큰 존재 여부 확인 실패: ', result.message);
 }
 ```
