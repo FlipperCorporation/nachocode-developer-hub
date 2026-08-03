@@ -31,7 +31,7 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 <ThumbnailImage src='/img/docs/thumbnails/GUIDE/push.png'/>
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
-> 🔔 **최신화 일자:** 2026-06-17
+> 🔔 **최신화 일자:** 2026-08-03
 
 이 문서는 **광고성 푸시 알림**(**마케팅 푸시**)의 법적 요구사항과 nachocode SDK를 활용한 구현 방법을 안내합니다.
 
@@ -177,18 +177,12 @@ nachocode는 마케팅 동의 관리를 **간편하고 안전하게** 처리할 
 await Nachocode.user.setUserId('user123');
 ```
 
-- 해당 `userId`의 기존 마케팅 동의 정보를 서버에서 조회
-- 다른 디바이스에서 설정한 마케팅 동의 정보를 현재 디바이스에 **자동 동기화**
+- 해당 `userId`의 기존 마케팅 동의 정보를 조회
 - 기존 회원이 다시 로그인한 경우 이전 동의 상태를 **자동 복원**
-
-:::tip
-앱 사용자가 여러 디바이스를 사용하더라도 마케팅 동의 설정이 **자동으로 동기화**됩니다.  
-A 디바이스에서 마케팅 수신을 거부했다면, B 디바이스에서도 자동으로 거부 상태가 유지됩니다.
-:::
 
 <br/>
 
-#### 2. 동의 변경 시 모든 디바이스에 자동 전파
+#### 2. 동의 변경 시 토픽 구독 자동 관리
 
 ```javascript
 // 한 디바이스에서 마케팅 동의 변경
@@ -198,14 +192,7 @@ await Nachocode.push.setMarketingAllowed(false);
 await Nachocode.push.setNightAllowed(false);
 ```
 
-- 로그인 상태(`user`)인 경우, 해당 `userId`를 가진 **모든 디바이스**에 동의 상태 변경을 **자동 전파**
-- 각 디바이스의 마케팅 토픽 구독/구독해제를 **자동 처리**
-- 동의 변경 내역을 서버에 **자동 저장**
-
-:::tip
-앱 사용자가 한 번만 마케팅 수신을 거부하면, **소유한 모든 디바이스**에서 자동으로 마케팅 푸시 수신이 중단됩니다.  
-여러 디바이스에서 일일이 설정을 변경할 필요가 없습니다.
-:::
+- 디바이스의 마케팅 토픽 구독/구독해제를 **자동 처리**
 
 <br/>
 

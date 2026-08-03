@@ -20,7 +20,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/user.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
-> 🔔 **최신화 일자:** 2026-06-17
+> 🔔 **최신화 일자:** 2026-07-30
 
 ## **개요** {#overview}
 
@@ -36,15 +36,6 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 **마케팅 푸시에 관련하여** 사용자 ID 설정 여부에 따라 **게스트(비로그인) 동의**와 **유저(로그인) 동의**가 구분되어 관리됩니다.  
 자세한 내용은 [마케팅 푸시 가이드](/docs/guide/push/marketing-push)를 참고하세요.
-:::
-
-:::info 공지
-
-앱 사용자 관리 SDK는 [**비즈니스 멤버십 이상**](https://nachocode.io/pricing?utm_source=docs&utm_medium=documentation&utm_campaign=devguide)부터 사용 가능한 namespace로 nachocode 문의를 통해 기능 활성화가 가능합니다.
-
-- 이메일 문의: [support@nachocode.io](mailto:support@nachocode.io)
-- 채팅 문의: [https://nachocode.channel.io](https://nachocode.channel.io/home)
-
 :::
 
 ---
