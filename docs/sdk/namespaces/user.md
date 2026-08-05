@@ -20,7 +20,8 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/user.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
-> 🔔 **최신화 일자:** 2026-07-30
+> 🛠️ **개선된 버전 :** <BadgeWithVersion type="SDK" version="v1.11.2" link="/docs/releases/v1/sdk/release-v-1-11-2" /> <BadgeWithVersion type="Android" version="v1.11.3" link="/docs/releases/v1/app-source/android/release-v-1-11-3" /> <BadgeWithVersion type="iOS" version="v1.11.3" link="/docs/releases/v1/app-source/ios/release-v-1-11-3" /> - 네이티브 마케팅 수신 동의 팝업 추가  
+> 🔔 **최신화 일자:** 2026-08-05
 
 ## **개요** {#overview}
 
@@ -78,7 +79,8 @@ export declare type UserOperationResult = {
 ### **`setUserId(userId)`** {#set-user-id}
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" />
-- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.10.1" link="/docs/releases/v1/sdk/release-v-1-10-1" /> - _반환 형식 변경_
+- _updated :_ <BadgeWithVersion type="SDK" version="v1.10.1" link="/docs/releases/v1/sdk/release-v-1-10-1" /> - _반환 형식 변경_
+- _lastupdated :_ <BadgeWithVersion type="SDK" version="v1.11.2" link="/docs/releases/v1/sdk/release-v-1-11-2" /> - _푸시 토큰 등록 내부 처리 추가_
 
 #### 타입 정의 {#set-user-id-types}
 
@@ -90,6 +92,9 @@ function setUserId(userId: string): Promise<UserOperationResult>;
 
 네이티브 레이어에 사용자 ID를 설정합니다.
 사용자가 로그인할 때 호출하여 사용자를 식별할 수 있도록 합니다.
+
+**v1.11.2**부터 `setUserId` 호출 시 [`registerPushToken`](/docs/sdk/namespaces/push#register-push-token)에서 수행하던 **푸시 토큰 등록을 내부적으로 처리**하도록 개선되었습니다.  
+이를 통해 사용자 ID와 푸시 토큰이 앱 서버에 함께 등록되는 것이 보장됩니다.
 
 :::info 마케팅 푸시 관련
 `setUserId` 호출 시 앱이 **로그인 상태로 전환**되며, 이후 [`Nachocode.push.setMarketingAllowed`](/docs/sdk/namespaces/push#set-marketing-allowed)를 호출하면 **유저(로그인) 마케팅 동의**가 저장됩니다. 자세한 내용은 [마케팅 푸시 가이드](/docs/guide/push/marketing-push)를 참고하세요.

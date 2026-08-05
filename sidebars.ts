@@ -291,6 +291,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'releases/v1/sdk/intro',
+        'releases/v1/sdk/release-v-1-11-2',
         'releases/v1/sdk/release-v-1-11-1',
         'releases/v1/sdk/release-v-1-11-0',
         'releases/v1/sdk/release-v-1-10-5',

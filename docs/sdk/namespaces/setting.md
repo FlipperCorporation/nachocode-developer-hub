@@ -23,7 +23,8 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/setting.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> <BadgeWithVersion type="Android" version="v1.4.0" link="/docs/releases/v1/app-source/android/release-v-1-4-0" /> <BadgeWithVersion type="iOS" version="v1.4.0" link="/docs/releases/v1/app-source/ios/release-v-1-4-0" />  
-> 🔔 **최신화 일자:** 2026-03-19
+> 🛠️ **개선된 버전 :** <BadgeWithVersion type="SDK" version="v1.11.2" link="/docs/releases/v1/sdk/release-v-1-11-2" /> <BadgeWithVersion type="Android" version="v1.11.3" link="/docs/releases/v1/app-source/android/release-v-1-11-3" /> <BadgeWithVersion type="iOS" version="v1.11.3" link="/docs/releases/v1/app-source/ios/release-v-1-11-3" /> - 네이티브 설정 화면 추가  
+> 🔔 **최신화 일자:** 2026-08-05
 
 ## **개요** {#overview}
 
@@ -40,11 +41,12 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ## **메서드 목록** {#method-list}
 
-| 메서드                                             | 설명                                               | 추가된 버전                                                                                   |
-| -------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`openSetting()`](#open-setting)                   | OS 앱 설정 화면으로 이동합니다.                    | <BadgeWithVersion type="SDK" version="v1.4.2" link="/docs/releases/v1/sdk/release-v-1-4-2" /> |
-| [`setPullToRefresh(enable)`](#set-pull-to-refresh) | 당겨서 새로고침 기능을 활성화 또는 비활성화합니다. | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
-| [`setSupportZoom(enable)`](#set-support-zoom)      | 화면 확대 기능을 활성화 또는 비활성화합니다.       | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" /> |
+| 메서드                                             | 설명                                               | 추가된 버전                                                                                     |
+| -------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [`openSetting()`](#open-setting)                   | OS 앱 설정 화면으로 이동합니다.                    | <BadgeWithVersion type="SDK" version="v1.4.2" link="/docs/releases/v1/sdk/release-v-1-4-2" />   |
+| [`openAppSettingView()`](#open-app-setting-view)   | 앱 내 네이티브 설정 화면으로 이동합니다.           | <BadgeWithVersion type="SDK" version="v1.11.2" link="/docs/releases/v1/sdk/release-v-1-11-2" /> |
+| [`setPullToRefresh(enable)`](#set-pull-to-refresh) | 당겨서 새로고침 기능을 활성화 또는 비활성화합니다. | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />   |
+| [`setSupportZoom(enable)`](#set-support-zoom)      | 화면 확대 기능을 활성화 또는 비활성화합니다.       | <BadgeWithVersion type="SDK" version="v1.4.0" link="/docs/releases/v1/sdk/release-v-1-4-0" />   |
 
 ---
 
@@ -78,6 +80,53 @@ OS 앱 설정 화면을 엽니다.
 ```javascript
 // OS 앱 설정 화면 열기
 Nachocode.setting.openSetting();
+```
+
+---
+
+### **`openAppSettingView()`** {#open-app-setting-view}
+
+- _since :_ <BadgeWithVersion type="SDK" version="v1.11.2" link="/docs/releases/v1/sdk/release-v-1-11-2" /> <BadgeWithVersion type="Android" version="v1.11.3" link="/docs/releases/v1/app-source/android/release-v-1-11-3" /> <BadgeWithVersion type="iOS" version="v1.11.3" link="/docs/releases/v1/app-source/ios/release-v-1-11-3" />
+
+#### 타입 정의 {#open-app-setting-view-types}
+
+```typescript
+function openAppSettingView(): void;
+```
+
+#### 설명 {#open-app-setting-view-summary}
+
+앱 내 **네이티브 설정 화면**을 엽니다. OS 설정 화면으로 이동하는 [`openSetting()`](#open-setting)과 달리,  
+**앱이 자체적으로 제공하는 네이티브 설정 화면**으로 이동합니다.
+
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-link-PC" src="/img/docs/settings/nachocode_app_native_setting_view.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
+</div>
+
+네이티브 앱 설정 화면에서는 다음과 같은 기능을 제공합니다.
+
+- 기기 알림 권한 설정
+- 마케팅 푸시 알림 동의 설정
+- 야간 푸시 알림 동의 설정
+- 앱 버전 정보 확인
+- 캐시 데이터 삭제
+
+:::info `openSetting()`과의 차이
+
+- `openSetting()` : **OS(운영체제) 설정 화면**으로 이동합니다.
+- `openAppSettingView()` : **앱이 자체적으로 제공하는 네이티브 설정 화면**으로 이동합니다.
+
+:::
+
+#### 반환 값 {#open-app-setting-view-returns}
+
+해당 메서드는 반환 값을 가지지 않습니다.
+
+#### 사용 예제 {#open-app-setting-view-examples}
+
+```javascript
+// 앱 내 네이티브 설정 화면 열기
+Nachocode.setting.openAppSettingView();
 ```
 
 ---
