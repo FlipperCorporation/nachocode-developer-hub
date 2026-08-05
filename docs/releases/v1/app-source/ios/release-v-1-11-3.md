@@ -1,24 +1,28 @@
 ---
-sidebar_label: 'ver.1.11.3 (26.08.05)'
+sidebar_label: 'ver.1.11.3 (26.08.06)'
 description: nachocode iOS App Source ver.1.11.3의 릴리즈노트입니다.
 image: /img/docs/releases/release_note_ios_detail.png
 ---
 
-# Release: ver.1.11.3 (2026-08-05)
+# Release: ver.1.11.3 (2026-08-06)
 
 import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
 
 <ThumbnailImage src='/img/docs/releases/release_note_ios_detail.png'/>
 
-> 🔔 **배포 일자:** 2026-08-05
+> 🔔 **배포 일자:** 2026-08-06
 
 nachocode iOS App Source **1.11.3** 버전이 반영되었습니다.
 
-이번 업데이트 **ver.1.11.3**에서는 네이티브 마케팅 푸시 동의 팝업 기능이 추가되었습니다.
+이번 업데이트 **ver.1.11.3**에서는 **네이티브 마케팅 푸시 동의 팝업 기능**과 **네이티브 앱 설정 화면**이 추가되었습니다.
 
 ## 새로운 기능
 
-- **마케팅 동의 팝업** : 세 가지 타입의 마케팅 푸시 동의 팝업 기능이 추가되었습니다.
+- **마케팅 동의 팝업** : 세 가지 타입 (`fullscreen`, `bottom`, `popup`)의 마케팅 푸시 동의 팝업 기능이 추가되었습니다.
+- **앱 설정 화면** : 앱에서 자체적으로 제공하는 네이티브 설정 화면이 추가되었습니다.
+  <div style={{"textAlign":"center"}}>
+    <img alt="nachocode-link-PC" src="/img/docs/settings/nachocode_app_native_setting_view.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", margin: "1.5rem auto"}} />
+  </div>
 
 ## 업데이트 적용 방법
 
