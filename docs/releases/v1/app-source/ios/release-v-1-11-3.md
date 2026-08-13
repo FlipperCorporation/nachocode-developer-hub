@@ -21,7 +21,7 @@ nachocode iOS App Source **1.11.3** 버전이 반영되었습니다.
 - **마케팅 동의 팝업** : 세 가지 타입 (`fullscreen`, `bottom`, `popup`)의 마케팅 푸시 동의 팝업 기능이 추가되었습니다.
 - **앱 설정 화면** : 앱에서 자체적으로 제공하는 네이티브 설정 화면이 추가되었습니다.
   <div style={{"textAlign":"center"}}>
-    <img alt="nachocode-link-PC" src="/img/docs/settings/nachocode_app_native_setting_view.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", margin: "1.5rem auto"}} />
+    <img alt="nachocode-app-native-setting-view" src="/img/docs/settings/nachocode_app_native_setting_view.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", margin: "1.5rem auto"}} />
   </div>
 
 ## 업데이트 적용 방법

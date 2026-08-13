@@ -100,7 +100,7 @@ function openAppSettingView(): void;
 **앱이 자체적으로 제공하는 네이티브 설정 화면**으로 이동합니다.
 
 <div style={{"textAlign":"center"}}>
-  <img alt="nachocode-link-PC" src="/img/docs/settings/nachocode_app_native_setting_view.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
+  <img alt="nachocode-app-native-setting-view" src="/img/docs/settings/nachocode_app_native_setting_view.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
 </div>
 
 네이티브 앱 설정 화면에서는 다음과 같은 기능을 제공합니다.
