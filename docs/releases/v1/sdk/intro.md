@@ -11,7 +11,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/releases/release_note_sdk.png'/>
 
-> 🔔 **최신화 일자:** 2026-08-05
+> 🔔 **최신화 일자:** 2026-08-13
 
 nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 정리한 릴리즈 노트입니다.
 
@@ -19,7 +19,7 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
 
 ## 🚀 최신 SDK 릴리즈
 
-- [ver.1.11.2 릴리즈 노트](./release-v-1-11-2)
+- [ver.1.11.3 릴리즈 노트](./release-v-1-11-3)
 
 - **항상 최신 버전 가져오기 (`@latest`)**
 
@@ -27,10 +27,10 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
   <script src="https://cdn.nachocode.io/nachocode/client-sdk/@latest/client-sdk.min.js"></script>
   ```
 
-- **현재 배포된 최신 버전 가져오기 (`@1.11.2`)**
+- **현재 배포된 최신 버전 가져오기 (`@1.11.3`)**
 
   ```html
-  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.11.2/client-sdk.min.js"></script>
+  <script src="https://cdn.nachocode.io/nachocode/client-sdk/@1.11.3/client-sdk.min.js"></script>
   ```
 
 ---
@@ -41,6 +41,7 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
 
 | 버전                             | 릴리즈 날짜 | 주요 내용                                                |
 | -------------------------------- | ----------- | -------------------------------------------------------- |
+| [ver.1.11.3](./release-v-1-11-3) | 2026-08-13  | locale 네임스페이스 추가, 다국가 지원 기능 추가          |
 | [ver.1.11.2](./release-v-1-11-2) | 2026-08-06  | setUserId 동작 개선, 네이티브 앱 설정 화면 열기 추가     |
 | [ver.1.11.1](./release-v-1-11-1) | 2026-07-24  | 통신사 앱 사용자 토큰 관리 기능 추가                     |
 | [ver.1.11.0](./release-v-1-11-0) | 2026-07-15  | Firebase 연동 기능, 스토어 국가 코드 조회 추가           |
