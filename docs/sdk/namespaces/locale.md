@@ -25,8 +25,8 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/SDK/location.png'/>
 
-> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" />  
-> 🔔 **최신화 일자:** 2026-08-13
+> 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> <BadgeWithVersion type="Android" version="v1.11.4" link="/docs/releases/v1/app-source/android/release-v-1-11-4" /> <BadgeWithVersion type="iOS" version="v1.11.4" link="/docs/releases/v1/app-source/ios/release-v-1-11-4" />  
+> 🔔 **최신화 일자:** 2026-08-14
 
 ## **개요** {#overview}
 
@@ -199,7 +199,7 @@ export declare type SetAppCountryCodeResult = {
 
 ### **`getAppCountryList()`** {#get-app-country-list}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> <BadgeWithVersion type="Android" version="v1.11.4" link="/docs/releases/v1/app-source/android/release-v-1-11-4" /> <BadgeWithVersion type="iOS" version="v1.11.4" link="/docs/releases/v1/app-source/ios/release-v-1-11-4" />
 
 #### 타입 정의 {#get-app-country-list-types}
 
@@ -240,7 +240,7 @@ if (result.status === 'success') {
 
 ### **`getAppCountryCode()`** {#get-app-country-code}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> <BadgeWithVersion type="Android" version="v1.11.4" link="/docs/releases/v1/app-source/android/release-v-1-11-4" /> <BadgeWithVersion type="iOS" version="v1.11.4" link="/docs/releases/v1/app-source/ios/release-v-1-11-4" />
 
 #### 타입 정의 {#get-app-country-code-types}
 
@@ -283,7 +283,7 @@ if (result.status === 'success') {
 
 ### **`setAppCountryCode(countryCode)`** {#set-app-country-code}
 
-- _since :_ <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" />
+- _since :_ <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> <BadgeWithVersion type="Android" version="v1.11.4" link="/docs/releases/v1/app-source/android/release-v-1-11-4" /> <BadgeWithVersion type="iOS" version="v1.11.4" link="/docs/releases/v1/app-source/ios/release-v-1-11-4" />
 
 #### 타입 정의 {#set-app-country-code-types}
 
