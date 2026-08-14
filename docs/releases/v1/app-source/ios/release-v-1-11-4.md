@@ -14,11 +14,11 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 nachocode iOS App Source **1.11.4** 버전이 반영되었습니다.
 
-이번 업데이트 **ver.1.11.4**에서는 로딩 스피너 영역이 개선되었으며,[SDK](../../sdk/release-v-1-11-3)의 일부 기능이 추가되었습니다.
+이번 업데이트 **ver.1.11.4**에서는 로딩 스피너 영역이 개선되었으며, [SDK](../../sdk/release-v-1-11-3)의 일부 기능이 추가되었습니다.
 
 ## 새로운 기능
 
-- **나라별 진입 URL** : 이용 국가에 따라 각 국가에 맞는 웹페이지로 자동 연결되도록 개선되었습니다.
+- **국가별 진입 URL** : 이용 국가에 따라 각 국가에 맞는 웹페이지로 자동 연결되도록 개선되었습니다.
 
 ## 개선 및 수정 사항
 
