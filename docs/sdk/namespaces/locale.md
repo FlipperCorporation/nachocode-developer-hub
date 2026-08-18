@@ -3,7 +3,7 @@ description: nachocode SDK의 `locale` 네임스페이스를 사용하여 앱에
 keywords:
   [
     앱 국가 설정,
-    앱 국가 코드,
+    앱 국가코드,
     다국가 앱,
     국가별 URL,
     앱 국제화,
@@ -26,18 +26,18 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 <ThumbnailImage src='/img/docs/thumbnails/SDK/location.png'/>
 
 > 🚀 **추가된 버전 :** <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> <BadgeWithVersion type="Android" version="v1.11.4" link="/docs/releases/v1/app-source/android/release-v-1-11-4" /> <BadgeWithVersion type="iOS" version="v1.11.4" link="/docs/releases/v1/app-source/ios/release-v-1-11-4" />  
-> 🔔 **최신화 일자:** 2026-08-14
+> 🔔 **최신화 일자:** 2026-08-18
 
 ## **개요** {#overview}
 
 `locale` 네임스페이스는 **앱에 설정된 국가 정보를 관리하는 기능**을 제공합니다.
 
 - **앱에서 지원하는 국가 목록을 조회**
-- **현재 앱에 설정된 국가 코드를 조회**
-- **앱의 국가 코드를 변경**
+- **현재 앱에 설정된 국가코드를 조회**
+- **앱의 국가코드를 변경**
 
 하나의 앱에서 **국가별로 서로 다른 웹사이트 URL을 제공**하는 등 다국가 지원 앱을 구현할 때 활용할 수 있습니다.  
-각 국가에는 **ISO 3166-1 alpha-3 형식의 국가 코드**(ex. `KOR`)와 해당 국가에 대응하는 **웹사이트 URL**이 매핑되어 있습니다.
+각 국가에는 **ISO 3166-1 alpha-3 형식의 국가코드**(ex. `KOR`)와 해당 국가에 대응하는 **웹사이트 URL**이 매핑되어 있습니다.
 
 :::warning 공지
 
@@ -64,10 +64,10 @@ export declare type AppCountryData = {
 };
 ```
 
-| 속성명        | 타입     | 필수 여부 | 설명                                              |
-| ------------- | -------- | --------- | ------------------------------------------------- |
-| `countryCode` | `string` | ✅        | ISO 3166-1 alpha-3 형식의 국가 코드 (ex. `"KOR"`) |
-| `url`         | `string` | ✅        | 해당 국가에 대해 앱에 설정된 웹사이트 URL         |
+| 속성명        | 타입     | 필수 여부 | 설명                                             |
+| ------------- | -------- | --------- | ------------------------------------------------ |
+| `countryCode` | `string` | ✅        | ISO 3166-1 alpha-3 형식의 국가코드 (ex. `"KOR"`) |
+| `url`         | `string` | ✅        | 해당 국가에 대해 앱에 설정된 웹사이트 URL        |
 
 ---
 
@@ -122,7 +122,7 @@ export declare type GetAppCountryListErrorResult = {
 
 - _since :_ <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" />
 
-현재 앱 국가 코드 조회 결과 타입으로, 성공 시 [`GetCountryCodeSuccessResult`](#get-country-code-success-result), 실패 시 [`GetCountryCodeErrorResult`](#get-country-code-error-result)를 반환합니다.
+현재 앱 국가코드 조회 결과 타입으로, 성공 시 [`GetCountryCodeSuccessResult`](#get-country-code-success-result), 실패 시 [`GetCountryCodeErrorResult`](#get-country-code-error-result)를 반환합니다.
 
 ```typescript
 export declare type GetAppCountryCodeResult =
@@ -140,12 +140,12 @@ export declare type GetCountryCodeSuccessResult = {
 };
 ```
 
-| 속성명       | 타입        | 필수 여부 | 설명                                                   |
-| ------------ | ----------- | --------- | ------------------------------------------------------ |
-| `status`     | `'success'` | ✅        | 요청 성공 상태                                         |
-| `statusCode` | `200`       | ✅        | 결과 상태 코드                                         |
-| `message`    | `string`    | ✅        | 결과 메시지                                            |
-| `data`       | `string`    | ✅        | 현재 앱에 설정된 국가 코드 (alpha-3 형식, ex. `"KOR"`) |
+| 속성명       | 타입        | 필수 여부 | 설명                                                  |
+| ------------ | ----------- | --------- | ----------------------------------------------------- |
+| `status`     | `'success'` | ✅        | 요청 성공 상태                                        |
+| `statusCode` | `200`       | ✅        | 결과 상태 코드                                        |
+| `message`    | `string`    | ✅        | 결과 메시지                                           |
+| `data`       | `string`    | ✅        | 현재 앱에 설정된 국가코드 (alpha-3 형식, ex. `"KOR"`) |
 
 #### **`GetCountryCodeErrorResult`** {#get-country-code-error-result}
 
@@ -179,7 +179,7 @@ export declare type SetAppCountryCodeResult = {
 
 | 속성명       | 타입                   | 필수 여부 | 설명                                      |
 | ------------ | ---------------------- | --------- | ----------------------------------------- |
-| `status`     | `'success' \| 'error'` | ✅        | 국가 코드 설정 성공 여부                  |
+| `status`     | `'success' \| 'error'` | ✅        | 국가코드 설정 성공 여부                   |
 | `statusCode` | `number`               | ✅        | 결과 상태 코드                            |
 | `message`    | `string`               | ❌        | **_(optional)_** 에러 발생 시 상세 메시지 |
 
@@ -187,11 +187,11 @@ export declare type SetAppCountryCodeResult = {
 
 ## **메서드 목록** {#method-list}
 
-| 메서드                                                    | 설명                                     | 추가된 버전                                                                                     |
-| --------------------------------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| [`getAppCountryList()`](#get-app-country-list)            | 앱에서 지원하는 국가 목록을 조회합니다.  | <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> |
-| [`getAppCountryCode()`](#get-app-country-code)            | 현재 앱에 설정된 국가 코드를 조회합니다. | <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> |
-| [`setAppCountryCode(countryCode)`](#set-app-country-code) | 앱의 국가 코드를 설정합니다.             | <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> |
+| 메서드                                                    | 설명                                    | 추가된 버전                                                                                     |
+| --------------------------------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [`getAppCountryList()`](#get-app-country-list)            | 앱에서 지원하는 국가 목록을 조회합니다. | <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> |
+| [`getAppCountryCode()`](#get-app-country-code)            | 현재 앱에 설정된 국가코드를 조회합니다. | <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> |
+| [`setAppCountryCode(countryCode)`](#set-app-country-code) | 앱의 국가코드를 설정합니다.             | <BadgeWithVersion type="SDK" version="v1.11.3" link="/docs/releases/v1/sdk/release-v-1-11-3" /> |
 
 ---
 
@@ -210,7 +210,7 @@ function getAppCountryList(): Promise<GetAppCountryListResult>;
 #### 설명 {#get-app-country-list-summary}
 
 앱에서 지원하는 국가 목록을 조회합니다.  
-각 항목은 **국가 코드**와 해당 국가에 설정된 **웹사이트 URL**로 구성됩니다.
+각 항목은 **국가코드**와 해당 국가에 설정된 **웹사이트 URL**로 구성됩니다.
 
 국가 선택 화면을 구현할 때, 선택 가능한 국가 목록을 구성하는 용도로 활용할 수 있습니다.
 
@@ -250,32 +250,35 @@ function getAppCountryCode(): Promise<GetAppCountryCodeResult>;
 
 #### 설명 {#get-app-country-code-summary}
 
-현재 앱에 설정되어 있는 국가 코드를 조회합니다.  
-성공 시 `data` 값으로 **ISO 3166-1 alpha-3 형식의 국가 코드**(ex. `"KOR"`)를 반환합니다.
+현재 앱에 설정되어 있는 국가코드를 조회합니다.  
+성공 시 `data` 값으로 **ISO 3166-1 alpha-3 형식의 국가코드**(ex. `"KOR"`)를 반환합니다.
+
+앱 최초 실행 시 **스토어 계정의 국가코드**를 확인하여 해당 국가코드를 반환하며,  
+스토어 국가코드 조회에 실패할 경우 **디바이스 언어** 기준으로 변환하여 반환됩니다.
 
 :::info `store.getStoreCountryCode()`와의 차이
 
-- [`store.getStoreCountryCode()`](/docs/sdk/namespaces/store#get-store-country-code) : 디바이스의 **앱 스토어 계정 국가 코드**를 조회합니다.
-- `locale.getAppCountryCode()` : **앱에 설정되어 있는 국가 코드**를 조회합니다.
+- [`store.getStoreCountryCode()`](/docs/sdk/namespaces/store#get-store-country-code) : 디바이스의 **앱 스토어 계정 국가코드**를 조회합니다.
+- `locale.getAppCountryCode()` : **앱에 설정되어 있는 국가코드**를 조회합니다.
 
 :::
 
 #### 반환 값 {#get-app-country-code-returns}
 
-| 타입                                                               | 설명                   |
-| ------------------------------------------------------------------ | ---------------------- |
-| [`Promise<GetAppCountryCodeResult>`](#get-app-country-code-result) | 앱 국가 코드 조회 결과 |
+| 타입                                                               | 설명                  |
+| ------------------------------------------------------------------ | --------------------- |
+| [`Promise<GetAppCountryCodeResult>`](#get-app-country-code-result) | 앱 국가코드 조회 결과 |
 
 #### 사용 예제 {#get-app-country-code-examples}
 
 ```javascript
-// 현재 앱에 설정된 국가 코드 조회
+// 현재 앱에 설정된 국가코드 조회
 const result = await Nachocode.locale.getAppCountryCode();
 
 if (result.status === 'success') {
-  console.log('현재 앱 국가 코드:', result.data); // ex. "KOR"
+  console.log('현재 앱 국가코드:', result.data); // ex. "KOR"
 } else {
-  console.error('국가 코드 조회 실패: ', result.message);
+  console.error('국가코드 조회 실패: ', result.message);
 }
 ```
 
@@ -295,36 +298,37 @@ function setAppCountryCode(
 
 #### 설명 {#set-app-country-code-summary}
 
-앱의 국가 코드를 설정합니다.  
-사용자가 국가를 직접 선택하는 화면 등에서 호출하여 앱의 국가를 변경할 수 있습니다.
+앱의 국가코드를 설정합니다. 설정된 국가코드는 앱에 영구 저장되어 재실행 시에도 유지됩니다.
+
+사용자가 국가를 직접 선택하는 화면 등에서 호출하여 앱의 국가코드를 변경할 수 있습니다.
 
 :::warning 주의사항
-[`getAppCountryList()`](#get-app-country-list)로 조회한 **국가 목록에 포함된 국가 코드**를 전달해야 합니다.  
-지원하지 않는 국가 코드를 전달할 경우 에러가 반환됩니다.
+[`getAppCountryList()`](#get-app-country-list)로 조회한 **국가 목록에 포함된 국가코드**를 전달해야 합니다.  
+지원하지 않는 국가코드를 전달할 경우 에러가 반환됩니다.
 :::
 
 #### 매개변수 {#set-app-country-code-parameters}
 
-| 파라미터      | 타입     | 필수 여부 | 설명                                         |
-| ------------- | -------- | --------- | -------------------------------------------- |
-| `countryCode` | `string` | ✅        | 설정할 국가 코드 (alpha-3 형식, ex. `"KOR"`) |
+| 파라미터      | 타입     | 필수 여부 | 설명                                        |
+| ------------- | -------- | --------- | ------------------------------------------- |
+| `countryCode` | `string` | ✅        | 설정할 국가코드 (alpha-3 형식, ex. `"KOR"`) |
 
 #### 반환 값 {#set-app-country-code-returns}
 
-| 타입                                                               | 설명                   |
-| ------------------------------------------------------------------ | ---------------------- |
-| [`Promise<SetAppCountryCodeResult>`](#set-app-country-code-result) | 앱 국가 코드 설정 결과 |
+| 타입                                                               | 설명                  |
+| ------------------------------------------------------------------ | --------------------- |
+| [`Promise<SetAppCountryCodeResult>`](#set-app-country-code-result) | 앱 국가코드 설정 결과 |
 
 #### 사용 예제 {#set-app-country-code-examples}
 
 ```javascript
-// 앱 국가 코드 설정
+// 앱 국가코드 설정
 const result = await Nachocode.locale.setAppCountryCode('KOR');
 
 if (result.status === 'success') {
-  console.log('앱 국가 코드가 설정되었습니다.');
+  console.log('앱 국가코드가 설정되었습니다.');
 } else {
-  console.error('앱 국가 코드 설정 실패: ', result.message);
+  console.error('앱 국가코드 설정 실패: ', result.message);
 }
 ```
 
@@ -338,13 +342,13 @@ async function selectCountry() {
     return;
   }
 
-  // 2. 현재 설정된 국가 코드 조회
+  // 2. 현재 설정된 국가코드 조회
   const currentResult = await Nachocode.locale.getAppCountryCode();
   const currentCode =
     currentResult.status === 'success' ? currentResult.data : null;
 
   // 3. 사용자가 선택한 국가로 변경
-  const selectedCode = 'USA'; // ex. 사용자가 선택한 국가 코드
+  const selectedCode = 'USA'; // ex. 사용자가 선택한 국가코드
   if (selectedCode !== currentCode) {
     const setResult = await Nachocode.locale.setAppCountryCode(selectedCode);
 
