@@ -127,7 +127,9 @@ nachocode는 광고성 푸시 수신 동의 팝업을 **두 가지 방식**으�
 [**나쵸코드 대시보드**](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) > **푸시 알림 > 설정** > **광고성 푸시 설정** 탭 > **광고성 푸시** 활성화 > **1. 팝업 개발 방식**
 :::
 
-<!-- TODO: 대시보드 > 광고성 푸시 설정 > 팝업 개발 방식 선택 화면 스크린샷 추가 -->
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-marketing-push-settings-00" src="/img/docs/push/nachocode_dashboard_marketing_push_settings_00.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
+</div>
 
 | 구분                    | [방법 A] 나쵸코드로 만들게요                                 | [방법 B] 직접 개발할게요                                                                               |
 | ----------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
@@ -163,7 +165,17 @@ nachocode는 광고성 푸시 수신 동의 팝업을 **두 가지 방식**으�
 
 대시보드의 **광고성 푸시 설정**은 아래 4단계로 구성됩니다.
 
-<!-- TODO: 대시보드 > 광고성 푸시 설정 (나쵸코드로 만들게요) 각 단계 스크린샷 추가 -->
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-marketing-push-settings-01" src="/img/docs/push/nachocode_dashboard_marketing_push_settings_01.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
+</div>
+
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-marketing-push-settings-02" src="/img/docs/push/nachocode_dashboard_marketing_push_settings_02.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
+</div>
+
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-marketing-push-settings-03" src="/img/docs/push/nachocode_dashboard_marketing_push_settings_03.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
+</div>
 
 | 단계  | 설정 항목          | 내용                                                                                                                                  |
 | ----- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
@@ -179,7 +191,11 @@ nachocode는 광고성 푸시 수신 동의 팝업을 **두 가지 방식**으�
 
 ### 2단계. SDK 연동하기 — 메서드 3가지 {#nachocode-popup-sdk}
 
-대시보드 **3. 이벤트** 단계의 **이벤트 설정 마무리**에서 안내하는 SDK 연동입니다.
+대시보드 **이벤트** 단계의 **이벤트 설정 마무리**에서 안내하는 SDK 연동입니다.
+
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-marketing-push-settings-02-user" src="/img/docs/push/nachocode_dashboard_marketing_push_settings_02_user.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
+</div>
 
 나쵸코드 동의 팝업은 **로그인 직후**에 노출되고, 동의 상태는 **로그인 → 로그아웃 → 탈퇴**에 따라 게스트/회원 상태가 전환됩니다.  
 따라서 앱이 **사용자의 상태 변화를 감지**할 수 있도록, 서비스의 해당 시점에 아래 3가지 메서드를 호출해 주세요.
@@ -290,11 +306,13 @@ nachocode는 마케팅 푸시 동의와 야간 푸시 동의를 사용자가 직
   <img alt="nachocode-app-native-setting-view" src="/img/docs/settings/nachocode_app_native_setting_view.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
 </div>
 
-대시보드 **4. 앱 설정 화면** 단계의 체크리스트에 따라, **로그인 후 접근 가능한 페이지**(마이페이지, 설정 등)에 앱 설정 화면으로 이동하는 버튼을 추가해 주세요.
+대시보드 **앱 설정 화면** 단계의 체크리스트에 따라, **로그인 후 접근 가능한 페이지**(마이페이지, 설정 등)에 앱 설정 화면으로 이동하는 버튼을 추가해 주세요.
+
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-marketing-push-settings-03" src="/img/docs/push/nachocode_dashboard_marketing_push_settings_03.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
+</div>
 
 연결 방법은 두 가지 중 편한 방식을 선택하면 됩니다.
-
-<!-- TODO: 대시보드 > 광고성 푸시 설정 > 앱 설정 화면 단계 스크린샷 추가 -->
 
 #### 방법 1. 앱 설정 화면 URL 연결 (노코드)
 
@@ -362,7 +380,9 @@ document.getElementById('app-setting-button').addEventListener('click', () => {
 대시보드에서 **직접 개발할게요**를 선택하면, 동의 팝업 UI를 **서비스에서 직접 개발**하고  
 사용자의 **로그인 상태**와 **광고성 푸시 수신 동의 여부**를 SDK를 통해 nachocode에 알려주어야 합니다.
 
-<!-- TODO: 대시보드 > 광고성 푸시 설정 (직접 개발할게요) > SDK 연동 단계 스크린샷 추가 -->
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-marketing-push-settings-00-self" src="/img/docs/push/nachocode_dashboard_marketing_push_settings_00_self.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
+</div>
 
 :::danger SDK 연동을 진행하지 않으면
 **광고성 푸시 알림이 고객에게 도착하지 않습니다.**  
