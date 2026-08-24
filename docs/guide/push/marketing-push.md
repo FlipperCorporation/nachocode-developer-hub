@@ -34,9 +34,10 @@ import { BadgeWithVersion } from '@site/src/components/svg/badge-with-version';
 
 > 🚀 **추가된 버전:** <BadgeWithVersion type="SDK" version="v1.10.0" link="/docs/releases/v1/sdk/release-v-1-10-0" /> <BadgeWithVersion type="Android" version="v1.10.1" link="/docs/releases/v1/app-source/android/release-v-1-10-1" /> <BadgeWithVersion type="iOS" version="v1.10.1" link="/docs/releases/v1/app-source/ios/release-v-1-10-1" />  
 > 🛠️ **개선된 버전:** <BadgeWithVersion type="SDK" version="v1.11.2" link="/docs/releases/v1/sdk/release-v-1-11-2" /> <BadgeWithVersion type="Android" version="v1.11.3" link="/docs/releases/v1/app-source/android/release-v-1-11-3" /> <BadgeWithVersion type="iOS" version="v1.11.3" link="/docs/releases/v1/app-source/ios/release-v-1-11-3" /> - 네이티브 마케팅 수신 동의 팝업, 앱 설정 화면 추가  
-> 🔔 **최신화 일자:** 2026-08-21
+> 🔔 **최신화 일자:** 2026-08-24
 
 <!-- 2026-08-20 대시보드 노코드 광고성 푸시 동의 팝업 기능 추가에 따라 [방법 A] 나쵸코드 팝업 / [방법 B] 직접 개발 구조로 분리 -->
+<!-- 2026-08-24 대시보드 광고성 푸시 알림 전송 기능 배포 반영 -->
 
 이 문서는 **광고성 푸시 알림**(**마케팅 푸시**)의 법적 요구사항과 nachocode를 활용한 구현 방법을 안내합니다.
 
@@ -698,17 +699,46 @@ if (result.status === 'success') {
 
 ## 마케팅 푸시 전송 방법 {#sending-marketing-push}
 
-### 현재 지원 방식 (SDK 기반)
+### 1. 선행 작업: 마케팅 동의 관리 연동 {#sending-prerequisite}
 
 [**SDK v1.10.0**](/docs/releases/v1/sdk/release-v-1-10-0) 및 **앱소스 v1.10.1**부터 마케팅 동의 관리 기능이 지원됩니다.
 
 나쵸코드 동의 팝업([방법 A](#nachocode-popup)) 또는 SDK([방법 B](#custom-implementation))를 통해 사용자의 마케팅 동의를 관리하면,  
 nachocode 앱소스가 **내부적으로 마케팅 토픽 구독을 자동 처리**합니다.
 
+마케팅 푸시는 **마케팅 수신에 동의한 사용자에게만 전송**되므로,  
+전송에 앞서 위 두 방식 중 하나로 동의 관리 연동이 완료되어 있어야 합니다.
+
+### 2. 대시보드에서 광고성 푸시 전송하기 {#sending-from-dashboard}
+
+나쵸코드 대시보드에서 별도의 개발 없이 광고성 푸시 알림을 직접 작성하여 전송할 수 있습니다.
+
+:::info 대시보드 전송 경로
+[**나쵸코드 대시보드**](https://nachocode.io/?utm_source=docs&utm_medium=documentation&utm_campaign=devguide) > **푸시 알림 > 전송**
+:::
+
+<div style={{"textAlign":"center"}}>
+  <img alt="nachocode-marketing-push-send-form" src="/img/docs/push/nachocode_dashboard_marketing_push_send_form.png" style={{maxHeight:"600px", border:"1px solid #dbdbdb", marginBottom: "1.5rem"}} />
+</div>
+
+전송 폼에서 **메세지 유형**을 **광고성**으로 선택하면 마케팅 푸시로 전송됩니다.
+
+| 항목            | 설명                                                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------------- |
+| **메세지 유형** | **광고성** 선택 — 마케팅 수신에 동의한 사용자에게만 전송됩니다                                          |
+| **제목**        | 정보통신망법에 따른 광고 표기 의무를 준수하도록 제목에 **`(광고)` 표기가 포함**됩니다                   |
+| **내용**        | **수신거부 방법 안내를 반드시 포함**해 주세요 — 예) 수신거부: [설정] > [푸시 알림]에서 변경 가능 (무료) |
+
+:::warning 야간 시간대 전송
+**마케팅 푸시 동의**와 **야간 푸시 동의**가 모두 있어야 **21:00~08:00** 야간 시간대 광고성 푸시 알림 전송이 가능합니다.  
+자세한 내용은 [야간 푸시 별도 동의](#night-push)를 참고하세요.
+:::
+
+전송한 푸시 알림의 결과는 **푸시 알림 > 내역**에서 확인할 수 있습니다.
+
 :::info 향후 제공 예정
 
-1. **nachocode 대시보드**: 마케팅 푸시 전송 기능 제공
-2. **nachocode API**: 서버에서 직접 마케팅 푸시를 발송할 수 있는 API 또는 옵션 제공
+- **nachocode API**: 서버에서 직접 마케팅 푸시를 발송할 수 있는 API 또는 옵션 제공
 
 :::
 
