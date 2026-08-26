@@ -29,7 +29,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/SDK/intro.png'/>
 
-> 🔔 **최신화 일자:** 2026-03-18
+> 🔔 **최신화 일자:** 2026-08-26
 
 **nachocode Client SDK**는 웹 클라이언트 개발자가 **모바일 네이티브 앱의 고유 기능**을 손쉽게 활용할 수 있도록 돕는 JavaScript SDK입니다. 웹 애플리케이션에 nachocode Client SDK를 연동하면 코드 몇 줄만으로도 간단하게 디바이스의 다양한 기능을 활용하여 **하이브리드 앱**을 개발할 수 있습니다. 웹 기술만으로도 모바일 기기의 네이티브 API를 호출하고 제어할 수 있으므로, **별도 네이티브**(**Android/iOS**) **개발** 없이도 앱 기능을 구현할 수 있습니다.
 
@@ -39,7 +39,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 ## 문서 구조
 
-nachocode Client SDK 문서는 아래와 같은 구조로 구성되어 있습니다:
+nachocode Client SDK 문서는 아래와 같은 구조로 구성되어 있습니다.
 
 1. **시작하기**  
    nachocode Client SDK를 웹 클라이언트에 설치하고 설정하는 방법을 안내합니다.  
@@ -190,84 +190,98 @@ Android 및 iOS 환경에서 네이티브 인앱결제를 손쉽게 처리할 �
 ➡️ [로딩 네임스페이스 문서 바로가기](./namespaces/loading)
 :::
 
-### 11. **위치 기능 (`location`)**
+### 11. **로케일 기능 (`locale`)**
+
+앱에 설정된 국가 정보를 관리하는 기능을 제공합니다.
+:::info locale
+➡️ [로케일 네임스페이스 문서 바로가기](./namespaces/locale)
+:::
+
+### 12. **위치 기능 (`location`)**
 
 현재 위치 정보를 가져오는 기능을 제공합니다.
 :::info location
 ➡️ [위치 네임스페이스 문서 바로가기](./namespaces/location)
 :::
 
-### 12. **네비게이션 제어 (`navigation`)**
+### 13. **네비게이션 제어 (`navigation`)**
 
 앱의 네비게이션 스택을 제어하고 스와이프 제스처를 설정할 수 있습니다.
 :::info navigation
 ➡️ [네비게이션 네임스페이스 문서 바로가기](./namespaces/navigation)
 :::
 
-### 13. **디바이스 권한 제어 (`permission`)**
+### 14. **디바이스 권한 제어 (`permission`)**
 
 카메라, 위치, 푸시 알림 등 디바이스 권한을 요청하고 상태를 확인할 수 있습니다.  
 :::info permission
 ➡️ [권한 네임스페이스 문서 바로가기](./namespaces/permission)
 :::
 
-### 14. **내부 저장소 데이터 관리 (`preference`)**
+### 15. **내부 저장소 데이터 관리 (`preference`)**
 
 애플리케이션 내부 저장소를 통해 데이터를 저장 및 관리합니다.
 :::info preference
 ➡️ [내부 저장소 네임스페이스 문서 바로가기](./namespaces/preference)
 :::
 
-### 15. **푸시 알림 (`push`)**
+### 16. **푸시 알림 (`push`)**
 
 토큰을 등록하거나 토픽을 구독, 로컬 푸시를 예약하는 등 강력한 푸시 알림 기능을 활용할 수 있습니다.
 :::info push
 ➡️ [푸시 네임스페이스 문서 바로가기](./namespaces/push)
 :::
 
-### 16. **스캔 기능 (`scanner`)**
+### 17. **스캔 기능 (`scanner`)**
 
 QR 코드 스캔 및 기타 스캔 기능을 제어할 수 있습니다.
 :::info scanner
 ➡️ [스캐너 네임스페이스 문서 바로가기](./namespaces/scanner)
 :::
 
-### 17. **설정 (`setting`)**
+### 18. **설정 (`setting`)**
 
 'Pull to Refresh'와 같은 새로고침 동작과 화면 확대 기능 등 앱의 다양한 설정을 제어할 수 있습니다.
 :::info setting
 ➡️ [설정 네임스페이스 문서 바로가기](./namespaces/setting)
 :::
 
-### 18. **네이티브 공유 기능 (`share`)**
+### 19. **네이티브 공유 기능 (`share`)**
 
 네이티브 공유 UI를 통해 콘텐츠를 공유할 수 있습니다.
 :::info share
 ➡️ [공유 네임스페이스 문서 바로가기](./namespaces/share)
 :::
 
-### 19. **스토어 기능 (`store`)**
+### 20. **스토어 기능 (`store`)**
 
 앱스토어 및 플레이스토어 상호작용 기능을 제공합니다.
 :::info store
 ➡️ [스토어 네임스페이스 문서 바로가기](./namespaces/store)
 :::
 
-### 20. **탭바 제어 (`tabbar`)**
+### 21. **탭바 제어 (`tabbar`)**
 
 앱 내부 탭바의 표시 여부 및 이동을 제어할 수 있습니다.
 :::info tabbar
 ➡️ [탭바 네임스페이스 문서 바로가기](./namespaces/tabbar)
 :::
 
-### 21. **사용자 관리 (`user`)**
+### 22. **통신사 기능 (`telecom`)**
+
+통신사 관련 사용자 토큰을 관리하는 기능을 제공합니다.
+:::info telecom
+➡️ [통신사 네임스페이스 문서 바로가기](./namespaces/telecom)
+:::
+
+### 23. **사용자 관리 (`user`)**
 
 사용자 고유 ID를 네이티브 레이어에서 관리하는 기능을 제공합니다.
 :::info user
 ➡️ [사용자 네임스페이스 문서 바로가기](./namespaces/user)
 :::
 
-### 22. **진동 및 햅틱 피드백 (`vibration`)**
+### 24. **진동 및 햅틱 피드백 (`vibration`)**
 
 디바이스의 진동 및 햅틱 피드백을 트리거할 수 있습니다.
 :::info vibration
