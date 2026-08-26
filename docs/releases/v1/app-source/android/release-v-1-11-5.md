@@ -14,11 +14,16 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 nachocode Android App Source **1.11.5** 버전이 반영되었습니다.
 
-이번 업데이트 **ver.1.11.5**에서는 에어브릿지 관련 기능이 개선되었습니다.
+이번 업데이트 **ver.1.11.5**에서는 Airbridge 관련 기능이 개선되었습니다.
 
 ## 개선 및 수정 사항
 
-- **에어브릿지** : Meta Install Referrer 수집 기능이 추가되었습니다.
+- **Airbridge** : Meta Install Referrer 수집 기능이 추가되었습니다.
+
+## 관련 문서
+
+- [Airbridge - 메타 애즈 인스톨 리퍼러 활용하기](https://help.airbridge.io/ko/guides/meta-business-google-play-install-referrer)
+- [Airbridge - Android 메타 인스톨 리퍼러 수집 설정](https://help.airbridge.io/ko/developers/android-sdk-v4#%EB%A9%94%ED%83%80-%EC%9D%B8%EC%8A%A4%ED%86%A8-%EB%A6%AC%ED%8D%BC%EB%9F%AC-%EC%88%98%EC%A7%91-%EC%84%A4%EC%A0%95)
 
 ## 업데이트 적용 방법
 

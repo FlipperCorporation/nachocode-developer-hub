@@ -14,11 +14,16 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 nachocode iOS App Source **1.11.5** 버전이 반영되었습니다.
 
-이번 업데이트 **ver.1.11.5**에서는 에어브릿지 관련 기능이 개선되었습니다.
+이번 업데이트 **ver.1.11.5**에서는 Airbridge 관련 기능이 개선되었습니다.
 
 ## 개선 및 수정 사항
 
-- **에어브릿지** : SKAdNetwork ConversionValue 서버 계산 기능이 기본으로 포함되도록 변경되었습니다.
+- **Airbridge** : `SKAdNetwork` `ConversionValue` 서버 계산 기능이 기본으로 포함되도록 변경되었습니다.
+
+## 관련 문서
+
+- [Airbridge - iOS SKAdNetwork(SKAN) 기본 개념과 측정 방식 이해하기](https://www.airbridge.io/ko/blog/understanding-ios-skadnetwork)
+- [Airbridge - SKAdNetwork ConversionValue 계산을 서버에서 하기](https://help.airbridge.io/ko/developers/ios-sdk-v4#skadnetwork-conversionvalue-%EA%B3%84%EC%82%B0%EC%9D%84-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-%ED%95%98%EA%B8%B0)
 
 ## 업데이트 적용 방법
 
