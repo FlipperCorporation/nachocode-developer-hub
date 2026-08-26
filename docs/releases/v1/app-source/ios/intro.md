@@ -11,7 +11,7 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/releases/release_note_ios.png'/>
 
-> 🔔 **최신화 일자:** 2026-08-14
+> 🔔 **최신화 일자:** 2026-08-26
 
 nachocode iOS App Source **Version 1**의 버전별 업데이트 내용을 정리한 릴리즈 노트입니다.
 
@@ -27,6 +27,7 @@ nachocode iOS App Source **Version 1**의 버전별 업데이트 내용을 정�
 
 | 버전                               | 릴리즈 날짜 | 주요 내용                                                                 |
 | ---------------------------------- | ----------- | ------------------------------------------------------------------------- |
+| [ver.1.11.5](./release-v-1-11-5)   | 2026-08-26  | 에어브릿지 SDK 변경                                                       |
 | [ver.1.11.4](./release-v-1-11-4)   | 2026-08-14  | 국가별 진입 URL 설정 기능 추가                                            |
 | [ver.1.11.3](./release-v-1-11-3)   | 2026-08-06  | 마케팅 푸시 동의 팝업, 앱 설정 화면 추가                                  |
 | [ver.1.11.2](./release-v-1-11-2)   | 2026-07-28  | 위젯 안정성 개선                                                          |
