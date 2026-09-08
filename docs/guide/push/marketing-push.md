@@ -725,7 +725,7 @@ await Nachocode.user.withdrawUser();
 ### API
 
 - [**[DELETE] /api/app-user/v2**](../../api/app-user/user-management.endpoints#delete-app-user-v2) - 사용자 및 디바이스 정보 초기화 API (회원 탈퇴)
-- [**[PUT] /api/app-user/v2/marketing**](../../api/app-user/user-preferences.endpoints#put-app-user-v2-marketing) - 사용자 광고성 푸시 알림 수신 동의 여부 변경 API (마케팅 동의)
+- [**[PATCH] /api/app-user/v2/marketing**](../../api/app-user/user-preferences.endpoints#patch-app-user-v2-marketing) - 사용자 광고성 푸시 알림 수신 동의 여부 변경 API (마케팅 동의)
 
 ### 릴리즈 노트
 

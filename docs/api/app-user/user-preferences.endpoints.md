@@ -48,30 +48,30 @@ nachocode 마케팅 수신 동의 관리 API를 활용하여 앱 유저의 마�
 
 :::
 
-## **[PUT] `/api/app-user/v2/marketing`** {#put-app-user-v2-marketing}
+## **[PATCH] `/api/app-user/v2/marketing`** {#patch-app-user-v2-marketing}
 
-### 설명 {#put-app-user-v2-marketing-summary}
+### 설명 {#patch-app-user-v2-marketing-summary}
 
 - SDK의 [`setUserId()`](../../sdk/namespaces/user#set-user-id) 또는 [`registerPushToken()`](../../sdk/namespaces/push.md#register-push-token)을 통해 등록된 **유저와 매핑된 모든 토큰의 광고성 푸시 알림 수신 동의 여부를 일괄 변경**합니다.
 - 앱 환경이 아닌 환경에서 **마케팅 수신 동의 여부 변경**이 이뤄진 상황에 사용하기 적합합니다.
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Request {#put-app-user-v2-marketing-request}
+### Request {#patch-app-user-v2-marketing-request}
 
 - **Header**
 
   | **Parameter** | **Type** | **Required** | **Description** |
   | ------------- | -------- | ------------ | --------------- |
-  | x-api-key     | `string` | ✔           | API 키          |
-  | x-secret-key  | `string` | ✔           | Secret 키       |
+  | x-api-key     | `string` | ✔            | API 키          |
+  | x-secret-key  | `string` | ✔            | Secret 키       |
 
 - **Body**
 
   | **Parameter** | **Type**                                                                             | **Required** | **Constraints** | **Description**            |
   | ------------- | ------------------------------------------------------------------------------------ | ------------ | --------------- | -------------------------- |
-  | userId        | `string \| number`                                                                   | ✔           |                 | 동의 여부를 변경할 유저 ID |
-  | state         | [`UserMarketingPreferenceState`](#user-marketing-preference-state-object-definition) | ✔           |                 | 변경할 마케팅 동의 값      |
+  | userId        | `string \| number`                                                                   | ✔            |                 | 동의 여부를 변경할 유저 ID |
+  | state         | [`UserMarketingPreferenceState`](#user-marketing-preference-state-object-definition) | ✔            |                 | 변경할 마케팅 동의 값      |
 
   <br/>
 
@@ -119,7 +119,7 @@ nachocode 마케팅 수신 동의 관리 API를 활용하여 앱 유저의 마�
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Response {#put-app-user-v2-marketing-response}
+### Response {#patch-app-user-v2-marketing-response}
 
 - **Success Response**
 
@@ -140,7 +140,7 @@ nachocode 마케팅 수신 동의 관리 API를 활용하여 앱 유저의 마�
 
 - **Error Response**
 
-  - [Error Response](#put-app-user-v2-marketing-error-response-object-definition)
+  - [Error Response](#patch-app-user-v2-marketing-error-response-object-definition)
 
   - 에러코드
 
@@ -153,7 +153,7 @@ nachocode 마케팅 수신 동의 관리 API를 활용하여 앱 유저의 마�
 
 <hr style={{border: "1px dashed #8E8C8C", opacity: "0.2"}}/>
 
-### Error Response {#put-app-user-v2-marketing-error-response-object-definition}
+### Error Response {#patch-app-user-v2-marketing-error-response-object-definition}
 
 - **Property**
 

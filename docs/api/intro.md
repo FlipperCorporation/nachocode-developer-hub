@@ -126,7 +126,7 @@ nachocode 플랫폼의 앱 유저 관리 서비스를 통해 광고성 푸시 �
 - **광고성 푸시 알림 수신 동의 변경**: 유저 식별자를 통해 마케팅 수신 여부를 변경합니다.
 
   :::info 유저 마케팅 동의
-  ➡️ [마케팅 동의 API](./app-user/user-preferences.endpoints#put-app-user-v2-marketing) 보러가기
+  ➡️ [마케팅 동의 API](./app-user/user-preferences.endpoints#patch-app-user-v2-marketing) 보러가기
   :::
 
 <br/><br/><hr style={{ border: "1px solid #8E8C8C"}} /><br/>
