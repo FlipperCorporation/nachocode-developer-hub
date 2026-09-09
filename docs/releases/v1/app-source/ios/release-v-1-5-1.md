@@ -1,6 +1,18 @@
 ---
 sidebar_label: 'ver.1.5.1 (25.04.25)'
 description: nachocode iOS App Source ver.1.5.1의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    iOS 앱소스,
+    아이폰 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.5.1,
+    v1.5.1,
+    유니버셜링크 지원,
+    딥링크 기능 추가,
+  ]
 image: /img/docs/releases/release_note_ios_detail.png
 ---
 

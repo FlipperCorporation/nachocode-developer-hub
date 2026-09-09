@@ -2,6 +2,16 @@
 sidebar_label: '목차'
 pagination_label: 'iOS App Source 릴리즈노트 목차'
 description: nachocode iOS App Source Version 1 릴리즈 버전별 변경 사항을 확인할 수 있습니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    iOS 앱소스,
+    아이폰 앱소스 버전 목록,
+    앱소스 릴리즈 히스토리,
+    App Source Release Note,
+    앱소스 업데이트 내역,
+    Changelog,
+  ]
 image: /img/docs/releases/release_note_ios.png
 ---
 

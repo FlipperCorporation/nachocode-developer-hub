@@ -1,6 +1,19 @@
 ---
 sidebar_label: 'ver.1.10.12 (26.06.26)'
 description: nachocode Android App Source ver.1.10.12의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    Android 앱소스,
+    안드로이드 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.10.12,
+    v1.10.12,
+    SafeArea 영역 확인,
+    Safe Area CSS 변수 추가,
+    안정성 개선,
+  ]
 image: /img/docs/releases/release_note_android_detail.png
 ---
 

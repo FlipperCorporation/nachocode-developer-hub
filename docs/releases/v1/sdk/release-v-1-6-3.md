@@ -1,6 +1,21 @@
 ---
 sidebar_label: 'ver.1.6.3 (25.07.28)'
 description: nachocode Client SDK ver.1.6.3의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.6.3,
+    v1.6.3,
+    browser 네임스페이스,
+    clipboard 네임스페이스,
+    push 네임스페이스,
+    OS 기본 브라우저로 열기,
+    내부 로직 최적화,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 

@@ -1,6 +1,17 @@
 ---
 sidebar_label: 'ver.1.9.0 (26.01.15)'
 description: nachocode Client SDK ver.1.9.0의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.9.0,
+    v1.9.0,
+    네이버 네이티브 로그인 기능,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 

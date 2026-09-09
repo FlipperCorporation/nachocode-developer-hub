@@ -1,6 +1,17 @@
 ---
 sidebar_label: 'ver.1.7.0 (25.09.26)'
 description: nachocode Client SDK ver.1.7.0의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.7.0,
+    v1.7.0,
+    AppsFlyer 마케팅 어트리뷰션 및 사용자 트래킹 기능,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 

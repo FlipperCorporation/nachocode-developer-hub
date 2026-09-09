@@ -1,6 +1,20 @@
 ---
 sidebar_label: 'ver.1.4.0 (25.02.06)'
 description: nachocode Client SDK ver.1.4.0의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.4.0,
+    v1.4.0,
+    QR 코드 스캔 지원,
+    '소셜 로그인 지원 (Apple, Facebook)',
+    클립보드 기능 지원,
+    첫 실행 여부 확인 기능,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 

@@ -1,6 +1,19 @@
 ---
 sidebar_label: 'ver.1.6.4 (25.07.02)'
 description: nachocode Android App Source ver.1.6.4의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    Android 앱소스,
+    안드로이드 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.6.4,
+    v1.6.4,
+    앱링크 진입 경로 개선,
+    앱 도메인 앱링크,
+    App Link,
+  ]
 image: /img/docs/releases/release_note_android_detail.png
 ---
 

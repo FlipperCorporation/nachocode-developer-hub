@@ -1,6 +1,19 @@
 ---
 sidebar_label: 'ver.1.6.5 (25.07.02)'
 description: nachocode Android App Source ver.1.6.5의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    Android 앱소스,
+    안드로이드 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.6.5,
+    v1.6.5,
+    포그라운드 복귀 인디케이터 버그 수정,
+    Target API 35,
+    Google 정책 대응,
+  ]
 image: /img/docs/releases/release_note_android_detail.png
 ---
 

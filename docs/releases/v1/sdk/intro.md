@@ -2,6 +2,16 @@
 sidebar_label: '목차'
 pagination_label: 'SDK 릴리즈노트 목차'
 description: nachocode Client SDK Version 1 릴리즈 버전별 변경 사항을 확인할 수 있습니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    SDK 버전 목록,
+    SDK 릴리즈 히스토리,
+    SDK 업데이트 내역,
+    Release Notes,
+    Changelog,
+  ]
 image: /img/docs/releases/release_note_sdk.png
 ---
 
@@ -52,8 +62,8 @@ nachocode JavaScript Client SDK **Version 1**의 주요 업데이트 내용을 �
 | [ver.1.10.1](./release-v-1-10-1) | 2026-03-24  | 마케팅 푸시 설정 반환 형식 변경 등                       |
 | [ver.1.10.0](./release-v-1-10-0) | 2026-03-05  | 사용자 식별자 관리, 마케팅 수신 동의 관리 등             |
 | [ver.1.9.0](./release-v-1-9-0)   | 2026-01-15  | Naver 연동 기능, Facebook Meta 앱 이벤트 로깅 등         |
-| [ver.1.8.0](./release-v-1-8-0)   | 2025-10-23  | 네비게이션, 로딩 인디케이터 제어, 안전 영역 조회 등      |
-| [ver.1.7.0](./release-v-1-7-0)   | 2025-09-23  | AppsFlyer 연동 기능 추가                                 |
+| [ver.1.8.0](./release-v-1-8-0)   | 2025-10-29  | 네비게이션, 로딩 인디케이터 제어, 안전 영역 조회 등      |
+| [ver.1.7.0](./release-v-1-7-0)   | 2025-09-26  | AppsFlyer 연동 기능 추가                                 |
 | [ver.1.6.3](./release-v-1-6-3)   | 2025-07-28  | OS 기본 브라우저 엔진으로 링크 열기, 내부 로직 최적화 등 |
 | [ver.1.6.2](./release-v-1-6-2)   | 2025-07-09  | 위치 정보 가져오기, 사용성 개선 등                       |
 | [ver.1.6.1](./release-v-1-6-1)   | 2025-06-20  | 토픽 구독 반환 방식 수정, 클립보드 버그 수정 등          |

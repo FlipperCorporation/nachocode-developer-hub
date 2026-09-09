@@ -1,6 +1,17 @@
 ---
 sidebar_label: 'ver.1.6.11 (25.08.19)'
 description: nachocode iOS App Source ver.1.6.11의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    iOS 앱소스,
+    아이폰 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.6.11,
+    v1.6.11,
+    스크립트 삽입 옵션화,
+  ]
 image: /img/docs/releases/release_note_ios_detail.png
 ---
 

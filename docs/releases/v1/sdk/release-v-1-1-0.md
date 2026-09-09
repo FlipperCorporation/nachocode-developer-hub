@@ -1,6 +1,19 @@
 ---
 sidebar_label: 'ver.1.1.0 (24.08.20)'
 description: nachocode Client SDK ver.1.1.0의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.1.0,
+    v1.1.0,
+    공유하기,
+    브라우저 열기,
+    진동 및 햅틱 피드백,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 

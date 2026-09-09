@@ -1,6 +1,20 @@
 ---
 sidebar_label: 'ver.1.0.0 (24.03.14)'
 description: nachocode iOS App Source ver.1.0.0의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    iOS 앱소스,
+    아이폰 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.0.0,
+    v1.0.0,
+    번들,
+    스플래시,
+    탭바,
+    푸시,
+  ]
 image: /img/docs/releases/release_note_ios_detail.png
 ---
 

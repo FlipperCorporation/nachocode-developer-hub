@@ -1,6 +1,21 @@
 ---
 sidebar_label: 'ver.1.8.0 (25.10.29)'
 description: nachocode Android App Source ver.1.8.0의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    Android 앱소스,
+    안드로이드 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.8.0,
+    v1.8.0,
+    앱 종료,
+    로딩 인디케이터,
+    웹뷰 히스토리 초기화,
+    루트페이지로 웹뷰 호출,
+    인앱 브라우저 URL표시 숨기기,
+  ]
 image: /img/docs/releases/release_note_android_detail.png
 ---
 

@@ -1,6 +1,20 @@
 ---
 sidebar_label: 'ver.1.11.0 (26.07.15)'
 description: nachocode Android App Source ver.1.11.0의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    Android 앱소스,
+    안드로이드 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.11.0,
+    v1.11.0,
+    스토어 국가 코드,
+    Firebase Analytics,
+    인앱 브라우저,
+    SSL 인증서,
+  ]
 image: /img/docs/releases/release_note_android_detail.png
 ---
 

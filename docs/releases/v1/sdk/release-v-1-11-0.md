@@ -1,6 +1,18 @@
 ---
 sidebar_label: 'ver.1.11.0 (26.07.15)'
 description: nachocode Client SDK ver.1.11.0의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.11.0,
+    v1.11.0,
+    Firebase Analytics 연동 기능,
+    스토어 국가 코드 조회 기능,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 
@@ -156,8 +168,7 @@ export declare type GetStoreCountryCodeErrorResult = {
 };
 
 export declare type GetStoreCountryCodeResult =
-  | GetStoreCountryCodeSuccessResult
-  | GetStoreCountryCodeErrorResult;
+  GetStoreCountryCodeSuccessResult | GetStoreCountryCodeErrorResult;
 ```
 
 #### 사용 예제 {#store-examples}

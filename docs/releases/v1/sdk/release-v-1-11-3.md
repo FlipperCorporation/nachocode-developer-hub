@@ -1,6 +1,19 @@
 ---
 sidebar_label: 'ver.1.11.3 (26.08.13)'
 description: nachocode Client SDK ver.1.11.3의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.11.3,
+    v1.11.3,
+    locale 네임스페이스,
+    앱 국가 설정,
+    다국가 지원,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 
@@ -83,8 +96,7 @@ export declare type GetAppCountryListErrorResult = {
 };
 
 export declare type GetAppCountryListResult =
-  | GetAppCountryListSuccessResult
-  | GetAppCountryListErrorResult;
+  GetAppCountryListSuccessResult | GetAppCountryListErrorResult;
 ```
 
 **`GetAppCountryCodeResult`**
@@ -107,8 +119,7 @@ export declare type GetCountryCodeErrorResult = {
 };
 
 export declare type GetAppCountryCodeResult =
-  | GetCountryCodeSuccessResult
-  | GetCountryCodeErrorResult;
+  GetCountryCodeSuccessResult | GetCountryCodeErrorResult;
 ```
 
 **`SetAppCountryCodeResult`**

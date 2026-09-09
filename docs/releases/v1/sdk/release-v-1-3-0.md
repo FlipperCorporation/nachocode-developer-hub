@@ -1,6 +1,20 @@
 ---
 sidebar_label: 'ver.1.3.0 (24.11.20)'
 description: nachocode Client SDK ver.1.3.0의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.3.0,
+    v1.3.0,
+    생체 인증,
+    배터리 상태 확인,
+    디바이스 모델 및 OS 확인,
+    네트워크 상태 확인,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 

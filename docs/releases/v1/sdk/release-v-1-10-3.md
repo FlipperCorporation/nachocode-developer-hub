@@ -1,6 +1,18 @@
 ---
 sidebar_label: 'ver.1.10.3 (26.04.29)'
 description: nachocode Client SDK ver.1.10.3의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.10.3,
+    v1.10.3,
+    로컬 푸시 알림 그룹핑,
+    마케팅 푸시 함수 성능 개선,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 

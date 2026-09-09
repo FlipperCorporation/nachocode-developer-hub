@@ -1,6 +1,19 @@
 ---
 sidebar_label: 'ver.1.6.1 (25.06.20)'
 description: nachocode Client SDK ver.1.6.1의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.6.1,
+    v1.6.1,
+    푸시 토픽 메서드 반환값 변경,
+    clipboard 버그 수정,
+    타입 명세 보완,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 

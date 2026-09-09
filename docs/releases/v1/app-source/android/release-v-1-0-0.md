@@ -1,6 +1,20 @@
 ---
 sidebar_label: 'ver.1.0.0 (24.03.14)'
 description: nachocode Android App Source ver.1.0.0의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    Android 앱소스,
+    안드로이드 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.0.0,
+    v1.0.0,
+    패키지,
+    스플래시,
+    탭바,
+    푸시,
+  ]
 image: /img/docs/releases/release_note_android_detail.png
 ---
 

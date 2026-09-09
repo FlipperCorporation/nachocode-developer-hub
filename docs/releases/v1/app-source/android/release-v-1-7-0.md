@@ -1,6 +1,19 @@
 ---
 sidebar_label: 'ver.1.7.0 (25.09.29)'
 description: nachocode Android App Source ver.1.7.0의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    Android 앱소스,
+    안드로이드 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.7.0,
+    v1.7.0,
+    AppsFlyer 연동,
+    탭 바 버그 수정,
+    UI 버그 수정,
+  ]
 image: /img/docs/releases/release_note_android_detail.png
 ---
 

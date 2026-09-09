@@ -1,6 +1,20 @@
 ---
 sidebar_label: 'ver.1.0.0 (24.03.14)'
 description: nachocode Client SDK ver.1.0.0의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.0.0,
+    v1.0.0,
+    SDK 초기화 기능 추가,
+    앱 실행 환경 및 설정 확인,
+    디바이스 타입 감지 기능 추가,
+    푸시 토큰 관리 기능 추가,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 

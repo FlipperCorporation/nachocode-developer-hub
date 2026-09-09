@@ -1,6 +1,19 @@
 ---
 sidebar_label: 'ver.1.5.0 (25.04.18)'
 description: nachocode Client SDK ver.1.5.0의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.5.0,
+    v1.5.0,
+    '소셜 로그인 (Google, Kakao)',
+    카카오톡 공유 기능 네임스페이스 이동,
+    새로운 권한 타입(사진 접근),
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 

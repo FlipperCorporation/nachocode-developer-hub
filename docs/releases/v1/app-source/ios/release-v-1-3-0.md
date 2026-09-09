@@ -1,6 +1,20 @@
 ---
 sidebar_label: 'ver.1.3.0 (24.11.20)'
 description: nachocode iOS App Source ver.1.3.0의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    iOS 앱소스,
+    아이폰 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.3.0,
+    v1.3.0,
+    생체 인증,
+    배터리 상태 확인,
+    디바이스 모델 및 OS 확인,
+    네트워크 상태 확인,
+  ]
 image: /img/docs/releases/release_note_ios_detail.png
 ---
 

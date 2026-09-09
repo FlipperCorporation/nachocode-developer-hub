@@ -1,6 +1,18 @@
 ---
 sidebar_label: 'ver.1.9.2 (26.02.11)'
 description: nachocode iOS App Source ver.1.9.2의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    iOS 앱소스,
+    아이폰 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.9.2,
+    v1.9.2,
+    OS 권한 팝업 버그 수정,
+    User Agent 버그 수정,
+  ]
 image: /img/docs/releases/release_note_ios_detail.png
 ---
 

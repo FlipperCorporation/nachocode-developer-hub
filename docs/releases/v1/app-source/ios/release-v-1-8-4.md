@@ -1,6 +1,17 @@
 ---
 sidebar_label: 'ver.1.8.4 (25.12.17)'
 description: nachocode iOS App Source ver.1.8.4의 릴리즈노트입니다.
+keywords:
+  [
+    앱소스 릴리즈노트,
+    iOS 앱소스,
+    아이폰 앱소스,
+    App Source Release Note,
+    앱소스 업데이트,
+    ver.1.8.4,
+    v1.8.4,
+    스플래시 개선,
+  ]
 image: /img/docs/releases/release_note_ios_detail.png
 ---
 

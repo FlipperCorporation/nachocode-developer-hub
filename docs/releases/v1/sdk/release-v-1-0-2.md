@@ -1,6 +1,17 @@
 ---
 sidebar_label: 'ver.1.0.2 (24.04.09)'
 description: nachocode Client SDK ver.1.0.2의 릴리즈노트입니다.
+keywords:
+  [
+    SDK 릴리즈노트,
+    nachocode Client SDK,
+    Client SDK 업데이트,
+    SDK 변경 사항,
+    SDK Release Note,
+    ver.1.0.2,
+    v1.0.2,
+    SDK 초기화 완료 이벤트 추가,
+  ]
 image: /img/docs/releases/release_note_sdk_detail.png
 ---
 
