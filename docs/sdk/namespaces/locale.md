@@ -1,4 +1,5 @@
 ---
+sidebar_label: 로케일 (locale)
 description: nachocode SDK의 `locale` 네임스페이스를 사용하여 앱에 설정된 국가 목록을 조회하고, 현재 앱 국가를 조회하거나 변경할 수 있습니다. 다국가 지원 앱 구현에 활용할 수 있습니다.
 keywords:
   [

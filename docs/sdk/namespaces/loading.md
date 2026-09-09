@@ -1,4 +1,5 @@
 ---
+sidebar_label: 로딩 (loading)
 description: nachocode SDK의 `loading` 네임스페이스는 네이티브 로딩 인디케이터를 제어하는 기능을 제공합니다.
 keywords:
   [

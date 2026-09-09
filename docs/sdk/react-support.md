@@ -1,4 +1,5 @@
 ---
+sidebar_label: React 지원
 sidebar_position: 4
 description: nachocode Client SDK의 React 지원 가이드입니다. React 환경의 프로젝트에 nachocode Client SDK를 설치하고 사용하는 방법을 안내합니다.
 keywords:

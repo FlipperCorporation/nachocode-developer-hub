@@ -1,4 +1,5 @@
 ---
+sidebar_label: TypeScript 지원
 sidebar_position: 3
 description: nachocode Client SDK의 TypeScript 지원 가이드입니다. 타입스크립트 프로젝트에 nachocode SDK를 설치하고 사용하는 방법을 안내합니다.
 keywords:

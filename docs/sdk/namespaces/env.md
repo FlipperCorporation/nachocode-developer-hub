@@ -1,4 +1,5 @@
 ---
+sidebar_label: 환경 (env)
 description: nachocode SDK의 `env` 네임스페이스는 SDK의 버전 정보, 실행 환경(Web/App), 샌드박스 환경 여부 등을 조회할 수 있는 기능을 제공합니다.
 keywords:
   [

@@ -1,4 +1,5 @@
 ---
+sidebar_label: 통신사 (telecom)
 description: nachocode SDK의 `telecom` 네임스페이스를 사용하여 통신사 관련 사용자 토큰을 관리할 수 있습니다. 통신사 연동 서비스 구현에 활용할 수 있습니다.
 keywords:
   [

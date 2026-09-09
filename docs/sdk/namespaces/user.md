@@ -1,4 +1,5 @@
 ---
+sidebar_label: 사용자 (user)
 description: nachocode SDK의 `user` 네임스페이스를 사용하여 네이티브 레이어에서 사용자 고유 ID를 설정, 조회, 삭제할 수 있습니다. 사용자 추적 및 분석에 활용할 수 있습니다.
 keywords:
   [

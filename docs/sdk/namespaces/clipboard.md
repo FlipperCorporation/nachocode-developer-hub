@@ -1,4 +1,5 @@
 ---
+sidebar_label: 클립보드 (clipboard)
 description: nachocode SDK의 `clipboard` 네임스페이스는 디바이스의 네이티브 클립보드와 데이터를 쉽게 주고받을 수 있는 기능을 제공합니다.
 keywords:
   [

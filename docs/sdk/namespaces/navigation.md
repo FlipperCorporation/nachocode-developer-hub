@@ -1,4 +1,5 @@
 ---
+sidebar_label: 네비게이션 (navigation)
 description: nachocode SDK의 `navigation` 네임스페이스는 앱의 네비게이션 스택을 제어하고, 스와이프 제스처 설정, 루트로 리셋하는 기능을 제공합니다.
 keywords:
   [

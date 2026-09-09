@@ -1,4 +1,5 @@
 ---
+sidebar_label: 내부 저장소 (preference)
 description: nachocode SDK의 preference 네임스페이스를 사용해 앱의 네이티브 내부 저장소에 데이터를 저장, 조회 및 삭제하여 앱 설정이나 사용자 데이터를 간편하게 관리하세요.
 keywords:
   [

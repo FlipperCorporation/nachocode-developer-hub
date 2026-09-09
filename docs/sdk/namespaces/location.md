@@ -1,4 +1,5 @@
 ---
+sidebar_label: 위치 (location)
 description: nachocode SDK의 location 네임스페이스는 디바이스의 현재 위치를 확인하는 기능을 제공합니다. 웹, Android, iOS 플랫폼 모두에서 사용 가능합니다.
 keywords:
   [

@@ -1,4 +1,5 @@
 ---
+sidebar_label: 스캐너 (scanner)
 description: nachocode SDK의 scanner 네임스페이스를 이용하여 앱에서 QR 코드 스캐너를 구현하고, 스캔한 데이터를 손쉽게 처리하거나 URL을 즉시 실행할 수 있습니다.
 keywords:
   [

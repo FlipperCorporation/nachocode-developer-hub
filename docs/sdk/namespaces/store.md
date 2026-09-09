@@ -1,4 +1,5 @@
 ---
+sidebar_label: 스토어 (store)
 description: nachocode SDK의 store 네임스페이스는 앱스토어 및 플레이스토어 인터랙션 기능을 제공하여 앱 설치나 리뷰 요청을 유도할 수 있도록 지원합니다.
 keywords:
   [
