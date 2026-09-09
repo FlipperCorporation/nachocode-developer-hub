@@ -15,6 +15,9 @@ import sidebars from '../../../sidebars';
 const SITE_URL = 'https://developer.nachocode.io';
 const DOCS_DIR = 'docs';
 const RELEASE_FULL_LIMIT = 3;
+// 사이드바 밖 문서 중 llms.txt 에 싣는 허용 목록.
+// api/push/v2/endpoints: 나쵸토픽 푸시(POST /api/push/v2/nacho-topic)를 설명하는 유일한 문서.
+const ORPHAN_ALLOWLIST = ['api/push/v2/endpoints'];
 
 type Section = 'guide' | 'api' | 'sdk' | 'mcp' | 'releases';
 
@@ -66,36 +69,16 @@ function orderedDocIds(): string[] {
   for (const key of SECTION_ORDER) {
     collectSidebarDocIds(sb[key], ids);
   }
-  // 사이드바에 없는 문서는 같은 섹션 끝에 붙인다 (docs/temp 제외)
-  const all = walkDocs(path.resolve(DOCS_DIR))
-    .map(f => toDocId(f))
-    .filter(id => !id.startsWith('temp/'));
+  // 사이드바에 없는 문서는 기본적으로 싣지 않는다. 사이드바에서 뺀 문서는 일부러 숨긴 것이다.
+  // 예외는 ORPHAN_ALLOWLIST 에 명시한 문서뿐이다.
   const known = new Set(ids);
-  const orphans = all.filter(id => !known.has(id)).sort();
+  const orphans = ORPHAN_ALLOWLIST.filter(id => !known.has(id));
   const result: string[] = [];
   for (const section of SECTION_ORDER) {
     result.push(...ids.filter(id => sectionOf(id) === section));
     result.push(...orphans.filter(id => sectionOf(id) === section));
   }
   return result;
-}
-
-function walkDocs(dir: string): string[] {
-  const out: string[] = [];
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) out.push(...walkDocs(full));
-    else if (/\.mdx?$/.test(entry.name)) out.push(full);
-  }
-  return out;
-}
-
-function toDocId(file: string): string {
-  const rel = path
-    .relative(path.resolve(DOCS_DIR), file)
-    .split(path.sep)
-    .join('/');
-  return rel.replace(/\.mdx?$/, '');
 }
 
 function sectionOf(id: string): Section {
@@ -182,38 +165,60 @@ function cleanLine(line: string, docId: string): string | null {
   if (/^\s*(<br\s*\/?>\s*)*<hr[^>]*\/?>(\s*<br\s*\/?>)*\s*$/.test(l))
     return null;
 
+  const isTableRow = /^\s*\|/.test(l);
+  const isHeading = /^#{1,6}\s/.test(l);
+  // 인라인 코드(`...`) 안은 원문 그대로 두고, 나머지 구간에만 치환 규칙을 적용한다.
+  l = l
+    .split(/(`[^`]*`)/)
+    .map((seg, i) =>
+      i % 2 === 1 ? seg : cleanSegment(seg, docId, isTableRow, isHeading)
+    )
+    .join('');
+  l = l.replace(/[ \t]+$/g, '');
+  return l;
+}
+
+function cleanSegment(
+  seg: string,
+  docId: string,
+  isTableRow: boolean,
+  isHeading: boolean
+): string {
+  let s = seg;
   // BadgeWithVersion -> [SDK v1.8.0]
-  l = l.replace(
+  s = s.replace(
     /<BadgeWithVersion[^>]*type="([^"]+)"[^>]*version="([^"]+)"[^>]*\/>/g,
     '[$1 $2]'
   );
   // 이미지 -> [이미지: alt]
-  l = l.replace(
+  s = s.replace(
     /!\[([^\]]*)\]\([^)]*\)/g,
     (_m, alt: string) => `[이미지: ${alt || '이미지'}]`
   );
-  l = l.replace(/<img[^>]*alt="([^"]*)"[^>]*\/?>/g, '[이미지: $1]');
-  l = l.replace(
+  s = s.replace(/<img[^>]*alt="([^"]*)"[^>]*\/?>/g, '[이미지: $1]');
+  s = s.replace(
     /<img[^>]*src="([^"]*)"[^>]*\/?>/g,
     (_m, src: string) => `[이미지: ${path.posix.basename(src)}]`
   );
-
-  const isTableRow = /^\s*\|/.test(l);
-  l = l.replace(/<br\s*\/?>/g, isTableRow ? ' ' : '\n');
-  l = l.replace(/&nbsp;/g, ' ');
+  s = s.replace(/<br\s*\/?>/g, isTableRow ? ' ' : '\n');
+  s = s.replace(/&nbsp;/g, ' ');
   // span / i / b / u 래퍼 제거
-  l = l.replace(/<\/?(span|i|b|u|small|strong|em)(\s[^>]*)?>/g, '');
+  s = s.replace(/<\/?(span|i|b|u|small|strong|em)(\s[^>]*)?>/g, '');
   // 이스케이프된 앵커 정규화
-  l = l.replace(/\\\{#/g, '{#');
+  s = s.replace(/\\\{#/g, '{#');
   // 제목의 ** 제거
-  if (/^#{1,6}\s/.test(l)) l = l.replace(/\*\*/g, '');
+  if (isHeading) s = s.replace(/\*\*/g, '');
   // 링크 절대화
-  l = l.replace(
+  s = s.replace(
     /\]\(([^)\s]+)\)/g,
     (_m, href: string) => `](${toAbsoluteUrl(href, docId)})`
   );
-  l = l.replace(/[ \t]+$/g, '');
-  return l;
+  // 나머지 JSX 태그(<Tabs>, <TabItem> 등)와 details/summary 는 태그만 벗긴다.
+  // cleanLine 은 코드 블록 밖 줄에만 호출되고, 인라인 코드 구간은 위에서 제외되므로
+  // 코드 블록·인라인 코드 안의 JSX 는 그대로 남는다.
+  s = s.replace(/<\/?[A-Z][A-Za-z]*(\s[^>]*)?>/g, '');
+  s = s.replace(/<\/?(details|summary)[^>]*>/g, '');
+  return s;
 }
 
 function cleanBody(body: string, docId: string): string {
@@ -260,15 +265,10 @@ function cleanBody(body: string, docId: string): string {
       out.push(admonition ? `> ${part}`.replace(/\s+$/, '') : part);
     }
   }
-  // 나머지 JSX 태그 제거 (코드 블록 밖)
-  const text = out
+  return out
     .join('\n')
-    .replace(/<\/?[A-Z][A-Za-z]*(\s[^>]*)?>/g, '')
-    .replace(/<\/?details[^>]*>/g, '')
-    .replace(/<\/?summary[^>]*>/g, '')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
-  return text;
 }
 
 // ---------- 출력 ----------
