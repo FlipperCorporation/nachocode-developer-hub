@@ -265,6 +265,7 @@ const config: Config = {
         indexBlog: false,
         indexPages: false,
         highlightSearchTermsOnTargetPage: true,
+        searchBarShortcutHint: false,
         searchBarShortcutKeymap: 'ctrl+shift+f',
         searchResultLimits: 8,
         searchResultContextMaxLength: 60,

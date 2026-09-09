@@ -285,6 +285,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '연결하기',
+      collapsed: false,
       link: {
         type: 'generated-index',
         title: 'AI 클라이언트 연결하기',
