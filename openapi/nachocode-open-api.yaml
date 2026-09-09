@@ -1,0 +1,1346 @@
+openapi: 3.1.0
+
+info:
+  title: nachocode Open API
+  version: 2.0.0
+  summary: nachocode 앱의 푸시 알림 전송과 앱 유저 관리를 위한 서버 사이드 Open API
+  description: |
+    nachocode Open API는 nachocode로 빌드한 앱의 **푸시 알림 전송**, **토픽 구독 관리**, **푸시 토큰 관리**,
+    **앱 유저 관리(회원 탈퇴·마케팅 수신 동의)** 기능을 서버에서 호출할 수 있도록 제공합니다.
+    이 명세는 nachocode Developer Hub의 API 문서(https://developer.nachocode.io/docs/api/intro)를
+    OpenAPI 3.1 형식으로 옮긴 것입니다.
+
+    ## 서버 사이드 전용
+
+    모든 요청은 `x-api-key`와 `x-secret-key` 헤더로 인증합니다.
+    **Secret Key는 서버 사이드에서만 사용하고, 브라우저·앱 등 클라이언트에 절대 노출하지 마세요.**
+    클라이언트에서 직접 호출하면 키가 유출될 수 있습니다.
+
+    ## 키 발급
+
+    API Key와 Secret Key는 nachocode 대시보드 **[앱 설정] > [개발자 설정]** 탭에서 발급합니다.
+
+    ## 요청·응답 형식
+
+    - 요청·응답 본문은 모두 JSON입니다. `Content-Type: application/json`을 지정하세요.
+    - 오류 응답은 `{ statusCode, path, code, message }` 형태입니다. (ex. `ERR-AB-VAL-00`)
+    - 에러 코드 전체 표는 `components.x-nachocode-error-codes`에 있습니다.
+
+    ## 서버 액션(Server Action)
+
+    푸시 전송·토픽 구독·토큰 삭제 요청은 서버 액션을 차감합니다.
+    개인화 푸시·토픽 구독·토큰 삭제는 유저 1명당 0.5, 토픽 푸시·전체 푸시는 요청 1건당 0.5가 차감됩니다.
+
+    ## 확장 필드
+
+    이 명세는 nachocode MCP 서버가 읽는 확장 필드를 사용합니다.
+
+    - `x-nachocode-limit`: 오퍼레이션 단위 한도 (ex. `{ "userIds": 500 }`)
+    - `x-nachocode-cost`: 서버 액션 비용 (ex. `{ "serverActionPerUser": 0.5 }`)
+    - `x-nachocode-since`: 필요한 앱소스·SDK 최소 버전 (ex. `{ "appSource": "1.5.0" }`)
+    - `x-nachocode-notes`: 문서의 보충 설명·주의 사항 메모 (문자열 배열)
+    - `x-nachocode-doc`: 해당 오퍼레이션을 설명하는 개발자 허브 페이지 URL (앵커 포함)
+  contact:
+    name: nachocode 지원팀
+    email: support@nachocode.io
+    url: https://developer.nachocode.io/docs/api/intro
+  license:
+    name: Proprietary
+    identifier: LicenseRef-Proprietary
+
+externalDocs:
+  description: nachocode Developer Hub - API 개요
+  url: https://developer.nachocode.io/docs/api/intro
+
+servers:
+  - url: https://app.nachocode.io
+    description: nachocode Open API 서버
+
+security:
+  - ApiKey: []
+    SecretKey: []
+
+tags:
+  - name: Personal Push
+    description: 유저 ID를 기준으로 개인화 푸시 알림을 전송합니다.
+    externalDocs:
+      url: https://developer.nachocode.io/docs/api/push/personal-push.endpoints
+  - name: Topic Push
+    description: 커스텀 토픽·나쵸토픽으로 푸시를 전송하고 토픽 구독을 관리합니다.
+    externalDocs:
+      url: https://developer.nachocode.io/docs/api/push/topic-push.endpoints
+  - name: All Push
+    description: 앱이 설치된 모든 디바이스로 푸시를 전송합니다.
+    externalDocs:
+      url: https://developer.nachocode.io/docs/api/push/all-push.endpoints
+  - name: Push Token
+    description: 유저 ID에 매핑된 푸시 토큰을 관리합니다.
+    externalDocs:
+      url: https://developer.nachocode.io/docs/api/push/push-token.endpoints
+  - name: App User
+    description: 앱 유저의 회원 탈퇴와 마케팅 수신 동의를 관리합니다. 비즈니스 멤버십 이상에서 nachocode 문의를 통해 활성화됩니다.
+    externalDocs:
+      url: https://developer.nachocode.io/docs/api/app-user
+
+paths:
+  /api/push/v2/users:
+    post:
+      operationId: sendPersonalPushToUsers
+      tags: [Personal Push]
+      summary: 유저 목록에 동일한 개인화 푸시 전송
+      description: |
+        동일한 제목과 내용의 푸시 알림을 여러 유저에게 전송합니다.
+        유저 ID로 조회된 **모든 푸시 토큰**(여러 디바이스)이 전송 대상입니다.
+
+        - 요청당 `userIds`는 최대 500개입니다.
+        - 전송 요청된 유저 1명당 0.5 서버 액션이 차감됩니다.
+        - `options.scheduleTime`으로 예약 전송할 수 있습니다.
+        - 토큰이 없거나 만료되어 전송할 수 없는 유저 목록은
+          [전송불가 유저 웹훅](https://developer.nachocode.io/docs/guide/webhook/personal-push/unavailable-users)으로 확인할 수 있습니다.
+      x-nachocode-doc: https://developer.nachocode.io/docs/api/push/personal-push.endpoints#post-v2-users
+      x-nachocode-limit:
+        userIds: 500
+      x-nachocode-cost:
+        serverActionPerUser: 0.5
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonalPushToUsersRequest'
+            examples:
+              immediate:
+                summary: 즉시 발송
+                value:
+                  userIds: ['USER_ID_1', 'USER_ID_2', 'USER_ID_3']
+                  title: 나쵸코드 업데이트
+                  content: 새로운 업데이트!
+                  linkURL: https://SERVICE_DOMAIN
+                  imageURL: https://IMAGE_DOMAIN/path/sample-image.jpg
+                  options:
+                    isUsingBadge: true
+                    requestGroupId: REQUEST_GROUP_ID
+              scheduled:
+                summary: 예약 발송
+                value:
+                  userIds: ['USER_ID_1', 'USER_ID_2']
+                  title: 나쵸코드 업데이트
+                  content: 오늘 오전 9시에 도착하는 알림입니다.
+                  options:
+                    scheduleTime: '2026-10-01T09:00'
+      responses:
+        '200':
+          description: 전송 또는 예약 요청 성공. 본문은 JSON 문자열입니다.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PushRequestResultString'
+              examples:
+                sent:
+                  summary: 즉시 발송
+                  value: 'Push successfully requested to be sent.'
+                scheduled:
+                  summary: 예약 발송
+                  value: 'Push scheduling request was successful.'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: 앱 미등록, FCM 서비스 계정 미등록 또는 유효하지 않은 API Key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                appNotFound:
+                  $ref: '#/components/examples/ErrPss91'
+                fcmAccountNotFound:
+                  $ref: '#/components/examples/ErrPss92'
+                apiKeyNotFound:
+                  $ref: '#/components/examples/ErrKsy13'
+
+  /api/push/v2/messages:
+    post:
+      operationId: sendPersonalPushMessages
+      tags: [Personal Push]
+      summary: 유저별로 다른 메시지를 개인화 푸시로 전송
+      description: |
+        각 유저 ID마다 서로 다른 제목·내용의 푸시 알림을 한 번의 요청으로 전송합니다.
+
+        - 요청당 `messages`는 최대 200개, 요청 본문 크기는 150KB 이하여야 합니다.
+        - 전송 요청된 유저 1명당 0.5 서버 액션이 차감됩니다.
+        - 사용 가능한 옵션은 `isUsingBadge`, `requestGroupId`입니다.
+        - 토큰이 없거나 만료되어 전송할 수 없는 유저 목록은
+          [전송불가 유저 웹훅](https://developer.nachocode.io/docs/guide/webhook/personal-push/unavailable-users)으로 확인할 수 있습니다.
+      x-nachocode-doc: https://developer.nachocode.io/docs/api/push/personal-push.endpoints#post-v2-messages
+      x-nachocode-limit:
+        messages: 200
+        bodyBytes: 153600
+      x-nachocode-cost:
+        serverActionPerUser: 0.5
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonalPushMessagesRequest'
+            examples:
+              default:
+                summary: 유저별 메시지
+                value:
+                  messages:
+                    - userId: USER_ID_1
+                      title: 나쵸코드 업데이트
+                      content: 나쵸님! 새로운 기능이 추가되었습니다.
+                      linkURL: https://SERVICE_DOMAIN
+                      imageURL: https://IMAGE_DOMAIN/path/sample-image.jpg
+                    - userId: USER_ID_2
+                      title: 나쵸코드 업데이트
+                      content: 코드님! 새로운 기능이 추가되었습니다.
+                  options:
+                    isUsingBadge: true
+                    requestGroupId: REQUEST_GROUP_ID
+      responses:
+        '200':
+          description: 전송 요청 성공. 본문은 JSON 문자열입니다.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PushRequestResultString'
+              examples:
+                sent:
+                  value: 'Push successfully requested to be sent.'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: 앱 미등록, FCM 서비스 계정 미등록 또는 유효하지 않은 API Key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                appNotFound:
+                  $ref: '#/components/examples/ErrPss91'
+                fcmAccountNotFound:
+                  $ref: '#/components/examples/ErrPss92'
+                apiKeyNotFound:
+                  $ref: '#/components/examples/ErrKsy13'
+
+  /api/push/v2/topic:
+    post:
+      operationId: sendTopicPush
+      tags: [Topic Push]
+      summary: 커스텀 토픽 구독자 전체에 푸시 전송
+      description: |
+        `topicName`으로 지정한 커스텀 토픽을 구독 중인 모든 디바이스로 동일한 푸시 알림을 전송합니다.
+        구독은 `POST /api/push/v2/topic/subscription` 또는 SDK로 미리 등록해야 합니다.
+
+        - 토픽 푸시 전송 요청 1건당 0.5 서버 액션이 차감됩니다.
+        - 전송 가능한 구독자가 없거나 존재하지 않는 토픽이면 `ERR-AB-CST-51`(400)을 반환합니다.
+      x-nachocode-doc: https://developer.nachocode.io/docs/api/push/topic-push.endpoints#post-v2-topic
+      x-nachocode-limit:
+        topicNameLength: 500
+      x-nachocode-cost:
+        serverActionPerRequest: 0.5
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TopicPushRequest'
+            examples:
+              default:
+                value:
+                  topicName: TOPIC_EVENT_AD
+                  title: 업데이트 전체 알림
+                  content: 나쵸코드 이용자 여러분 새로운 기능이 추가되었습니다.
+                  linkURL: https://SERVICE_DOMAIN
+                  imageURL: https://IMAGE_DOMAIN/path/sample-image.jpg
+                  options:
+                    isUsingBadge: true
+      responses:
+        '200':
+          description: 전송 요청 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+              examples:
+                sent:
+                  value:
+                    message: Push send request was successful.
+        '400':
+          description: 잘못된 요청 본문, 인증 헤더 누락 또는 전송 가능한 토픽 없음
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                validation:
+                  $ref: '#/components/examples/ErrVal00'
+                noTopic:
+                  $ref: '#/components/examples/ErrCst51'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: 앱 미등록, FCM 서비스 계정 미등록 또는 유효하지 않은 API Key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                appNotFound:
+                  $ref: '#/components/examples/ErrPss91'
+                fcmAccountNotFound:
+                  $ref: '#/components/examples/ErrPss92'
+                apiKeyNotFound:
+                  $ref: '#/components/examples/ErrKsy13'
+
+  /api/push/v2/topic/subscription:
+    post:
+      operationId: subscribeTopic
+      tags: [Topic Push]
+      summary: 유저 목록을 토픽에 구독
+      description: |
+        SDK의 `registerPushToken()`으로 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에 구독시킵니다.
+        FCM 구독 과정에서 발견된 유효하지 않은 토큰은 nachocode 서버에서 자동 삭제되며 `tokenDeleted`에 담깁니다.
+
+        - 요청당 `userIds`는 최대 100개입니다.
+        - 유저 1명당 0.5 서버 액션이 차감됩니다.
+      x-nachocode-doc: https://developer.nachocode.io/docs/api/push/topic-push.endpoints#post-v2-topic-subscription
+      x-nachocode-limit:
+        userIds: 100
+        topicNameLength: 500
+      x-nachocode-cost:
+        serverActionPerUser: 0.5
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TopicSubscriptionRequest'
+            examples:
+              default:
+                value:
+                  userIds: ['USER_ID_1', 'USER_ID_2', 'USER_ID_3']
+                  topicName: TOPIC_NAME
+      responses:
+        '200':
+          description: 구독 처리 결과
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PushResult'
+              examples:
+                default:
+                  $ref: '#/components/examples/PushResultExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: 앱 미등록, FCM 서비스 계정 미등록 또는 유효하지 않은 API Key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                appNotFound:
+                  $ref: '#/components/examples/ErrPss91'
+                fcmAccountNotFound:
+                  $ref: '#/components/examples/ErrPss92'
+                apiKeyNotFound:
+                  $ref: '#/components/examples/ErrKsy13'
+    delete:
+      operationId: unsubscribeTopic
+      tags: [Topic Push]
+      summary: 유저 목록을 토픽에서 구독 해제
+      description: |
+        SDK의 `registerPushToken()`으로 토큰이 등록된 유저에 한하여, 해당 유저들의 토큰을 토픽에서 구독 해제합니다.
+        FCM 구독 해제 과정에서 발견된 유효하지 않은 토큰은 nachocode 서버에서 자동 삭제되며 `tokenDeleted`에 담깁니다.
+
+        - 요청당 `userIds`는 최대 100개입니다.
+        - 유저 1명당 0.5 서버 액션이 차감됩니다.
+      x-nachocode-doc: https://developer.nachocode.io/docs/api/push/topic-push.endpoints#delete-v2-topic-subscription
+      x-nachocode-limit:
+        userIds: 100
+        topicNameLength: 500
+      x-nachocode-cost:
+        serverActionPerUser: 0.5
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TopicSubscriptionRequest'
+            examples:
+              default:
+                value:
+                  userIds: ['USER_ID_1', 'USER_ID_2', 'USER_ID_3']
+                  topicName: TOPIC_NAME
+      responses:
+        '202':
+          description: 구독 해제 처리 결과
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PushResult'
+              examples:
+                default:
+                  $ref: '#/components/examples/PushResultExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: 앱 미등록, FCM 서비스 계정 미등록 또는 유효하지 않은 API Key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                appNotFound:
+                  $ref: '#/components/examples/ErrPss91'
+                fcmAccountNotFound:
+                  $ref: '#/components/examples/ErrPss92'
+                apiKeyNotFound:
+                  $ref: '#/components/examples/ErrKsy13'
+
+  /api/push/v2/all:
+    post:
+      operationId: sendPushToAll
+      tags: [All Push]
+      summary: 앱이 설치된 모든 디바이스에 푸시 전송
+      description: |
+        토큰 등록 여부나 회원 여부와 관계없이 **앱이 설치된 모든 디바이스**로 푸시 알림을 전송합니다.
+        별도의 구독·대상 선별 작업 없이 즉시 사용할 수 있습니다.
+
+        - 전체 푸시 전송 요청 1건당 0.5 서버 액션이 차감됩니다.
+        - `options.scheduleTime`으로 예약 전송할 수 있습니다.
+      x-nachocode-doc: https://developer.nachocode.io/docs/api/push/all-push.endpoints#post-v2-all
+      x-nachocode-cost:
+        serverActionPerRequest: 0.5
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AllPushRequest'
+            examples:
+              scheduled:
+                summary: 예약 발송
+                value:
+                  title: 업데이트 전체 알림
+                  content: 나쵸코드 이용자 여러분 새로운 기능이 추가되었습니다.
+                  linkURL: https://SERVICE_DOMAIN
+                  imageURL: https://IMAGE_DOMAIN/path/sample-image.jpg
+                  options:
+                    isUsingBadge: true
+                    scheduleTime: '2026-10-01T09:00'
+      responses:
+        '200':
+          description: 전송 또는 예약 요청 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+              examples:
+                sent:
+                  summary: 즉시 발송
+                  value:
+                    message: Push send request was successful.
+                scheduled:
+                  summary: 예약 발송
+                  value:
+                    message: Push scheduling request was successful.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: 앱 미등록, FCM 서비스 계정 미등록 또는 유효하지 않은 API Key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                appNotFound:
+                  $ref: '#/components/examples/ErrPss91'
+                fcmAccountNotFound:
+                  $ref: '#/components/examples/ErrPss92'
+                apiKeyNotFound:
+                  $ref: '#/components/examples/ErrKsy13'
+
+  /api/push/v2/token:
+    delete:
+      operationId: deletePushTokens
+      tags: [Push Token]
+      summary: 유저 목록의 푸시 토큰 전체 삭제
+      description: |
+        SDK의 `registerPushToken()`으로 토큰이 등록된 유저에 한하여, 각 유저에게 매핑된 **모든 토큰**을 삭제합니다.
+
+        - 요청당 `userIds`는 최대 500개입니다.
+        - 유저 1명당 0.5 서버 액션이 차감됩니다.
+        - 응답의 `failed`는 토큰 존재 여부를 판별하는 용도로 적합하지 않습니다.
+        - 이 오퍼레이션의 응답에는 `tokenDeleted`가 포함되지 않습니다.
+      x-nachocode-doc: https://developer.nachocode.io/docs/api/push/push-token.endpoints#delete-v2-token
+      x-nachocode-limit:
+        userIds: 500
+      x-nachocode-cost:
+        serverActionPerUser: 0.5
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeletePushTokensRequest'
+            examples:
+              default:
+                value:
+                  userIds: ['USER_ID_1', 'USER_ID_2', 'USER_ID_3']
+      responses:
+        '202':
+          description: 토큰 삭제 처리 결과
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PushResult'
+              examples:
+                default:
+                  value:
+                    success: ['USER_ID_1', 'USER_ID_2', 'USER_ID_3']
+                    tokenNotFound: ['USER_ID_5', 'USER_ID_6']
+                    failed: ['USER_ID_4']
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/ApiKeyNotFound'
+
+  /api/push/v2/nacho-topic:
+    post:
+      operationId: sendNachoTopicPush
+      tags: [Topic Push]
+      summary: 나쵸토픽(nachocode 관리 토픽) 구독자 전체에 푸시 전송
+      description: |
+        nachocode가 자동으로 관리하는 **나쵸토픽**을 구독 중인 모든 디바이스로 푸시 알림을 전송합니다.
+        현재 사용 가능한 나쵸토픽은 `ALL`(모든 디바이스) 하나이며, 향후 추가될 수 있습니다.
+
+        - 토픽 푸시 전송 요청 1건당 0.5 서버 액션이 차감됩니다.
+        - `options.scheduleTime`으로 예약 전송할 수 있습니다.
+      x-nachocode-doc: https://developer.nachocode.io/docs/api/push/v2/endpoints#post-v2-nacho-topic
+      x-nachocode-cost:
+        serverActionPerRequest: 0.5
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NachoTopicPushRequest'
+            examples:
+              default:
+                value:
+                  topicName: ALL
+                  title: 전체알림
+                  content: 전체에게 보내는 푸시 알림입니다.
+                  linkURL: https://nachocode.io
+                  imageURL: https://example.com/images/sample-image.jpg
+                  options:
+                    isUsingBadge: true
+                    scheduleTime: '2026-10-01T20:00'
+      responses:
+        '200':
+          description: 전송 또는 예약 요청 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+              examples:
+                sent:
+                  summary: 즉시 발송
+                  value:
+                    message: Push successfully requested to be sent.
+                scheduled:
+                  summary: 예약 발송
+                  value:
+                    message: Push successfully requested to be scheduled.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: 앱 미등록, FCM 서비스 계정 미등록 또는 유효하지 않은 API Key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                appNotFound:
+                  $ref: '#/components/examples/ErrPss91'
+                fcmAccountNotFound:
+                  $ref: '#/components/examples/ErrPss92'
+                apiKeyNotFound:
+                  $ref: '#/components/examples/ErrKsy13'
+
+  /api/app-user/v2:
+    delete:
+      operationId: withdrawAppUser
+      tags: [App User]
+      summary: 앱 유저 회원 탈퇴 처리
+      description: |
+        SDK의 `setUserId()` 또는 `registerPushToken()`으로 등록된 유저와 저장된 모든 토큰의 매핑을 제거하고,
+        저장된 디바이스 설정과 유저 동의 여부를 초기화합니다. 앱이 아닌 환경에서 회원 탈퇴가 이뤄질 때 사용하기 적합합니다.
+
+        - 앱 유저 API는 비즈니스 멤버십 이상에서 nachocode 문의를 통해 활성화됩니다.
+        - 기능이 활성화되지 않은 앱은 `ERR-AB-ACS-21`(403), 이미 탈퇴한 유저는 `ERR-AB-ACS-22`(410)를 반환합니다.
+      x-nachocode-doc: https://developer.nachocode.io/docs/api/app-user/user-management.endpoints#delete-app-user-v2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WithdrawAppUserRequest'
+            examples:
+              default:
+                value:
+                  userId: USER_ID_VALUE
+      responses:
+        '200':
+          description: 탈퇴 처리 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+              examples:
+                default:
+                  value:
+                    message: User withdrawal process successfully executed.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          description: 앱 유저 관리 기능 사용 불가
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                featureDisabled:
+                  $ref: '#/components/examples/ErrAcs21'
+        '404':
+          $ref: '#/components/responses/ApiKeyNotFound'
+        '410':
+          description: 이미 탈퇴 처리된 유저
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                alreadyWithdrawn:
+                  $ref: '#/components/examples/ErrAcs22'
+
+  /api/app-user/v2/marketing:
+    patch:
+      operationId: updateMarketingPreference
+      tags: [App User]
+      summary: 앱 유저의 마케팅 푸시 수신 동의 변경
+      description: |
+        SDK의 `setUserId()` 또는 `registerPushToken()`으로 등록된 유저와 매핑된 **모든 토큰**의
+        광고성 푸시 알림 수신 동의 여부를 일괄 변경합니다. 앱이 아닌 환경에서 수신 동의가 변경될 때 사용하기 적합합니다.
+
+        - `state.marketing`과 `state.marketingNight` 중 변경할 항목만 전달합니다.
+        - `marketing: false`일 때 `marketingNight: true`는 허용되지 않습니다.
+        - 앱 유저 API는 비즈니스 멤버십 이상에서 nachocode 문의를 통해 활성화됩니다.
+        - 기능이 활성화되지 않은 앱은 `ERR-AB-ACS-31`(403), 이미 탈퇴한 유저는 `ERR-AB-ACS-32`(410)를 반환합니다.
+      x-nachocode-doc: https://developer.nachocode.io/docs/api/app-user/user-preferences.endpoints#patch-app-user-v2-marketing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMarketingPreferenceRequest'
+            examples:
+              optIn:
+                summary: 마케팅·야간 모두 동의
+                value:
+                  userId: USER_ID_VALUE
+                  state:
+                    marketing: true
+                    marketingNight: true
+              nightOnly:
+                summary: 야간 동의만 변경
+                value:
+                  userId: USER_ID_VALUE
+                  state:
+                    marketingNight: true
+      responses:
+        '200':
+          description: 갱신된 앱 유저 마케팅 수신 동의 여부
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserMarketingPreference'
+              examples:
+                default:
+                  value:
+                    marketing: true
+                    marketingNight: true
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          description: 앱 유저 관리 기능 사용 불가
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                featureDisabled:
+                  $ref: '#/components/examples/ErrAcs31'
+        '404':
+          $ref: '#/components/responses/ApiKeyNotFound'
+        '410':
+          description: 이미 탈퇴 처리된 유저
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                withdrawn:
+                  $ref: '#/components/examples/ErrAcs32'
+
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: nachocode 대시보드 [앱 설정] > [개발자 설정]에서 발급한 API Key. 예시의 `API_KEY_VALUE` 자리에 넣습니다.
+    SecretKey:
+      type: apiKey
+      in: header
+      name: x-secret-key
+      description: nachocode 대시보드 [앱 설정] > [개발자 설정]에서 발급한 Secret Key. 서버 사이드에서만 사용하세요. 예시의 `SECRET_KEY_VALUE` 자리에 넣습니다.
+
+  responses:
+    BadRequest:
+      description: 잘못된 요청 본문 또는 인증 헤더 누락
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            validation:
+              $ref: '#/components/examples/ErrVal00'
+            secretKeyMissing:
+              $ref: '#/components/examples/ErrSgk11'
+            apiKeyMissing:
+              $ref: '#/components/examples/ErrAgk11'
+    Unauthorized:
+      description: 유효하지 않은 Secret Key
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            incorrectSecretKey:
+              $ref: '#/components/examples/ErrSgk13'
+    ApiKeyNotFound:
+      description: 유효하지 않은 API Key
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            apiKeyNotFound:
+              $ref: '#/components/examples/ErrKsy13'
+
+  schemas:
+    UserId:
+      description: SDK `setUserId()` 또는 `registerPushToken()`으로 등록한 유저 식별자
+      type: [string, number]
+      examples:
+        - USER_ID_1
+        - 10293
+
+    TopicName:
+      description: 커스텀 토픽 이름 (길이 500 이하)
+      type: string
+      minLength: 1
+      maxLength: 500
+      examples:
+        - TOPIC_EVENT_AD
+
+    PushTitle:
+      description: 푸시 알림 제목
+      type: string
+      minLength: 1
+      examples:
+        - 나쵸코드 업데이트
+
+    PushContent:
+      description: 푸시 알림 내용
+      type: string
+      minLength: 1
+      examples:
+        - 새로운 기능이 추가되었습니다.
+
+    LinkURL:
+      description: 푸시 클릭 시 이동할 URL (길이 255 이하)
+      type: string
+      format: uri
+      maxLength: 255
+      examples:
+        - https://nachocode.io
+
+    ImageURL:
+      description: |
+        푸시에 표시할 이미지 URL (길이 500 이하). 앱소스 1.6.0 이상의 앱에서만 노출됩니다.
+        FCM 정책에 따라 다음 조건에서는 이미지가 노출되지 않을 수 있습니다.
+        - SSL 인증이 되지 않은 `http` 프로토콜 링크
+        - 용량이 1MB를 초과하는 이미지
+        - 리다이렉션 처리되는 링크
+      type: string
+      format: uri
+      maxLength: 500
+      x-nachocode-since:
+        appSource: 1.6.0
+      x-nachocode-limit:
+        imageBytes: 1048576
+      examples:
+        - https://example.com/images/sample-image.jpg
+
+    PushOptionIsUsingBadge:
+      description: |
+        푸시 뱃지 제어 여부. 앱소스 1.5.0 이상의 앱에서만 뱃지가 노출됩니다.
+        - Android: OS 레벨에서 뱃지를 자동 처리하므로 설정값과 관계없이 정책에 따라 표시됩니다.
+        - iOS: 알림이 하나 이상 도착하면 앱 아이콘에 `1`이 표시됩니다. 알림 건수 누적은 추후 지원 예정입니다.
+      type: boolean
+      x-nachocode-since:
+        appSource: 1.5.0
+
+    PushOptionRequestGroupId:
+      description: |
+        여러 개의 분리된 푸시 요청을 하나의 전송 히스토리로 묶어 관리하는 고유값.
+        영어 대소문자·숫자·특수문자로 구성한 5~20자 문자열이며 영어 대소문자를 반드시 포함해야 합니다.
+        작은따옴표, 큰따옴표, 백슬래시, 백틱은 사용할 수 없습니다.
+        연관성이 약한 요청에 같은 값을 주면 무관한 히스토리가 하나로 합쳐져 부정확한 데이터가 표시됩니다.
+      type: string
+      minLength: 5
+      maxLength: 20
+      pattern: '^(?=.*[A-Za-z])[^\s''"\\`]{5,20}$'
+      examples:
+        - EVENT_2026_10A
+
+    PushOptionScheduleTime:
+      description: |
+        예약 전송 시각. `YYYY-MM-DDTHH:mm` 형식(ISO 8601)이며 API 호출 시점 기준 **최소 60초 이후** 시간만 예약할 수 있습니다.
+        예약된 푸시는 전송 시간 5분 전까지 nachocode 대시보드에서 취소·수정할 수 있습니다.
+      type: string
+      pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$'
+      x-nachocode-limit:
+        minSecondsInFuture: 60
+      examples:
+        - '2026-10-01T09:00'
+
+    PushOptions:
+      description: '`POST /api/push/v2/users` 옵션. 오퍼레이션별로 사용 가능한 옵션이 다르므로 각 요청 스키마를 참고하세요.'
+      type: object
+      additionalProperties: false
+      properties:
+        isUsingBadge:
+          $ref: '#/components/schemas/PushOptionIsUsingBadge'
+        requestGroupId:
+          $ref: '#/components/schemas/PushOptionRequestGroupId'
+        scheduleTime:
+          $ref: '#/components/schemas/PushOptionScheduleTime'
+
+    MessagePushOptions:
+      description: '`POST /api/push/v2/messages` 옵션.'
+      type: object
+      additionalProperties: false
+      properties:
+        isUsingBadge:
+          $ref: '#/components/schemas/PushOptionIsUsingBadge'
+        requestGroupId:
+          $ref: '#/components/schemas/PushOptionRequestGroupId'
+
+    TopicPushOptions:
+      description: '`POST /api/push/v2/topic` 옵션.'
+      type: object
+      additionalProperties: false
+      properties:
+        isUsingBadge:
+          $ref: '#/components/schemas/PushOptionIsUsingBadge'
+
+    ScheduledPushOptions:
+      description: '`POST /api/push/v2/all`, `POST /api/push/v2/nacho-topic` 옵션.'
+      type: object
+      additionalProperties: false
+      properties:
+        isUsingBadge:
+          $ref: '#/components/schemas/PushOptionIsUsingBadge'
+        scheduleTime:
+          $ref: '#/components/schemas/PushOptionScheduleTime'
+
+    PersonalPushToUsersRequest:
+      type: object
+      required: [userIds, title, content]
+      additionalProperties: false
+      properties:
+        userIds:
+          description: 푸시를 전송할 유저 ID 배열 (최대 500개)
+          type: array
+          minItems: 1
+          maxItems: 500
+          items:
+            $ref: '#/components/schemas/UserId'
+        title:
+          $ref: '#/components/schemas/PushTitle'
+        content:
+          $ref: '#/components/schemas/PushContent'
+        linkURL:
+          $ref: '#/components/schemas/LinkURL'
+        imageURL:
+          $ref: '#/components/schemas/ImageURL'
+        options:
+          $ref: '#/components/schemas/PushOptions'
+
+    Message:
+      description: 유저별 개인화 메시지
+      type: object
+      required: [userId, title, content]
+      additionalProperties: false
+      properties:
+        userId:
+          $ref: '#/components/schemas/UserId'
+        title:
+          $ref: '#/components/schemas/PushTitle'
+        content:
+          $ref: '#/components/schemas/PushContent'
+        linkURL:
+          $ref: '#/components/schemas/LinkURL'
+        imageURL:
+          $ref: '#/components/schemas/ImageURL'
+
+    PersonalPushMessagesRequest:
+      type: object
+      required: [messages]
+      additionalProperties: false
+      properties:
+        messages:
+          description: 전송할 메시지 배열 (최대 200개, 본문 150KB 이하)
+          type: array
+          minItems: 1
+          maxItems: 200
+          items:
+            $ref: '#/components/schemas/Message'
+        options:
+          $ref: '#/components/schemas/MessagePushOptions'
+
+    TopicPushRequest:
+      type: object
+      required: [topicName, title, content]
+      additionalProperties: false
+      properties:
+        topicName:
+          $ref: '#/components/schemas/TopicName'
+        title:
+          $ref: '#/components/schemas/PushTitle'
+        content:
+          $ref: '#/components/schemas/PushContent'
+        linkURL:
+          $ref: '#/components/schemas/LinkURL'
+        imageURL:
+          $ref: '#/components/schemas/ImageURL'
+        options:
+          $ref: '#/components/schemas/TopicPushOptions'
+
+    TopicSubscriptionRequest:
+      type: object
+      required: [userIds, topicName]
+      additionalProperties: false
+      properties:
+        userIds:
+          description: 구독 또는 구독 해제할 유저 ID 배열 (최대 100개)
+          type: array
+          minItems: 1
+          maxItems: 100
+          items:
+            $ref: '#/components/schemas/UserId'
+        topicName:
+          $ref: '#/components/schemas/TopicName'
+
+    NachoTopic:
+      description: |
+        nachocode가 자동으로 관리하는 토픽 상수. 향후 추가될 수 있습니다.
+        - `ALL`: 모든 디바이스에 푸시를 전송합니다.
+      type: string
+      enum: [ALL]
+
+    AllPushRequest:
+      type: object
+      required: [title, content]
+      additionalProperties: false
+      properties:
+        title:
+          $ref: '#/components/schemas/PushTitle'
+        content:
+          $ref: '#/components/schemas/PushContent'
+        linkURL:
+          $ref: '#/components/schemas/LinkURL'
+        imageURL:
+          $ref: '#/components/schemas/ImageURL'
+        options:
+          $ref: '#/components/schemas/ScheduledPushOptions'
+
+    NachoTopicPushRequest:
+      type: object
+      required: [topicName, title, content]
+      additionalProperties: false
+      properties:
+        topicName:
+          $ref: '#/components/schemas/NachoTopic'
+        title:
+          $ref: '#/components/schemas/PushTitle'
+        content:
+          $ref: '#/components/schemas/PushContent'
+        linkURL:
+          $ref: '#/components/schemas/LinkURL'
+        imageURL:
+          $ref: '#/components/schemas/ImageURL'
+        options:
+          $ref: '#/components/schemas/ScheduledPushOptions'
+
+    DeletePushTokensRequest:
+      type: object
+      required: [userIds]
+      additionalProperties: false
+      properties:
+        userIds:
+          description: 토큰을 삭제할 유저 ID 배열 (최대 500개)
+          type: array
+          minItems: 1
+          maxItems: 500
+          items:
+            $ref: '#/components/schemas/UserId'
+
+    WithdrawAppUserRequest:
+      type: object
+      required: [userId]
+      additionalProperties: false
+      properties:
+        userId:
+          description: 삭제(탈퇴) 처리할 유저 ID
+          $ref: '#/components/schemas/UserId'
+
+    UserMarketingPreferenceState:
+      description: |
+        변경할 마케팅 수신 동의 값. `marketing`, `marketingNight` 중 변경할 항목만 전달합니다.
+        `marketing: false`일 때 `marketingNight: true`는 허용되지 않습니다.
+      type: object
+      minProperties: 1
+      additionalProperties: false
+      properties:
+        marketing:
+          description: 마케팅 푸시 수신 동의 여부
+          type: boolean
+        marketingNight:
+          description: 야간 마케팅 푸시 수신 동의 여부
+          type: boolean
+      not:
+        description: '`marketing: false`와 `marketingNight: true`의 조합은 허용되지 않습니다.'
+        type: object
+        required: [marketing, marketingNight]
+        properties:
+          marketing:
+            const: false
+          marketingNight:
+            const: true
+      examples:
+        - marketing: true
+          marketingNight: true
+        - marketing: false
+        - marketingNight: true
+
+    UpdateMarketingPreferenceRequest:
+      type: object
+      required: [userId, state]
+      additionalProperties: false
+      properties:
+        userId:
+          description: 동의 여부를 변경할 유저 ID
+          $ref: '#/components/schemas/UserId'
+        state:
+          $ref: '#/components/schemas/UserMarketingPreferenceState'
+
+    UserMarketingPreference:
+      description: 갱신된 앱 유저 마케팅 수신 동의 여부
+      type: object
+      required: [marketing, marketingNight]
+      properties:
+        marketing:
+          type: boolean
+        marketingNight:
+          type: boolean
+
+    PushResult:
+      description: |
+        유저 단위 처리 결과. 토픽 구독·구독 해제·토큰 삭제 오퍼레이션이 반환합니다.
+        유저가 여러 토큰을 보유하면 `success`, `failed`, `tokenDeleted`에 같은 유저 ID가 동시에 나타날 수 있습니다.
+        `tokenDeleted`는 토픽 구독·구독 해제에서만 포함됩니다.
+      type: object
+      required: [success, tokenNotFound, failed]
+      properties:
+        success:
+          description: 등록된 토큰이 존재했고 요청된 동작에 성공한 유저 ID 목록
+          type: array
+          items:
+            type: string
+        tokenNotFound:
+          description: 등록된 토큰이 없는 유저 ID 목록
+          type: array
+          items:
+            type: string
+        tokenDeleted:
+          description: FCM이 유효하지 않은 토큰으로 판정해 nachocode 서버에서 삭제한 토큰의 소유 유저 ID 목록 (토픽 구독·구독 해제 전용)
+          type: array
+          items:
+            type: string
+        failed:
+          description: 등록된 토큰이 존재했지만 요청된 동작에 실패한 유저 ID 목록
+          type: array
+          items:
+            type: string
+
+    PushRequestResultString:
+      description: 개인화 푸시 전송 요청 결과 문자열 (JSON 문자열 본문)
+      type: string
+      examples:
+        - Push successfully requested to be sent.
+        - Push scheduling request was successful.
+
+    MessageResponse:
+      description: 요청 성공 메시지
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
+
+    ErrorResponse:
+      description: 공통 오류 응답. 에러 코드 전체 표는 `components.x-nachocode-error-codes`에 있습니다.
+      type: object
+      required: [statusCode, path, code, message]
+      properties:
+        statusCode:
+          description: HTTP 상태 코드
+          type: integer
+        path:
+          description: 요청 경로
+          type: string
+        code:
+          description: 에러 코드 (예 `ERR-AB-VAL-00`)
+          type: string
+        message:
+          description: 에러 메시지
+          type: string
+
+  examples:
+    PushResultExample:
+      summary: 구독 처리 결과
+      value:
+        success: ['USER_ID_1', 'USER_ID_2', 'USER_ID_3']
+        tokenNotFound: ['USER_ID_4', 'USER_ID_5']
+        tokenDeleted: ['USER_ID_7', 'USER_ID_8', 'USER_ID_9']
+        failed: ['USER_ID_6']
+    ErrVal00:
+      summary: ERR-AB-VAL-00 요청 본문 오류
+      value:
+        statusCode: 400
+        path: /api/push/v2/users
+        code: ERR-AB-VAL-00
+        message: Incorrect request. Server cannot understand request.
+    ErrSgk11:
+      summary: ERR-AB-SGK-11 Secret Key 누락
+      value:
+        statusCode: 400
+        path: /api/push/v2/users
+        code: ERR-AB-SGK-11
+        message: Secret key not found.
+    ErrSgk13:
+      summary: ERR-AB-SGK-13 유효하지 않은 Secret Key
+      value:
+        statusCode: 401
+        path: /api/push/v2/users
+        code: ERR-AB-SGK-13
+        message: Incorrect secret key.
+    ErrKsy13:
+      summary: ERR-AB-KSY-13 유효하지 않은 API Key
+      value:
+        statusCode: 404
+        path: /api/push/v2/users
+        code: ERR-AB-KSY-13
+        message: Provided key information not found. Please check your key again.
+    ErrAgk11:
+      summary: ERR-AB-AGK-11 API Key 누락
+      value:
+        statusCode: 400
+        path: /api/push/v2/users
+        code: ERR-AB-AGK-11
+        message: Api key not found.
+    ErrPss91:
+      summary: ERR-AB-PSS-91 미등록 앱
+      value:
+        statusCode: 404
+        path: /api/push/v2/users
+        code: ERR-AB-PSS-91
+        message: App data not found.
+    ErrPss92:
+      summary: ERR-AB-PSS-92 FCM 서비스 계정 미등록
+      value:
+        statusCode: 404
+        path: /api/push/v2/users
+        code: ERR-AB-PSS-92
+        message: FCM Account data not found.
+    ErrCst51:
+      summary: ERR-AB-CST-51 전송 가능한 토픽 없음
+      value:
+        statusCode: 400
+        path: /api/push/v2/topic
+        code: ERR-AB-CST-51
+        message: No topics are available to send.
+    ErrAcs21:
+      summary: ERR-AB-ACS-21 앱 유저 관리 기능 사용 불가
+      value:
+        statusCode: 403
+        path: /api/app-user/v2
+        code: ERR-AB-ACS-21
+        message: This app is unable to handle user preference.
+    ErrAcs22:
+      summary: ERR-AB-ACS-22 이미 탈퇴한 유저
+      value:
+        statusCode: 410
+        path: /api/app-user/v2
+        code: ERR-AB-ACS-22
+        message: User already withdrawn.
+    ErrAcs31:
+      summary: ERR-AB-ACS-31 앱 유저 관리 기능 사용 불가
+      value:
+        statusCode: 403
+        path: /api/app-user/v2/marketing
+        code: ERR-AB-ACS-31
+        message: This app is unable to handle user preference.
+    ErrAcs32:
+      summary: ERR-AB-ACS-32 탈퇴한 유저
+      value:
+        statusCode: 410
+        path: /api/app-user/v2/marketing
+        code: ERR-AB-ACS-32
+        message: User withdrawn. Please re-register.
+
+  x-nachocode-error-codes:
+    description: 개발자 허브 API 페이지의 에러 표를 모은 전체 목록. 명세되지 않은 코드를 받으면 nachocode에 문의하세요.
+    codes:
+      - code: ERR-AB-VAL-00
+        statusCode: 400
+        message: Incorrect request. Server cannot understand request.
+        description: 요청 Body 데이터가 잘못된 경우
+        scope: common
+      - code: ERR-AB-SGK-11
+        statusCode: 400
+        message: Secret key not found.
+        description: Secret Key가 전달되지 않았을 경우
+        scope: common
+      - code: ERR-AB-SGK-13
+        statusCode: 401
+        message: Incorrect secret key.
+        description: 유효하지 않은 Secret Key
+        scope: common
+      - code: ERR-AB-KSY-11
+        statusCode: 400
+        message: Required parameters missing.
+        description: API Key가 전달되지 않았을 경우
+        scope: common
+      - code: ERR-AB-KSY-13
+        statusCode: 404
+        message: Provided key information not found. Please check your key again.
+        description: 유효하지 않은 API Key
+        scope: common
+      - code: ERR-AB-AGK-11
+        statusCode: 400
+        message: Api key not found.
+        description: API Key가 전달되지 않았을 경우
+        scope: common
+      - code: ERR-AB-AGK-12
+        statusCode: 400
+        message: Invalid api key type.
+        description: 유효하지 않은 API Key
+        scope: common
+      - code: ERR-AB-PSS-91
+        statusCode: 404
+        message: App data not found.
+        description: 미등록 앱
+        scope: push
+        operations:
+          - sendPersonalPushToUsers
+          - sendPersonalPushMessages
+          - sendTopicPush
+          - subscribeTopic
+          - unsubscribeTopic
+          - sendPushToAll
+          - sendNachoTopicPush
+      - code: ERR-AB-PSS-92
+        statusCode: 404
+        message: FCM Account data not found.
+        description: FCM Service Account 파일 미등록
+        scope: push
+        operations:
+          - sendPersonalPushToUsers
+          - sendPersonalPushMessages
+          - sendTopicPush
+          - subscribeTopic
+          - unsubscribeTopic
+          - sendPushToAll
+          - sendNachoTopicPush
+      - code: ERR-AB-CST-51
+        statusCode: 400
+        message: No topics are available to send.
+        description: 전송이 불가하거나 존재하지 않는 토픽
+        scope: push
+        operations:
+          - sendTopicPush
+      - code: ERR-AB-ACS-21
+        statusCode: 403
+        message: This app is unable to handle user preference.
+        description: 앱 유저 관리 기능 사용 불가 (회원 탈퇴)
+        scope: app-user
+        operations:
+          - withdrawAppUser
+      - code: ERR-AB-ACS-22
+        statusCode: 410
+        message: User already withdrawn.
+        description: 이미 탈퇴 처리된 유저 (회원 탈퇴)
+        scope: app-user
+        operations:
+          - withdrawAppUser
+      - code: ERR-AB-ACS-31
+        statusCode: 403
+        message: This app is unable to handle user preference.
+        description: 앱 유저 관리 기능 사용 불가 (마케팅 동의)
+        scope: app-user
+        operations:
+          - updateMarketingPreference
+      - code: ERR-AB-ACS-32
+        statusCode: 410
+        message: User withdrawn. Please re-register.
+        description: 이미 탈퇴 처리된 유저 (마케팅 동의)
+        scope: app-user
+        operations:
+          - updateMarketingPreference

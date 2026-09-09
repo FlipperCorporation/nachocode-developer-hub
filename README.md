@@ -42,6 +42,16 @@ nachocode Developer Hub는 [markdownlint](https://marketplace.visualstudio.com/i
 
 ---
 
+## 📐 Open API 명세 (OpenAPI 3.1)
+
+nachocode Open API의 기계 판독 명세는 [`openapi/nachocode-open-api.yaml`](./openapi/nachocode-open-api.yaml)에 있습니다.
+
+- 스펙은 공개된 API 문서(`docs/api/**`)에 있는 내용만 담습니다. 문서와 스펙이 다르면 **스펙이 우선**하며, 두 곳을 함께 맞춥니다.
+- 검증 명령: `npx @redocly/cli lint openapi/nachocode-open-api.yaml` (오류 0이어야 합니다)
+- `x-nachocode-limit` / `x-nachocode-cost` / `x-nachocode-since` / `x-nachocode-notes` / `x-nachocode-doc` 확장 필드는 nachocode MCP 서버가 읽습니다. 이름을 바꾸지 마세요.
+
+---
+
 ## 🚀 시작하기
 
 ### 1. **레포지토리 클론**
@@ -115,6 +125,7 @@ nachocode-developer-hub/
 │   ├── intro.md         # 서비스 소개
 │   ├── sdk/             # SDK 관련 문서
 │   └── api/             # API 관련 문서
+├── openapi/             # Open API OpenAPI 3.1 명세 (nachocode-open-api.yaml)
 ├── src/                 # 커스텀 컴포넌트
 ├── static/              # 정적 파일 (이미지, 로고 등)
 ├── docusaurus.config.js # Docusaurus 설정 파일
