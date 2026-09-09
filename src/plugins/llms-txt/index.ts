@@ -16,7 +16,7 @@ const SITE_URL = 'https://developer.nachocode.io';
 const DOCS_DIR = 'docs';
 const RELEASE_FULL_LIMIT = 3;
 
-type Section = 'guide' | 'api' | 'sdk' | 'releases';
+type Section = 'guide' | 'api' | 'sdk' | 'mcp' | 'releases';
 
 type DocEntry = {
   id: string; // e.g. guide/push/intro
@@ -29,11 +29,12 @@ type DocEntry = {
   draft: boolean;
 };
 
-const SECTION_ORDER: Section[] = ['guide', 'api', 'sdk', 'releases'];
+const SECTION_ORDER: Section[] = ['guide', 'api', 'sdk', 'mcp', 'releases'];
 const SECTION_TITLE: Record<Section, string> = {
   guide: '가이드',
   api: 'API',
   sdk: 'SDK',
+  mcp: 'MCP',
   releases: '릴리즈 노트',
 };
 

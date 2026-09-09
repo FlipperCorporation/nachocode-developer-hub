@@ -183,6 +183,12 @@ const config: Config = {
           position: 'left',
         },
         {
+          to: 'docs/mcp/intro', // MCP 문서 시작 페이지로 이동
+          activeBasePath: 'docs/mcp',
+          label: 'MCP',
+          position: 'left',
+        },
+        {
           to: 'docs/releases/v1/sdk/intro', // SDK 릴리즈노트로 이동
           activeBasePath: 'docs/releases',
           label: '릴리즈노트',
@@ -205,6 +211,7 @@ const config: Config = {
             { label: 'Developer Guide', to: '/docs/guide/intro' },
             { label: 'API', to: '/docs/api/intro' },
             { label: 'SDK', to: '/docs/sdk/intro' },
+            { label: 'MCP', to: '/docs/mcp/intro' },
           ],
         },
         {

@@ -280,6 +280,27 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
+  mcp: [
+    'mcp/intro',
+    {
+      type: 'category',
+      label: '연결하기',
+      link: {
+        type: 'generated-index',
+        title: 'AI 클라이언트 연결하기',
+        description:
+          '사용 중인 AI 도구에 nachocode MCP 서버를 연결하는 방법을 클라이언트별로 안내합니다.',
+        slug: '/mcp/setup',
+      },
+      items: [
+        'mcp/setup/claude-code',
+        'mcp/setup/codex',
+        'mcp/setup/cursor',
+        'mcp/setup/other',
+      ],
+    },
+    'mcp/features',
+  ],
   releases: [
     {
       type: 'category',
