@@ -246,6 +246,25 @@ const config: Config = {
     },
   ],
 
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['en', 'ko'],
+        docsRouteBasePath: '/docs',
+        indexBlog: false,
+        indexPages: false,
+        highlightSearchTermsOnTargetPage: true,
+        searchBarShortcutKeymap: 'ctrl+shift+f',
+        searchResultLimits: 8,
+        searchResultContextMaxLength: 60,
+        // 릴리즈 노트 개별 페이지는 검색 결과를 가리므로 인덱스에서 제외한다 (intro 목록 페이지는 유지).
+        ignoreFiles: [/^docs\/releases\/.*\/release-v-/],
+      },
+    ],
+  ],
+
   plugins: [
     [
       '@docusaurus/plugin-pwa',
