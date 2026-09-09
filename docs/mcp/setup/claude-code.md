@@ -29,7 +29,8 @@ image: /img/og-image.png
 설정은 명령 한 줄이면 끝나고, 현재 단계에서는 API 키나 로그인 없이 바로 사용할 수 있습니다.
 
 :::info 사전 준비
-Claude Code가 설치되어 있어야 합니다. 설치 방법은 [Claude Code 공식 문서](https://code.claude.com/docs/ko/mcp)를 참고하세요.
+Claude Code가 설치되어 있어야 합니다.  
+자세한 설정 방법은 [Claude Code 공식 문서](https://code.claude.com/docs/ko/mcp)를 참고하세요.
 :::
 
 ---

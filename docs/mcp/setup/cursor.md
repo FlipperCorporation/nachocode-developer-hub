@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 sidebar_label: Cursor
 pagination_label: Cursor에 nachocode MCP 연결하기
 description: Cursor에 nachocode MCP 서버를 연결하는 방법을 안내합니다. 원클릭 설치 버튼을 누르거나 mcp.json에 서버 URL을 추가하고, MCP 설정에서 연결 상태를 확인합니다.

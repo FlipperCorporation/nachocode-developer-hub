@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 sidebar_label: Codex
 pagination_label: Codex에 nachocode MCP 연결하기
 description: OpenAI Codex CLI와 Codex IDE 확장에 nachocode MCP 서버를 연결하는 방법을 안내합니다. codex mcp add 명령 또는 config.toml로 등록하고 codex mcp list로 확인합니다.
@@ -29,7 +29,8 @@ image: /img/og-image.png
 CLI와 IDE 확장은 같은 설정 파일(`~/.codex/config.toml`)을 공유하므로 한 번만 등록하면 됩니다.
 
 :::info 사전 준비
-Codex CLI가 설치되어 있어야 합니다. 설치 방법과 MCP 설정 상세는 [Codex 공식 문서](https://developers.openai.com/codex/mcp)를 참고하세요.
+Codex CLI가 설치되어 있어야 합니다.  
+설치 방법과 MCP 설정 상세는 [Codex 공식 문서](https://developers.openai.com/codex/mcp)를 참고하세요.
 :::
 
 ---

@@ -75,12 +75,15 @@ MCP 서버는 AI 에이전트를 위한 **nachocode 창구**입니다.
 원격 MCP 서버(Streamable HTTP)를 지원하는 클라이언트라면 설정에서 서버 URL만 추가하면 됩니다.  
 자주 쓰는 도구별 연결 방법은 아래 문서에서 단계별로 안내합니다.
 
-| 클라이언트                                            | 연결 방법                               | 안내 문서                                   |
-| ----------------------------------------------------- | --------------------------------------- | ------------------------------------------- |
-| **Claude Code**                                       | 터미널 명령 한 줄 또는 `.mcp.json`      | [Claude Code 연결하기](./setup/claude-code) |
-| **Cursor**                                            | 원클릭 설치 버튼 또는 `mcp.json`        | [Cursor 연결하기](./setup/cursor)           |
-| **Codex** (OpenAI Codex CLI · IDE 확장)               | `codex mcp add` 명령 또는 `config.toml` | [Codex 연결하기](./setup/codex)             |
-| **Claude.ai · Claude Desktop · ChatGPT · VS Code 등** | 각 도구의 MCP(커넥터) 설정에서 URL 추가 | [기타 클라이언트 연결하기](./setup/other)   |
+| 클라이언트                              | 연결 방법                                        | 안내 문서                                   |
+| --------------------------------------- | ------------------------------------------------ | ------------------------------------------- |
+| **Claude Code**                         | 터미널 명령 한 줄 또는 `.mcp.json`               | [Claude Code 연결하기](./setup/claude-code) |
+| **Codex** (OpenAI Codex CLI · IDE 확장) | `codex mcp add` 명령 또는 `config.toml`          | [Codex 연결하기](./setup/codex)             |
+| **Cursor**                              | 원클릭 설치 버튼 또는 `mcp.json`                 | [Cursor 연결하기](./setup/cursor)           |
+| **VS Code** (GitHub Copilot)            | `.vscode/mcp.json` 또는 **MCP: Add Server** 명령 | [VS Code 연결하기](./setup/vscode)          |
+| **Claude.ai · Claude Desktop**          | 설정 › 커넥터에서 커스텀 커넥터 추가             | [Claude.ai 연결하기](./setup/claude-ai)     |
+| **ChatGPT**                             | 개발자 모드에서 커넥터 추가                      | [ChatGPT 연결하기](./setup/chatgpt)         |
+| **그 밖의 도구**                        | 각 도구의 MCP 설정에서 URL 추가                  | [기타 클라이언트 연결하기](./setup/other)   |
 
 ---
 
