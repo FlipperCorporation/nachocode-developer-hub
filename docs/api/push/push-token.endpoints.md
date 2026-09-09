@@ -31,9 +31,10 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/API/push.png'/>
 
-> 🔔 **최신화 일자:** 2026-01-13
+> 🔔 **최신화 일자:** 2026-09-09
 
 <!-- 2026-01-12 최초 생성(endpoint페이지 분리) / User ID로 토큰 삭제 API 생성 -->
+<!-- 2026-09-09 userIds 최대 개수 100 → 500 수정 -->
 
 <br/>
 
@@ -50,7 +51,7 @@ nachocode 푸시 토큰 관리 API를 활용하여 푸시 토큰을 관리 할 �
 
 :::warning 제한
 
-**요청 당 userId의 최대 개수는 100개입니다**.
+**요청 당 userId의 최대 개수는 500개입니다**.
 
 :::
 
@@ -62,14 +63,14 @@ nachocode 푸시 토큰 관리 API를 활용하여 푸시 토큰을 관리 할 �
 
   | **Parameter** | **Type** | **Required** | **Description** |
   | ------------- | -------- | ------------ | --------------- |
-  | x-api-key     | `string` | ✔           | API 키          |
-  | x-secret-key  | `string` | ✔           | Secret 키       |
+  | x-api-key     | `string` | ✔            | API 키          |
+  | x-secret-key  | `string` | ✔            | Secret 키       |
 
 - **Body**
 
   | **Parameter** | **Type**               | **Required** | **Constraints**     | **Description**            |
   | ------------- | ---------------------- | ------------ | ------------------- | -------------------------- |
-  | userIds       | `(string \| number)[]` | ✔           | 길이 100이하의 배열 | 토큰을 삭제할 유저 ID 배열 |
+  | userIds       | `(string \| number)[]` | ✔            | 길이 500이하의 배열 | 토큰을 삭제할 유저 ID 배열 |
 
 - **Example**
 

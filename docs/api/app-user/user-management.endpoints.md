@@ -22,9 +22,10 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/API/appuser.png'/>
 
-> 🔔 **최신화 일자:** 2026-06-16
+> 🔔 **최신화 일자:** 2026-09-09
 
 <!-- 2026-06-05 최초 생성 / 회원탈퇴 API 생성 -->
+<!-- 2026-09-09 cURL 예시 DELETE로 수정 -->
 
 <br/>
 
@@ -57,19 +58,19 @@ nachocode 앱 유저 관리 API를 활용하여 회원 상태를 관리 할 수 
 
   | **Parameter** | **Type** | **Required** | **Description** |
   | ------------- | -------- | ------------ | --------------- |
-  | x-api-key     | `string` | ✔           | API 키          |
-  | x-secret-key  | `string` | ✔           | Secret 키       |
+  | x-api-key     | `string` | ✔            | API 키          |
+  | x-secret-key  | `string` | ✔            | Secret 키       |
 
 - **Body**
 
   | **Parameter** | **Type**           | **Required** | **Constraints** | **Description**              |
   | ------------- | ------------------ | ------------ | --------------- | ---------------------------- |
-  | userId        | `string \| number` | ✔           |                 | 삭제(탈퇴) 처리 할 유저의 ID |
+  | userId        | `string \| number` | ✔            |                 | 삭제(탈퇴) 처리 할 유저의 ID |
 
 - **Example**
 
   ```bash
-  curl -X POST "https://app.nachocode.io/api/app-user/v2" \
+  curl -X DELETE "https://app.nachocode.io/api/app-user/v2" \
     -H "Content-Type: application/json" \
     -H "x-api-key: API_KEY_VALUE" \
     -H "x-secret-key: SECRET_KEY_VALUE" \

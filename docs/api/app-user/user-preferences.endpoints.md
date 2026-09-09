@@ -23,9 +23,10 @@ import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-imag
 
 <ThumbnailImage src='/img/docs/thumbnails/API/appuser.png'/>
 
-> 🔔 **최신화 일자:** 2026-06-16
+> 🔔 **최신화 일자:** 2026-09-09
 
 <!-- 2026-06-05 최초 생성 / 마케팅 푸시 회원 탈퇴 관리 API 생성 -->
+<!-- 2026-09-09 cURL 예시 PATCH로 수정, 오류 예시 path에 /v2 추가 -->
 
 <br/>
 
@@ -104,7 +105,7 @@ nachocode 마케팅 수신 동의 관리 API를 활용하여 앱 유저의 마�
 - **Example**
 
   ```bash
-  curl -X POST "https://app.nachocode.io/api/app-user/v2/marketing" \
+  curl -X PATCH "https://app.nachocode.io/api/app-user/v2/marketing" \
     -H "Content-Type: application/json" \
     -H "x-api-key: API_KEY_VALUE" \
     -H "x-secret-key: SECRET_KEY_VALUE" \
@@ -169,7 +170,7 @@ nachocode 마케팅 수신 동의 관리 API를 활용하여 앱 유저의 마�
   ```json
   {
     "statusCode": 410,
-    "path": "/api/app-user/marketing",
+    "path": "/api/app-user/v2/marketing",
     "code": "ERR-AB-ACS-32",
     "message": "User withdrawn. Please re-register."
   }
