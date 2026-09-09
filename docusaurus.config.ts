@@ -2,6 +2,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 
+import llmsTxtPlugin from './src/plugins/llms-txt';
+
 const config: Config = {
   title: 'nachocode Developer',
   tagline: '가장 빠르고 쉬운 노코드 & 로우코드 앱 빌더, nachocode',
@@ -304,6 +306,7 @@ const config: Config = {
         ],
       },
     ],
+    llmsTxtPlugin,
   ],
 };
 
