@@ -93,7 +93,7 @@ export declare type NaverUserData = {
   id: string;
   gender?: 'F' | 'M';
   name?: string;
-  nickName?: string;
+  nickname?: string;
   email?: string;
   mobile?: string;
   mobile_e164?: string;
