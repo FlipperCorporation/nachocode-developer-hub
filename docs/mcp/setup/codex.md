@@ -21,7 +21,7 @@ image: /img/og-image.png
 
 # Codex에 연결하기 {#codex}
 
-> 🔔 **최신화 일자:** 2026-09-09
+> 🔔 **최신화 일자:** 2026-09-11
 
 <!-- 2026-09-09 최초 생성 -->
 
@@ -53,7 +53,8 @@ https://mcp.nachocode.io/mcp
 codex mcp add nachocode --url https://mcp.nachocode.io/mcp
 ```
 
-현재 단계에서는 인증이 없으므로 `codex mcp login` 단계가 필요하지 않습니다. nachocode 계정 로그인이 추가되면 이 문서에서 안내합니다.
+현재 단계에서는 인증이 없으므로 `codex mcp login` 단계가 필요하지 않습니다.  
+nachocode 계정 로그인이 추가되면 이 문서에서 안내합니다.
 
 ---
 
@@ -93,7 +94,7 @@ codex
 - ex. “nachocode SDK로 인앱 결제 구현하는 순서 알려 줘”
 
 :::tip 도구 전체 목록
-➡️ [제공 기능](../features)에서 사용할 수 있는 도구 17개를 확인할 수 있습니다.
+➡️ [제공 기능](../features)에서 사용할 수 있는 도구 7개를 확인할 수 있습니다.
 :::
 
 ---
