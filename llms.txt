@@ -1,0 +1,253 @@
+# nachocode Developer Hub
+
+> nachocode(하이브리드 앱 빌더)의 Client SDK, Open API, 앱소스(App Source) 개발자 문서입니다. 한국어로 작성되어 있습니다.
+
+nachocode는 웹사이트를 Android·iOS 네이티브 앱으로 만들어 주는 노코드·로우코드 앱 빌더입니다. 이 사이트는 웹 클라이언트에서 네이티브 기능을 호출하는 nachocode Client SDK, 서버에서 푸시 알림과 앱 유저를 관리하는 Open API, 앱의 기반 소스 코드인 앱소스의 가이드와 릴리즈 노트를 제공합니다.
+
+## 가이드
+
+- [nachocode 서비스 소개](https://developer.nachocode.io/docs/guide/intro): nachocode는 웹 개발자를 위한 하이브리드 앱 빌드 플랫폼입니다. 강력한 SDK와 API 개발자 도구를 통해 푸시 알림, 인앱 결제, 생체 인증, QR 코드 스캐너, 디바이스 제어 등 고급 네이티브 기능을 손쉽게 구현하여, 혁신적인 하이브리드 앱 개발을 실현할 수 있습니다. nachocode 개발자 가이드에서 각 기능을 원활히 사용하기 위한 설정과 사용법을 확인하세요.
+- [앱소스 (App Source)](https://developer.nachocode.io/docs/guide/app-source): nachocode의 앱소스 (App Source)는 웹사이트를 네이티브 앱으로 만들어줄 때 사용되는 앱의 기반 소스 코드입니다. 푸시알림, 생체 인증, QR 스캐너, 디바이스 제어 등 고급 네이티브 기능이 포함되어있습니다. 새로운 기능이 나오면 버전이 올라갑니다.
+- [푸시 알림 개요](https://developer.nachocode.io/docs/guide/push/intro): nachocode 푸시 알림 가이드는 다양한 푸시 알림 유형의 개념, 설정, 활용법까지 포괄적으로 안내합니다.
+- [푸시 알림 이해하기](https://developer.nachocode.io/docs/guide/push/understanding): 푸시 알림(Push Notification)이 왜 중요한지, 언제 보내야 하는지, 어떻게 사용자 경험을 개선하는지, 왜 웹을 앱으로 확장해야 하는지 상세히 안내합니다.
+- [푸시 토큰](https://developer.nachocode.io/docs/guide/push/push-token): nachocode 푸시 토큰 가이드는 SDK 및 API를 활용한 개인 맞춤형 푸시 알림을 전송하기 위한 FCM 디바이스 토큰 등록부터 전송, 결과 분석 방법을 안내합니다.
+- [개인화 푸시](https://developer.nachocode.io/docs/guide/push/personal-push): nachocode 개인화 푸시 가이드는 SDK 및 API를 활용한 개인 맞춤형 푸시 알림 전송 방법을 안내합니다. FCM 디바이스 토큰 등록부터 전송, 결과 분석까지 쉽고 효율적으로 관리할 수 있습니다.
+- [토픽 푸시](https://developer.nachocode.io/docs/guide/push/topic-push): nachocode 토픽 푸시 가이드는 SDK 및 API를 활용한 구독형 푸시 알림 전송 방법을 안내합니다. 토픽 구독부터 구독해제, 전송, 결과 분석까지 쉽고 효율적으로 관리할 수 있습니다.
+- [전체 푸시](https://developer.nachocode.io/docs/guide/push/all-push): nachocode 전체 푸시 가이드는 API를 활용한 전체 푸시 알림 전송 방법을 안내합니다. 사전 작업 필요없이 유저의 모든 디바이스로 푸시 알림을 전송할 수 있습니다.
+- [로컬 푸시](https://developer.nachocode.io/docs/guide/push/local-push): nachocode 로컬 푸시 가이드는 SDK를 활용한 디바이스 내 푸시 알림 예약 및 취소 방법을 안내합니다. 즉시 발송부터 예약 발송, 알림 취소까지 효과적으로 관리할 수 있습니다.
+- [마케팅 푸시](https://developer.nachocode.io/docs/guide/push/marketing-push): nachocode 마케팅 푸시 가이드는 정보통신망법을 준수하여 광고성 푸시 알림을 관리하는 방법을 안내합니다. 대시보드에서 노코드로 제작하는 광고성 푸시 동의 팝업 연동 방법부터 SDK로 직접 구현하는 방법까지 상세히 설명합니다.
+- [딥링크 개요](https://developer.nachocode.io/docs/guide/deep-link/intro): nachocode 딥링크 가이드는 다양한 딥링크 유형의 개념, 설정, 활용법까지 포괄적으로 안내합니다.
+- [URI 스킴 (URI Scheme)](https://developer.nachocode.io/docs/guide/deep-link/uri-scheme): 가장 기본적인 모바일 앱 딥링크인 URI 스킴 (URI Scheme)의 개념과 nachocode 대시보드에서 앱 설정하는 방법, nachocode에서의 URI 앱 스킴 활용법을 안내합니다.
+- [인텐트 스킴 (Intent Scheme)](https://developer.nachocode.io/docs/guide/deep-link/intent-scheme): Android 플랫폼에서 제공하는 인텐트 스킴 (Intent Scheme)의 개념과 nachocode에서의 인텐트 스킴 활용법을 안내합니다.
+- [유니버셜 링크 (Universal Link)](https://developer.nachocode.io/docs/guide/deep-link/universal-link): Apple iOS의 표준 딥링크 방식인 유니버셜 링크 (Universal Link)에 대한 개념과 nachocode에서 유니버셜 링크를 설정하는 방법, 활용법을 안내합니다.
+- [앱 링크 (App Link)](https://developer.nachocode.io/docs/guide/deep-link/app-link): Google Android의 표준 딥링크 방식인 앱 링크 (App Link)에 대한 개념과 nachocode에서 앱링크를 설정하는 방법, 활용법을 안내합니다.
+- [나쵸 링크 (nachocode.link)](https://developer.nachocode.io/docs/guide/deep-link/nachocode-link): nachocode에서 제공하는 적응형 통합 딥링크 서비스, 나쵸 링크 (nachocode.link)의 개념과 설정하는 방법, 사용 방법 등을 안내합니다. 나쵸 링크로 특정 페이지를 여는 방법과 실제 고객 활용 사례도 함께 소개합니다.
+- [인앱 결제 (In App Purchase)](https://developer.nachocode.io/docs/guide/iap): nachocode 인앱 결제 가이드는 Android 및 iOS 환경에서 결제 프로세스부터 검증, 웹훅 설정, 에러 처리까지 구체적으로 안내합니다. 쉽고 안전한 인앱 결제 설정으로 사용자의 결제 경험을 강화하세요.
+- [웹훅 개요](https://developer.nachocode.io/docs/guide/webhook/overview): nachocode 웹훅 가이드는 웹훅 이벤트 타입, 요청 방식, 테스트 방법 등 nachocode 플랫폼에서 발생한 이벤트를 서버로 전달하는 웹훅 정책을 설명합니다.
+- [인앱결제 구매 웹훅](https://developer.nachocode.io/docs/guide/webhook/iap/purchase): nachocode 인앱결제 구매 웹훅 이벤트의 요청 본문 예시와 데이터 구조를 설명합니다. 웹훅을 통해 앱 사용자의 구매 이벤트를 실시간으로 수신 및 처리할 수 있습니다.
+- [인앱결제 환불 웹훅](https://developer.nachocode.io/docs/guide/webhook/iap/refund): nachocode 인앱결제 환불 웹훅 이벤트의 요청 본문 예시와 상세한 데이터 구조를 설명합니다. 웹훅을 통해 앱 사용자 환불 이벤트를 수신하여 빠르게 처리할 수 있습니다.
+- [개인화 푸시 전송불가 유저 웹훅](https://developer.nachocode.io/docs/guide/webhook/personal-push/unavailable-users): nachocode 개인화 푸시 전송 후 전송 불가한 유저의 목록을 전달받는 이벤트의 요청 본문 예시와 데이터 구조를 설명합니다. 웹훅을 통해 전달받은 유저의 목록을 다음번 전송 시에 제외시켜 최적화에 사용할 수 있습니다.
+- [User Agent 이해하기](https://developer.nachocode.io/docs/guide/user-agent/user-agent-definition): nachocode 앱의 User Agent 설정 및 정책을 안내합니다. 본 가이드는 User Agent 정의부터 nachocode가 설정하는 방식, 예외 처리 정책까지 포함하며 외부 연동 시 유용한 정보를 제공합니다.
+- [User Agent 설정하기](https://developer.nachocode.io/docs/guide/user-agent/user-agent-configuration): nachocode 앱의 User Agent 설정 및 정책을 안내합니다. 본 가이드는 User Agent 정의부터 nachocode가 설정하는 방식, 예외 처리 정책까지 포함하며 외부 연동 시 유용한 정보를 제공합니다.
+- [샌드박스 앱 이해하기](https://developer.nachocode.io/docs/guide/sandbox/sandbox-overview): nachocode에서 제공하는 샌드박스 앱 빌드란 무엇이고, 왜 필요한지, 어떤 점이 좋은지 상세히 설명합니다.
+- [웹 인스펙터 설정하기](https://developer.nachocode.io/docs/guide/sandbox/sandbox-inspector): Android, iOS 웹 인스펙터를 활용해 실기기에서 웹뷰(WebView)의 웹 클라이언트 디버깅을 할 수 있는 방법을 안내합니다. 웹뷰(WebView) 앱을 개발하다 보면 실제 모바일 디바이스에서의 동작을 확인하고 디버깅해야 할 때가 많습니다. 웹 인스펙터는 Android/iOS 디바이스와의 연결을 통해 이러한 작업을 가능하게 합니다.
+- [샌드박스 앱 디버깅하기](https://developer.nachocode.io/docs/guide/sandbox/sandbox-debugging): nachocode 샌드박스 앱에서 Android/iOS 웹 인스펙터를 활용해 실기기에서 웹 디버깅을 할 수 있는 방법을 안내합니다.
+- [안전 영역 (Safe Area)](https://developer.nachocode.io/docs/guide/safe-area): nachocode 안전 영역 (Safe Area) 가이드는 iOS와 Android에서 디바이스 안전 영역을 처리하는 방법을 제공합니다. SDK 메서드와 CSS 변수를 활용한 구현 방법을 안내합니다.
+- [스토어 앱 ID 확인하기](https://developer.nachocode.io/docs/guide/check-store-id): 본 가이드에서는 Android와 iOS에서 자신의 구글 플래이 스토어(Google Play Store)와 애플 앱스토어(Apple App Store) 앱 ID 확인하는 방법을 안내합니다.
+- [자주 묻는 질문 (FAQ)](https://developer.nachocode.io/docs/guide/faq): nachocode 개발 시 자주 묻는 질문과 개발 팁을 확인할 수 있습니다. 환경 구분, 버전 관리, API 키 관리 등 실무에 필요한 핵심 내용을 담았습니다.
+
+## API
+
+- [nachocode API 개요](https://developer.nachocode.io/docs/api/intro): nachocode API를 통해 푸시 알림을 쉽고 빠르게 전송할 수 있습니다. API의 기본 사항과 인증 방법, 사용 방법을 안내합니다.
+- [푸시 토큰 관리 API Endpoints](https://developer.nachocode.io/docs/api/push/push-token.endpoints): nachocode 푸시 토큰 관리 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
+- [개인화 푸시 알림 API Endpoints](https://developer.nachocode.io/docs/api/push/personal-push.endpoints): nachocode 개인화 푸시 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
+- [토픽 푸시 알림 API Endpoints](https://developer.nachocode.io/docs/api/push/topic-push.endpoints): nachocode 토픽 푸시 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
+- [전체 푸시 알림 API Endpoints](https://developer.nachocode.io/docs/api/push/all-push.endpoints): nachocode 전체 푸시 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
+- [앱 유저 관리 API Endpoints](https://developer.nachocode.io/docs/api/app-user/user-management.endpoints): nachocode 앱 유저 관리 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
+- [마케팅 동의 관리 API Endpoints](https://developer.nachocode.io/docs/api/app-user/user-preferences.endpoints): nachocode 앱 유저의 마케팅 푸시 알림 수신 동의 관리 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
+- [푸시알림 V2 API Endpoints](https://developer.nachocode.io/docs/api/push/v2/endpoints): nachocode 개인화 푸시 API의 모든 엔드포인트에 대한 요청과 응답 구조 및 사용 방법을 안내합니다.
+
+## SDK
+
+- [nachocode Client SDK 개요](https://developer.nachocode.io/docs/sdk/intro): nachocode Javascript Client SDK는 웹 개발자를 위한 강력한 개발 도구로, 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어, QR 스캐너 등)을 손쉽게 웹에 통합할 수 있도록 지원합니다. SDK를 활용하여 혁신적으로 네이티브 앱을 개발하세요.
+- [nachocode Client SDK 시작하기](https://developer.nachocode.io/docs/sdk/getting-started): nachocode Javascript Client SDK 설치부터 초기화, 기본 사용법까지 한 번에 익히는 시작 가이드입니다. SDK를 활용하여 다양한 네이티브 기능 (푸시 알림, 인증, 디바이스 제어, QR 스캐너 등)을 손쉽게 웹에 통합하여 네이티브 앱을 개발하세요.
+- [TypeScript 지원](https://developer.nachocode.io/docs/sdk/typescript-support): nachocode Client SDK의 TypeScript 지원 가이드입니다. 타입스크립트 프로젝트에 nachocode SDK를 설치하고 사용하는 방법을 안내합니다.
+- [React 지원](https://developer.nachocode.io/docs/sdk/react-support): nachocode Client SDK의 React 지원 가이드입니다. React 환경의 프로젝트에 nachocode Client SDK를 설치하고 사용하는 방법을 안내합니다.
+- [애플리케이션 (app)](https://developer.nachocode.io/docs/sdk/namespaces/app): nachocode SDK의 `app` 네임스페이스는 앱의 이름, 버전, 패키지명 등 앱 정보를 조회하거나 앱의 최초 실행 여부를 확인하는 기능을 제공합니다.
+- [인증 (authentication)](https://developer.nachocode.io/docs/sdk/namespaces/authentication): nachocode SDK의 `authentication` 네임스페이스는 생체 인증(Biometrics)을 지원하여 앱 내에서 사용자 인증을 안전하고 간편하게 처리할 수 있도록 합니다.
+- [백 키 (backkey)](https://developer.nachocode.io/docs/sdk/namespaces/backkey): nachocode SDK의 `backkey` 네임스페이스는 Android 환경에서 네이티브 백 키 이벤트를 사용자 정의하고 관리할 수 있는 기능을 제공합니다.
+- [브라우저 (browser)](https://developer.nachocode.io/docs/sdk/namespaces/browser): nachocode SDK의 `browser` 네임스페이스는 앱 내에서 URL을 열 때 외부 또는 내부 브라우저를 선택하여 열 수 있는 기능을 제공합니다.
+- [클립보드 (clipboard)](https://developer.nachocode.io/docs/sdk/namespaces/clipboard): nachocode SDK의 `clipboard` 네임스페이스는 디바이스의 네이티브 클립보드와 데이터를 쉽게 주고받을 수 있는 기능을 제공합니다.
+- [디바이스 (device)](https://developer.nachocode.io/docs/sdk/namespaces/device): nachocode SDK의 `device` 네임스페이스를 사용하여 디바이스의 모델, OS 버전, 언어, 배터리 상태, 네트워크 연결 정보 등을 조회하고, 디바이스 유형(Android/iOS)을 확인할 수 있습니다.
+- [환경 (env)](https://developer.nachocode.io/docs/sdk/namespaces/env): nachocode SDK의 `env` 네임스페이스는 SDK의 버전 정보, 실행 환경(Web/App), 샌드박스 환경 여부 등을 조회할 수 있는 기능을 제공합니다.
+- [이벤트 (event)](https://developer.nachocode.io/docs/sdk/namespaces/event): nachocode SDK의 `event` 네임스페이스는 SDK 초기화, 앱 활성화 상태 변경, 네트워크 변화 등의 다양한 이벤트를 처리할 수 있도록 지원합니다.
+- [인앱결제 (iap)](https://developer.nachocode.io/docs/sdk/namespaces/iap): nachocode SDK의 `iap` 네임스페이스를 통해 Android 및 iOS 환경에서 인앱결제를 손쉽게 처리하고, 결제 성공, 실패, 웹훅(Webhook) 처리까지 효율적으로 관리하세요.
+- [로딩 (loading)](https://developer.nachocode.io/docs/sdk/namespaces/loading): nachocode SDK의 `loading` 네임스페이스는 네이티브 로딩 인디케이터를 제어하는 기능을 제공합니다.
+- [로케일 (locale)](https://developer.nachocode.io/docs/sdk/namespaces/locale): nachocode SDK의 `locale` 네임스페이스를 사용하여 앱에 설정된 국가 목록을 조회하고, 현재 앱 국가를 조회하거나 변경할 수 있습니다. 다국가 지원 앱 구현에 활용할 수 있습니다.
+- [위치 (location)](https://developer.nachocode.io/docs/sdk/namespaces/location): nachocode SDK의 location 네임스페이스는 디바이스의 현재 위치를 확인하는 기능을 제공합니다. 웹, Android, iOS 플랫폼 모두에서 사용 가능합니다.
+- [네비게이션 (navigation)](https://developer.nachocode.io/docs/sdk/namespaces/navigation): nachocode SDK의 `navigation` 네임스페이스는 앱의 네비게이션 스택을 제어하고, 스와이프 제스처 설정, 루트로 리셋하는 기능을 제공합니다.
+- [권한 (permission)](https://developer.nachocode.io/docs/sdk/namespaces/permission): nachocode SDK의 permission 네임스페이스는 앱의 필수 권한(카메라, 위치, 마이크, 푸시 알림 등)의 허용 여부를 조회하고 사용자에게 권한을 요청하는 기능을 제공합니다.
+- [내부 저장소 (preference)](https://developer.nachocode.io/docs/sdk/namespaces/preference): nachocode SDK의 preference 네임스페이스를 사용해 앱의 네이티브 내부 저장소에 데이터를 저장, 조회 및 삭제하여 앱 설정이나 사용자 데이터를 간편하게 관리하세요.
+- [푸시 알림 (push)](https://developer.nachocode.io/docs/sdk/namespaces/push): nachocode SDK의 push 네임스페이스는 FCM 디바이스 푸시 토큰 관리, 로컬 푸시 알림 예약 및 취소 기능을 제공하여 앱 사용자와의 효과적인 소통을 돕습니다.
+- [스캐너 (scanner)](https://developer.nachocode.io/docs/sdk/namespaces/scanner): nachocode SDK의 scanner 네임스페이스를 이용하여 앱에서 QR 코드 스캐너를 구현하고, 스캔한 데이터를 손쉽게 처리하거나 URL을 즉시 실행할 수 있습니다.
+- [설정 (setting)](https://developer.nachocode.io/docs/sdk/namespaces/setting): nachocode SDK의 setting 네임스페이스로 OS 설정 화면 접근, Pull to Refresh 기능 설정, 화면 확대(Zoom) 지원 활성화 등 앱의 사용자 환경을 효율적으로 제어하세요.
+- [공유 (share)](https://developer.nachocode.io/docs/sdk/namespaces/share): nachocode SDK의 share 네임스페이스는 네이티브 공유 UI로 콘텐츠 공유 기능을 손쉽게 제공합니다.
+- [스토어 (store)](https://developer.nachocode.io/docs/sdk/namespaces/store): nachocode SDK의 store 네임스페이스는 앱스토어 및 플레이스토어 인터랙션 기능을 제공하여 앱 설치나 리뷰 요청을 유도할 수 있도록 지원합니다.
+- [탭바 (tabbar)](https://developer.nachocode.io/docs/sdk/namespaces/tabbar): nachocode SDK의 tabbar 네임스페이스를 통해 앱 내 탭바의 표시 여부를 동적으로 관리하거나, 특정 탭으로 이동하는 사용자 인터페이스를 효과적으로 제어할 수 있습니다.
+- [통신사 (telecom)](https://developer.nachocode.io/docs/sdk/namespaces/telecom): nachocode SDK의 `telecom` 네임스페이스를 사용하여 통신사 관련 사용자 토큰을 관리할 수 있습니다. 통신사 연동 서비스 구현에 활용할 수 있습니다.
+- [사용자 (user)](https://developer.nachocode.io/docs/sdk/namespaces/user): nachocode SDK의 `user` 네임스페이스를 사용하여 네이티브 레이어에서 사용자 고유 ID를 설정, 조회, 삭제할 수 있습니다. 사용자 추적 및 분석에 활용할 수 있습니다.
+- [진동 (vibration)](https://developer.nachocode.io/docs/sdk/namespaces/vibration): nachocode SDK의 vibration 네임스페이스를 사용하여 디바이스 진동 및 햅틱 피드백 기능을 간단히 구현하고, 사용자 환경에 따라 활성화 또는 비활성화할 수 있습니다.
+- [애플 (apple) - 연동하기](https://developer.nachocode.io/docs/sdk/integrations/apple/integrate): nachocode SDK의 `apple` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. Developer Apple 대시보드, nachocode 대시보드에서 Apple 네이티브 기능을 쉽게 연동하는 방법을 제공합니다.
+- [애플 (apple) - 레퍼런스](https://developer.nachocode.io/docs/sdk/integrations/apple/reference): nachocode SDK의 `apple` 네임스페이스는 Apple 소셜 로그인과 사용자 정보 조회 기능을 제공하여 iOS 네이티브 기능과의 통합을 지원합니다.
+- [앱스플라이어 (appsflyer) - 연동하기](https://developer.nachocode.io/docs/sdk/integrations/appsflyer/integrate): nachocode SDK의 `appsflyer` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. AppsFlyer 대시보드에서 앱 등록부터 nachocode 연동까지의 상세한 방법을 제공합니다.
+- [앱스플라이어 (appsflyer) - 레퍼런스](https://developer.nachocode.io/docs/sdk/integrations/appsflyer/reference): nachocode SDK의 `appsflyer` 네임스페이스는 AppsFlyer 마케팅 어트리뷰션 및 사용자 트래킹, 커스텀 이벤트 로깅, 유저 ID 관리 등 AppsFlyer 연동 기능을 쉽게 구현할 수 있습니다.
+- [페이스북 (facebook) - 연동하기](https://developer.nachocode.io/docs/sdk/integrations/facebook/integrate): nachocode SDK의 `facebook` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. 페이스북 개발자 센터와 nachocode 대시보드에서의 네이티브 로그인 연동 설정하는 상세한 방법을 제공합니다.
+- [페이스북 (facebook) - 레퍼런스](https://developer.nachocode.io/docs/sdk/integrations/facebook/reference): nachocode SDK의 `facebook` 네임스페이스로 페이스북 네이티브 로그인 연동 및 사용자 데이터 조회, 로그인 상태 확인, 로그아웃 등 페이스북 인증 기능을 쉽게 구현할 수 있습니다.
+- [파이어베이스 (firebase) - 연동하기](https://developer.nachocode.io/docs/sdk/integrations/firebase/integrate): nachocode SDK의 `firebase` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. Firebase 프로젝트 설정 및 nachocode 대시보드에서 Firebase Analytics를 연동하는 상세한 방법을 제공합니다.
+- [파이어베이스 (firebase) - 레퍼런스](https://developer.nachocode.io/docs/sdk/integrations/firebase/reference): nachocode SDK의 `firebase` 네임스페이스로 Firebase Analytics 이벤트 로깅, 사용자 속성 설정 및 삭제 기능을 쉽게 구현할 수 있습니다.
+- [구글 (google) - 연동하기](https://developer.nachocode.io/docs/sdk/integrations/google/integrate): nachocode SDK의 `google` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. Firebase, Play Console, nachocode 대시보드에서 구글 네이티브 로그인을 연동하는 상세한 방법을 제공합니다.
+- [구글 (google) - 레퍼런스](https://developer.nachocode.io/docs/sdk/integrations/google/reference): nachocode SDK의 `google` 네임스페이스로 구글 네이티브 로그인 연동 및 사용자 데이터 조회, 로그인 상태 확인, 로그아웃 등 구글 인증 기능을 쉽게 구현할 수 있습니다.
+- [카카오 (kakao) - 연동하기](https://developer.nachocode.io/docs/sdk/integrations/kakao/integrate): nachocode SDK의 `kakao` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. 카카오 개발자 대시보드, nachocode 대시보드에서 네이티브 로그인 및 카카오톡 공유 기능을 쉽게 연동하는 방법을 제공합니다.
+- [카카오 (kakao) - 레퍼런스](https://developer.nachocode.io/docs/sdk/integrations/kakao/reference): nachocode SDK의 `kakao` 네임스페이스로 카카오 네이티브 로그인 연동, 사용자 데이터 조회, 및 카카오톡 공유 기능을 쉽게 구현할 수 있습니다.
+- [네이버 (naver) - 연동하기](https://developer.nachocode.io/docs/sdk/integrations/naver/integrate): nachocode SDK의 `naver` 네임스페이스를 사용하기 위한 필수 사전 준비 절차를 설명합니다. 네이버 개발자 센터와 nachocode 대시보드에서의 네이티브 로그인 연동 설정하는 상세한 방법을 제공합니다.
+- [네이버 (naver) - 레퍼런스](https://developer.nachocode.io/docs/sdk/integrations/naver/reference): nachocode SDK의 `naver` 네임스페이스로 네이버 네이티브 로그인 연동 및 사용자 데이터 조회, 로그인 상태 확인, 로그아웃 등 네이버 인증 기능을 쉽게 구현할 수 있습니다.
+
+## MCP
+
+- [nachocode MCP 개요](https://developer.nachocode.io/docs/mcp/intro): nachocode MCP 서버는 Claude, ChatGPT, Cursor, Codex 같은 AI 에이전트를 nachocode에 연결합니다. 개발자 문서·SDK·Open API 지식부터 앱 운영 작업까지, MCP의 개념과 서버 정보, 지원 클라이언트, 제공 범위를 안내합니다.
+- [Claude Code에 연결하기](https://developer.nachocode.io/docs/mcp/setup/claude-code): Claude Code에 nachocode MCP 서버를 연결하는 방법을 단계별로 안내합니다. 터미널 명령 한 줄로 등록하거나 .mcp.json으로 프로젝트에 공유하고, /mcp 메뉴에서 연결을 확인합니다.
+- [Codex에 연결하기](https://developer.nachocode.io/docs/mcp/setup/codex): OpenAI Codex CLI와 Codex IDE 확장에 nachocode MCP 서버를 연결하는 방법을 안내합니다. codex mcp add 명령 또는 config.toml로 등록하고 codex mcp list로 확인합니다.
+- [Cursor에 연결하기](https://developer.nachocode.io/docs/mcp/setup/cursor): Cursor에 nachocode MCP 서버를 연결하는 방법을 안내합니다. 원클릭 설치 버튼을 누르거나 mcp.json에 서버 URL을 추가하고, MCP 설정에서 연결 상태를 확인합니다.
+- [VS Code에 연결하기](https://developer.nachocode.io/docs/mcp/setup/vscode): VS Code(GitHub Copilot)에 nachocode MCP 서버를 연결하는 방법을 안내합니다. .vscode/mcp.json에 서버 URL을 추가하거나 MCP: Add Server 명령으로 등록하고, Agent 모드에서 사용합니다.
+- [Claude.ai에 연결하기](https://developer.nachocode.io/docs/mcp/setup/claude-ai): Claude.ai와 Claude Desktop에 nachocode MCP 서버를 커스텀 커넥터로 연결하는 방법을 안내합니다. 설정에서 커넥터를 추가하고 대화창에서 켜서 사용합니다.
+- [ChatGPT에 연결하기](https://developer.nachocode.io/docs/mcp/setup/chatgpt): ChatGPT에 nachocode MCP 서버를 커넥터로 연결하는 방법을 안내합니다. 개발자 모드를 켜고 커넥터를 추가한 뒤 대화와 딥 리서치에서 사용합니다.
+- [기타 클라이언트에 연결하기](https://developer.nachocode.io/docs/mcp/setup/other): 원격 MCP 서버(Streamable HTTP)를 지원하는 모든 클라이언트에 nachocode MCP 서버를 연결하는 공통 절차와, 로컬 명령(stdio)만 지원하는 도구에서 브리지를 쓰는 방법을 안내합니다.
+- [제공 기능](https://developer.nachocode.io/docs/mcp/features): nachocode MCP 서버가 제공하는 도구 7개, 리소스 6개, 프롬프트 5개를 언제 쓰는지, 무엇을 입력하고 무엇을 돌려받는지 안내합니다. 공통 동작 규칙과 이후 추가될 앱·대시보드 작업 도구의 범위도 함께 설명합니다.
+
+## 릴리즈 노트
+
+- [nachocode Client SDK 릴리즈 노트](https://developer.nachocode.io/docs/releases/v1/sdk/intro): nachocode Client SDK Version 1 릴리즈 버전별 변경 사항을 확인할 수 있습니다.
+- [Release: ver.1.11.3 (2026-08-13)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-11-3): nachocode Client SDK ver.1.11.3의 릴리즈노트입니다.
+- [Release: ver.1.11.2 (2026-08-06)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-11-2): nachocode Client SDK ver.1.11.2의 릴리즈노트입니다.
+- [Release: ver.1.11.1 (2026-07-28)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-11-1): nachocode Client SDK ver.1.11.1의 릴리즈노트입니다.
+- [Release: ver.1.11.0 (2026-07-15)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-11-0): nachocode Client SDK ver.1.11.0의 릴리즈노트입니다.
+- [Release: ver.1.10.5 (2026-06-26)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-10-5): nachocode Client SDK ver.1.10.5의 릴리즈노트입니다.
+- [Release: ver.1.10.4 (2026-06-17)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-10-4): nachocode Client SDK ver.1.10.4의 릴리즈노트입니다.
+- [Release: ver.1.10.3 (2026-04-29)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-10-3): nachocode Client SDK ver.1.10.3의 릴리즈노트입니다.
+- [Release: ver.1.10.2 (2026-03-27)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-10-2): nachocode Client SDK ver.1.10.2의 릴리즈노트입니다.
+- [Release: ver.1.10.1 (2026-03-24)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-10-1): nachocode Client SDK ver.1.10.1의 릴리즈노트입니다.
+- [Release: ver.1.10.0 (2026-03-05)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-10-0): nachocode Client SDK ver.1.10.0의 릴리즈노트입니다.
+- [Release: ver.1.9.0 (2026-01-15)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-9-0): nachocode Client SDK ver.1.9.0의 릴리즈노트입니다.
+- [Release: ver.1.8.0 (2025-10-29)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-8-0): nachocode Client SDK ver.1.8.0의 릴리즈노트입니다.
+- [Release: ver.1.7.0 (2025-09-26)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-7-0): nachocode Client SDK ver.1.7.0의 릴리즈노트입니다.
+- [Release: ver.1.6.3 (2025-07-28)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-6-3): nachocode Client SDK ver.1.6.3의 릴리즈노트입니다.
+- [Release: ver.1.6.2 (2025-07-09)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-6-2): nachocode Client SDK ver.1.6.2의 릴리즈노트입니다.
+- [Release: ver.1.6.1 (2025-06-20)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-6-1): nachocode Client SDK ver.1.6.1의 릴리즈노트입니다.
+- [Release: ver.1.6.0 (2025-06-12)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-6-0): nachocode Client SDK ver.1.6.0의 릴리즈노트입니다.
+- [Release: ver.1.5.0 (2025-04-18)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-5-0): nachocode Client SDK ver.1.5.0의 릴리즈노트입니다.
+- [Release: ver.1.4.2 (2025-02-19)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-4-2): nachocode Client SDK ver.1.4.2의 릴리즈노트입니다.
+- [Release: ver.1.4.1 (2025-02-12)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-4-1): nachocode Client SDK ver.1.4.1의 릴리즈노트입니다.
+- [Release: ver.1.4.0 (2025-02-06)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-4-0): nachocode Client SDK ver.1.4.0의 릴리즈노트입니다.
+- [Release: ver.1.3.0 (2024-11-20)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-3-0): nachocode Client SDK ver.1.3.0의 릴리즈노트입니다.
+- [Release: ver.1.2.0 (2024-10-02)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-2-0): nachocode Client SDK ver.1.2.0의 릴리즈노트입니다.
+- [Release: ver.1.1.0 (2024-08-20)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-1-0): nachocode Client SDK ver.1.1.0의 릴리즈노트입니다.
+- [Release: ver.1.0.3 (2024-06-19)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-0-3): nachocode Client SDK ver.1.0.3의 릴리즈노트입니다.
+- [Release: ver.1.0.2 (2024-04-09)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-0-2): nachocode Client SDK ver.1.0.2의 릴리즈노트입니다.
+- [Release: ver.1.0.0 (2024-03-14)](https://developer.nachocode.io/docs/releases/v1/sdk/release-v-1-0-0): nachocode Client SDK ver.1.0.0의 릴리즈노트입니다.
+- [Android App Source 릴리즈 노트](https://developer.nachocode.io/docs/releases/v1/app-source/android/intro): nachocode Android App Source Version 1 릴리즈 버전별 변경 사항을 확인할 수 있습니다.
+- [Release: ver.1.11.5 (2026-08-31)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-11-5): nachocode Android App Source ver.1.11.5의 릴리즈노트입니다.
+- [Release: ver.1.11.4 (2026-08-14)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-11-4): nachocode Android App Source ver.1.11.4의 릴리즈노트입니다.
+- [Release: ver.1.11.3 (2026-08-06)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-11-3): nachocode Android App Source ver.1.11.3의 릴리즈노트입니다.
+- [Release: ver.1.11.2 (2026-07-28)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-11-2): nachocode Android App Source ver.1.11.2의 릴리즈노트입니다.
+- [Release: ver.1.11.1 (2026-07-23)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-11-1): nachocode Android App Source ver.1.11.1의 릴리즈노트입니다.
+- [Release: ver.1.11.0 (2026-07-15)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-11-0): nachocode Android App Source ver.1.11.0의 릴리즈노트입니다.
+- [Release: ver.1.10.12 (2026-06-26)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-12): nachocode Android App Source ver.1.10.12의 릴리즈노트입니다.
+- [Release: ver.1.10.11 (2026-06-17)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-11): nachocode Android App Source ver.1.10.11의 릴리즈노트입니다.
+- [Release: ver.1.10.10 (2026-06-11)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-10): nachocode Android App Source ver.1.10.10의 릴리즈노트입니다.
+- [Release: ver.1.10.9 (2026-05-28)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-9): nachocode Android App Source ver.1.10.9의 릴리즈노트입니다.
+- [Release: ver.1.10.8 (2026-05-18)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-8): nachocode Android App Source ver.1.10.8의 릴리즈노트입니다.
+- [Release: ver.1.10.7 (2026-05-15)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-7): nachocode Android App Source ver.1.10.7의 릴리즈노트입니다.
+- [Release: ver.1.10.6 (2026-04-29)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-6): nachocode Android App Source ver.1.10.6의 릴리즈노트입니다.
+- [Release: ver.1.10.5 (2026-04-13)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-5): nachocode Android App Source ver.1.10.5의 릴리즈노트입니다.
+- [Release: ver.1.10.4 (2026-04-02)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-4): nachocode Android App Source ver.1.10.4의 릴리즈노트입니다.
+- [Release: ver.1.10.3 (2026-03-30)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-3): nachocode Android App Source ver.1.10.3의 릴리즈노트입니다.
+- [Release: ver.1.10.2 (2026-03-17)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-2): nachocode Android App Source ver.1.10.2의 릴리즈노트입니다.
+- [Release: ver.1.10.1 (2026-03-09)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-1): nachocode Android App Source ver.1.10.1의 릴리즈노트입니다.
+- [Release: ver.1.10.0 (2026-02-26)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-10-0): nachocode Android App Source ver.1.10.0의 릴리즈노트입니다.
+- [Release: ver.1.9.2 (2026-02-06)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-9-2): nachocode Android App Source ver.1.9.2의 릴리즈노트입니다.
+- [Release: ver.1.9.1 (2026-01-27)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-9-1): nachocode Android App Source ver.1.9.1의 릴리즈노트입니다.
+- [Release: ver.1.9.0 (2026-01-19)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-9-0): nachocode Android App Source ver.1.9.0의 릴리즈노트입니다.
+- [Release: ver.1.8.7 (2025-12-26)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-8-7): nachocode Android App Source ver.1.8.7의 릴리즈노트입니다.
+- [Release: ver.1.8.6 (2025-12-19)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-8-6): nachocode Android App Source ver.1.8.6의 릴리즈노트입니다.
+- [Release: ver.1.8.5 (2025-12-18)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-8-5): nachocode Android App Source ver.1.8.5의 릴리즈노트입니다.
+- [Release: ver.1.8.4 (2025-12-16)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-8-4): nachocode Android App Source ver.1.8.4의 릴리즈노트입니다.
+- [Release: ver.1.8.3 (2025-12-10)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-8-3): nachocode Android App Source ver.1.8.3의 릴리즈노트입니다.
+- [Release: ver.1.8.2 (2025-11-24)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-8-2): nachocode Android App Source ver.1.8.2의 릴리즈노트입니다.
+- [Release: ver.1.8.1 (2025-11-06)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-8-1): nachocode Android App Source ver.1.8.1의 릴리즈노트입니다.
+- [Release: ver.1.8.0 (2025-10-29)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-8-0): nachocode Android App Source ver.1.8.0의 릴리즈노트입니다.
+- [Release: ver.1.7.1 (2025-10-27)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-7-1): nachocode Android App Source ver.1.7.1의 릴리즈노트입니다.
+- [Release: ver.1.7.0 (2025-09-29)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-7-0): nachocode Android App Source ver.1.7.0의 릴리즈노트입니다.
+- [Release: ver.1.6.11 (2025-09-08)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-11): nachocode Android App Source ver.1.6.11의 릴리즈노트입니다.
+- [Release: ver.1.6.10 (2025-08-22)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-10): nachocode Android App Source ver.1.6.10의 릴리즈노트입니다.
+- [Release: ver.1.6.9 (2025-07-30)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-9): nachocode Android App Source ver.1.6.9의 릴리즈노트입니다.
+- [Release: ver.1.6.8 (2025-07-15)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-8): nachocode Android App Source ver.1.6.8의 릴리즈노트입니다.
+- [Release: ver.1.6.7 (2025-07-09)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-7): nachocode Android App Source ver.1.6.7의 릴리즈노트입니다.
+- [Release: ver.1.6.6 (2025-07-02)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-6): nachocode Android App Source ver.1.6.6의 릴리즈노트입니다.
+- [Release: ver.1.6.5 (2025-07-02)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-5): nachocode Android App Source ver.1.6.5의 릴리즈노트입니다.
+- [Release: ver.1.6.4 (2025-07-02)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-4): nachocode Android App Source ver.1.6.4의 릴리즈노트입니다.
+- [Release: ver.1.6.3 (2025-07-01)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-3): nachocode Android App Source ver.1.6.3의 릴리즈노트입니다.
+- [Release: ver.1.6.2 (2025-06-30)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-2): nachocode Android App Source ver.1.6.2의 릴리즈노트입니다.
+- [Release: ver.1.6.1 (2025-06-20)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-1): nachocode Android App Source ver.1.6.1의 릴리즈노트입니다.
+- [Release: ver.1.6.0 (2025-06-09)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-6-0): nachocode Android App Source ver.1.6.0의 릴리즈노트입니다.
+- [Release: ver.1.5.1 (2025-04-25)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-5-1): nachocode Android App Source ver.1.5.1의 릴리즈노트입니다.
+- [Release: ver.1.5.0 (2025-04-22)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-5-0): nachocode Android App Source ver.1.5.0의 릴리즈노트입니다.
+- [Release: ver.1.4.2 (2025-02-20)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-4-2): nachocode Android App Source ver.1.4.2의 릴리즈노트입니다.
+- [Release: ver.1.4.1 (2025-02-17)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-4-1): nachocode Android App Source ver.1.4.1의 릴리즈노트입니다.
+- [Release: ver.1.4.0 (2025-02-04)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-4-0): nachocode Android App Source ver.1.4.0의 릴리즈노트입니다.
+- [Release: ver.1.3.2 (2025-01-10)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-3-2): nachocode Android App Source ver.1.3.2의 릴리즈노트입니다.
+- [Release: ver.1.3.1 (2024-12-30)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-3-1): nachocode Android App Source ver.1.3.1의 릴리즈노트입니다.
+- [Release: ver.1.3.0 (2024-11-20)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-3-0): nachocode Android App Source ver.1.3.0의 릴리즈노트입니다.
+- [Release: ver.1.2.0 (2024-10-02)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-2-0): nachocode Android App Source ver.1.2.0의 릴리즈노트입니다.
+- [Release: ver.1.1.0 (2024-08-01)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-1-0): nachocode Android App Source ver.1.1.0의 릴리즈노트입니다.
+- [Release: ver.1.0.0 (2024-03-14)](https://developer.nachocode.io/docs/releases/v1/app-source/android/release-v-1-0-0): nachocode Android App Source ver.1.0.0의 릴리즈노트입니다.
+- [iOS App Source 릴리즈 노트](https://developer.nachocode.io/docs/releases/v1/app-source/ios/intro): nachocode iOS App Source Version 1 릴리즈 버전별 변경 사항을 확인할 수 있습니다.
+- [Release: ver.1.11.5 (2026-08-31)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-11-5): nachocode iOS App Source ver.1.11.5의 릴리즈노트입니다.
+- [Release: ver.1.11.4 (2026-08-14)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-11-4): nachocode iOS App Source ver.1.11.4의 릴리즈노트입니다.
+- [Release: ver.1.11.3 (2026-08-06)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-11-3): nachocode iOS App Source ver.1.11.3의 릴리즈노트입니다.
+- [Release: ver.1.11.2 (2026-07-28)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-11-2): nachocode iOS App Source ver.1.11.2의 릴리즈노트입니다.
+- [Release: ver.1.11.1 (2026-07-23)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-11-1): nachocode iOS App Source ver.1.11.1의 릴리즈노트입니다.
+- [Release: ver.1.11.0 (2026-07-15)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-11-0): nachocode iOS App Source ver.1.11.0의 릴리즈노트입니다.
+- [Release: ver.1.10.12 (2026-06-26)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-12): nachocode iOS App Source ver.1.10.12의 릴리즈노트입니다.
+- [Release: ver.1.10.11 (2026-06-17)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-11): nachocode iOS App Source ver.1.10.11의 릴리즈노트입니다.
+- [Release: ver.1.10.10 (2026-06-11)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-10): nachocode iOS App Source ver.1.10.10의 릴리즈노트입니다.
+- [Release: ver.1.10.9 (2026-06-05)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-9): nachocode iOS App Source ver.1.10.9의 릴리즈노트입니다.
+- [Release: ver.1.10.8 (2026-05-22)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-8): nachocode iOS App Source ver.1.10.8의 릴리즈노트입니다.
+- [Release: ver.1.10.7 (2026-05-15)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-7): nachocode iOS App Source ver.1.10.7의 릴리즈노트입니다.
+- [Release: ver.1.10.6 (2026-05-12)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-6): nachocode iOS App Source ver.1.10.6의 릴리즈노트입니다.
+- [Release: ver.1.10.5 (2026-04-29)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-5): nachocode iOS App Source ver.1.10.5의 릴리즈노트입니다.
+- [Release: ver.1.10.4 (2026-04-08)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-4): nachocode iOS App Source ver.1.10.4의 릴리즈노트입니다.
+- [Release: ver.1.10.3 (2026-04-02)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-3): nachocode iOS App Source ver.1.10.3의 릴리즈노트입니다.
+- [Release: ver.1.10.2 (2026-03-30)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-2): nachocode iOS App Source ver.1.10.2의 릴리즈노트입니다.
+- [Release: ver.1.10.1 (2026-03-09)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-1): nachocode iOS App Source ver.1.10.1의 릴리즈노트입니다.
+- [Release: ver.1.10.0 (2026-02-26)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-10-0): nachocode iOS App Source ver.1.10.0의 릴리즈노트입니다.
+- [Release: ver.1.9.2 (2026-02-11)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-9-2): nachocode iOS App Source ver.1.9.2의 릴리즈노트입니다.
+- [Release: ver.1.9.1 (2026-01-27)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-9-1): nachocode iOS App Source ver.1.9.1의 릴리즈노트입니다.
+- [Release: ver.1.9.0 (2026-01-19)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-9-0): nachocode iOS App Source ver.1.9.0의 릴리즈노트입니다.
+- [Release: ver.1.8.6 (2025-12-23)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-8-6): nachocode iOS App Source ver.1.8.6의 릴리즈노트입니다.
+- [Release: ver.1.8.5 (2025-12-23)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-8-5): nachocode iOS App Source ver.1.8.5의 릴리즈노트입니다.
+- [Release: ver.1.8.4 (2025-12-17)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-8-4): nachocode iOS App Source ver.1.8.4의 릴리즈노트입니다.
+- [Release: ver.1.8.3 (2025-12-12)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-8-3): nachocode iOS App Source ver.1.8.3의 릴리즈노트입니다.
+- [Release: ver.1.8.2 (2025-12-11)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-8-2): nachocode iOS App Source ver.1.8.2의 릴리즈노트입니다.
+- [Release: ver.1.8.1 (2025-11-06)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-8-1): nachocode iOS App Source ver.1.8.1의 릴리즈노트입니다.
+- [Release: ver.1.8.0 (2025-10-29)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-8-0): nachocode iOS App Source ver.1.8.0의 릴리즈노트입니다.
+- [Release: ver.1.7.1 (2025-10-27)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-7-1): nachocode iOS App Source ver.1.7.1의 릴리즈노트입니다.
+- [Release: ver.1.7.0 (2025-09-29)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-7-0): nachocode iOS App Source ver.1.7.0의 릴리즈노트입니다.
+- [Release: ver.1.6.12 (2025-09-08)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-12): nachocode iOS App Source ver.1.6.12의 릴리즈노트입니다.
+- [Release: ver.1.6.11 (2025-08-19)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-11): nachocode iOS App Source ver.1.6.11의 릴리즈노트입니다.
+- [Release: ver.1.6.10 (2025-07-30)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-10): nachocode iOS App Source ver.1.6.10의 릴리즈노트입니다.
+- [Release: ver.1.6.9 (2025-07-15)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-9): nachocode iOS App Source ver.1.6.9의 릴리즈노트입니다.
+- [Release: ver.1.6.8 (2025-07-11)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-8): nachocode iOS App Source ver.1.6.8의 릴리즈노트입니다.
+- [Release: ver.1.6.7 (2025-07-09)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-7): nachocode iOS App Source ver.1.6.7의 릴리즈노트입니다.
+- [Release: ver.1.6.6 (2025-07-04)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-6): nachocode iOS App Source ver.1.6.6의 릴리즈노트입니다.
+- [Release: ver.1.6.5 (2025-07-02)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-5): nachocode iOS App Source ver.1.6.5의 릴리즈노트입니다.
+- [Release: ver.1.6.4 (2025-07-02)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-4): nachocode iOS App Source ver.1.6.4의 릴리즈노트입니다.
+- [Release: ver.1.6.3 (2025-07-01)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-3): nachocode iOS App Source ver.1.6.3의 릴리즈노트입니다.
+- [Release: ver.1.6.2 (2025-06-30)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-2): nachocode iOS App Source ver.1.6.2의 릴리즈노트입니다.
+- [Release: ver.1.6.1 (2025-06-20)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-1): nachocode iOS App Source ver.1.6.1의 릴리즈노트입니다.
+- [Release: ver.1.6.0 (2025-06-09)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-6-0): nachocode iOS App Source ver.1.6.0의 릴리즈노트입니다.
+- [Release: ver.1.5.1 (2025-04-25)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-5-1): nachocode iOS App Source ver.1.5.1의 릴리즈노트입니다.
+- [Release: ver.1.5.0 (2025-04-22)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-5-0): nachocode iOS App Source ver.1.5.0의 릴리즈노트입니다.
+- [Release: ver.1.4.2 (2025-02-20)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-4-2): nachocode iOS App Source ver.1.4.2의 릴리즈노트입니다.
+- [Release: ver.1.4.1 (2025-02-17)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-4-1): nachocode iOS App Source ver.1.4.1의 릴리즈노트입니다.
+- [Release: ver.1.4.0 (2025-02-04)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-4-0): nachocode iOS App Source ver.1.4.0의 릴리즈노트입니다.
+- [Release: ver.1.3.1 (2024-12-20)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-3-1): nachocode iOS App Source ver.1.3.1의 릴리즈노트입니다.
+- [Release: ver.1.3.0 (2024-11-20)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-3-0): nachocode iOS App Source ver.1.3.0의 릴리즈노트입니다.
+- [Release: ver.1.2.0 (2024-10-02)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-2-0): nachocode iOS App Source ver.1.2.0의 릴리즈노트입니다.
+- [Release: ver.1.1.0 (2024-08-01)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-1-0): nachocode iOS App Source ver.1.1.0의 릴리즈노트입니다.
+- [Release: ver.1.0.0 (2024-03-14)](https://developer.nachocode.io/docs/releases/v1/app-source/ios/release-v-1-0-0): nachocode iOS App Source ver.1.0.0의 릴리즈노트입니다.
+
+## Optional
+
+- [llms-full.txt](https://developer.nachocode.io/llms-full.txt): 전체 문서 전문 (릴리즈 노트는 플랫폼별 최신 3개 버전만 전문 수록)
+- [OpenAPI 3.1 명세](https://github.com/FlipperCorporation/nachocode-developer-hub/blob/main/openapi/nachocode-open-api.yaml): nachocode Open API 기계 판독 명세
+- [사용자 가이드](https://docs.nachocode.io): 대시보드 사용법 등 비개발자용 가이드
