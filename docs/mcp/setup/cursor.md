@@ -21,7 +21,11 @@ image: /img/og-image.png
 
 # Cursor에 연결하기 {#cursor}
 
-> 🔔 **최신화 일자:** 2026-09-11
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/SDK/intro.png'/>
+
+> 🔔 **최신화 일자:** 2026-09-14
 
 <!-- 2026-09-09 최초 생성 -->
 

@@ -21,6 +21,10 @@ image: /img/og-image.png
 
 # ChatGPT에 연결하기 {#chatgpt}
 
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/SDK/intro.png'/>
+
 > 🔔 **최신화 일자:** 2026-09-11
 
 <!-- 2026-09-10 최초 생성 (기타 클라이언트 문서에서 분리) -->

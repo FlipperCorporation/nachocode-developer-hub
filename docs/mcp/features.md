@@ -24,6 +24,10 @@ image: /img/og-image.png
 
 # 제공 기능 {#features}
 
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/SDK/intro.png'/>
+
 > 🔔 **최신화 일자:** 2026-09-11
 
 <!-- 2026-09-09 최초 생성 -->
@@ -32,7 +36,7 @@ image: /img/og-image.png
 <!-- 2026-09-11 도구 17→7(+ChatGPT 2), 리소스 10→6, 프롬프트 8→5. 호환·예제는 sdk_lookup 파라미터, FAQ 는 검색 출처. search·fetch 는 ChatGPT 계열에만 노출 -->
 
 :::caution 준비 중
-기능 목록은 MCP 서버 출시 시점에 최종 확정되며, 이후 업데이트로 계속 추가됩니다.
+nachocode MCP 서버의 기능 목록은 이후 업데이트로 계속 추가됩니다.
 :::
 
 nachocode MCP 서버는 세 종류의 기능을 제공합니다.

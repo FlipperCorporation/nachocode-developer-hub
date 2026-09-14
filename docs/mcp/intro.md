@@ -27,13 +27,17 @@ image: /img/og-image.png
 
 # nachocode MCP 개요 {#mcp-intro}
 
-> 🔔 **최신화 일자:** 2026-09-11
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/GUIDE/intro.png'/>
+
+> 🔔 **최신화 일자:** 2026-09-14
 
 <!-- 2026-09-09 최초 생성 (MCP 서버 출시 전 초안) -->
 <!-- 2026-09-11 도구·리소스·프롬프트 개수 갱신 -->
 
 :::caution 준비 중
-nachocode MCP 서버는 현재 준비 중입니다. 연결 방법과 기능 목록은 서버 출시 시점에 최종 확정됩니다.
+nachocode MCP 서버는 현재 지속적으로 업데이트 중입니다.
 :::
 
 **nachocode MCP**는 Claude, ChatGPT, Cursor, Codex 같은 AI 에이전트를 **nachocode에 연결하는 MCP 서버**입니다.  

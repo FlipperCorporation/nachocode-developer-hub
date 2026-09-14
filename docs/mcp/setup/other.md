@@ -21,7 +21,11 @@ image: /img/og-image.png
 
 # 기타 클라이언트에 연결하기 {#other-clients}
 
-> 🔔 **최신화 일자:** 2026-09-11
+import { ThumbnailImage } from '@site/src/components/common/image/thumbnail-image';
+
+<ThumbnailImage src='/img/docs/thumbnails/SDK/intro.png'/>
+
+> 🔔 **최신화 일자:** 2026-09-14
 
 <!-- 2026-09-09 최초 생성 -->
 <!-- 2026-09-10 VS Code·Claude.ai·ChatGPT를 별도 문서로 분리 -->
